@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ta3laM — اتعلم Power BI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="tweaks-available">
+
+<!-- Background layers -->
+<div class="backdrop" aria-hidden="true">
+  <svg viewBox="0 0 1600 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgG1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F5A623" stop-opacity=".35"/>
+        <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="bgG2" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#00B4D8" stop-opacity=".30"/>
+        <stop offset="100%" stop-color="#00B4D8" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="bgGlow1" cx="20%" cy="30%" r="50%">
+        <stop offset="0%" stop-color="#F5A623" stop-opacity=".15"/>
+        <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="bgGlow2" cx="85%" cy="75%" r="45%">
+        <stop offset="0%" stop-color="#00B4D8" stop-opacity=".12"/>
+        <stop offset="100%" stop-color="#00B4D8" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1600" height="900" fill="url(#bgGlow1)"/>
+    <rect width="1600" height="900" fill="url(#bgGlow2)"/>
+    <path d="M-50 700 Q 300 600 600 650 T 1200 580 T 1700 620" stroke="url(#bgG2)" stroke-width="1.5" fill="none"/>
+    <path d="M-50 760 Q 280 700 580 720 T 1180 660 T 1700 690" stroke="url(#bgG1)" stroke-width="1.2" fill="none"/>
+    <path d="M-50 820 Q 320 800 640 780 T 1240 740 T 1700 760" stroke="url(#bgG2)" stroke-width="1" fill="none" opacity=".5"/>
+    <path d="M-50 100 Q 280 140 560 180 T 1140 160 T 1700 190" stroke="url(#bgG1)" stroke-width="1" fill="none" opacity=".4"/>
+    <g fill="#2A3A4D" opacity=".3">
+      <circle cx="160" cy="180" r="1.5"/><circle cx="320" cy="240" r="1.5"/><circle cx="480" cy="200" r="1.5"/>
+      <circle cx="640" cy="260" r="1.5"/><circle cx="800" cy="220" r="1.5"/><circle cx="960" cy="280" r="1.5"/>
+      <circle cx="1120" cy="240" r="1.5"/><circle cx="1280" cy="300" r="1.5"/><circle cx="1440" cy="260" r="1.5"/>
+    </g>
+    <circle cx="580" cy="720" r="3" fill="#F5A623"/>
+    <circle cx="900" cy="640" r="3" fill="#00B4D8"/>
+    <circle cx="1240" cy="740" r="3" fill="#F5A623"/>
+  </svg>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="shell">
+
+  <!-- MAIN READER -->
+  <main class="reader">
+    <div class="reader-topbar">
+      <button id="sidebarToggle" class="topbar-btn" aria-label="Menu" style="padding:7px 10px;">☰</button>
+      <div class="crumb">
+        <span id="crumbChapter">—</span>
+        <span style="margin:0 8px;opacity:.5;">/</span>
+        <b id="crumbLesson">—</b>
+      </div>
+      <div class="topbar-spacer"></div>
+      <button class="topbar-btn" onclick="window.resetShellProgress && window.resetShellProgress()" style="font-size:11px;">↺ ابدأ من الأول</button>
+      <button class="topbar-btn" id="tweaksToggle" onclick="document.getElementById('tweaksPanel').classList.toggle('open')">
+        <span style="opacity:.6;">⚙</span> Tweaks
+      </button>
+      <button class="topbar-btn lang-toggle" id="topbarLangBtn" title="Toggle language">EN</button>
+      <button class="topbar-btn primary" id="topbarQuizBtn" onclick="window.startQuiz && window.startQuiz('')">📝 اختبر نفسك</button>
+    </div>
+    <div class="reading-progress"><div class="reading-progress-fill"></div></div>
+
+    <div id="reader-body"></div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">T3M</div>
+      <div class="brand-text">
+        <div class="name">تعلَّم<em>.</em> Power BI</div>
+        <div class="tagline">Ta3laM Platform</div>
+      </div>
+    </div>
+
+    <div class="search">
+      <div class="search-wrap">
+        <input id="searchInput" class="search-input" type="search" placeholder="ابحث في الدروس..." autocomplete="off" dir="rtl">
+      </div>
+    </div>
+
+    <div class="rail">
+      <div class="rail-top">
+        <div class="rail-label">وصلت لفين؟</div>
+        <div class="rail-val">0<span> / 50</span></div>
+      </div>
+      <div class="rail-bar"><div class="rail-fill"></div></div>
+    </div>
+
+    <nav class="toc" id="toc" aria-label="Course table of contents"></nav>
+  </aside>
+
+</div>
+
+<!-- Tweaks panel -->
+<div class="tweaks" id="tweaksPanel" role="dialog" aria-label="Design tweaks">
+  <div class="tweaks-head">
+    <div class="tweaks-title">Tweaks</div>
+    <button class="tweaks-close" id="tweaksClose" aria-label="close">×</button>
+  </div>
+
+  <div class="tweaks-row">
+    <label class="tweaks-label">اختار اللون</label>
+    <div class="seg" data-tweak-accent>
+      <button data-val="gold">ذهبي</button>
+      <button data-val="teal">تيل</button>
+      <button data-val="dual">مزدوج</button>
+    </div>
+  </div>
+
+  <div class="tweaks-row">
+    <label class="tweaks-label">تباعد المحتوى</label>
+    <div class="seg" data-tweak-density>
+      <button data-val="compact">ضيق</button>
+      <button data-val="cozy">عادي</button>
+      <button data-val="spacious">واسع</button>
+    </div>
+  </div>
+
+  <div class="tweaks-switch-row">
+    <span style="font-size:12.5px;">خلفية متحركة</span>
+    <div class="sw" id="sw-backdrop"></div>
+  </div>
+
+  <div class="tweaks-switch-row">
+    <span style="font-size:12.5px;">Grain texture</span>
+    <div class="sw" id="sw-grain"></div>
+  </div>
+</div>
+
+<!-- Certificate Modal -->
+<div id="certificateModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,16,23,0.96);z-index:3000;align-items:center;justify-content:center;">
+  <div style="background:#131F2B;border:2px solid #F5A623;border-radius:20px;padding:2.5rem;max-width:500px;width:90%;text-align:center;direction:rtl;font-family:Cairo,sans-serif;">
+    <div style="font-size:3.5rem;margin-bottom:1rem;">🏆</div>
+    <h2 style="color:#F5A623;margin-bottom:0.75rem;">مبروك يا بطل! 🎉</h2>
+    <p style="color:#A8B2BF;margin-bottom:1.5rem;">خلّصت الدورة بنجاح<br><strong style="color:#ECEFF3;">Power BI — من الصفر للاحتراف</strong></p>
+    <input id="certNameInput" type="text" placeholder="اكتب اسمك هنا"
+      style="width:100%;background:#1A2836;border:1px solid #2A3A4D;border-radius:8px;padding:0.75rem;color:#ECEFF3;font-family:Cairo,sans-serif;font-size:1rem;text-align:center;margin-bottom:0.75rem;outline:none;">
+    <p style="font-size:0.9rem;color:#6A7685;margin-bottom:1.5rem;">التاريخ: <span id="certDate"></span></p>
+    <div style="display:flex;gap:1rem;justify-content:center;">
+      <button onclick="window.closeModal()" class="btn-prev">إغلاق</button>
+      <button onclick="window.downloadCertificate()" class="btn-next">حمّل الشهادة</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="window.closeLightbox(event)">
+  <button id="lightbox-close" onclick="window.closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<script src="js/curriculum.js"></script>
+<script src="js/lessons.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/shell.js"></script>
+</body>
+</html>

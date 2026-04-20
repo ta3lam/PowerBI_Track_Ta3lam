@@ -1,0 +1,135 @@
+{
+  "exercises": [
+    {
+      "id": "ex1",
+      "section": "getdata",
+      "title": "استيراد بيانات من ملف Excel",
+      "description": "تمرين عملي لاستيراد بيانات من ملف Excel وإنشاء نموذج بيانات بسيط.",
+      "instructions": "1. قم بتحميل ملف 'sales.xlsx' المرفق.\n2. استخدم Get Data لاستيراد البيانات من Sheet1.\n3. قم بتحويل أنواع الأعمدة المناسبة.\n4. احفظ الاستعلام باسم 'SalesData'.",
+      "starterCode": "",
+      "solutionCode": "let\n    Source = Excel.Workbook(File.Contents(\"sales.xlsx\")),\n    Sheet = Source{[Name=\"Sheet1\"]}[Data],\n    Promoted = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),\n    TypedCols = Table.TransformColumnTypes(Promoted, {\n        {\"Date\", type date},\n        {\"ProductID\", type text},\n        {\"Amount\", type number},\n        {\"Region\", type text}\n    })\nin\n    TypedCols",
+      "hints": [
+        "استخدم Get Data → Excel Workbook",
+        "اختر Sheet1 من Navigator",
+        "استخدم Transform Data للدخول إلى Power Query Editor",
+        "استخدم Change Type لتغيير أنواع الأعمدة"
+      ],
+      "points": 15,
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex2",
+      "section": "powerquery",
+      "title": "تنظيف البيانات وإزالة التكرارات",
+      "description": "تمرين لتنظيف مجموعة بيانات تحتوي على تكرارات وقيم مفقودة.",
+      "instructions": "1. قم باستيراد ملف 'customers.csv'.\n2. أزل الصفوف المكررة بناءً على عمود 'CustomerID'.\n3. استبدل القيم الفارغة في عمود 'City' بقيمة 'Unknown'.\n4. قسم عمود 'FullName' إلى 'FirstName' و 'LastName' بناءً على المسافة.",
+      "starterCode": "let\n    Source = Csv.Document(File.Contents(\"customers.csv\"), [Delimiter=\",\", Columns=4, Encoding=1256]),\n    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true])\nin\n    Promoted",
+      "solutionCode": "let\n    Source = Csv.Document(File.Contents(\"customers.csv\"), [Delimiter=\",\", Columns=4, Encoding=1256]),\n    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    RemovedDuplicates = Table.Distinct(Promoted, {\"CustomerID\"}),\n    ReplacedNulls = Table.ReplaceValue(RemovedDuplicates, null, \"Unknown\", Replacer.ReplaceValue, {\"City\"}),\n    SplitNames = Table.SplitColumn(ReplacedNulls, \"FullName\", Splitter.SplitTextByDelimiter(\" \", QuoteStyle.Csv), {\"FirstName\", \"LastName\"})\nin\n    SplitNames",
+      "hints": [
+        "استخدم Table.Distinct لإزالة التكرارات",
+        "استخدم Table.ReplaceValue لاستبدال القيم الفارغة",
+        "استخدم Table.SplitColumn لتقسيم الأعمدة"
+      ],
+      "points": 20,
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex3",
+      "section": "model",
+      "title": "بناء نموذج البيانات Star Schema",
+      "description": "تمرين لبناء نموذج بيانات Star Schema باستخدام جداول الحقائق والأبعاد.",
+      "instructions": "1. استورد جدول المبيعات 'sales_fact.csv'.\n2. استورد جدول المنتجات 'products_dim.csv'.\n3. استورد جدول العملاء 'customers_dim.csv'.\n4. أنشئ علاقات بين الجداول باستخدام Model View.",
+      "starterCode": "",
+      "solutionCode": "// الخطوات:\n// 1. استيراد sales_fact.csv (Fact Table)\n// 2. استيراد products_dim.csv (Dimension Table)\n// 3. استيراد customers_dim.csv (Dimension Table)\n// 4. في Model View، اسحب ProductID من sales_fact إلى products_dim\n// 5. اسحب CustomerID من sales_fact إلى customers_dim\n// 6. تأكد من أن اتجاه العلاقة هو Single (من Dimension إلى Fact)",
+      "hints": [
+        "جداول الحقائق عادة تكون أكبر وتحوي أرقام",
+        "جداول الأبعاد أصغر وتحوي تفاصيل وصفية",
+        "العلاقات يجب أن تكون من 1 إلى Many",
+        "اتجاه الفلترة يجب أن يكون Single من الأبعاد إلى الحقائق"
+      ],
+      "points": 25,
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex4",
+      "section": "dax1",
+      "title": "إنشاء Measures أساسية",
+      "description": "تمرين لإنشاء مقاييس DAX أساسية لتحليل المبيعات.",
+      "instructions": "بناءً على جدول Sales:\n1. أنشئ مقياس 'Total Sales' يحسب مجموع عمود Amount.\n2. أنشئ مقياس 'Average Sale' يحسب متوسط قيمة البيع.\n3. أنشئ مقياس 'Number of Transactions' يحسب عدد الصفوف.",
+      "starterCode": "",
+      "solutionCode": "Total Sales = SUM(Sales[Amount])\n\nAverage Sale = AVERAGE(Sales[Amount])\n\nNumber of Transactions = COUNTROWS(Sales)",
+      "hints": [
+        "استخدم SUM للمجموع",
+        "استخدم AVERAGE للمتوسط",
+        "استخدم COUNTROWS لعدد الصفوف"
+      ],
+      "points": 15,
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex5",
+      "section": "dax-logical",
+      "title": "استخدام IF و SWITCH في DAX",
+      "description": "تمرين لاستخدام الدوال المنطقية لتصنيف البيانات.",
+      "instructions": "بناءً على جدول Products:\n1. أنشئ Calculated Column 'Price Category':\n   - إذا Price >= 1000 فقيمة 'High'\n   - إذا Price >= 500 فقيمة 'Medium'\n   - وإلا فقيمة 'Low'\n2. أنشئ Calculated Column 'Discount Group' باستخدام SWITCH:\n   - إذا Category = 'Electronics' فقيمة 10%\n   - إذا Category = 'Clothing' فقيمة 20%\n   - وإلا فقيمة 5%",
+      "starterCode": "",
+      "solutionCode": "Price Category = \nIF(\n    Products[Price] >= 1000,\n    \"High\",\n    IF(\n        Products[Price] >= 500,\n        \"Medium\",\n        \"Low\"\n    )\n)\n\nDiscount Group = \nSWITCH(\n    Products[Category],\n    \"Electronics\", 0.10,\n    \"Clothing\", 0.20,\n    0.05\n)",
+      "hints": [
+        "استخدم IF للشروط المتداخلة",
+        "استخدم SWITCH للقيم الثابتة",
+        "تذكر أن النسبة المئوية تكتب كأرقام عشرية"
+      ],
+      "points": 20,
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex6",
+      "section": "calculate",
+      "title": "استخدام CALCULATE مع الفلاتر",
+      "description": "تمرين متقدم لاستخدام CALCULATE لحساب مقاييس بفلترات مخصصة.",
+      "instructions": "بناءً على جدول Sales:\n1. أنشئ مقياس 'Sales Last Year' يحسب مبيعات السنة الماضية باستخدام CALCULATE و DATEADD.\n2. أنشئ مقياس 'Sales in West Region' يحسب المبيعات في المنطقة الغربية فقط.\n3. أنشئ مقياس 'Sales Excluding Product X' يحسب المبيعات باستثناء منتج معين.",
+      "starterCode": "",
+      "solutionCode": "Sales Last Year = \nCALCULATE(\n    SUM(Sales[Amount]),\n    DATEADD('Calendar'[Date], -1, YEAR)\n)\n\nSales in West Region = \nCALCULATE(\n    SUM(Sales[Amount]),\n    Sales[Region] = \"West\"\n)\n\nSales Excluding Product X = \nCALCULATE(\n    SUM(Sales[Amount]),\n    FILTER(\n        Sales,\n        Sales[Product] <> \"Product X\"\n    )\n)",
+      "hints": [
+        "استخدم DATEADD للرجوع سنة واحدة",
+        "استخدم FILTER لاستبعاد قيم معينة",
+        "CALCULATE تغير سياق الفلترة"
+      ],
+      "points": 25,
+      "difficulty": "advanced"
+    },
+    {
+      "id": "ex7",
+      "section": "dax2",
+      "title": "دوال الزمن Time Intelligence",
+      "description": "تمرين لحساب مقاييس زمنية باستخدام دوال Time Intelligence.",
+      "instructions": "بناءً على جدول Sales وجدول Calendar:\n1. أنشئ مقياس 'YTD Sales' باستخدام TOTALYTD.\n2. أنشئ مقياس 'Sales Previous Month' باستخدام PREVIOUSMONTH.\n3. أنشئ مقياس 'Sales Last 7 Days' باستخدام DATESINPERIOD.",
+      "starterCode": "",
+      "solutionCode": "YTD Sales = \nTOTALYTD(\n    SUM(Sales[Amount]),\n    'Calendar'[Date]\n)\n\nSales Previous Month = \nCALCULATE(\n    SUM(Sales[Amount]),\n    PREVIOUSMONTH('Calendar'[Date])\n)\n\nSales Last 7 Days = \nCALCULATE(\n    SUM(Sales[Amount]),\n    DATESINPERIOD(\n        'Calendar'[Date],\n        MAX('Calendar'[Date]),\n        -7,\n        DAY\n    )\n)",
+      "hints": [
+        "TOTALYTD تحتاج إلى جدول تاريخ مرتبط",
+        "PREVIOUSMONTH ترجع الشهر السابق",
+        "DATESINPERIOD ترجع نافذة زمنية محددة"
+      ],
+      "points": 30,
+      "difficulty": "advanced"
+    },
+    {
+      "id": "ex8",
+      "section": "visuals",
+      "title": "إنشاء مرئيات تفاعلية",
+      "description": "تمرين لإنشاء لوحة تحكم (Dashboard) بمجموعة من المرئيات.",
+      "instructions": "1. أنشئ مخطط عمودي يظهر المبيعات حسب الشهر.\n2. أنشئ مخطط دائري يظهر توزيع المبيعات حسب المنطقة.\n3. أنشئ جدول يظهر أفضل 10 منتجات من حيث المبيعات.\n4. أضف فلترات تفاعلية للتاريخ والمنطقة.",
+      "starterCode": "",
+      "solutionCode": "// الخطوات:\n// 1. من Visualizations pane، اختر Column chart\n// 2. اسحب 'Date' إلى Axis و 'Sales' إلى Values\n// 3. اختر Pie chart، اسحب 'Region' إلى Legend و 'Sales' إلى Values\n// 4. اختر Table visual، اسحب 'Product' إلى Rows و 'Sales' إلى Values\n// 5. من Format، اضبط Sort by 'Sales' Descending\n// 6. حدد Top 10 من Visual level filters\n// 7. أضفل Slicer للتاريخ والمنطقة من Visualizations pane",
+      "hints": [
+        "استخدم Column chart للاتجاهات الزمنية",
+        "استخدم Pie chart للتوزيع النسبي",
+        "استخدم Table visual للبيانات التفصيلية",
+        "استخدم Slicer للفلترة التفاعلية"
+      ],
+      "points": 35,
+      "difficulty": "intermediate"
+    }
+  ]
+}

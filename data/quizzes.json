@@ -1,0 +1,169 @@
+{
+  "quizzes": [
+    {
+      "id": "q1",
+      "section": "intro",
+      "question": "ما هو ذكاء الأعمال (Business Intelligence)؟",
+      "type": "multiple_choice",
+      "options": [
+        "عملية تحويل البيانات الخام إلى معلومات ورؤى تساعد في اتخاذ القرارات",
+        "برنامج لتحرير النصوص والعروض التقديمية",
+        "أداة لتصميم المواقع الإلكترونية",
+        "نظام لإدارة قواعد البيانات فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ذكاء الأعمال هو عملية تحويل البيانات الخام إلى معلومات مفهومة تساعد مدراء الشركات على اتخاذ قرارات صحيحة ومبنية على أرقام.",
+      "points": 5
+    },
+    {
+      "id": "q2",
+      "section": "intro",
+      "question": "أي من المكونات التالية هو جزء من بيئة Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "Power BI Desktop فقط",
+        "Power BI Desktop و Power BI Service",
+        "Power BI Desktop و Power BI Service و Power BI Mobile",
+        "Power BI Mobile فقط"
+      ],
+      "correctAnswer": 2,
+      "explanation": "بيئة Power BI تتكون من: Power BI Desktop (لإنشاء التقارير)، Power BI Service (السحابي للمشاركة)، Power BI Mobile (للتطبيقات المحمولة).",
+      "points": 5
+    },
+    {
+      "id": "q3",
+      "section": "setup",
+      "question": "هل Power BI Desktop يعمل على أنظمة macOS؟",
+      "type": "true_false",
+      "options": ["صحيح", "خطأ"],
+      "correctAnswer": 1,
+      "explanation": "Power BI Desktop لا يعمل على أنظمة macOS مباشرة. يجب استخدام Parallels أو Boot Camp لتشغيل Windows على Mac.",
+      "points": 3
+    },
+    {
+      "id": "q4",
+      "section": "interface",
+      "question": "ما هي الشاشات الرئيسية في Power BI Desktop؟",
+      "type": "multiple_choice",
+      "options": [
+        "شاشة التقرير وشاشة البيانات وشاشة العلاقات",
+        "شاشة التصميم وشاشة البرمجة فقط",
+        "شاشة التقرير وشاشة الطباعة",
+        "شاشة البيانات وشاشة الرسومات فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الشاشات الرئيسية هي: 1) شاشة التقرير (Report View) لرسم الشارتات، 2) شاشة البيانات (Data/Table View) لعرض الجداول، 3) شاشة العلاقات (Model View) لربط الجداول.",
+      "points": 5
+    },
+    {
+      "id": "q5",
+      "section": "getdata",
+      "question": "ما هي مصادر البيانات المدعومة في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "ملفات Excel فقط",
+        "قواعد بيانات SQL فقط",
+        "أكثر من 100 مصدر مختلف بما في ذلك الملفات وقواعد البيانات والخدمات السحابية",
+        "الملفات النصية فقط"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Power BI يدعم أكثر من 100 مصدر بيانات مختلف مثل: ملفات (Excel, CSV, PDF, Folder)، قواعد بيانات (SQL Server, MySQL, Oracle)، خدمات سحابية (Web, SharePoint, Google Analytics).",
+      "points": 5
+    },
+    {
+      "id": "q6",
+      "section": "powerquery",
+      "question": "ما هو Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "أداة لتصميم الرسومات البيانية",
+        "برنامج لتحرير الاستعلامات وتحويل البيانات (ETL)",
+        "لغة برمجة لإنشاء التقارير",
+        "نظام لإدارة المستخدمين"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Power Query هو برنامج مدمج داخل Power BI وظيفته الأساسية هي ETL: Extract (سحب البيانات)، Transform (تعديل وتنظيف)، Load (تحميل البيانات للموديل).",
+      "points": 5
+    },
+    {
+      "id": "q7",
+      "section": "powerquery",
+      "question": "اكتب كود M لتغيير نوع عمود 'Amount' إلى رقمي في Power Query",
+      "type": "code",
+      "codeTemplate": "let\n    Source = Excel.Workbook(File.Contents(\"sales.xlsx\")),\n    Sheet = Source{[Name=\"Sheet1\"]}[Data],\n    Promoted = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),\n    TypedCols = Table.TransformColumnTypes(Promoted, {\n        {\"Date\", type date},\n        // أضف الكود هنا لتغيير نوع عمود Amount إلى type number\n    })\nin\n    TypedCols",
+      "correctAnswer": "{\"Amount\", type number}",
+      "explanation": "لتغيير نوع العمود إلى رقمي نستخدم type number. الكود الصحيح: {\"Amount\", type number}",
+      "points": 10
+    },
+    {
+      "id": "q8",
+      "section": "model",
+      "question": "ما الفرق بين جداول الحقائق وجداول الأبعاد؟",
+      "type": "multiple_choice",
+      "options": [
+        "جداول الحقائق تحتوي على الحركات والأرقام، وجداول الأبعاد تحتوي على التفاصيل والوصف",
+        "جداول الأبعاد طويلة وجداول الحقائق قصيرة",
+        "لا يوجد فرق بينهما",
+        "جداول الحقائق للتفاصيل وجداول الأبعاد للأرقام"
+      ],
+      "correctAnswer": 0,
+      "explanation": "جداول الحقائق تحتوي على الحركات والأرقام (المبيعات، المصروفات) وهي طويلة. جداول الأبعاد تحتوي على التفاصيل والوصف (العملاء، المنتجات) وهي قصيرة ومحدودة.",
+      "points": 7
+    },
+    {
+      "id": "q9",
+      "section": "relationships",
+      "question": "ما هي العلاقة المثالية في نموذج البيانات؟",
+      "type": "multiple_choice",
+      "options": [
+        "1 to Many (1:*)",
+        "Many to Many (*:*)",
+        "1 to 1 (1:1)",
+        "لا يوجد علاقة مثالية"
+      ],
+      "correctAnswer": 0,
+      "explanation": "العلاقة 1 to Many (1:*) هي العلاقة المثالية والمطلوبة دائماً، حيث يكون لسجل واحد في جدول الأبعاد عدة سجلات في جدول الحقائق.",
+      "points": 5
+    },
+    {
+      "id": "q10",
+      "section": "dax1",
+      "question": "ما الفرق بين Calculated Column و Measure؟",
+      "type": "multiple_choice",
+      "options": [
+        "Calculated Column يضيف عموداً فعلياً ويأخذ مساحة، Measure معادلة وهمية لا تأخذ مساحة",
+        "كلاهما نفس الشيء",
+        "Measure يضيف عموداً فعلياً، Calculated Column معادلة وهمية",
+        "لا يوجد فرق بينهما"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Calculated Column يضيف عمود فعلي في الجدول ويأخذ مساحة من الرام، بينما Measure معادلة وهمية لا تأخذ مساحة وتُحسب فقط عند وضعها في شارت.",
+      "points": 8
+    },
+    {
+      "id": "q11",
+      "section": "dax-logical",
+      "question": "اكتب دالة DAX لتصنيف المبيعات: إذا كانت المبيعات >= 500000 تظهر '🏆 Elite'، إذا كانت >= 200000 تظهر '⭐ High Performer'، وإلا تظهر '📈 Standard'",
+      "type": "code",
+      "codeTemplate": "Performance Category = \nSWITCH(\n    TRUE(),\n    // أضف الشروط هنا\n)",
+      "correctAnswer": "[TotalSales] >= 500000, \"🏆 Elite\",\n    [TotalSales] >= 200000, \"⭐ High Performer\",\n    \"📈 Standard\"",
+      "explanation": "استخدم SWITCH(TRUE(), [condition1], result1, [condition2], result2, defaultResult) لتصنيف متعدد المستويات.",
+      "points": 10
+    },
+    {
+      "id": "q12",
+      "section": "calculate",
+      "question": "ما هي وظيفة CALCULATE في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "تغيير سياق الفلترة لحساب مقياس",
+        "حساب مجموع العمود",
+        "إنشاء علاقات بين الجداول",
+        "تصدير البيانات إلى Excel"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CALCULATE هي أهم دالة في DAX، وتستخدم لتغيير سياق الفلترة (Filter Context) أثناء حساب المقياس.",
+      "points": 8
+    }
+  ]
+}
