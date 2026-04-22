@@ -23,11 +23,33 @@
   --blue: #3A8FD1;
   --teal: #1D9E75;
   --coral: #D85A30;
+  --legacy-heading-size: 1.08rem;
+  --legacy-body-size: 0.96rem;
+  --legacy-list-size: 0.94rem;
+  --legacy-tip-size: 0.96rem;
+  --legacy-step-title-size: 1.02rem;
+  --legacy-step-body-size: 0.92rem;
+  --legacy-table-size: 0.94rem;
+  --legacy-kpi-heading-size: 1.18rem;
+  --legacy-kpi-body-size: 0.92rem;
+}
+
+html.lang-en {
+  --legacy-heading-size: 1.3rem;
+  --legacy-body-size: 1.2rem;
+  --legacy-list-size: 1.16rem;
+  --legacy-tip-size: 1.18rem;
+  --legacy-step-title-size: 1.26rem;
+  --legacy-step-body-size: 1.16rem;
+  --legacy-table-size: 1.14rem;
+  --legacy-kpi-heading-size: 1.42rem;
+  --legacy-kpi-body-size: 1.12rem;
 }
 
 /* ── Lesson content elements (rendered inside .lesson) ── */
+/* Keep lesson content aligned to its own language mode, not the scroll container. */
 .lesson { direction: rtl; }
-.lesson > * { direction: rtl; }
+.lesson > * { direction: inherit; }
 
 .section-tag {
   display: inline-block; padding: 3px 10px; border-radius: 4px;
@@ -53,19 +75,41 @@
   transition: border-color 0.2s;
 }
 .lesson-card:hover { border-color: var(--border2); }
-.lesson-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
-.lesson-card p  { font-size: 0.9rem; color: var(--text2); margin-bottom: 0.75rem; }
+.lesson-card h3 { font-size: var(--legacy-heading-size); font-weight: 700; margin-bottom: 0.6rem; }
+.lesson-card p  { font-size: var(--legacy-body-size); color: var(--text2); margin-bottom: 0.75rem; }
 .lesson-card ul { list-style: none; padding: 0; }
+.lesson-card a {
+  color: #8CCEFF;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed rgba(140, 206, 255, 0.35);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.lesson-card a:hover {
+  color: var(--gold);
+  border-bottom-color: rgba(245, 184, 0, 0.45);
+}
+.lesson-card code {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: rgba(7, 13, 18, 0.85);
+  color: #DDE8F5;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.8em;
+}
 .lesson-card ul li {
-  font-size: 0.87rem; color: var(--text2); padding: 4px 0;
+  font-size: var(--legacy-list-size); color: var(--text2); padding: 4px 0;
   border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px;
+  flex-wrap: wrap;
 }
 .lesson-card ul li:last-child { border-bottom: none; }
 .lesson-card ul li::before { content: '←'; color: var(--gold); flex-shrink: 0; font-size: 0.8rem; margin-top: 2px; }
 
 .code-block {
   background: #070D12; border: 1px solid var(--border);
-  border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1rem 0;
+  border-radius: 8px; padding: 3.25rem 1.5rem 1.25rem; margin: 1rem 0;
   font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 0.83rem;
   direction: ltr; text-align: left; overflow-x: auto; line-height: 1.7;
   position: relative;
@@ -73,7 +117,7 @@
 .code-block .kw  { color: #F5B800; font-weight: 600; }
 .code-block .fn  { color: #00B4D8; }
 .code-block .str { color: #3FD37A; }
-.code-block .cm  { color: #6A7685; font-style: italic; }
+.code-block .cm  { color: #6A7685; font-style: normal; }
 .code-block .num { color: #E85D4A; }
 
 .tip-box, .warn-box {
@@ -83,7 +127,7 @@
 .tip-box  { background: rgba(245,184,0,0.06);  border: 1px solid rgba(245,184,0,0.2); }
 .warn-box { background: rgba(216,90,48,0.06); border: 1px solid rgba(216,90,48,0.2); }
 .tip-box .icon, .warn-box .icon { font-size: 1.5rem; flex-shrink: 0; }
-.tip-box p, .warn-box p { margin: 0; font-size: 0.9rem; color: var(--text2); }
+.tip-box p, .warn-box p { margin: 0; font-size: var(--legacy-tip-size); color: var(--text2); }
 
 .steps { counter-reset: step; margin: 1rem 0; }
 .step {
@@ -96,10 +140,10 @@
   display: flex; align-items: center; justify-content: center;
   font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
 }
-.step-content h4 { margin-bottom: 0.25rem; font-size: 1rem; }
-.step-content p  { font-size: 0.85rem; color: var(--text2); margin: 0; }
+.step-content h4 { margin-bottom: 0.25rem; font-size: var(--legacy-step-title-size); }
+.step-content p  { font-size: var(--legacy-step-body-size); color: var(--text2); margin: 0; }
 
-.compare-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.87rem; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: var(--legacy-table-size); }
 .compare-table th { background: var(--bg4); color: var(--gold); padding: 0.6rem 1rem; text-align: right; font-weight: 600; border-bottom: 2px solid var(--gold-dark); }
 .compare-table td { padding: 0.55rem 1rem; border-bottom: 1px solid var(--border); color: var(--text2); }
 .compare-table tr:hover td { background: var(--bg3); }
@@ -111,22 +155,37 @@
 
 .btn-prev, .btn-next {
   padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer;
-  font-family: 'Cairo', sans-serif; font-size: 0.85rem; font-weight: 600;
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
   transition: all 0.15s; border: 1px solid var(--border2);
 }
 .btn-prev { background: var(--bg3); color: var(--text2); }
 .btn-prev:hover { background: var(--bg4); color: var(--text); }
 .btn-next { background: var(--gold); color: #000; border-color: var(--gold); }
 .btn-next:hover { background: var(--gold-dark); }
-.btn-quiz { background: #1D9E75; color: #fff; border-color: #1D9E75; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer; font-family: 'Cairo', sans-serif; font-size: 0.85rem; font-weight: 600; transition: all 0.15s; }
+.btn-quiz { background: #1D9E75; color: #fff; border-color: #1D9E75; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; transition: all 0.15s; }
 .btn-quiz:hover { background: #17895f; }
 
 /* Copy button (for .code-block) */
 .copy-btn {
-  position: absolute; top: 0.6rem; left: 0.6rem;
   background: var(--bg4); border: 1px solid var(--border2);
   color: var(--text3); border-radius: 5px; padding: 2px 10px;
-  font-size: 0.72rem; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all 0.15s;
+  font-size: 0.72rem; cursor: pointer; font-family: var(--sans); transition: all 0.15s;
+}
+.code-block > .copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  left: auto;
+  z-index: 2;
+  min-width: 62px;
+  line-height: 1.5;
+}
+.code-head .copy-btn {
+  position: static;
+  top: auto;
+  right: auto;
+  left: auto;
+  margin-inline-start: auto;
 }
 .copy-btn:hover { background: var(--border2); color: var(--text); }
 .copy-btn.copied { background: var(--teal); color: #fff; border-color: var(--teal); }
@@ -148,7 +207,7 @@
 }
 #lightbox.open { display: flex; }
 #lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 10px; border: 2px solid var(--border2); box-shadow: 0 0 60px rgba(0,0,0,0.8); cursor: default; }
-#lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: var(--text2); font-size: 0.9rem; font-family: 'Cairo', sans-serif; background: rgba(0,0,0,0.6); padding: 0.4rem 1rem; border-radius: 20px; white-space: nowrap; }
+#lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: var(--text2); font-size: 0.9rem; font-family: var(--sans); background: rgba(0,0,0,0.6); padding: 0.4rem 1rem; border-radius: 20px; white-space: nowrap; }
 #lightbox-close { position: absolute; top: 1.5rem; left: 1.5rem; background: var(--bg3); border: 1px solid var(--border2); color: var(--text2); width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
 #lightbox-close:hover { background: var(--bg4); color: var(--text); }
 
@@ -162,24 +221,73 @@
 /* KPI section styles */
 .kpi-domain-header { display: flex; align-items: center; gap: 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 1.75rem; }
 .kpi-domain-icon { font-size: 2rem; flex-shrink: 0; }
-.kpi-domain-header h3 { font-size: 1.15rem; font-weight: 800; margin: 0; }
-.kpi-domain-header p { font-size: 0.82rem; color: var(--text2); margin: 0; }
+.kpi-domain-header h3 { font-size: var(--legacy-kpi-heading-size); font-weight: 800; margin: 0; }
+.kpi-domain-header p { font-size: var(--legacy-kpi-body-size); color: var(--text2); margin: 0; }
 .kpi-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 2rem; overflow: hidden; }
 .kpi-card-header { background: var(--bg3); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 10px; }
 .kpi-card-header .kpi-num { background: var(--gold); color: #000; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; }
-.kpi-card-header h4 { font-size: 1rem; font-weight: 700; margin: 0; }
+.kpi-card-header h4 { font-size: calc(var(--legacy-kpi-heading-size) - 0.16rem); font-weight: 700; margin: 0; }
 .kpi-card-header .kpi-en { font-size: 0.75rem; color: var(--text3); font-weight: 400; margin-right: 6px; }
 .kpi-card-body { padding: 1.25rem 1.5rem; }
 .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
 .kpi-info-box { background: var(--bg4); border-radius: 8px; padding: 0.9rem 1rem; border: 1px solid var(--border); }
 .kpi-info-box .kpi-label { font-size: 0.68rem; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-.kpi-info-box p { font-size: 0.85rem; color: var(--text2); margin: 0; line-height: 1.6; }
+.kpi-info-box p { font-size: var(--legacy-kpi-body-size); color: var(--text2); margin: 0; line-height: 1.6; }
 .kpi-formula-box { background: #070D12; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1.25rem; margin: 0.75rem 0; direction: ltr; text-align: left; font-size: 0.82rem; font-family: 'JetBrains Mono', monospace; line-height: 1.8; }
-.kpi-formula-label { font-size: 0.68rem; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; direction: rtl; text-align: right; font-family: 'Cairo', sans-serif; }
+.kpi-formula-label { font-size: 0.68rem; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; direction: rtl; text-align: right; font-family: var(--sans); }
 .kpi-example { background: rgba(29,158,117,0.06); border: 1px solid rgba(29,158,117,0.2); border-radius: 8px; padding: 0.9rem 1.25rem; margin-top: 0.75rem; }
 .kpi-example .ex-label { font-size: 0.68rem; font-weight: 700; color: #1D9E75; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-.kpi-example p { font-size: 0.85rem; color: var(--text2); margin: 0; line-height: 1.7; }
+.kpi-example p { font-size: var(--legacy-kpi-body-size); color: var(--text2); margin: 0; line-height: 1.7; }
 .kpi-example strong { color: var(--text); }
 .kpi-importance { background: rgba(245,184,0,0.05); border-right: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: 0.75rem; }
 .kpi-importance .imp-label { font-size: 0.68rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-.kpi-importance p { font-size: 0.85rem; color: var(--text2); margin: 0; line-height: 1.6; }
+.kpi-importance p { font-size: var(--legacy-kpi-body-size); color: var(--text2); margin: 0; line-height: 1.6; }
+
+/* English-mode fixes for legacy lesson HTML */
+html.lang-en .lesson :is(.lesson-card, .tip-box, .warn-box, .steps, .step, .step-content, .compare-table, .kpi-domain-header, .kpi-card-header, .kpi-grid, .kpi-info-box, .kpi-example, .kpi-importance) {
+  direction: ltr;
+}
+
+html.lang-en .lesson :is(
+  p,
+  li,
+  h3,
+  h4,
+  th,
+  td,
+  .kpi-label,
+  .ex-label,
+  .imp-label,
+  .kpi-formula-label
+) {
+  direction: ltr;
+  text-align: left !important;
+  unicode-bidi: plaintext;
+}
+
+html.lang-en .lesson-card ul li::before {
+  content: '→';
+}
+
+html.lang-en .compare-table th,
+html.lang-en .compare-table td,
+html.lang-en .lesson table th,
+html.lang-en .lesson table td {
+  text-align: left !important;
+}
+
+html.lang-en .kpi-card-header .kpi-en {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+html.lang-en .kpi-formula-label {
+  direction: ltr;
+  text-align: left;
+}
+
+html.lang-en .kpi-importance {
+  border-right: none;
+  border-left: 3px solid var(--gold);
+  border-radius: 8px 0 0 8px;
+}

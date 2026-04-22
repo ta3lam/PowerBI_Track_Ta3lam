@@ -6,9 +6,10 @@
 <title>Ta3laM — اتعلم Power BI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/shell.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23F5A623'/></svg>">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="tweaks-available">
@@ -64,9 +65,9 @@
         <b id="crumbLesson">—</b>
       </div>
       <div class="topbar-spacer"></div>
-      <button class="topbar-btn" onclick="window.resetShellProgress && window.resetShellProgress()" style="font-size:11px;">↺ ابدأ من الأول</button>
+      <button class="topbar-btn" id="resetProgressBtn" onclick="window.resetShellProgress && window.resetShellProgress()" style="font-size:11px;">↺ ابدأ من الأول</button>
       <button class="topbar-btn" id="tweaksToggle" onclick="document.getElementById('tweaksPanel').classList.toggle('open')">
-        <span style="opacity:.6;">⚙</span> Tweaks
+        <span style="opacity:.6;">⚙</span> <span id="tweaksToggleLabel">Tweaks</span>
       </button>
       <button class="topbar-btn lang-toggle" id="topbarLangBtn" title="Toggle language">EN</button>
       <button class="topbar-btn primary" id="topbarQuizBtn" onclick="window.startQuiz && window.startQuiz('')">📝 اختبر نفسك</button>
@@ -79,7 +80,7 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-mark">T3M</div>
+      <div class="brand-mark"><img src="images/New Logo.png" alt="Ta3laM Logo" style="max-width:100%;height:auto;"></div>
       <div class="brand-text">
         <div class="name">تعلَّم<em>.</em> Power BI</div>
         <div class="tagline">Ta3laM Platform</div>
@@ -108,51 +109,51 @@
 <!-- Tweaks panel -->
 <div class="tweaks" id="tweaksPanel" role="dialog" aria-label="Design tweaks">
   <div class="tweaks-head">
-    <div class="tweaks-title">Tweaks</div>
+    <div class="tweaks-title" id="tweaksTitle">Tweaks</div>
     <button class="tweaks-close" id="tweaksClose" aria-label="close">×</button>
   </div>
 
   <div class="tweaks-row">
-    <label class="tweaks-label">اختار اللون</label>
+    <label class="tweaks-label" id="tweakAccentLabel">اختار اللون</label>
     <div class="seg" data-tweak-accent>
-      <button data-val="gold">ذهبي</button>
-      <button data-val="teal">تيل</button>
-      <button data-val="dual">مزدوج</button>
+      <button data-val="gold" id="accentGoldBtn">ذهبي</button>
+      <button data-val="teal" id="accentTealBtn">تيل</button>
+      <button data-val="dual" id="accentDualBtn">مزدوج</button>
     </div>
   </div>
 
   <div class="tweaks-row">
-    <label class="tweaks-label">تباعد المحتوى</label>
+    <label class="tweaks-label" id="tweakDensityLabel">تباعد المحتوى</label>
     <div class="seg" data-tweak-density>
-      <button data-val="compact">ضيق</button>
-      <button data-val="cozy">عادي</button>
-      <button data-val="spacious">واسع</button>
+      <button data-val="compact" id="densityCompactBtn">ضيق</button>
+      <button data-val="cozy" id="densityCozyBtn">عادي</button>
+      <button data-val="spacious" id="densitySpaciousBtn">واسع</button>
     </div>
   </div>
 
   <div class="tweaks-switch-row">
-    <span style="font-size:12.5px;">خلفية متحركة</span>
+    <span style="font-size:12.5px;" id="tweakBackdropLabel">خلفية متحركة</span>
     <div class="sw" id="sw-backdrop"></div>
   </div>
 
   <div class="tweaks-switch-row">
-    <span style="font-size:12.5px;">Grain texture</span>
+    <span style="font-size:12.5px;" id="tweakGrainLabel">Grain texture</span>
     <div class="sw" id="sw-grain"></div>
   </div>
 </div>
 
 <!-- Certificate Modal -->
 <div id="certificateModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,16,23,0.96);z-index:3000;align-items:center;justify-content:center;">
-  <div style="background:#131F2B;border:2px solid #F5A623;border-radius:20px;padding:2.5rem;max-width:500px;width:90%;text-align:center;direction:rtl;font-family:Cairo,sans-serif;">
+  <div id="certificateCard" style="background:#131F2B;border:2px solid #F5A623;border-radius:20px;padding:2.5rem;max-width:500px;width:90%;text-align:center;direction:rtl;font-family:var(--sans);">
     <div style="font-size:3.5rem;margin-bottom:1rem;">🏆</div>
-    <h2 style="color:#F5A623;margin-bottom:0.75rem;">مبروك يا بطل! 🎉</h2>
-    <p style="color:#A8B2BF;margin-bottom:1.5rem;">خلّصت الدورة بنجاح<br><strong style="color:#ECEFF3;">Power BI — من الصفر للاحتراف</strong></p>
+    <h2 id="certHeading" style="color:#F5A623;margin-bottom:0.75rem;">مبروك يا بطل! 🎉</h2>
+    <p id="certSubheading" style="color:#A8B2BF;margin-bottom:1.5rem;">خلّصت الدورة بنجاح<br><strong id="certCourseTitle" style="color:#ECEFF3;">Power BI — من الصفر للاحتراف</strong></p>
     <input id="certNameInput" type="text" placeholder="اكتب اسمك هنا"
-      style="width:100%;background:#1A2836;border:1px solid #2A3A4D;border-radius:8px;padding:0.75rem;color:#ECEFF3;font-family:Cairo,sans-serif;font-size:1rem;text-align:center;margin-bottom:0.75rem;outline:none;">
-    <p style="font-size:0.9rem;color:#6A7685;margin-bottom:1.5rem;">التاريخ: <span id="certDate"></span></p>
+      style="width:100%;background:#1A2836;border:1px solid #2A3A4D;border-radius:8px;padding:0.75rem;color:#ECEFF3;font-family:var(--sans);font-size:1rem;text-align:center;margin-bottom:0.75rem;outline:none;">
+    <p style="font-size:0.9rem;color:#6A7685;margin-bottom:1.5rem;"><span id="certDateLabel">التاريخ:</span> <span id="certDate"></span></p>
     <div style="display:flex;gap:1rem;justify-content:center;">
-      <button onclick="window.closeModal()" class="btn-prev">إغلاق</button>
-      <button onclick="window.downloadCertificate()" class="btn-next">حمّل الشهادة</button>
+      <button onclick="window.closeModal()" class="btn-prev" id="certCloseBtn">إغلاق</button>
+      <button onclick="window.downloadCertificate()" class="btn-next" id="certDownloadBtn">حمّل الشهادة</button>
     </div>
   </div>
 </div>
