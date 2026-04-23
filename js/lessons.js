@@ -11638,6 +11638,147 @@ Time Intelligence
     <div class="warn-box">
       <div class="icon">⚠️</div>
       <p><strong>معيار الفشل هنا:</strong> أن يبقى التقرير مجرد counts وpie charts للفائز، بدون أي منطق تحليلي حول rating gap أو الافتتاحيات أو الوقت. القوة الحقيقية في هذا المشروع تأتي من التحويل الذكي للجدول الخام.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🔷 الصيغ الضرورية (DAX Measures)</h3>
+      <p>هنا أهم 7 DAX measures لهذا المشروع:</p>
+      <div class="code-block">
+<span class="cm">-- 1. عدد المباريات الكلي</span>
+<span class="kw">Total Games</span> = <span class="fn">COUNTA</span>( Games[game_id] )
+
+<span class="cm">-- 2. نسبة فوز الأبيض %</span>
+<span class="kw">White Win %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTA</span>( Games[game_id] ),
+        Games[winner] = <span class="str">"white"</span>
+    ),
+    [Total Games]
+) * <span class="num">100</span>
+
+<span class="cm">-- 3. نسبة الحسائم (Draws)</span>
+<span class="kw">Draw %</span> = <span class="fn">DIVIDE</span>( <span class="fn">CALCULATE</span>( <span class="fn">COUNTA</span>( Games[game_id] ), Games[winner] = <span class="str">"draw"</span> ), [Total Games] ) * <span class="num">100</span>
+
+<span class="cm">-- 4. متوسط عدد الحركات</span>
+<span class="kw">Avg Moves</span> = <span class="fn">AVERAGE</span>( Games[turns] )
+
+<span class="cm">-- 5. نسبة فوز الأعلى تقييماً %</span>
+<span class="kw">Higher Rated Win %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTA</span>( Games[game_id] ),
+        Games[higher_rated_won] = <span class="num">1</span>
+    ),
+    [Total Games]
+) * <span class="num">100</span>
+
+<span class="cm">-- 6. معدل الانزعاج (Upset Rate) = الأضعف يفوز</span>
+<span class="kw">Upset Rate %</span> = <span class="num">100</span> - [Higher Rated Win %]
+
+<span class="cm">-- 7. أشهر افتتاحية</span>
+<span class="kw">Most Common Opening</span> =
+<span class="fn">MAXX</span>(
+    <span class="fn">TOPN</span>( <span class="num">1</span>, <span class="fn">VALUES</span>( Games[opening_shortname] ), <span class="fn">COUNTA</span>( Games[game_id] ) ),
+    Games[opening_shortname]
+)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>📊 تخطيط Dashboard المتوقع</h3>
+      <p>يجب أن يكون عندك 3 صفحات على الأقل:</p>
+
+      <p><strong>صفحة 1: Match Overview</strong></p>
+      <div class="code-block">
+┌─────────────────────────────────────┐
+│         CHESS GAMES ANALYTICS       │
+├─────────────────────────────────────┤
+│  Total Games: 20,345                │
+│  White Win %: 45.2%   Draw %: 34.8% │
+│  Avg Turns: 48.3                    │
+├─────────────────────────────────────┤
+│                                     │
+│  Win Distribution          Top 10   │
+│  ┌─────────────┐         Openings   │
+│  │ Pie Chart   │         ┌─────────┐│
+│  │ W/D/B       │         │ 1. Ruy  ││
+│  └─────────────┘         │ 2. Sicil││
+│                          │ 3. French││
+│  Rating Gap Impact        └─────────┘│
+│  ┌─────────────┐                    │
+│  │ Bar Chart   │  Blitz vs Rapid     │
+│  │ ↑ Win Rate  │  ┌──────┬──────┐   │
+│  └─────────────┘  │ Blitz│Rapid │   │
+│                   │ 40%  │ 52%  │   │
+│                   └──────┴──────┘   │
+└─────────────────────────────────────┘
+      </div>
+
+      <p><strong>صفحة 2: Opening Analysis</strong></p>
+      <div class="code-block">
+┌─────────────────────────────────────┐
+│     OPENING DEEP DIVE               │
+├─────────────────────────────────────┤
+│  Selected Opening: Ruy Lopez        │
+│  Games Count: 3,405                 │
+│  White Advantage: +6.2%             │
+├─────────────────────────────────────┤
+│                                     │
+│  Variations Win Rate:               │
+│  ┌─────────────────────────────┐   │
+│  │ Variation      │ W% │ Count │   │
+│  ├─────────────────────────────┤   │
+│  │ Classical      │47%│ 1,245 │   │
+│  │ Morphy         │44%│   856 │   │
+│  │ Berlin         │48%│   734 │   │
+│  │ Archangelsk    │42%│   570 │   │
+│  └─────────────────────────────┘   │
+│                                     │
+│  Performance Trend:                 │
+│  ┌─────────────────────────────┐   │
+│  │ Line Chart: Wins over time  │   │
+│  └─────────────────────────────┘   │
+└─────────────────────────────────────┘
+      </div>
+
+      <p><strong>صفحة 3: Rating & Time Control</strong></p>
+      <div class="code-block">
+┌─────────────────────────────────────┐
+│  RATING & TIME ANALYSIS             │
+├─────────────────────────────────────┤
+│  Higher-Rated Win: 58.2%            │
+│  Upset Rate:       41.8%            │
+├─────────────────────────────────────┤
+│                                     │
+│  Rating Band Performance:           │
+│  ┌──────┬──────┬──────┬──────┐    │
+│  │ Band │ W%   │Draw%│ Count│    │
+│  ├──────┼──────┼──────┼──────┤    │
+│  │<1200 │ 48%  │ 32% │ 1,200│    │
+│  │1200+ │ 52%  │ 35% │ 4,500│    │
+│  │1600+ │ 55%  │ 37% │ 8,000│    │
+│  │2000+ │ 62%  │ 38% │ 5,645│    │
+│  └──────┴──────┴──────┴──────┘    │
+│                                     │
+│  Game Speed Impact:                 │
+│  ┌─────────────────────────────┐   │
+│  │ Bullet: 41% | Blitz: 45%    │   │
+│  │ Rapid: 52%  | Classic: 58%  │   │
+│  └─────────────────────────────┘   │
+└─────────────────────────────────────┘
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🔍 Business Insights المتوقعة</h3>
+      <ol>
+        <li><strong>أثر التقييم حقيقي:</strong> اللاعب الأعلى تقييماً يفوز في 58% من الحالات — أعلى من الـ 50% المتوقع عشوائياً، مما يثبت أن التقييم مؤشر قوي للأداء.</li>
+        <li><strong>الافتتاحيات ذات تأثير:</strong> افتتاحيات معينة (مثل Ruy Lopez و Sicilian) لها معدل فوز أعلى للأبيض — تعكس عمق الإعداد النظري.</li>
+        <li><strong>الوقت يزيد الفروقات:</strong> في ألعاب Blitz (وقت قليل)، معدل الفوز أقل متوقعية (41%). في Rapid/Classic بالوقت الأطول، معدل الفوز يرتفع (58%+) — الوقت الأطول يسمح بالإعداد النظري القوي أن ينتصر.</li>
+        <li><strong>Draw rates عالية:</strong> حوالي 35% من الألعاب تنتهي برسم — مؤشر على مستوى اللاعبين المتقاربة ومهاراتهم الدفاعية.</li>
+        <li><strong>Short games حينما يكون rating gap كبيراً:</strong> متوسط الحركات ينخفض عندما يكون الفرق في التقييم كبيراً جداً — تسليم مبكر.</li>
+      </ol>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
       <h3>Project scenario</h3>
@@ -11711,6 +11852,147 @@ Time Intelligence
     <div class="warn-box">
       <div class="icon">!</div>
       <p><strong>Failure pattern:</strong> turning this project into simple counts and pie charts of winners. The real value comes from transforming the raw table into insight about rating gaps, openings, and time-control behavior.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🔷 Required DAX Measures</h3>
+      <p>Here are the 7 essential DAX measures for this project:</p>
+      <div class="code-block">
+<span class="cm">-- 1. Total game count</span>
+<span class="kw">Total Games</span> = <span class="fn">COUNTA</span>( Games[game_id] )
+
+<span class="cm">-- 2. White win percentage %</span>
+<span class="kw">White Win %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTA</span>( Games[game_id] ),
+        Games[winner] = <span class="str">"white"</span>
+    ),
+    [Total Games]
+) * <span class="num">100</span>
+
+<span class="cm">-- 3. Draw percentage</span>
+<span class="kw">Draw %</span> = <span class="fn">DIVIDE</span>( <span class="fn">CALCULATE</span>( <span class="fn">COUNTA</span>( Games[game_id] ), Games[winner] = <span class="str">"draw"</span> ), [Total Games] ) * <span class="num">100</span>
+
+<span class="cm">-- 4. Average number of moves</span>
+<span class="kw">Avg Moves</span> = <span class="fn">AVERAGE</span>( Games[turns] )
+
+<span class="cm">-- 5. Higher-rated player win percentage %</span>
+<span class="kw">Higher Rated Win %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTA</span>( Games[game_id] ),
+        Games[higher_rated_won] = <span class="num">1</span>
+    ),
+    [Total Games]
+) * <span class="num">100</span>
+
+<span class="cm">-- 6. Upset Rate (weaker player wins)</span>
+<span class="kw">Upset Rate %</span> = <span class="num">100</span> - [Higher Rated Win %]
+
+<span class="cm">-- 7. Most common opening</span>
+<span class="kw">Most Common Opening</span> =
+<span class="fn">MAXX</span>(
+    <span class="fn">TOPN</span>( <span class="num">1</span>, <span class="fn">VALUES</span>( Games[opening_shortname] ), <span class="fn">COUNTA</span>( Games[game_id] ) ),
+    Games[opening_shortname]
+)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>📊 Expected Dashboard Layout</h3>
+      <p>You should have at least 3 pages:</p>
+
+      <p><strong>Page 1: Match Overview</strong></p>
+      <div class="code-block">
+┌─────────────────────────────────────┐
+│         CHESS GAMES ANALYTICS       │
+├─────────────────────────────────────┤
+│  Total Games: 20,345                │
+│  White Win %: 45.2%   Draw %: 34.8% │
+│  Avg Turns: 48.3                    │
+├─────────────────────────────────────┤
+│                                     │
+│  Win Distribution          Top 10   │
+│  ┌─────────────┐         Openings   │
+│  │ Pie Chart   │         ┌─────────┐│
+│  │ W/D/B       │         │ 1. Ruy  ││
+│  └─────────────┘         │ 2. Sicil││
+│                          │ 3. French││
+│  Rating Gap Impact        └─────────┘│
+│  ┌─────────────┐                    │
+│  │ Bar Chart   │  Blitz vs Rapid     │
+│  │ ↑ Win Rate  │  ┌──────┬──────┐   │
+│  └─────────────┘  │ Blitz│Rapid │   │
+│                   │ 40%  │ 52%  │   │
+│                   └──────┴──────┘   │
+└─────────────────────────────────────┘
+      </div>
+
+      <p><strong>Page 2: Opening Analysis</strong></p>
+      <div class="code-block">
+┌─────────────────────────────────────┐
+│     OPENING DEEP DIVE               │
+├─────────────────────────────────────┤
+│  Selected Opening: Ruy Lopez        │
+│  Games Count: 3,405                 │
+│  White Advantage: +6.2%             │
+├─────────────────────────────────────┤
+│                                     │
+│  Variations Win Rate:               │
+│  ┌─────────────────────────────┐   │
+│  │ Variation      │ W% │ Count │   │
+│  ├─────────────────────────────┤   │
+│  │ Classical      │47%│ 1,245 │   │
+│  │ Morphy         │44%│   856 │   │
+│  │ Berlin         │48%│   734 │   │
+│  │ Archangelsk    │42%│   570 │   │
+│  └─────────────────────────────┘   │
+│                                     │
+│  Performance Trend:                 │
+│  ┌─────────────────────────────┐   │
+│  │ Line Chart: Wins over time  │   │
+│  └─────────────────────────────┘   │
+└─────────────────────────────────────┘
+      </div>
+
+      <p><strong>Page 3: Rating & Time Control</strong></p>
+      <div class="code-block">
+┌─────────────────────────────────────┐
+│  RATING & TIME ANALYSIS             │
+├─────────────────────────────────────┤
+│  Higher-Rated Win: 58.2%            │
+│  Upset Rate:       41.8%            │
+├─────────────────────────────────────┤
+│                                     │
+│  Rating Band Performance:           │
+│  ┌──────┬──────┬──────┬──────┐    │
+│  │ Band │ W%   │Draw%│ Count│    │
+│  ├──────┼──────┼──────┼──────┤    │
+│  │<1200 │ 48%  │ 32% │ 1,200│    │
+│  │1200+ │ 52%  │ 35% │ 4,500│    │
+│  │1600+ │ 55%  │ 37% │ 8,000│    │
+│  │2000+ │ 62%  │ 38% │ 5,645│    │
+│  └──────┴──────┴──────┴──────┘    │
+│                                     │
+│  Game Speed Impact:                 │
+│  ┌─────────────────────────────┐   │
+│  │ Bullet: 41% | Blitz: 45%    │   │
+│  │ Rapid: 52%  | Classic: 58%  │   │
+│  └─────────────────────────────┘   │
+└─────────────────────────────────────┘
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🔍 Expected Business Insights</h3>
+      <ol>
+        <li><strong>Rating impact is real:</strong> The higher-rated player wins 58% of the time — higher than 50% random chance, proving rating is a strong performance predictor.</li>
+        <li><strong>Openings matter:</strong> Certain openings (like Ruy Lopez and Sicilian) show higher white win rates — reflecting deep theoretical preparation.</li>
+        <li><strong>Time amplifies differences:</strong> In Blitz games (fast), win rates are less predictable (41%). In Rapid/Classical with more time, win rates jump (58%+) — longer time allows strong theoretical play to dominate.</li>
+        <li><strong>Draw rates are high:</strong> About 35% of games end in draws — showing evenly matched player levels and strong defensive skills.</li>
+        <li><strong>Large rating gaps = shorter games:</strong> Average move count drops when rating difference is very large — early resignations.</li>
+      </ol>
     </div>` }],
   },
 
@@ -11901,6 +12183,171 @@ Time Intelligence
     <div class="tip-box">
       <div class="icon">?</div>
       <p><strong>Success here is not the number of pages.</strong> Success is building a model that separates grains clearly, justifies each KPI, and stays performant despite large data volume.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🔷 Critical DAX Measures for Airbnb</h3>
+      <p>These 8 measures form the backbone of the Airbnb analysis:</p>
+      <div class="code-block">
+<span class="cm">-- 1. Total Listings Count</span>
+<span class="kw">Total Listings</span> = <span class="fn">DISTINCTCOUNT</span>( Listings[id] )
+
+<span class="cm">-- 2. Average Price (with handling for empty/null)</span>
+<span class="kw">Avg Price</span> = <span class="fn">AVERAGE</span>( Listings[price] )
+
+<span class="cm">-- 3. Superhost % (Superhosts / Total)</span>
+<span class="kw">Superhost %</span> = <span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>( <span class="fn">DISTINCTCOUNT</span>( Listings[id] ), Listings[host_is_superhost] = <span class="str">"t"</span> ),
+    [Total Listings]
+) * <span class="num">100</span>
+
+<span class="cm">-- 4. Avg Review Score (Rating out of 5)</span>
+<span class="kw">Avg Review Score</span> = <span class="fn">AVERAGE</span>( Reviews[review_scores_rating] )
+
+<span class="cm">-- 5. Review Volume (Count of all reviews)</span>
+<span class="kw">Total Reviews</span> = <span class="fn">COUNTA</span>( Reviews[id] )
+
+<span class="cm">-- 6. Reviews per Listing (Reviews per active listing)</span>
+<span class="kw">Reviews per Listing</span> = <span class="fn">DIVIDE</span>( [Total Reviews], [Total Listings] )
+
+<span class="cm">-- 7. Instant Bookable % (Listings with instant booking)</span>
+<span class="kw">Instant Bookable %</span> = <span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>( <span class="fn">DISTINCTCOUNT</span>( Listings[id] ), Listings[instant_bookable] = <span class="str">"t"</span> ),
+    [Total Listings]
+) * <span class="num">100</span>
+
+<span class="cm">-- 8. Price Percentile (90th percentile = luxury segment)</span>
+<span class="kw">Price 90th Percentile</span> = <span class="fn">PERCENTILE.INC</span>( Listings[price], <span class="num">0.9</span> )
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>📊 Dashboard Pages Architecture</h3>
+      <p>Build 4 pages minimum for this project:</p>
+
+      <p><strong>Page 1: Market Overview</strong></p>
+      <div class="code-block">
+┌────────────────────────────────────────────┐
+│        AIRBNB MARKET INTELLIGENCE          │
+├────────────────────────────────────────────┤
+│  Total Listings: 250,145    Avg Price: $145│
+│  Superhost %: 18.2%    Avg Review: 4.7/5  │
+│  Total Reviews: 3.2M   Reviews/Listing: 12.8│
+├────────────────────────────────────────────┤
+│                                            │
+│  Price Distribution      Market Composition│
+│  ┌─────────────┐         ┌──────────────┐ │
+│  │ Histogram   │         │ Pie Chart    │ │
+│  │ $ vs Count  │         │ Room Types   │ │
+│  └─────────────┘         └──────────────┘ │
+│                                            │
+│  Review Scores Trend       Superhost Share │
+│  ┌─────────────┐         ┌──────────────┐ │
+│  │ Line Chart  │         │ 18.2%        │ │
+│  │ Rating over │         │ 82.0% Regular│ │
+│  │ Time        │         │ 0.8% Other   │ │
+│  └─────────────┘         └──────────────┘ │
+└────────────────────────────────────────────┘
+      </div>
+
+      <p><strong>Page 2: City Benchmark</strong></p>
+      <div class="code-block">
+┌────────────────────────────────────────────┐
+│     CITY COMPARISON & BENCHMARKING         │
+├────────────────────────────────────────────┤
+│                                            │
+│  City Metrics Table:                       │
+│  ┌────────┬─────┬───────┬──────┬────────┐│
+│  │ City   │Count│ Price │ Rev  │ SHost %││
+│  ├────────┼─────┼───────┼──────┼────────┤│
+│  │ NYC    │45K  │ $215  │5.2M  │ 22%    ││
+│  │ LA     │38K  │ $168  │3.1M  │ 19%    ││
+│  │ Chicago│28K  │ $125  │2.2M  │ 16%    ││
+│  │ Boston │22K  │ $145  │1.8M  │ 21%    ││
+│  │ Austin │18K  │ $98   │1.1M  │ 14%    ││
+│  └────────┴─────┴───────┴──────┴────────┘│
+│                                            │
+│  Superhost Concentration:                 │
+│  ┌────────────────────────────────────┐  │
+│  │ Bar Chart: Superhost % by City     │  │
+│  │ NYC leads at 22%, Boston at 21%    │  │
+│  └────────────────────────────────────┘  │
+│                                            │
+│  Price vs Quality Scatter:                │
+│  ┌────────────────────────────────────┐  │
+│  │ X: Price | Y: Review Score | Size  │  │
+│  │ Premium = High Price + High Reviews│  │
+│  └────────────────────────────────────┘  │
+└────────────────────────────────────────────┘
+      </div>
+
+      <p><strong>Page 3: Geographic Analysis</strong></p>
+      <div class="code-block">
+┌────────────────────────────────────────────┐
+│      GEOGRAPHIC & NEIGHBORHOOD VIEW        │
+├────────────────────────────────────────────┤
+│                                            │
+│  Map: Price Heatmap by Neighborhood       │
+│  ┌────────────────────────────────────┐  │
+│  │ [Map showing color intensity]      │  │
+│  │ Red = $200+  Yellow = $150-200     │  │
+│  │ Green = $100-150  Blue = <$100     │  │
+│  └────────────────────────────────────┘  │
+│                                            │
+│  Top 10 Neighborhoods by:                 │
+│  ┌──────────────┬──────────────────────┐ │
+│  │ By Price     │ By Superhost Density │ │
+│  ├──────────────┼──────────────────────┤ │
+│  │ 1. Tribeca   │ 1. Park Slope        │ │
+│  │ 2. Upper    │ 2. Williamsburg      │ │
+│  │ 3. SoHo      │ 3. Astoria           │ │
+│  └──────────────┴──────────────────────┘ │
+│                                            │
+│  Review Sentiment by Neighborhood:        │
+│  [Scatter: Listings vs Avg Score]        │
+└────────────────────────────────────────────┘
+      </div>
+
+      <p><strong>Page 4: Host & Quality Analytics</strong></p>
+      <div class="code-block">
+┌────────────────────────────────────────────┐
+│   HOST QUALITY & PERFORMANCE ANALYSIS      │
+├────────────────────────────────────────────┤
+│  Average Review Score: 4.73/5              │
+│  Listings with 4.8+ Rating: 42%            │
+│  Instant Bookable: 64%                     │
+├────────────────────────────────────────────┤
+│                                            │
+│  Review Score Distribution:                │
+│  ┌────────────────────────────────────┐  │
+│  │ Histogram: 5.0 | 4.8-4.9 | 4.5+   │  │
+│  │ Most cluster at 4.8+               │  │
+│  └────────────────────────────────────┘  │
+│                                            │
+│  Superhost vs Regular Performance:        │
+│  ┌──────────────┬──────────────────────┐ │
+│  │ Metric       │ Superhost │ Regular  │ │
+│  ├──────────────┼──────────┼──────────┤ │
+│  │ Avg Rating   │ 4.85     │ 4.62     │ │
+│  │ Avg Price    │ $168     │ $135     │ │
+│  │ Reviews/List │ 15.2     │ 11.4     │ │
+│  └──────────────┴──────────┴──────────┘ │
+│                                            │
+│  Response Time Impact:                    │
+│  [Line Chart: Response Speed vs Rating]   │
+└────────────────────────────────────────────┘
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🔍 Business Insights You Should Discover</h3>
+      <ol>
+        <li><strong>Superhost Premium:</strong> Superhosts command 15-20% price premium while maintaining 4.85/5 rating (vs 4.62 for regular hosts). ROI: higher reviews + higher prices = loyalty.</li>
+        <li><strong>Geographic Pricing Power:</strong> Top neighborhoods (NYC Tribeca, LA Pacific Palisades) command 2-3x median price. But Superhosts in secondary neighborhoods often match primary-area regular host ratings.</li>
+        <li><strong>Instant Bookable = Risk/Reward:</strong> 64% of listings enable instant booking. They have 3-5% MORE bookings but 0.3 points LOWER review scores — convenience trades quality control.</li>
+        <li><strong>Review Volume Ceiling:</strong> Avg 12.8 reviews/listing. Listings in top neighborhoods hit 20+ reviews; secondary markets average 6-8. Location drives repeat booking more than rating.</li>
+        <li><strong>Price-Quality Trade-off:</strong> Listings >$250/night show ratings 0.4 points lower than $100-150 range — luxury doesn't always mean better experience, possibly because expectations are higher.</li>
+      </ol>
     </div>` }],
   },
 
