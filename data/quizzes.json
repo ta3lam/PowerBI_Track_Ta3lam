@@ -2786,6 +2786,947 @@
       "correctAnswer": 0,
       "explanation": "Pipelines موجودة لـ safety: كل مرحلة اختبار. حتى بسرعة: احترم المراحل.",
       "points": 8
+    },
+    {
+      "id": "q188",
+      "section": "intro",
+      "question": "في مقارنة بين Power BI و Tableau و Qlik، ما الميزة الفريدة لـ Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "التكامل الكامل مع Microsoft ecosystem (Excel, Azure, Office 365) + التسعير في متناول الشركات الصغيرة",
+        "أرخص دائماً من الأدوات الأخرى",
+        "أفضل رسوم بيانية فقط",
+        "بدون منافسين"
+      ],
+      "correctAnswer": 0,
+      "explanation": "قوة Power BI: التكامل العميق مع منتجات Microsoft + تسعير منافس + خيارات سعة مختلفة.",
+      "points": 6
+    },
+    {
+      "id": "q189",
+      "section": "oltp-olap",
+      "question": "في نظام OLTP، ما معدل التحديثات المتوقع على سجل واحد؟",
+      "type": "multiple_choice",
+      "options": [
+        "ثوان أو دقائق (عمليات يومية سريعة)",
+        "أيام",
+        "بدون تحديثات",
+        "مرة واحدة سنوياً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "OLTP مصمم للتحديثات المتكررة والسريعة: بيع منتج، تحديث حساب، إضافة عميل.",
+      "points": 5
+    },
+    {
+      "id": "q190",
+      "section": "scd",
+      "question": "في جدول 'Employees' مع مرتبات متغيرة، إذا أردت تحليل تاريخي صحيح للرواتب، أي SCD type تختار؟",
+      "type": "multiple_choice",
+      "options": [
+        "Type 2 مع StartDate و EndDate",
+        "Type 1 (استبدال)",
+        "Type 0 (بدون تاريخ)",
+        "دمج الجداول"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Type 2 = احتفظ بكل الإصدارات مع تاريخ. لذا كل ارتفاع راتب = صف جديد بتاريخ بداية.",
+      "points": 7
+    },
+    {
+      "id": "q191",
+      "section": "bridge-tables",
+      "question": "في علاقة Many-to-Many بين Employees و Projects (موظف يعمل بـ عدة مشاريع)، ما اسم Bridge الشائع؟",
+      "type": "multiple_choice",
+      "options": [
+        "EmployeeProject (يحتوي EmployeeID و ProjectID)",
+        "Employee_Projects_combined",
+        "Master_Table",
+        "Link_All"
+      ],
+      "correctAnswer": 0,
+      "explanation": "تسمية واضحة: [Entity1][Entity2] أو [Entity1]_[Entity2]. يجعل الـ naming convention منطقي.",
+      "points": 5
+    },
+    {
+      "id": "q192",
+      "section": "query-folding",
+      "question": "عند استخدام 'Remove Errors' في Power Query من 10 مليون صف، هل يفقد Query Folding؟",
+      "type": "true_false",
+      "options": [
+        "صحيح",
+        "خطأ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "نعم، Remove Errors = Custom function غير مدعومة في folding. البيانات كاملة تُسحب ثم تُنظف محليًا.",
+      "points": 7
+    },
+    {
+      "id": "q193",
+      "section": "directquery",
+      "question": "عند اختيار DirectQuery على 500K row table، ما المخاطر المحتملة؟",
+      "type": "multiple_choice",
+      "options": [
+        "أداء بطيء جداً إذا كانت قاعدة البيانات بطيئة، قيود DAX أكثر",
+        "بلا مخاطر",
+        "أسرع من Import دائماً",
+        "أكثر أماناً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "DirectQuery مع 500K row + بطء database = timeout + تجربة سيئة. Import أفضل غالباً.",
+      "points": 7
+    },
+    {
+      "id": "q194",
+      "section": "tabular-editor",
+      "question": "عند استخدام Tabular Editor، ما الميزة التي لا توجد في Power BI Desktop؟",
+      "type": "multiple_choice",
+      "options": [
+        "تعديل TMDL/JSON files مباشرة + تعديلات جماعية + Version Control support",
+        "رسم الرسوم البيانية",
+        "استيراد البيانات",
+        "عمل backup"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Tabular Editor = editor نصي للـ Model. TMDL format = git-friendly. Desktop = GUI فقط.",
+      "points": 7
+    },
+    {
+      "id": "q195",
+      "section": "dax2",
+      "question": "عند حساب 'Same Period Last Month' بدقة، أي دالة أساسية تستخدم؟",
+      "type": "multiple_choice",
+      "options": [
+        "SAMEPERIODLASTYEAR أو معادلة مخصصة مع DATEADD",
+        "فقط -30 days",
+        "YESTERDAY()",
+        "LASTMONTH()"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SAMEPERIODLASTYEAR يحسب نفس الفترة من سنة ماضية (1 سنة بالضبط). -30 days خطأ (leap months).",
+      "points": 8
+    },
+    {
+      "id": "q196",
+      "section": "time-intel-pro",
+      "question": "عند بناء 'Forecast vs Actual' dashboard، ما البيانات الأساسية المطلوبة؟",
+      "type": "multiple_choice",
+      "options": [
+        "Actual sales (من التاريخ) + Forecast (من planning) + Date table منفصلة",
+        "فقط الـ Actual",
+        "بدون تاريخ",
+        "Forecast فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Forecast vs Actual = مقارنة تاريخية. يحتاج جداول منفصلة أو أعمدة واضحة في نفس الجدول.",
+      "points": 7
+    },
+    {
+      "id": "q197",
+      "section": "semantic-model",
+      "question": "عند تسمية Measures في نموذج احترافي، أي من الآتي يُعتبر اسماً سيئاً؟",
+      "type": "multiple_choice",
+      "options": [
+        "'Sales_1_old' أو 'Temp_Measure_Copy' (غير واضح + يشير لـ obsolete)",
+        "'Total Sales'",
+        "'YTD Revenue'",
+        "'Avg Price'"
+      ],
+      "correctAnswer": 0,
+      "explanation": "أسماء سيئة: أسماء مؤقتة، '_old'، '_Copy'. الأسماء الجيدة واضحة وتصف القيمة الحقيقية.",
+      "points": 6
+    },
+    {
+      "id": "q198",
+      "section": "common-mistakes",
+      "question": "عند بناء Measure يعتمد على relationship Many-to-One، أي خطأ شائع قد يحدث؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدام SUM مباشرة دون CALCULATE يضاعف النتائج عند التجميع من كثير side",
+        "SUM دائماً صحيح",
+        "لا يوجد خطأ ممكن",
+        "Measures لا تخطئ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "خطأ شائع: نسيان CALCULATE/SUMPRODUCT/DISTINCT. النتيجة = Cartesian product و تضخيم.",
+      "points": 8
+    },
+    {
+      "id": "q199",
+      "section": "external-tools",
+      "question": "أي أداة خارجية تساعد في اكتشاف cardinality violations في النموذج؟",
+      "type": "multiple_choice",
+      "options": [
+        "Tabular Editor BPA (Best Practice Analyzer)",
+        "Power Query فقط",
+        "Excel",
+        "Notepad"
+      ],
+      "correctAnswer": 0,
+      "explanation": "BPA يحذر من cardinality كثيف والـ relationships ضعيفة + naming issues و performance anti-patterns.",
+      "points": 6
+    },
+    {
+      "id": "q200",
+      "section": "apis",
+      "question": "عند استخدام Power BI REST APIs لـ automation، أي permission ضروري؟",
+      "type": "multiple_choice",
+      "options": [
+        "Service Principal مع App Registration + Power BI Admin consent",
+        "بدون أي إعداد",
+        "فقط Username/Password",
+        "بدون permission"
+      ],
+      "correctAnswer": 0,
+      "explanation": "APIs تحتاج Service Principal (app identity) مع proper scopes و Admin approval لـ tenant-level access.",
+      "points": 8
+    },
+    {
+      "id": "q201",
+      "section": "git-integration",
+      "question": "عند merge editing من فريقين على نفس Semantic Model في git، ما الأداة الأفضل؟",
+      "type": "multiple_choice",
+      "options": [
+        "PBIP format + Tabular Editor (TMDL text-based، سهل diff و merge)",
+        "PBIX ثنائي (صعب merge)",
+        "لا توجد طريقة",
+        "حذف و إعادة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "PBIP = text files = git-friendly. PBIX = binary = conflict nightmare. PBIP هو المستقبل.",
+      "points": 8
+    },
+    {
+      "id": "q202",
+      "section": "advanced-dataflows",
+      "question": "عند اختيار بين Dataflow Gen2 و Power Query في Desktop، متى تختار Gen2؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تحتاج إعادة استخدام نفس المنطق في عدة Datasets أو عبر فرق",
+        "فقط ملف واحد",
+        "دائماً Desktop",
+        "Gen2 بطيء"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dataflow Gen2 = centralized ETL. إذا كانت تحويلات مشتركة أو Datasets متعددة، استخدم Gen2.",
+      "points": 7
+    },
+    {
+      "id": "q203",
+      "section": "calculation-groups",
+      "question": "في Calculation Group بـ YTD + MTD + QTD items، ما دالة تحدد أي item مختار؟",
+      "type": "multiple_choice",
+      "options": [
+        "SELECTEDVALUE('Time Intelligence Items')",
+        "SWITCH()",
+        "IF()",
+        "COUNT()"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SELECTEDVALUE يجلب اختيار المستخدم من parameter. ثم يمكنك استخدامه في معادلات مختلفة.",
+      "points": 8
+    },
+    {
+      "id": "q204",
+      "section": "enterprise-security",
+      "question": "عند تطبيق Dynamic RLS مع USERPRINCIPALNAME()، ما الشرط الحرج؟",
+      "type": "multiple_choice",
+      "options": [
+        "المستخدم في Azure AD يجب أن يوجد عمود matching في الـ data (مثل email_address) قابل للمقارنة",
+        "لا حاجة لـ data matching",
+        "أي string يكفي",
+        "بدون شروط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dynamic RLS = فلتر بناءً على هوية المستخدم. يحتاج data column يطابق email/username في Azure AD.",
+      "points": 8
+    },
+    {
+      "id": "q205",
+      "section": "monitoring-adoption",
+      "question": "عند مراقبة تقرير، أي من الآتي مؤشر حقيقي على نجاح بعد النشر؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدام متكرر من نفس الأشخاص + اعتماد في القرارات + أقل من 1% error rate",
+        "عدد المشاهدات العالي",
+        "حجم الملف الكبير",
+        "شعار جميل"
+      ],
+      "correctAnswer": 0,
+      "explanation": "النجاح = adoption فعلي + ثقة المستخدم + استقرار النظام. Views وحده قد يكون مضلل.",
+      "points": 7
+    },
+    {
+      "id": "q206",
+      "section": "fabric-dataflows",
+      "question": "متى تصبح Fabric القرار الأفضل بدل Power BI standalone؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تحتاج منصة data متكاملة (Data Engineering + Analytics + Science) و عدة Datasets وفرق",
+        "لمشروع واحد بسيط",
+        "فقط تقارير",
+        "بدون حالة استخدام"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Fabric = platform شاملة. Power BI = analytics فقط. Fabric لو احتجت more than analytics.",
+      "points": 8
+    },
+    {
+      "id": "q207",
+      "section": "project-retail-starter",
+      "question": "في مشروع Pizza Place، إذا أردت معرفة 'ساعات الذروة'، أي بيانات تحتاج من الـ fact table؟",
+      "type": "multiple_choice",
+      "options": [
+        "order_details.order_time (الوقت بالساعة) مع count/sum quantity",
+        "فقط order_date",
+        "product name فقط",
+        "بدون بيانات زمنية"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Peak hours = تجميع order_time بـ hour dimension. يحتاج timestamp دقيق في الـ fact.",
+      "points": 7
+    },
+    {
+      "id": "q208",
+      "section": "project-ops-intermediate",
+      "question": "في مشروع Online Chess، لحساب 'Win Rate by Opening'، ما الحساب الصحيح؟",
+      "type": "multiple_choice",
+      "options": [
+        "COUNT(Wins) / COUNT(All Games by Opening) × 100",
+        "فقط SUM(Wins)",
+        "COUNT(Games)",
+        "بدون صيغة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Win Rate = الفوز / الكل. يحتاج جدول Opening مع relationship إلى games وقياس الفوز.",
+      "points": 7
+    },
+    {
+      "id": "q209",
+      "section": "project-enterprise-advanced",
+      "question": "في مشروع Airbnb، إذا كان Superhost percentage ≠ غير صحيح، ما أول سبب محتمل؟",
+      "type": "multiple_choice",
+      "options": [
+        "Relationship missing أو many-to-many بين listings و hosts، مما يضاعف النتائج",
+        "البيانات خاطئة",
+        "الـ Measure خطأ",
+        "التقرير بطيء"
+      ],
+      "correctAnswer": 0,
+      "explanation": "إذا كانت النتيجة مضخمة غالباً = مشكلة تصليح relationship. تحقق cardinality أولاً.",
+      "points": 8
+    },
+    {
+      "id": "q210",
+      "section": "portfolio-playbook",
+      "question": "عند عرض portfolio من 3 مشاريع Power BI في مقابلة، ما الترتيب الأمثل؟",
+      "type": "multiple_choice",
+      "options": [
+        "من الأبسط إلى الأعقد (يظهر progression) + ركز على Business Impact بدل Features",
+        "أكبر ملف أولاً",
+        "عشوائي",
+        "لا ترتيب معين"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Portfolio عرض = رحلة تصعد في التعقيد + أثر على الأعمال. يوضح مستوى خبرة حقيقي.",
+      "points": 7
+    },
+    {
+      "id": "q211",
+      "section": "fieldparams",
+      "question": "عند إنشاء Field Parameter 'Metrics' مع 5 measures مختلفة، كم visual تحتاج أدنى حد؟",
+      "type": "multiple_choice",
+      "options": [
+        "visual واحد يستخدم measure ديناميكية + Slicer للـ parameter",
+        "5 visuals (واحد لكل measure)",
+        "لا visual محدد",
+        "10 visuals"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Field Parameter = مرونة. Visual واحد + SELECTEDVALUE() = dynamic display لـ 5 measures مختلفة.",
+      "points": 8
+    },
+    {
+      "id": "q212",
+      "section": "scd",
+      "question": "في SCD Type 3 (تخزين نسخة سابقة واحدة)، متى تكون مفيدة؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تريد مقارنة سريعة current vs previous فقط (مثل price current vs previous)",
+        "عندما تريد التاريخ الكامل",
+        "دائماً أفضل من Type 2",
+        "بدون استخدام عملي"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Type 3 = وسط. يعطيك current + one version back. أقل تعقيداً من Type 2 لـ limited history.",
+      "points": 7
+    },
+    {
+      "id": "q213",
+      "section": "bridge-tables",
+      "question": "في Bridge Table مع attributes إضافية (مثل 'Assignment Date')، كيف يبدو الـ schema؟",
+      "type": "multiple_choice",
+      "options": [
+        "Bridge جدول: EmployeeID, ProjectID, Assignment_Date (الـ attributes في Bridge)",
+        "Bridge بدون أي أعمدة إضافية",
+        "Attributes في Fact فقط",
+        "بدون Bridge"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Bridge يحتوي المفاتيح + أي attributes يخص الـ relationship (مثل تاريخ الانضمام).",
+      "points": 7
+    },
+    {
+      "id": "q214",
+      "section": "relationships-dax",
+      "question": "عند استخدام RELATED() في DAX، ما الشرط الأساسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "يجب أن يكون في سياق صف من الـ many side، و relationship موجود 1:*",
+        "بدون شروط",
+        "أي table يكفي",
+        "بدون relationship"
+      ],
+      "correctAnswer": 0,
+      "explanation": "RELATED = جلب من جدول one side. يحتاج row context من many side و relationship محكم.",
+      "points": 8
+    },
+    {
+      "id": "q215",
+      "section": "dax3",
+      "question": "عند استخدام GROUPBY في DAX، ما الفرق عن VALUES()?",
+      "type": "multiple_choice",
+      "options": [
+        "GROUPBY أقوى: يسمح بـ aggregations مخصصة في المجموعات",
+        "كلاهما نفس الشيء",
+        "VALUES أقوى",
+        "لا فرق"
+      ],
+      "correctAnswer": 0,
+      "explanation": "GROUPBY = advanced. يعطيك group + حساب custom داخل كل group. VALUES = list فقط.",
+      "points": 8
+    },
+    {
+      "id": "q216",
+      "section": "dax-text",
+      "question": "عند استخراج رقم من نص (مثل 'Order-2024-001')، أي دوال نصية تستخدم؟",
+      "type": "multiple_choice",
+      "options": [
+        "MID أو FIND لتحديد موضع + VALUE لتحويل للرقم",
+        "CONCATENATE فقط",
+        "LOWER فقط",
+        "SUBSTITUTE"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Text parsing = FIND (موضع) + MID (استخراج) + VALUE (تحويل). أو REGEX في M Code.",
+      "points": 8
+    },
+    {
+      "id": "q217",
+      "section": "dax-reference",
+      "question": "عند توثيق مشروع DAX كبير، ما أفضل ممارسة؟",
+      "type": "multiple_choice",
+      "options": [
+        "Display Folders + Descriptions واضحة + Naming prefixes (Calc_, Agg_) + External doc",
+        "بدون توثيق",
+        "توثيق واحد فقط في الملف",
+        "بدون أسماء واضحة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Maintainability = clarity. Comments + naming + folders + external wiki = future-proof.",
+      "points": 7
+    },
+    {
+      "id": "q218",
+      "section": "performance",
+      "question": "عند optimize تقرير ببطء، أي من الخطوات التالية تغيير أساسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "تقليل عدد الصفوف المستورة (remove unused columns) أو استخدام Incremental Refresh",
+        "تغيير الألوان",
+        "إضافة أكثر visuals",
+        "زيادة الخطوط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Optimization = بيانات أقل + model أفضل + queries أسرع. UI changes = سطحي.",
+      "points": 7
+    },
+    {
+      "id": "q219",
+      "section": "error-handling",
+      "question": "عند ظهور 'Column has no values' في Power Query، ما أول فحص؟",
+      "type": "multiple_choice",
+      "options": [
+        "هل الـ source data نفسه فيها None/empty؟ أم الاستعلام حذف الأعمدة؟",
+        "احذف العمود",
+        "استبدل بـ zero",
+        "غادر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Root cause أولاً. قد تكون البيانات صحيحة لكن خطوة سابقة حذفت الـ data.",
+      "points": 7
+    },
+    {
+      "id": "q220",
+      "section": "cost-optimization",
+      "question": "في Power BI Premium، إذا كانت utilization 10% فقط، ما الخطوة الأولى لتقليل التكاليف؟",
+      "type": "multiple_choice",
+      "options": [
+        "تقليل Capacity size أو استخدام Shared Capacity + Auto Pause",
+        "زيادة Premium فوراً",
+        "بدون خطوات",
+        "دفع أكثر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "استخدام ضعيف = over-provisioned. خفض الـ SKU أو Auto Pause = توفير كبير.",
+      "points": 7
+    },
+    {
+      "id": "q221",
+      "section": "python-pbi",
+      "question": "عند استخدام Python في Power Query، ما القيد الأمني الأساسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "Administrator فقط يمكنه تفعيل Python scripting (security risk عالي)",
+        "أي مستخدم",
+        "بدون قيود",
+        "بدون خطر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Python execution = خطر أمني. تفعيل Enterprise يحتاج Admin approval.",
+      "points": 7
+    },
+    {
+      "id": "q222",
+      "section": "paginated",
+      "question": "عند طباعة Paginated Report على عدة صفحات، أي feature يجب استخدام؟",
+      "type": "multiple_choice",
+      "options": [
+        "Report Page Breaks + Repeating Headers/Footers",
+        "الكل على صفحة واحدة",
+        "بدون breaks",
+        "فقط صفحة واحدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Paginated = page-oriented. breaks و repeating headers = طباعة احترافية و readable.",
+      "points": 7
+    },
+    {
+      "id": "q223",
+      "section": "auto-refresh",
+      "question": "عند تحديد Refresh Frequency، ما السؤال الذي يجب أن تسأله قبل الاختيار؟",
+      "type": "multiple_choice",
+      "options": [
+        "كم مرة تتغير البيانات فعلاً في المصدر؟ وما tolerance للـ staleness؟",
+        "أقصى تكرار ممكن",
+        "مرة واحدة يومياً دائماً",
+        "بدون سؤال"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cadence = business decision. عملاء تحديث كل ساعة، مالية قد تكفي يومي.",
+      "points": 6
+    },
+    {
+      "id": "q224",
+      "section": "automate-reports",
+      "question": "عند توزيع تقرير RLS-enabled عبر Power Automate، ما التحدي الرئيسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "RLS في Email embed محدود (قد تُظهر بيانات الكل). الحل: Export PDF unique أو Direct Link",
+        "بدون تحديات",
+        "توزيع عادي يكفي",
+        "بدون RLS"
+      ],
+      "correctAnswer": 0,
+      "explanation": "RLS + Automation = تعقيد. Email embed قد يُظهر الكل. PDF export unique = آمن.",
+      "points": 8
+    },
+    {
+      "id": "q225",
+      "section": "intro",
+      "question": "إذا كان لديك فريق لا يعرف Power BI، ما أول خطوة تدريبية تقترحها؟",
+      "type": "multiple_choice",
+      "options": [
+        "بدء بـ Desktop + مشروع real تحت إشرافك (learning by doing)",
+        "نظري فقط",
+        "مباشر للـ Service",
+        "بدون تدريب"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Hands-on learning > theoretical. مشروع محقق = فهم سريع + ثقة.",
+      "points": 5
+    },
+    {
+      "id": "q226",
+      "section": "interface",
+      "question": "في Model View، ما الحد الأقصى المعقول لعدد الجداول المرئية قبل أن تصبح معقدة جداً؟",
+      "type": "multiple_choice",
+      "options": [
+        "20-30 جداول (زيادة عن ذلك = استخدم Folders في Tabular Editor)",
+        "100+ جداول",
+        "بدون حد",
+        "جدول واحد فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Model visualization يصبح غير منطقي مع جداول كثيرة. Tabular Editor أفضل للنماذج الكبيرة.",
+      "points": 6
+    },
+    {
+      "id": "q227",
+      "section": "getdata",
+      "question": "عند الربط مع SharePoint list، ما الفرق بين 'From SharePoint' vs 'From OData'?",
+      "type": "multiple_choice",
+      "options": [
+        "From SharePoint = UI-based simpler. From OData = advanced/larger lists (سحب مباشر من API)",
+        "كلاهما نفس الشيء",
+        "OData أبسط",
+        "From SharePoint فقط يعمل"
+      ],
+      "correctAnswer": 0,
+      "explanation": "OData endpoint = direct API access. أفضل للـ large lists و refresh موثوق.",
+      "points": 7
+    },
+    {
+      "id": "q228",
+      "section": "cleaning",
+      "question": "عند اكتشاف 'encoding issue' في نصوص عربية (مثل أحرف غريبة)، أين المشكلة غالباً؟",
+      "type": "multiple_choice",
+      "options": [
+        "المصدر نفسه (Excel/Database) قد يحفظ بـ encoding خاطئ، أو Power Query تقرأ بـ encoding wrong",
+        "Power BI بطبيعتها بدون دعم عربي",
+        "يجب حذف الأحرف",
+        "بدون حل"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Encoding = UTF-8 أفضل. المصدر + Connection settings يجب يتفق على encoding.",
+      "points": 7
+    },
+    {
+      "id": "q229",
+      "section": "powerquery",
+      "question": "عند استيراد ملف Excel بـ multiple sheets، ما أفضل طريقة Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدام 'From File' + combine sheets تلقائياً، أو يدويًا merge كل sheet",
+        "استيراد ملف واحد فقط",
+        "دمج يدويًا في Excel أولاً",
+        "تجنب Excel"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Multiple sheets = combine في Power Query أفضل من يدوي. Automation = scalable.",
+      "points": 7
+    },
+    {
+      "id": "q230",
+      "section": "mcode",
+      "question": "عند كتابة custom function في Power Query، متى تصبح مفيدة أكثر من UI-based?",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تحتاج منطق معقد، parameters متعددة، أو إعادة استخدام متكررة",
+        "أبداً",
+        "للعمليات البسيطة فقط",
+        "بدون فائدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Custom functions = مرونة. استخدمها للعمليات المتكررة المعقدة.",
+      "points": 7
+    },
+    {
+      "id": "q231",
+      "section": "model",
+      "question": "في star schema ب 1 fact و 5 dimensions، ما الحد الأقصى للصفوف في fact قبل تقسيم؟",
+      "type": "multiple_choice",
+      "options": [
+        "100 مليون (حسب RAM + network. فوق ذلك = تقسيم temporal أو خياري)",
+        "مليون فقط",
+        "10 مليون دائماً كافي",
+        "بدون حد"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Performance يعتمد على hardware. 100M+ = consider partitioning أو incremental.",
+      "points": 7
+    },
+    {
+      "id": "q232",
+      "section": "relationships",
+      "question": "عند وجود عدة possible relationship paths بين جداول، ما المشكلة المحتملة؟",
+      "type": "multiple_choice",
+      "options": [
+        "Ambiguous relationships (Power BI يختار واحد arbitrarily). الحل: نشط واحد، باقي بـ USERELATIONSHIP()",
+        "بدون مشكلة",
+        "كل الـ paths تعمل",
+        "الخيار الأول دائماً صحيح"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Multiple paths = ambiguity. Power BI ينشط واحد. استخدم USERELATIONSHIP لـ override.",
+      "points": 8
+    },
+    {
+      "id": "q233",
+      "section": "dax1",
+      "question": "عند اختيار بين المقاييس (Measures)، ما السيناريو الوحيد لـ Calculated Column؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تحتاج عمود يُستخدم في سياق صفوف محدد (مثل: category الفئة)",
+        "دائماً استخدم Calculated Column",
+        "بدون استخدام",
+        "لكل شيء Measure"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Calculated Column = derivation per row. Measure = aggregate. اختر حسب السياق.",
+      "points": 6
+    },
+    {
+      "id": "q234",
+      "section": "calculate",
+      "question": "عند استخدام CALCULATE مع ALL()، ما الفرق عن CALCULATE بدون ALL()?",
+      "type": "multiple_choice",
+      "options": [
+        "CALCULATE(measure, ALL()) = احسب measure بدون أي filters (الإجمالي العام)",
+        "نفس الشيء",
+        "ALL يقلل الأداء",
+        "بدون فرق"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ALL = reset context. مفيد لـ '%of Grand Total' أو مقارنات عامة.",
+      "points": 7
+    },
+    {
+      "id": "q235",
+      "section": "iterators",
+      "question": "عند اختيار SUMPRODUCT vs SUMX لعمل معقد، أي مؤشر يرشدك؟",
+      "type": "multiple_choice",
+      "options": [
+        "SUMX = row context clearer. SUMPRODUCT = matrix operations. اختر حسب logic clarity",
+        "كلاهما متساوي",
+        "SUMPRODUCT دائماً",
+        "SUMX فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SUMX = readable للـ iterative logic. SUMPRODUCT = powerful لـ matrices. اختر clarity.",
+      "points": 7
+    },
+    {
+      "id": "q236",
+      "section": "visuals",
+      "question": "عند عرض 'Market Share' في dashboard، أي visual أنسب + visualization practice?",
+      "type": "multiple_choice",
+      "options": [
+        "Pie/Donut للبيانات القليلة (3-5)، Stacked Bar للكثير (6+) أو مقارنات زمنية",
+        "Scatter",
+        "Line فقط",
+        "Gauge"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Pie = part-to-whole بسيط. Stacked Bar = flexible و comparable. اختر حسب البيانات.",
+      "points": 6
+    },
+    {
+      "id": "q237",
+      "section": "themes",
+      "question": "عند تصميم Theme JSON، أي عنصر يؤثر على أداء الرسوم البيانية؟",
+      "type": "multiple_choice",
+      "options": [
+        "عددكبير من colors/fonts المخصصة قد يؤدي لـ font loading delays (استخدم standard fonts)",
+        "الألوان بطيئة",
+        "fonts بسيطة فقط",
+        "بدون تأثير"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Performance = اختر fonts مدعومة (Cairo, Segoe) بدل Google Fonts غير الضرورية.",
+      "points": 6
+    },
+    {
+      "id": "q238",
+      "section": "sync-slicers",
+      "question": "عند مزامنة slicer عبر 4 صفحات مع data sources مختلفة، هل يعمل؟",
+      "type": "true_false",
+      "options": [
+        "صحيح",
+        "خطأ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "نعم، Sync Slicers يعمل حتى مع مصادر مختلفة طالما اسم العمود متطابق.",
+      "points": 6
+    },
+    {
+      "id": "q239",
+      "section": "rls",
+      "question": "عند تطبيق RLS على Manager role (يرى بيانات فريقه فقط)، كيف تختبر قبل النشر؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدم 'View as' في Power BI Service + test مع معرف Manager فعلي",
+        "بدون اختبار",
+        "افترض أنها تعمل",
+        "انشر فوراً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'View as' = simulate different users. Test كل role قبل النشر الفعلي.",
+      "points": 7
+    },
+    {
+      "id": "q240",
+      "section": "publish",
+      "question": "عند نشر dataset به 1GB من البيانات، ما حد الأقصى للـ Shared Capacity؟",
+      "type": "multiple_choice",
+      "options": [
+        "Shared Capacity محدودة (10GB total للـ workspace عموماً). 1GB = ممكن لكن اقترب من الحد",
+        "بدون حد",
+        "Shared دائماً يكفي",
+        "بدون قيود"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Shared Capacity = مشترك. 1GB × عدة datasets = غالقة الحد. Premium أفضل للـ large datasets.",
+      "points": 7
+    },
+    {
+      "id": "q241",
+      "section": "workspaces",
+      "question": "عند إنشاء workspace جديد، متى تختار Premium Capacity بدل Shared؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما يكون dataset > 100MB، أو تحتاج Incremental Refresh، أو user base كبير",
+        "فقط ملف صغير",
+        "دائماً Shared",
+        "بدون معايير"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Premium = استثمار. Justified لـ high-volume أو features restricted (Incremental, etc).",
+      "points": 7
+    },
+    {
+      "id": "q242",
+      "section": "gateway",
+      "question": "عند استخدام Gateway، ما الفحص الأول إذا كان Refresh يفشل؟",
+      "type": "multiple_choice",
+      "options": [
+        "Gateway status في Power BI + logs في الـ gateway machine نفسها + network connectivity",
+        "restart Power BI",
+        "غير password",
+        "احذف Gateway"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Gateway failures = تشخيص منظم: Status + Logs + Network. بدون حدس.",
+      "points": 7
+    },
+    {
+      "id": "q243",
+      "section": "incremental",
+      "question": "عند setup Incremental Refresh على dataset بـ 5 سنوات تاريخ، ما استراتيجية التقسيم الأمثل؟",
+      "type": "multiple_choice",
+      "options": [
+        "مثال: تاريخ 3 سنوات قديم (بدون refresh) + 7 أيام rolling (يومي refresh)",
+        "تاريخ كل السنوات = rolling",
+        "بدون تقسيم",
+        "سنة واحدة فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Incremental strategy = balance. تاريخ ثابت + rolling recent = أداء أفضل.",
+      "points": 8
+    },
+    {
+      "id": "q244",
+      "section": "performance",
+      "question": "عند profiling تقرير بطيء في DAX Studio، أي من الآتي أكثر أهمية؟",
+      "type": "multiple_choice",
+      "options": [
+        "Server Timings (execution time) + Cache hit rate + Storage size",
+        "Visual count فقط",
+        "ألوان الرسم",
+        "حجم الملف"
+      ],
+      "correctAnswer": 0,
+      "explanation": "DAX profiling = timing metrics. Server time high = query optimization needed. Cache low = data pressure.",
+      "points": 7
+    },
+    {
+      "id": "q245",
+      "section": "error-handling",
+      "question": "عند ظهور خطأ 'Timeout' في Query، ما السبب الأساسي غالباً؟",
+      "type": "multiple_choice",
+      "options": [
+        "Database بطيء جداً (query expensive) أو network latency high أو data كبيرة جداً",
+        "Power BI معطوب",
+        "الملف كبير",
+        "بدون سبب"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Timeout = query مكلفة أو infrastructure slow. Optimize query أو زيادة timeout value.",
+      "points": 7
+    },
+    {
+      "id": "q246",
+      "section": "cost-optimization",
+      "question": "عند قرار Premium vs Shared + increase Refresh frequency، ما السؤال المالي الأساسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "مجموع التكلفة = Premium cost vs Shared × frequency impact على performance/support",
+        "اختر الأرخص فقط",
+        "بدون معادلة",
+        "بدون ميزانية"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ROI decision = Business value vs cost. Premium cost للـ reliability + performance.",
+      "points": 7
+    },
+    {
+      "id": "q247",
+      "section": "paginated",
+      "question": "عند اختيار Paginated Reports بدل Power BI Reports، ما السيناريو الوحيد حقيقي؟",
+      "type": "multiple_choice",
+      "options": [
+        "تقرير قانوني/مالي يحتاج تنسيق pixel-perfect + pages متكررة دقيقة",
+        "أي dashboard",
+        "دائماً Power BI أفضل",
+        "بدون فرق"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Paginated = compliance + printing. Power BI = interactivity. اختر mission.",
+      "points": 7
+    },
+    {
+      "id": "q248",
+      "section": "deployment-pipelines",
+      "question": "عند استخدام Deployment Pipeline مع 3 stages (Dev, Test, Prod)، ما الـ best practice؟",
+      "type": "multiple_choice",
+      "options": [
+        "Code review → UAT → Production. لا تقفز المراحل حتى لـ hotfixes.",
+        "مباشر لـ Prod",
+        "اسحب من Prod للـ Dev",
+        "بدون stages"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Pipeline = governance. كل مرحلة = quality gate. Shortcuts = problems later.",
+      "points": 8
+    },
+    {
+      "id": "q249",
+      "section": "premium-capacity",
+      "question": "عند اختيار الـ Premium SKU (P1 vs P2 vs P3)، ما المقياس الأساسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "عدد concurrent users + dataset size + refresh frequency. P1 صغير، P3 enterprise.",
+        "فقط السعر",
+        "P2 دائماً الأفضل",
+        "بدون فرق"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SKU selection = usage profile. Start P1 و scale up حسب الحاجة.",
+      "points": 7
+    },
+    {
+      "id": "q250",
+      "section": "portfolio-playbook",
+      "question": "عند مراجعة portfolio power BI لشركة، أي عنصر أكثر أهمية من الرسوم الجميلة؟",
+      "type": "multiple_choice",
+      "options": [
+        "Business impact واضح (كم أثر على decisions/savings) + Data integrity + Governance",
+        "فقط اللون والتصميم",
+        "عدد الـ visuals",
+        "حجم الملف"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Portfolio evaluation = impact. Beautiful visualizations بدون value = فشل. Impact = success.",
+      "points": 7
     }
   ]
 }
