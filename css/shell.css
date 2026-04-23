@@ -138,6 +138,31 @@ html[data-theme="light"] #certDateLabel {
   color: var(--ink-2) !important;
 }
 
+/* Light mode code syntax highlighting */
+html[data-theme="light"] .tk-cm {
+  color: #5A7085 !important;
+}
+
+html[data-theme="light"] .copy-btn {
+  color: var(--ink-2) !important;
+}
+
+html[data-theme="light"] .search-input::placeholder {
+  color: #5A7085 !important;
+}
+
+html[data-theme="light"] .eyebrow {
+  color: #5A7085 !important;
+}
+
+html[data-theme="light"] .lesson-meta {
+  color: #6A7685 !important;
+}
+
+html[data-theme="light"] .lesson-kind {
+  background: #8A98A8 !important;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {

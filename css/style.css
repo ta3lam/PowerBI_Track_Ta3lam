@@ -84,6 +84,18 @@ html[data-theme="light"] #lightbox-caption {
   background: rgba(26,32,44,0.7) !important;
 }
 
+/* Light mode code and text contrast fixes */
+html[data-theme="light"] .code-block .cm {
+  color: #5A7085 !important;
+}
+
+html[data-theme="light"] .lesson-img-caption,
+html[data-theme="light"] .kpi-formula-label,
+html[data-theme="light"] .kpi-label,
+html[data-theme="light"] .kpi-en {
+  color: #5A7085 !important;
+}
+
 /* ── Lesson content elements (rendered inside .lesson) ── */
 /* Keep lesson content aligned to its own language mode, not the scroll container. */
 .lesson { direction: rtl; }
