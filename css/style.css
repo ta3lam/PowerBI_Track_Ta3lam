@@ -85,8 +85,30 @@ html[data-theme="light"] #lightbox-caption {
 }
 
 /* Light mode code and text contrast fixes */
+html[data-theme="light"] .code-block {
+  background: #F8F9FB !important;
+  color: #1A202C !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme="light"] .code-block .kw {
+  color: #C49200 !important;
+}
+
+html[data-theme="light"] .code-block .fn {
+  color: #0F7E5A !important;
+}
+
+html[data-theme="light"] .code-block .str {
+  color: #2D7B4A !important;
+}
+
 html[data-theme="light"] .code-block .cm {
   color: #5A7085 !important;
+}
+
+html[data-theme="light"] .code-block .num {
+  color: #B84620 !important;
 }
 
 html[data-theme="light"] .lesson-img-caption,
