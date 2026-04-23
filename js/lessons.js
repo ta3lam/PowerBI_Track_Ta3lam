@@ -574,69 +574,226 @@ Sales With Promo =
     en_lede: "How to import data from different sources into the program.",
     sectionId: "getdata",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>مصادر البيانات المدعومة</h3>
-      <p>باور بي آي بيقدر يقرأ من أكثر من 100 مصدر مختلف، أشهرهم:</p>
+      <h3>مقدمة: مصادر البيانات المتعددة</h3>
+      <p>Power BI يدعم أكثر من 100 مصدر مختلف. الاختيار بينهم يعتمد على:</p>
       <ul>
-        <li>ملفات (Excel, CSV, PDF, Folder).</li>
-        <li>قواعد بيانات (SQL Server, MySQL, Oracle).</li>
-        <li>خدمات سحابية ومواقع (Web, SharePoint, Google Analytics).</li>
+        <li><strong>نوع البيانات:</strong> Excel؟ Database؟ API؟</li>
+        <li><strong>موقع البيانات:</strong> محلي (Local)؟ سحابة (Cloud)؟</li>
+        <li><strong>تكرار التحديث:</strong> يومي؟ ساعي؟ فوري (Real-time)؟</li>
       </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>أشهر مصادر البيانات</h3>
+      <ul>
+        <li><strong>ملفات (Files):</strong>
+          <ul>
+            <li><strong>Excel:</strong> أشهر مصدر. اختر ورقة العمل وحدد الجدول المناسب من Navigator.</li>
+            <li><strong>CSV / Text:</strong> ملفات نصية. Power Query سيسأل عن الفاصل (Comma, Tab, Space).</li>
+            <li><strong>Folder:</strong> استيراد كل الملفات من مجلد واحد (مثل 12 ملف Excel لأول 12 شهر) وادمجهم تلقائياً.</li>
+          </ul>
+        </li>
+        <li><strong>قواعد البيانات (Databases):</strong>
+          <ul>
+            <li><strong>SQL Server:</strong> قاعدة بيانات محلية أو على الـ Cloud. توفر Query النتائج مباشرة (أسرع من Excel).</li>
+            <li><strong>MySQL, Oracle, PostgreSQL:</strong> قواعد بيانات أخرى. نفس المنطق.</li>
+          </ul>
+        </li>
+        <li><strong>Microsoft Ecosystem:</strong>
+          <ul>
+            <li><strong>SharePoint Lists:</strong> قوائم من SharePoint مع التحديث الفوري.</li>
+            <li><strong>Dataverse:</strong> قاعدة بيانات سحابية من Microsoft Dynamics 365 و Power Apps.</li>
+            <li><strong>Azure SQL Database:</strong> قاعدة بيانات محجوزة على السحابة.</li>
+          </ul>
+        </li>
+        <li><strong>الويب و APIs:</strong>
+          <ul>
+            <li><strong>Web:</strong> استيراد البيانات من صفحة HTML (سحب الجداول من الويب).</li>
+            <li><strong>REST API:</strong> الاتصال بـ APIs الحديثة لاستجلاب البيانات بصيغة JSON.</li>
+            <li><strong>Google Analytics, Salesforce, etc.:</strong> connectors جاهزة.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>طرق المصادقة (Authentication)</h3>
+      <p>عند الاتصال بمصدر بيانات خارجي، Power BI يسأل: "من تكون؟" إليك الطرق:</p>
+      <ul>
+        <li><strong>Windows Authentication (Windows):</strong> استخدم بيانات حسابك الويندوز الحالي. سريع وآمن في الشبكات الداخلية (On-Premises).</li>
+        <li><strong>Basic (Username + Password):</strong> أدخل اسم المستخدم والكلمة المرور. شائع لـ APIs والمواقع.</li>
+        <li><strong>OAuth (Single Sign-On):</strong> انقر على "Google Sign-In" أو "Microsoft Sign-In" — توكن آمن بدون حفظ كلمة مرور.</li>
+        <li><strong>API Key / Token:</strong> لـ APIs المتقدمة — توكن طويل يمنحك وصول مؤقت.</li>
+      </ul>
+      <p><strong>نصيحة أمان:</strong> لا تحفظ كلمات المرور في Power Query. استخدم OAuth أو Secure Storage.</p>
     </div>
 
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h4>الضغط على Get Data</h4>
-          <p>من قائمة Home، اختار مصدر البيانات بتاعك (مثلاً Excel workbook).</p>
+          <h4>Home → Get Data</h4>
+          <p>من شريط الأدوات العلوي، انقر على "Get Data" واختر مصدر البيانات بتاعك (Excel, SQL Server, Web, إلخ).</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h4>اختيار الجداول</h4>
-          <p>هتظهر لك شاشة (Navigator) بتوريك الشيتات المتاحة، علم صح على الجدول اللي عايزه.</p>
+          <h4>الـ Navigator Window</h4>
+          <p><strong>ماذا ترى:</strong> قائمة بكل الجداول المتاحة في المصدر.</p>
+          <p><strong>اختر جداولك:</strong> علم (checkmark) على الجداول اللي عايزها. تقدر تختار أكثر من جدول.</p>
+          <p><strong>معاينة:</strong> انقر على جدول لتشوف البيانات الفعلية قبل الاستيراد.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-content">
-          <h4>Load vs Transform</h4>
-          <p>لو الداتا نظيفة وجاهزة اضغط <strong>Load</strong>. لو محتاجة تنظيف وتعديل اضغط <strong>Transform Data</strong> (وهذا هو الأفضل دائماً).</p>
+          <h4>Load vs Transform Data</h4>
+          <p><strong>Load (الخيار السريع):</strong> استورد البيانات كما هي مباشرة إلى النموذج. استخدمه فقط لو البيانات نظيفة تماماً.</p>
+          <p><strong>Transform Data (الخيار الأفضل):</strong> افتح Power Query Editor لتنظيف وتحويل البيانات قبل الاستيراد. <strong>دائماً اختر هذا الخيار.</strong></p>
         </div>
       </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Import vs DirectQuery — أي تختار؟</h3>
+      <p>عند الاتصال بـ Database أو API، Power BI يسأل:</p>
+      <ul>
+        <li><strong>Import Mode (الافتراضي):</strong> انسخ البيانات الكاملة إلى جهازك (في ملف .pbix). الفائدة: سريع جداً. العيب: البيانات قد تكون قديمة (تحتاج Refresh يدوي).</li>
+        <li><strong>DirectQuery Mode:</strong> لا تنسخ. اتصل بـ Database مباشرة في كل استعلام. الفائدة: بيانات فورية Real-time. العيب: أبطأ لأن الاستعلام يحدث كلما تفاعل المستخدم.</li>
+      </ul>
+      <p><strong>النصيحة:</strong> استخدم Import للبيانات الثابتة (تاريخ، منتجات). استخدم DirectQuery للبيانات المتغيرة السريعة (المبيعات الفورية).</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>استكشاف الأخطاء الشائعة</h3>
+      <ul>
+        <li><strong>❌ "Could not find file":</strong> تحقق من المسار والملف موجود. لو الملف على محرك USB أو Shared Drive، قد يتغير الـ Path.</li>
+        <li><strong>❌ Connection timeout:</strong> الـ Database بعيد أو الـ Network بطيء. جرب Increase Timeout من Data Source Settings.</li>
+        <li><strong>❌ "Access Denied":</strong> بيانات الدخول خاطئة (Username/Password). أعد المحاولة أو اطلب من الـ Admin كلمة مرور جديدة.</li>
+        <li><strong>❌ Headers كـ First Row:</strong> إذا أول صف بيانات وليس رؤوس (Header)، استخدم "Use First Row as Headers" في Power Query.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>نصيحة:</strong> احفظ اتصالاتك المتكررة كـ "Query" مسماة. بهذا لو احتجت تحديثها لاحقاً، تقدر تعدّل Query واحدة وكل التقارير تحديثت تلقائياً.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذير:</strong> عند الاتصال بـ Database من شبكة الشركة (On-Premises)، قد تحتاج تثبيت Data Gateway. بدونه، Power BI Service لن يقدر تحديث البيانات في السحابة.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>Supported data sources</h3>
-<p>Power BI can read from more than 100 different sources, the most popular of which are:</p>
+<h3>Introduction: Multiple Data Sources</h3>
+<p>Power BI supports 100+ different sources. Choosing between them depends on:</p>
 <ul>
-<li>Files (Excel, CSV, PDF, Folder).</li>
-<li>Databases (SQL Server, MySQL, Oracle).</li>
-<li>Cloud services and websites (Web, SharePoint, Google Analytics).</li>
+<li><strong>Data Type:</strong> Excel? Database? API?</li>
+<li><strong>Location:</strong> Local? Cloud?</li>
+<li><strong>Refresh Frequency:</strong> Daily? Hourly? Real-time?</li>
 </ul>
 </div>
+
+<div class="lesson-card">
+<h3>Popular Data Sources</h3>
+<ul>
+<li><strong>Files:</strong>
+<ul>
+<li><strong>Excel:</strong> Most common. Choose the worksheet and select the table from Navigator.</li>
+<li><strong>CSV / Text:</strong> Text files. Power Query will ask about the delimiter (Comma, Tab, Space).</li>
+<li><strong>Folder:</strong> Import all files from one folder (like 12 Excel files for 12 months) and merge automatically.</li>
+</ul>
+</li>
+<li><strong>Databases:</strong>
+<ul>
+<li><strong>SQL Server:</strong> Local or Cloud database. Returns query results directly (faster than Excel).</li>
+<li><strong>MySQL, Oracle, PostgreSQL:</strong> Other databases. Same logic.</li>
+</ul>
+</li>
+<li><strong>Microsoft Ecosystem:</strong>
+<ul>
+<li><strong>SharePoint Lists:</strong> Lists from SharePoint with instant updates.</li>
+<li><strong>Dataverse:</strong> Cloud database from Microsoft Dynamics 365 and Power Apps.</li>
+<li><strong>Azure SQL Database:</strong> Database hosted on the cloud.</li>
+</ul>
+</li>
+<li><strong>Web &amp; APIs:</strong>
+<ul>
+<li><strong>Web:</strong> Import data from HTML pages (scrape tables from websites).</li>
+<li><strong>REST API:</strong> Connect to modern APIs to fetch data in JSON format.</li>
+<li><strong>Google Analytics, Salesforce, etc.:</strong> Ready-made connectors.</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Authentication Methods</h3>
+<p>When connecting to an external data source, Power BI asks: "Who are you?" Here are the methods:</p>
+<ul>
+<li><strong>Windows Authentication:</strong> Use your current Windows account. Fast and secure in internal networks (On-Premises).</li>
+<li><strong>Basic (Username + Password):</strong> Enter username and password. Common for APIs and websites.</li>
+<li><strong>OAuth (Single Sign-On):</strong> Click "Google Sign-In" or "Microsoft Sign-In" — secure token without saving password.</li>
+<li><strong>API Key / Token:</strong> For advanced APIs — long token granting temporary access.</li>
+</ul>
+<p><strong>Security Tip:</strong> Don't save passwords in Power Query. Use OAuth or Secure Storage.</p>
+</div>
+
 <div class="steps">
 <div class="step">
 <div class="step-num">1</div>
 <div class="step-content">
-<h4>Click on Get Data</h4>
-<p>From the Home menu, choose your data source (for example, Excel workbook).</p>
+<h4>Home → Get Data</h4>
+<p>From the top toolbar, click "Get Data" and choose your data source (Excel, SQL Server, Web, etc.).</p>
 </div>
 </div>
 <div class="step">
 <div class="step-num">2</div>
 <div class="step-content">
-<h4>Selection of tables</h4>
-<p>The Navigator screen will appear showing you the available chips, check it correctly on the schedule you want.</p>
+<h4>The Navigator Window</h4>
+<p><strong>What you see:</strong> List of all available tables in the source.</p>
+<p><strong>Select your tables:</strong> Check (checkmark) the tables you want. You can select multiple tables.</p>
+<p><strong>Preview:</strong> Click a table to see actual data before import.</p>
 </div>
 </div>
 <div class="step">
 <div class="step-num">3</div>
 <div class="step-content">
-<h4>Load vs Transform</h4>
-<p>If the data is clean and ready, click <strong>Load</strong>. If you need to clean and modify, click <strong>Transform Data</strong> (This is always best).</p>
+<h4>Load vs Transform Data</h4>
+<p><strong>Load (quick option):</strong> Import data as-is directly into the model. Use only if data is completely clean.</p>
+<p><strong>Transform Data (best option):</strong> Open Power Query Editor to clean and transform data before import. <strong>Always choose this option.</strong></p>
 </div>
 </div>
+</div>
+
+<div class="lesson-card">
+<h3>Import vs DirectQuery — Which to Choose?</h3>
+<p>When connecting to a Database or API, Power BI asks:</p>
+<ul>
+<li><strong>Import Mode (default):</strong> Copy all data to your device (in .pbix file). Benefit: very fast. Drawback: data may be stale (needs manual refresh).</li>
+<li><strong>DirectQuery Mode:</strong> Don't copy. Query database directly. Benefit: Real-time data. Drawback: slower because query runs every time user interacts.</li>
+</ul>
+<p><strong>Tip:</strong> Use Import for stable data (dates, products). Use DirectQuery for fast-changing data (live sales).</p>
+</div>
+
+<div class="lesson-card">
+<h3>Troubleshoot Common Errors</h3>
+<ul>
+<li><strong>❌ "Could not find file":</strong> Check path and file exists. If file is on USB or Shared Drive, path may change.</li>
+<li><strong>❌ Connection timeout:</strong> Database is far or network is slow. Try increasing Timeout from Data Source Settings.</li>
+<li><strong>❌ "Access Denied":</strong> Login credentials wrong (Username/Password). Retry or ask Admin for new password.</li>
+<li><strong>❌ Headers as First Row:</strong> If first row is data not header, use "Use First Row as Headers" in Power Query.</li>
+</ul>
+</div>
+
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Tip:</strong> Save your repeated connections as named "Queries". This way if you need to update later, edit one Query and all reports update automatically.</p>
+</div>
+
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> When connecting to company network database (On-Premises), you may need to install Data Gateway. Without it, Power BI Service can't refresh data in the cloud.</p>
 </div>` }],
   },
   "cleaning": {
@@ -647,39 +804,184 @@ Sales With Promo =
     en_lede: "The most common tools you'll need in Power Query to prepare your data.",
     sectionId: "cleaning",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>أدوات التحويل (Transformations)</h3>
+      <h3>مقدمة: الـ Data Profiling</h3>
+      <p>قبل تنظيف البيانات، <strong>افهم مشاكلك أولاً</strong>. Power Query وفّر أدوات للتحليل السريع:</p>
       <ul>
-        <li><strong>Data Types:</strong> التأكد إن الأرقام مقرية كأرقام والتواريخ كتواريخ (مهم جداً جداً).</li>
-        <li><strong>Split Column:</strong> فصل عمود بناءً على مسافة أو علامة (زي فصل الاسم الأول عن الأخير).</li>
-        <li><strong>Replace Values:</strong> استبدال قيمة بخطأ أو قيمة فارغة بقيمة صحيحة (زي Find & Replace).</li>
-        <li><strong>Unpivot:</strong> تحويل الجداول العرضية (الكروس تاب) إلى جداول طولية مناسبة للتحليل. (سحر الباور كويري!).</li>
+        <li><strong>Column Distribution:</strong> كام فريق قيمة مختلفة في العمود؟ هل فيه Values مكررة كتير؟</li>
+        <li><strong>Column Quality:</strong> كام % من القيم صحيحة / فارغة / خطأ (Errors)؟</li>
+        <li><strong>Column Profile:</strong> إحصائيات مفصلة (Count, Unique, Null, Min, Max).</li>
+      </ul>
+      <p>في الـ Home → Column Profile Pane → اختر العمود واستكشف المشاكل قبل التصليح.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>إزالة الأخطاء والفراغات</h3>
+      <ul>
+        <li><strong>Remove Errors:</strong> حذف الصفوف اللي فيها #Error (أرقام محفوظة غلط أو قيمة مفقودة). Right-click على رقم الصف ← Remove Errors.</li>
+        <li><strong>Remove Empty Rows:</strong> حذف الصفوف الفارغة تماماً (شائع جداً في الـ Excel imports).</li>
+        <li><strong>Handle Nulls Systematically:</strong> اختر: حذف الصفوف؟ أم ملء بقيمة default؟ أم ترك Null للـ DAX ليتعامل معه؟</li>
+        <li><strong>Replace Errors:</strong> بدل ما تحذف، أستبدل الـ #Error بـ Null أو "Unknown" باستخدام Replace Values.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تقسيم ودمج الأعمدة</h3>
+      <ul>
+        <li><strong>Split Column:</strong> فصل عمود بناءً على مسافة أو علامة (مثل فصل "محمد علي" إلى "محمد" و"علي").</li>
+        <li><strong>Merge Columns:</strong> دمج عمودين بفاصل (مثل دمج Country + Region = "Egypt - Cairo").</li>
+        <li><strong>Extract (Text before/after):</strong> استخرج جزء من النص (مثل استخراج المجال من Email: "ahmed@company.com" → "company.com").</li>
+        <li><strong>Unpivot:</strong> تحويل جداول عرضية (Pivot) إلى جداول طولية (Normalized). مثال: من (Product | Jan | Feb | Mar) إلى (Product, Month, Value).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>أنواع البيانات والتصحيح</h3>
+      <p><strong>مشكلة شائعة:</strong> الأرقام محفوظة كـ Text (لاحظ السهم الأيسر بدل الأيمن في الرأس).</p>
+      <ul>
+        <li>اختر العمود ← Transform → Data Type ← Number/Decimal/Date (حسب نوع البيانات).</li>
+        <li><strong>Trim & Clean:</strong> إزالة مسافات زائدة في البداية/النهاية (وتسبب مشاكل في المرشحات).</li>
+        <li><strong>Change Case:</strong> تحويل النصوص إلى UPPERCASE أو lowercase (لتوحيد الأسماء).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>إضافة أعمدة مشروطة (Conditional Column)</h3>
+      <p>بدل DAX، اصنع عمود Logic مباشرة في Power Query:</p>
+      <ul>
+        <li>Add Column ← Conditional Column</li>
+        <li>اكتب القاعدة: IF [Sales] > 10000 THEN "High" ELSE "Low"</li>
+        <li>مثال عملي: تصنيف العملاء حسب الإنفاق (من داتا الـ Import).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تجميع وتجميع البيانات (Group By)</h3>
+      <p>ملخص البيانات قبل الاستيراد (بدل DAX Measures):</p>
+      <ul>
+        <li>Transform ← Group By</li>
+        <li>Group By: Product, Operation: SUM على Sales</li>
+        <li>النتيجة: جدول واحد محجم (200 صفوف بدل 1 مليون).</li>
+        <li><strong>الفائدة:</strong> تقليل حجم البيانات و Performance أفضل.</li>
       </ul>
     </div>
 
     <div class="lesson-card">
       <h3>دمج الجداول (Merge & Append)</h3>
-      <p>زي دوال VLOOKUP في الإكسيل بس أقوى بكتير:</p>
+      <p>ربط البيانات من مصادر مختلفة:</p>
       <ul>
-        <li><strong>Merge Queries:</strong> دمج جدولين بالعرض بناءً على عمود مشترك (زي كود الموظف).</li>
+        <li><strong>Merge Queries:</strong> دمج جدولين بالعرض بناءً على عمود مشترك (مثل Employee ID). مثل VLOOKUP لكن أقوى.</li>
         <li><strong>Append Queries:</strong> دمج جدولين بالطول (وضع داتا شهر 2 تحت داتا شهر 1).</li>
+        <li><strong>نوع الـ Join:</strong> Inner (تقاطع فقط)، Left Outer (كل الصفوف من الأول + المطابقات من الثاني).</li>
       </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Fill Down و Fill Up</h3>
+      <p>ملء القيم الفارغة بالقيمة الأقرب:</p>
+      <ul>
+        <li><strong>Fill Down:</strong> ملء Null بالقيمة من الصف الأعلى (مثل ملء "Department" المفقودة بالـ Department السابق).</li>
+        <li><strong>Fill Up:</strong> ملء Null بالقيمة من الصف الأسفل.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>نصيحة ذهبية:</strong> كل خطوة تنظيف تسجل في Power Query M-code تلقائياً. لو مصدر البيانات محدّث، الخطوات تطبق تلقائياً. هذا السحر الحقيقي للـ Power Query!</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذير:</strong> لا تحذف البيانات الخام من المصدر. احفظ Query خاصة بالداتا الخام (Staging)، ثم ابنِ Queries محسّنة تعتمد عليها. بهذا لو احتجت العودة للخام، تقدر.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>Transformations tools</h3>
+<h3>Introduction: Data Profiling</h3>
+<p>Before cleaning data, <strong>understand your problems first</strong>. Power Query provides tools for quick analysis:</p>
 <ul>
-<li><strong>Data Types:</strong> Ensure that numbers are read as numbers and dates as dates (very, very important).</li>
-<li><strong>Split Column:</strong> Separating a column based on a space or sign (such as separating a first name from a last name).</li>
-<li><strong>Replace Values:</strong> Replace an error value or an empty value with a valid value (such as Find &amp; Replace).</li>
-<li><strong>Unpivot:</strong> Converting cross-tabs into longitudinal tables suitable for analysis. (The magic of Power Query!).</li>
+<li><strong>Column Distribution:</strong> How many unique values in the column? Are values heavily duplicated?</li>
+<li><strong>Column Quality:</strong> What % of values are valid / empty / error?</li>
+<li><strong>Column Profile:</strong> Detailed statistics (Count, Unique, Null, Min, Max).</li>
+</ul>
+<p>In Home → Column Profile Pane → select the column and explore issues before fixing.</p>
+</div>
+
+<div class="lesson-card">
+<h3>Remove Errors and Empty Values</h3>
+<ul>
+<li><strong>Remove Errors:</strong> Delete rows with #Error (badly stored numbers or missing values). Right-click row number ← Remove Errors.</li>
+<li><strong>Remove Empty Rows:</strong> Delete completely empty rows (very common in Excel imports).</li>
+<li><strong>Handle Nulls Systematically:</strong> Choose: delete rows? Or fill with default value? Or leave Null for DAX to handle?</li>
+<li><strong>Replace Errors:</strong> Instead of deleting, replace #Error with Null or "Unknown" using Replace Values.</li>
 </ul>
 </div>
+
 <div class="lesson-card">
-<h3>Merge &amp; Append</h3>
-<p>Like a doula VLOOKUP In Excel, it is much stronger:</p>
+<h3>Split and Merge Columns</h3>
 <ul>
-<li><strong>Merge Queries:</strong> Merge two tables based on a common column (such as employee code).</li>
-<li><strong>Append Queries:</strong> Merge two tables lengthwise (put data for month 2 under data for month 1).</li>
+<li><strong>Split Column:</strong> Separate a column based on space or delimiter (like splitting "Mohammad Ali" to "Mohammad" and "Ali").</li>
+<li><strong>Merge Columns:</strong> Combine two columns with a separator (like merging Country + Region = "Egypt - Cairo").</li>
+<li><strong>Extract (Text before/after):</strong> Extract part of text (like extracting domain from Email: "ahmed@company.com" → "company.com").</li>
+<li><strong>Unpivot:</strong> Convert pivot tables to normalized tables. Example: from (Product | Jan | Feb | Mar) to (Product, Month, Value).</li>
 </ul>
+</div>
+
+<div class="lesson-card">
+<h3>Data Types and Fixes</h3>
+<p><strong>Common Problem:</strong> Numbers stored as Text (notice left arrow instead of right in header).</p>
+<ul>
+<li>Select column ← Transform ← Data Type ← Number/Decimal/Date.</li>
+<li><strong>Trim &amp; Clean:</strong> Remove leading/trailing spaces (cause filter issues).</li>
+<li><strong>Change Case:</strong> Convert text to UPPERCASE or lowercase (for name consistency).</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Adding Conditional Columns</h3>
+<p>Instead of DAX, create logic columns directly in Power Query:</p>
+<ul>
+<li>Add Column ← Conditional Column</li>
+<li>Write rule: IF [Sales] > 10000 THEN "High" ELSE "Low"</li>
+<li>Practical example: classify customers by spend (at import time).</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Group By and Data Aggregation</h3>
+<p>Summarize data before import (instead of DAX Measures):</p>
+<ul>
+<li>Transform ← Group By</li>
+<li>Group By: Product, Operation: SUM on Sales</li>
+<li>Result: one aggregated table (200 rows instead of 1 million).</li>
+<li><strong>Benefit:</strong> Smaller file size and better performance.</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Merge &amp; Append Queries</h3>
+<p>Link data from different sources:</p>
+<ul>
+<li><strong>Merge Queries:</strong> Join two tables horizontally by common column (like Employee ID). Like VLOOKUP but stronger.</li>
+<li><strong>Append Queries:</strong> Stack two tables vertically (Month 2 data below Month 1).</li>
+<li><strong>Join Types:</strong> Inner (intersection only), Left Outer (all rows from first + matches from second).</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Fill Down and Fill Up</h3>
+<p>Populate empty values with nearest value:</p>
+<ul>
+<li><strong>Fill Down:</strong> Fill Null with value from row above (like filling missing Department with previous Department).</li>
+<li><strong>Fill Up:</strong> Fill Null with value from row below.</li>
+</ul>
+</div>
+
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Golden Tip:</strong> Every cleaning step is automatically recorded in M-code. If the source updates, steps reapply automatically. That's the real magic of Power Query!</p>
+</div>
+
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> Don't delete raw data from source. Keep a Staging query for raw data, then build optimized queries on top. This way you can revert to raw if needed.</p>
 </div>` }],
   },
   "powerquery": {
@@ -3126,42 +3428,192 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
     en_lede: "Overview of all Power BI chart types and when to use each one.",
     sectionId: "visuals",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>قواعد اختيار الشارت الصحيح</h3>
+      <h3>مقدمة: رسم البيانات، ليس مجرد جداول</h3>
+      <p>الدماغ البشري يستوعب <strong>الصور بـ 60,000 مرة أسرع</strong> من النصوص. الشارت الصحيح يحكي القصة في ثانية. الشارت الخاطئ يخفيها في رسوم معقدة.</p>
+      <p><strong>القاعدة الذهبية:</strong> اختر الشارت الذي يظهر النمط (Pattern) الذي تريد إيصاله بأسرع وقت ممكن.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>المخططات الأساسية (Core Charts)</h3>
       <ul>
-        <li><strong>Bar / Column Chart:</strong> لمقارنة القيم ببعضها (مبيعات الدول، مبيعات المنتجات).</li>
-        <li><strong>Line Chart:</strong> ممتاز جداً لعرض التطور الزمني (المبيعات عبر الشهور).</li>
-        <li><strong>Pie / Donut Chart:</strong> استخدمه فقط لمعرفة النسبة من الكل، ويفضل ألا يزيد عن 4 أو 5 أجزاء.</li>
-        <li><strong>Cards:</strong> لعرض الأرقام الإجمالية الهامة (KPIs) بخط كبير في أعلى التقرير (إجمالي المبيعات، الربح).</li>
-        <li><strong>Matrix:</strong> زي الـ Pivot Table في الإكسيل، مفيد لعرض أرقام تفصيلية بصفوف وأعمدة.</li>
+        <li><strong>Column / Bar Chart:</strong> مقارنة القيم عبر فئات. استخدمه للمقارنات المباشرة (مبيعات الدول، إيرادات المنتجات). ترتيب الأعمدة أفقياً (من الأعلى للأسفل) يسهل القراءة.</li>
+        <li><strong>Line Chart:</strong> عرض التطور الزمني والاتجاهات. مثالي للـ Time Series (المبيعات عبر 12 شهر). أضف كسر خط (Dashed) لـ Forecasts.</li>
+        <li><strong>Combo Chart:</strong> دمج Column + Line في نفس الشارت. مثال: عرض المبيعات (عمود) والنسبة المئوية (خط) معاً.</li>
+        <li><strong>Area Chart:</strong> مثل Line لكن بملء اللون تحت الخط. يفضل مع فئات قليلة جداً فقط (لا تجعلها ملبكة).</li>
+        <li><strong>Scatter / Bubble Chart:</strong> عرض العلاقة بين متغيرين (Correlation). استخدم الحجم كمتغير ثالث (Bubble Size).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>المخططات المتخصصة (Specialized)</h3>
+      <ul>
+        <li><strong>Waterfall Chart:</strong> عرض التغيير التراكمي (كيف انتقل الربح من 100 إلى 250). شارت الـ Income Statement بالذات.</li>
+        <li><strong>Treemap:</strong> عرض التسلسل الهرمي (Category → Subcategory → Product)، حيث الحجم يمثل القيمة. بديل بصري رائع للـ Pie.</li>
+        <li><strong>Gauge / KPI:</strong> عرض KPI واحد ضد Target (المبيعات الفعلية مقابل Target).</li>
+        <li><strong>Card:</strong> أبسط شارت — عدد واحد كبير. استخدمه لـ KPIs في أعلى التقرير (إجمالي الإيرادات).</li>
+        <li><strong>Matrix / Table:</strong> عرض بيانات تفصيلية في صفوف/أعمدة. مثل Pivot Table. أضف Conditional Formatting للألوان.</li>
+        <li><strong>Ribbon Chart:</strong> عرض الترتيب المتغير عبر الزمن (Top 5 Products تتغير ترتيبها كل شهر).</li>
+        <li><strong>Shape Map / Map:</strong> خريطة جغرافية. استخدم للبيانات الجغرافية (مبيعات حسب الدول / المحافظات).</li>
+        <li><strong>Decomposition Tree:</strong> تحليل Root Cause. "لماذا انخفضت المبيعات هذا الشهر؟"</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الـ Field Wells — التحكم بأبعاد الشارت</h3>
+      <p>كل شارت له <strong>Field Wells</strong> (المناطق التي تسحب فيها الأعمدة):</p>
+      <ul>
+        <li><strong>Axis (Category Axis):</strong> الفئات على المحور الأفقي (المنتجات، الدول، الأشهر).</li>
+        <li><strong>Legend:</strong> ألوان مختلفة لكل مجموعة فرعية (Sales by Region).</li>
+        <li><strong>Values:</strong> القيم العددية التي تعرض في الشارت (إجمالي المبيعات، الربح، العدد).</li>
+        <li><strong>Tooltips:</strong> معلومات إضافية تظهر عند تمرير الماوس.</li>
+        <li><strong>Drill Through Fields:</strong> للانتقال لصفحات تفصيلية.</li>
+      </ul>
+      <p><strong>نصيحة:</strong> استخدم درجات (Hierarchy) في Category — مثلاً Year → Month → Day. ثم استخدم الـ Expand في الشارت للتنقيب التدريجي.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تنسيق الشارت (Formatting)</h3>
+      <p>بعد إنشاء الشارت، انقر على أيقونة الفرشاة (Format) لتخصيصه:</p>
+      <ul>
+        <li><strong>Data Labels:</strong> اعرض الأرقام على كل عمود / نقطة (مثل "500K").</li>
+        <li><strong>Axis Settings:</strong> تحكم بنطاق المحور (Min/Max)، عدد الخطوط (Grid Lines).</li>
+        <li><strong>Legend Placement:</strong> أين تظهر المفاتيح (Right, Bottom, Top).</li>
+        <li><strong>Title & Subtitle:</strong> عنوان واضح يشرح ماذا يرى القارئ.</li>
+        <li><strong>Colors:</strong> اختر Palette واحدة متناسقة (لا 10 ألوان).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>متى لا تستخدم أنواع معينة</h3>
+      <ul>
+        <li><strong>❌ Pie Chart بأكثر من 5 أجزاء:</strong> تصبح غير مقروءة. استخدم Treemap بدلاً منها.</li>
+        <li><strong>❌ 3D Charts:</strong> تشوه الإدراك البصري (الأبعاد تبدو مختلفة). استخدم 2D.</li>
+        <li><strong>❌ Dual Axis بمقاييس مختلفة جداً:</strong> تخدع القارئ. مثال: مبيعات (بالملايين) مقابل عدد الموظفين (عشرات).</li>
+        <li><strong>❌ Line Chart مع فئات كثيرة:</strong> تصبح شبكة معقدة. استخدم Small Multiples بدلاً منها.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>التفاعل بين الشارتات (Cross-Filtering)</h3>
+      <p>من أجمل مميزات Power BI: الشارتات تتفاعل مع بعضها. لو ضغطت على "مصر" في خريطة، كل أرقام التقرير ستتغير فوراً.</p>
+      <ul>
+        <li>كل شارت يرسل Filter للشارتات الأخرى عند الضغط عليه.</li>
+        <li>يمكنك تعطيل التفاعل من خلال Format → Interaction → Off (إذا كان مزعجاً).</li>
+        <li>استخدم Bookmarks لحفظ حالات مختلفة من التقرير (مثل Filters).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Small Multiples — التنقيب عبر الفئات</h3>
+      <p>بدل خط واحد ملبك مع 20 منتج، أنشئ 20 شارت صغير جنباً إلى جنب (واحد لكل منتج). يسهل المقارنة والبحث عن النمط.</p>
+      <ul>
+        <li>في خصائص الشارت، اسحب عمود في حقل "Small Multiples".</li>
+        <li>مثالي للـ Scatter plots وقوائم الخطوط والمخططات التفصيلية.</li>
       </ul>
     </div>
 
     <div class="tip-box">
       <div class="icon">🎨</div>
-      <p><strong>نصيحة تصميم:</strong> لا تضع أكثر من 5 إلى 7 رسومات بيانية في الصفحة الواحدة. اترك مساحات فارغة (White Space) لكي لا تشتت عين القارئ.</p>
+      <p><strong>نصيحة تصميم:</strong> لا تضع أكثر من 5 إلى 7 رسومات بيانية في الصفحة الواحدة. اترك مساحات فارغة (White Space). تقرير نظيف مقروء أفضل من تقرير كثيف معقد.</p>
     </div>
 
-    <div class="lesson-card">
-      <h3>التفاعل بين الشارتات (Cross-Filtering)</h3>
-      <p>من أجمل مميزات Power BI أن الشارتات تتفاعل مع بعضها. لو ضغطت على "مصر" في خريطة، كل أرقام التقرير ورسوماته ستتغير فوراً لتعرض بيانات مصر فقط.</p>
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذير:</strong> في Power BI Desktop، الشارتات Interactive (تفاعلية). في Power BI Service، لا تنسَ أن Mobile users قد لا يرى التفاصيل الدقيقة على الشاشة الصغيرة. اختبر على Mobile.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>Rules for choosing the correct chart</h3>
+<h3>Introduction: Visualize Data, Don't Tabulate It</h3>
+<p>The human brain processes <strong>images 60,000x faster</strong> than text. The right chart tells the story in one second. The wrong chart hides it in complexity.</p>
+<p><strong>The Golden Rule:</strong> Choose the chart that shows the pattern you want to communicate as fast as possible.</p>
+</div>
+
+<div class="lesson-card">
+<h3>Core Charts</h3>
 <ul>
-<li><strong>Bar / Column Chart:</strong> To compare values ​​with each other (country sales, product sales).</li>
-<li><strong>Line Chart:</strong> Very excellent for displaying chronological development (sales over months).</li>
-<li><strong>Pie / Donut Chart:</strong> Use it only to know the proportion of the whole, preferably no more than 4 or 5 parts.</li>
-<li><strong>Cards:</strong> Displays key aggregate numbers (KPIs) in large font at the top of the report (Total Sales, Profit).</li>
-<li><strong>Matrix:</strong> Like the Pivot Table in Excel, it is useful for displaying detailed numbers in rows and columns.</li>
+<li><strong>Column / Bar Chart:</strong> Compare values across categories. Use for direct comparisons (sales by country, revenue by product). Horizontal bars (top-to-bottom) are easier to read.</li>
+<li><strong>Line Chart:</strong> Show trends and time evolution. Perfect for Time Series (sales over 12 months). Add dashed lines for forecasts.</li>
+<li><strong>Combo Chart:</strong> Mix Column + Line in the same chart. Example: show Sales (column) and Margin % (line) together.</li>
+<li><strong>Area Chart:</strong> Like Line but with color fill. Use only with very few categories (don't make it messy).</li>
+<li><strong>Scatter / Bubble Chart:</strong> Show relationship between two variables (correlation). Use bubble size as a third variable.</li>
 </ul>
 </div>
+
+<div class="lesson-card">
+<h3>Specialized Charts</h3>
+<ul>
+<li><strong>Waterfall Chart:</strong> Show cumulative change (how profit moved from 100 to 250). Essential for Income Statements.</li>
+<li><strong>Treemap:</strong> Show hierarchy (Category → Subcategory → Product), where size = value. Beautiful visual alternative to Pie.</li>
+<li><strong>Gauge / KPI:</strong> Show one KPI against a Target (actual sales vs target).</li>
+<li><strong>Card:</strong> Simplest chart — one big number. Use for KPIs at the top (total revenue).</li>
+<li><strong>Matrix / Table:</strong> Display detailed data in rows/columns. Like Pivot Table. Add Conditional Formatting for colors.</li>
+<li><strong>Ribbon Chart:</strong> Show changing rankings over time (Top 5 Products change position each month).</li>
+<li><strong>Shape Map / Map:</strong> Geographic map. Use for geographic data (sales by country / region).</li>
+<li><strong>Decomposition Tree:</strong> Root cause analysis. "Why did sales drop this month?"</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Field Wells — Controlling Chart Dimensions</h3>
+<p>Every chart has <strong>Field Wells</strong> (zones where you drag columns):</p>
+<ul>
+<li><strong>Axis (Category Axis):</strong> Categories on the horizontal axis (products, countries, months).</li>
+<li><strong>Legend:</strong> Different colors for each subgroup (sales by region).</li>
+<li><strong>Values:</strong> Numeric values displayed in the chart (total sales, profit, count).</li>
+<li><strong>Tooltips:</strong> Additional information on hover.</li>
+<li><strong>Drill Through Fields:</strong> Navigation to detailed pages.</li>
+</ul>
+<p><strong>Tip:</strong> Use hierarchies in Category — e.g., Year → Month → Day. Then use Expand in the chart for progressive exploration.</p>
+</div>
+
+<div class="lesson-card">
+<h3>Chart Formatting</h3>
+<p>After creating the chart, click the Format icon (brush) to customize:</p>
+<ul>
+<li><strong>Data Labels:</strong> Show numbers on each bar / point (e.g., "500K").</li>
+<li><strong>Axis Settings:</strong> Control axis range (Min/Max), grid lines.</li>
+<li><strong>Legend Placement:</strong> Where legends appear (Right, Bottom, Top).</li>
+<li><strong>Title & Subtitle:</strong> Clear title explaining what the reader sees.</li>
+<li><strong>Colors:</strong> Choose one cohesive palette (not 10 different colors).</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>When NOT to Use Certain Types</h3>
+<ul>
+<li><strong>❌ Pie Chart with more than 5 slices:</strong> Becomes unreadable. Use Treemap instead.</li>
+<li><strong>❌ 3D Charts:</strong> Distort visual perception (dimensions look different). Use 2D.</li>
+<li><strong>❌ Dual Axis with very different scales:</strong> Deceives the reader. Example: sales (millions) vs employee count (dozens).</li>
+<li><strong>❌ Line Chart with too many categories:</strong> Becomes a messy web. Use Small Multiples instead.</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Cross-Filtering Interaction</h3>
+<p>One of Power BI's best features: charts interact with each other. Click "Egypt" on a map, and all report numbers instantly update.</p>
+<ul>
+<li>Each chart sends a Filter to other charts when clicked.</li>
+<li>You can disable interaction via Format → Interaction → Off (if annoying).</li>
+<li>Use Bookmarks to save different states of the report (with different Filters).</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Small Multiples — Exploring Across Categories</h3>
+<p>Instead of one messy line with 20 products, create 20 small charts side-by-side (one per product). Easier to compare and spot patterns.</p>
+<ul>
+<li>In chart properties, drag a column to the "Small Multiples" field.</li>
+<li>Perfect for scatter plots, line charts, and detailed breakdowns.</li>
+</ul>
+</div>
+
 <div class="tip-box">
 <div class="icon">🎨</div>
-<p><strong>Design tip:</strong> Do not place more than 5 to 7 charts per page. Leave empty spaces (white space) so as not to distract the reader's eye.</p>
+<p><strong>Design Tip:</strong> Don't place more than 5-7 charts per page. Leave white space. A clean, readable report beats a dense, complex one.</p>
 </div>
-<div class="lesson-card">
-<h3>Interaction between cards (Cross-Filtering)</h3>
-<p>One of the most beautiful features Power BI The cards interact with each other. If you press "Egypt" In a map, all the report numbers and graphics will change immediately to display only Egypt data.</p>
+
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> In Power BI Desktop, charts are interactive. In Power BI Service, remember mobile users won't see fine details on small screens. Test on mobile.</p>
 </div>` }],
   },
   "sync-slicers": {
