@@ -1,9 +1,8 @@
-// Shell app — Ta3laM Power BI course platform
+// Shell app - Ta3laM Power BI course platform
 (function () {
-  const $ = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
-  // ─── Internationalization ───────────────────────────────
   const I18N = {
     ar: {
       searchPlaceholder: "ابحث في الدروس...",
@@ -13,15 +12,23 @@
       quizBtn: "📝 اختبر نفسك",
       markDone: "خلّصت الدرس",
       alreadyDone: "✓ خلّصت الدرس ده",
+      stubLesson: "الدرس قيد الإعداد",
+      comingSoonMeta: "قريبًا",
       prevArrow: "← اللي فات",
-      nextArrow: "الجاي →",
+      nextArrow: "الجاى →",
       readingTime: "وقت القراءة",
       minutes: "دقيقة",
       lessonOf: "درس",
       of: "من",
       resetConfirm: "متأكد إنك عايز تبدأ من الأول؟ هيتمسح كل تقدمك!",
+      tweaksTitle: "Tweaks",
+      tweakAccentLabel: "اختار اللون",
+      tweakDensityLabel: "تباعد المحتوى",
+      tweakBackdropLabel: "خلفية متحركة",
+      tweakGrainLabel: "Grain texture",
+      tweakAccentOptions: { gold: "ذهبي", teal: "تيل", dual: "مزدوج" },
+      tweakDensityOptions: { compact: "ضيق", cozy: "عادي", spacious: "واسع" },
       englishContentNote: "",
-      quizNote: "",
       kindLabels: { concept: "فاهم الفكرة", practice: "تطبيق عملي", theory: "نظري", code: "كود", reference: "مرجع" },
       calloutLabels: { warn: "تنبيه مهم", note: "لازم تعرف", tip: "نصيحة" },
     },
@@ -33,6 +40,8 @@
       quizBtn: "📝 Quiz yourself",
       markDone: "Mark as done",
       alreadyDone: "✓ Lesson complete",
+      stubLesson: "Coming soon",
+      comingSoonMeta: "Soon",
       prevArrow: "← Previous",
       nextArrow: "Next →",
       readingTime: "Read time",
@@ -40,20 +49,36 @@
       lessonOf: "Lesson",
       of: "of",
       resetConfirm: "Reset all progress? This cannot be undone.",
+      tweaksTitle: "Tweaks",
+      tweakAccentLabel: "Accent color",
+      tweakDensityLabel: "Content density",
+      tweakBackdropLabel: "Animated backdrop",
+      tweakGrainLabel: "Grain texture",
+      tweakAccentOptions: { gold: "Gold", teal: "Teal", dual: "Dual" },
+      tweakDensityOptions: { compact: "Compact", cozy: "Cozy", spacious: "Spacious" },
       englishContentNote: "<strong>Lesson content is in Arabic.</strong> English translations are coming in a future update.",
-      quizNote: "Questions are currently in Arabic.",
       kindLabels: { concept: "Concept", practice: "Practice", theory: "Theory", code: "Code", reference: "Reference" },
       calloutLabels: { warn: "Important", note: "Good to know", tip: "Tip" },
     }
   };
 
-  // ─── State ───────────────────────────────
   const STATE = {
     lang: localStorage.getItem("t3m_lang") || "ar",
     currentId: localStorage.getItem("t3m_current") || "intro",
     done: new Set(JSON.parse(localStorage.getItem("t3m_done") || "[]")),
     openChapters: new Set(JSON.parse(localStorage.getItem("t3m_open") || '["foundations","dax"]')),
   };
+
+  const isStubLesson = (id) => !window.LESSONS[id] || window.LESSONS[id].isStub;
+  const COMPLETABLE_LESSON_IDS = new Set(
+    window.ALL_LESSONS.filter((lesson) => !isStubLesson(lesson.id)).map((lesson) => lesson.id)
+  );
+  const COMPLETABLE_LESSON_COUNT = COMPLETABLE_LESSON_IDS.size;
+  const getCompletedCount = () => [...STATE.done].filter((id) => COMPLETABLE_LESSON_IDS.has(id)).length;
+  const hasQuizForLesson = (lessonId) => Array.isArray(window.quizData) && window.quizData.some((q) => q.section === lessonId);
+  if (STATE.done.size !== getCompletedCount()) {
+    STATE.done = new Set([...STATE.done].filter((id) => COMPLETABLE_LESSON_IDS.has(id)));
+  }
 
   const persist = () => {
     localStorage.setItem("t3m_lang", STATE.lang);
@@ -80,148 +105,198 @@
   window.setLang = setLang;
 
   const findLesson = (id) => {
-    for (const ch of window.CURRICULUM) {
-      const l = ch.lessons.find(x => x.id === id);
-      if (l) return { lesson: l, chapter: ch };
+    for (const chapter of window.CURRICULUM) {
+      const lesson = chapter.lessons.find((entry) => entry.id === id);
+      if (lesson) return { lesson, chapter };
     }
     return null;
   };
 
-  const flatIndex = (id) => window.ALL_LESSONS.findIndex(l => l.id === id);
+  const flatIndex = (id) => window.ALL_LESSONS.findIndex((lesson) => lesson.id === id);
 
-  // ─── Sidebar ───────────────────────────────
   function renderSidebar() {
     const toc = $("#toc");
     toc.innerHTML = "";
-    window.CURRICULUM.forEach((ch) => {
-      const chEl = document.createElement("div");
-      chEl.className = "chapter" + (STATE.openChapters.has(ch.id) ? " open" : "");
-      chEl.dataset.chapter = ch.id;
 
-      const chTitle = STATE.lang === "en" ? (ch.en || ch.title) : ch.title;
-      const chSub = STATE.lang === "en" ? ch.subtitle : ch.en || ch.subtitle;
+    window.CURRICULUM.forEach((chapter) => {
+      const chapterEl = document.createElement("div");
+      chapterEl.className = "chapter" + (STATE.openChapters.has(chapter.id) ? " open" : "");
+      chapterEl.dataset.chapter = chapter.id;
 
-      chEl.innerHTML = `
+      const chapterTitle = STATE.lang === "en" ? (chapter.en || chapter.title) : chapter.title;
+      const chapterSub = STATE.lang === "en" ? (chapter.subtitle || "") : "";
+
+      chapterEl.innerHTML = `
         <div class="chapter-head">
-          <div class="chapter-num">${ch.num}</div>
+          <div class="chapter-num">${chapter.num}</div>
           <div style="flex:1;">
-            <div class="chapter-title">${chTitle}</div>
-            <div class="chapter-sub">${chSub}</div>
+            <div class="chapter-title">${chapterTitle}</div>
+            <div class="chapter-sub">${chapterSub}</div>
           </div>
-          <span class="chapter-count">${ch.lessons.length}</span>
+          <span class="chapter-count">${chapter.lessons.length}</span>
           <span class="chapter-chev">▾</span>
         </div>
         <div class="chapter-body">
-          ${ch.lessons.map((l, i) => `
-            <div class="lesson-item ${STATE.currentId === l.id ? "active" : ""} ${STATE.done.has(l.id) ? "done" : ""}" data-lesson="${l.id}">
-              <span class="lesson-idx">${String(i + 1).padStart(2, "0")}</span>
-              <span class="lesson-title">${STATE.lang === "en" ? l.en : l.title}</span>
-              <span style="display:flex;align-items:center;gap:8px;">
-                <span class="lesson-kind" data-k="${l.kind}"></span>
-                <span class="lesson-meta">${l.mins}′</span>
-              </span>
-            </div>
-          `).join("")}
+          ${chapter.lessons.map((lesson, index) => {
+            const lessonIsStub = isStubLesson(lesson.id);
+            const lessonMeta = lessonIsStub ? t("comingSoonMeta") : `${lesson.mins}′`;
+            return `
+              <div class="lesson-item ${STATE.currentId === lesson.id ? "active" : ""} ${STATE.done.has(lesson.id) ? "done" : ""} ${lessonIsStub ? "stub" : ""}" data-lesson="${lesson.id}">
+                <span class="lesson-idx">${String(index + 1).padStart(2, "0")}</span>
+                <span class="lesson-title">${STATE.lang === "en" ? lesson.en : lesson.title}</span>
+                <span style="display:flex;align-items:center;gap:8px;">
+                  <span class="lesson-kind" data-k="${lesson.kind}"></span>
+                  <span class="lesson-meta">${lessonMeta}</span>
+                </span>
+              </div>
+            `;
+          }).join("")}
         </div>
       `;
-      chEl.querySelector(".chapter-head").addEventListener("click", (e) => {
-        if (e.target.closest(".lesson-item")) return;
-        chEl.classList.toggle("open");
-        if (chEl.classList.contains("open")) STATE.openChapters.add(ch.id);
-        else STATE.openChapters.delete(ch.id);
+
+      chapterEl.querySelector(".chapter-head").addEventListener("click", (event) => {
+        if (event.target.closest(".lesson-item")) return;
+        chapterEl.classList.toggle("open");
+        if (chapterEl.classList.contains("open")) STATE.openChapters.add(chapter.id);
+        else STATE.openChapters.delete(chapter.id);
         persist();
       });
-      $$(".lesson-item", chEl).forEach(el => {
-        el.addEventListener("click", () => goTo(el.dataset.lesson));
+
+      $$(".lesson-item", chapterEl).forEach((lessonEl) => {
+        lessonEl.addEventListener("click", () => goTo(lessonEl.dataset.lesson));
       });
-      toc.appendChild(chEl);
+
+      toc.appendChild(chapterEl);
     });
+
     updateProgress();
   }
 
   function updateProgress() {
-    const total = window.ALL_LESSONS.length;
-    const done = STATE.done.size;
-    const pct = Math.round((done / total) * 100);
+    const total = COMPLETABLE_LESSON_COUNT;
+    const done = getCompletedCount();
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
     $(".rail-fill").style.width = pct + "%";
     $(".rail-val").innerHTML = `${done}<span> / ${total}</span>`;
   }
 
-  // ─── Lesson rendering ───────────────────────────────
-  function escapeHTML(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[char]));
+  }
 
-  function renderBlock(b) {
-    switch (b.kind) {
-      case "html": return b.html;
-      case "h2": return `<h2>${escapeHTML(b.text)}</h2>`;
-      case "p": return `<p>${escapeHTML(b.text)}</p>`;
-      case "list": return `<ul class="bullets">${b.items.map(i => `<li>${escapeHTML(i)}</li>`).join("")}</ul>`;
+  function fitLessonHeadline() {
+    const heading = $(".lesson-h1");
+    if (!heading) return;
+
+    heading.style.fontSize = "";
+    heading.style.letterSpacing = "";
+
+    if (window.innerWidth <= 880) return;
+
+    let fontSize = parseFloat(getComputedStyle(heading).fontSize);
+    const minFontSize = document.documentElement.lang === "en" ? 27 : 26;
+
+    while (heading.scrollWidth > heading.clientWidth && fontSize > minFontSize) {
+      fontSize -= 0.5;
+      heading.style.fontSize = fontSize + "px";
+    }
+
+    if (heading.scrollWidth > heading.clientWidth) {
+      heading.style.letterSpacing = "-.04em";
+      while (heading.scrollWidth > heading.clientWidth && fontSize > minFontSize - 2) {
+        fontSize -= 0.5;
+        heading.style.fontSize = fontSize + "px";
+      }
+    }
+  }
+
+  function scheduleHeadlineFit() {
+    requestAnimationFrame(fitLessonHeadline);
+    setTimeout(fitLessonHeadline, 0);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => requestAnimationFrame(fitLessonHeadline));
+    }
+  }
+
+  function renderBlock(block) {
+    switch (block.kind) {
+      case "html":
+        return block.html;
+      case "h2":
+        return `<h2>${escapeHTML(block.text)}</h2>`;
+      case "p":
+        return `<p>${escapeHTML(block.text)}</p>`;
+      case "list":
+        return `<ul class="bullets">${block.items.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>`;
       case "callout": {
         const tones = { warn: "tone-warn", note: "tone-note", tip: "" };
         const labels = I18N[STATE.lang].calloutLabels;
-        return `<div class="callout ${tones[b.tone] || ""}">
-          <div class="callout-label">${labels[b.tone] || (STATE.lang === "en" ? "Tip" : "نصيحة ⚡")}</div>
-          <div class="callout-title">${escapeHTML(b.title)}</div>
-          <p class="callout-body">${escapeHTML(b.body)}</p>
+        return `<div class="callout ${tones[block.tone] || ""}">
+          <div class="callout-label">${labels[block.tone] || (STATE.lang === "en" ? "Tip" : "نصيحة")}</div>
+          <div class="callout-title">${escapeHTML(block.title)}</div>
+          <p class="callout-body">${escapeHTML(block.body)}</p>
         </div>`;
       }
       case "triple":
-        return `<div class="triple">${b.items.map(i => `
+        return `<div class="triple">${block.items.map((item) => `
           <div class="triple-cell">
-            <div class="triple-tag">${escapeHTML(i.tag)}</div>
-            <div class="triple-title">${escapeHTML(i.title)}</div>
-            <p class="triple-body">${escapeHTML(i.body)}</p>
+            <div class="triple-tag">${escapeHTML(item.tag)}</div>
+            <div class="triple-title">${escapeHTML(item.title)}</div>
+            <p class="triple-body">${escapeHTML(item.body)}</p>
           </div>`).join("")}</div>`;
       case "compare":
         return `<div class="compare">
           <div class="compare-side left">
-            <div class="compare-title">${escapeHTML(b.left.title)}</div>
-            <ul>${b.left.items.map(i => `<li>${escapeHTML(i)}</li>`).join("")}</ul>
+            <div class="compare-title">${escapeHTML(block.left.title)}</div>
+            <ul>${block.left.items.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>
           </div>
           <div class="compare-side right">
-            <div class="compare-title">${escapeHTML(b.right.title)}</div>
-            <ul>${b.right.items.map(i => `<li>${escapeHTML(i)}</li>`).join("")}</ul>
+            <div class="compare-title">${escapeHTML(block.right.title)}</div>
+            <ul>${block.right.items.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>
           </div>
         </div>`;
       case "quote":
         return `<div class="pullquote">
-          <div class="pullquote-text">${escapeHTML(b.text)}</div>
-          <div class="pullquote-by">— ${escapeHTML(b.by)}</div>
+          <div class="pullquote-text">${escapeHTML(block.text)}</div>
+          <div class="pullquote-by">— ${escapeHTML(block.by)}</div>
         </div>`;
       case "code": {
-        const body = b.body.map(t => `<span class="tk-${t.t}">${escapeHTML(t.v)}</span>`).join("");
+        const codeBody = block.body.map((token) => `<span class="tk-${token.t}">${escapeHTML(token.v)}</span>`).join("");
         const copyText = STATE.lang === "en" ? "Copy" : "نسخ 📋";
         return `<div class="code">
           <div class="code-head">
             <span class="code-dots"><span></span><span></span><span></span></span>
-            <span>${b.lang || "dax"}</span>
+            <span>${block.lang || "dax"}</span>
             <button class="copy-btn" data-copy>${copyText}</button>
           </div>
-          <div class="code-body">${body}</div>
+          <div class="code-body">${codeBody}</div>
         </div>`;
       }
       case "shortcuts": {
-        const links = b.ids.map(id => {
-          const { lesson, chapter } = findLesson(id) || {};
-          if (!lesson) return "";
-          const lessonTitle = STATE.lang === "en" ? lesson.en : lesson.title;
+        const links = block.ids.map((id) => {
+          const target = findLesson(id);
+          if (!target) return "";
+          const lessonTitle = STATE.lang === "en" ? target.lesson.en : target.lesson.title;
+          const lessonIndex = target.chapter.lessons.findIndex((lesson) => lesson.id === id) + 1;
           return `<div class="shortcut" data-goto="${id}">
-            <span class="shortcut-num">${chapter.num}·${String(chapter.lessons.findIndex(l => l.id === id) + 1).padStart(2, "0")}</span>
+            <span class="shortcut-num">${target.chapter.num}·${String(lessonIndex).padStart(2, "0")}</span>
             <span class="shortcut-title">${lessonTitle}</span>
           </div>`;
         }).join("");
         return `<div class="shortcuts">${links}</div>`;
       }
+      default:
+        return "";
     }
-    return "";
   }
 
   function renderLesson() {
     const info = findLesson(STATE.currentId);
     if (!info) return;
+
     const { lesson, chapter } = info;
     const content = window.LESSONS[lesson.id] || window.stubLesson(lesson, chapter);
-
+    const isStub = !!content.isStub;
     const idx = flatIndex(lesson.id);
     const prev = idx > 0 ? window.ALL_LESSONS[idx - 1] : null;
     const next = idx < window.ALL_LESSONS.length - 1 ? window.ALL_LESSONS[idx + 1] : null;
@@ -234,31 +309,23 @@
     $("#crumbChapter").textContent = `${chapter.num} — ${chapterTitle}`;
     $("#crumbLesson").textContent = lessonTitle;
 
-    // title with italic accent on last word — use English title in EN mode
     const displayTitle = STATE.lang === "en" ? (lesson.en || content.title) : content.title;
-    const parts = displayTitle.split(" ");
-    const titleHTML = parts.length > 1
-      ? parts.slice(0, -1).join(" ") + " <em>" + parts.slice(-1) + "</em>"
-      : displayTitle;
+    const titleParts = displayTitle.trim().split(/\s+/);
+    const titleHTML = titleParts.length > 1
+      ? `${escapeHTML(titleParts.slice(0, -1).join(" "))} <span class="title-accent">${escapeHTML(titleParts[titleParts.length - 1])}</span>`
+      : escapeHTML(displayTitle);
 
     const blocksToRender = STATE.lang === "en" && content.en_blocks ? content.en_blocks : content.blocks;
     const blocks = blocksToRender.map(renderBlock).join("");
     const isDone = STATE.done.has(lesson.id);
-
-    // Check if quiz available for this lesson
-    const hasQuiz = window.quizData && window.quizData.some(q => q.section === lesson.id);
-    const quizBtnId = "topbarQuizBtn";
-
-    // English content note
-    const englishNote = STATE.lang === "en" && I18N.en.englishContentNote
-      ? `<div class="callout tone-note" style="margin-bottom: 2rem;">
-          <div class="callout-label">Good to know</div>
+    const hasQuiz = hasQuizForLesson(lesson.id);
+    const englishNote = STATE.lang === "en" && !content.en_blocks && I18N.en.englishContentNote
+      ? `<div class="callout tone-note" style="margin-bottom:2rem;">
+          <div class="callout-label">${I18N[STATE.lang].calloutLabels.note}</div>
           <p class="callout-body">${I18N.en.englishContentNote}</p>
         </div>`
       : "";
-
     const lessonDir = STATE.lang === "ar" ? "rtl" : "ltr";
-
     const displayEyebrow = STATE.lang === "en" ? (content.en_eyebrow || chapter.en || content.eyebrow) : content.eyebrow;
     const displayLede = STATE.lang === "en" ? (content.en_lede || "") : content.lede;
 
@@ -282,9 +349,9 @@
             <div class="foot-arrow">${t("prevArrow")}</div>
             <div class="foot-title">${escapeHTML(prevTitle)}</div>
           </div>` : '<div class="foot-nav empty"></div>'}
-        <button class="foot-cta" id="markDoneBtn">
-          ${isDone ? t("alreadyDone") : t("markDone")}
-          ${next ? (STATE.lang === "en" ? " →" : " ←") : ""}
+        <button class="foot-cta" id="markDoneBtn" ${isStub ? "disabled" : ""}>
+          ${isStub ? t("stubLesson") : (isDone ? t("alreadyDone") : t("markDone"))}
+          ${!isStub && next ? (STATE.lang === "en" ? " →" : " ←") : ""}
         </button>
         ${next ? `<div class="foot-nav" data-goto="${next.id}">
             <div class="foot-arrow" style="text-align:${STATE.lang === "en" ? "left" : "right"};">${t("nextArrow")}</div>
@@ -293,51 +360,67 @@
       </div>
     `;
 
-    // wire copy buttons (new-style code blocks)
-    $$("[data-copy]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const pre = btn.closest(".code").querySelector(".code-body");
+    $$("[data-copy]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const pre = button.closest(".code").querySelector(".code-body");
         navigator.clipboard.writeText(pre.innerText);
-        btn.textContent = "✓";
-        btn.classList.add("copied");
+        button.textContent = "✓";
+        button.classList.add("copied");
         const originalText = STATE.lang === "en" ? "Copy" : "نسخ 📋";
-        setTimeout(() => { btn.textContent = originalText; btn.classList.remove("copied"); }, 1400);
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove("copied");
+        }, 1400);
       });
     });
-    $$("[data-goto]").forEach(el => el.addEventListener("click", () => goTo(el.dataset.goto)));
-    $("#markDoneBtn").addEventListener("click", () => {
-      STATE.done.add(lesson.id);
-      persist();
-      renderSidebar();
-      // Check if all done → certificate
-      if (STATE.done.size === window.ALL_LESSONS.length && typeof window.showCertificate === "function") {
-        setTimeout(() => window.showCertificate(), 300);
-      } else if (next) {
-        setTimeout(() => goTo(next.id), 300);
-      } else {
-        $("#markDoneBtn").textContent = t("alreadyDone");
-      }
-    });
 
-    // wire quiz button in topbar
-    const quizTopBtn = $("#topbarQuizBtn");
-    if (quizTopBtn) {
-      quizTopBtn.style.display = "";
-      quizTopBtn.onclick = () => {
-        if (typeof window.startQuiz === "function") window.startQuiz(lesson.id);
-      };
+    $$("[data-goto]").forEach((element) => element.addEventListener("click", () => goTo(element.dataset.goto)));
+
+    if (!isStub) {
+      $("#markDoneBtn").addEventListener("click", () => {
+        STATE.done.add(lesson.id);
+        persist();
+        renderSidebar();
+        if (getCompletedCount() === COMPLETABLE_LESSON_COUNT && typeof window.showCertificate === "function") {
+          setTimeout(() => window.showCertificate(), 300);
+        } else if (next) {
+          setTimeout(() => goTo(next.id), 300);
+        } else {
+          $("#markDoneBtn").textContent = t("alreadyDone");
+        }
+      });
     }
 
-    $(".reader").scrollTop = 0;
+    syncTopbarQuizButton(lesson.id, hasQuiz);
 
-    // Re-init lightbox and copy buttons for raw HTML lesson content
+    $(".reader").scrollTop = 0;
+    scheduleHeadlineFit();
     if (typeof window.initLightbox === "function") window.initLightbox();
     if (typeof window.initCopyButtons === "function") window.initCopyButtons();
     if (typeof window.updateQuizButtons === "function") window.updateQuizButtons();
   }
 
-  function kindLabel(k) {
-    return I18N[STATE.lang].kindLabels[k] || k;
+  function syncTopbarQuizButton(lessonId, hasQuiz = hasQuizForLesson(lessonId)) {
+    const quizTopBtn = $("#topbarQuizBtn");
+    if (!quizTopBtn) return;
+
+    if (!hasQuiz) {
+      quizTopBtn.style.display = "none";
+      quizTopBtn.disabled = true;
+      quizTopBtn.onclick = null;
+      return;
+    }
+
+    quizTopBtn.style.display = "";
+    quizTopBtn.disabled = false;
+    quizTopBtn.textContent = t("quizBtn");
+    quizTopBtn.onclick = () => {
+      if (typeof window.startQuiz === "function") window.startQuiz(lessonId);
+    };
+  }
+
+  function kindLabel(kind) {
+    return I18N[STATE.lang].kindLabels[kind] || kind;
   }
 
   function goTo(id) {
@@ -350,42 +433,51 @@
     if (window.innerWidth < 880) $(".sidebar").classList.remove("open");
   }
 
-  // Expose goTo globally so quiz/cert code can use it
   window.shellGoTo = goTo;
+  window.getCourseStats = function() {
+    return {
+      totalLessons: window.ALL_LESSONS.length,
+      completableLessons: COMPLETABLE_LESSON_COUNT,
+      completedLessons: getCompletedCount(),
+      stubLessons: window.ALL_LESSONS.length - COMPLETABLE_LESSON_COUNT,
+      chapterCount: window.CURRICULUM.length,
+    };
+  };
+  window.refreshShellQuizAvailability = function() {
+    syncTopbarQuizButton(STATE.currentId);
+  };
 
-  // ─── Reading progress ───────────────────────────────
   function wireReadingProgress() {
     const reader = $(".reader");
     const fill = $(".reading-progress-fill");
     reader.addEventListener("scroll", () => {
-      const h = reader.scrollHeight - reader.clientHeight;
-      const pct = h > 0 ? (reader.scrollTop / h) * 100 : 0;
+      const scrollableHeight = reader.scrollHeight - reader.clientHeight;
+      const pct = scrollableHeight > 0 ? (reader.scrollTop / scrollableHeight) * 100 : 0;
       fill.style.width = pct + "%";
     });
   }
 
-  // ─── Search ───────────────────────────────
   function wireSearch() {
     const input = $("#searchInput");
     input.addEventListener("input", () => {
-      const q = input.value.trim().toLowerCase();
-      $$(".lesson-item").forEach(el => {
-        const title = el.querySelector(".lesson-title").textContent.toLowerCase();
-        el.style.display = !q || title.includes(q) ? "" : "none";
+      const query = input.value.trim().toLowerCase();
+      $$(".lesson-item").forEach((lessonEl) => {
+        const title = lessonEl.querySelector(".lesson-title").textContent.toLowerCase();
+        lessonEl.style.display = !query || title.includes(query) ? "" : "none";
       });
-      $$(".chapter").forEach(ch => {
-        const visibleLessons = $$(".lesson-item", ch).filter(li => li.style.display !== "none").length;
-        if (q && visibleLessons > 0) ch.classList.add("open");
+      $$(".chapter").forEach((chapterEl) => {
+        const visibleLessons = $$(".lesson-item", chapterEl).filter((lessonEl) => lessonEl.style.display !== "none").length;
+        if (query && visibleLessons > 0) chapterEl.classList.add("open");
       });
     });
   }
 
-  // ─── Tweaks panel ───────────────────────────────
   const TWEAK_DEFAULTS = {
-    "accent": "gold",
-    "density": "cozy",
-    "backdrop": true,
-    "grain": true
+    accent: "gold",
+    density: "cozy",
+    backdrop: true,
+    grain: true,
+    theme: "dark"
   };
 
   const TWEAKS = { ...TWEAK_DEFAULTS, ...JSON.parse(localStorage.getItem("t3m_tweaks") || "{}") };
@@ -393,12 +485,14 @@
   function applyTweaks() {
     document.documentElement.dataset.accent = TWEAKS.accent;
     document.documentElement.dataset.density = TWEAKS.density;
+    document.documentElement.dataset.theme = TWEAKS.theme;
     document.body.classList.toggle("no-backdrop", !TWEAKS.backdrop);
     document.body.classList.toggle("no-grain", !TWEAKS.grain);
-    $$("[data-tweak-accent] button").forEach(b => b.classList.toggle("on", b.dataset.val === TWEAKS.accent));
-    $$("[data-tweak-density] button").forEach(b => b.classList.toggle("on", b.dataset.val === TWEAKS.density));
+    $$("[data-tweak-accent] button").forEach((button) => button.classList.toggle("on", button.dataset.val === TWEAKS.accent));
+    $$("[data-tweak-density] button").forEach((button) => button.classList.toggle("on", button.dataset.val === TWEAKS.density));
     $("#sw-backdrop").classList.toggle("on", TWEAKS.backdrop);
     $("#sw-grain").classList.toggle("on", TWEAKS.grain);
+    $("#sw-theme").classList.toggle("on", TWEAKS.theme === "light");
   }
 
   function setTweak(key, value) {
@@ -407,33 +501,35 @@
     applyTweaks();
     try {
       window.parent.postMessage({ type: "__edit_mode_set_keys", edits: { [key]: value } }, "*");
-    } catch (e) {}
+    } catch (error) {}
   }
 
   function wireTweaks() {
-    window.addEventListener("message", (e) => {
-      if (!e.data) return;
-      if (e.data.type === "__activate_edit_mode") $("#tweaksPanel").classList.add("open");
-      if (e.data.type === "__deactivate_edit_mode") $("#tweaksPanel").classList.remove("open");
+    window.addEventListener("message", (event) => {
+      if (!event.data) return;
+      if (event.data.type === "__activate_edit_mode") $("#tweaksPanel").classList.add("open");
+      if (event.data.type === "__deactivate_edit_mode") $("#tweaksPanel").classList.remove("open");
     });
-    try { window.parent.postMessage({ type: "__edit_mode_available" }, "*"); } catch (e) {}
 
-    $$("[data-tweak-accent] button").forEach(b => b.addEventListener("click", () => setTweak("accent", b.dataset.val)));
-    $$("[data-tweak-density] button").forEach(b => b.addEventListener("click", () => setTweak("density", b.dataset.val)));
+    try {
+      window.parent.postMessage({ type: "__edit_mode_available" }, "*");
+    } catch (error) {}
+
+    $$("[data-tweak-accent] button").forEach((button) => button.addEventListener("click", () => setTweak("accent", button.dataset.val)));
+    $$("[data-tweak-density] button").forEach((button) => button.addEventListener("click", () => setTweak("density", button.dataset.val)));
     $("#sw-backdrop").addEventListener("click", () => setTweak("backdrop", !TWEAKS.backdrop));
     $("#sw-grain").addEventListener("click", () => setTweak("grain", !TWEAKS.grain));
+    $("#sw-theme").addEventListener("click", () => setTweak("theme", TWEAKS.theme === "dark" ? "light" : "dark"));
     $("#tweaksClose").addEventListener("click", () => $("#tweaksPanel").classList.remove("open"));
 
     applyTweaks();
   }
 
-  // ─── Mobile sidebar toggle ───────────────────────────────
   function wireMobile() {
-    const tb = $("#sidebarToggle");
-    if (tb) tb.addEventListener("click", () => $(".sidebar").classList.toggle("open"));
+    const toggle = $("#sidebarToggle");
+    if (toggle) toggle.addEventListener("click", () => $(".sidebar").classList.toggle("open"));
   }
 
-  // ─── Reset progress ───────────────────────────────
   window.resetShellProgress = function() {
     if (confirm(t("resetConfirm"))) {
       STATE.done.clear();
@@ -445,14 +541,12 @@
     }
   };
 
-  // ─── Language toggle button ───────────────────────────────
   function updateTopbarLangBtn() {
     const langBtn = $("#topbarLangBtn");
-    if (langBtn) {
-      langBtn.textContent = STATE.lang === "ar" ? "EN" : "AR";
-      langBtn.classList.toggle("active-en", STATE.lang === "en");
-      langBtn.classList.toggle("active-ar", STATE.lang === "ar");
-    }
+    if (!langBtn) return;
+    langBtn.textContent = STATE.lang === "ar" ? "EN" : "AR";
+    langBtn.classList.toggle("active-en", STATE.lang === "en");
+    langBtn.classList.toggle("active-ar", STATE.lang === "ar");
   }
 
   function updateStaticStrings() {
@@ -465,21 +559,54 @@
       search.dir = STATE.lang === "ar" ? "rtl" : "ltr";
     }
 
-    const resetBtn = $(".topbar-btn[onclick*='resetShellProgress']");
+    const resetBtn = $("#resetProgressBtn");
     if (resetBtn) resetBtn.textContent = t("resetBtn");
 
+    const tweaksToggleLabel = $("#tweaksToggleLabel");
+    if (tweaksToggleLabel) tweaksToggleLabel.textContent = t("tweaksBtn");
+
+    const tweaksTitle = $("#tweaksTitle");
+    if (tweaksTitle) tweaksTitle.textContent = t("tweaksTitle");
+
+    const tweakAccentLabel = $("#tweakAccentLabel");
+    if (tweakAccentLabel) tweakAccentLabel.textContent = t("tweakAccentLabel");
+
+    const tweakDensityLabel = $("#tweakDensityLabel");
+    if (tweakDensityLabel) tweakDensityLabel.textContent = t("tweakDensityLabel");
+
+    const tweakBackdropLabel = $("#tweakBackdropLabel");
+    if (tweakBackdropLabel) tweakBackdropLabel.textContent = t("tweakBackdropLabel");
+
+    const tweakGrainLabel = $("#tweakGrainLabel");
+    if (tweakGrainLabel) tweakGrainLabel.textContent = t("tweakGrainLabel");
+
+    const accentLabels = I18N[STATE.lang].tweakAccentOptions;
+    const densityLabels = I18N[STATE.lang].tweakDensityOptions;
+    const accentGoldBtn = $("#accentGoldBtn");
+    const accentTealBtn = $("#accentTealBtn");
+    const accentDualBtn = $("#accentDualBtn");
+    const densityCompactBtn = $("#densityCompactBtn");
+    const densityCozyBtn = $("#densityCozyBtn");
+    const densitySpaciousBtn = $("#densitySpaciousBtn");
+
+    if (accentGoldBtn) accentGoldBtn.textContent = accentLabels.gold;
+    if (accentTealBtn) accentTealBtn.textContent = accentLabels.teal;
+    if (accentDualBtn) accentDualBtn.textContent = accentLabels.dual;
+    if (densityCompactBtn) densityCompactBtn.textContent = densityLabels.compact;
+    if (densityCozyBtn) densityCozyBtn.textContent = densityLabels.cozy;
+    if (densitySpaciousBtn) densitySpaciousBtn.textContent = densityLabels.spacious;
+
     const quizBtn = $("#topbarQuizBtn");
-    if (quizBtn) quizBtn.textContent = t("quizBtn");
+    if (quizBtn && quizBtn.style.display !== "none") quizBtn.textContent = t("quizBtn");
   }
 
-  // ─── Init ───────────────────────────────
   document.addEventListener("DOMContentLoaded", () => {
-    // Set initial language
     document.documentElement.lang = STATE.lang;
     document.documentElement.dir = STATE.lang === "ar" ? "rtl" : "ltr";
     document.documentElement.classList.toggle("lang-en", STATE.lang === "en");
     document.documentElement.classList.toggle("lang-ar", STATE.lang === "ar");
 
+    persist();
     renderSidebar();
     renderLesson();
     wireReadingProgress();
@@ -489,13 +616,13 @@
     updateTopbarLangBtn();
     updateStaticStrings();
 
-    // Wire language toggle button
     const langBtn = $("#topbarLangBtn");
     if (langBtn) {
       langBtn.addEventListener("click", () => {
-        const newLang = STATE.lang === "ar" ? "en" : "ar";
-        setLang(newLang);
+        setLang(STATE.lang === "ar" ? "en" : "ar");
       });
     }
+
+    window.addEventListener("resize", scheduleHeadlineFit);
   });
 })();
