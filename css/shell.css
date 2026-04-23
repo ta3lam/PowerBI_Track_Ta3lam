@@ -66,13 +66,39 @@ html[data-theme="light"] {
   --bg-1:      #F8F9FB;
   --bg-2:      #F0F3F7;
   --bg-3:      #E8EDF3;
-  --line:      #D9DFE8;
-  --line-2:    #CDD5E0;
+  --line:      #E2E8F0;
+  --line-2:    #CBD5E0;
 
   --ink:       #1A202C;
   --ink-2:     #4A5568;
   --ink-3:     #718096;
   --ink-4:     #A0AEC0;
+
+  --gold-soft: rgba(245,166,35,.08);
+  --gold-line: rgba(245,166,35,.2);
+  --teal-soft: rgba(0,180,216,.08);
+}
+
+/* Light mode element-specific overrides */
+html[data-theme="light"] .sidebar {
+  background: linear-gradient(180deg, rgba(248,249,251,.95), rgba(255,255,255,.98));
+}
+
+html[data-theme="light"] .reader-topbar {
+  background: rgba(248,249,251,.8);
+}
+
+html[data-theme="light"] .tweaks {
+  background: rgba(240,243,247,.95);
+  box-shadow: 0 20px 60px rgba(0,0,0,.1);
+}
+
+html[data-theme="light"] .lesson-item:hover {
+  background: rgba(0,0,0,.04);
+}
+
+html[data-theme="light"] .lesson-item:hover .lesson-title {
+  color: var(--ink);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -105,6 +131,20 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #D94830;
+}
+
+/* Light mode scrollbar */
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border: 2px solid #FFFFFF;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
 }
 
 button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }

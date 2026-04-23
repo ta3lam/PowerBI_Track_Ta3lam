@@ -29,6 +29,7 @@ window.CURRICULUM = [
       { id: "cleaning",    title: "تنظيف البيانات",           en: "Data Cleaning",    mins: 12, kind: "practice" },
       { id: "powerquery",  title: "محرر Power Query",          en: "Power Query",      mins: 18, kind: "practice" },
       { id: "mcode",       title: "لغة M المتقدمة",            en: "Advanced M Code",  mins: 22, kind: "code" },
+      { id: "query-folding", title: "Query Folding و الأداء", en: "Query Folding & Performance", mins: 24, kind: "theory" },
     ],
   },
   {
@@ -42,6 +43,8 @@ window.CURRICULUM = [
       { id: "relationships", title: "إدارة العلاقات",  en: "Relationships",  mins: 11, kind: "theory" },
       { id: "datetable",     title: "جدول التقويم",    en: "Date Table",     mins: 14, kind: "code" },
       { id: "hierarchies",   title: "التصنيفات الهرمية", en: "Hierarchies",    mins: 7,  kind: "practice" },
+      { id: "directquery",   title: "DirectQuery vs Import vs Live", en: "DirectQuery vs Import vs Live", mins: 22, kind: "theory" },
+      { id: "tabular-editor", title: "Tabular Editor و Advanced Modeling", en: "Tabular Editor & Advanced Modeling", mins: 26, kind: "code" },
     ],
   },
   {
@@ -80,6 +83,7 @@ window.CURRICULUM = [
       { id: "condformat",      title: "التنسيق الشرطي",              en: "Conditional Formatting",  mins: 10, kind: "practice" },
       { id: "drillthrough",    title: "Drill Down و Drill Through",  en: "Drill Through",           mins: 11, kind: "practice" },
       { id: "bookmarks",       title: "الإشارات المرجعية",            en: "Bookmarks",               mins: 9,  kind: "practice" },
+      { id: "mobile-design",   title: "Mobile Design و الـ Responsive", en: "Mobile Design & Responsive", mins: 18, kind: "practice" },
     ],
   },
   {
@@ -106,9 +110,12 @@ window.CURRICULUM = [
     accent: "teal",
     lessons: [
       { id: "performance",         title: "الأداء والتحسين",       en: "Performance",            mins: 16, kind: "theory" },
+      { id: "error-handling",      title: "Error Handling و Debugging", en: "Error Handling & Debugging", mins: 24, kind: "code" },
+      { id: "semantic-model",      title: "Semantic Model Design و Governance", en: "Semantic Model Design & Governance", mins: 28, kind: "theory" },
+      { id: "common-mistakes",     title: "الأخطاء الشائعة و Anti-patterns", en: "Common Mistakes & Anti-patterns", mins: 26, kind: "theory" },
+      { id: "cost-optimization",   title: "Cost Optimization و Premium", en: "Cost Optimization & Premium", mins: 22, kind: "theory" },
       { id: "python-pbi",          title: "Python داخل Power BI",  en: "Python in PBI",          mins: 18, kind: "code" },
       { id: "paginated",           title: "التقارير الموجهة",       en: "Paginated Reports",      mins: 12, kind: "practice" },
-      { id: "premium",             title: "مميزات Premium",         en: "Premium Features",       mins: 9,  kind: "reference" },
       { id: "external-tools",      title: "الأدوات الخارجية",        en: "External Tools",         mins: 11, kind: "reference" },
       { id: "apis",                title: "APIs و Embedded",        en: "APIs & Embedded",        mins: 14, kind: "code" },
       { id: "git-integration",     title: "Git و CI/CD",            en: "Git Integration",        mins: 10, kind: "reference" },
@@ -116,8 +123,21 @@ window.CURRICULUM = [
     ],
   },
   {
-    id: "kpi",
+    id: "automation",
     num: "08",
+    title: "الأتمتة والتكامل",
+    en: "Automation & Integration",
+    subtitle: "Power Automate & Alerts",
+    accent: "gold",
+    lessons: [
+      { id: "power-automate",  title: "Power Automate و الـ Alerts",      en: "Power Automate & Alerts",     mins: 24, kind: "code" },
+      { id: "auto-refresh",    title: "Automated Refresh و Scheduling",  en: "Automated Refresh & Scheduling", mins: 20, kind: "practice" },
+      { id: "automate-reports", title: "توليد التقارير الآلي",           en: "Automated Report Generation",  mins: 22, kind: "code" },
+    ],
+  },
+  {
+    id: "kpi",
+    num: "09",
     title: "مؤشرات الأداء الرئيسية",
     en: "KPI Domains",
     subtitle: "KPI Domains",
@@ -131,6 +151,34 @@ window.CURRICULUM = [
     ],
   },
 ];
+
+const advancedChapter = window.CURRICULUM.find((chapter) => chapter.id === "advanced");
+if (advancedChapter && !advancedChapter.lessons.some((lesson) => lesson.id === "calculation-groups")) {
+  advancedChapter.lessons.push(
+    { id: "calculation-groups", title: "Calculation Groups و Reusable Time Intelligence", en: "Calculation Groups & Reusable Time Intelligence", mins: 17, kind: "code" },
+    { id: "enterprise-security", title: "Enterprise Security — RLS و OLS و Permissions", en: "Enterprise Security — RLS, OLS & Permissions", mins: 18, kind: "theory" },
+    { id: "deployment-pipelines", title: "Deployment Pipelines و ALM Toolkit", en: "Deployment Pipelines & ALM Toolkit", mins: 16, kind: "practice" },
+    { id: "monitoring-adoption", title: "Monitoring و Adoption و Refresh Operations", en: "Monitoring, Adoption & Refresh Operations", mins: 15, kind: "theory" },
+    { id: "fabric-dataflows", title: "Fabric و Dataflows Gen2", en: "Fabric & Dataflows Gen2", mins: 18, kind: "practice" }
+  );
+}
+
+if (!window.CURRICULUM.some((chapter) => chapter.id === "projects")) {
+  window.CURRICULUM.push({
+    id: "projects",
+    num: "10",
+    title: "المشاريع ودراسات الحالة",
+    en: "Capstones & Case Studies",
+    subtitle: "Portfolio-ready Power BI projects",
+    accent: "blue",
+    lessons: [
+      { id: "project-retail-starter", title: "مشروع البداية — Pizza Place Sales", en: "Starter Project — Pizza Place Sales", mins: 35, kind: "practice" },
+      { id: "project-ops-intermediate", title: "مشروع متوسط — Online Chess Games", en: "Intermediate Project — Online Chess Games", mins: 45, kind: "practice" },
+      { id: "project-enterprise-advanced", title: "مشروع متقدم — Airbnb Market Intelligence", en: "Advanced Project — Airbnb Market Intelligence", mins: 60, kind: "practice" },
+      { id: "portfolio-playbook", title: "Portfolio و Interview Playbook", en: "Portfolio & Interview Playbook", mins: 20, kind: "reference" },
+    ],
+  });
+}
 
 // Flatten for progress tracking
 window.ALL_LESSONS = window.CURRICULUM.flatMap(ch =>
