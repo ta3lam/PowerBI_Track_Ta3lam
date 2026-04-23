@@ -101,6 +101,43 @@ html[data-theme="light"] .lesson-item:hover .lesson-title {
   color: var(--ink);
 }
 
+/* Certificate modal light mode */
+html[data-theme="light"] #certificateModal {
+  background: rgba(255,255,255,0.96) !important;
+}
+
+html[data-theme="light"] #certificateCard {
+  background: var(--bg-1) !important;
+  border-color: var(--accent) !important;
+}
+
+html[data-theme="light"] #certHeading {
+  color: var(--accent) !important;
+}
+
+html[data-theme="light"] #certSubheading {
+  color: var(--ink-2) !important;
+}
+
+html[data-theme="light"] #certCourseTitle {
+  color: var(--ink) !important;
+}
+
+html[data-theme="light"] #certNameInput {
+  background: var(--bg-2) !important;
+  border-color: var(--line) !important;
+  color: var(--ink) !important;
+}
+
+html[data-theme="light"] #certNameInput::placeholder {
+  color: var(--ink-3) !important;
+}
+
+html[data-theme="light"] #certDate,
+html[data-theme="light"] #certDateLabel {
+  color: var(--ink-2) !important;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {

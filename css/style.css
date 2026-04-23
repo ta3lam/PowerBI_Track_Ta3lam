@@ -46,6 +46,44 @@ html.lang-en {
   --legacy-kpi-body-size: 1.12rem;
 }
 
+/* Light mode for legacy lesson content */
+html[data-theme="light"] {
+  --gold: #D4860E;
+  --gold-dark: #A06A0A;
+  --gold-light: #F5E6C8;
+  --bg: #FFFFFF;
+  --bg2: #F8F9FB;
+  --bg3: #F0F3F7;
+  --bg4: #E8EDF3;
+  --border: #E2E8F0;
+  --border2: #CBD5E0;
+  --text: #1A202C;
+  --text2: #4A5568;
+  --text3: #718096;
+  --blue: #2C5282;
+  --teal: #0F7E5A;
+  --coral: #B84620;
+}
+
+/* Light mode element-specific overrides for legacy content */
+html[data-theme="light"] .ann-label {
+  background: rgba(248,249,251,0.92) !important;
+  border-color: var(--gold) !important;
+}
+
+html[data-theme="light"] .kpi-formula-box {
+  background: var(--bg2) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme="light"] .lightbox {
+  background: rgba(255,255,255,0.92) !important;
+}
+
+html[data-theme="light"] #lightbox-caption {
+  background: rgba(26,32,44,0.7) !important;
+}
+
 /* ── Lesson content elements (rendered inside .lesson) ── */
 /* Keep lesson content aligned to its own language mode, not the scroll container. */
 .lesson { direction: rtl; }
