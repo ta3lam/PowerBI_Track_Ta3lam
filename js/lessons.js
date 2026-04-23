@@ -5588,10 +5588,10 @@ Detect Changes: OrderUpdatedAt  <span class="cm">// A column that changes when a
 </div>` }],
   },
   "python-pbi": {
-    eyebrow: "07 · 02 — Python داخل Power BI",
+    eyebrow: "07 · 06 — Python داخل Power BI",
     title: "Python في Power BI",
     lede: "دمج Python مع Power BI يفتح أبواب التحليل الإحصائي المتقدم والمرئيات غير المتوفرة في Power BI الافتراضي — من Seaborn للـ Forecasting.",
-    en_eyebrow: "06 · 07 — Python Integration",
+    en_eyebrow: "07 · 06 — Python Integration",
     en_lede: "Using Python scripts within Power BI for advanced data transformations.",
     sectionId: "python-pbi",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -5722,10 +5722,10 @@ plt.show()
 </div>` }],
   },
   "paginated": {
-    eyebrow: "07 · 03 — التقارير المُصفَّحة",
+    eyebrow: "07 · 07 — التقارير المُصفَّحة",
     title: "Paginated Reports — التقارير المُصفَّحة",
     lede: "Power BI Paginated Reports هي التقارير المصممة للطباعة والتصدير — مثالية للفواتير، كشوف الرواتب، التقارير المحاسبية التي تمتد لصفحات متعددة.",
-    en_eyebrow: "06 · 08 — Paginated Reports",
+    en_eyebrow: "07 · 07 — Paginated Reports",
     en_lede: "Creating pixel-perfect reports optimized for printing and distribution.",
     sectionId: "paginated",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -5856,10 +5856,10 @@ plt.show()
 </div>` }],
   },
   "kpi-finance": {
-    eyebrow: "08 · 01 — المالية",
+    eyebrow: "09 · 01 — المالية",
     title: "💰 المؤشرات المالية — Financial KPIs",
     lede: "أهم مؤشرات الأداء المالي المستخدمة في تحليل صحة الشركة وربحيتها. كل KPI هنا فيه معادلة DAX جاهزة، مثال عملي، وأهميته.",
-    en_eyebrow: "07 · 01 — Financial KPIs",
+    en_eyebrow: "09 · 01 — Financial KPIs",
     en_lede: "Key financial metrics: Revenue, Profit, Margins, and Cash Flow.",
     sectionId: "kpi-finance",
     blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
@@ -6273,10 +6273,10 @@ plt.show()
 </div>` }],
   },
   "kpi-sales": {
-    eyebrow: "08 · 02 — المبيعات",
+    eyebrow: "09 · 02 — المبيعات",
     title: "📈 مؤشرات المبيعات — Sales KPIs",
     lede: "المؤشرات الأساسية لقياس أداء فريق المبيعات ونمو الإيرادات وجودة العملاء. لازم تتابعها أسبوعياً مش بس شهرياً.",
-    en_eyebrow: "07 · 02 — Sales KPIs",
+    en_eyebrow: "09 · 02 — Sales KPIs",
     en_lede: "Tracking sales performance: Revenue, Orders, Customer Acquisition, and Churn.",
     sectionId: "kpi-sales",
     blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
@@ -6629,10 +6629,10 @@ plt.show()
 </div>` }],
   },
   "kpi-inventory": {
-    eyebrow: "08 · 03 — المخزون والإمداد",
+    eyebrow: "09 · 03 — المخزون والإمداد",
     title: "📦 مؤشرات المخزون وسلسلة الإمداد — Inventory & Supply KPIs",
     lede: "مؤشرات بتقيس كفاءة إدارة المخزون والديون التجارية. حرجة جداً في قطاعات التجزئة والتصنيع والتوزيع.",
-    en_eyebrow: "07 · 03 — Inventory KPIs",
+    en_eyebrow: "09 · 03 — Inventory KPIs",
     en_lede: "Managing stock: Turnover, Stockout Rate, and Carrying Cost.",
     sectionId: "kpi-inventory",
     blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
@@ -6916,10 +6916,10 @@ plt.show()
 </div>` }],
   },
   "kpi-hr": {
-    eyebrow: "08 · 04 — الموارد البشرية",
+    eyebrow: "09 · 04 — الموارد البشرية",
     title: "👥 مؤشرات الموارد البشرية — HR KPIs",
     lede: "المؤشرات الأساسية لقياس كفاءة القوى البشرية وتكاليف التوظيف والاحتفاظ بالموظفين. مهمة جداً في الشركات الكبيرة.",
-    en_eyebrow: "07 · 04 — HR KPIs",
+    en_eyebrow: "09 · 04 — HR KPIs",
     en_lede: "Employee metrics: Headcount, Turnover, Satisfaction, and Productivity.",
     sectionId: "kpi-hr",
     blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
@@ -7208,10 +7208,10 @@ plt.show()
 </div>` }],
   },
   "kpi-marketing": {
-    eyebrow: "08 · 05 — التسويق",
+    eyebrow: "09 · 05 — التسويق",
     title: "📣 مؤشرات التسويق — Marketing KPIs",
     lede: "مؤشرات قياس كفاءة الإنفاق التسويقي، اكتساب العملاء، والاحتفاظ بهم. لازم تُربط دائماً بإيرادات حقيقية مش مجرد vanity metrics.",
-    en_eyebrow: "07 · 05 — Marketing KPIs",
+    en_eyebrow: "09 · 05 — Marketing KPIs",
     en_lede: "Campaign metrics: CAC, LTV, Conversion Rate, and ROI.",
     sectionId: "kpi-marketing",
     blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
@@ -9044,47 +9044,6 @@ plt.show()
   },
 
   // ==================== درس جديد: Power Automate و الـ Alerts ====================
-  // ==================== الدروس الأصلية الناقصة ====================
-  "git-integration": {
-    eyebrow: "07 · 10 — Git و CI/CD",
-    title: "Git و CI/CD",
-    lede: "تكامل Git والنشر التلقائي لنماذج Power BI",
-    en_eyebrow: "07 · 10 — Git Integration",
-    en_lede: "Git integration and automatic deployment of Power BI models",
-    sectionId: "git-integration",
-    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Git Integration مع Power BI</h3><p>استخدام Version Control مع Power BI لتتبع التغييرات والتعاون بين الفريق.</p><p><strong>الميزات:</strong></p><ul><li>تتبع كل تغيير في النموذج</li><li>العودة للإصدارات السابقة</li><li>مراجعة التغييرات قبل دمجها</li><li>تعاون آمن بين المحللين</li></ul></div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Git Integration with Power BI</h3><p>Using version control with Power BI to track changes and collaborate between team members.</p><p><strong>Features:</strong></p><ul><li>Track every model change</li><li>Revert to previous versions</li><li>Review changes before merging</li><li>Safe collaboration between analysts</li></ul></div>` }],
-  },
-  "external-tools": {
-    eyebrow: "07 · 08 — الأدوات الخارجية",
-    title: "الأدوات الخارجية",
-    lede: "أدوات مساعدة تحسّن إنتاجيتك مع Power BI",
-    en_eyebrow: "07 · 08 — External Tools",
-    en_lede: "Helper tools that improve your productivity with Power BI",
-    sectionId: "external-tools",
-    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>الأدوات الخارجية الأساسية</h3><p><strong>DAX Studio:</strong> اختبار DAX وتحسين الأداء</p><p><strong>Tabular Editor:</strong> تحرير سريع للنماذج</p><p><strong>Power BI Helper:</strong> أتمتة العمليات</p><p><strong>BirdsOfAFeather:</strong> تصدير البيانات</p></div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Essential External Tools</h3><p><strong>DAX Studio:</strong> Test DAX and improve performance</p><p><strong>Tabular Editor:</strong> Quick model editing</p><p><strong>Power BI Helper:</strong> Automate operations</p><p><strong>BirdsOfAFeather:</strong> Export data</p></div>` }],
-  },
-  "apis": {
-    eyebrow: "07 · 09 — APIs و Embedded",
-    title: "APIs و Embedded",
-    lede: "دمج Power BI في التطبيقات الخارجية",
-    en_eyebrow: "07 · 09 — APIs & Embedded",
-    en_lede: "Embed Power BI in external applications",
-    sectionId: "apis",
-    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Power BI APIs</h3><p><strong>REST API:</strong> الوصول البرمجي للتقارير</p><p><strong>Embedded Analytics:</strong> دمج التقارير في تطبيقك</p><p><strong>Service Principal:</strong> تشفير الاتصال التلقائي</p><p><strong>الفائدة:</strong> قوة Power BI في تطبيقك الخاص</p></div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Power BI APIs</h3><p><strong>REST API:</strong> Programmatic access to reports</p><p><strong>Embedded Analytics:</strong> Embed reports in your app</p><p><strong>Service Principal:</strong> Automate connections</p><p><strong>Benefit:</strong> Power BI strength in your own app</p></div>` }],
-  },
-  "advanced-dataflows": {
-    eyebrow: "07 · 11 — Dataflows المتقدمة",
-    title: "Dataflows المتقدمة",
-    lede: "نقل ETL إلى السحابة باستخدام Dataflows",
-    en_eyebrow: "07 · 11 — Advanced Dataflows",
-    en_lede: "Move ETL to cloud using Dataflows",
-    sectionId: "advanced-dataflows",
-    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>ما هي Dataflows؟</h3><p>Dataflows هي طريقة لإنشاء ETL (Extract, Transform, Load) في السحابة بدلاً من الكمبيوتر.</p><p><strong>المميزات:</strong></p><ul><li>معالجة بيانات في السحابة</li><li>معادة استخدام العمليات</li><li>أداء أفضل من Power Query</li><li>تكامل مع التطبيقات الأخرى</li></ul></div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>What are Dataflows?</h3><p>Dataflows are a way to create ETL in cloud instead of on your computer.</p><p><strong>Features:</strong></p><ul><li>Process data in cloud</li><li>Reuse processes</li><li>Better performance than Power Query</li><li>Integration with other apps</li></ul></div>` }],
-  },
 
   "power-automate": {
     eyebrow: "08 · 01 — Power Automate و الـ Alerts",
