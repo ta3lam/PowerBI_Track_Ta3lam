@@ -3670,6 +3670,58 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
     </div>
 
     <div class="lesson-card">
+      <h3>أنواع Slicers المختلفة</h3>
+      <p>Power BI يوفر عدة أنواع slicers لحالات استخدام مختلفة:</p>
+      <ul>
+        <li><strong>List Slicer:</strong> قائمة بجميع القيم (الافتراضي). مثالي للفئات القليلة (منطقة، منتج).</li>
+        <li><strong>Dropdown Slicer:</strong> قائمة منسدلة توفر مساحة. استخدمه عندما تكون القيم كثيرة جداً.</li>
+        <li><strong>Tile Slicer:</strong> أزرار قابلة للنقر. جميل للـ UI لكن يأخذ مساحة.</li>
+        <li><strong>Between Slicer:</strong> نطاق (Min-Max). مثالي للأرقام والتواريخ (السعر بين 100-500 ريال).</li>
+        <li><strong>Relative Date Slicer:</strong> تواريخ نسبية (آخر 30 يوم، آخر 12 شهر). لـ التقارير الديناميكية.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تخصيص Slicer Header و Styling</h3>
+      <p>اختر Visual ← Format ← Slicer Header:</p>
+      <ul>
+        <li><strong>Show Header:</strong> إظهار/إخفاء العنوان.</li>
+        <li><strong>Header Text:</strong> غير اسم الـ Slicer للقارئ (مثل "اختر المنطقة" بدل "Region").</li>
+        <li><strong>Search:</strong> أضف صندوق بحث للـ Slicers الكبيرة.</li>
+        <li><strong>Selection Controls:</strong> أزرار Select All / Clear Filter.</li>
+        <li><strong>Single Select:</strong> مستخدم يختار قيمة واحدة فقط (بدل متعدد).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What-If Parameters — Slicers للمتغيرات</h3>
+      <p>بدل slicer عادي على عمود موجود، اصنع Slicer تفاعلي للحسابات:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>إنشاء What-If Parameter</h4>
+            <p>Modeling ← New Parameter. اختر نطاق القيم (مثل 0-100 للنسبة المئوية).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>إنشاء Measure يستخدم Parameter</h4>
+            <p>مثال: Sales with Growth = [Total Sales] * (1 + Discount[Discount Value]).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>إضافة Slicer</h4>
+            <p>السليسر تلقائياً يحدّث الـ Measure عند تغيير القيمة (scenario planning).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
       <h3>Slicer Panel — Panel مخفي بزر</h3>
       <p>تقنية شائعة: ضع الـ Slicers في صفحة منفصلة أو في Overlay Panel يظهر/يختفي بالـ Bookmarks. يوفر مساحة التقرير ويحسن تجربة المستخدم.</p>
     </div>
@@ -3677,6 +3729,11 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
     <div class="tip-box">
       <div class="icon">💡</div>
       <p><strong>أفضل ممارسة:</strong> استخدم Sync Slicers للفلاتر العالمية (السنة، المنطقة) وEdit Interactions=None للـ KPI Cards حتى لا تتغير بالضغط على الشارتات.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذير:</strong> الـ Relative Date Slicer يُحدّث نطاقه تلقائياً بناءً على اليوم الحالي (آخر 30 يوم متغير دائماً). تأكد أن هذا ما تريده — قد لا يناسب التقارير التاريخية.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>Sync Slicers — Sync filters between pages</h3>
@@ -3723,12 +3780,70 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
 </div>
 </div>
 <div class="lesson-card">
+<h3>Different Types of Slicers</h3>
+<p>Power BI offers different slicer types for different use cases:</p>
+<ul>
+<li><strong>List Slicer:</strong> List of all values (default). Perfect for few categories (region, product).</li>
+<li><strong>Dropdown Slicer:</strong> Dropdown list saves space. Use when values are too many.</li>
+<li><strong>Tile Slicer:</strong> Clickable buttons. Nice for UI but takes space.</li>
+<li><strong>Between Slicer:</strong> Range (Min-Max). Perfect for numbers and dates (Price between 100-500).</li>
+<li><strong>Relative Date Slicer:</strong> Relative dates (last 30 days, last 12 months). For dynamic reports.</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>Customize Slicer Header and Styling</h3>
+<p>Choose Visual → Format → Slicer Header:</p>
+<ul>
+<li><strong>Show Header:</strong> Show/hide the title.</li>
+<li><strong>Header Text:</strong> Change slicer name for reader (like "Select Region" instead of "Region").</li>
+<li><strong>Search:</strong> Add search box for large slicers.</li>
+<li><strong>Selection Controls:</strong> Select All / Clear Filter buttons.</li>
+<li><strong>Single Select:</strong> User picks one value only (instead of multiple).</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>What-If Parameters — Slicers for Variables</h3>
+<p>Instead of normal slicer on existing column, create interactive slicer for calculations:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create What-If Parameter</h4>
+<p>Modeling → New Parameter. Choose value range (like 0-100 for percentage).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Create Measure using Parameter</h4>
+<p>Example: Sales with Growth = [Total Sales] * (1 + Discount[Discount Value]).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Add Slicer</h4>
+<p>Slicer automatically updates Measure when value changes (scenario planning).</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lesson-card">
 <h3>Slicer Panel — Panel hidden by a button</h3>
 <p>Common technique: Place the Slicers on a separate page or in the Overlay Panel to appear/disappear with the Bookmarks. Saves report space and improves user experience.</p>
 </div>
+
 <div class="tip-box">
 <div class="icon">💡</div>
-<p><strong>Best practice:</strong> use Sync Slicers For global filters (Year, region) andEdit Interactions=None For KPI Cards So as not to change by clicking on the charts.</p>
+<p><strong>Best practice:</strong> Use Sync Slicers for global filters (Year, region) and Edit Interactions=None for KPI Cards so they don't change when clicking charts.</p>
+</div>
+
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> Relative Date Slicer updates its range automatically based on today (last 30 days always changes). Make sure this is what you want — it may not suit historical reports.</p>
 </div>` }],
   },
   "themes": {
@@ -11251,6 +11366,69 @@ Time Intelligence
     </div>
 
     <div class="lesson-card">
+      <h3>كيف تبني Calculation Group (في Tabular Editor)</h3>
+      <p>Power BI Desktop لا يوفر واجهة كاملة. يجب استخدام Tabular Editor:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>افتح Tabular Editor</h4>
+            <p>External Tools ← Tabular Editor (أو نزّل من GitHub).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>أنشئ Calculation Group</h4>
+            <p>Right-click على Model ← Create → Calculation Group. اسمها "Time Intelligence" مثلاً.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>أضف Calculation Items</h4>
+            <p>Right-click على Group ← Add Calculation Item "YTD". ثم اكتب DAX:
+            <br><code>CALCULATE(SELECTEDMEASURE(), DATESYTD(Dates[Date]))</code></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>أضف Slicer</h4>
+            <p>أضف slicer على الـ Calculation Group column (تلقائياً يختار "Current" أو "YTD").</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>SELECTEDMEASURE() — السحر الحقيقي</h3>
+      <p><strong>SELECTEDMEASURE():</strong> دالة تشير إلى الـ Measure الحالية المختارة في الـ context.</p>
+      <div class="code-block">
+في Calculation Item "YTD":
+<span class="fn">SELECTEDMEASURE</span>() يعني "أياً كان الـ measure المختار الآن (Sales, Profit, Quantity)"
+<span class="fn">CALCULATE</span>(<span class="fn">SELECTEDMEASURE</span>(), <span class="fn">DATESYTD</span>(...))</p>
+      <p>بدونها، ستضطر تكتب:</p>
+      <ul>
+        <li>YTD of Sales = CALCULATE([Sales], DATESYTD(...))</li>
+        <li>YTD of Profit = CALCULATE([Profit], DATESYTD(...))</li>
+        <li>YTD of Quantity = CALCULATE([Quantity], DATESYTD(...))</li>
+      </ul>
+      <p><strong>مع SELECTEDMEASURE():</strong> formula واحدة تشتغل على كل الـ measures!</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Precedence (الأولوية) عند تعارض Items</h3>
+      <p>إذا كان عندك calculation groups متعددة (Time و Currency مثلاً)، ماذا يحدث؟</p>
+      <ul>
+        <li><strong>Format String Precedence:</strong> كل item لها priority. Power BI تطبق من الأعلى أولوية للأقل.</li>
+        <li><strong>التحكم:</strong> في Tabular Editor، اضبط Ordinal لكل item (1, 2, 3...).</li>
+        <li><strong>مثال واقعي:</strong> Time Group تطبق أولاً (YTD)، ثم Currency Group تطبق (Format as USD).</li>
+      </ul>
+      <p><strong>احذر:</strong> إذا كانت كل group تعدّل same column، قد تحصل على نتائج غير متوقعة.</p>
+    </div>
+
+    <div class="lesson-card">
       <h3>متى تستحق الجهد؟</h3>
       <ul>
         <li>عند وجود عشرات الـ measures الأساسية</li>
@@ -11263,6 +11441,11 @@ Time Intelligence
     <div class="tip-box">
       <div class="icon">💡</div>
       <p><strong>أفضل استخدام:</strong> اجعل Calculation Groups طبقة موحدة فوق base measures النظيفة. إذا كانت measures الأصلية نفسها فوضوية، فـ Calculation Groups لن تنقذك.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذير:</strong> Calculation Groups لا تعمل مع External Tools في Power BI Service (لكن تعمل في Desktop). اختبر دائماً قبل النشر.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
       <h3>What problem do calculation groups solve?</h3>
@@ -11291,6 +11474,69 @@ Time Intelligence
     </div>
 
     <div class="lesson-card">
+      <h3>How to Build a Calculation Group (in Tabular Editor)</h3>
+      <p>Power BI Desktop does not provide full interface. Use Tabular Editor:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Open Tabular Editor</h4>
+            <p>External Tools → Tabular Editor (or download from GitHub).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Create Calculation Group</h4>
+            <p>Right-click on Model → Create → Calculation Group. Name it "Time Intelligence" for example.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Add Calculation Items</h4>
+            <p>Right-click on Group → Add Calculation Item "YTD". Then write DAX:
+            <br><code>CALCULATE(SELECTEDMEASURE(), DATESYTD(Dates[Date]))</code></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Add Slicer</h4>
+            <p>Add slicer on the Calculation Group column (automatically picks "Current" or "YTD").</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>SELECTEDMEASURE() — The Real Magic</h3>
+      <p><strong>SELECTEDMEASURE():</strong> A function that refers to the current selected measure in context.</p>
+      <div class="code-block">
+In Calculation Item "YTD":
+<span class="fn">SELECTEDMEASURE</span>() means "whatever measure is currently chosen (Sales, Profit, Quantity)"
+<span class="fn">CALCULATE</span>(<span class="fn">SELECTEDMEASURE</span>(), <span class="fn">DATESYTD</span>(...))</p>
+      <p>Without it, you'd have to write:</p>
+      <ul>
+        <li>YTD of Sales = CALCULATE([Sales], DATESYTD(...))</li>
+        <li>YTD of Profit = CALCULATE([Profit], DATESYTD(...))</li>
+        <li>YTD of Quantity = CALCULATE([Quantity], DATESYTD(...))</li>
+      </ul>
+      <p><strong>With SELECTEDMEASURE():</strong> one formula works across all measures!</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Precedence (Priority) When Items Conflict</h3>
+      <p>If you have multiple calculation groups (Time and Currency for example), what happens?</p>
+      <ul>
+        <li><strong>Format String Precedence:</strong> each item has priority. Power BI applies from highest to lowest.</li>
+        <li><strong>Control:</strong> in Tabular Editor, set Ordinal for each item (1, 2, 3...).</li>
+        <li><strong>Real example:</strong> Time Group applies first (YTD), then Currency Group applies (Format as USD).</li>
+      </ul>
+      <p><strong>Caution:</strong> If each group modifies the same column, you may get unexpected results.</p>
+    </div>
+
+    <div class="lesson-card">
       <h3>When is the extra setup worth it?</h3>
       <ul>
         <li>When the model already has many core measures.</li>
@@ -11301,8 +11547,13 @@ Time Intelligence
     </div>
 
     <div class="tip-box">
-      <div class="icon">?</div>
-      <p><strong>Best use case:</strong> keep your base measures clean first, then place calculation groups on top of them. If the original measures are messy, calculation groups will only automate the mess.</p>
+      <div class="icon">💡</div>
+      <p><strong>Best use case:</strong> Keep your base measures clean first, then place calculation groups on top. If the original measures are messy, calculation groups will only automate the mess.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>Warning:</strong> Calculation Groups don't work with External Tools in Power BI Service (but work in Desktop). Always test before publishing.</p>
     </div>` }],
   },
 
@@ -11352,14 +11603,145 @@ Time Intelligence
       </ul>
     </div>
 
-    <div class="warn-box">
-      <div class="icon">⚠️</div>
+    <div class=”lesson-card”>
+      <h3>كيفية إعداد OLS (Object Level Security) في Tabular Editor</h3>
+      <p>OLS تسمح بإخفاء أعمدة أو جداول كاملة عن أدوار معينة:</p>
+      <div class=”steps”>
+        <div class=”step”>
+          <div class=”step-num”>1</div>
+          <div class=”step-content”>
+            <h4>افتح Tabular Editor</h4>
+            <p>في Power BI Desktop → External Tools → Tabular Editor.</p>
+          </div>
+        </div>
+        <div class=”step”>
+          <div class=”step-num”>2</div>
+          <div class=”step-content”>
+            <h4>اختر العمود المحساس (مثل Cost)</h4>
+            <p>في Model tree، جد الجدول والعمود → Right-click → Edit Metadata.</p>
+          </div>
+        </div>
+        <div class=”step”>
+          <div class=”step-num”>3</div>
+          <div class=”step-content”>
+            <h4>اضبط OLS</h4>
+            <p>اضبط Roles الذي يستطيع رؤية العمود. Role لا تُختار = العمود مخفي.</p>
+          </div>
+        </div>
+        <div class=”step”>
+          <div class=”step-num”>4</div>
+          <div class=”step-content”>
+            <h4>احفظ</h4>
+            <p>Save and refresh في Power BI Desktop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=”lesson-card”>
+      <h3>Dynamic RLS مع USERPRINCIPALNAME()</h3>
+      <p><strong>Static RLS:</strong> حدد الأدوار يدويّاً (Admin role يرى الكل). <strong>Dynamic RLS:</strong> استخدم بيانات المستخدم الفعليّة:</p>
+      <div class=”code-block”>
+-- في Power BI Desktop، اذهب لـ Modeling → Manage Roles
+-- اصنع Role اسمه “Regional Manager”
+-- في Filter DAX على جدول Dim_Region:
+
+[Region] = USERPRINCIPALNAME()
+
+أو:
+
+[Manager ID] = [User Principal Name] من Security table مربوط
+      </div>
+      <p><strong>الفكرة:</strong> كل مستخدم (ahmed@company.com) يُعطى وسم في Security table (Region = Cairo). DAX checks: هل هذا الصف مسموح ليوزر البته؟</p>
+    </div>
+
+    <div class=”lesson-card”>
+      <h3>اختبار RLS في Power BI Desktop</h3>
+      <p>قبل النشر، اختبر RLS محليّاً:</p>
+      <ul>
+        <li><strong>Modeling → Manage Roles → View as (اختر الدور)</strong> — تشوف البيانات تتفلتر تلقائياً.</li>
+        <li><strong>Validate the filter:</strong> إذا كنت تختبر Region=”Cairo”، شُف هل الأرقام نزلت لـ Cairo data فقط.</li>
+        <li><strong>Test multiple roles:</strong> اختبر Admin (كل البيانات)، Regional (Cairo فقط)، Viewer (limited).</li>
+      </ul>
+      <p><strong>حذر:</strong> في Service، RLS تطبق تلقائياً على المستخدم المُسجّل الدخول. في Desktop، انت تختبر يدويّاً. فرق كبير!</p>
+    </div>
+
+    <div class=”warn-box”>
+      <div class=”icon”>⚠️</div>
       <p><strong>أكثر خطأ شائع:</strong> إعطاء Workspace access واسع ثم القول “لدينا RLS”. الـ RLS لا تعالج وحدها سوء توزيع الصلاحيات أو Build rights أو الوصول المباشر للبيئة الخطأ.</p>
     </div>
 
-    <div class="tip-box">
-      <div class="icon">💡</div>
-      <p><strong>Security design rule:</strong> ابدأ من السؤال “ما أقل صلاحية تكفي هذا الدور؟” وليس “كيف أجعل كل شيء يعمل بسرعة؟”. الأمان الجيد يبدأ من principle of least privilege.</p>
+    <div class=”lesson-card”>
+      <h3>How to Set Up OLS (Object Level Security) in Tabular Editor</h3>
+      <p>OLS allows hiding entire columns or tables from certain roles:</p>
+      <div class=”steps”>
+        <div class=”step”>
+          <div class=”step-num”>1</div>
+          <div class=”step-content”>
+            <h4>Open Tabular Editor</h4>
+            <p>In Power BI Desktop → External Tools → Tabular Editor.</p>
+          </div>
+        </div>
+        <div class=”step”>
+          <div class=”step-num”>2</div>
+          <div class=”step-content”>
+            <h4>Choose the sensitive column (like Cost)</h4>
+            <p>In Model tree, find the table and column → Right-click → Edit Metadata.</p>
+          </div>
+        </div>
+        <div class=”step”>
+          <div class=”step-num”>3</div>
+          <div class=”step-content”>
+            <h4>Set up OLS</h4>
+            <p>Set which Roles can see the column. Roles not selected = column is hidden.</p>
+          </div>
+        </div>
+        <div class=”step”>
+          <div class=”step-num”>4</div>
+          <div class=”step-content”>
+            <h4>Save</h4>
+            <p>Save and refresh in Power BI Desktop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=”lesson-card”>
+      <h3>Dynamic RLS with USERPRINCIPALNAME()</h3>
+      <p><strong>Static RLS:</strong> Manually define roles (Admin sees all). <strong>Dynamic RLS:</strong> Use actual user data:</p>
+      <div class=”code-block”>
+-- In Power BI Desktop, go to Modeling → Manage Roles
+-- Create a Role named “Regional Manager”
+-- In Filter DAX on Dim_Region table:
+
+[Region] = USERPRINCIPALNAME()
+
+OR:
+
+[Manager ID] matches [User Principal Name] from a linked Security table
+      </div>
+      <p><strong>The idea:</strong> Each user (ahmed@company.com) is tagged in a Security table (Region = Cairo). DAX checks: is this row allowed for this user?</p>
+    </div>
+
+    <div class=”lesson-card”>
+      <h3>Testing RLS in Power BI Desktop</h3>
+      <p>Before publishing, test RLS locally:</p>
+      <ul>
+        <li><strong>Modeling → Manage Roles → View as (select role)</strong> — data auto-filters.</li>
+        <li><strong>Validate the filter:</strong> If testing Region=”Cairo”, verify numbers dropped to Cairo data only.</li>
+        <li><strong>Test multiple roles:</strong> Test Admin (all data), Regional (Cairo only), Viewer (limited).</li>
+      </ul>
+      <p><strong>Important:</strong> In Service, RLS applies automatically to the logged-in user. In Desktop, you test manually. Big difference!</p>
+    </div>
+
+    <div class=”warn-box”>
+      <div class=”icon”>⚠️</div>
+      <p><strong>Common mistake:</strong> Giving broad workspace access and claiming “we have RLS.” RLS alone does not fix weak workspace permissions or unnecessary Build rights.</p>
+    </div>
+
+    <div class=”tip-box”>
+      <div class=”icon”>💡</div>
+      <p><strong>Security design rule:</strong> Start with “what is the minimum permission needed for this role?” not “how do I make everything work fast?” Good security starts with least privilege.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<table class="compare-table">
       <tr>
@@ -11546,9 +11928,68 @@ Time Intelligence
       <p>غياب هذا التحديد يحوّل أي dashboard ناجحة إلى “مشكلة مشتركة لا يملكها أحد”.</p>
     </div>
 
+    <div class="lesson-card">
+      <h3>الوصول إلى Activity Log والـ Admin Monitoring</h3>
+      <p><strong>خطوة 1: Power BI Service Admin Portal</strong></p>
+      <ul>
+        <li>في Power BI Service، انقر على Admin Portal (أيقونة الترس).</li>
+        <li>اختر Tenant Settings ← Audit and monitoring ← Audit Log.</li>
+        <li>ستشوف سجل كل الـ activities: من فتح التقرير، من حدّث النموذج، متى فشل الـ refresh.</li>
+      </ul>
+      <p><strong>خطوة 2: Admin Monitoring Workspace (مميزة متقدمة)</strong></p>
+      <ul>
+        <li>Admin Settings ← Workspace Settings ← Create Monitoring Workspace.</li>
+        <li>Power BI تنشئ workspace خاص يحتوي على dashboards مراقبة تلقائية (Usage، Refresh Reliability).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>بناء "Report Usage" Dashboard خاص</h3>
+      <p>بدل الاعتماد على المراقبة الافتراضية، اصنع dashboard مخصص:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>استخدم Microsoft Fabric Admin API</h4>
+            <p>Power BI توفر API للـ Activity Log. تقدر تسحب البيانات عبر Power Automate أو Python.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>قيّس الـ Metrics الصحيحة</h4>
+            <p>Views per User، Pages per Report، Refresh Frequency، Avg Render Time.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>اصنع Alerts</h4>
+            <p>لو التقرير حصل على 0 views في أسبوع، أو refresh فشل مرتين متتاليتين، شغّل تنبيه.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Refresh Operations والفشل</h3>
+      <p><strong>مراقبة الـ Refresh:</strong></p>
+      <ul>
+        <li><strong>Success Rate:</strong> لو أقل من 95% في الشهر الأخير، هناك مشكلة نظامية (Data Gateway issues، source database down).</li>
+        <li><strong>Duration Trend:</strong> لو الـ refresh بدأت تأخذ ساعتين بدل 20 دقيقة، هناك bloat في البيانات أو query performance issue.</li>
+        <li><strong>Failure Alerts:</strong> في Data Gateway Settings، اضبط Email Notifications عند فشل refresh.</li>
+      </ul>
+      <p><strong>استكشاف الأخطاء:</strong> Dataset Settings ← Refresh History يشوفك الأخطاء الدقيقة (auth failed، timeout، SQL Server down).</p>
+    </div>
+
     <div class="warn-box">
       <div class="icon">⚠️</div>
       <p><strong>خطأ شائع:</strong> قياس النجاح بعدد المشاهدات فقط. قد يحصل التقرير على 1000 view لأنه التقرير الوحيد المتاح، لا لأنه الأفضل. النجاح الحقيقي هو: استخدام متكرر + ثقة + قرار أفضل.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>نصيحة مهمة:</strong> دراسة Adoption ليست لحظية. خذ 4-6 أسابيع على الأقل قبل الحكم. التقارير الجيدة تحتاج وقتاً لينسج الفريق أسلوب استخدام جديد في روتينهم.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
       <h3>Four operational signals to monitor</h3>
@@ -11582,9 +12023,68 @@ Time Intelligence
       <p>Without ownership, even a successful dashboard slowly turns into a shared problem that nobody truly maintains.</p>
     </div>
 
+    <div class="lesson-card">
+      <h3>Accessing Activity Log and Admin Monitoring</h3>
+      <p><strong>Step 1: Power BI Service Admin Portal</strong></p>
+      <ul>
+        <li>In Power BI Service, click Admin Portal (gear icon).</li>
+        <li>Choose Tenant Settings → Audit and monitoring → Audit Log.</li>
+        <li>You'll see activity log: who opened the report, who modified the model, when refresh failed.</li>
+      </ul>
+      <p><strong>Step 2: Admin Monitoring Workspace (advanced feature)</strong></p>
+      <ul>
+        <li>Admin Settings → Workspace Settings → Create Monitoring Workspace.</li>
+        <li>Power BI creates a dedicated workspace with automated monitoring dashboards (Usage, Refresh Reliability).</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Building a Custom "Report Usage" Dashboard</h3>
+      <p>Instead of relying on default monitoring, create a custom dashboard:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Use Microsoft Fabric Admin API</h4>
+            <p>Power BI provides an API for Activity Log. Pull data via Power Automate or Python.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Measure the right metrics</h4>
+            <p>Views per User, Pages per Report, Refresh Frequency, Avg Render Time.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Set up Alerts</h4>
+            <p>If the report gets 0 views in a week, or refresh fails twice in a row, trigger an alert.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Refresh Operations and Failures</h3>
+      <p><strong>Monitor Refresh Health:</strong></p>
+      <ul>
+        <li><strong>Success Rate:</strong> If below 95% over a month, there's a systemic issue (Data Gateway problems, source database down).</li>
+        <li><strong>Duration Trend:</strong> If refresh went from 20 minutes to 2 hours, there's data bloat or query performance degradation.</li>
+        <li><strong>Failure Alerts:</strong> In Data Gateway Settings, enable Email Notifications on refresh failure.</li>
+      </ul>
+      <p><strong>Troubleshoot:</strong> Dataset Settings → Refresh History shows exact failures (auth failed, timeout, SQL Server down).</p>
+    </div>
+
     <div class="warn-box">
-      <div class="icon">!</div>
-      <p><strong>Common mistake:</strong> measuring success by total views alone. A report can get many views because it is the only available report, not because it is trusted or useful. Real success is repeat usage plus confidence plus better decisions.</p>
+      <div class="icon">⚠️</div>
+      <p><strong>Common mistake:</strong> Measuring success by total views alone. A report can get many views because it's the only available report, not because it's trusted. Real success = repeat usage + confidence + better decisions.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Important tip:</strong> Adoption studies are not instantaneous. Wait 4-6 weeks minimum before judging. Good reports need time for teams to embed them into their routine workflow.</p>
     </div>` }],
   },
 
