@@ -164,6 +164,996 @@
       "correctAnswer": 0,
       "explanation": "CALCULATE هي أهم دالة في DAX، وتستخدم لتغيير سياق الفلترة (Filter Context) أثناء حساب المقياس.",
       "points": 8
+    },
+    {
+      "id": "q13",
+      "section": "performance",
+      "question": "في أغلب مشاريع Power BI، ما الـ mode الذي يُعد الاختيار الافتراضي عادةً ما لم توجد حاجة واضحة لغيره؟",
+      "type": "multiple_choice",
+      "options": [
+        "Import",
+        "DirectQuery",
+        "Live Connection دائمًا",
+        "Dual لكل الجداول"
+      ],
+      "correctAnswer": 0,
+      "explanation": "غالبًا ما يكون Import هو الخيار الافتراضي لأنه أسرع ويدعم قدرات DAX كاملة، بينما DirectQuery يُستخدم عندما تفرض الحالة ذلك مثل الحاجة لبيانات كبيرة جدًا أو قريبة من الزمن الحقيقي.",
+      "points": 6
+    },
+    {
+      "id": "q14",
+      "section": "semantic-model",
+      "question": "أي اسم من الآتي يعكس Naming Convention أنضج لجدول في Semantic Model احترافي؟",
+      "type": "multiple_choice",
+      "options": [
+        "Product",
+        "Products_Table_Final",
+        "tblProduct",
+        "منتجات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الاسم المفرد والواضح مثل Product أسهل للفهم والصيانة، ويُعد أفضل من الأسماء المليئة بالـ prefixes أو اللاحقات أو الأسماء غير المتسقة.",
+      "points": 5
+    },
+    {
+      "id": "q15",
+      "section": "common-mistakes",
+      "question": "إذا كان لديك Many-to-Many بين Product و Campaign، فما البديل الأكثر أمانًا غالبًا بدل الاعتماد على ربط مباشر سريع؟",
+      "type": "multiple_choice",
+      "options": [
+        "إلغاء العلاقة تمامًا",
+        "Bridge Table بين الطرفين",
+        "تحويل كل الجداول إلى Flat Table واحدة",
+        "استخدام Bidirectional filters في كل العلاقات"
+      ],
+      "correctAnswer": 1,
+      "explanation": "الـ Bridge Table هو الحل الأكثر انضباطًا في كثير من حالات Many-to-Many لأنه يجعل منطق الربط ومسار الفلاتر أوضح وأسهل للاختبار.",
+      "points": 7
+    },
+    {
+      "id": "q16",
+      "section": "external-tools",
+      "question": "أي أداة من الأدوات الخارجية تُستخدم غالبًا لتشخيص بطء الاستعلامات ومراجعة Server Timings وVertiPaq Analyzer؟",
+      "type": "multiple_choice",
+      "options": [
+        "Tabular Editor",
+        "DAX Studio",
+        "Power BI Helper",
+        "Excel Power Pivot"
+      ],
+      "correctAnswer": 1,
+      "explanation": "DAX Studio هي الأداة الأشهر لتشخيص الأداء على مستوى الاستعلامات والذاكرة، بينما Tabular Editor يركز أكثر على تنظيم النموذج والتعديل الجماعي.",
+      "points": 6
+    },
+    {
+      "id": "q17",
+      "section": "apis",
+      "question": "ما الوصف الأدق لـ Service Principal في سياق Power BI APIs وAutomation؟",
+      "type": "multiple_choice",
+      "options": [
+        "طريقة لتشفير البيانات داخل التقرير",
+        "هوية تطبيق غير بشرية تستخدم للأتمتة والتكامل بين الأنظمة",
+        "نوع خاص من الـ visual داخل Power BI Service",
+        "بديل عن Row-Level Security"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Service Principal هو Application Identity تُستخدم للأتمتة والتكامل، وليس أسلوب تشفير أو بديلًا عن تصميم الأمان داخل النموذج.",
+      "points": 7
+    },
+    {
+      "id": "q18",
+      "section": "git-integration",
+      "question": "متى يصبح استخدام Git أكثر فائدة فعلية مع Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تعمل فقط بملف PBIX ثنائي بدون Metadata قابلة للمقارنة",
+        "عندما تعتمد PBIP/TMDL أو ملفات قابلة للمراجعة والـ diff",
+        "عندما تريد تغيير الألوان في التقرير فقط",
+        "عندما تريد حذف Workspace كاملة"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Git يصبح ذا قيمة حقيقية عندما تكون ملفات المشروع قابلة للمراجعة والمقارنة، مثل PBIP/TMDL، لا عندما يكون العمل محصورًا في ملف ثنائي صعب الـ diff.",
+      "points": 6
+    },
+    {
+      "id": "q19",
+      "section": "advanced-dataflows",
+      "question": "متى يكون استخدام Dataflow أكثر منطقية من تنفيذ نفس التحويلات داخل Power Query في Desktop فقط؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تكون نفس منطقية التنظيف مطلوبة عبر أكثر من Dataset أو فريق",
+        "عندما يكون التقرير صفحة واحدة فقط",
+        "عندما لا يوجد أي إعادة استخدام للبيانات",
+        "عندما تريد تجنب كتابة أي أسماء للجداول"
+      ],
+      "correctAnswer": 0,
+      "explanation": "قيمة Dataflows تظهر عندما تحتاج التحويلات إلى مركزية وإعادة استخدام سحابية بين أكثر من نموذج أو فريق، لا لمجرد إضافة طبقة جديدة.",
+      "points": 6
+    },
+    {
+      "id": "q20",
+      "section": "calculation-groups",
+      "question": "ما المشكلة الأساسية التي تحلها Calculation Groups؟",
+      "type": "multiple_choice",
+      "options": [
+        "إلغاء الحاجة إلى Date Table",
+        "تقليل تكرار Measures المتشابهة مثل YTD وPY وYoY عبر عدد كبير من الـ base measures",
+        "استبدال كل الـ visuals داخل التقرير",
+        "إجبار Power BI على العمل في DirectQuery"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Calculation Groups تقلل انفجار عدد الـ measures عبر إعادة استخدام منطق التحويل مثل YTD وPY وYoY على مقاييس متعددة بدل تكرارها يدويًا.",
+      "points": 7
+    },
+    {
+      "id": "q21",
+      "section": "enterprise-security",
+      "question": "أي طبقة أمان تُستخدم عندما تريد إخفاء عمود حساس مثل Cost أو Salary عن فئة معينة من المستخدمين؟",
+      "type": "multiple_choice",
+      "options": [
+        "RLS",
+        "OLS",
+        "Bookmarks",
+        "Conditional Formatting"
+      ],
+      "correctAnswer": 1,
+      "explanation": "RLS تتحكم في الصفوف، بينما OLS تتحكم في إظهار أو إخفاء أعمدة أو جداول حساسة داخل النموذج.",
+      "points": 7
+    },
+    {
+      "id": "q22",
+      "section": "deployment-pipelines",
+      "question": "ما التسلسل الأكثر نضجًا لنقل التغييرات بين البيئات في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "Prod → Dev → Test",
+        "Dev → Test/UAT → Prod",
+        "Test → Prod → Dev",
+        "أي ترتيب لا يهم طالما التقرير يعمل"
+      ],
+      "correctAnswer": 1,
+      "explanation": "أفضل ممارسة هي التطوير في Dev، ثم التحقق في Test/UAT، ثم النشر إلى Prod بعد التأكد من النتائج والأمان وسلوك التحديث.",
+      "points": 5
+    },
+    {
+      "id": "q23",
+      "section": "monitoring-adoption",
+      "question": "أي من المؤشرات التالية لا يكفي وحده للحكم على نجاح التقرير بعد النشر؟",
+      "type": "multiple_choice",
+      "options": [
+        "عدد المشاهدات فقط",
+        "معدل نجاح الـ refresh",
+        "مدة الـ refresh",
+        "عدد المستخدمين النشطين المتكررين"
+      ],
+      "correctAnswer": 0,
+      "explanation": "عدد المشاهدات وحده قد يكون مضللًا؛ النجاح الحقيقي يعتمد على الاستخدام المتكرر، والثقة، واستقرار التشغيل، وتأثير التقرير على القرار.",
+      "points": 6
+    },
+    {
+      "id": "q24",
+      "section": "fabric-dataflows",
+      "question": "متى يصبح Fabric أو Dataflows Gen2 أكثر منطقية تعليميًا وعمليًا؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما لا تعرف أساسيات الـ model وDAX بعد",
+        "عندما تحتاج منصة بيانات أوسع مع فرق متعددة وطبقات سحابية مترابطة",
+        "عندما تريد فقط تغيير Theme التقرير",
+        "عندما يكون المصدر ملف CSV واحدًا صغيرًا"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Fabric يصبح أكثر منطقية عندما تكون Power BI جزءًا من منصة بيانات أكبر فيها تعدد فرق ونماذج وطبقات سحابية، لا قبل فهم الأساسيات.",
+      "points": 6
+    },
+    {
+      "id": "q25",
+      "section": "project-retail-starter",
+      "question": "في مشروع Pizza Place Sales، ما أفضل grain تبدأ بها داخل الـ fact table؟",
+      "type": "multiple_choice",
+      "options": [
+        "سطر الطلب في order_details بعد ربطه مع orders وباقي الجداول",
+        "الاعتماد على pizza_types فقط لأنها أصغر جدول",
+        "صف واحد لكل يوم حتى لو فقدت تفاصيل الصنف",
+        "دمج كل شيء في visual مباشرة بدون model"
+      ],
+      "correctAnswer": 0,
+      "explanation": "لأن line-level fact تمنحك تفاصيل الكمية والإيراد والوقت والصنف بشكل يسمح ببناء KPIs تشغيلية صحيحة مثل Revenue وAOV وPeak Hour.",
+      "points": 6
+    },
+    {
+      "id": "q26",
+      "section": "project-ops-intermediate",
+      "question": "ما التحدي المركزي في مشروع Online Chess Games المتوسط؟",
+      "type": "multiple_choice",
+      "options": [
+        "إنشاء semantic layer مشتقة من جدول واحد خام بدل الاكتفاء بالأعمدة الأصلية",
+        "إلغاء تحليل الافتتاحيات لأنها نصوص",
+        "تحويل moves إلى صور قبل التحليل",
+        "إجبار التقرير أن يكون صفحة واحدة فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "قيمة المشروع تأتي من اشتقاق Rating Bands وTime Control Categories وResult Logic وOpening Groups من جدول خام واحد.",
+      "points": 7
+    },
+    {
+      "id": "q27",
+      "section": "project-enterprise-advanced",
+      "question": "ما القرار المعماري الأهم في مشروع Airbnb Market Intelligence؟",
+      "type": "multiple_choice",
+      "options": [
+        "فصل listing grain عن review grain وعدم خلط المقاييس بينهما",
+        "عرض كل الـ reviews الخام في كل visual لزيادة التفاصيل",
+        "الاعتماد على price فقط وإلغاء بقية الحقول",
+        "إلغاء التحليل الجغرافي لتقليل التعقيد"
+      ],
+      "correctAnswer": 0,
+      "explanation": "لأن listings وreviews يمثلان grains مختلفة. إذا خلطتهما بلا ضبط ستتكرر الأسعار والتقييمات وتفسد أغلب المقاييس.",
+      "points": 8
+    },
+    {
+      "id": "q28",
+      "section": "portfolio-playbook",
+      "question": "أي تسلسل يعتبر عرضًا ناضجًا لمشروع Portfolio في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "ألوان التقرير → الشعار → صورة الغلاف",
+        "Business Context → Data Sources → Model Design → Core Measures → Key Insights",
+        "عدد الـ visuals فقط",
+        "اسم الشركة ثم رابط التقرير فقط"
+      ],
+      "correctAnswer": 1,
+      "explanation": "الترتيب الناضج في العرض يُظهر الفهم التحليلي والهندسي: المشكلة، المصادر، النموذج، المقاييس، ثم الرؤى الناتجة.",
+      "points": 6
+    },
+    {
+      "id": "q29",
+      "section": "oltp-olap",
+      "question": "أي نظام من الآتي مُصمم أساسًا للعمليات التشغيلية اليومية السريعة مثل Insert و Update و Delete؟",
+      "type": "multiple_choice",
+      "options": [
+        "OLTP",
+        "OLAP",
+        "Semantic Model",
+        "Dataflow Gen2"
+      ],
+      "correctAnswer": 0,
+      "explanation": "OLTP مخصص للأنظمة التشغيلية اليومية، بينما OLAP مخصص أكثر للتحليل والاستعلامات التجميعية والاتجاهات التاريخية.",
+      "points": 5
+    },
+    {
+      "id": "q30",
+      "section": "scd",
+      "question": "أي نوع من SCD يحتفظ بالتاريخ الكامل عبر إضافة صف جديد بتاريخ بداية ونهاية؟",
+      "type": "multiple_choice",
+      "options": [
+        "Type 0",
+        "Type 1",
+        "Type 2",
+        "Type 3"
+      ],
+      "correctAnswer": 2,
+      "explanation": "SCD Type 2 يحتفظ بالتاريخ عبر إضافة صف جديد لكل حالة جديدة مع أعمدة مثل StartDate وEndDate وIsCurrent.",
+      "points": 7
+    },
+    {
+      "id": "q31",
+      "section": "bridge-tables",
+      "question": "متى تحتاج غالبًا إلى Bridge Table داخل النموذج؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تكون العلاقة 1:* بسيطة وواضحة",
+        "عندما يوجد ارتباط Many-to-Many بين كيانين مثل Products وPromotions",
+        "عندما تريد تغيير لون التقرير",
+        "عندما تريد إلغاء Date Table"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Bridge Table تُستخدم غالبًا لضبط كثير من سيناريوهات Many-to-Many بشكل أوضح وأكثر انضباطًا في مسار الفلاتر.",
+      "points": 6
+    },
+    {
+      "id": "q32",
+      "section": "query-folding",
+      "question": "ما المقصود بـ Query Folding في Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "أن يتم تنفيذ جزء من التحويلات في مصدر البيانات نفسه بدل تنفيذها كلها محليًا",
+        "طي نافذة Power Query بعد الانتهاء",
+        "تحويل كل الأعمدة إلى نص",
+        "نسخ الاستعلام إلى تقرير آخر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Query Folding يعني دفع التحويلات إلى المصدر قدر الإمكان، مما يحسن الأداء ويقلل كمية البيانات المنقولة إلى Power BI.",
+      "points": 7
+    },
+    {
+      "id": "q33",
+      "section": "directquery",
+      "question": "ما المقايضة الأشهر عند اختيار DirectQuery بدل Import؟",
+      "type": "multiple_choice",
+      "options": [
+        "أداء أسرع دائمًا مع دعم DAX أكبر",
+        "قدرة أفضل على real-time نسبيًا لكن مع أداء أبطأ وقيود أكثر",
+        "يلغي الحاجة لأي علاقة بين الجداول",
+        "يجعل حجم البيانات داخل PBIX أكبر دائمًا"
+      ],
+      "correctAnswer": 1,
+      "explanation": "DirectQuery مفيد عندما تحتاج حداثة بيانات أعلى أو أحجامًا كبيرة، لكنه غالبًا يأتي على حساب الأداء وبعض قدرات النمذجة وDAX.",
+      "points": 7
+    },
+    {
+      "id": "q34",
+      "section": "tabular-editor",
+      "question": "أي من الآتي يُعد استخدامًا شائعًا لـ Tabular Editor؟",
+      "type": "multiple_choice",
+      "options": [
+        "تشخيص Query Plan وServer Timings",
+        "التعديل الجماعي على الـ measures وإنشاء Display Folders وتشغيل BPA",
+        "رسم الخرائط الجغرافية",
+        "استيراد ملفات CSV"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tabular Editor قوي في التنظيم والتعديل الجماعي والجودة المعمارية، بينما تشخيص الأداء التفصيلي غالبًا يكون في DAX Studio.",
+      "points": 6
+    },
+    {
+      "id": "q35",
+      "section": "dax2",
+      "question": "ما الشرط الأساسي لنجاح أغلب دوال Time Intelligence في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "وجود Date Table صحيحة ومعلّمة كـ Date Table",
+        "استخدام DirectQuery فقط",
+        "إلغاء العلاقات بين الجداول",
+        "إنشاء كل المقاييس كـ Calculated Columns"
+      ],
+      "correctAnswer": 0,
+      "explanation": "أغلب دوال Time Intelligence تعتمد على Date Table سليمة ومتصلة بالنموذج بشكل صحيح.",
+      "points": 7
+    },
+    {
+      "id": "q36",
+      "section": "fieldparams",
+      "question": "ما فائدة Field Parameters في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "تسمح للمستخدم بالتبديل الديناميكي بين dimensions أو measures داخل نفس visual",
+        "تستبدل الحاجة إلى كل العلاقات في النموذج",
+        "تسرّع Query Folding تلقائيًا",
+        "تمنع استخدام slicers"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Field Parameters تمنح المستخدم مرونة لتبديل المحور أو المقياس أو طريقة العرض بشكل ديناميكي داخل التقرير.",
+      "points": 6
+    },
+    {
+      "id": "q37",
+      "section": "visuals",
+      "question": "ما نقطة البداية الأفضل لاختيار Visual مناسب؟",
+      "type": "multiple_choice",
+      "options": [
+        "اختيار أكثر رسم يبدو جميلًا أولًا",
+        "البدء من السؤال التحليلي الذي تريد أن تجيب عنه ثم اختيار الرسم المناسب",
+        "استخدام نفس الرسم في كل الصفحات",
+        "اختيار الألوان قبل البيانات"
+      ],
+      "correctAnswer": 1,
+      "explanation": "اختيار الـ visual يجب أن يبدأ من السؤال التحليلي ونوع المقارنة أو الاتجاه أو التركيب الذي تريد إظهاره، لا من الشكل وحده.",
+      "points": 5
+    },
+    {
+      "id": "q38",
+      "section": "rls",
+      "question": "ما الذي تقيده RLS داخل النموذج؟",
+      "type": "multiple_choice",
+      "options": [
+        "ألوان التقرير",
+        "الصفوف التي يمكن للمستخدم رؤيتها بحسب الدور",
+        "ترتيب الصفحات فقط",
+        "نوع الخط"
+      ],
+      "correctAnswer": 1,
+      "explanation": "RLS تُستخدم لتقييد الصفوف المعروضة للمستخدمين بحسب أدوار أو قواعد أعمال محددة.",
+      "points": 5
+    },
+    {
+      "id": "q39",
+      "section": "power-automate",
+      "question": "ما النصيحة العملية الأنسب عند بدء العمل على تنبيهات Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "ابدأ مباشرة بـ Flows معقدة جدًا حتى لو الاحتياج بسيط",
+        "ابدأ بـ Data Alerts البسيطة، ثم انتقل إلى Power Automate عندما تحتاج منطقًا أعمق",
+        "لا تستخدم أي تنبيهات داخل Power BI Service",
+        "احذف كل KPIs قبل بناء التنبيهات"
+      ],
+      "correctAnswer": 1,
+      "explanation": "أفضل مسار عملي هو البدء بالحل الأبسط أولًا، ثم استخدام Power Automate عندما يصبح المطلوب أكثر تعقيدًا مثل التخصيص، التوزيع، أو الربط مع أنظمة أخرى.",
+      "points": 6
+    },
+    {
+      "id": "q40",
+      "section": "kpi-finance",
+      "question": "ما الصيغة الصحيحة لهامش الربح الإجمالي Gross Profit Margin؟",
+      "type": "multiple_choice",
+      "options": [
+        "الإيرادات + تكلفة البضاعة ÷ الإيرادات",
+        "الإيرادات − تكلفة البضاعة",
+        "(الإيرادات − تكلفة البضاعة) ÷ الإيرادات × 100",
+        "تكلفة البضاعة ÷ عدد العملاء"
+      ],
+      "correctAnswer": 2,
+      "explanation": "هامش الربح الإجمالي يقيس نسبة الربح بعد طرح تكلفة البضاعة من الإيرادات ثم قسمة الناتج على الإيرادات وضربه في 100.",
+      "points": 6
+    },
+    {
+      "id": "q41",
+      "section": "cleaning",
+      "question": "ما الهدف الأهم من خطوات التنظيف في Power Query قبل بناء أي تقرير؟",
+      "type": "multiple_choice",
+      "options": [
+        "تغيير الألوان والخطوط مبكرًا",
+        "جعل البيانات متسقة وصالحة للنمذجة والتحليل",
+        "زيادة عدد الصفحات داخل التقرير",
+        "استبدال كل المقاييس بـ calculated columns"
+      ],
+      "correctAnswer": 1,
+      "explanation": "التنظيف الجيد يعالج القيم الفارغة، الأنواع الخاطئة، التكرار، وتفاوت الصيغ حتى تدخل البيانات إلى النموذج بصورة مستقرة وقابلة للتحليل.",
+      "points": 5
+    },
+    {
+      "id": "q42",
+      "section": "mcode",
+      "question": "متى يكون النظر إلى M Code مفيدًا بدل الاكتفاء بالواجهة الرسومية في Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تريد فهم تسلسل الخطوات أو تعديلها بدقة أو إعادة استخدامها",
+        "فقط عند تغيير ألوان التقرير",
+        "عندما تريد إنشاء RLS",
+        "فقط في حالة استيراد ملفات PDF"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الواجهة الرسومية ممتازة للبداية، لكن قراءة M Code تفيد في فهم ما نُفِّذ فعليًا، وترتيب الخطوات، وتعديل المنطق، وإعادة استخدامه بطريقة أكثر احترافية.",
+      "points": 6
+    },
+    {
+      "id": "q43",
+      "section": "datetable",
+      "question": "لماذا نحتاج Date Table منفصلة بدل الاعتماد فقط على عمود التاريخ داخل جدول المبيعات؟",
+      "type": "multiple_choice",
+      "options": [
+        "لأنها تسمح بأداء أبطأ لكنه أدق",
+        "لأنها تدعم Time Intelligence وتوفر تقويمًا نظيفًا ومركزيًا",
+        "لأنها تلغي الحاجة إلى measures",
+        "لأنها تمنع أي علاقة بين الجداول"
+      ],
+      "correctAnswer": 1,
+      "explanation": "جدول التاريخ المنفصل يسهل دوال الوقت مثل YTD وYOY ويمنحك تقويمًا قياسيًا ومتكاملًا يمكن ربطه بأكثر من fact table عند الحاجة.",
+      "points": 7
+    },
+    {
+      "id": "q44",
+      "section": "hierarchies",
+      "question": "ما الفائدة الأساسية من Hierarchies داخل Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "تسريع refresh فقط",
+        "تمكين التنقل المنطقي مثل سنة ← ربع ← شهر أو دولة ← مدينة",
+        "استبدال كل العلاقات في النموذج",
+        "إلغاء الحاجة إلى slicers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "الـ Hierarchies تساعد المستخدم على drill down ضمن مستويات منطقية بدل البحث اليدوي عن كل حقل على حدة.",
+      "points": 5
+    },
+    {
+      "id": "q45",
+      "section": "relationships-dax",
+      "question": "إذا ظهر measure صحيح إجماليًا لكنه يعطي تفاصيل خاطئة حسب الفئة، فما أول شيء يجب مراجعته؟",
+      "type": "multiple_choice",
+      "options": [
+        "لون الخلفية في الصفحة",
+        "العلاقات واتجاه الفلترة قبل اتهام DAX نفسه",
+        "حجم الخط في الـ visual",
+        "اسم الملف فقط"
+      ],
+      "correctAnswer": 1,
+      "explanation": "كثير من مشاكل DAX ليست في الصيغة نفسها بل في العلاقات، cardinality، أو اتجاه الفلترة بين الجداول.",
+      "points": 7
+    },
+    {
+      "id": "q46",
+      "section": "iterators",
+      "question": "ما الفرق العملي بين SUM وSUMX؟",
+      "type": "multiple_choice",
+      "options": [
+        "لا يوجد فرق إطلاقًا",
+        "SUMX يمر صفًا صفًا ويقيّم تعبيرًا لكل صف ثم يجمع الناتج",
+        "SUMX يعمل فقط مع النصوص",
+        "SUM لا يعمل إلا في DirectQuery"
+      ],
+      "correctAnswer": 1,
+      "explanation": "SUM يجمع عمودًا مباشرة، بينما SUMX هو iterator ينشئ سياق صفوف ويحسب تعبيرًا لكل صف قبل التجميع.",
+      "points": 7
+    },
+    {
+      "id": "q47",
+      "section": "time-intel-pro",
+      "question": "عند بناء مقارنة Year over Year بشكل احترافي، ما الشرط الأهم قبل كتابة measure؟",
+      "type": "multiple_choice",
+      "options": [
+        "وجود Date Table سليمة ومتصلة جيدًا بالنموذج",
+        "استخدام نفس اللون في كل الرسوم",
+        "إلغاء كل الـ slicers",
+        "تحويل المقاييس إلى أعمدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "المقارنات الزمنية المتقدمة تعتمد أساسًا على تقويم مضبوط وعلاقات صحيحة، وإلا ستخرج النتائج ناقصة أو مضللة.",
+      "points": 7
+    },
+    {
+      "id": "q48",
+      "section": "dax3",
+      "question": "ما الاستخدام الأشهر لـ CALCULATE في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "تغيير Filter Context أثناء تقييم التعبير",
+        "استيراد ملفات Excel",
+        "تصميم Mobile Layout",
+        "تحويل measure إلى visual"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CALCULATE هي الدالة المركزية في DAX لأنها تغيّر سياق التصفية ثم تعيد تقييم التعبير داخل هذا السياق الجديد.",
+      "points": 7
+    },
+    {
+      "id": "q49",
+      "section": "dax-text",
+      "question": "متى تكون دوال النصوص في DAX مفيدة عمليًا؟",
+      "type": "multiple_choice",
+      "options": [
+        "عند تجهيز labels أو تنظيف أجزاء نصية محدودة داخل النموذج",
+        "فقط عند رسم الخرائط",
+        "لإنشاء Query Folding",
+        "لا فائدة لها في Power BI"
+      ],
+      "correctAnswer": 0,
+      "explanation": "دوال النصوص مثل LEFT وRIGHT وFORMAT قد تكون مفيدة لتجهيز Labels أو معالجة أجزاء نصية، لكن من الأفضل عدم استخدامها بشكل يثقل النموذج دون داعٍ.",
+      "points": 5
+    },
+    {
+      "id": "q50",
+      "section": "dax-reference",
+      "question": "ما أفضل طريقة للتعامل مع مكتبة DAX كبيرة داخل مشروع احترافي؟",
+      "type": "multiple_choice",
+      "options": [
+        "تكرار نفس المنطق في عشرات المقاييس بأسماء عشوائية",
+        "اتباع Naming واضح، وتجميع المقاييس، وكتابة وصف عند الحاجة",
+        "الاعتماد على الذاكرة فقط بلا توثيق",
+        "تحويل كل شيء إلى calculated columns"
+      ],
+      "correctAnswer": 1,
+      "explanation": "كلما كبر المشروع، زادت قيمة التنظيم: أسماء واضحة، display folders، وإعادة استخدام المنطق بدل نسخه بشكل مشتت.",
+      "points": 6
+    },
+    {
+      "id": "q51",
+      "section": "publish",
+      "question": "ماذا يحدث عادة بعد Publish من Power BI Desktop إلى Service؟",
+      "type": "multiple_choice",
+      "options": [
+        "ينتقل التقرير والـ semantic model إلى Workspace محدد",
+        "يُحذف الملف المحلي تلقائيًا",
+        "تُفعّل RLS تلقائيًا دون إعداد",
+        "تُنشأ App تلقائيًا لكل مستخدم"
+      ],
+      "correctAnswer": 0,
+      "explanation": "النشر يرسل التقرير والنموذج إلى الـ Workspace المستهدف، وبعدها تبدأ مهام مثل الإعدادات، refresh، الأمان، والتوزيع.",
+      "points": 5
+    },
+    {
+      "id": "q52",
+      "section": "workspaces",
+      "question": "ما الدور الرئيسي للـ Workspace في Power BI Service؟",
+      "type": "multiple_choice",
+      "options": [
+        "هو مكان لتجميع المحتوى، التعاون، وضبط الصلاحيات قبل التوزيع",
+        "هو مجرد بديل لجدول التاريخ",
+        "هو أداة لكتابة M Code فقط",
+        "هو visual جديد للـ dashboards"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الـ Workspace هو وحدة العمل الأساسية في الخدمة: يجمع التقارير والنماذج ويمثل نقطة التعاون والإدارة والتوزيع.",
+      "points": 5
+    },
+    {
+      "id": "q53",
+      "section": "gateway",
+      "question": "متى تصبح On-premises Data Gateway ضرورية غالبًا؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تكون مصادر البيانات داخل الشبكة المحلية وتحتاج Refresh من Power BI Service",
+        "عند تغيير الخطوط فقط",
+        "عند استخدام KPI Cards فقط",
+        "إذا كان كل شيء موجودًا على ملفات محلية داخل PBIX"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الـ Gateway تربط Power BI Service بمصادر البيانات الموجودة داخل بيئة داخلية لا يمكن الوصول إليها مباشرة من السحابة.",
+      "points": 6
+    },
+    {
+      "id": "q54",
+      "section": "incremental",
+      "question": "ما الفكرة الأساسية من Incremental Refresh؟",
+      "type": "multiple_choice",
+      "options": [
+        "إعادة تحميل كل التاريخ في كل refresh",
+        "تحديث الجزء الجديد أو المتغير فقط بدل إعادة معالجة كل البيانات",
+        "إلغاء الحاجة إلى أي Date Table",
+        "زيادة حجم النموذج دائمًا"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Incremental Refresh يقلل زمن التحديث واستهلاك الموارد عبر التركيز على البيانات الحديثة أو المتغيرة فقط.",
+      "points": 7
+    },
+    {
+      "id": "q55",
+      "section": "kpi-sales",
+      "question": "أي KPI من التالي يعكس جودة أداء المبيعات بشكل أوضح من رقم الإيراد وحده؟",
+      "type": "multiple_choice",
+      "options": [
+        "الإيراد فقط دون أي سياق",
+        "نمو المبيعات مع متوسط قيمة الطلب أو نسبة تحقيق الهدف",
+        "عدد الصفحات داخل التقرير",
+        "لون الشعار"
+      ],
+      "correctAnswer": 1,
+      "explanation": "قياس المبيعات لا يكتمل برقم الإيراد فقط؛ من الأفضل ربطه بالنمو، متوسط الطلب، التحصيل مقابل الهدف، أو الربحية.",
+      "points": 5
+    },
+    {
+      "id": "q56",
+      "section": "kpi-inventory",
+      "question": "ما المؤشر الذي يساعد على اكتشاف بطء حركة المخزون؟",
+      "type": "multiple_choice",
+      "options": [
+        "Inventory Turnover أو Days of Inventory",
+        "عدد ألوان التقرير",
+        "عدد الـ bookmarks",
+        "اسم الـ workspace"
+      ],
+      "correctAnswer": 0,
+      "explanation": "مؤشرات مثل معدل دوران المخزون أو أيام المخزون تكشف بسرعة إذا كانت البضاعة تتحرك ببطء أو تتراكم أكثر من اللازم.",
+      "points": 6
+    },
+    {
+      "id": "q57",
+      "section": "kpi-hr",
+      "question": "أي KPI يُستخدم غالبًا لقياس استقرار القوى العاملة؟",
+      "type": "multiple_choice",
+      "options": [
+        "Employee Turnover Rate",
+        "عدد الأعمدة داخل Date Table",
+        "حجم ملف الثيم",
+        "عدد الـ visuals في الصفحة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "معدل دوران الموظفين مؤشر HR أساسي لأنه يكشف قدرة الشركة على الاحتفاظ بالمواهب واستقرار القوة العاملة.",
+      "points": 5
+    },
+    {
+      "id": "q58",
+      "section": "kpi-marketing",
+      "question": "إذا كانت الحملات تجلب Leads كثيرة لكن المبيعات النهائية ضعيفة، فأي KPI يجب مراقبته؟",
+      "type": "multiple_choice",
+      "options": [
+        "Conversion Rate من Lead إلى Customer",
+        "عدد صفحات التقرير فقط",
+        "لون بطاقات الـ KPI",
+        "عدد العلاقات في النموذج"
+      ],
+      "correctAnswer": 0,
+      "explanation": "عدد الـ leads وحده قد يكون مضللًا؛ المهم هو جودة التحويل من lead إلى عميل فعلي أو إيراد محقق.",
+      "points": 6
+    },
+    {
+      "id": "q59",
+      "section": "sync-slicers",
+      "question": "ما فائدة Sync Slicers داخل تقرير متعدد الصفحات؟",
+      "type": "multiple_choice",
+      "options": [
+        "مزامنة نفس اختيار الفلتر عبر أكثر من صفحة عند الحاجة",
+        "حذف كل الـ slicers تلقائيًا",
+        "استبدال العلاقات في النموذج",
+        "تغيير الخطوط بين الصفحات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sync Slicers تجعل تجربة الاستخدام أكثر اتساقًا عندما تريد أن يبقى نفس الاختيار فعّالًا أثناء انتقال المستخدم بين الصفحات.",
+      "points": 5
+    },
+    {
+      "id": "q60",
+      "section": "themes",
+      "question": "ما القيمة العملية لملف Theme داخل Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "فرض اتساق بصري في الألوان والخطوط وبعض الإعدادات عبر التقرير",
+        "استبدال Power Query",
+        "إنشاء Gateway تلقائيًا",
+        "تحسين DAX مباشرة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الثيم لا يحل كل شيء، لكنه يقلل العشوائية ويحسن الاتساق البصري خاصة في المشاريع التي تضم عدة صفحات أو مطورين.",
+      "points": 5
+    },
+    {
+      "id": "q61",
+      "section": "custom-tooltips",
+      "question": "متى تكون Custom Tooltips مفيدة أكثر من tooltip العادي؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تريد تقديم سياق إضافي أو mini-visual دون ازدحام الصفحة الأساسية",
+        "فقط عند استخدام جداول Excel",
+        "عندما تريد إلغاء كل التفاعلات",
+        "لا تُستخدم إلا مع الخرائط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الـ Custom Tooltip مفيد عندما تريد تفاصيل أو مقاييس مساندة تظهر عند hover بدل حشو الصفحة بعناصر إضافية.",
+      "points": 5
+    },
+    {
+      "id": "q62",
+      "section": "condformat",
+      "question": "ما الهدف الصحيح من Conditional Formatting؟",
+      "type": "multiple_choice",
+      "options": [
+        "لفت الانتباه إلى القيم المهمة أو الشاذة وفق قاعدة واضحة",
+        "إضافة ألوان كثيرة بلا معنى",
+        "استبدال المقاييس الأساسية",
+        "تقليل عدد الصفوف في المصدر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "التلوين الشرطي يجب أن يخدم القراءة السريعة للبيانات، لا أن يحول الجدول إلى لوحة ألوان تربك المستخدم.",
+      "points": 5
+    },
+    {
+      "id": "q63",
+      "section": "drillthrough",
+      "question": "ما أفضل استخدام لـ Drillthrough؟",
+      "type": "multiple_choice",
+      "options": [
+        "الانتقال من نظرة عامة إلى صفحة تفاصيل مفلترة على العنصر المحدد",
+        "إلغاء كل الفلاتر في التقرير",
+        "نشر التقرير إلى Service",
+        "إنشاء Date Table"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Drillthrough ممتاز لنقل المستخدم من مستوى summary إلى تحليل أعمق لعميل أو منتج أو منطقة مع الحفاظ على السياق.",
+      "points": 6
+    },
+    {
+      "id": "q64",
+      "section": "bookmarks",
+      "question": "ما الاستخدام العملي الشائع للـ Bookmarks؟",
+      "type": "multiple_choice",
+      "options": [
+        "إنشاء حالات عرض مختلفة أو رواية تفاعلية داخل نفس الصفحة",
+        "رفع سرعة Query Folding",
+        "استبدال Workspace",
+        "إنشاء Measures تلقائيًا"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الـ Bookmarks مفيدة للتحكم في حالات العرض، التبديل بين مشاهد، أو بناء story-telling مبسط داخل التقرير.",
+      "points": 5
+    },
+    {
+      "id": "q65",
+      "section": "mobile-design",
+      "question": "ما أول مبدأ يجب مراعاته عند تصميم Mobile Layout؟",
+      "type": "multiple_choice",
+      "options": [
+        "تقليل الازدحام وترتيب العناصر حسب الأولوية على شاشة صغيرة",
+        "نسخ نفس صفحة الديسكتوب حرفيًا",
+        "إخفاء كل العناوين",
+        "استخدام أكبر عدد ممكن من visuals"
+      ],
+      "correctAnswer": 0,
+      "explanation": "تصميم الموبايل ليس تصغيرًا حرفيًا لنسخة الديسكتوب، بل إعادة ترتيب واختصار بحسب أهم ما يحتاجه المستخدم سريعًا.",
+      "points": 6
+    },
+    {
+      "id": "q66",
+      "section": "error-handling",
+      "question": "عند ظهور أخطاء تحويل نوع البيانات في Power Query، ما التصرف الأكثر احترافية؟",
+      "type": "multiple_choice",
+      "options": [
+        "فهم سبب الخطأ ومعالجته أو عزله بدل تجاهله عشوائيًا",
+        "حذف الجدول كاملًا مباشرة",
+        "نقل الخطأ إلى DAX دائمًا",
+        "تغيير ألوان الصفحة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "إدارة الأخطاء الجيدة تعني معرفة لماذا ظهرت المشكلة أصلًا، ثم إصلاح المصدر أو وضع منطق واضح للتعامل معها.",
+      "points": 6
+    },
+    {
+      "id": "q67",
+      "section": "cost-optimization",
+      "question": "ما مثال صحيح على Cost Optimization في Power BI/Fabric context؟",
+      "type": "multiple_choice",
+      "options": [
+        "اختيار السعة المناسبة وتقليل العمليات الثقيلة غير الضرورية",
+        "زيادة refresh بلا حدود دائمًا",
+        "رفع كل الملفات إلى أعلى سعة متاحة فورًا",
+        "منع أي مراقبة للاستهلاك"
+      ],
+      "correctAnswer": 0,
+      "explanation": "خفض التكلفة لا يعني التضحية بالجودة، بل مواءمة السعة والـ refresh والعمليات مع قيمة الاستخدام الفعلية.",
+      "points": 6
+    },
+    {
+      "id": "q68",
+      "section": "python-pbi",
+      "question": "متى يكون Python داخل Power BI خيارًا مناسبًا؟",
+      "type": "multiple_choice",
+      "options": [
+        "عند وجود حاجة تحليلية أو معالجة متخصصة لا تغطيها الأدوات التقليدية بسهولة",
+        "لكل تقرير بسيط افتراضيًا",
+        "لاستخدامه بدل العلاقات",
+        "فقط لتغيير الثيم"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Python مفيد في حالات متخصصة مثل إحصاء متقدم أو تجهيزات محددة، لكنه ليس البديل الافتراضي لكل سيناريو.",
+      "points": 6
+    },
+    {
+      "id": "q69",
+      "section": "paginated",
+      "question": "ما السيناريو الأنسب لتقارير Paginated؟",
+      "type": "multiple_choice",
+      "options": [
+        "تقارير تشغيلية أو رسمية تحتاج طباعة دقيقة وتكرارًا منضبطًا للصفحات",
+        "Dashboards تفاعلية سريعة فقط",
+        "استبدال كل visual pages داخل Power BI",
+        "إلغاء الحاجة إلى البيانات المنظمة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "تقارير Paginated مناسبة عندما تكون الأولوية للدقة الطباعية والتنسيق الثابت والتصدير الرسمي، لا للتفاعل البصري الحر.",
+      "points": 6
+    },
+    {
+      "id": "q70",
+      "section": "auto-refresh",
+      "question": "قبل تفعيل Auto Refresh أو Scheduled Refresh، ما السؤال العملي الأهم؟",
+      "type": "multiple_choice",
+      "options": [
+        "ما cadence المناسب للبزنس وهل المصدر والبنية يتحملان هذا التكرار؟",
+        "هل يمكن زيادة عدد الألوان؟",
+        "هل يمكن حذف الـ measures؟",
+        "هل يمكن إلغاء الـ workspace؟"
+      ],
+      "correctAnswer": 0,
+      "explanation": "التحديث المتكرر بلا حاجة فعلية قد يستهلك موارد بلا عائد؛ الأهم هو ضبط التكرار على ما يحتاجه العمل فعلًا.",
+      "points": 6
+    },
+    {
+      "id": "q71",
+      "section": "automate-reports",
+      "question": "ما القيمة الأساسية من أتمتة توزيع التقارير؟",
+      "type": "multiple_choice",
+      "options": [
+        "تقليل العمل اليدوي وضمان وصول المعلومة الصحيحة للشخص المناسب في الوقت المناسب",
+        "منع أي تحديث للتقرير",
+        "استبدال النمذجة بالكامل",
+        "إلغاء الحاجة إلى الصلاحيات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الأتمتة الجيدة تقلل التأخير والأخطاء اليدوية، وتربط التحليل بسير العمل الحقيقي بدل أن يبقى التقرير معزولًا.",
+      "points": 6
+    },
+    {
+      "id": "q72",
+      "section": "power-automate",
+      "question": "ما أساس عمل Power Automate Alerts مع Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "مراقبة KPI وتفعيل إجراء تلقائي (بريد، Teams رسالة) عند تجاوز حد معين",
+        "تصدير البيانات فقط",
+        "تغيير ألوان الشارتات",
+        "حذف الصفوف"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Power Automate تندمج مع Power BI لمراقبة KPIs وعند تجاوز الحدود المحددة، تفعّل إجراءات تلقائية مثل إرسال إشعارات.",
+      "points": 6
+    },
+    {
+      "id": "q73",
+      "section": "kpi-sales",
+      "question": "ما الفرق بين الإيرادات (Revenue) والأرباح (Profit)؟",
+      "type": "multiple_choice",
+      "options": [
+        "الإيرادات = مجموع المبيعات. الأرباح = الإيرادات - المصروفات",
+        "لا فرق بينهما",
+        "الأرباح أكبر دائماً",
+        "الإيرادات قد تكون سالبة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Revenue هو المال الداخل من المبيعات. Profit = Revenue - Expenses. الفرق بينهما يشير إلى كفاءة التشغيل.",
+      "points": 6
+    },
+    {
+      "id": "q74",
+      "section": "kpi-finance",
+      "question": "ماذا يعني Net Profit Margin وكيف تحسبه؟",
+      "type": "multiple_choice",
+      "options": [
+        "النسبة المئوية للأرباح الصافية من الإيرادات = (Net Profit / Revenue) × 100%",
+        "إجمالي الإيرادات فقط",
+        "عدد الموظفين",
+        "السعر الإجمالي للمنتجات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Net Profit Margin = (صافي الربح / الإيرادات) × 100%. تشير إلى كم % من كل ريال إيرادات يصبح ربح صافي.",
+      "points": 6
+    },
+    {
+      "id": "q75",
+      "section": "kpi-inventory",
+      "question": "ما معنى Inventory Turnover Ratio وأهميته؟",
+      "type": "multiple_choice",
+      "options": [
+        "عدد المرات التي يتم فيها بيع المخزون واستبداله = الـ Cost of Goods Sold / Average Inventory",
+        "سعر المخزون النهائي فقط",
+        "عدد فروع الشركة",
+        "عدد الموظفين"
+      ],
+      "correctAnswer": 0,
+      "explanation": "معدل دوران المخزون يشير إلى كفاءة إدارة المخزون. نسبة عالية = إدارة جيدة. نسبة منخفضة = مخزون متحرك ببطء.",
+      "points": 6
+    },
+    {
+      "id": "q76",
+      "section": "project-retail-starter",
+      "question": "في مشروع Pizza Place، أي الخطوات الأساسية لبناء النموذج؟",
+      "type": "multiple_choice",
+      "options": [
+        "استيراد البيانات → تنظيف البيانات → بناء العلاقات → إنشاء Measures → تصميم الـ Visuals",
+        "كتابة الكود مباشرة",
+        "حذف كل البيانات",
+        "عدم استخدام Relationships"
+      ],
+      "correctAnswer": 0,
+      "explanation": "المسار الصحيح: Import Data → Clean → Model → DAX → Visualize. كل خطوة تعتمد على السابقة.",
+      "points": 6
+    },
+    {
+      "id": "q77",
+      "section": "project-ops-intermediate",
+      "question": "في مشروع Online Chess Games، ما نوع البيانات التي نحتاجها لتحليل أداء الأفتتاحات (Openings)؟",
+      "type": "multiple_choice",
+      "options": [
+        "الفتح المستخدم (Opening) وعدد الألعاب وملخص النتائج (إذا ربح، خسر، تعادل)",
+        "فقط أسماء اللاعبين",
+        "الألوان الحالية فقط",
+        "عدد المتابعين"
+      ],
+      "correctAnswer": 0,
+      "explanation": "لتحليل الأفتتاحات: نحتاج Opening + game counts + outcomes. بدون هذه البيانات لن نستطيع تقييم فعالية كل افتتاح.",
+      "points": 6
+    },
+    {
+      "id": "q78",
+      "section": "project-enterprise-advanced",
+      "question": "في مشروع Airbnb Market Intelligence، كيف يمكن تحديد السوق الأفضل للاستثمار؟",
+      "type": "multiple_choice",
+      "options": [
+        "تحليل السعر المتوسط + معدل التقييمات + نسبة الحجوزات + نسبة Superhost",
+        "فقط عدد الحجوزات",
+        "لون الصور",
+        "اسم المالك فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "القرار الاستثماري الجيد يعتمد على عوامل متعددة: الأسعار (الدخل)، الجودة (التقييمات)، الطلب (الحجوزات)، والموثوقية (Superhost).",
+      "points": 6
     }
   ]
 }
