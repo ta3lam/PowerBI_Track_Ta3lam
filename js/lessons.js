@@ -25,6 +25,22 @@ window.LESSONS = {
       <div class="icon">💡</div>
       <p><strong>معلومة:</strong> برنامج Power BI Desktop مجاني بالكامل 100% وتقدر تتعلم عليه وتعمل كل حاجة بدون أي اشتراك مدفوع!</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is Business Intelligence?</h3>
+<p>It is the process of converting raw data into understandable information and insights that help company managers make correct decisions based on numbers.</p>
+</div>
+<div class="lesson-card">
+<h3>Core Power BI Components</h3>
+<ul>
+<li><strong>Power BI Desktop:</strong> The free desktop app that we install on our computer to build reports and formulas.</li>
+<li><strong>Power BI Service:</strong> The cloud server to which we upload the report to share it with the team and managers.</li>
+<li><strong>Power BI Mobile:</strong> A mobile application that allows managers to follow reports from anywhere.</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Note:</strong> Power BI Desktop is completely free, so you can learn on it and build everything you need without any paid subscription!</p>
+</div>` }],
   },
   "setup": {
     eyebrow: "01 · 02 — التثبيت والإعداد",
@@ -54,6 +70,26 @@ window.LESSONS = {
       <div class="icon">⚠️</div>
       <p><strong>تنبيه:</strong> Power BI Desktop لا يعمل على أجهزة الماك (Mac OS). لو معاك ماك هتحتاج تنزل Windows عليه باستخدام Parallels أو Boot Camp.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Microsoft Store (recommended)</h4>
+<p>Open Microsoft Store in Windows, search for "Power BI Desktop", then click Install. The advantage is that the app updates automatically on its own.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Direct download</h4>
+<p>If you do not have a store, you can download it from the official Microsoft website (Search on Google for Download Power BI Desktop).</p>
+</div>
+</div>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> Power BI Desktop does not run natively on Mac devices (macOS). If you use a Mac, you will need to install Windows on it through Parallels or Boot Camp.</p>
+</div>` }],
   },
   "interface": {
     eyebrow: "01 · 03 — واجهة البرنامج",
@@ -80,6 +116,23 @@ window.LESSONS = {
           <li><strong>Filters Pane:</strong> لعمل فلاتر متقدمة على مستوى التقرير كله أو شارت معين.</li>
       </ul>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>The three main screens (Views)</h3>
+<ul>
+<li><strong>Report View:</strong> The white canvas on which we draw charts and graphs.</li>
+<li><strong>Data/Table View:</strong> Here you can see your data in the form of tables like Excel.</li>
+<li><strong>Relationships screen (Model View):</strong> This is the most important screen for professionals! Here we link the tables together.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Side menus (Panes)</h3>
+<p>On the right you will find:</p>
+<ul>
+<li><strong>Data Pane:</strong> It contains all your tables and columns.</li>
+<li><strong>Visualizations Pane:</strong> It contains all types of charts (bar, pie, map...) and color settings.</li>
+<li><strong>Filters Pane:</strong> To create advanced filters on the level of the entire report or a specific chart.</li>
+</ul>
+</div>` }],
   },
   "oltp-olap": {
     eyebrow: "01 · 04 — OLTP vs OLAP",
@@ -136,11 +189,56 @@ window.LESSONS = {
       <div class="icon">💡</div>
       <p><strong>الصورة الكاملة:</strong> البيانات بتبدأ من OLTP (التشغيل) ← بتنتقل عبر ETL/Power Query ← لتوصل لـ OLAP (التحليل في Power BI). أنت كمحلل بياناتك بتشتغل في الجزء الأخير.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>OLTP — Operational systems (Online Transaction Processing)</h3>
+<p>These are the systems that run a business day to day — such as the sales system, hospital system, inventory system.</p>
+<ul>
+<li><strong>Goal:</strong> Record transactions quickly and safely (Insert, Update, Delete).</li>
+<li><strong>Data:</strong> Updated in real time — reflects only the current status.</li>
+<li><strong>Model:</strong> Many tables are normalized to reduce redundancy.</li>
+<li><strong>user:</strong> Input personnel and operational systems.</li>
+<li><strong>example:</strong> Point of sale system (POS), SAP, hospital system.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>OLAP — Analysis systems (Online Analytical Processing)</h3>
+<p>These are systems that analyze historical data to extract insights and make decisions — like Power BI.</p>
+<ul>
+<li><strong>Goal:</strong> Complex analytical queries (Aggregations, Trends, Comparisons).</li>
+<li><strong>Data:</strong> Cumulative history - reflecting long periods of time.</li>
+<li><strong>Model:</strong> Star Schema or Snowflake Schema (Denormalized) for reading speed.</li>
+<li><strong>user:</strong> Managers, analysts and decision making.</li>
+<li><strong>example:</strong> Power BI, Tableau, Azure Synapse.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Direct comparison</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.92rem;">
+<thead>
+<tr style="background:var(--bg4);color:var(--gold);">
+<th style="padding:10px;border:1px solid var(--border);text-align:right;">Standard</th>
+<th style="padding:10px;border:1px solid var(--border);text-align:right;">OLTP</th>
+<th style="padding:10px;border:1px solid var(--border);text-align:right;">OLAP</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:8px;border:1px solid var(--border);">the goal</td><td style="padding:8px;border:1px solid var(--border);">Running a business</td><td style="padding:8px;border:1px solid var(--border);">Data analysis</td></tr>
+<tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">Type of operations</td><td style="padding:8px;border:1px solid var(--border);">Read/Write recursive</td><td style="padding:8px;border:1px solid var(--border);">Read dense</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">Data size</td><td style="padding:8px;border:1px solid var(--border);">Relatively small</td><td style="padding:8px;border:1px solid var(--border);">huge (GB → TB)</td></tr>
+<tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">Model</td><td style="padding:8px;border:1px solid var(--border);">Normalized</td><td style="padding:8px;border:1px solid var(--border);">Star Schema</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">Update</td><td style="padding:8px;border:1px solid var(--border);">My moment</td><td style="padding:8px;border:1px solid var(--border);">Batch</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>The full picture:</strong> Data starts from OLTP (Operation) ← You move across ETL/Power Query ← To reach OLAP (Analysis in Power BI). You, as your data analyst, work on the last part.</p>
+</div>` }],
   },
   "model": {
-    eyebrow: "01 · 05 — نموذج البيانات والـ Star Schema",
-    title: "نموذج البيانات (Data Model)",
-    lede: "سر قوة Power BI! كيف تبني قاعدة بيانات قوية (Star Schema).",
+    eyebrow: "01 · 05 — Data Model و Star Schema",
+    title: "Data Model و Star Schema",
+    lede: "سر قوة Power BI! كيف تبني Data Model قوي باستخدام Star Schema.",
     en_eyebrow: "01 · 05 — Data Model and Star Schema",
     en_lede: "The secret of Power BI's power! How to build a strong database (Star Schema).",
     sectionId: "model",
@@ -151,8 +249,8 @@ window.LESSONS = {
 
     <table class="compare-table">
       <tr>
-        <th>جداول الحقائق (Fact Tables)</th>
-        <th>جداول الأبعاد (Dimension Tables)</th>
+        <th>Fact Tables</th>
+        <th>Dimension Tables</th>
       </tr>
       <tr>
         <td>تحتوي على الحركات والأرقام (المبيعات، المصروفات).</td>
@@ -170,8 +268,34 @@ window.LESSONS = {
 
     <div class="tip-box">
       <div class="icon">⭐</div>
-      <p><strong>Star Schema:</strong> هو أفضل تصميم، وفيه بيكون جدول الحركات (Fact) في النص، ومحاط بجداول الأبعاد (Dimensions) زي النجمة.</p>
+      <p><strong>Star Schema:</strong> هو أفضل تصميم، وفيه بيكون الـ Fact Table في المنتصف، ومحاط بـ Dimension Tables زي النجمة.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Why don't we use one big table? (Flat Table)</h3>
+<p>In Excel, we are used to putting all the data in one big sheet. in Power BI This causes extreme slowness and data duplication. The correct thing is to divide the data.</p>
+</div>
+<table class="compare-table">
+<tr>
+<th>Fact Tables</th>
+<th>Dimension Tables</th>
+</tr>
+<tr>
+<td>It contains transactions and numbers (sales, expenses).</td>
+<td>Contains details and description (customers, products).</td>
+</tr>
+<tr>
+<td>Very long (millions of rows).</td>
+<td>Short and limited (hundreds or thousands of rows).</td>
+</tr>
+<tr>
+<td>The data is repeated (the customer can buy 100 times).</td>
+<td>The data is unique and not duplicated (each customer has only one code).</td>
+</tr>
+</table>
+<div class="tip-box">
+<div class="icon">⭐</div>
+<p><strong>Star Schema:</strong> It is the best design, and it includes a table of movements (Fact) in the text, surrounded by tables of dimensions (Dimensions) like a star.</p>
+</div>` }],
   },
   "scd": {
     eyebrow: "01 · 06 — الأبعاد المتغيرة ببطء",
@@ -253,11 +377,79 @@ Employee Branch at Sale =
       <div class="icon">💡</div>
       <p><strong>في معظم مشاريع Power BI:</strong> Type 1 كافٍ لـ 80% من الحالات. Type 2 لما العميل أو المدير يسألك "ما كانت بيانات الموظف وقت البيعة؟" — هنا فقط تحتاجه.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What's the problem?</h3>
+<p>In fact, the data of Dimension It changes with time. If a branch manager moved from Cairo to Alexandria in July, do the pre-July reports reflect Cairo or Alexandria? The answer depends on the type of SCD Which you choose.</p>
+</div>
+<table class="compare-table">
+<tr>
+<th>Type</th>
+<th>Mechanism</th>
+<th>When do you use it?</th>
+</tr>
+<tr>
+<td><strong>Type 0</strong></td>
+<td>No change — the first value remains forever.</td>
+<td>Data that never changes (date of birth).</td>
+</tr>
+<tr>
+<td><strong>Type 1</strong></td>
+<td>Overwrite — Replace the old value with the new one.</td>
+<td>Why don't you care about the date (correct a spelling error).</td>
+</tr>
+<tr>
+<td><strong>Type 2 <span class="yes">✔ Most common</span></strong></td>
+<td>Add a new row with start and end dates.</td>
+<td>Why do you need to keep the full history?</td>
+</tr>
+<tr>
+<td><strong>Type 3</strong></td>
+<td>Add a column for the previous value next to the current one.</td>
+<td>Track just one last change.</td>
+</tr>
+</table>
+<div class="lesson-card">
+<h3>Type 2 in Power Query — Practical application</h3>
+<p>For every employee or customer who changes their data, you add a new row instead of modifying the old one:</p>
+<div class="code-block">
+<span class="cm">-- Staff table with SCD Type 2</span>
+EmployeeKey | EmployeeID | Name   | Branch       | StartDate  | EndDate    | IsCurrent
+----------- | ---------- | ------ | ------------ | ---------- | ---------- | ---------
+1           | E001       | Ahmed  | Cairo        | 2020-01-01 | 2023-06-30 | FALSE
+2           | E001       | Ahmed  | Alexandria   | 2023-07-01 | 9999-12-31 | TRUE
+3           | E002       | Sara   | Cairo        | 2021-03-15 | 9999-12-31 | TRUE
+
+<span class="cm">-- date 9999-12-31 = He is still active now</span>
+<span class="cm">-- IsCurrent = TRUE For the current active row</span>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Correct association with Fact Table</h3>
+<div class="code-block">
+<span class="cm">-- Linking is to EmployeeKey (not EmployeeID)</span>
+<span class="cm">-- Because EmployeeID is duplicate (two rows for employee E001)</span>
+<span class="cm">-- in DAX: To display employee data on the transaction date</span>
+Employee Branch at Sale = 
+<span class="fn">CALCULATE</span>(
+    <span class="fn">MAX</span>(Dim_Employee[Branch]),
+    <span class="fn">FILTER</span>(
+        Dim_Employee,
+        Dim_Employee[EmployeeID] = <span class="fn">MAX</span>(Fact_Sales[EmployeeID]) &amp;&amp;
+        Dim_Employee[StartDate] &lt;= <span class="fn">MAX</span>(Fact_Sales[SaleDate]) &amp;&amp;
+        Dim_Employee[EndDate] &gt;= <span class="fn">MAX</span>(Fact_Sales[SaleDate])
+    )
+)
+      </div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>In most projects Power BI:</strong> Type 1 is sufficient for 80% of cases. Type 2 When a client or manager asks you, “What was the employee’s data at the time of the sale?” - Only here you need it.</p>
+</div>` }],
   },
   "bridge-tables": {
-    eyebrow: "01 · 07 — الجداول الجسرية",
-    title: "جداول الجسر — Bridge Tables",
-    lede: "الحل الاحترافي لعلاقات Many-to-Many في نموذج البيانات — بدون جداول الجسر ستواجه نتائج خاطئة وفلاتر مكسورة.",
+    eyebrow: "01 · 07 — Bridge Tables",
+    title: "Bridge Tables",
+    lede: "الحل الاحترافي لعلاقات Many-to-Many في Data Model — بدون Bridge Tables ستواجه نتائج خاطئة والـ Filters ستكون مكسورة.",
     en_eyebrow: "01 · 07 — Bridge Tables",
     en_lede: "The professional solution for Many-to-Many relationships in your data model — without bridge tables, you'll get wrong results and broken filters.",
     sectionId: "bridge-tables",
@@ -267,17 +459,17 @@ Employee Branch at Sale =
     </div>
 
     <div class="lesson-card">
-      <h3>الحل — جدول الجسر (Bridge Table)</h3>
-      <p>جدول وسيط يحتوي على المفاتيح من الجدولين ويحوّل العلاقة Many-to-Many لعلاقتين One-to-Many نظيفتين:</p>
+      <h3>الحل — Bridge Table</h3>
+      <p>Bridge Table عبارة عن جدول وسيط يحتوي على المفاتيح من الجدولين ويحوّل العلاقة Many-to-Many لعلاقتين One-to-Many نظيفتين:</p>
       <div class="code-block">
 <span style="color:var(--gold);">-- بدلاً من:</span>
 Students ←→ Subjects  (Many-to-Many — خطأ)
 
-<span style="color:var(--gold);">-- استخدم جدول جسر:</span>
+<span style="color:var(--gold);">-- استخدم Bridge Table:</span>
 Students ──< StudentSubjects >── Subjects
          (One-to-Many)  (Many-to-One)
 
-<span style="color:var(--gold);">-- جدول الجسر يحتوي على:</span>
+<span style="color:var(--gold);">-- الـ Bridge Table يحتوي على:</span>
 StudentSubjects: StudentID | SubjectID | Grade | Year
       </div>
     </div>
@@ -290,7 +482,7 @@ StudentSubjects: StudentID | SubjectID | Grade | Year
 Products (ProductID, Name, Category)
 Promotions (PromotionID, Name, Discount%)
 
-<span style="color:var(--gold);">-- جدول الجسر:</span>
+<span style="color:var(--gold);">-- Bridge Table:</span>
 ProductPromotion (ProductID, PromotionID)
 
 <span style="color:var(--gold);">-- العلاقات:</span>
@@ -299,14 +491,14 @@ Products ──< ProductPromotion >── Promotions
     </div>
 
     <div class="lesson-card">
-      <h3>إعداد اتجاه الفلتر مع جداول الجسر</h3>
+      <h3>إعداد Filter Direction مع Bridge Tables</h3>
       <ul>
         <li>العلاقة من Fact → Bridge: اتجاه واحد (Single)</li>
         <li>العلاقة من Bridge → Dimension: اتجاه واحد (Single)</li>
         <li>في بعض الحالات ستحتاج <strong>CROSSFILTER</strong> في DAX لتمرير الفلتر يدوياً</li>
       </ul>
       <div class="code-block">
-<span style="color:var(--text3);">-- DAX مع CROSSFILTER لتمرير الفلتر عبر الجسر</span>
+<span style="color:var(--text3);">-- DAX مع CROSSFILTER لتمرير الـ filter عبر Bridge Table</span>
 Sales With Promo =
 <span class="fn">CALCULATE</span>(
     [Total Sales],
@@ -319,6 +511,60 @@ Sales With Promo =
       <div class="icon">⚠️</div>
       <p><strong>تحذير:</strong> تجنّب تفعيل Cross-filter Direction = Both على العلاقات مباشرة في نموذج Many-to-Many — استخدم CROSSFILTER في DAX بدلاً منه للتحكم الدقيق.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Problem — Why is Many-to-Many dangerous?</h3>
+<p>If you connect two tables directly with a relationship Many-to-Many (for example: student ← A subject and each student has multiple subjects, and each subject has multiple students), Power BI It needs an intermediate solution because the filters will spread uncontrollably and give double numbers.</p>
+</div>
+<div class="lesson-card">
+<h3>Solution — Bridge Table</h3>
+<p>An intermediate table contains the keys from the two tables and converts the Many-to-Many relationship into two clean One-to-Many relationships:</p>
+<div class="code-block">
+<span style="color:var(--gold);">-- instead of:</span>
+Students ←→ Subjects (Many-to-Many — false)
+
+<span style="color:var(--gold);">-- Use a bridge table:</span>
+Students ──&lt; StudentSubjects &gt;── Subjects
+         (One-to-Many)  (Many-to-One)
+
+<span style="color:var(--gold);">-- The bridge table contains:</span>
+StudentSubjects: StudentID | SubjectID | Grade | Year
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Real-life example — sales, products, and offers</h3>
+<p>If there are promotions that apply to multiple products and each product belongs to multiple offers:</p>
+<div class="code-block">
+<span style="color:var(--gold);">-- Tables:</span>
+Products (ProductID, Name, Category)
+Promotions (PromotionID, Name, Discount%)
+
+<span style="color:var(--gold);">-- Bridge schedule:</span>
+ProductPromotion (ProductID, PromotionID)
+
+<span style="color:var(--gold);">-- Relationships:</span>
+Products ──&lt; ProductPromotion &gt;── Promotions
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Setting filter direction with bridge tables</h3>
+<ul>
+<li>Relationship from Fact → Bridge: One Way (Single)</li>
+<li>Relationship from Bridge → Dimension: One Way (Single)</li>
+<li>In some cases you will need <strong>CROSSFILTER</strong> in DAX To pass the filter manually</li>
+</ul>
+<div class="code-block">
+<span style="color:var(--text3);">-- DAX with CROSSFILTER To pass the filter through the bridge</span>
+Sales With Promo =
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">CROSSFILTER</span>(ProductPromotion[ProductID], Products[ProductID], Both)
+)
+      </div>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>warning:</strong> Avoid activation Cross-filter Direction = Both On the relationships directly in the model Many-to-Many — use CROSSFILTER in DAX Instead of precise control.</p>
+</div>` }],
   },
   "getdata": {
     eyebrow: "02 · 01 — هندسة البيانات وتحويلها",
@@ -360,6 +606,38 @@ Sales With Promo =
         </div>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Supported data sources</h3>
+<p>Power BI can read from more than 100 different sources, the most popular of which are:</p>
+<ul>
+<li>Files (Excel, CSV, PDF, Folder).</li>
+<li>Databases (SQL Server, MySQL, Oracle).</li>
+<li>Cloud services and websites (Web, SharePoint, Google Analytics).</li>
+</ul>
+</div>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Click on Get Data</h4>
+<p>From the Home menu, choose your data source (for example, Excel workbook).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Selection of tables</h4>
+<p>The Navigator screen will appear showing you the available chips, check it correctly on the schedule you want.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Load vs Transform</h4>
+<p>If the data is clean and ready, click <strong>Load</strong>. If you need to clean and modify, click <strong>Transform Data</strong> (This is always best).</p>
+</div>
+</div>
+</div>` }],
   },
   "cleaning": {
     eyebrow: "02 · 02 — تنظيف البيانات",
@@ -386,10 +664,27 @@ Sales With Promo =
         <li><strong>Append Queries:</strong> دمج جدولين بالطول (وضع داتا شهر 2 تحت داتا شهر 1).</li>
       </ul>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Transformations tools</h3>
+<ul>
+<li><strong>Data Types:</strong> Ensure that numbers are read as numbers and dates as dates (very, very important).</li>
+<li><strong>Split Column:</strong> Separating a column based on a space or sign (such as separating a first name from a last name).</li>
+<li><strong>Replace Values:</strong> Replace an error value or an empty value with a valid value (such as Find &amp; Replace).</li>
+<li><strong>Unpivot:</strong> Converting cross-tabs into longitudinal tables suitable for analysis. (The magic of Power Query!).</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Merge &amp; Append</h3>
+<p>Like a doula VLOOKUP In Excel, it is much stronger:</p>
+<ul>
+<li><strong>Merge Queries:</strong> Merge two tables based on a common column (such as employee code).</li>
+<li><strong>Append Queries:</strong> Merge two tables lengthwise (put data for month 2 under data for month 1).</li>
+</ul>
+</div>` }],
   },
   "powerquery": {
-    eyebrow: "02 · 03 — محرر Power Query",
-    title: "Power Query — محرر الاستعلامات",
+    eyebrow: "02 · 03 — Power Query Editor",
+    title: "Power Query Editor",
     lede: "المطبخ السري لـ Power BI. كل خطوة بتتسجل تلقائياً وبتتطبق كل مرة تحدّث البيانات.",
     en_eyebrow: "02 · 03 — Power Query Editor",
     en_lede: "The secret kitchen of Power BI. Every step is automatically recorded and applied every time you update the data.",
@@ -467,6 +762,74 @@ A       | Mar   | 900
 <span class="cm">-- الخطوة: select columns Jan,Feb,Mar → Transform → Unpivot Columns</span>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is Power Query?</h3>
+<p>It is a built-in program Power BI Its primary function is <strong>ETL</strong>:</p>
+<ul>
+<li><strong>Extract:</strong> Pull data from any source.</li>
+<li><strong>Transform:</strong> Edit and clean up (Clear Columns, Change Type, Merge, Unpivot).</li>
+<li><strong>Load:</strong> Load clean data for the model.</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Super feature:</strong> Every step is recorded <strong>Applied Steps</strong>. When the data speaks, the steps are executed automatically without any intervention.</p>
+</div>
+<div class="lesson-card">
+<h3>The most important conversion operations</h3>
+<ul>
+<li><strong>Change Type:</strong> Changing the column type — most important of all, do it first thing.</li>
+<li><strong>Remove Duplicates:</strong> Delete duplicate rows with one click.</li>
+<li><strong>Split Column:</strong> Separate a column based on a delimiter (comma, space, number of characters).</li>
+<li><strong>Replace Values:</strong> Replace a null or error value with a true value.</li>
+<li><strong>Unpivot Columns:</strong> Convert a table from wide to long — the magic of Power Query.</li>
+<li><strong>Add Custom Column:</strong> Add a calculated column with code M.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Merge vs Append</h3>
+<ul>
+<li><strong>Merge Queries:</strong> Merge two tables crosswise with a common column — substitute VLOOKUP The strongest. supports Left/Right/Inner/Full Join.</li>
+<li><strong>Append Queries:</strong> Stack two tables on top of each other — useful for merging monthly or yearly files.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>M Code example — Loading and cleaning Excel file</h3>
+<div class="code-block">
+<span class="kw">let</span>
+    Source     = Excel.Workbook(<span class="fn">File.Contents</span>(<span class="str">"C:\\data\\sales.xlsx"</span>)),
+    Sheet      = Source{[<span class="fn">Name</span>=<span class="str">"Sheet1"</span>]}[Data],
+    Promoted   = <span class="fn">Table.PromoteHeaders</span>(Sheet, [PromoteAllScalars=<span class="kw">true</span>]),
+    TypedCols  = <span class="fn">Table.TransformColumnTypes</span>(Promoted, {
+                     {<span class="str">"Date"</span>,   type date},
+                     {<span class="str">"Amount"</span>, type number},
+                     {<span class="str">"Region"</span>, type text}
+                 }),
+    NoNulls    = <span class="fn">Table.SelectRows</span>(TypedCols, each [Amount] &lt;&gt; null),
+    NoNeg      = <span class="fn">Table.SelectRows</span>(NoNulls,   each [Amount] &gt; <span class="num">0</span>),
+    TrimRegion = <span class="fn">Table.TransformColumns</span>(NoNeg, {{<span class="str">"Region"</span>, Text.Trim}})
+<span class="kw">in</span>
+    TrimRegion
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Example Unpivot — from Wide to Long</h3>
+<div class="code-block">
+<span class="cm">-- Before Unpivot (cross table — error for parsing):</span>
+Product | Jan  | Feb  | Mar
+------- | ---- | ---- | ----
+A       | 1000 | 1200 | 900
+
+<span class="cm">-- After Unpivot (linear table - correct):</span>
+Product | Month | Sales
+------- | ----- | -----
+A       | Jan   | 1000
+A       | Feb   | 1200
+A       | Mar   | 900
+
+<span class="cm">-- Step: select columns Jan,Feb,Mar → Transform → Unpivot Columns</span>
+</div>
+</div>` }],
   },
   "mcode": {
     eyebrow: "02 · 04 — لغة M المتقدمة",
@@ -568,11 +931,100 @@ CleanedFeb = CleanSalesTable(RawFebTable)
       <div class="icon">💡</div>
       <p><strong>Advanced Editor:</strong> في Power Query → View → Advanced Editor. هنا تشوف وتعدّل الكود M الكامل للاستعلام. Ctrl+Z للتراجع يشتغل هنا. اعتاد على قراءته بعد كل خطوة تعملها بالضغط على الأزرار.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>M language syntax — how to read code</h3>
+<p>Every query in Power Query is actually a block of M code <strong>let...in</strong>. Every line = step Applied Step:</p>
+<div class="code-block">
+<span class="kw">let</span>
+<span class="cm">// Every step = A variable that takes the result of the previous step</span>
+    Source      = Excel.Workbook(<span class="fn">File.Contents</span>(<span class="str">"C:\\data\\sales.xlsx"</span>)),
+    Sheet1      = Source{[<span class="fn">Name</span>=<span class="str">"Sales"</span>]}[Data],
+    Headers     = <span class="fn">Table.PromoteHeaders</span>(Sheet1),
+    ChangedType = <span class="fn">Table.TransformColumnTypes</span>(Headers, {
+                      {<span class="str">"Date"</span>,   type date},
+                      {<span class="str">"Amount"</span>, type number}
+                  }),
+    Filtered    = <span class="fn">Table.SelectRows</span>(ChangedType, each [Amount] &gt; <span class="num">0</span>)
+<span class="kw">in</span>
+    Filtered  <span class="cm">//The last step is the final output</span>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Parameters — dynamic queries</h3>
+<p>Instead of writing a fixed file path in your code, use a parameter that changes easily:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Manage Parameters → New Parameter</h4>
+<p>Specify the name (for example: FilePath), type (Text), and default value (C:\\data\\).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Use it in code</h4>
+<div class="code-block" style="margin-top:6px;">
+<span class="cm">// Replace the static path</span>
+Source = Excel.Workbook(<span class="fn">File.Contents</span>(FilePath &amp; <span class="str">"sales.xlsx"</span>))
+            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Custom Functions — Create custom functions</h3>
+<p>If you have the same cleaning steps for many files, turn them into a function and call them once:</p>
+<div class="code-block">
+<span class="cm">// Define a Function to clean any sales table</span>
+CleanSalesTable = (<span class="kw">tbl</span> as table) as table =&gt;
+<span class="kw">let</span>
+    Typed    = <span class="fn">Table.TransformColumnTypes</span>(tbl, {
+                   {<span class="str">"Date"</span>,   type date},
+                   {<span class="str">"Amount"</span>, type number},
+                   {<span class="str">"Region"</span>, type text}
+               }),
+    NoNulls  = <span class="fn">Table.SelectRows</span>(Typed, each [Amount] &lt;&gt; null),
+    Trimmed  = <span class="fn">Table.TransformColumns</span>(NoNulls, {{<span class="str">"Region"</span>, Text.Trim}})
+<span class="kw">in</span>
+    Trimmed
+
+<span class="cm">// Call the function on a new table</span>
+CleanedJan = CleanSalesTable(RawJanTable)
+CleanedFeb = CleanSalesTable(RawFebTable)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Folder Connector — Automatic file merging</h3>
+<p>One of the most powerful M-Code scenarios is: importing an entire folder of monthly Excel files and merging them automatically:</p>
+<div class="code-block">
+<span class="kw">let</span>
+<span class="cm">// 1. Read the entire volume</span>
+    FolderPath = <span class="fn">Folder.Files</span>(<span class="str">"C:\\data\\monthly_sales\\"</span>),
+
+    <span class="cm">// 2. Filter Excel files only</span>
+    OnlyXLSX   = <span class="fn">Table.SelectRows</span>(FolderPath, 
+                     each <span class="fn">Text.EndsWith</span>([Name], <span class="str">".xlsx"</span>)),
+
+    <span class="cm">// 3. For each file, extract the table (Custom Column)</span>
+    AddData    = <span class="fn">Table.AddColumn</span>(OnlyXLSX, <span class="str">"Data"</span>, each
+                     <span class="fn">Excel.Workbook</span>([Content]){<span class="num">0</span>}[Data]),
+
+    <span class="cm">// 4. Merge all the tables on top of each other</span>
+    Combined   = <span class="fn">Table.Combine</span>(AddData[Data])
+<span class="kw">in</span>
+    Combined
+      </div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Advanced Editor:</strong> In Power Query → View → Advanced Editor. Here you can view and edit the complete M code for the query. Ctrl+Z to undo works here. Get into the habit of reading it after each step you make by pressing the buttons.</p>
+</div>` }],
   },
   "relationships": {
-    eyebrow: "03 · 01 — بناء النموذج الربطي",
-    title: "العلاقات (Relationships)",
-    lede: "كيف نربط الجداول ببعضها لتعمل ككيان واحد متصل.",
+    eyebrow: "03 · 01 — Relationship Model",
+    title: "Relationships",
+    lede: "كيف نربط الجداول ببعضها عبر Relationships لتعمل ككيان واحد متصل.",
     en_eyebrow: "03 · 01 — Building the Relationship Model",
     en_lede: "How to connect tables to each other so they work as a single connected entity.",
     sectionId: "relationships",
@@ -586,11 +1038,11 @@ CleanedFeb = CleanSalesTable(RawFebTable)
     </div>
 
     <div class="lesson-card">
-      <h3>اتجاه الفلترة (Cross Filter Direction)</h3>
-      <p>السهم الموجود على خط العلاقة يحدد اتجاه انتقال الفلاتر:</p>
+      <h3>Cross Filter Direction</h3>
+      <p>السهم الموجود على خط العلاقة يحدد اتجاه انتقال الـ filters:</p>
       <ul>
-        <li><strong>Single (أحادي):</strong> الفلتر ينتقل من جداول الـ Dimension إلى جدول الـ Fact. (هذا هو الافتراضي والأكثر أماناً).</li>
-        <li><strong>Both (ثنائي):</strong> الفلتر ينتقل في الاتجاهين. استخدمه بحذر شديد لأنه يبطئ النموذج.</li>
+        <li><strong>Single:</strong> الـ filter ينتقل من جداول الـ Dimension إلى جدول الـ Fact. وهذا هو الوضع الافتراضي والأكثر أماناً.</li>
+        <li><strong>Both:</strong> الـ filter ينتقل في الاتجاهين. استخدمه بحذر شديد لأنه يبطئ النموذج.</li>
       </ul>
     </div>
 
@@ -601,8 +1053,32 @@ CleanedFeb = CleanSalesTable(RawFebTable)
 
     <div class="warn-box">
       <div class="icon">🚨</div>
-      <p><strong>خطر الفلترة الثنائية (Both Directional Filter):</strong> تغيير العلاقة لـ "Both" يبدو مغرياً لكنه يسبب 3 مشاكل خطيرة: (1) يبطئ النموذج بشكل ملحوظ لأن المحرك يحسب مسارات فلترة إضافية. (2) يؤدي لنتائج خاطئة عند وجود Many-to-Many ضمنية. (3) يجعل التشخيص صعباً جداً. الحل الصحيح: ابقَ على Single Direction واستخدم <strong>CROSSFILTER()</strong> في DAX فقط عند الحاجة.</p>
+      <p><strong>خطر Both Directional Filter:</strong> تغيير العلاقة إلى "Both" يبدو مغرياً لكنه يسبب 3 مشاكل خطيرة: (1) يبطئ النموذج بشكل ملحوظ لأن المحرك يحسب مسارات Filter إضافية. (2) يؤدي لنتائج خاطئة عند وجود Many-to-Many ضمنية. (3) يجعل التشخيص صعباً جداً. الحل الصحيح: ابقَ على Single Direction واستخدم <strong>CROSSFILTER()</strong> في DAX فقط عند الحاجة.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Types of relationships (Cardinality)</h3>
+<ul>
+<li><strong>1 to Many (1:*):</strong> It is the ideal and always desired relationship! (One customer in the Customers table has many transactions in the Sales table.)</li>
+<li><strong>1 to 1 (1:1):</strong> Rare, and usually means that the two tables should have been merged together.</li>
+<li><strong>Many to Many (*:*):</strong> It is very dangerous and should be avoided, because it causes incorrect results in calculations.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Cross Filter Direction</h3>
+<p>The arrow on the relationship line determines the direction of travel of the filters:</p>
+<ul>
+<li><strong>Single:</strong> The filter moves from the Dimension tables to the Fact table. (This is the default and most secure).</li>
+<li><strong>Both:</strong> The filter moves in both directions. Use it with extreme caution as it slows down the form.</li>
+</ul>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p>Always make sure that the columns on which you build the relationship (like Product ID) It has the same data type (Data Type) In the two tables.</p>
+</div>
+<div class="warn-box">
+<div class="icon">🚨</div>
+<p><strong>The danger of both directional filter:</strong> Changing the relationship to "Both" sounds tempting but it causes 3 serious problems: (1) It slows down the model significantly because the engine calculates additional filter paths. (2) It leads to incorrect results when there is a Many-to-Many implicit. (3) It makes diagnosis very difficult. Correct solution: Stay with Single Direction and use <strong>CROSSFILTER()</strong> in DAX Only when needed.</p>
+</div>` }],
   },
   "datetable": {
     eyebrow: "03 · 02 — جدول التقويم",
@@ -690,21 +1166,96 @@ Date_Table =
       <div class="icon">💡</div>
       <p><strong>Sort Month Name:</strong> عمود Month Name بيرتب أبجدياً (أبريل قبل يناير!). عشان تصلح ده، في الـ Data View اختار عمود Month Name ثم Column Tools → Sort by Column → اختار Month Num.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="warn-box">
+<div class="icon">🚨</div>
+<p><strong>Rule you need to know:</strong> Power BI It does not accept functions Time Intelligence (TOTALYTD, SAMEPERIODLASTYEAR...) Unless you have a continuous calendar schedule (No gaps in dates) And teacher K Date Table.</p>
+</div>
+<div class="lesson-card">
+<h3>method 1 — CALENDARAUTO() (The fastest way)</h3>
+<p>It runs an automatic schedule from the smallest date to the largest date in the entire model. Use it if your data is complete:</p>
+<div class="code-block">
+<span class="cm">-- Simple automatic calendar schedule</span>
+Date_Table = 
+<span class="fn">ADDCOLUMNS</span>(
+    <span class="fn">CALENDARAUTO</span>(),
+    <span class="str">"Year"</span>,        <span class="fn">YEAR</span>([Date]),
+    <span class="str">"Month Number"</span>, <span class="fn">MONTH</span>([Date]),
+    <span class="str">"Month Name"</span>,   <span class="fn">FORMAT</span>([Date], <span class="str">"MMMM"</span>),
+    <span class="str">"Quarter"</span>,      <span class="str">"Q"</span> &amp; <span class="fn">FORMAT</span>([Date], <span class="str">"Q"</span>),
+    <span class="str">"Week Number"</span>,  <span class="fn">WEEKNUM</span>([Date]),
+    <span class="str">"Day Name"</span>,     <span class="fn">FORMAT</span>([Date], <span class="str">"dddd"</span>),
+    <span class="str">"Is Weekend"</span>,   <span class="fn">IF</span>(<span class="fn">WEEKDAY</span>([Date],2) &gt;= <span class="num">6</span>, <span class="kw">TRUE</span>(), <span class="kw">FALSE</span>())
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>method 2 — CALENDAR() (Complete control)</h3>
+<p>You specify the exact date range. Useful if you have future or historical data outside the scope of the data:</p>
+<div class="code-block">
+<span class="cm">-- Calendar table from 2020 to the end of the current year</span>
+Date_Table = 
+<span class="fn">ADDCOLUMNS</span>(
+    <span class="fn">CALENDAR</span>(
+        <span class="fn">DATE</span>(<span class="num">2020</span>, <span class="num">1</span>, <span class="num">1</span>),
+        <span class="fn">DATE</span>(<span class="fn">YEAR</span>(<span class="fn">TODAY</span>()), <span class="num">12</span>, <span class="num">31</span>)
+    ),
+    <span class="str">"Year"</span>,           <span class="fn">YEAR</span>([Date]),
+    <span class="str">"Month Num"</span>,      <span class="fn">MONTH</span>([Date]),
+    <span class="str">"Month Name AR"</span>,  <span class="fn">SWITCH</span>(<span class="fn">MONTH</span>([Date]),
+                         <span class="num">1</span>,<span class="str">"January"</span>, <span class="num">2</span>,<span class="str">"February"</span>, <span class="num">3</span>,<span class="str">"March"</span>, <span class="num">4</span>,<span class="str">"April"</span>,
+                         <span class="num">5</span>,<span class="str">"May"</span>, <span class="num">6</span>,<span class="str">"June"</span>, <span class="num">7</span>,<span class="str">"July"</span>, <span class="num">8</span>,<span class="str">"August"</span>,
+                         <span class="num">9</span>,<span class="str">"September"</span>, <span class="num">10</span>,<span class="str">"October"</span>, <span class="num">11</span>,<span class="str">"November"</span>, <span class="str">"December"</span>),
+    <span class="str">"Quarter"</span>,        <span class="str">"Q"</span> &amp; <span class="fn">FORMAT</span>([Date], <span class="str">"Q"</span>),
+    <span class="str">"Year-Month"</span>,     <span class="fn">FORMAT</span>([Date], <span class="str">"YYYY-MM"</span>),
+    <span class="str">"Sort Month"</span>,     <span class="fn">YEAR</span>([Date]) * <span class="num">100</span> + <span class="fn">MONTH</span>([Date])
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Steps to activate the calendar table (Mark as Date Table)</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Go to Model View</h4>
+<p>Open the Relationships screen and choose the Date_Table table.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Table Tools → Mark as Date Table</h4>
+<p>From the top menu, choose Column Date And he pressed Mark as Date Table. Power BI It will verify that dates are continuous and unique.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Link the table to the Fact Table</h4>
+<p>Create a 1:Many relationship from Date_Table[Date] to Fact_Sales[OrderDate] with Single filtering.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Sort Month Name:</strong> The Month Name column is arranged alphabetically (April before January!). To fix this, in the Data View choose the Month Name column, then Column Tools → Sort by Column → choose Month Num.</p>
+</div>` }],
   },
   "hierarchies": {
-    eyebrow: "03 · 03 — التصنيفات الهرمية",
-    title: "التصنيفات الهرمية — Hierarchies",
-    lede: "الـ Hierarchies تتيح للمستخدم الانتقال من مستوى تحليلي لآخر بضغطة واحدة — من السنة للربع للشهر للأسبوع للوم، أو من الدولة للمدينة للمنطقة.",
+    eyebrow: "03 · 03 — Hierarchies",
+    title: "Hierarchies",
+    lede: "الـ Hierarchies تتيح للمستخدم الانتقال من مستوى تحليلي لآخر بضغطة واحدة — من السنة إلى الربع إلى الشهر إلى الأسبوع إلى اليوم، أو من الدولة إلى المنطقة إلى المدينة.",
     en_eyebrow: "03 · 03 — Hierarchies",
     en_lede: "Hierarchies allow users to move from one analytical level to another with one click — from year to quarter to month to week to day, or from country to city to region.",
     sectionId: "hierarchies",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
       <h3>ما هي الـ Hierarchy ولماذا تهم؟</h3>
-      <p>هي ترتيب هرمي لمستويات بيانات مترابطة — بتيجي مع ميزة <strong>Drill Down</strong> اللي تخلي المستخدم ينزل من مستوى عام لمستوى تفصيلي بنقرة.</p>
+      <p>هي ترتيب لمستويات بيانات مترابطة — وتأتي مع ميزة <strong>Drill Down</strong> التي تجعل المستخدم ينزل من مستوى عام إلى مستوى تفصيلي بنقرة واحدة.</p>
       <ul>
-        <li>هرمية الوقت: السنة ← الربع ← الشهر ← اليوم</li>
-        <li>هرمية الجغرافيا: الدولة ← المنطقة ← المدينة ← الفرع</li>
-        <li>هرمية المنتجات: الفئة ← الفئة الفرعية ← المنتج</li>
+        <li>Time Hierarchy: السنة ← الربع ← الشهر ← اليوم</li>
+        <li>Geography Hierarchy: الدولة ← المنطقة ← المدينة ← الفرع</li>
+        <li>Product Hierarchy: الفئة ← الفئة الفرعية ← المنتج</li>
       </ul>
     </div>
 
@@ -754,8 +1305,63 @@ Date_Table =
 
     <div class="tip-box">
       <div class="icon">💡</div>
-      <p><strong>نصيحة:</strong> جدول التقويم (Date Table) بتاعك يجب أن يحتوي على أعمدة Year, QuarterNum, MonthNum, MonthName, Day لبناء هرمية زمنية احترافية — الأرقام للترتيب والأسماء للعرض.</p>
+      <p><strong>نصيحة:</strong> جدول التقويم (Date Table) يجب أن يحتوي على أعمدة Year, QuarterNum, MonthNum, MonthName, Day لبناء Time Hierarchy احترافية — الأرقام للترتيب والأسماء للعرض.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is Hierarchy and why does it matter?</h3>
+<p>It is a hierarchical arrangement of interconnected data levels — which comes with a feature <strong>Drill Down</strong> Which allows the user to descend from a general level to a detailed level with a click.</p>
+<ul>
+<li>Time hierarchy: year ← quarter ← month ← day</li>
+<li>Geography hierarchy: country → region → city → branch</li>
+<li>Product hierarchy: Category → Subcategory → Product</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>construction Hierarchy in Power BI Desktop</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Choose the highest level column</h4>
+<p>In the Data Pane, right-click on the top column (eg <strong>Year</strong>) and chose <strong>Create Hierarchy</strong>.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Add the following levels</h4>
+<p>Drag the remaining columns (Quarter, Month, Day) and drop them onto the Hierarchy, or right-click on them and choose <strong>Add to Hierarchy</strong>.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Ranking of levels</h4>
+<p>Drag levels to arrange the pyramid from top (most general) to bottom (most detailed).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Use in report</h4>
+<p>Drag the Hierarchy to the Visual — Drill Down/Up arrows will appear automatically.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Drill buttons in Visuals</h3>
+<ul>
+<li><strong>▼ (Drill Down):</strong> Descends one level for all visible values.</li>
+<li><strong>⬇ (Go to next level):</strong> The next level displays all values ​​at once.</li>
+<li><strong>▲ (Drill Up):</strong> Returns to the top level.</li>
+<li><strong>Double click on a value:</strong> Drill Down for this specific value.</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>advice:</strong> Your Date Table should have Year, QuarterNum, MonthNum, MonthName, Day columns to build a professional time hierarchy — numbers to arrange and names to display.</p>
+</div>` }],
   },
   "dax1": {
     eyebrow: "04 · 01 — لغة التحليل DAX",
@@ -801,6 +1407,41 @@ Total Orders = <span class="fn">COUNTROWS</span>(Sales)
 Unique Products = <span class="fn">DISTINCTCOUNT</span>(Sales[ProductID])
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>The difference between Calculated Column and Measure</h3>
+<p>One of the most important lessons in DAX.</p>
+</div>
+<table class="compare-table">
+<tr>
+<th>Calculated Column</th>
+<th>Measure</th>
+</tr>
+<tr>
+<td>Adds an actual column in the table and takes up RAM space.</td>
+<td>A virtual formula that takes no storage space; it is evaluated only when you place it in a visual.</td>
+</tr>
+<tr>
+<td>Calculates row by row (Row Context).</td>
+<td>Calculated based on overall filters (Filter Context).</td>
+</tr>
+<tr>
+<td>We use it to make categories (high/low price).</td>
+<td>We use it for numerical calculations (total, average, ratio). <span class="yes">✔ Better</span></td>
+</tr>
+</table>
+<div class="lesson-card">
+<h3>Examples of basic functions</h3>
+<div class="code-block">
+<span class="cm">-- Calculate total sales (Measure)</span>
+Total Sales = <span class="fn">SUM</span>(Sales[Amount])
+
+<span class="cm">-- Count total transactions</span>
+Total Orders = <span class="fn">COUNTROWS</span>(Sales)
+
+<span class="cm">-- Count unique products sold</span>
+Unique Products = <span class="fn">DISTINCTCOUNT</span>(Sales[ProductID])
+      </div>
+</div>` }],
   },
   "dax-logical": {
     eyebrow: "04 · 02 — IF و SWITCH",
@@ -910,6 +1551,103 @@ Flagged =
       <div class="icon">💡</div>
       <p><strong>IFERROR و ISBLANK:</strong> لو الـ Measure ممكن يرجع خطأ (مثل قسمة) استخدم <code>IFERROR([Measure], 0)</code>. لو ممكن يرجع BLANK استخدم <code>IF(ISBLANK([Measure]), "لا يوجد", [Measure])</code>.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>IF — Simple condition</h3>
+<p>Structure: <code>IF( &lt;Condition&gt;, &lt;TrueResult&gt;, [FalseResult] )</code></p>
+<div class="code-block">
+<span class="cm">-- Performance rating: above or below target?</span>
+Performance Flag = 
+<span class="fn">IF</span>(
+    [Total Sales] &gt;= [Sales Target],
+    <span class="str">"✅ On Track"</span>,
+    <span class="str">"❌ Below Target"</span>
+)
+
+<span class="cm">-- Use IF To avoid division by zero (instead DIVIDE)</span>
+Margin % = 
+<span class="fn">IF</span>(
+    [Total Revenue] = <span class="num">0</span>,
+    <span class="fn">BLANK</span>(),
+    <span class="fn">DIVIDE</span>([Total Profit], [Total Revenue])
+)
+
+<span class="cm">-- IF Overlapping (Nested) — Read the note below!</span>
+Score Label = 
+<span class="fn">IF</span>([Score] &gt;= <span class="num">90</span>, <span class="str">"Excellent"</span>,
+    <span class="fn">IF</span>([Score] &gt;= <span class="num">70</span>, <span class="str">"Good"</span>,
+        <span class="fn">IF</span>([Score] &gt;= <span class="num">50</span>, <span class="str">"Average"</span>, <span class="str">"Poor"</span>)
+    )
+)
+      </div>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>IF Overlapping = problem:</strong> The higher the levels, the more difficult it is to read and edit. More than two levels → Go to SWITCH(TRUE()) immediately.</p>
+</div>
+<div class="lesson-card">
+<h3>SWITCH — substitute IF Professional</h3>
+<p>Two types: SWITCH For fixed values, andSWITCH(TRUE()) For compound conditions.</p>
+<div class="code-block">
+<span class="cm">-- Type 1: SWITCH For fixed values</span>
+Month Name AR = 
+<span class="fn">SWITCH</span>(
+    <span class="fn">MONTH</span>('Calendar'[Date]),
+    <span class="num">1</span>,  <span class="str">"January"</span>,
+    <span class="num">2</span>,  <span class="str">"February"</span>,
+    <span class="num">3</span>,  <span class="str">"March"</span>,
+    <span class="num">4</span>,  <span class="str">"April"</span>,
+    <span class="num">5</span>,  <span class="str">"May"</span>,
+    <span class="num">6</span>,  <span class="str">"June"</span>,
+    <span class="num">7</span>,  <span class="str">"July"</span>,
+    <span class="num">8</span>,  <span class="str">"August"</span>,
+    <span class="num">9</span>,  <span class="str">"September"</span>,
+    <span class="num">10</span>, <span class="str">"October"</span>,
+    <span class="num">11</span>, <span class="str">"November"</span>,
+    <span class="str">"December"</span> <span class="cm">--Default value</span>
+)
+
+<span class="cm">-- Type 2: SWITCH(TRUE()) For compound conditions</span>
+<span class="cm">-- Performance of Egyptian branches based on sales</span>
+Branch Performance = 
+<span class="fn">SWITCH</span>(
+    <span class="kw">TRUE</span>(),
+    [Total Sales] &gt;= <span class="num">500000</span>, <span class="str">"🏆 Elite Branch"</span>,
+    [Total Sales] &gt;= <span class="num">200000</span>, <span class="str">"⭐ High Performer"</span>,
+    [Total Sales] &gt;= <span class="num">100000</span>, <span class="str">"📈 Growing"</span>,
+    [Total Sales] &gt;= <span class="num">50000</span>,  <span class="str">"⚠️ Needs Support"</span>,
+    <span class="str">"🔴 Critical"</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>AND / OR / NOT — Compound terms</h3>
+<div class="code-block">
+<span class="cm">-- AND: Both conditions are true</span>
+High Value Active = 
+<span class="fn">IF</span>(
+    <span class="fn">AND</span>([Total Sales] &gt; <span class="num">100000</span>, [Customer Status] = <span class="str">"Active"</span>),
+    <span class="str">"Premium"</span>, <span class="str">"Standard"</span>
+)
+
+<span class="cm">-- or in the abbreviated form (&amp;&amp;)</span>
+High Value Active = 
+<span class="fn">IF</span>(
+    [Total Sales] &gt; <span class="num">100000</span> &amp;&amp; [Customer Status] = <span class="str">"Active"</span>,
+    <span class="str">"Premium"</span>, <span class="str">"Standard"</span>
+)
+
+<span class="cm">-- OR: One of the two conditions is true (||)</span>
+Flagged = 
+<span class="fn">IF</span>(
+    [Returns] &gt; <span class="num">5</span> || [Complaints] &gt; <span class="num">3</span>,
+    <span class="str">"Review Needed"</span>, <span class="str">"OK"</span>
+)
+      </div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>IFERROR and ISBLANK:</strong> If the Measure may return an error (such as division), use <code>IFERROR([Measure], 0)</code>. If he can come back BLANK use <code>IF(ISBLANK([Measure]), "nothing", [Measure])</code>.</p>
+</div>` }],
   },
   "calculate": {
     eyebrow: "04 · 03 — CALCULATE بعمق",
@@ -1015,6 +1753,98 @@ Sales % of Category =
       <div class="icon">⚠️</div>
       <p><strong>ترتيب تنفيذ CALCULATE:</strong> الفلاتر الخارجية تُطبَّق أولاً ← ثم فلاتر CALCULATE تعدّل عليها ← ثم تُحسب Expression. فهم هذا الترتيب يحل 90% من مشاكل DAX.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>How does CALCULATE work? — Context Transition</h3>
+<p>CALCULATE does two things at the same time: it evaluates the expression first, then adjusts the filter context based on the filters you specify. The order matters:</p>
+<div class="code-block">
+<span class="cm">-- Basic syntax</span>
+CALCULATE( &lt;Expression&gt;, [Filter1], [Filter2], ... )
+
+<span class="cm">-- Example: Northern region sales only - regardless of the Slicer filter</span>
+North Sales = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    Dim_Region[Region] = <span class="str">"North"</span>
+)
+
+<span class="cm">-- Example: Sales for the year 2024 only</span>
+Sales 2024 = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    Dim_Date[Year] = <span class="num">2024</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>ALL vs REMOVEFILTERS vs ALLEXCEPT</h3>
+<p>All three clear filters, but each one does it in a different way:</p>
+<div class="code-block">
+<span class="cm">-- ALL: Clears all filters for a table or column</span>
+% of Total = 
+<span class="fn">DIVIDE</span>(
+    [Total Sales],
+    <span class="fn">CALCULATE</span>([Total Sales], <span class="fn">ALL</span>(Fact_Sales)),
+    <span class="num">0</span>
+)
+
+<span class="cm">-- REMOVEFILTERS: same ALL But make it clearer in intention (best practice)</span>
+% of Total = 
+<span class="fn">DIVIDE</span>(
+    [Total Sales],
+    <span class="fn">CALCULATE</span>([Total Sales], <span class="fn">REMOVEFILTERS</span>(Dim_Product)),
+    <span class="num">0</span>
+)
+
+<span class="cm">-- ALLEXCEPT: Clears all filters except certain columns</span>
+<span class="cm">-- Here: The percentage of each product in its total category (keeping the category filter)</span>
+% of Category = 
+<span class="fn">DIVIDE</span>(
+    [Total Sales],
+    <span class="fn">CALCULATE</span>([Total Sales], <span class="fn">ALLEXCEPT</span>(Dim_Product, Dim_Product[Category])),
+    <span class="num">0</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>KEEPFILTERS — Add a filter without replacing it</h3>
+<p>usually CALCULATE It replaces the existing filter. KEEPFILTERS It adds the new filter to the existing one (junction):</p>
+<div class="code-block">
+<span class="cm">-- without KEEPFILTERS: Shows North sales even if the Slicer On the south</span>
+North Only = <span class="fn">CALCULATE</span>([Total Sales], Dim_Region[Region] = <span class="str">"North"</span>)
+
+<span class="cm">-- with KEEPFILTERS: If the Slicer On the south → Result BLANK</span>
+North Filtered = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">KEEPFILTERS</span>(Dim_Region[Region] = <span class="str">"North"</span>)
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Context Transition in Calculated Columns</h3>
+<p>When you use it CALCULATE Inside Calculated Column, the Row Context It automatically converts to Filter Context. This is very important and why confusion:</p>
+<div class="code-block">
+<span class="cm">-- This column: For each row, calculates the percentage of sales out of the total for the same category</span>
+<span class="cm">-- CALCULATE Here you work Context Transition: Row → Filter</span>
+Sales % of Category = 
+<span class="fn">DIVIDE</span>(
+    Fact_Sales[Amount],
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">SUM</span>(Fact_Sales[Amount]),
+        <span class="fn">ALLEXCEPT</span>(Fact_Sales, Fact_Sales[Category])
+    ),
+    <span class="num">0</span>
+)
+      </div>
+</div>
+<div class="tip-box">
+<div class="icon">🧠</div>
+<p><strong>Context Transition — as simple as:</strong> in DAX There are two types of context: <strong>Row Context</strong> (You are in a particular row — you know the value of each column in that row) and<strong>Filter Context</strong> (A set of filters that determine which rows are counted.) When you put <code>CALCULATE</code>, it converts the Row Context to a Filter Context automatically — this allows Measures to work within Calculated Columns. Without understanding this conversion, you will get numbers you don't expect.</p>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Execution order CALCULATE:</strong> External filters are applied first ← Then filters CALCULATE Modify it ← Then it is calculated Expression. Understanding this arrangement solves 90% Of problems DAX.</p>
+</div>` }],
   },
   "relationships-dax": {
     eyebrow: "04 · 04 — العلاقات داخل DAX",
@@ -1101,6 +1931,78 @@ Unsold Products =
       <div class="icon">⚠️</div>
       <p><strong>CROSSFILTER في Measure = آمن. Both في الموديل = خطر:</strong> CROSSFILTER يفعّل الفلترة الثنائية فقط لحظة تنفيذ الـ Measure المحدد. أما تغيير العلاقة لـ Both في الموديل، فيؤثر على كل المعادلات في التقرير ويسبب نتائج غير متوقعة في أماكن أخرى.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>RELATED — Fetch a value from a linked table</h3>
+<p>Only works in <strong>Calculated Columns</strong>. Brings a value from the Dimension table to the Fact table via an existing relationship:</p>
+<div class="code-block">
+<span class="cm">-- In Fact_Sales: Add column with category name from Dim_Product</span>
+Product Category = <span class="fn">RELATED</span>(Dim_Product[Category])
+
+<span class="cm">-- Now you can use it in Calculated Column again</span>
+Is Electronics = 
+<span class="fn">IF</span>(
+    <span class="fn">RELATED</span>(Dim_Product[Category]) = <span class="str">"Electronics"</span>,
+    <span class="str">"Yes"</span>, <span class="str">"No"</span>
+)
+
+<span class="cm">-- in Measures: use RELATEDTABLE instead RELATED</span>
+<span class="cm">-- (RELATED Don't work in Measures)</span>
+Products Sold = <span class="fn">COUNTROWS</span>(<span class="fn">RELATEDTABLE</span>(Dim_Product))
+      </div>
+</div>
+<div class="lesson-card">
+<h3>USERELATIONSHIP — Activate an inactive relationship</h3>
+<p>Common problem: Table of Fact There are two dates (OrderDate and DeliveryDate) But the model allows only one active relationship with Date Table. the solution: Make both connections and do what you need with USERELATIONSHIP:</p>
+<div class="code-block">
+<span class="cm">-- Setting up the model:</span>
+<span class="cm">-- Active relationship: Date[Date] ← Fact[OrderDate]</span>
+<span class="cm">-- Passive relationship: Date[Date] ← Fact[DeliveryDate]</span>
+<span class="cm">-- Measure works on order date (default)</span>
+Sales by Order Date = [Total Sales]
+
+<span class="cm">-- Measure works on delivery date (activates dormant relationship)</span>
+Sales by Delivery Date = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">USERELATIONSHIP</span>(Fact_Sales[DeliveryDate], 'Date'[Date])
+)
+
+<span class="cm">-- Real-life example: measuring revenues collected (Collected) versus required (Invoiced)</span>
+Revenue Collected = 
+<span class="fn">CALCULATE</span>(
+    [Total Revenue],
+    <span class="fn">USERELATIONSHIP</span>(Fact_Invoices[PaymentDate], 'Date'[Date])
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>CROSSFILTER — Change the filtering direction programmatically</h3>
+<p>Instead of changing the relationship to Both In the model (And the slowness it causes), use CROSSFILTER inside Measure Only when needed:</p>
+<div class="code-block">
+<span class="cm">-- Problem: Number of customers who have not yet purchased</span>
+<span class="cm">-- In the regular model (Single direction) Dim_Customer is not filtered by Fact_Sales</span>
+<span class="cm">-- The solution is: CROSSFILTER:</span>
+Customers With No Sales = 
+<span class="fn">CALCULATE</span>(
+    <span class="fn">DISTINCTCOUNT</span>(Dim_Customer[CustomerID]),
+    <span class="fn">CROSSFILTER</span>(Dim_Customer[CustomerID], Fact_Sales[CustomerID], BOTH),
+    <span class="fn">ISBLANK</span>(<span class="fn">CALCULATE</span>(<span class="fn">COUNTROWS</span>(Fact_Sales)))
+)
+
+<span class="cm">-- CROSSFILTER Values: NONE, ONEWAY, BOTH, ONEWAY_LEFTFILTERSRIGHT</span>
+<span class="cm">-- A simpler example: the number of products that were never sold</span>
+Unsold Products = 
+<span class="fn">CALCULATE</span>(
+    <span class="fn">COUNTROWS</span>(Dim_Product),
+    <span class="fn">CROSSFILTER</span>(Dim_Product[ProductID], Fact_Sales[ProductID], BOTH),
+    <span class="fn">ISBLANK</span>(<span class="fn">CALCULATE</span>(<span class="fn">COUNTROWS</span>(Fact_Sales)))
+)
+      </div>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>CROSSFILTER in Measure = security. Both In the model = risk:</strong> CROSSFILTER Binary filtering is activated only the moment the Measure Specified. As for changing the relationship to Both In the model, it affects all equations in the report and causes unexpected results elsewhere.</p>
+</div>` }],
   },
   "iterators": {
     eyebrow: "04 · 05 — دوال التكرار",
@@ -1179,6 +2081,72 @@ Compound Factor =
       <div class="icon">💡</div>
       <p><strong>قاعدة الاختيار:</strong> لو الحساب يحتاج ضرب أو قسمة أو منطق على مستوى الصف → SUMX. لو بتجمع عمود موجود فقط → SUM (أسرع).</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>The difference between SUM and SUMX</h3>
+<p>SUM An existing column pool. SUMX Calculate an expression (expression) For each row, the results are then combined:</p>
+<div class="code-block">
+<span class="cm">-- SUM: By collecting a column Amount located in the table</span>
+Total Sales = <span class="fn">SUM</span>(Fact_Sales[Amount])
+
+<span class="cm">-- SUMX: You multiply the price by the quantity, row by row, then add</span>
+<span class="cm">-- Useful if there is no Amount column and you only have Qty and Price</span>
+Total Revenue = <span class="fn">SUMX</span>(Fact_Sales, Fact_Sales[Qty] * Fact_Sales[UnitPrice])
+
+<span class="cm">-- Advanced example: Calculating profit margin row by row</span>
+Total Profit = 
+<span class="fn">SUMX</span>(
+    Fact_Sales,
+    Fact_Sales[Qty] * (Fact_Sales[UnitPrice] - Fact_Sales[UnitCost])
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>AVERAGEX, MAXX, MINX, COUNTX</h3>
+<div class="code-block">
+<span class="cm">-- Average invoice value (not the column average - it is calculated for each invoice and then creates an average)</span>
+Avg Order Value = 
+<span class="fn">AVERAGEX</span>(
+    <span class="fn">VALUES</span>(Fact_Sales[OrderID]),
+    <span class="fn">CALCULATE</span>(<span class="fn">SUM</span>(Fact_Sales[Amount]))
+)
+
+<span class="cm">-- Highest single day sales</span>
+Max Daily Sales = 
+<span class="fn">MAXX</span>(
+    <span class="fn">VALUES</span>(Dim_Date[Date]),
+    <span class="fn">CALCULATE</span>([Total Sales])
+)
+
+<span class="cm">-- The number of orders that contain more than 3 items</span>
+Orders Above 3 Lines = 
+<span class="fn">COUNTX</span>(
+    <span class="fn">FILTER</span>(
+        <span class="fn">VALUES</span>(Fact_Sales[OrderID]),
+        <span class="fn">CALCULATE</span>(<span class="fn">COUNTROWS</span>(Fact_Sales)) &gt; <span class="num">3</span>
+    ),
+    Fact_Sales[OrderID]
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>PRODUCTX — Multiply the values</h3>
+<div class="code-block">
+<span class="cm">-- Calculating compound growth rate (multiplying growth rates)</span>
+Compound Factor = 
+<span class="fn">PRODUCTX</span>(
+    Dim_Date,
+    <span class="num">1</span> + [Monthly Growth Rate]
+)
+      </div>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Iterator inside Iterator = Very slow:</strong> Avoid placing SUMX By air SUMX By air SUMX. The model will slow down exponentially. If you need it, use it Calculated Column First to store the internal account.</p>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Selection rule:</strong> If arithmetic requires multiplication, division, or logic at the grade level → SUMX. If you collect only an existing column → SUM (faster).</p>
+</div>` }],
   },
   "dax2": {
     eyebrow: "04 · 06 — ذكاء الوقت",
@@ -1243,6 +2211,60 @@ Sales PQ =
 Sales MTD = <span class="fn">TOTALMTD</span>([Total Sales], 'Calendar'[Date])
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="warn-box">
+<div class="icon">🚨</div>
+<p><strong>prerequisite:</strong> For time functions to work, you must have a Calendar / Date Table linked to the Transactions table in a 1-to-many relationship.</p>
+</div>
+<div class="lesson-card">
+<h3>The most important time functions in DAX</h3>
+<div class="code-block">
+<span class="cm">-- Year to date sales</span>
+YTD Sales = <span class="fn">TOTALYTD</span>([Total Sales], 'Calendar'[Date])
+
+<span class="cm">-- Sales for the same period last year</span>
+Last Year Sales = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">SAMEPERIODLASTYEAR</span>('Calendar'[Date])
+)
+
+<span class="cm">-- Growth rate compared to last year (YoY Growth%)</span>
+YoY Growth = 
+<span class="fn">DIVIDE</span>(
+    [Total Sales] - [Last Year Sales],
+    [Last Year Sales], 
+    <span class="num">0</span> <span class="cm">-- To prevent the error of dividing by zero</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>DATEADD — Complete flexibility in moving time</h3>
+<div class="code-block">
+<span class="cm">-- Last month's sales</span>
+Sales Last Month = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">PREVIOUSMONTH</span>('Calendar'[Date])
+)
+
+<span class="cm">--Sales 3 months ago</span>
+Sales 3M Ago = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">DATEADD</span>('Calendar'[Date], <span class="num">-3</span>, MONTH)
+)
+
+<span class="cm">-- Sales of the same quarter of last year</span>
+Sales PQ = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">DATEADD</span>('Calendar'[Date], <span class="num">-1</span>, QUARTER)
+)
+
+<span class="cm">-- MTD: Sales from the beginning of the month to the current date</span>
+Sales MTD = <span class="fn">TOTALMTD</span>([Total Sales], 'Calendar'[Date])
+      </div>
+</div>` }],
   },
   "time-intel-pro": {
     eyebrow: "04 · 07 — ذكاء الوقت المتقدم",
@@ -1346,6 +2368,97 @@ YoY Growth % =
       <div class="icon">💡</div>
       <p><strong>متى تستخدم أيها؟</strong> DATESINPERIOD للنوافذ الثابتة (آخر N يوم/شهر). DATEADD لتحريك النافذة الحالية. PARALLELPERIOD لمقارنة الفترات الكاملة (ربع كامل، سنة كاملة). SAMEPERIODLASTYEAR = PARALLELPERIOD بـ -1 YEAR مع فارق دقيق في التعامل مع السنوات الكبيسة.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>DATESINPERIOD — Animated time window</h3>
+<p>Account allowance YTD or last month, DATESINPERIOD It gives you a time window of a size you specify — last 7 Days, another 30 One day, another 3 months:</p>
+<div class="code-block">
+<span class="cm">-- Structure: DATESINPERIOD( DateColumn, LastDate, Interval, IntervalType )</span>
+<span class="cm">-- Sales in the last 7 days (moving window)</span>
+Sales Last 7 Days = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">DATESINPERIOD</span>('Date'[Date], <span class="fn">MAX</span>('Date'[Date]), <span class="num">-7</span>, DAY)
+)
+
+<span class="cm">-- Sales in the last 30 days</span>
+Sales Last 30 Days = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">DATESINPERIOD</span>('Date'[Date], <span class="fn">MAX</span>('Date'[Date]), <span class="num">-30</span>, DAY)
+)
+
+<span class="cm">-- Sales in the last 3 months</span>
+Sales Last 3M = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">DATESINPERIOD</span>('Date'[Date], <span class="fn">MAX</span>('Date'[Date]), <span class="num">-3</span>, MONTH)
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Moving Average</h3>
+<p>A moving average smoothes out daily fluctuations and shows the real trend. Ideal for sales and performance reporting:</p>
+<div class="code-block">
+<span class="cm">-- Moving average for the last 7 days</span>
+Moving Avg 7D = 
+<span class="kw">VAR</span> Last7Days = 
+    <span class="fn">DATESINPERIOD</span>('Date'[Date], <span class="fn">MAX</span>('Date'[Date]), <span class="num">-7</span>, DAY)
+<span class="kw">VAR</span> DaysWithData = 
+    <span class="fn">CALCULATE</span>(<span class="fn">DISTINCTCOUNT</span>('Date'[Date]), Last7Days, Fact_Sales[Amount] &gt; <span class="num">0</span>)
+<span class="kw">RETURN</span>
+<span class="fn">DIVIDE</span>(
+        <span class="fn">CALCULATE</span>([Total Sales], Last7Days),
+        DaysWithData,
+        <span class="num">0</span>
+    )
+
+<span class="cm">-- Moving average for the last 3 months (popular in management reports)</span>
+Moving Avg 3M = 
+<span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>(
+        [Total Sales],
+        <span class="fn">DATESINPERIOD</span>('Date'[Date], <span class="fn">MAX</span>('Date'[Date]), <span class="num">-3</span>, MONTH)
+    ),
+    <span class="num">3</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>PARALLELPERIOD — Compare entire periods</h3>
+<p>The difference between DATEADD andPARALLELPERIOD: DATEADD Move dates by a specified amount, PARALLELPERIOD Returns the corresponding full period (A whole month or a whole quarter):</p>
+<div class="code-block">
+<span class="cm">-- DATEADD: Move the current window with 12 A month back</span>
+<span class="cm">-- If you are in March 2025 → it will only be March 2024</span>
+Sales DATEADD LY = 
+<span class="fn">CALCULATE</span>([Total Sales], <span class="fn">DATEADD</span>('Date'[Date], <span class="num">-12</span>, MONTH))
+
+<span class="cm">-- PARALLELPERIOD: corresponding full period</span>
+<span class="cm">-- If the Slicer is on Q1 2025 → it returns the full Q1 2024</span>
+Sales Parallel LY = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">PARALLELPERIOD</span>('Date'[Date], <span class="num">-1</span>, YEAR)
+)
+
+<span class="cm">-- Comparing the current quarter with the last quarter</span>
+Sales Prev Quarter = 
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">PARALLELPERIOD</span>('Date'[Date], <span class="num">-1</span>, QUARTER)
+)
+
+<span class="cm">-- Growth rate compared to the same period last year (with PARALLELPERIOD)</span>
+YoY Growth % = 
+<span class="kw">VAR</span> CurrentSales  = [Total Sales]
+<span class="kw">VAR</span> PreviousSales  = <span class="fn">CALCULATE</span>([Total Sales], <span class="fn">PARALLELPERIOD</span>('Date'[Date], <span class="num">-1</span>, YEAR))
+<span class="kw">RETURN</span>
+<span class="fn">DIVIDE</span>(CurrentSales - PreviousSales, PreviousSales, <span class="fn">BLANK</span>())
+      </div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>When do you use them?</strong> DATESINPERIOD For fixed windows (last N day/month). DATEADD To move the current window. PARALLELPERIOD To compare full periods (A whole quarter, a whole year). SAMEPERIODLASTYEAR = PARALLELPERIOD With -1 YEAR With a nuance in dealing with leap years.</p>
+</div>` }],
   },
   "fieldparams": {
     eyebrow: "04 · 08 — Field Parameters",
@@ -1427,6 +2540,75 @@ Axis Selector = {
       <div class="icon">💡</div>
       <p><strong>الاستخدام الاحترافي:</strong> دمج Dimension Parameter + Measure Parameter في نفس الصفحة يعطي المستخدم تحكماً كاملاً في التقرير — يختار ما يعرضه وعلى أي مستوى — بدون أي صفحات إضافية.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is the Field Parameter?</h3>
+<p>Field Parameter is a special table that contains a list of measurements or columns. When you set it as a Slicer, the user chooses which measure he wants to see on the chart at the same time.</p>
+</div>
+<div class="lesson-card">
+<h3>Create a Field Parameter — step by step</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Modeling → New Parameter → Fields</h4>
+<p>From the top menu, choose New Parameter, then Fields.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Add the required measurements</h4>
+<p>for example: Total Sales, Total Profit, Total Qty. Power BI He will name him Parameter1 And you will be able to change the name.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Power BI The table is generated automatically</h4>
+<p>You will find a new table in the model with 3 columns: Fields (name), Order (order), and a column with the same name as Parameter.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Use it in charts and slicers</h4>
+<p>Place the Parameter column in the Y-Axis of the chart. Place the Fields column in the Slicer. The user selects and the data changes immediately.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Automatically generated code — and how to modify it</h3>
+<div class="code-block">
+<span class="cm">-- Power BI This table is generated automatically</span>
+KPI Selector = {
+    (<span class="str">"Total Sales"</span>,   <span class="fn">NAMEOF</span>('Measures'[Total Sales]),   <span class="num">0</span>),
+    (<span class="str">"Total Profit"</span>,  <span class="fn">NAMEOF</span>('Measures'[Total Profit]),  <span class="num">1</span>),
+    (<span class="str">"Total Qty"</span>,     <span class="fn">NAMEOF</span>('Measures'[Total Qty]),     <span class="num">2</span>)
+}
+
+<span class="cm">-- To add a new Measure manually:</span>
+<span class="cm">-- Add a new line with the same structure</span>
+    (<span class="str">"Avg Order Value"</span>, <span class="fn">NAMEOF</span>('Measures'[Avg Order Value]), <span class="num">3</span>)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Dynamic Axis — Change the axis as well</h3>
+<p>The same idea, but with Columns instead of Measures. Let the user choose to display sales at the region, branch, or product level:</p>
+<div class="code-block">
+<span class="cm">-- Dimension Parameter</span>
+Axis Selector = {
+    (<span class="str">"By Region"</span>,   <span class="fn">NAMEOF</span>(Dim_Region[RegionName]),   <span class="num">0</span>),
+    (<span class="str">"By Branch"</span>,   <span class="fn">NAMEOF</span>(Dim_Branch[BranchName]),   <span class="num">1</span>),
+    (<span class="str">"By Product"</span>,  <span class="fn">NAMEOF</span>(Dim_Product[ProductName]),  <span class="num">2</span>)
+}
+<span class="cm">-- Place the Axis Selector column in the X-Axis + Slicer</span>
+</div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Professional use:</strong> Combining Dimension Parameter + Measure Parameter on the same page gives the user complete control over the report — choosing what to display and at what level — without any additional pages.</p>
+</div>` }],
   },
   "dax3": {
     eyebrow: "04 · 09 — DAX المتقدم",
@@ -1533,6 +2715,99 @@ Repeat Customers =
       <div class="icon">💡</div>
       <p><strong>قاعدة ذهبية:</strong> دايماً استخدم <strong>VAR</strong> لو نفس الحساب بيتكرر أكتر من مرة في نفس الـ Measure. أسرع وأوضح.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>VAR / RETURN — Clean and faster code</h3>
+<p>Instead of writing the same calculation more than once, store it in a variable. Faster to implement, easier to read and maintain.</p>
+<div class="code-block">
+<span class="cm">-- without VAR — Difficult to read and repetitive</span>
+% of Total = 
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>(Sales[Amount]),
+    <span class="fn">CALCULATE</span>(<span class="fn">SUM</span>(Sales[Amount]), <span class="fn">ALL</span>(Sales)),
+    <span class="num">0</span>
+)
+
+<span class="cm">-- with VAR — Professional and clear</span>
+% of Total = 
+<span class="kw">VAR</span> CurrentSales = <span class="fn">SUM</span>(Sales[Amount])
+<span class="kw">VAR</span> TotalSales   = <span class="fn">CALCULATE</span>(<span class="fn">SUM</span>(Sales[Amount]), <span class="fn">ALL</span>(Sales))
+<span class="kw">RETURN</span>
+<span class="fn">DIVIDE</span>(CurrentSales, TotalSales, <span class="num">0</span>)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>RANKX — Arrange items</h3>
+<div class="code-block">
+<span class="cm">-- Sorting the product by sales (Top = 1)</span>
+Product Rank = 
+<span class="fn">RANKX</span>(
+    <span class="fn">ALL</span>(Dim_Product[ProductName]),
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    ,
+    DESC,
+    DENSE  <span class="cm">-- DENSE: Does not leave gaps in numbering when equal</span>
+)
+
+<span class="cm">-- Show only top 5 products</span>
+Top 5 Sales = 
+<span class="fn">IF</span>([Product Rank] &lt;= <span class="num">5</span>, <span class="fn">SUM</span>(Fact_Sales[Amount]), <span class="fn">BLANK</span>())
+      </div>
+</div>
+<div class="lesson-card">
+<h3>SWITCH(TRUE()) — substitute IF Overlapping</h3>
+<p>Instead of working IF inside IF inside IF, use SWITCH(TRUE()) — Clearer and easier to edit.</p>
+<div class="code-block">
+<span class="cm">-- Classification of customers according to total spending</span>
+Customer Tier = 
+<span class="fn">SWITCH</span>(
+    <span class="kw">TRUE</span>(),
+    [Total Spend] &gt;= <span class="num">50000</span>, <span class="str">"Platinum"</span>,
+    [Total Spend] &gt;= <span class="num">20000</span>, <span class="str">"Gold"</span>,
+    [Total Spend] &gt;= <span class="num">5000</span>,  <span class="str">"Silver"</span>,
+    <span class="str">"Bronze"</span> <span class="cm">--Default value</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>ALLSELECTED — A percentage of the whole, with respect to the Slicer</h3>
+<p>The difference between ALL andALLSELECTED: ALL Completely removes all filters. ALLSELECTED Respect the Slicers External only.</p>
+<div class="code-block">
+<span class="cm">-- A percentage of the total, taking into account the current Slicer</span>
+% of Slicer Total = 
+<span class="fn">DIVIDE</span>(
+    [Total Sales],
+    <span class="fn">CALCULATE</span>(<span class="fn">SUM</span>(Fact_Sales[Amount]), <span class="fn">ALLSELECTED</span>(Dim_Product)),
+    <span class="num">0</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>FILTER K Iterator — Filter compound terms</h3>
+<div class="code-block">
+<span class="cm">-- Accounting for sales of large orders above 5000 only</span>
+High Value Sales = 
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    <span class="fn">FILTER</span>(
+        Fact_Sales,
+        Fact_Sales[Amount] &gt; <span class="num">5000</span> &amp;&amp; Fact_Sales[Category] = <span class="str">"Electronics"</span>
+    )
+)
+
+<span class="cm">-- The number of customers who purchased more than once</span>
+Repeat Customers = 
+<span class="fn">COUNTROWS</span>(
+    <span class="fn">FILTER</span>(
+        <span class="fn">VALUES</span>(Fact_Sales[CustomerID]),
+        <span class="fn">CALCULATE</span>(<span class="fn">COUNTROWS</span>(Fact_Sales)) &gt; <span class="num">1</span>
+    )
+)
+      </div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Golden base:</strong> Always use <strong>VAR</strong> If the same calculation is repeated more than once in the same measure. Faster and clearer.</p>
+</div>` }],
   },
   "dax-text": {
     eyebrow: "04 · 10 — دوال النصوص",
@@ -1621,6 +2896,76 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
       <div class="icon">💡</div>
       <p><strong>FORMAT تُرجع نصاً — لا تستخدمها في حسابات:</strong> بعد FORMAT لا تقدر تجمع أو تطرح النتيجة. استخدمها فقط في الـ Card أو Tooltip أو Labels. للحسابات ابق على الأرقام الأصلية.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>CONCATENATEX — Group table values ​​into one text</h3>
+<p>It works like an Iterator: it walks over each row and combines the values ​​into a single text separated by a delimiter of your choice. Ideal for displaying product lists or customer names:</p>
+<div class="code-block">
+<span class="cm">-- List of products sold to a specific customer (comma separated)</span>
+Products List = 
+<span class="fn">CONCATENATEX</span>(
+    <span class="fn">VALUES</span>(Dim_Product[ProductName]),
+    Dim_Product[ProductName],
+    <span class="str">" | "</span>
+)
+<span class="cm">-- Result: "Laptop | Keyboard | Mouse"</span>
+<span class="cm">-- sorted by sales (descending)</span>
+Top Products Str = 
+<span class="fn">CONCATENATEX</span>(
+    <span class="fn">TOPN</span>(<span class="num">5</span>, <span class="fn">VALUES</span>(Dim_Product[ProductName]), [Total Sales], DESC),
+    Dim_Product[ProductName],
+    <span class="str">", "</span>,
+    [Total Sales],
+    DESC
+)
+<span class="cm">-- Result: "iPhone, Samsung, Dell, HP, Lenovo"</span>
+<span class="cm">-- Practical use: displaying the branches of each manager in one card</span>
+Manager Branches = 
+<span class="fn">CONCATENATEX</span>(
+    <span class="fn">RELATEDTABLE</span>(Dim_Branch),
+    Dim_Branch[BranchName],
+    <span class="str">" ← "</span>
+)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>FORMAT — Professionally coordinate outputs</h3>
+<p>Convert numbers and dates to rich text. Necessary to display KPIs clearly:</p>
+<div class="code-block">
+<span class="cm">-- Format numbers</span>
+Sales Formatted    = <span class="fn">FORMAT</span>([Total Sales], <span class="str">"#,##0"</span>)         <span class="cm">-- 1,250,000</span>
+Sales Currency     = <span class="fn">FORMAT</span>([Total Sales], <span class="str">"#,##0.00 EGP"</span>) <span class="cm">-- 1,250,000.00 EGP</span>
+Sales Millions     = <span class="fn">FORMAT</span>([Total Sales] / <span class="num">1000000</span>, <span class="str">"0.0M"</span>) <span class="cm">-- 1.3M</span>
+Growth Pct         = <span class="fn">FORMAT</span>([YoY Growth], <span class="str">"0.00%"</span>)       <span class="cm">-- 12.50%</span>
+<span class="cm">-- Format dates</span>
+Date Label         = <span class="fn">FORMAT</span>('Date'[Date], <span class="str">"MMM YYYY"</span>)    <span class="cm">-- Mar 2025</span>
+Date Arabic        = <span class="fn">FORMAT</span>('Date'[Date], <span class="str">"DD/MM/YYYY"</span>)   <span class="cm">-- 15/03/2025</span>
+Quarter Label      = <span class="fn">FORMAT</span>('Date'[Date], <span class="str">"\\Q"</span>) &amp; <span class="fn">FORMAT</span>('Date'[Date], <span class="str">"Q YYYY"</span>) <span class="cm">-- Q1 2025</span>
+<span class="cm">-- Practical use in Card: an offer KPI With unit</span>
+Revenue Card Label = 
+<span class="fn">FORMAT</span>([Total Revenue] / <span class="num">1000000</span>, <span class="str">"0.0"</span>) &amp; <span class="str">"One million pounds"</span>
+<span class="cm">-- Result: "4.7 million pounds"</span>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Other basic text functions</h3>
+<div class="code-block">
+<span class="cm">-- LEFT, RIGHT, MID: Extract part of the text</span>
+Branch Code = <span class="fn">LEFT</span>(Dim_Branch[BranchID], <span class="num">3</span>)       <span class="cm">-- The first 3 letters</span>
+Year Part   = <span class="fn">RIGHT</span>(Fact_Sales[InvoiceNo], <span class="num">4</span>)      <span class="cm">-- Last 4 digits</span>
+City        = <span class="fn">MID</span>(Dim_Store[StoreCode], <span class="num">4</span>, <span class="num">3</span>)        <span class="cm">-- 3 letters starting from the fourth letter</span>
+<span class="cm">-- UPPER, LOWER, PROPER: Change status</span>
+Name Clean  = <span class="fn">PROPER</span>(Dim_Customer[FullName])          <span class="cm">-- ahmed ali → Ahmed Ali</span>
+<span class="cm">-- TRIM, SUBSTITUTE: Text cleaning</span>
+Clean Name  = <span class="fn">TRIM</span>(Dim_Customer[FullName])             <span class="cm">-- Delete extra spaces</span>
+Fixed Code  = <span class="fn">SUBSTITUTE</span>(Fact_Sales[Code], <span class="str">"-"</span>, <span class="str">"/"</span>)  <span class="cm">-- EG-001 → EG/001</span>
+<span class="cm">-- LEN, SEARCH, FIND: Search the text</span>
+Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span class="fn">SEARCH</span>(<span class="str">"Egypt"</span>, Dim_Store[Address])), <span class="str">"No"</span>, <span class="str">"Yes"</span>)
+      </div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>FORMAT Returns text — Do not use it in calculations:</strong> after FORMAT You cannot add or subtract the result. Use it only in the Card or Tooltip or Labels. For calculations stay with the original numbers.</p>
+</div>` }],
   },
   "dax-reference": {
     eyebrow: "04 · 11 — مرجع DAX الكامل",
@@ -1703,6 +3048,75 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
       <div class="icon">🚀</div>
       <p><strong>أسرع طريقة لتعلم DAX:</strong> عند مواجهة مشكلة جديدة، اذهب لـ dax.guide — الموقع الرسمي لتوثيق دوال DAX مع أمثلة ومستوى الصعوبة. كل دالة مذكورة هنا موجودة فيه مع شرح مفصّل ومثال تطبيقي.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>📊 Aggregation functions</h3>
+<table class="compare-table">
+<tr><th>Function</th><th>Use</th><th>note</th></tr>
+<tr><td><strong>SUM</strong></td><td>Column sum</td><td>Fastest - Always use it if the column is present</td></tr>
+<tr><td><strong>SUMX</strong></td><td>Sum of expression (row by row)</td><td>For multiplication and division at the row level</td></tr>
+<tr><td><strong>COUNT / COUNTA</strong></td><td>Count numbers/texts</td><td>COUNTA Counts everything that is not empty</td></tr>
+<tr><td><strong>COUNTROWS</strong></td><td>Count table rows</td><td>Faster than COUNT In most cases</td></tr>
+<tr><td><strong>DISTINCTCOUNT</strong></td><td>Count unique values</td><td>For customers, products, branches</td></tr>
+<tr><td><strong>AVERAGE / AVERAGEX</strong></td><td>Arithmetic average</td><td>AVERAGEX To average a complex expression</td></tr>
+<tr><td><strong>MAX / MIN</strong></td><td>Highest/lowest value</td><td>It works on dates too</td></tr>
+</table>
+</div>
+<div class="lesson-card">
+<h3>🔍 Filter functions</h3>
+<table class="compare-table">
+<tr><th>Function</th><th>Use</th><th>note</th></tr>
+<tr><td><strong>CALCULATE</strong></td><td>Edit Filter Context</td><td>The strongest function in DAX</td></tr>
+<tr><td><strong>FILTER</strong></td><td>Filter a table with a condition</td><td>Iterator — Use with caution on large tables</td></tr>
+<tr><td><strong>ALL</strong></td><td>Delete all filters</td><td>Returns all table/column values</td></tr>
+<tr><td><strong>ALLEXCEPT</strong></td><td>Delete filters except columns</td><td>For partial percentages (% of category)</td></tr>
+<tr><td><strong>ALLSELECTED</strong></td><td>Delete filters while respecting Slicer</td><td>For the percentage of all in the Slicer range</td></tr>
+<tr><td><strong>REMOVEFILTERS</strong></td><td>same ALL — Clearer in intention</td><td>Best Practice Hadith</td></tr>
+<tr><td><strong>KEEPFILTERS</strong></td><td>Adding a filter without replacing it</td><td>Filter intersection</td></tr>
+<tr><td><strong>VALUES</strong></td><td>Unique values ​​while respecting the filter</td><td>Different from ALL</td></tr>
+</table>
+</div>
+<div class="lesson-card">
+<h3>📅 Time Intelligence functions</h3>
+<table class="compare-table">
+<tr><th>Function</th><th>Use</th></tr>
+<tr><td><strong>TOTALYTD / TOTALMTD / TOTALQTD</strong></td><td>Cumulative from the beginning of the year/month/quarter</td></tr>
+<tr><td><strong>SAMEPERIODLASTYEAR</strong></td><td>The same period last year</td></tr>
+<tr><td><strong>DATEADD</strong></td><td>Move the time period</td></tr>
+<tr><td><strong>PARALLELPERIOD</strong></td><td>corresponding full period</td></tr>
+<tr><td><strong>DATESINPERIOD</strong></td><td>A time window of a specified size</td></tr>
+<tr><td><strong>PREVIOUSMONTH / PREVIOUSQUARTER</strong></td><td>The entire previous month/quarter</td></tr>
+<tr><td><strong>DATESYTD</strong></td><td>All dates year so far</td></tr>
+</table>
+</div>
+<div class="lesson-card">
+<h3>🔠 Logical &amp; Text functions</h3>
+<table class="compare-table">
+<tr><th>Function</th><th>Use</th></tr>
+<tr><td><strong>IF / SWITCH</strong></td><td>Conditional branching</td></tr>
+<tr><td><strong>AND / OR / NOT</strong></td><td>Compound terms</td></tr>
+<tr><td><strong>IFERROR / ISBLANK / ISERROR</strong></td><td>Dealing with errors and blanks</td></tr>
+<tr><td><strong>FORMAT</strong></td><td>Format a number or date as text</td></tr>
+<tr><td><strong>CONCATENATE / CONCATENATEX</strong></td><td>Merge texts/merge table values</td></tr>
+<tr><td><strong>LEFT / RIGHT / MID</strong></td><td>Extract part of the text</td></tr>
+<tr><td><strong>TRIM / SUBSTITUTE</strong></td><td>Text cleaning</td></tr>
+<tr><td><strong>SEARCH / FIND</strong></td><td>Search within text</td></tr>
+</table>
+</div>
+<div class="lesson-card">
+<h3>🔗 Relationship functions</h3>
+<table class="compare-table">
+<tr><th>Function</th><th>Use</th></tr>
+<tr><td><strong>RELATED</strong></td><td>Fetch value from linked table (in Columns)</td></tr>
+<tr><td><strong>RELATEDTABLE</strong></td><td>Fetch entire linked table (in Measures)</td></tr>
+<tr><td><strong>USERELATIONSHIP</strong></td><td>Activate a temporarily dormant relationship</td></tr>
+<tr><td><strong>CROSSFILTER</strong></td><td>Temporarily change the filtering direction</td></tr>
+<tr><td><strong>TREATAS</strong></td><td>Treat a column as if it were from another table</td></tr>
+</table>
+</div>
+<div class="tip-box">
+<div class="icon">🚀</div>
+<p><strong>The fastest way to learn DAX:</strong> When faced with a new problem, go to dax.guide — The official website for documenting functions DAX With examples and difficulty level. Every function mentioned here is included with a detailed explanation and application example.</p>
+</div>` }],
   },
   "visuals": {
     eyebrow: "05 · 01 — التصميم البصري",
@@ -1731,6 +3145,24 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
       <h3>التفاعل بين الشارتات (Cross-Filtering)</h3>
       <p>من أجمل مميزات Power BI أن الشارتات تتفاعل مع بعضها. لو ضغطت على "مصر" في خريطة، كل أرقام التقرير ورسوماته ستتغير فوراً لتعرض بيانات مصر فقط.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Rules for choosing the correct chart</h3>
+<ul>
+<li><strong>Bar / Column Chart:</strong> To compare values ​​with each other (country sales, product sales).</li>
+<li><strong>Line Chart:</strong> Very excellent for displaying chronological development (sales over months).</li>
+<li><strong>Pie / Donut Chart:</strong> Use it only to know the proportion of the whole, preferably no more than 4 or 5 parts.</li>
+<li><strong>Cards:</strong> Displays key aggregate numbers (KPIs) in large font at the top of the report (Total Sales, Profit).</li>
+<li><strong>Matrix:</strong> Like the Pivot Table in Excel, it is useful for displaying detailed numbers in rows and columns.</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">🎨</div>
+<p><strong>Design tip:</strong> Do not place more than 5 to 7 charts per page. Leave empty spaces (white space) so as not to distract the reader's eye.</p>
+</div>
+<div class="lesson-card">
+<h3>Interaction between cards (Cross-Filtering)</h3>
+<p>One of the most beautiful features Power BI The cards interact with each other. If you press "Egypt" In a map, all the report numbers and graphics will change immediately to display only Egypt data.</p>
+</div>` }],
   },
   "sync-slicers": {
     eyebrow: "05 · 02 — الـ Slicers والتفاعل",
@@ -1794,6 +3226,58 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
       <div class="icon">💡</div>
       <p><strong>أفضل ممارسة:</strong> استخدم Sync Slicers للفلاتر العالمية (السنة، المنطقة) وEdit Interactions=None للـ KPI Cards حتى لا تتغير بالضغط على الشارتات.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Sync Slicers — Sync filters between pages</h3>
+<p>Instead of putting the same slicer on every page, you can sync a single slicer across multiple pages — the user filters from any page and affects all.</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Open Sync Slicers</h4>
+<p>Choose Slicer → View → Sync Slicers. A side window with a list of pages will open.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Sync setting</h4>
+<p>Each page has two columns: <strong>Sync</strong> (Applies filter) and <strong>Visible</strong> (The Slicer appears). You can sync without showing.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Edit Interactions — Control the interaction of elements</h3>
+<p>By default, each Visual filters the rest of the Visuals. You can change this behavior:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Enable Edit Interactions</h4>
+<p>Choose Any Visual → Format → Edit Interactions. Icons will appear above the rest of the visuals.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Choose the type of interaction</h4>
+<ul>
+<li><strong>🔽 Filter:</strong> Filters the target visual (default).</li>
+<li><strong>🔆 Highlight:</strong> Highlights related values ​​without filtering.</li>
+<li><strong>⛔ None:</strong> No effect — Useful for KPI Cards and fixed elements.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Slicer Panel — Panel hidden by a button</h3>
+<p>Common technique: Place the Slicers on a separate page or in the Overlay Panel to appear/disappear with the Bookmarks. Saves report space and improves user experience.</p>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Best practice:</strong> use Sync Slicers For global filters (Year, region) andEdit Interactions=None For KPI Cards So as not to change by clicking on the charts.</p>
+</div>` }],
   },
   "themes": {
     eyebrow: "05 · 03 — الثيمات والتصميم",
@@ -1861,6 +3345,108 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
       <div class="icon">💡</div>
       <p><strong>نصيحة الاحتراف:</strong> ابدأ كل مشروع بإنشاء صفحة "Design Guide" تضع فيها الألوان والمكوّنات المعيارية — ثم انسخ منها في كل صفحة. يوفر وقتاً ويضمن الاتساق.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Power BI Themes</h3>
+<p>The Theme It is a file JSON Defines default colors, fonts, and formats for all report elements at once.</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Theme app is ready</h4>
+<p>View → Themes → Choose from built-in themes or browse Microsoft's gallery of ready-made themes.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Customize Theme</h4>
+<p>View → Themes → Customize Current Theme — You will find a section for each item type (Cards, Charts, Text).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Save and apply to other projects</h4>
+<p>View → Themes → Save Current Theme — Saves a .json file that can be shared with the team.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>File structure of Theme (JSON)</h3>
+<div class="code-block">
+{
+  "name": "Corporate Theme",
+  "dataColors": ["#0070C0","#00B050","#FF0000","#FFC000"],
+  "background": "#FFFFFF",
+  "foreground": "#252525",
+  "tableAccent": "#0070C0",
+  "visualStyles": {
+    "*": { "*": { "fontFamily": [{ "value": "Segoe UI" }] } }
+  }
+}
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Professional design principles</h3>
+<ul>
+<li><strong>3 color base:</strong> Primary color + secondary color + warning/alert color. Don't go beyond that.</li>
+<li><strong>Visual sequence:</strong> Bigger title → KPIs → Details. User eye tracking gradient.</li>
+<li><strong>Alignment and margins:</strong> Use Format → Align to align elements — chaos loses confidence.</li>
+<li><strong>Labels:</strong> Data Labels only for important values ​​— too much is distracting.</li>
+<li><strong>Background:</strong> Light background for printing, dark for presentations.</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Pro Tip:</strong> Start each project by creating a “Design Guide” page where you lay out standard colors and components — then copy them over each page. Saves time and ensures consistency.</p>
+</div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Default vs. custom Tooltip</h3>
+<ul>
+<li><strong>hypothetical:</strong> Displays field name and value only when hover.</li>
+<li><strong>Custom:</strong> Displays a full report page with charts, KPIs, details — all in a popup window.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Steps to create a Custom Tooltip</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create a Tooltip page</h4>
+<p>Add a new page → right click on its name → Page Information → activate <strong>Allow use as tooltip</strong>.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Tooltip content design</h4>
+<p>Change the page size for the Tooltip (View → Page Size → Tooltip). Add KPIs and mini charts.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Link the Tooltip to Visual</h4>
+<p>Choose the main visual → Format → Tooltips → Change Type from Default to <strong>Report Page</strong> ← Select the page you created.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Ideas for using Custom Tooltips</h3>
+<ul>
+<li><strong>Bar Chart:</strong> Tooltip Displays the linear trend of the product when hovering.</li>
+<li><strong>map:</strong> Tooltip displays Top 5 sales for the region.</li>
+<li><strong>KPI Card:</strong> Tooltip displays a breakdown of monthly numbers.</li>
+<li><strong>table:</strong> Tooltip displays the complete profile of the customer or product.</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>The context is saved:</strong> The Tooltip inherits the context filter — if you look at a specific product on the chart, the Tooltip will display data for that specific product.</p>
+</div>` }],
   },
   "custom-tooltips": {
     eyebrow: "05 · 04 — Tooltips مخصصة",
@@ -1918,6 +3504,52 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
       <div class="icon">💡</div>
       <p><strong>الـ Context محفوظ:</strong> الـ Tooltip يرث فلتر السياق — لو وقفت على منتج معين في الشارت، الـ Tooltip سيعرض بيانات هذا المنتج تحديداً.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Default vs. custom Tooltip</h3>
+<ul>
+<li><strong>hypothetical:</strong> Displays field name and value only when hover.</li>
+<li><strong>Custom:</strong> Displays a full report page with charts, KPIs, details — all in a popup window.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Steps to create a Custom Tooltip</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create a Tooltip page</h4>
+<p>Add a new page → right click on its name → Page Information → activate <strong>Allow use as tooltip</strong>.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Tooltip content design</h4>
+<p>Change the page size for the Tooltip (View → Page Size → Tooltip). Add KPIs and mini charts.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Link the Tooltip to Visual</h4>
+<p>Choose the main visual → Format → Tooltips → Change Type from Default to <strong>Report Page</strong> ← Select the page you created.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Ideas for using Custom Tooltips</h3>
+<ul>
+<li><strong>Bar Chart:</strong> Tooltip Displays the linear trend of the product when hovering.</li>
+<li><strong>map:</strong> Tooltip displays Top 5 sales for the region.</li>
+<li><strong>KPI Card:</strong> Tooltip displays a breakdown of monthly numbers.</li>
+<li><strong>table:</strong> Tooltip displays the complete profile of the customer or product.</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>The context is saved:</strong> The Tooltip inherits the context filter — if you look at a specific product on the chart, the Tooltip will display data for that specific product.</p>
+</div>` }],
   },
   "condformat": {
     eyebrow: "05 · 05 — التنسيق الشرطي",
@@ -1982,6 +3614,58 @@ If Value &lt; 0   → ↓ (أحمر)
 <span class="cm">-- النوع: Number, Percent, أو Percentile</span>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Method 1: Color Scale</h3>
+<p>In any Visual or MatrixSelect the field → Format → Conditional Formatting → Background Color → Rules = Color Scale. It will be determined: Less value → Highest value and their colors. Power BI Colors automatically.</p>
+</div>
+<div class="lesson-card">
+<h3>Method 2: Rules</h3>
+<div class="code-block">
+<span class="cm">-- Example: Coloring the performance green/yellow/red</span>
+If Value &gt;= 90%  → Green  ✅ (Excellent performance)
+If Value &gt;= 70%  → Yellow ⚠️ (Acceptable performance)
+If Value &lt; 70%   → Red    ❌ (Poor performance)
+
+<span class="cm">--Steps:</span>
+Format Visual → Cells → Background Color 
+→ Format Style: Rules
+→ Rule 1: If Value &gt;= 90 (Number) → Green
+→ Rule 2: If Value &gt;= 70 → Yellow
+→ Rule 3: If Value &gt;= 0  → Red
+      </div>
+</div>
+<div class="lesson-card">
+<h3>method 3: Field Value — Control of DAX</h3>
+<p>The most powerful method. The measure returns a color code (hex value or color name) and links it to conditional formatting:</p>
+<div class="code-block">
+<span class="cm">--Measure returns color based on performance</span>
+KPI Color = 
+<span class="fn">SWITCH</span>(
+    <span class="kw">TRUE</span>(),
+    [Achievement %] &gt;= <span class="num">0.9</span>,  <span class="str">"#1D9E75"</span>,  <span class="cm">-- green</span>
+    [Achievement %] &gt;= <span class="num">0.7</span>,  <span class="str">"#F5B800"</span>,  <span class="cm">--Golden</span>
+<span class="str">"#D85A30"</span> <span class="cm">-- Red</span>
+)
+
+<span class="cm">-- then: Format → Background Color → Format Style: Field Value → to choose KPI Color</span>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Data Bars — Bars embedded in the cell</h3>
+<p>in Matrix or Table: Select the field → Format → Conditional Formatting → Data Bars. It creates a relative tape directly inside the cell without Chart separate. Perfect for tables KPI.</p>
+</div>
+<div class="lesson-card">
+<h3>Icons — Status icons</h3>
+<div class="code-block">
+<span class="cm">-- Format → Icons → Rules</span>
+<span class="cm">-- Example: Up/Down/Flat icons for sales</span>
+If Value &gt; 0   → ↑ (green)
+If Value = 0   → → (ashen)
+If Value &lt; 0   → ↓ (red)
+
+<span class="cm">-- Type: Number, Percent, or Percentile</span>
+</div>
+</div>` }],
   },
   "drillthrough": {
     eyebrow: "05 · 06 — Drill Down و Drill Through",
@@ -2066,6 +3750,80 @@ If Value &lt; 0   → ↓ (أحمر)
         </div>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Drill Down — Dive into Hierarchy</h3>
+<p>It works when you have a specific Hierarchy (eg: year → quarter → month → day). Steps:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create Hierarchy</h4>
+<p>In the Data Pane, right-click on the Year → New Hierarchy column. Then drag Quarter, Month, Day into it.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Put the Hierarchy in the Axis</h4>
+<p>Drag the entire Hierarchy (not one column) into the X-Axis field on the chart.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Activate Drill Down Mode</h4>
+<p>Above the chart you will find the down arrow button ↓ — press it and then click on any column on the chart to drill down into it.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Drill Through — Details page</h3>
+<p>It allows you to right-click on any data point and go to its detailed page. Setup steps:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create a new page for details</h4>
+<p>Add a new page and name it “Product Details,” for example. Design it to display all the details of the chosen product.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Activate Drill Through on the new page</h4>
+<p>On the details page, he is gone Visualizations → Drag a column ProductName In a box "Drill through". Power BI He will add a button Back automatically.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Use</h4>
+<p>Return to the home page → Right click on a product name on any chart → Drill through → Product details.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Tooltip Page — Custom tip when Hovering</h3>
+<p>Instead of the default tooltip, you can make an entire page appear as a Tooltip when you hover over any point:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>New page → Page Information</h4>
+<p>In Format Page → turn on “Allow use as tooltip”. Change the size of the Tooltip (320×240 for example).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Link it to the chart</h4>
+<p>On the main chart → Format → Tooltip → Type: Report Page → Page: Choose the Tooltip page.</p>
+</div>
+</div>
+</div>
+</div>` }],
   },
   "bookmarks": {
     eyebrow: "05 · 07 — الإشارات المرجعية",
@@ -2129,6 +3887,57 @@ If Value &lt; 0   → ↓ (أحمر)
       <div class="icon">💡</div>
       <p><strong>Selection Pane:</strong> View → Selection. هذا اللوح بيوريك كل العناصر في الصفحة ويسمحلك تخفيها أو تجيبها بضغطة. لازم تفتحه وأنت بتشتغل على الـ Bookmarks.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is a bookmark?</h3>
+<p>Bookmark = Snapshot (Snapshot) The status of the report at a given moment — Include: That is, the Visuals visible, applied filters, and the Slicers Selected. When you press the Bookmark The report returns to that moment.</p>
+</div>
+<div class="lesson-card">
+<h3>Usage 1: Switch between two charts</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Place the two drawings on top of each other in the same size and location</h4>
+<p>For example: Bar Chart and Line Chart in the same place. Hide the Line.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>View → Bookmarks → Add Bookmark</h4>
+<p>Call it "Show Bar". Then hide the Bar, show the Line, and add a second “Show Line” Bookmark.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Add a button and link it to Bookmark</h4>
+<p>Insert → Button → Choose the button shape → Action → Type: Bookmark → Choose “Show Bar”.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Usage 2: Panel Details Hideable</h3>
+<div class="code-block">
+<span class="cm">-- Idea: ← button opens a side panel with additional details</span>
+
+Steps:
+1. Design a side panel (rectangle + charts)
+2. Bookmark 1 “Panel Closed”: Panel is hidden
+3. Bookmark 2 “Panel Open”: Panel is visible
+4. Button ← Open Panel
+5. The X button inside Panel returns Panel Closed
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Page Navigator — Automatic navigation between pages</h3>
+<p>Insert → Buttons → Navigator → Page Navigator. Power BI It automatically generates buttons for all pages of the report and updates when you add new pages.</p>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Selection Pane:</strong> View → Selection. This panel displays all the elements on the page and allows you to hide or remove them with one click. You must open it while working on Bookmarks.</p>
+</div>` }],
   },
   "publish": {
     eyebrow: "06 · 01 — النشر والمشاركة",
@@ -2137,36 +3946,410 @@ If Value &lt; 0   → ↓ (أحمر)
     en_eyebrow: "06 · 01 — Publishing to Power BI Service",
     en_lede: "How to share your reports with colleagues and managers on the cloud.",
     sectionId: "publish",
-    blocks: [{ kind: "html", html: `<div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>إنشاء حساب</h4>
-          <p>للنشر تحتاج حساب عمل أو جامعة (Work/School email)، ولا يقبل حسابات مثل Gmail أو Yahoo.</p>
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>☁️ ما الفرق بين Desktop و Service؟</h3>
+      <p>Power BI Desktop للبناء والتصميم على جهازك. Power BI Service للنشر والمشاركة والتحديث التلقائي على السحابة. Service هو الوجهة النهائية لكل تقرير.</p>
+      <table class="compare-table" style="width:100%; border-collapse:collapse; margin-top:12px;">
+        <tr style="background:var(--bg-2);">
+          <th style="padding:10px; border:1px solid var(--ink-3);">Feature</th>
+          <th style="padding:10px; border:1px solid var(--ink-3);">Desktop</th>
+          <th style="padding:10px; border:1px solid var(--ink-3);">Service</th>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid var(--ink-3);">التطوير والتصميم</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">✅ نعم</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">❌ تعديلات محدودة</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid var(--ink-3);">النشر والمشاركة</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">❌ لا يوجد</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">✅ نعم</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid var(--ink-3);">التحديث التلقائي</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">❌ يدوي فقط</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">✅ مجدول</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid var(--ink-3);">RLS والأمان</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">⚙️ تصميم فقط</td>
+          <td style="padding:10px; border:1px solid var(--ink-3);">✅ تطبيق فعلي</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>📋 الشروط الأساسية قبل النشر</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>حساب Microsoft 365 (Work/School Email)</h4>
+            <p>لا يقبل Gmail أو Yahoo. يجب أن يكون حساب عمل أو جامعي رسمي من المؤسسة.</p>
+            <div class="tip-box">
+              <div class="icon">💡</div>
+              <p>إذا كان عندك Office 365 للعمل، البريد الخاص بك صالح للنشر.</p>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>ترخيص Power BI (License)</h4>
+            <p>إما <strong>Power BI Pro</strong> (شهري) أو <strong>Power BI Premium</strong> (أعلى). الـ Free License ما تقدر تنشر.</p>
+            <div class="code-block">
+<span class="cm">-- قارن الخيارات:</span>
+Pro    → للفرق الصغيرة والمتوسطة ($10/شهر)
+Premium → للمؤسسات الكبيرة (capacity-based)
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>اتصال الإنترنت والـ Gateway (إن لزم)</h4>
+            <p>للبيانات السحابية (Excel Online, SQL Azure) تحتاج اتصال مباشر. للبيانات المحلية (SQL Server محلي) تحتاج On-Premises Data Gateway.</p>
+          </div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>زر الـ Publish</h4>
-          <p>من داخل الـ Desktop، اضغط Publish، واختر مساحة العمل (Workspace) ليتم رفع التقرير للسحابة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🚀 خطوات النشر — من Desktop إلى Service</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>تحضير الملف (Desktop)</h4>
+            <p>تأكد من:</p>
+            <ul style="margin:8px 0; padding-left:20px;">
+              <li>الـ Model خالي من الأخطاء (Error في Power Query يوقف النشر)</li>
+              <li>جميع الـ Queries محدثة وصحيحة</li>
+              <li>لا توجد مسافات غريبة أو أسماء غير واضحة في الأعمدة</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>الضغط على Publish</h4>
+            <p>File → Publish (أو من شريط القوائم في الأعلى). ستظهر نافذة باختيار الـ Workspace.</p>
+            <div class="tip-box">
+              <div class="icon">💡</div>
+              <p>اختار Workspace shared بدل "My Workspace" — "My Workspace" للتجربة فقط.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>تأكيد الدخول (Sign-in)</h4>
+            <p>سيطلب منك تسجيل الدخول بحسابك العملي. ادخل البريد والكلمة المرور.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>انتظر الرفع</h4>
+            <p>سيظهر تقدم الرفع. التقارير الكبيرة قد تأخذ دقائق. بعد انتهاء الرفع، ستجد رابط مباشر للتقرير على Service.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>تحديث الـ Dataset في Service (حرج)</h4>
+            <p>بعد النشر الأول، في Service:</p>
+            <div class="code-block">
+<span class="cm">-- اذهب إلى Dataset → ⚙️ Settings</span>
+<span class="cm">-- Data source credentials → أدخل بيانات الاتصال بقاعدة البيانات</span>
+<span class="cm">-- (مثل: SQL Server username + password)</span>
+<span class="cm">-- بدونها، التحديث التلقائي ما يشتغل</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>التحديث التلقائي (Scheduled Refresh)</h4>
-          <p>من داخل الـ Service، يمكنك ضبط التقرير ليتحدث بياناته تلقائياً كل يوم الساعة 8 صباحاً مثلاً، بدون تدخل منك!</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>⚙️ إعداد التحديث التلقائي (Scheduled Refresh)</h3>
+      <p>بعد النشر، بتقدر تحدث البيانات تلقائياً حسب جدول محدد:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>في Service، اذهب للـ Dataset</h4>
+            <p>اضغط على "..." بجانب اسم الـ Dataset وختار "Settings".</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>البحث عن "Scheduled Refresh"</h4>
+            <div class="code-block">
+<span class="cm">-- مثال: تحديث يومي في الساعة 7 صباحاً</span>
+Frequency: Daily
+Time: 07:00 AM
+Timezone: Africa/Cairo
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>أضف عنوان بريد إلكتروني للتنبيهات</h4>
+            <p>إذا فشل التحديث، Power BI بترسل إشعار. تأكد من البريد صحيح.</p>
+          </div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <h4>الأمان (Row Level Security - RLS)</h4>
-          <p>بتتحكم في مين يشوف إيه في نفس التقرير. كل مستخدم يفتح التقرير يشوف بيانات نطاقه فقط.</p>
+
+      <div class="warn-box">
+        <div class="icon">⚠️</div>
+        <p><strong>ملاحظة مهمة:</strong> عدد مرات التحديث يعتمد على الترخيص: Power BI Pro = 8 مرات يومياً، Premium = غير محدود. لا تحدد تحديثات كثيرة جداً بدون داعي.</p>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🔐 إدارة الصلاحيات والمشاركة</h3>
+      <p>بعد النشر، بتقدر تتحكم من يشوف التقرير:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>من التقرير نفسه: Share</h4>
+            <p>اضغط "Share" أعلى يمين التقرير، وادخل البريد الإلكتروني للشخص أو المجموعة. بتقدر تعطيه "View" أو "Edit" صلاحيات.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>من الـ Workspace: Manage Access</h4>
+            <p>بتقدر تعطي صلاحيات أعمق على مستوى الـ Workspace (Admin, Member, Contributor, Viewer).</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>من الـ Dataset: Row-Level Security (RLS)</h4>
+            <p>اذهب للـ Dataset → Security → أضف Roles وحدد أي مستخدم يرى أي منطقة/فئة (انظر درس RLS).</p>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>أفضل ممارسة:</strong> للمؤسسات الكبيرة، استخدم Apps بدل المشاركة المباشرة. App بتدي انطباع احترافي وأنظف للمستخدمين النهائيين.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>☁️ What's the difference between Desktop and Service?</h3>
+<p>Power BI Desktop is for building and designing on your machine. Power BI Service is for publishing, sharing, and automated updates on the cloud. Service is the final destination for every report.</p>
+<table class="compare-table" style="width:100%; border-collapse:collapse; margin-top:12px;">
+<tr style="background:var(--bg-2);">
+<th style="padding:10px; border:1px solid var(--ink-3);">Feature</th>
+<th style="padding:10px; border:1px solid var(--ink-3);">Desktop</th>
+<th style="padding:10px; border:1px solid var(--ink-3);">Service</th>
+</tr>
+<tr>
+<td style="padding:10px; border:1px solid var(--ink-3);">Development and Design</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">✅ Yes</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">❌ Limited edits</td>
+</tr>
+<tr>
+<td style="padding:10px; border:1px solid var(--ink-3);">Publishing and Sharing</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">❌ No</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">✅ Yes</td>
+</tr>
+<tr>
+<td style="padding:10px; border:1px solid var(--ink-3);">Automated Updates</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">❌ Manual only</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">✅ Scheduled</td>
+</tr>
+<tr>
+<td style="padding:10px; border:1px solid var(--ink-3);">RLS and Security</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">⚙️ Design only</td>
+<td style="padding:10px; border:1px solid var(--ink-3);">✅ Actual implementation</td>
+</tr>
+</table>
+</div>
+
+<div class="lesson-card">
+<h3>📋 Basic requirements before publishing</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Microsoft 365 Account (Work/School Email)</h4>
+<p>Gmail or Yahoo not accepted. Must be an official work or school account from the organization.</p>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p>If you have Office 365 for work, your email is valid for publishing.</p>
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Power BI License</h4>
+<p>Either <strong>Power BI Pro</strong> (monthly) or <strong>Power BI Premium</strong> (higher). Free License cannot publish.</p>
+<div class="code-block">
+<span class="cm">-- Compare options:</span>
+Pro    → for small to medium teams (\$10/month)
+Premium → for large enterprises (capacity-based)
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Internet connectivity and Gateway (if needed)</h4>
+<p>For cloud data (Excel Online, SQL Azure) you need direct connection. For on-premises data (local SQL Server) you need On-Premises Data Gateway.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>🚀 Publishing steps — from Desktop to Service</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Prepare the file (Desktop)</h4>
+<p>Ensure:</p>
+<ul style="margin:8px 0; padding-left:20px;">
+<li>Model is error-free (Power Query errors stop publishing)</li>
+<li>All Queries are updated and correct</li>
+<li>No strange spaces or unclear names in columns</li>
+</ul>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Click Publish</h4>
+<p>File → Publish (or from the top menu bar). A window will appear asking you to choose the Workspace.</p>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p>Choose a shared Workspace instead of "My Workspace" — "My Workspace" is just for testing.</p>
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Confirm login (Sign-in)</h4>
+<p>It will ask you to log in with your work account. Enter email and password.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Wait for the upload</h4>
+<p>Upload progress will appear. Large reports can take minutes. After upload completes, you'll find a direct link to the report on Service.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content">
+<h4>Update the Dataset in Service (critical)</h4>
+<p>After first publish, in Service:</p>
+<div class="code-block">
+<span class="cm">-- Go to Dataset → ⚙️ Settings</span>
+<span class="cm">-- Data source credentials → enter database connection details</span>
+<span class="cm">-- (e.g.: SQL Server username + password)</span>
+<span class="cm">-- Without it, scheduled refresh won't work</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>⚙️ Setting up automated updates (Scheduled Refresh)</h3>
+<p>After publishing, you can update data automatically on a set schedule:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>In Service, go to the Dataset</h4>
+<p>Click "..." next to the Dataset name and select "Settings".</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Look for "Scheduled Refresh"</h4>
+<div class="code-block">
+<span class="cm">-- Example: daily update at 7 AM</span>
+Frequency: Daily
+Time: 07:00 AM
+Timezone: Africa/Cairo
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Add email address for notifications</h4>
+<p>If refresh fails, Power BI will send notification. Make sure email is correct.</p>
+</div>
+</div>
+</div>
+
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Important note:</strong> Number of refresh times depends on license: Power BI Pro = 8 times daily, Premium = unlimited. Don't schedule too many refreshes without reason.</p>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>🔐 Managing permissions and sharing</h3>
+<p>After publishing, you can control who sees the report:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>From report itself: Share</h4>
+<p>Click "Share" at top right of report, enter email of person or group. You can give "View" or "Edit" permissions.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>From Workspace: Manage Access</h4>
+<p>You can grant deeper permissions at Workspace level (Admin, Member, Contributor, Viewer).</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>From Dataset: Row-Level Security (RLS)</h4>
+<p>Go to Dataset → Security → Add Roles and specify which user sees which region/category (see RLS lesson).</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Best practice:</strong> For large organizations, use Apps instead of direct sharing. App gives a professional impression and is cleaner for end users.</p>
+</div>` }],
   },
   "workspaces": {
     eyebrow: "06 · 02 — Workspaces و Apps",
@@ -2253,6 +4436,81 @@ Viewer  → يشاهد فقط (يحتاج Pro أو Premium License)
       <div class="icon">💡</div>
       <p><strong>أفضل ممارسة:</strong> مطوّرو التقارير يشتغلوا في الـ Workspace (Contributor/Member). المستخدمون النهائيون يستخدموا الـ App فقط (Viewer). ده بيمنع أي تعديل غير مقصود.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>My Workspace vs Shared Workspace</h3>
+<p>My Workspace is your personal space — no one sees it. The Shared Workspace is a shared space for the team:</p>
+<div class="code-block">
+<span class="cm">-- Roles in the Workspace (from highest to lowest):</span>
+Admin → controls everything, adds and deletes members
+Member → Publish content, edit, but do not delete the Workspace
+Contributor → publishes and edits but does not modify the work of others
+Viewer → Watch only (requires Pro or Premium License)
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Create and manage Workspace</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create a new Workspace</h4>
+<p>In Service → Workspaces → Create a Workspace. Specify the name, description, and License Mode (Pro/Premium).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Publishing from Desktop</h4>
+<p>Publish → Choose the Workspace by name (not My Workspace). You will find both the Report and Dataset uploaded.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Add members</h4>
+<p>Workspace → Access → Add the member's email and choose their role.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Power BI App — Professional distribution</h3>
+<p>App is the cleanest deployment method for end users. Instead of giving them a direct link to Workspace (which contains all the datasets and reports), you build an App that contains only what you want them to see:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create an App from within Workspace</h4>
+<p>Workspace → Create App. Specify the name, description, theme and logo.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Content selection</h4>
+<p>Choose which Reports and Dashboards you want to appear in the App. You can hide some of them.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Audience — Define the audience</h4>
+<p>You can create a different Audience - for example: Managers see certain pages, Analysts see other pages.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Publish App</h4>
+<p>The user goes to Apps in the Service and clicks Get Apps and sees your App organized and beautiful.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Best practice:</strong> Report developers work in Workspace (Contributor/Member). End users only use the App (Viewer). This prevents any unintended modification.</p>
+</div>` }],
   },
   "rls": {
     eyebrow: "06 · 03 — أمن الصفوف RLS",
@@ -2262,81 +4520,595 @@ Viewer  → يشاهد فقط (يحتاج Pro أو Premium License)
     en_lede: "Control which users see which data rows in your reports.",
     sectionId: "rls",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>كيف تعمل RLS؟</h3>
-      <p>RLS بتضيف فلتر DAX خفي على كل مستخدم. لما يفتح التقرير، Power BI يحدد هويته ويطبّق الفلتر المناسب تلقائياً قبل أن يرى أي بيانات.</p>
+      <h3>🔐 لماذا RLS مهمة جداً؟</h3>
+      <p>كل مدير في الشركة يحتاج نفس التقرير، لكن كل واحد يشوف بيانات نطاقه فقط. بدون RLS، لازم تطبع 20 تقرير نسخ — واحد لكل مدير. مع RLS: تقرير واحد بس، كل مدير يفتحه ويشوف بيانته تلقائياً.</p>
+      <div class="tip-box">
+        <div class="icon">💡</div>
+        <p><strong>الفكرة الأساسية:</strong> RLS تضيف فلتر DAX خفي تلقائياً قبل ما المستخدم يشوف أي بيانات.</p>
+      </div>
     </div>
 
     <div class="lesson-card">
-      <h3>Static RLS — خطوة بخطوة</h3>
+      <h3>آلية العمل — كيف تحدث RLS؟</h3>
+      <p>عملية RLS تمر بـ 3 خطوات:</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-content">
-            <h4>Modeling → Manage Roles → Create</h4>
-            <p>أنشئ Role لكل فئة مستخدمين (Cairo_Manager، Alex_Manager...).</p>
+            <p><strong>المستخدم يفتح التقرير</strong> من Power BI Service</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
-            <h4>اكتب الـ DAX Filter على الجدول</h4>
-            <div class="code-block" style="margin-top:6px;">
-<span class="cm">-- Static: يشوف القاهرة بس (مهما كان المستخدم)</span>
-[Region] = <span class="str">"Cairo"</span>
-            </div>
+            <p><strong>Power BI يعرّف هويته</strong> من البريد الإلكتروني (USERPRINCIPALNAME()) أو ID الـ Azure</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-content">
-            <h4>View as Role — اختبر قبل النشر</h4>
-            <p>Modeling → View as Role. شوف التقرير من منظور كل Role قبل ما تنشر.</p>
+            <p><strong>يطبّق الفلتر الخاص به</strong> قبل تحميل البيانات — يشوف فقط الصفوف المسموح بها</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>النوع الأول: Static RLS (ثابتة) — خطوة بخطوة</h3>
+      <p>Static RLS معناه كل Role بترى منطقة جغرافية ثابتة (مثلاً: Cairo_Manager يشوف القاهرة دايماً).</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>✏️ أنشئ جدول Dimension للأدوار</h4>
+            <p>قبل ما تبدأ RLS، تأكد عندك جدول مثل Dim_Region أو Dim_Manager بالمناطق والفروع:</p>
+            <div class="code-block">
+Region      | Manager_Email
+Cairo       | ahmed@company.com
+Alexandria  | sara@company.com
+Giza        | khaled@company.com
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>🎯 في Power BI Desktop: Modeling → Manage Roles</h4>
+            <p>انقر على "Manage Roles" وأنشئ Role جديدة باسم واضح:</p>
+            <div class="code-block">
+Role Name: Cairo_Manager
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>📋 اكتب فلتر DAX على جدول البيانات</h4>
+            <p>اختار جدول Dim_Region، وكتب الفلتر:</p>
+            <div class="code-block">
+<span class="cm">-- كل من Cairo_Manager سيرى فقط Cairo</span>
+[Region] = <span class="str">"Cairo"</span>
+
+<span class="cm">-- لو تبغى فلتر أعقد (مثلاً مدير يرى أكثر من منطقة):</span>
+[Region] <span class="kw">IN</span> { <span class="str">"Cairo"</span>, <span class="str">"Giza"</span> }
+            </div>
+          </div>
+        </div>
+
         <div class="step">
           <div class="step-num">4</div>
           <div class="step-content">
-            <h4>بعد النشر على Service</h4>
-            <p>الـ Dataset → Security → أضف البريد الإلكتروني لكل مستخدم في الـ Role المناسبة.</p>
+            <h4>🧪 اختبر الفلتر قبل النشر</h4>
+            <p>Modeling → View as Role. اختار Cairo_Manager واضغط OK. ستشوف التقرير كأنك Cairo_Manager — تأكد من الفلترة:</p>
+            <div class="code-block">
+<span class="cm">-- توقع أن ترى فقط بيانات Cairo</span>
+<span class="cm">-- أي منطقة أخرى ما تظهر في المخططات</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>☁️ بعد النشر على Power BI Service</h4>
+            <p>انتقل للـ Dataset في Service، واضغط على "..." → Security:</p>
+            <div class="code-block">
+<span class="cm">-- مثال: إضافة مستخدمين للـ Cairo_Manager Role</span>
+Role: Cairo_Manager
+Email: ahmed@company.com
+Email: sara@company.com
+            </div>
+            <p>أي مستخدم تضيفه هنا سيشوف فقط البيانات المسموح بها (Cairo في المثال).</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="lesson-card">
-      <h3>Dynamic RLS — الأقوى والأكثر احترافاً</h3>
-      <p>بدل إنشاء Role لكل فرع، Role واحدة تعرف هوية المستخدم تلقائياً من الـ Email:</p>
-      <div class="code-block">
-<span class="cm">-- Dynamic RLS: يشوف بيانات نطاقه هو فقط</span>
-<span class="cm">-- شرط: لازم يكون عندك جدول Security بعمودين</span>
-<span class="cm">-- [UserEmail] و [Region]</span>
+      <h3>النوع الثاني: Dynamic RLS (ديناميكية) — الأقوى 🚀</h3>
+      <p>بدل أن تنشئ Role لكل فرع، انشئ Role واحدة ذكية تقرأ هوية المستخدم تلقائياً وتجلب بيانته:</p>
 
-<span class="cm">-- الـ DAX Filter على جدول Dim_Region:</span>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>📊 جدول Security — الأساس</h4>
+            <p>لازم يكون عندك جدول Security بعمودين على الأقل:</p>
+            <div class="code-block">
+<span class="kw">Dim_Security</span>:
+UserEmail           | Region      | Department
+ahmed@company.com   | Cairo       | Sales
+sara@company.com    | Alexandria  | Marketing
+khaled@company.com  | Cairo       | Finance
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>🔗 سيناريو: مدير المبيعات في Cairo</h4>
+            <p>لما Ahmed يفتح التقرير:</p>
+            <div class="code-block">
+<span class="cm">-- Power BI تعرّف هويته: ahmed@company.com</span>
+<span class="cm">-- تبحث في Dim_Security عن صفه: Region = Cairo</span>
+<span class="cm">-- تطبق الفلتر تلقائياً: اعرض فقط Cairo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>💻 كود DAX للفلترة الديناميكية</h4>
+            <div class="code-block">
+<span class="cm">-- في Modeling → Manage Roles → أنشئ role اسمها "Manager"</span>
+<span class="cm">-- اكتب هذا الفلتر على جدول Sales أو أي جدول حقائق:</span>
+
 [Region] <span class="kw">IN</span>
 <span class="fn">CALCULATETABLE</span>(
-    <span class="fn">VALUES</span>(Security[Region]),
-    Security[UserEmail] = <span class="fn">USERPRINCIPALNAME</span>()
+    <span class="fn">VALUES</span>( Dim_Security[Region] ),
+    Dim_Security[UserEmail] = <span class="fn">USERPRINCIPALNAME</span>()
 )
 
-<span class="cm">-- USERPRINCIPALNAME() يرجع email المستخدم الحالي تلقائياً</span>
-<span class="cm">-- مثلاً: "ahmed@company.com"</span>
+<span class="cm">-- شرح:</span>
+<span class="cm">-- USERPRINCIPALNAME() = يرجع email المستخدم (ahmed@company.com)</span>
+<span class="cm">-- CALCULATETABLE = جيب كل القيم من Region where email = المستخدم الحالي</span>
+<span class="cm">-- IN = طبّق الفلتر على الصفوف</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>⚙️ مثال متقدم — مدير بأكثر من منطقة</h4>
+            <p>لو مدير Sales عنده مسؤولية عن Cairo + Giza:</p>
+            <div class="code-block">
+<span class="kw">Dim_Security</span>:
+UserEmail           | Region
+manager@company.com | Cairo
+manager@company.com | Giza
+
+<span class="cm">-- نفس الكود DAX يشتغل!</span>
+<span class="cm">-- سيجيب Cairo و Giza تلقائياً</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="icon">💡</div>
+        <p><strong>فائدة Dynamic RLS:</strong> لو عملت مستخدم جديد، بدّل البيانات في Dim_Security بس — ما تحتاج تعدّل التقرير أو تنشر نسخة جديدة!</p>
       </div>
     </div>
 
     <div class="lesson-card">
-      <h3>Object Level Security (OLS) — إخفاء جداول وأعمدة كاملة</h3>
-      <p>RLS بتخفي صفوف. OLS بتخفي أعمدة أو جداول كاملة عن مستخدمين معينين. تحتاج Power BI Premium أو Tabular Editor:</p>
-      <div class="code-block">
-<span class="cm">-- سيناريو: مديرو المبيعات لا يرون عمود التكلفة (Cost)</span>
-<span class="cm">-- في Tabular Editor: اختار العمود → Object Level Security → None</span>
-<span class="cm">-- المستخدمون في هذا الـ Role لن يروا العمود حتى في الـ Field List</span>
+      <h3>Object Level Security (OLS) — إخفاء أعمدة وجداول 🔒</h3>
+      <p>RLS بتخفي <strong>صفوف</strong>. OLS بتخفي <strong>أعمدة أو جداول كاملة</strong> عن مستخدمين. مثال: مديرو المبيعات ما يرون عمود التكلفة (Cost).</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>📥 نزّل Tabular Editor</h4>
+            <p>OLS تحتاج Tabular Editor (مجاني) أو Power BI Premium. انزّل من:</p>
+            <div class="code-block">
+tabulareditor.github.io
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>🛠️ فتح الـ Model في Tabular Editor</h4>
+            <p>افتح Tabular Editor، افتح ملف PBIX الخاص بك. ستشوف شجرة الـ Tables و Columns.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>🚫 اختار العمود وأخفه</h4>
+            <p>مثل: Cost Column</p>
+            <div class="code-block">
+<span class="cm">-- Right-click على Cost Column</span>
+<span class="cm">-- Object Level Security</span>
+<span class="cm">-- اختار Role: Sales_Manager</span>
+<span class="cm">-- Set to: None (إخفاء كامل)</span>
+
+<span class="cm">-- النتيجة: مدراء المبيعات في Sales_Manager Role</span>
+<span class="cm">-- لن يرون Cost حتى في Field List</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🧪 الاختبار — خطوات حاسمة</h3>
+      <p>قبل النشر على Service، لازم تختبر RLS كويس:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <p><strong>في Desktop:</strong> Modeling → View as Role → اختار Role وتحقق من البيانات</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <p><strong>التحقق من الأرقام:</strong> كل Role يشوف أرقام مختلفة بالضبط. القاهرة مثلاً ما تشوف بيانات الإسكندرية.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <p><strong>بعد النشر:</strong> اطلب من مستخدم حقيقي أنه يفتح التقرير من Service ويتأكد من صحة الفلترة</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="warn-box">
       <div class="icon">⚠️</div>
-      <p><strong>حد مهم:</strong> RLS بتحمي البيانات عند المشاهدة فقط. لو المستخدم عنده صلاحية تنزيل الـ Dataset من Service، هيتجاوز RLS تماماً. لمنع ذلك: اسحب صلاحية "Build" من الـ Dataset واستخدم Apps بدل الـ Workspace مباشرة.</p>
+      <p><strong>تحذير حرج:</strong> RLS تحمي البيانات عند المشاهدة فقط. لو المستخدم عنده صلاحية "Build" على الـ Dataset، ممكن يحمّل الـ PBIX ويرى البيانات كاملة! الحل:</p>
+      <ul>
+        <li>💻 اسحب صلاحية "Build" من الـ Dataset تماماً</li>
+        <li>📱 استخدم Power BI Apps بدل مشاركة Workspace مباشرة</li>
+        <li>🔑 استخدم Service Principals + Management APIs للتحكم الكامل</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>📋 جدول المقارنة — Static vs Dynamic RLS</h3>
+      <table class="compare-table" style="width:100%; border-collapse:collapse;">
+        <tr style="background:var(--bg-2);">
+          <th style="padding:12px; border:1px solid var(--ink-3);">Feature</th>
+          <th style="padding:12px; border:1px solid var(--ink-3);">Static RLS</th>
+          <th style="padding:12px; border:1px solid var(--ink-3);">Dynamic RLS</th>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid var(--ink-3);"><strong>عدد Roles</strong></td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">كثيرة (واحدة لكل فرع)</td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">Role واحدة أو اثنين فقط</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid var(--ink-3);"><strong>التعقيد</strong></td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">بسيطة — فلتر ثابت</td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">متوسطة — تحتاج جدول Security</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid var(--ink-3);"><strong>الصيانة</strong></td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">عند تغيير: تعديل Role + نشر</td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">تعديل البيانات فقط (بدون نشر)</td>
+        </tr>
+        <tr>
+          <td style="padding:12px; border:1px solid var(--ink-3);"><strong>الأداء</strong></td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">أسرع — فلتر مباشر</td>
+          <td style="padding:12px; border:1px solid var(--ink-3);">قد يكون أبطأ قليلاً</td>
+        </tr>
+      </table>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>🔐 Why is RLS so important?</h3>
+<p>Every manager in the company needs the same report, but each one sees only their regional data. Without RLS, you’d need to print 20 copies of the report — one for each manager. With RLS: one report, every manager opens it and automatically sees their data.</p>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>The basic idea:</strong> RLS adds a hidden DAX filter automatically before the user sees any data.</p>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>How RLS Works — The Three-Step Flow</h3>
+<p>The RLS process happens in 3 steps:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<p><strong>User opens the report</strong> from Power BI Service</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<p><strong>Power BI identifies them</strong> from their email (USERPRINCIPALNAME()) or Azure ID</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<p><strong>Applies their filter</strong> before loading data — they see only permitted rows</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>Type 1: Static RLS (Fixed) — Step by Step</h3>
+<p>Static RLS means each Role sees a fixed geographic region (e.g., Cairo_Manager always sees Cairo).</p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>✏️ Create a Dimension table for regions</h4>
+<p>Before starting RLS, ensure you have a table like Dim_Region with regions and branches:</p>
+<div class="code-block">
+Region      | Manager_Email
+Cairo       | ahmed@company.com
+Alexandria  | sara@company.com
+Giza        | khaled@company.com
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>🎯 In Power BI Desktop: Modeling → Manage Roles</h4>
+<p>Click "Manage Roles" and create a new Role with a clear name:</p>
+<div class="code-block">
+Role Name: Cairo_Manager
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>📋 Write a DAX filter on the data table</h4>
+<p>Select Dim_Region table, and write the filter:</p>
+<div class="code-block">
+<span class="cm">-- Cairo_Manager will only see Cairo</span>
+[Region] = <span class="str">"Cairo"</span>
+
+<span class="cm">-- For complex filters (e.g., manager sees multiple regions):</span>
+[Region] <span class="kw">IN</span> { <span class="str">"Cairo"</span>, <span class="str">"Giza"</span> }
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>🧪 Test the filter before publishing</h4>
+<p>Modeling → View as Role. Select Cairo_Manager and click OK. You will see the report as Cairo_Manager — verify the filtering:</p>
+<div class="code-block">
+<span class="cm">-- Expect to see only Cairo data</span>
+<span class="cm">-- Any other region should not appear in charts</span>
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content">
+<h4>☁️ After publishing to Power BI Service</h4>
+<p>Go to the Dataset in Service, click "..." → Security:</p>
+<div class="code-block">
+<span class="cm">-- Example: Adding users to the Cairo_Manager Role</span>
+Role: Cairo_Manager
+Email: ahmed@company.com
+Email: sara@company.com
+</div>
+<p>Any user you add here will only see permitted data (Cairo in the example).</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>Type 2: Dynamic RLS (Smart) — The Powerful Approach 🚀</h3>
+<p>Instead of creating a Role for each branch, create one smart Role that automatically reads the user’s identity and retrieves their data:</p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>📊 Security table — The foundation</h4>
+<p>You must have a Security table with at least two columns:</p>
+<div class="code-block">
+<span class="kw">Dim_Security</span>:
+UserEmail           | Region      | Department
+ahmed@company.com   | Cairo       | Sales
+sara@company.com    | Alexandria  | Marketing
+khaled@company.com  | Cairo       | Finance
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>🔗 Scenario: Sales manager in Cairo</h4>
+<p>When Ahmed opens the report:</p>
+<div class="code-block">
+<span class="cm">-- Power BI identifies him: ahmed@company.com</span>
+<span class="cm">-- It searches Dim_Security for his record: Region = Cairo</span>
+<span class="cm">-- Applies the filter automatically: show only Cairo</span>
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>💻 DAX Code for Dynamic Filtering</h4>
+<div class="code-block">
+<span class="cm">-- In Modeling → Manage Roles → create a role named "Manager"</span>
+<span class="cm">-- Write this filter on Sales or any fact table:</span>
+
+[Region] <span class="kw">IN</span>
+<span class="fn">CALCULATETABLE</span>(
+    <span class="fn">VALUES</span>( Dim_Security[Region] ),
+    Dim_Security[UserEmail] = <span class="fn">USERPRINCIPALNAME</span>()
+)
+
+<span class="cm">-- Explanation:</span>
+<span class="cm">-- USERPRINCIPALNAME() = returns current user email (ahmed@company.com)</span>
+<span class="cm">-- CALCULATETABLE = get all Region values where email = current user</span>
+<span class="cm">-- IN = apply filter to rows</span>
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>⚙️ Advanced example — Manager with multiple regions</h4>
+<p>If a Sales manager is responsible for Cairo + Giza:</p>
+<div class="code-block">
+<span class="kw">Dim_Security</span>:
+UserEmail           | Region
+manager@company.com | Cairo
+manager@company.com | Giza
+
+<span class="cm">-- The same DAX code works!</span>
+<span class="cm">-- It will fetch Cairo and Giza automatically</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Dynamic RLS benefit:</strong> If you add a new user, just update Dim_Security — you don’t need to edit the report or publish a new version!</p>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>Object Level Security (OLS) — Hiding Columns and Tables 🔒</h3>
+<p>RLS hides <strong>rows</strong>. OLS hides <strong>entire columns or tables</strong> from users. Example: Sales managers don’t see the Cost column.</p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>📥 Download Tabular Editor</h4>
+<p>OLS requires Tabular Editor (free) or Power BI Premium. Download from:</p>
+<div class="code-block">
+tabulareditor.github.io
+</div>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>🛠️ Open the Model in Tabular Editor</h4>
+<p>Open Tabular Editor, open your PBIX file. You will see the tree of Tables and Columns.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>🚫 Select the column and hide it</h4>
+<p>For example: Cost Column</p>
+<div class="code-block">
+<span class="cm">-- Right-click on Cost Column</span>
+<span class="cm">-- Object Level Security</span>
+<span class="cm">-- Select Role: Sales_Manager</span>
+<span class="cm">-- Set to: None (full hiding)</span>
+
+<span class="cm">-- Result: Sales managers in Sales_Manager Role</span>
+<span class="cm">-- Won’t see Cost even in Field List</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lesson-card">
+<h3>🧪 Testing — Critical Steps</h3>
+<p>Before publishing to Service, you must test RLS thoroughly:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<p><strong>In Desktop:</strong> Modeling → View as Role → select Role and verify data</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<p><strong>Verify numbers:</strong> Each Role sees different numbers. Cairo, for example, doesn’t see Alexandria data.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<p><strong>After publishing:</strong> Ask a real user to open the report from Service and verify filtering is working</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Critical warning:</strong> RLS only protects data when viewing. If a user has "Build" permission on the Dataset, they can download the PBIX and see all the data! Solution:</p>
+<ul>
+<li>💻 Remove "Build" permission from the Dataset completely</li>
+<li>📱 Use Power BI Apps instead of sharing the Workspace directly</li>
+<li>🔑 Use Service Principals + Management APIs for full control</li>
+</ul>
+</div>
+
+<div class="lesson-card">
+<h3>📋 Comparison Table — Static vs Dynamic RLS</h3>
+<table class="compare-table" style="width:100%; border-collapse:collapse;">
+<tr style="background:var(--bg-2);">
+<th style="padding:12px; border:1px solid var(--ink-3);">Feature</th>
+<th style="padding:12px; border:1px solid var(--ink-3);">Static RLS</th>
+<th style="padding:12px; border:1px solid var(--ink-3);">Dynamic RLS</th>
+</tr>
+<tr>
+<td style="padding:12px; border:1px solid var(--ink-3);"><strong>Number of Roles</strong></td>
+<td style="padding:12px; border:1px solid var(--ink-3);">Many (one per branch)</td>
+<td style="padding:12px; border:1px solid var(--ink-3);">One or two Roles only</td>
+</tr>
+<tr>
+<td style="padding:12px; border:1px solid var(--ink-3);"><strong>Complexity</strong></td>
+<td style="padding:12px; border:1px solid var(--ink-3);">Simple — fixed filter</td>
+<td style="padding:12px; border:1px solid var(--ink-3);">Moderate — needs Security table</td>
+</tr>
+<tr>
+<td style="padding:12px; border:1px solid var(--ink-3);"><strong>Maintenance</strong></td>
+<td style="padding:12px; border:1px solid var(--ink-3);">On change: edit Role + publish</td>
+<td style="padding:12px; border:1px solid var(--ink-3);">Update data only (no publish)</td>
+</tr>
+<tr>
+<td style="padding:12px; border:1px solid var(--ink-3);"><strong>Performance</strong></td>
+<td style="padding:12px; border:1px solid var(--ink-3);">Faster — direct filter</td>
+<td style="padding:12px; border:1px solid var(--ink-3);">Slightly slower</td>
+</tr>
+</table>
+</div>` }],
   },
   "gateway": {
     eyebrow: "06 · 04 — Gateway والتحديث",
@@ -2414,6 +5186,72 @@ Viewer  → يشاهد فقط (يحتاج Pro أو Premium License)
       <div class="icon">⚠️</div>
       <p><strong>مشكلة شائعة:</strong> لو الـ Gateway انقطع أو انطفأ الجهاز، التحديث هيفشل. حل: ركّب الـ Gateway على سيرفر مخصص ثابت وليس على لابتوب شخصي.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is the Gateway?</h3>
+<p>The Gateway It is a middleware (Bridge) It is downloaded to a fixed device within the company. His job: connects Power BI Service (The clouds) With data on the internal network (SQL Server Local, files Shared Drive...) Safely.</p>
+</div>
+<table class="compare-table">
+<tr>
+<th>Personal Gateway</th>
+<th>Standard Gateway (On-Premises)</th>
+</tr>
+<tr>
+<td>For only one person on his device.</td>
+<td>For businesses — serves multiple people and resources.</td>
+</tr>
+<tr>
+<td>Does not support DirectQuery.</td>
+<td>Supports Import and DirectQuery.</td>
+</tr>
+<tr>
+<td>Free — for personal use.</td>
+<td>needs Power BI Premium or Pro.</td>
+</tr>
+</table>
+<div class="lesson-card">
+<h3>Gateway setup steps</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Download Gateway</h4>
+<p>From powerbi.microsoft.com → Download On-Premises Data Gateway on the device that has the data (it must always be on).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Log in and link it to your account</h4>
+<p>Open the Gateway Register with the same account Power BI Yours. He will appear in powerbi.com → Settings → Gateways.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Add Data Source</h4>
+<p>In Service → Settings → Manage Gateways → Add a data source (server name, database name, login data).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Connecting the Dataset to the Gateway</h4>
+<p>In Service → Dataset → Settings → Gateway Connection → choose the Gateway and Data Source.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content">
+<h4>Scheduled Refresh</h4>
+<p>In the same Dataset settings → Scheduled Refresh → turn on and set the times (up to 8 times a day in Pro).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Common problem:</strong> If the gateway is interrupted or the device turns off, the update will fail. Solution: Install the Gateway on a fixed dedicated server and not on a personal laptop.</p>
+</div>` }],
   },
   "incremental": {
     eyebrow: "06 · 05 — Incremental Refresh",
@@ -2492,6 +5330,71 @@ Detect Changes: OrderUpdatedAt  <span class="cm">// عمود يتغير عند �
       <div class="icon">💡</div>
       <p><strong>Query Folding اختبار:</strong> في Power Query، كليك يمين على الخطوة الأخيرة → View Native Query. لو ظهر SQL Query = Query Folding يعمل ✅. لو ظهر رسالة خطأ = لا يعمل ❌ وIncrementalRefresh لن يشتغل صح.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>The problem it solves</h3>
+<p>If you have 5 years of sales data (50 million rows), daily Full Refresh takes hours and downloads everything from scratch. Incremental Refresh says: “The data from 2020 to 2024 has not changed — it only updated this week.”</p>
+</div>
+<div class="lesson-card">
+<h3>Basic conditions</h3>
+<ul>
+<li><strong>needs Power BI Premium or Premium Per User (PPU).</strong></li>
+<li>The Fact table must contain a date column of type DateTime.</li>
+<li>Data source must be supported Query Folding (SQL Server, SharePoint, Azure...).</li>
+<li>It does not work with unsupported sources Query Folding (Files Excel local, CSV).</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Step-by-step setup</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Create private Parameters (their name is fixed)</h4>
+<p>Create a Parameter named <strong>RangeStart</strong> And type DateTime, and another As <strong>RangeEnd</strong>. These two names are reserved in Power BI And they don't change.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Filter the Fact table with Parameters</h4>
+<div class="code-block" style="margin-top:6px;">
+<span class="cm">// In Power Query — date column filter</span>
+Filtered = <span class="fn">Table.SelectRows</span>(Source, each
+    [OrderDate] &gt;= RangeStart &amp;&amp; [OrderDate] &lt; RangeEnd)
+            </div>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Activate Incremental Refresh from Desktop</h4>
+<p>Right click on the table in Fields → Incremental Refresh. Select: Keep 5 years, Update last 7 days.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Publish for Service</h4>
+<p>After publishing, Power BI Service It will divide the data into... Partitions internally. all Refresh It happens Partition Only the last days.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Practical example — Incremental Refresh settings</h3>
+<div class="code-block">
+<span class="cm">// Ideal settings for an annual sales schedule</span>
+Archive Data:  5 years   <span class="cm">// Keep the full 5 years</span>
+Refresh Data:  14 days   <span class="cm">// Update the last 14 days (to accommodate changes)</span>
+Detect Changes: OrderUpdatedAt  <span class="cm">// A column that changes when a row is modified (optional)</span>
+<span class="cm">// Result: Instead of updating 50M rows → updating ~100K rows only</span>
+<span class="cm">// Refresh time: from 2 hours → 3 minutes</span>
+</div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Query Folding Test:</strong> in Power QueryRight click on the last step → View Native Query. If he appears SQL Query = Query Folding He works ✅. If an error message appears = It doesn't work ❌ andIncrementalRefresh It won't work right.</p>
+</div>` }],
   },
   "performance": {
     eyebrow: "07 · 01 — الأداء والتحسين",
@@ -2596,6 +5499,93 @@ Detect Changes: OrderUpdatedAt  <span class="cm">// عمود يتغير عند �
       <div class="icon">🚀</div>
       <p><strong>DAX Studio:</strong> أداة مجانية منفصلة (daxstudio.org) للتحليل العميق لأداء الـ DAX. تقدر تشوف Server Timings، Storage Engine Calls، وترى VertiPaq Analyzer لتحليل حجم كل عمود في الموديل. المحترفون لا يستغنون عنها.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Import vs DirectQuery — the most important decision</h3>
+</div>
+<table class="compare-table">
+<tr>
+<th>Import Mode</th>
+<th>DirectQuery Mode</th>
+</tr>
+<tr>
+<td>Data is loaded into .pbix (VertiPaq compression).</td>
+<td>Every interaction sends a Query directly to the database.</td>
+</tr>
+<tr>
+<td>Very fast. DAX Fully supported.</td>
+<td>Relatively slow. DAX Bound.</td>
+</tr>
+<tr>
+<td>Data is not Real-Time (needs Refresh).</td>
+<td>Always Real-Time.</td>
+</tr>
+<tr>
+<td><span class="yes">✔ Default selection in 90% of cases</span></td>
+<td>Only if data &gt; 1GB or Real-Time is required.</td>
+</tr>
+</table>
+<div class="lesson-card">
+<h3>Common causes of slowness and their solutions</h3>
+<div class="code-block">
+<span class="cm">❌ 1. Many Calculated Columns:</span>
+<span class="cm">   all Calculated Column He takes RAM And he makes his account with everyone Refresh.</span>
+<span class="cm">   Solution: Convert what you can to Power Query Columns (M Code).</span>
+<span class="cm">❌ 2. Many-to-Many Relationships:</span>
+<span class="cm">   Because Expand Table multiplies the data size.</span>
+<span class="cm">   Solution: Make a bridge table that converts it to 1:Many.</span>
+<span class="cm">❌ 3. Bidirectional Filters:</span>
+<span class="cm">   Each Bi-directional doubles the filtration paths.</span>
+<span class="cm">   the solution: use CROSSFILTER in DAX Just what you need.</span>
+<span class="cm">❌ 4. SUMX On huge tables:</span>
+<span class="cm">   SUMX You walk row by row — Over a million rows = Slow.</span>
+<span class="cm">   Solution: Precalculate the column in Power Query.</span>
+<span class="cm">❌ 5. ALL() On a large table in Measure:</span>
+<span class="cm">   the solution: use REMOVEFILTERS(Column) instead ALL(Table).</span>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Performance Analyzer — Measure the speed of each Visual</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>View → Performance Analyzer → Start Recording</h4>
+<p>Click "Refresh visuals" and wait. Each visual will show the time taken.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Analyze the result</h4>
+<p>all Visual In it 3 times: DAX Query (The time of Measure), Visual Display (The drawing), Other. Focus on DAX Query The high.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Copy Query For DAX Studio</h4>
+<p>Press "Copy Query" In the Visual Slow and paste it in DAX Studio For deeper analysis.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Golden rules of performance</h3>
+<div class="code-block">
+<span class="cm">✅ 1. Always Star Schema - not Flat Table</span>
+<span class="cm">✅ 2. Measures instead of Calculated Columns</span>
+<span class="cm">✅ 3. Select data types in Power Query (don’t leave them in Auto)</span>
+<span class="cm">✅ 4. Clear out unused columns in Power Query before Load</span>
+<span class="cm">✅ 5. VAR To store duplicate accounts in the same Measure</span>
+<span class="cm">✅ 6. to avoid DISTINCT() On columns High Cardinality</span>
+<span class="cm">✅ 7. Date Table is always separate and marked</span>
+<span class="cm">✅ 8. Do not use IF() To prevent division error — use DIVIDE()</span>
+</div>
+</div>
+<div class="tip-box">
+<div class="icon">🚀</div>
+<p><strong>DAX Studio:</strong> Separate free tool (daxstudio.org) For in-depth analysis of the performance of... DAX. You can see Server Timings, Storage Engine CallsAnd you see VertiPaq Analyzer To analyze the size of each column in the model. Professionals can't do without it.</p>
+</div>` }],
   },
   "python-pbi": {
     eyebrow: "07 · 02 — Python داخل Power BI",
@@ -2669,6 +5659,67 @@ plt.show()
       <div class="icon">⚠️</div>
       <p><strong>قيود مهمة:</strong> Python Visuals لا تعمل في Power BI Service مباشرة (تحتاج Gateway مع Python مثبّت). وقت التحديث قد يكون بطيئاً مع البيانات الضخمة.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Basic requirements</h3>
+<ul>
+<li>Install Python (3.x) on your machine — Anaconda Distribution preferred.</li>
+<li>Required libraries: <code style="background:var(--bg4);padding:2px 6px;border-radius:4px;">pandas</code>, <code style="background:var(--bg4);padding:2px 6px;border-radius:4px;">matplotlib</code>, <code style="background:var(--bg4);padding:2px 6px;border-radius:4px;">seaborn</code></li>
+<li>Set path: File → Options → Python Scripting → Select the Python folder.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Using Python in Power Query (Data Transformation)</h3>
+<p>The Python script can be run as a data source or as a transformation step within Power Query:</p>
+<div class="code-block">
+<span style="color:var(--text3);"># Import data from Python as source</span>
+import pandas as pd
+
+df = pd.read_csv('C:/data/sales.csv')
+df['YearMonth'] = pd.to_datetime(df['Date']).dt.to_period('M').astype(str)
+df = df[df['Sales'] &gt; 0]  <span style="color:var(--text3);"># Cleanup: Delete negative values</span>
+</div>
+<p style="margin-top:0.75rem;color:var(--text2);font-size:0.9rem;">Power Query automatically reads the last DataFrame in the script as a table.</p>
+</div>
+<div class="lesson-card">
+<h3>Use Python to create a custom Visual</h3>
+<p>Add <strong>Python Visual</strong> From the Visualizations Pane and drag the necessary columns:</p>
+<div class="code-block">
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+<span style="color:var(--text3);"># dataset he DataFrame Auto from Power BI</span>
+fig, ax = plt.subplots(figsize=(8, 4))
+sns.boxplot(data=dataset, x='Category', y='Sales',
+            palette='viridis', ax=ax)
+ax.set_title('Sales Distribution by Category')
+ax.set_xlabel('')
+plt.tight_layout()
+plt.show()
+      </div>
+</div>
+<div class="lesson-card">
+<h3>Statistical Analysis — Simple Forecasting</h3>
+<div class="code-block">
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(len(dataset))
+y = dataset['Sales'].values
+z = np.polyfit(x, y, 1)
+p = np.poly1d(z)
+
+plt.figure(figsize=(8,4))
+plt.plot(dataset['Month'], y, 'o-', label='Actual')
+plt.plot(dataset['Month'], p(x), '--', color='orange', label='Trend')
+plt.legend()
+plt.tight_layout()
+plt.show()
+      </div>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Important limitations:</strong> Python Visuals Don't work in Power BI Service directly (you need Gateway with Python Pinned). Update time may be slow with large data.</p>
+</div>` }],
   },
   "paginated": {
     eyebrow: "07 · 03 — التقارير المُصفَّحة",
@@ -2742,6 +5793,67 @@ plt.show()
       <div class="icon">💡</div>
       <p><strong>الاستخدام المثالي:</strong> استخدم Interactive Report للـ Dashboard التنفيذي (المديرون يستكشفون)، و Paginated Report للكشوفات الدورية (تُرسل تلقائياً لكل فرع/عميل).</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>When to use Paginated Reports?</h3>
+<ul>
+<li>When you need a report that prints perfectly, regardless of the number of pages.</li>
+<li>Monthly invoices and statements for each client separately.</li>
+<li>Reports contain tables with thousands of rows (Power BI Interactive He cuts it).</li>
+<li>Reports are automatically sent by mail (Email Subscriptions in Power BI Service).</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>The difference between Interactive and Paginated</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.92rem;">
+<thead>
+<tr style="background:var(--bg4);color:var(--gold);">
+<th style="padding:10px;border:1px solid var(--border);text-align:right;">Standard</th>
+<th style="padding:10px;border:1px solid var(--border);text-align:right;">Interactive (.pbix)</th>
+<th style="padding:10px;border:1px solid var(--border);text-align:right;">Paginated (.rdl)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:8px;border:1px solid var(--border);">the goal</td><td style="padding:8px;border:1px solid var(--border);">Explore and interact</td><td style="padding:8px;border:1px solid var(--border);">Printing and exporting</td></tr>
+<tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">Tool</td><td style="padding:8px;border:1px solid var(--border);">Power BI Desktop</td><td style="padding:8px;border:1px solid var(--border);">Power BI Report Builder</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">Pages</td><td style="padding:8px;border:1px solid var(--border);">Limited to screen</td><td style="padding:8px;border:1px solid var(--border);">Automatically stretch</td></tr>
+<tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">Export</td><td style="padding:8px;border:1px solid var(--border);">PDF limited</td><td style="padding:8px;border:1px solid var(--border);">PDF, Excel, Word, CSV</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">Data</td><td style="padding:8px;border:1px solid var(--border);">Included in the file</td><td style="padding:8px;border:1px solid var(--border);">Live Query is live</td></tr>
+</tbody>
+</table>
+</div>
+<div class="lesson-card">
+<h3>Construction tool — Power BI Report Builder</h3>
+<p>Download it for free from Microsoft's website. Similar to Excel in wire charting:</p>
+<ul>
+<li><strong>Data Sources:</strong> Specifies the data source (Power BI Dataset, SQL Server…).</li>
+<li><strong>Datasets:</strong> inquiry SQL or MDX Fetches data.</li>
+<li><strong>Report Items:</strong> Table, Matrix, Chart, Image, Textbox.</li>
+<li><strong>Parameters:</strong> Like a history filter — can be passed from Power BI Service.</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Publishing and scheduling</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Upload the report</h4>
+<p>from Power BI Report Builder: Publish ← Choose the Workspace (License required Premium or PPU).</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Schedule transmission</h4>
+<p>in Power BI Service: Open the report ← Subscribe ← Adjust schedule, recipients, and format (PDF/Excel).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Ideal use:</strong> Use Interactive Report for Executive Dashboard (managers explore), and Paginated Report for periodic statements (automatically sent to each branch/customer).</p>
+</div>` }],
   },
   "kpi-finance": {
     eyebrow: "08 · 01 — المالية",
@@ -2896,7 +6008,7 @@ plt.show()
           <div class="kpi-info-box"><div class="kpi-label">المعادلة</div><p>إجمالي الديون ÷ حقوق المساهمين</p></div>
           <div class="kpi-info-box"><div class="kpi-label">المعيار</div><p>أقل من 1 = شركة آمنة / فوق 2 = خطر</p></div>
         </div>
-        <div class="kpi-formula-label">🔷 DAX Measure</div>
+        <div class="kpi-formula-label">🔷 DAX Measure — Basic</div>
         <div class="kpi-formula-box">
 <span class="kw">Debt to Equity</span> =
 <span class="fn">DIVIDE</span>(
@@ -2904,15 +6016,38 @@ plt.show()
     <span class="fn">SUM</span>( Balance[Shareholder_Equity] )
 )
         </div>
+        <div class="kpi-formula-label">🔷 DAX Measure — Advanced (مع Comparison مع السنة الماضية)</div>
+        <div class="kpi-formula-box">
+<span class="kw">D/E Ratio with Trend</span> =
+<span class="fn">VAR</span> CurrentDE =
+    <span class="fn">DIVIDE</span>(
+        <span class="fn">SUM</span>( Balance[Total_Debt] ),
+        <span class="fn">SUM</span>( Balance[Shareholder_Equity] )
+    )
+<span class="fn">VAR</span> PriorYearDE =
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">DIVIDE</span>(
+            <span class="fn">SUM</span>( Balance[Total_Debt] ),
+            <span class="fn">SUM</span>( Balance[Shareholder_Equity] )
+        ),
+        <span class="fn">SAMEPERIODLASTYEAR</span>( Dates[Date] )
+    )
+<span class="fn">VAR</span> Trend = CurrentDE - PriorYearDE
+<span class="fn">RETURN</span>
+    <span class="fn">IF</span>( Trend > <span class="num">0.1</span>, <span class="str">"🔴 ارتفاع خطير"</span>,
+    <span class="fn">IF</span>( Trend > <span class="num">0</span>, <span class="str">"🟡 ارتفاع طفيف"</span>,
+    <span class="fn">IF</span>( Trend < -<span class="num">0.1</span>, <span class="str">"✅ تحسن ممتاز"</span>, <span class="str">"🟢 مستقر"</span> )))
+        </div>
         <div class="kpi-example">
           <div class="ex-label">📊 مثال عملي</div>
-          <p>ديون الشركة <strong>2,000,000</strong> وحقوق المساهمين <strong>4,000,000</strong>:<br>
-          D/E = 2,000,000 ÷ 4,000,000 = <strong>0.5</strong><br>
-          يعني الشركة ممولة 33% بديون و67% بأموال المساهمين — وضع صحي.</p>
+          <p><strong>2024:</strong> ديون 2,000,000 وحقوق 4,000,000 → D/E = 0.5<br>
+          <strong>2023:</strong> ديون 1,500,000 وحقوق 5,000,000 → D/E = 0.3<br>
+          <strong>التحليل:</strong> ارتفع الـ D/E من 0.3 إلى 0.5 (+0.2) = 🔴 ارتفاع خطير!<br>
+          يعني الديون زادت والأموال الخاصة انخفضت — لازم تتحقق من السبب.</p>
         </div>
         <div class="kpi-importance">
           <div class="imp-label">⭐ الأهمية</div>
-          <p>البنوك والمستثمرون بيبصوا عليه قبل أي قرض أو استثمار. نسبة عالية تعني الشركة تعتمد اعتماداً كبيراً على الديون لتمويل نشاطها.</p>
+          <p>البنوك والمستثمرون بيبصوا عليه قبل أي قرض. الاتجاه أهم من الرقم نفسه — D/E بتزيد تدريجياً = خطر أكثر من ثابتة.</p>
         </div>
       </div>
     </div>
@@ -2946,6 +6081,196 @@ plt.show()
         </div>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
+<div class="kpi-domain-icon">💰</div>
+<div>
+<h3>The financial domain</h3>
+<p>It measures a company's overall financial health — profitability, costs, returns, and liquidity. The most important domain for company management and investors.</p>
+</div>
+</div>
+<!-- KPI 1: Gross Profit Margin -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">1</div>
+<h4>Gross profit margin <span class="kpi-en">Gross Profit Margin</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>(Revenue − Cost of Goods) ÷ Revenue x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Good standard</div><p>Depends on the sector — segmentation: 30–50% | Technology: 60–80%</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Gross Profit Margin %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Sales[Revenue] ) - <span class="fn">SUM</span>( Sales[COGS] ),
+    <span class="fn">SUM</span>( Sales[Revenue] )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Company revenues <strong>5,000,000 pounds</strong> And the cost of the goods <strong>3,000,000 pounds</strong>:<br/>
+          Gross Profit = 2,000,000 ÷ 5,000,000 × 100 = <strong>40%</strong><br/>
+          This means that for every 100 pounds of sales, the company earns 40 pounds before operating expenses.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>The first indicator any investor reads. If the margin decreases over time, meaning costs increase or prices decrease - you must intervene immediately.</p>
+</div>
+</div>
+</div>
+<!-- KPI 2: Net Profit Margin -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">2</div>
+<h4>Net profit margin <span class="kpi-en">Net Profit Margin</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Net profit ÷ revenue x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Good standard</div><p>Above 10% excellent - 5-10% acceptable - less than 5% needs revision</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Net Profit Margin %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Financials[Net_Profit] ),
+    <span class="fn">SUM</span>( Financials[Revenue] )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Revenue <strong>5,000,000</strong> - After all expenses, net profit <strong>350,000</strong>:<br/>
+          Net Margin = 350,000 ÷ 5,000,000 × 100 = <strong>7%</strong><br/>
+          The real bottom line that remains with the company from every pound it sells.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>The bottom line is the most important in any financial report. I have the full picture after all the costs, taxes and benefits. Managers base expansion decisions on it.</p>
+</div>
+</div>
+</div>
+<!-- KPI 3: Operating Expense Ratio -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">3</div>
+<h4>Operating expense ratio <span class="kpi-en">Operating Expense Ratio</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Operating expenses ÷ revenue x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Target</div><p>The less the better - the company is more efficient in controlling its expenses</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">OpEx Ratio %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Expenses[Operating_Expenses] ),
+    <span class="fn">SUM</span>( Financials[Revenue] )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Operating expenses <strong>800,000</strong> On revenue <strong>5,000,000</strong>:<br/>
+          OpEx Ratio = 16% — I mean 16 A penny from every pound goes into running the company (Salaries, rents, marketing...)</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>If revenues increase and the ratio is fixed or increasing, the company does not benefit from scale. What is required is that the ratio decreases as revenues grow.</p>
+</div>
+</div>
+</div>
+<!-- KPI 4: Return on Investment -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">4</div>
+<h4>Return on investment <span class="kpi-en">Return on Investment (ROI)</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>(Net profit ÷ investment cost) x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>ROI positive = Successful investment / above 20% = excellent</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">ROI %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Investments[Net_Profit] ),
+    <span class="fn">SUM</span>( Investments[Investment_Cost] )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>I spent <strong>1,000 pounds</strong> On a machine and you get a profit <strong>200 pounds</strong>:<br/>
+          ROI = 200 ÷ 1,000 × 100 = <strong>20%</strong><br/>
+          This means that for every pound you invest, you will get 1.20 pounds back.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>It helps you make a decision: invest in X no Y? Compare the ROI Between different projects, I choose the highest return with the same risk.</p>
+</div>
+</div>
+</div>
+<!-- KPI 5: Debt to Equity -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">5</div>
+<h4>Debt to equity ratio <span class="kpi-en">Debt to Equity Ratio</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Total debt ÷ shareholders' equity</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>below 1 = Safe company / above 2 = risk</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Debt to Equity</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Balance[Total_Debt] ),
+    <span class="fn">SUM</span>( Balance[Shareholder_Equity] )
+)
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Company debts <strong>2,000,000</strong> and shareholders' rights <strong>4,000,000</strong>:<br/>
+          D/E = 2,000,000 ÷ 4,000,000 = <strong>0.5</strong><br/>
+          This means the company is financed 33% with debt and 67% with shareholders' money — a healthy situation.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>Banks and investors look at it before making any loan or investment. A high ratio means the company relies heavily on debt to finance its activity.</p>
+</div>
+</div>
+</div>
+<!-- KPI 6: Working Capital -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">6</div>
+<h4>working capital <span class="kpi-en">Working Capital</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Current assets − current liabilities</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>positive = The company is able to pay its short obligations</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Working Capital</span> =
+<span class="fn">SUM</span>( Balance[Current_Assets] )
+- <span class="fn">SUM</span>( Balance[Current_Liabilities] )
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Current Assets = <strong>500,000</strong> — Current Liabilities = <strong>300,000</strong>:<br/>
+          Working Capital = <strong>200,000 pounds</strong><br/>
+          The company has enough liquidity to comfortably cover its short-term debts.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>The basic liquidity index - Working Capital is negative. It can go bankrupt even if it is profitable on paper! It demonstrates the company's ability to operate daily.</p>
+</div>
+</div>
+</div>` }],
   },
   "kpi-sales": {
     eyebrow: "08 · 02 — المبيعات",
@@ -3131,6 +6456,177 @@ plt.show()
         </div>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
+<div class="kpi-domain-icon">📈</div>
+<div>
+<h3>The sales domain</h3>
+<p>It measures sales team efficiency, growth rate, and deal quality. The most important domain for sales managers and C-Level.</p>
+</div>
+</div>
+<!-- KPI 1: Revenue Growth Rate -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">1</div>
+<h4>Revenue growth rate <span class="kpi-en">Revenue Growth Rate</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>(Current period revenue − previous period) ÷ previous period x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>Growth up 15% annually = Excellent for medium companies</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure — with Time Intelligence</div>
+<div class="kpi-formula-box">
+<span class="kw">Revenue Growth %</span> =
+<span class="fn">VAR</span> CurrentRev = <span class="fn">SUM</span>( Sales[Revenue] )
+<span class="fn">VAR</span> PrevRev =
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">SUM</span>( Sales[Revenue] ),
+        <span class="fn">SAMEPERIODLASTYEAR</span>( Dates[Date] )
+    )
+<span class="fn">RETURN</span>
+<span class="fn">DIVIDE</span>( CurrentRev - PrevRev, PrevRev ) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>2024 revenue: <strong>5,000,000</strong> — 2023 revenues: <strong>4,200,000</strong>:<br/>
+          Growth = (5,000,000 − 4,200,000) ÷ 4,200,000 × 100 = <strong>19%</strong> Annual growth</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>The primary measure of business health. Consistent growth is more important than one-time huge growth. Compare it with the average industry growth to determine the company's positioning.</p>
+</div>
+</div>
+</div>
+<!-- KPI 2: Average Order Value -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">2</div>
+<h4>Average order value <span class="kpi-en">Average Order Value (AOV)</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Total revenue ÷ number of orders</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Target</div><p>Increase the AOV With 10-20% = Increase revenue without new customers</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Average Order Value</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Orders[Revenue] ),
+    <span class="fn">DISTINCTCOUNT</span>( Orders[Order_ID] )
+)
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Total revenue for the month <strong>200,000</strong> on <strong>500 requests</strong>:<br/>
+          AOV = 200,000 ÷ 500 = <strong>400 pounds</strong> Average order value<br/>
+          strategy upselling Can you upload it to 480 fairy = more 20% In revenue!</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>Raise the AOV Much cheaper than acquiring new customers. Follow it up with strategies upsell andcross-sell To measure its effectiveness.</p>
+</div>
+</div>
+</div>
+<!-- KPI 3: Sales Target Achievement -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">3</div>
+<h4>Percentage of achieving the goal <span class="kpi-en">Sales Target Achievement %</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Actual sales ÷ target x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>above 100% = Exceed the target / 80-100% = acceptable / below 80% = problem</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure — With a table Targets</div>
+<div class="kpi-formula-box">
+<span class="kw">Target Achievement %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Sales[Actual_Revenue] ),
+    <span class="fn">SUM</span>( Targets[Target_Revenue] )
+) * <span class="num">100</span>
+<span class="cm">-- with Conditional Color using IF</span>
+<span class="kw">Achievement Status</span> =
+<span class="fn">IF</span>( [Target Achievement %] &gt;= <span class="num">100</span>, <span class="str">"✅ Bypass"</span>,
+<span class="fn">IF</span>( [Target Achievement %] &gt;= <span class="num">80</span>, <span class="str">"🟡 Accepted"</span>, <span class="str">"🔴 Danger"</span> ))
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Actual March sales <strong>480,000</strong> And the goal was <strong>500,000</strong>:<br/>
+          Achievement = 480,000 ÷ 500,000 × 100 = <strong>96%</strong> — Acceptable, but close to danger</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>The simplest and quickest indicator for your sales team to follow. Do it for each salesperson, each region, and each product to determine where you need to intervene.</p>
+</div>
+</div>
+</div>
+<!-- KPI 4: Customer Lifetime Value -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">4</div>
+<h4>Customer lifetime value <span class="kpi-en">Customer Lifetime Value (CLV)</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Average purchase x purchase frequency per year x customer years</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Target</div><p>A CLV:CAC ratio of at least 3:1 means customer acquisition is healthy.</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">CLV</span> =
+<span class="fn">VAR</span> AvgPurchase =
+    <span class="fn">AVERAGEX</span>( Customers, [Total Revenue per Customer] )
+<span class="fn">VAR</span> PurchaseFreq =
+    <span class="fn">DIVIDE</span>( <span class="fn">COUNTROWS</span>( Orders ), <span class="fn">DISTINCTCOUNT</span>( Orders[Customer_ID] ) )
+<span class="fn">RETURN</span>
+    AvgPurchase * PurchaseFreq * <span class="num">3</span> <span class="cm">--If the average age of the customer is 3 years</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Average customer purchase <strong>500 pounds</strong> - He buys <strong>4 times</strong> A year - and remains <strong>3 years</strong>:<br/>
+          CLV = 500 × 4 × 3 = <strong>6,000 pounds</strong> - This means that it is worth spending up to 2,000 pounds to acquire it.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>It determines how much you can spend to acquire a new customer. Companies know CLV She competes stronger because she knows what to do.</p>
+</div>
+</div>
+</div>
+<!-- KPI 5: Conversion Rate -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">5</div>
+<h4>Conversion rate <span class="kpi-en">Sales Conversion Rate</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Number of closed trades ÷ total opportunities x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>B2B: 20-30% good / B2C: 1-3% normal depending on the sector</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Conversion Rate %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTROWS</span>( Pipeline ),
+        Pipeline[Stage] = <span class="str">"Won"</span>
+    ),
+    <span class="fn">COUNTROWS</span>( Pipeline )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>He has a sales team <strong>200 chances</strong> In the pipeline and close them <strong>50 deals</strong>:<br/>
+          Conversion = 50 ÷ 200 × 100 = <strong>25%</strong> — Compare it with competitors and the previous month.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>It reveals the sales team's efficiency in closing deals. if rate Low with leads A lot = The problem is the quality of sales, not the quality of marketing.</p>
+</div>
+</div>
+</div>` }],
   },
   "kpi-inventory": {
     eyebrow: "08 · 03 — المخزون والإمداد",
@@ -3281,6 +6777,143 @@ plt.show()
         </div>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
+<div class="kpi-domain-icon">📦</div>
+<div>
+<h3>The Domain — Supply Chain</h3>
+<p>It measures the speed of inventory turnover, debt collection, and the company's relationship with its suppliers and customers on the financial side.</p>
+</div>
+</div>
+<!-- KPI 1: Inventory Turnover -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">1</div>
+<h4>Inventory turnover rate <span class="kpi-en">Inventory Turnover</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Cost of goods sold ÷ average inventory</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>The higher the better — split: 4-6 times a year is good</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Inventory Turnover</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Sales[COGS] ),
+    <span class="fn">AVERAGE</span>( Inventory[Inventory_Value] )
+)
+
+<span class="cm">-- Days in Inventory</span>
+<span class="kw">Days in Inventory</span> = <span class="fn">DIVIDE</span>( <span class="num">365</span>, [Inventory Turnover] )
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>COGS = <strong>3,000,000</strong> — Average inventory = <strong>500,000</strong>:<br/>
+          Turnover = 6 times a year — all <strong>61 days</strong> Stock is fully replenished<br/>
+          if 2 Only a few times = Stagnant stock = Loss of financing and storage.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>Slow stock = Withheld funds without return + Storage costs + Risk of damage. Very fast stock = Risk of running out. Balance must be made according to the nature of the product.</p>
+</div>
+</div>
+</div>
+<!-- KPI 2: DSO -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">2</div>
+<h4>Days of sales pending <span class="kpi-en">Days Sales Outstanding (DSO)</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>(Receivables ÷ Total forward sales) x 365</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Target</div><p>The lower the better — reflects the speed with which debts can be collected from customers</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">DSO</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Receivables[Accounts_Receivable] ),
+    <span class="fn">SUM</span>( Sales[Credit_Sales] )
+) * <span class="num">365</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>accounts receivable: <strong>100,000</strong> — Annual forward sales: <strong>1,200,000</strong>:<br/>
+          DSO = (100,000 ÷ 1,200,000) × 365 = <strong>30 days</strong><br/>
+          This means that the company takes 30 days to collect its money from customers on average.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>DSO high = Customers are late in paying = Pressure on liquidity. if DSO &gt; Agreed payment terms = A collection problem that needs investigation.</p>
+</div>
+</div>
+</div>
+<!-- KPI 3: AP Days -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">3</div>
+<h4>Supplier payment days <span class="kpi-en">Accounts Payable Days</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>(Receivables ÷ Cost of Goods) x 365</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Strategy</div><p>Strive for AP Days Taller than DSO = The company takes its money before it pays it</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">AP Days</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Payables[Accounts_Payable] ),
+    <span class="fn">SUM</span>( Sales[COGS] )
+) * <span class="num">365</span>
+<span class="cm">-- comparison DSO vs AP Days</span>
+<span class="kw">Cash Position Status</span> =
+<span class="fn">IF</span>( [AP Days] &gt; [DSO], <span class="str">“✅ Good liquidity position”</span>, <span class="str">“⚠️ Pressure on liquidity”</span> )
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>DSO = <strong>30 days</strong> (You take your money from clients within 30 days)<br/>
+          AP Days = <strong>45 days</strong> (You pay the suppliers after 45 days)<br/>
+          Result: you have it <strong>15 days</strong> It uses suppliers' money — an ideal situation!</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>balance between DSO andAP Days It is the secret of liquidity management. Companies like Walmart keep... AP Days Very high as a free financing tool from suppliers.</p>
+</div>
+</div>
+</div>
+<!-- KPI 4: Cost to Revenue -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">4</div>
+<h4>Cost to revenue ratio <span class="kpi-en">Cost to Revenue Ratio</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Total costs ÷ revenue x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>below 70% = Good margin / above 90% = The company is about to lose</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Cost to Revenue %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Costs[Total_Costs] ),
+    <span class="fn">SUM</span>( Sales[Revenue] )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Revenue <strong>5,000,000</strong> —Total costs <strong>3,800,000</strong>:<br/>
+          Cost to Revenue = 76% — I mean 76 A penny from every pound of sales goes toward costs<br/>
+          Available net profit margin = 24% but.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>It explains how much revenue turns into profits. You follow it monthly and analyze where exactly the costs are rising — Are you in? COGS Nor in operating expenses.</p>
+</div>
+</div>
+</div>` }],
   },
   "kpi-hr": {
     eyebrow: "08 · 04 — الموارد البشرية",
@@ -3433,6 +7066,146 @@ plt.show()
         </div>
       </div>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
+<div class="kpi-domain-icon">👥</div>
+<div>
+<h3>The Domain — Human Resources</h3>
+<p>It measures workplace health, employee costs, and productivity. Its data usually comes from HR systems such as SAP, Oracle, or even Excel.</p>
+</div>
+</div>
+<!-- KPI 1: Employee Turnover Rate -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">1</div>
+<h4>Staff turnover rate <span class="kpi-en">Employee Turnover Rate</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>(Number of departing employees ÷ Average number of employees) x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>below 10% annually = healthy / above 20% = An administrative or work environment problem</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Turnover Rate %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTROWS</span>( Employees ),
+        Employees[Status] = <span class="str">"Left"</span>
+    ),
+    <span class="fn">AVERAGE</span>( HeadcountSnapshot[Headcount] )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Company B <strong>200 employees</strong> — He left them <strong>30 employees</strong> During the year:<br/>
+          Turnover = 30 ÷ 200 × 100 = <strong>15%</strong><br/>
+          Every employee who leaves costs the company approximately 50-200% of his annual salary in rehiring costs!</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>Turnover high = Huge costs + Loss of experiences + Impact on team morale. You must analyze the reasons for leaving in detail exit interviews.</p>
+</div>
+</div>
+</div>
+<!-- KPI 2: Cost per Hire -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">2</div>
+<h4>Recruitment cost <span class="kpi-en">Cost per Hire</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Total staffing costs ÷ number of employees hired</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>Varies by role — Includes ads + Agencies + time HR + Onboarding</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Cost per Hire</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( HR_Costs[Recruitment_Cost] ),
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTROWS</span>( Employees ),
+        Employees[Status] = <span class="str">"Hired"</span>
+    )
+)
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>First quarter hiring costs <strong>150,000 pounds</strong> — has been set <strong>25 employees</strong>:<br/>
+          Cost per Hire = <strong>6,000 pounds</strong> For one employee<br/>
+          Compare it with the previous quarter to measure the improvement in department efficiency HR.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>cut Cost per Hire Without reducing the quality of employment is the goal of every HR. Measuring it accurately reveals where the excess spending is — Agencies? advertisements? Long procedures?</p>
+</div>
+</div>
+</div>
+<!-- KPI 3: Absenteeism Rate -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">3</div>
+<h4>Absence rate <span class="kpi-en">Absenteeism Rate</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>(Days absent ÷ Total available work days) x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>below 3% = natural / above 5% = A problem in the work environment or management</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Absenteeism Rate %</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Attendance[Absent_Days] ),
+    <span class="fn">SUM</span>( Attendance[Working_Days_Available] )
+) * <span class="num">100</span>
+</div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Team of <strong>50 employees</strong> × <strong>20 working days</strong> = 1,000 Available day<br/>
+          Total days of unexcused absence = <strong>45 days</strong><br/>
+          Absenteeism = 45 ÷ 1,000 × 100 = <strong>4.5%</strong> - Needs follow-up.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>A sudden increase in absenteeism = Early warning of problems in the work environment, excessive work pressure, or poor management. Detect it early before it turns into... turnover.</p>
+</div>
+</div>
+</div>
+<!-- KPI 4: Revenue per Employee -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">4</div>
+<h4>Revenue per employee <span class="kpi-en">Revenue per Employee</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Total revenue ÷ number of employees</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>Team Productivity Metric — Tech: Millions / Retail: Hundreds of Thousands</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Revenue per Employee</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Sales[Revenue] ),
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">COUNTROWS</span>( Employees ),
+        Employees[Status] = <span class="str">"Active"</span>
+    )
+)
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Revenue <strong>10,000,000 pounds</strong> - Number of employees <strong>50 employees</strong>:<br/>
+          Revenue per Employee = <strong>200,000 pounds</strong> For each employee annually<br/>
+          If you are hired 10 New employees and the number has not increased = Efficiency decreases.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>The simplest measure of team productivity. Its rise with revenue growth means the company achieves real economies of scale from manpower.</p>
+</div>
+</div>
+</div>` }],
   },
   "kpi-marketing": {
     eyebrow: "08 · 05 — التسويق",
@@ -3601,16 +7374,4719 @@ plt.show()
       <div class="icon">💡</div>
       <p><strong>نصيحة احترافية:</strong> في Power BI، اربط كل الـ KPI domains ببعض في صفحة واحدة "Executive Dashboard" بـ slicers زمنية عشان المديرون يقدروا يشوفوا الصورة الكاملة بنظرة واحدة.</p>
     </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="kpi-domain-header">
+<div class="kpi-domain-icon">📣</div>
+<div>
+<h3>The Marketing Domain</h3>
+<p>It measures return on marketing spend and the efficiency of acquiring and retaining customers. Its data usually comes from Google Ads, Meta, and CRM systems.</p>
+</div>
+</div>
+<!-- KPI 1: CAC -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">1</div>
+<h4>Customer acquisition cost <span class="kpi-en">Customer Acquisition Cost (CAC)</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Total marketing and sales costs ÷ number of new customers</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Target</div><p>CAC should stay below one-third of CLV — aim for a CLV:CAC ratio of at least 3:1.</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">CAC</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Marketing[Total_Marketing_Cost] )
+    + <span class="fn">SUM</span>( Sales_Costs[Total_Sales_Cost] ),
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">DISTINCTCOUNT</span>( Customers[Customer_ID] ),
+        Customers[Is_New] = <span class="num">1</span>
+    )
+)
+
+<span class="cm">-- rate CLV to CAC</span>
+<span class="kw">CLV to CAC Ratio</span> = <span class="fn">DIVIDE</span>( [CLV], [CAC] )
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Marketing spend + sales <strong>100,000 pounds</strong> - New clients: <strong>50 clients</strong>:<br/>
+          CAC = 100,000 ÷ 50 = <strong>2,000 pounds</strong> For every customer<br/>
+          if CLV = 8,000 → rate 4:1 = A very successful investment ✅</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>Many companies go bankrupt because they spend more on acquiring customers than they bring in. Measuring it accurately is the difference between sustainable growth and suicidal growth.</p>
+</div>
+</div>
+</div>
+<!-- KPI 2: ROAS -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">2</div>
+<h4>Return on advertising spend <span class="kpi-en">Return on Ad Spend (ROAS)</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>Advertising revenue ÷ Advertising cost</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>ROAS 4x = excellent — below 2x = problem — Varies according to margin</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">ROAS</span> =
+<span class="fn">DIVIDE</span>(
+    <span class="fn">SUM</span>( Ad_Revenue[Revenue_from_Ads] ),
+    <span class="fn">SUM</span>( Marketing[Ad_Spend] )
+)
+
+<span class="cm">-- ROAS per Campaign</span>
+<span class="kw">ROAS per Campaign</span> =
+<span class="fn">CALCULATE</span>( [ROAS], <span class="fn">ALLEXCEPT</span>( Campaigns, Campaigns[Campaign_Name] ) )
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>Spent <strong>50,000 pounds</strong> On Facebook Ads — generate revenue <strong>200,000 pounds</strong>:<br/>
+          ROAS = 200,000 ÷ 50,000 = <strong>4x</strong> - This means that for every pound of advertising, you will get 4 pounds of sales back ✅</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>compare ROAS Between each advertising channel (Facebook vs Google vs TikTok) To shift budget to the highest performing channels and reduce spending on the weakest.</p>
+</div>
+</div>
+</div>
+<!-- KPI 3: Customer Retention Rate -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">3</div>
+<h4>Customer retention rate <span class="kpi-en">Customer Retention Rate</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>((End of period customers − New customers) ÷ Beginning of period customers) x 100</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>above 85% = excellent / below 70% = Customer satisfaction problem</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">Retention Rate %</span> =
+<span class="fn">VAR</span> EndCustomers = [Active Customers End of Period]
+<span class="fn">VAR</span> NewCustomers = [New Customers This Period]
+<span class="fn">VAR</span> StartCustomers = [Active Customers Start of Period]
+<span class="fn">RETURN</span>
+<span class="fn">DIVIDE</span>( EndCustomers - NewCustomers, StartCustomers ) * <span class="num">100</span>
+<span class="cm">-- Churn Rate = 100% - Retention Rate</span>
+<span class="kw">Churn Rate %</span> = <span class="num">100</span> - [Retention Rate %]
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>I started the month with <strong>500 clients</strong> — gained <strong>50 new</strong> - End of the month <strong>510 clients</strong>:<br/>
+          Retention = (510 − 50) ÷ 500 × 100 = <strong>92%</strong> ✅ — I mean Churn = 8%</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>Retaining an existing customer is 5-7 times cheaper than acquiring a new one. A low Retention Rate means all marketing efforts fill a holey bucket.</p>
+</div>
+</div>
+</div>
+<!-- KPI 4: Net Promoter Score -->
+<div class="kpi-card">
+<div class="kpi-card-header">
+<div class="kpi-num">4</div>
+<h4>Net Promoter Index <span class="kpi-en">Net Promoter Score (NPS)</span></h4>
+</div>
+<div class="kpi-card-body">
+<div class="kpi-grid">
+<div class="kpi-info-box"><div class="kpi-label">Equation</div><p>% Promoters (9-10) − % Detractors (0-6)</p></div>
+<div class="kpi-info-box"><div class="kpi-label">Standard</div><p>above 50 = excellent / 0-30 = good / negative = Serious problem</p></div>
+</div>
+<div class="kpi-formula-label">🔷 DAX Measure</div>
+<div class="kpi-formula-box">
+<span class="kw">NPS</span> =
+<span class="fn">VAR</span> Promoters =
+    <span class="fn">DIVIDE</span>(
+        <span class="fn">CALCULATE</span>( <span class="fn">COUNTROWS</span>(Surveys), Surveys[Score] &gt;= <span class="num">9</span> ),
+        <span class="fn">COUNTROWS</span>(Surveys)
+    ) * <span class="num">100</span>
+<span class="fn">VAR</span> Detractors =
+    <span class="fn">DIVIDE</span>(
+        <span class="fn">CALCULATE</span>( <span class="fn">COUNTROWS</span>(Surveys), Surveys[Score] &lt;= <span class="num">6</span> ),
+        <span class="fn">COUNTROWS</span>(Surveys)
+    ) * <span class="num">100</span>
+<span class="fn">RETURN</span> Promoters - Detractors
+        </div>
+<div class="kpi-example">
+<div class="ex-label">📊 Practical example</div>
+<p>100 polls — 60 favorable (9-10) — 15 neutral (7-8) — 25 detractors (0-6):<br/>
+          NPS = 60% − 25% = <strong>35</strong> - Good but there is room for improvement<br/>
+          Analyze the detractors' complaints to identify the root problems.</p>
+</div>
+<div class="kpi-importance">
+<div class="imp-label">⭐ Importance</div>
+<p>The simplest and most powerful measure of customer satisfaction and loyalty. Directly linked to organic growth — NPS High means your customers are marketing for you for free.</p>
+</div>
+</div>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Pro Tip:</strong> in Power BI, connect all the KPI domains Some on one page "Executive Dashboard" With slicers Timeframe so that managers can see the full picture at a glance.</p>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Query Folding و الأداء ====================
+  "query-folding": {
+    eyebrow: "02 · 05 — Query Folding و الأداء",
+    title: "Query Folding و الأداء",
+    lede: "فهم كيفية عمل Query Folding في Power Query وأثره الحقيقي على أداء التحديث والاستعلامات",
+    en_eyebrow: "02 · 05 — Query Folding & Performance",
+    en_lede: "Understanding how Query Folding works in Power Query and its real impact on refresh performance and query execution",
+    sectionId: "query-folding",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ما هي Query Folding؟</h3>
+      <p>Query Folding هي القدرة على دفع (Push) عمليات التحويل إلى المصدر الأصلي للبيانات (SQL Server, Excel, إلخ) بدلاً من تحميل جميع البيانات وتحويلها في Power Query.</p>
+      <p>عندما تكتب خطوات في Power Query:</p>
+      <ul>
+        <li><strong>مع Folding:</strong> يتم تحويل الخطوات إلى SQL Query يُنفذ في قاعدة البيانات مباشرة</li>
+        <li><strong>بدون Folding:</strong> يتم تحميل جميع البيانات أولاً ثم تحويلها محلياً</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>كيفية التحقق من Query Folding</h3>
+      <p><strong>الطريقة الأولى: عرض استعلام الأصل</strong></p>
+      <ol>
+        <li>انقر بزر الفأرة الأيمن على الخطوة قبل التي تريد فحصها</li>
+        <li>اختر "View Native Query" أو "Trace Data Source Query"</li>
+        <li>إذا رأيت SQL query معقد = Folding يعمل ✅</li>
+        <li>إذا رأيت رسالة "Native Query not available" = لا Folding 🚫</li>
+      </ol>
+      <p><strong>الطريقة الثانية: استخدام Query Diagnostics</strong></p>
+      <ul>
+        <li>Power Query Editor → Home → Diagnostics → Query Diagnostics</li>
+        <li>شغل الاستعلام وشاهد الخطوات التي تُنفذ في المصدر</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>قانون ذهبي:</strong> كلما زاد عدد الخطوات التي تُفحص بـ "View Native Query" وترجع SQL، كان الأداء أفضل والتحديث أسرع.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>العمليات التي تدعم Folding والتي لا تدعمها</h3>
+      <table style="width:100%; border-collapse:collapse; margin:15px 0;">
+        <tr style="background:var(--ink-light);">
+          <th style="border:1px solid var(--ink-2); padding:10px; text-align:right;">✅ تدعم Folding</th>
+          <th style="border:1px solid var(--ink-2); padding:10px; text-align:right;">🚫 لا تدعم Folding</th>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Remove Columns</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Add Custom Column (عادة)</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Filter Rows</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Merge Queries (عادة)</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Rename Column</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Group By (في حالات)</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Sort Rows</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Unpivot</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Select Columns</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">Text.Replace في عمود</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>قصة حقيقية: الفرق الكبير</h3>
+      <p><strong>السيناريو:</strong> جدول بـ 5 ملايين صف من مبيعات قديمة تريد تصفيتها لسنة واحدة فقط</p>
+      <p><strong>مع Folding (الصحيح):</strong></p>
+      <ul>
+        <li>Filter by Date → WHERE Date >= 2024</li>
+        <li>الخادم يرسل فقط 100,000 صف</li>
+        <li>وقت التحديث: 5 ثوانٍ ⚡</li>
+      </ul>
+      <p><strong>بدون Folding (الخطأ الشائع):</strong></p>
+      <ul>
+        <li>تحميل 5 ملايين صف كاملاً</li>
+        <li>ثم تصفيتها محلياً في الكمبيوتر</li>
+        <li>استهلاك ذاكرة ضخم وتحديث بطيء جداً</li>
+        <li>وقت التحديث: دقيقة أو أكثر 🐌</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>التحذير الأساسي:</strong> بعض العمليات تكسر Folding فوراً. إذا رأيت "Native Query not available" بعد خطوة معينة، اعلم أن جميع الخطوات التي بعدها ستُنفذ محلياً (توقف الـ Folding). رتب خطواتك بذكاء: ضع كل العمليات التي تدعم Folding أولاً.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>استراتيجية التعامل مع Folding</h3>
+      <p><strong>1. افحص دائماً</strong></p>
+      <p>قبل حفظ الـ Query، افحص كل خطوة بـ "View Native Query"</p>
+      <p><strong>2. ضع العمليات الثقيلة أولاً</strong></p>
+      <p>رتب الخطوات: Filter → Remove Columns → Rename → بعدها أي عمليات معقدة</p>
+      <p><strong>3. استخدم الـ Staging Table</strong></p>
+      <p>إذا كنت بحاجة عمليات معقدة، أنشئ Staging Query تدعم Folding بشكل كامل، ثم Merge معها</p>
+      <p><strong>4. اختبر مع عينات صغيرة</strong></p>
+      <p>جرب الـ Query أثناء الكتابة على عينة بـ 1000 صف لرؤية السرعة</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is Query Folding?</h3>
+<p>Query Folding is the ability to push transformation operations to the original data source (SQL Server, Excel, etc.) instead of loading all data and transforming it in Power Query.</p>
+<p>When you write steps in Power Query:</p>
+<ul>
+<li><strong>With Folding:</strong> Steps are converted into a SQL query executed directly in the database</li>
+<li><strong>Without Folding:</strong> All data is loaded first, then transformed locally</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>How to Check Query Folding</h3>
+<p><strong>Method 1: View Native Query</strong></p>
+<ol>
+<li>Right-click on the step before the one you want to inspect</li>
+<li>Select "View Native Query" or "Trace Data Source Query"</li>
+<li>If you see a complex SQL query = Folding is working ✅</li>
+<li>If you see "Native Query not available" message = No Folding 🚫</li>
+</ol>
+<p><strong>Method 2: Use Query Diagnostics</strong></p>
+<ul>
+<li>Power Query Editor → Home → Diagnostics → Query Diagnostics</li>
+<li>Run the query and watch which steps execute at the source</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Golden Rule:</strong> The more steps that check out with "View Native Query" and return SQL, the better the performance and the faster the refresh.</p>
+</div>
+<div class="lesson-card">
+<h3>Operations Supporting and Not Supporting Folding</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0;">
+<tr style="background:var(--ink-light);">
+<th style="border:1px solid var(--ink-2); padding:10px;">✅ Supports Folding</th>
+<th style="border:1px solid var(--ink-2); padding:10px;">🚫 No Folding Support</th>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;">Remove Columns</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Add Custom Column (usually)</td>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;">Filter Rows</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Merge Queries (usually)</td>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;">Rename Column</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Group By (in some cases)</td>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;">Sort Rows</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Unpivot</td>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;">Select Columns</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Text.Replace on column</td>
+</tr>
+</table>
+</div>
+<div class="lesson-card">
+<h3>Real-World Story: The Big Difference</h3>
+<p><strong>Scenario:</strong> A table with 5 million old sales rows that you want to filter to one year only</p>
+<p><strong>With Folding (Correct):</strong></p>
+<ul>
+<li>Filter by Date → WHERE Date >= 2024</li>
+<li>Server sends only 100,000 rows</li>
+<li>Refresh time: 5 seconds ⚡</li>
+</ul>
+<p><strong>Without Folding (Common Mistake):</strong></p>
+<ul>
+<li>Load all 5 million rows completely</li>
+<li>Then filter them locally on your computer</li>
+<li>Huge memory consumption and slow refresh</li>
+<li>Refresh time: a minute or more 🐌</li>
+</ul>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Critical Warning:</strong> Some operations break Folding immediately. If you see "Native Query not available" after a certain step, know that all steps after it will execute locally (Folding stops). Arrange your steps wisely: put all Folding-supporting operations first.</p>
+</div>
+<div class="lesson-card">
+<h3>Query Folding Strategy</h3>
+<p><strong>1. Always Inspect</strong></p>
+<p>Before saving the query, check each step with "View Native Query"</p>
+<p><strong>2. Put Heavy Operations First</strong></p>
+<p>Order steps: Filter → Remove Columns → Rename → then any complex operations</p>
+<p><strong>3. Use Staging Tables</strong></p>
+<p>If you need complex operations, create a Staging Query that fully supports Folding, then Merge with it</p>
+<p><strong>4. Test with Small Samples</strong></p>
+<p>Try the query while writing it on a sample of 1,000 rows to see the speed</p>
+</div>` }],
+  },
+
+  // ==================== درس جديد: DirectQuery vs Import vs Live ====================
+  "directquery": {
+    eyebrow: "03 · 04 — DirectQuery vs Import vs Live Connection",
+    title: "DirectQuery vs Import vs Live Connection",
+    lede: "فهم الفروقات الجوهرية بين أنماط الاتصال الثلاثة واختيار الأنسب لحالتك",
+    en_eyebrow: "03 · 04 — DirectQuery vs Import vs Live Connection",
+    en_lede: "Understanding the fundamental differences between the three connection modes and choosing the right one for your case",
+    sectionId: "directquery",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>المقارنة السريعة</h3>
+      <table style="width:100%; border-collapse:collapse; margin:15px 0;">
+        <tr style="background:var(--ink-light);">
+          <th style="border:1px solid var(--ink-2); padding:10px; text-align:right;">الخاصية</th>
+          <th style="border:1px solid var(--ink-2); padding:10px;">Import</th>
+          <th style="border:1px solid var(--ink-2); padding:10px;">DirectQuery</th>
+          <th style="border:1px solid var(--ink-2); padding:10px;">Live Connection</th>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>حجم البيانات</strong></td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">حتى 1 GB</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">ضخمة جداً</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">ضخمة جداً</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>الأداء</strong></td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">سريع جداً ⚡⚡⚡</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">يعتمد على الشبكة ⏳</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">يعتمد على الشبكة ⏳</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>التحديث الفوري</strong></td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">حسب جدول التحديث</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">دائماً آخر بيانات ✅</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">دائماً آخر بيانات ✅</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>الميزات المتقدمة</strong></td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">جميع DAX الميزات</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">محدودة</td>
+          <td style="border:1px solid var(--ink-2); padding:10px;">محدودة جداً</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Import Mode: التقليدي والموثوق</h3>
+      <p><strong>ماذا يحدث:</strong> تحميل البيانات من المصدر إلى ذاكرة Power BI، مرة واحدة أو حسب جدول معين</p>
+      <p><strong>المميزات:</strong></p>
+      <ul>
+        <li>✅ أسرع أداء ممكنة (البيانات في الذاكرة)</li>
+        <li>✅ جميع ميزات DAX متاحة</li>
+        <li>✅ يعمل بدون اتصال إنترنت بعد التحميل</li>
+        <li>✅ أفضل للبيانات التاريخية والمقارنات</li>
+      </ul>
+      <p><strong>العيوب:</strong></p>
+      <ul>
+        <li>❌ محدود بحجم الملف (1 GB في عادي، 10 GB في Premium)</li>
+        <li>❌ بيانات غير مباشرة (متأخرة حسب جدول التحديث)</li>
+        <li>❌ يحتاج تحديث منتظم</li>
+      </ul>
+      <p><strong>الحالات المثالية:</strong></p>
+      <ul>
+        <li>البيانات الصغيرة والمتوسطة (أقل من 500 MB)</li>
+        <li>التقارير اليومية والأسبوعية</li>
+        <li>البيانات التاريخية والتحليل العميق</li>
+        <li>عندما تحتاج ميزات DAX متقدمة</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>DirectQuery Mode: البيانات الحية المباشرة</h3>
+      <p><strong>ماذا يحدث:</strong> لا تحميل بيانات نهائياً! كل نقرة على الـ Slicer أو تصفية تُرسل استعلام SQL إلى المصدر</p>
+      <p><strong>المميزات:</strong></p>
+      <ul>
+        <li>✅ بيانات حية دائماً (تحديث فوري)</li>
+        <li>✅ لا حد أقصى لحجم البيانات</li>
+        <li>✅ استهلاك ذاكرة محدود جداً</li>
+        <li>✅ مثالي للبيانات الكبيرة جداً</li>
+      </ul>
+      <p><strong>العيوب:</strong></p>
+      <ul>
+        <li>❌ أداء أبطأ (تعتمد على السرعة والشبكة)</li>
+        <li>❌ ميزات DAX محدودة (بعض الدوال لا تعمل)</li>
+        <li>❌ تحتاج Gateway في Power BI Service</li>
+        <li>❌ سيء للبيانات التاريخية والـ Comparisons</li>
+        <li>❌ قد يشكل ضغط على قاعدة البيانات</li>
+      </ul>
+      <p><strong>الحالات المثالية:</strong></p>
+      <ul>
+        <li>البيانات الضخمة جداً (مليارات الصفوف)</li>
+        <li>التقارير الفورية (Operational Dashboards)</li>
+        <li>البيانات التي تتغير بسرعة كل دقائق</li>
+        <li>عندما لا تحتاج ميزات DAX معقدة</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Live Connection: الاتصال المباشر بـ Analysis Services</h3>
+      <p><strong>ماذا يحدث:</strong> اتصال مباشر بـ SQL Server Analysis Services أو Azure Analysis Services (Tabular Models)</p>
+      <p><strong>المميزات:</strong></p>
+      <ul>
+        <li>✅ بيانات حية دائماً</li>
+        <li>✅ استفادة من نموذج موجود على السيرفر</li>
+        <li>✅ أمان ممركز</li>
+      </ul>
+      <p><strong>العيوب:</strong></p>
+      <ul>
+        <li>❌ لا يمكن تعديل النموذج</li>
+        <li>❌ ميزات محدودة جداً</li>
+        <li>❌ يحتاج بنية موجودة بالفعل</li>
+      </ul>
+      <p><strong>الحالات المثالية:</strong></p>
+      <ul>
+        <li>شركات كبيرة عندها Analysis Services بالفعل</li>
+        <li>Data Warehouses مركزية</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>التحذير الأهم:</strong> اختيار الـ Mode الخطأ قد يسبب كارثة. إذا اخترت Import لبيانات ضخمة جداً ستفقد فعالية النموذج. وإذا اخترت DirectQuery لمشروع معقد ستفقد جميع ميزات DAX المتقدمة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الاختيار الذكي: Hybrid Approach</h3>
+      <p><strong>الحل الأفضل في كثير من الحالات: استخدام كلا النمطين معاً!</strong></p>
+      <p><strong>السيناريو:</strong> جدول مبيعات كبير جداً (ضخم) + جدول أبعاد صغير (منتجات)</p>
+      <p><strong>الحل الهجين:</strong></p>
+      <ul>
+        <li>جدول المبيعات → DirectQuery (يبقى حي)</li>
+        <li>جدول المنتجات → Import (سريع)</li>
+        <li>الربط بينهما عادي</li>
+      </ul>
+      <p><strong>النتيجة:</strong> أداء جيدة مع بيانات حية وميزات DAX متاحة!</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Quick Comparison</h3>
+<table style="width:100%; border-collapse:collapse; margin:15px 0;">
+<tr style="background:var(--ink-light);">
+<th style="border:1px solid var(--ink-2); padding:10px;">Feature</th>
+<th style="border:1px solid var(--ink-2); padding:10px;">Import</th>
+<th style="border:1px solid var(--ink-2); padding:10px;">DirectQuery</th>
+<th style="border:1px solid var(--ink-2); padding:10px;">Live Connection</th>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Data Size</strong></td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Up to 1 GB</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Extremely large</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Extremely large</td>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Performance</strong></td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Very fast ⚡⚡⚡</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Network dependent ⏳</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Network dependent ⏳</td>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Real-time Updates</strong></td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Scheduled refresh</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Always latest ✅</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Always latest ✅</td>
+</tr>
+<tr>
+<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Advanced Features</strong></td>
+<td style="border:1px solid var(--ink-2); padding:10px;">All DAX features</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Limited</td>
+<td style="border:1px solid var(--ink-2); padding:10px;">Very limited</td>
+</tr>
+</table>
+</div>
+<div class="lesson-card">
+<h3>Import Mode: Traditional and Reliable</h3>
+<p><strong>What Happens:</strong> Load data from source into Power BI memory, once or on a schedule</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ Fastest performance possible (data in memory)</li>
+<li>✅ All DAX features available</li>
+<li>✅ Works offline after loading</li>
+<li>✅ Best for historical data and comparisons</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>❌ Limited by file size (1 GB normal, 10 GB Premium)</li>
+<li>❌ Non-direct data (delayed by refresh schedule)</li>
+<li>❌ Requires regular refresh</li>
+</ul>
+<p><strong>Ideal Cases:</strong></p>
+<ul>
+<li>Small to medium data (less than 500 MB)</li>
+<li>Daily and weekly reports</li>
+<li>Historical data and deep analysis</li>
+<li>When you need advanced DAX features</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>DirectQuery Mode: Live Direct Data</h3>
+<p><strong>What Happens:</strong> No data loading at all! Every click on a Slicer or filter sends a SQL query to the source</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ Live data always (instant updates)</li>
+<li>✅ No upper limit on data size</li>
+<li>✅ Very limited memory consumption</li>
+<li>✅ Perfect for very large data</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>❌ Slower performance (depends on network speed)</li>
+<li>❌ Limited DAX features (some functions don't work)</li>
+<li>❌ Requires Gateway in Power BI Service</li>
+<li>❌ Bad for historical data and comparisons</li>
+<li>❌ May put pressure on database</li>
+</ul>
+<p><strong>Ideal Cases:</strong></p>
+<ul>
+<li>Very large data (billions of rows)</li>
+<li>Real-time reports (Operational Dashboards)</li>
+<li>Data that changes rapidly every minutes</li>
+<li>When you don't need complex DAX features</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Live Connection: Direct Analysis Services</h3>
+<p><strong>What Happens:</strong> Direct connection to SQL Server Analysis Services or Azure Analysis Services (Tabular Models)</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ Live data always</li>
+<li>✅ Leverage existing server model</li>
+<li>✅ Centralized security</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>❌ Cannot modify the model</li>
+<li>❌ Very limited features</li>
+<li>❌ Requires existing infrastructure</li>
+</ul>
+<p><strong>Ideal Cases:</strong></p>
+<ul>
+<li>Large enterprises with Analysis Services</li>
+<li>Centralized Data Warehouses</li>
+</ul>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Most Important Warning:</strong> Choosing the wrong mode can be catastrophic. If you choose Import for extremely large data, you'll lose model efficiency. If you choose DirectQuery for a complex project, you'll lose all advanced DAX features.</p>
+</div>
+<div class="lesson-card">
+<h3>Smart Choice: Hybrid Approach</h3>
+<p><strong>Best solution in many cases: Use both modes together!</strong></p>
+<p><strong>Scenario:</strong> Very large sales table (huge) + small dimension table (products)</p>
+<p><strong>Hybrid Solution:</strong></p>
+<ul>
+<li>Sales table → DirectQuery (stays live)</li>
+<li>Products table → Import (fast)</li>
+<li>Connect them normally</li>
+</ul>
+<p><strong>Result:</strong> Good performance with live data and available DAX features!</p>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Tabular Editor و Advanced Modeling ====================
+  "tabular-editor": {
+    eyebrow: "03 · 05 — Tabular Editor و Advanced Modeling",
+    title: "Tabular Editor و Advanced Modeling",
+    lede: "أداة احترافية متقدمة لتحرير وإدارة نماذج البيانات بسرعة وكفاءة أعلى من Desktop",
+    en_eyebrow: "03 · 05 — Tabular Editor & Advanced Modeling",
+    en_lede: "A professional advanced tool for editing and managing data models with greater speed and efficiency than Desktop",
+    sectionId: "tabular-editor",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ما هي Tabular Editor وليماذا تحتاجها؟</h3>
+      <p>Tabular Editor هي أداة مجانية (تقريباً) تتيح لك تحرير نماذج Power BI و Analysis Services بطرق متقدمة جداً:</p>
+      <ul>
+        <li>تعديل الـ Metadata بسرعة فائقة</li>
+        <li>نسخ Measures و Columns بين جداول</li>
+        <li>Batch Editing للعمليات الضخمة</li>
+        <li>Version Control و Git Integration</li>
+        <li>Advanced DAX Scripting و Automation</li>
+      </ul>
+      <p><strong>الفرق:</strong> عندما تريد تغيير 100 Measure في Power BI Desktop ستتعب! في Tabular Editor تفعلها بدقائق.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>التثبيت والإعداد</h3>
+      <p><strong>الخيار 1: Tabular Editor 2 (الأساسي المجاني)</strong></p>
+      <ul>
+        <li>حمل من: <code>tabulareditor.com</code></li>
+        <li>مجاني تماماً</li>
+        <li>يعمل مع Power BI Desktop و Analysis Services</li>
+      </ul>
+      <p><strong>الخيار 2: Tabular Editor 3 (الاحترافي المدفوع)</strong></p>
+      <ul>
+        <li>نسخة محسّنة من الـ 2</li>
+        <li>واجهة أحدث وسهلة</li>
+        <li>دعم أفضل ومميزات متقدمة</li>
+        <li>اشتراك شهري أو سنوي</li>
+      </ul>
+      <p><strong>التوصية:</strong> ابدأ بـ Tabular Editor 2 (مجاني)، وإذا أحببتها انتقل للـ 3</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الحالات الشائعة للاستخدام</h3>
+      <p><strong>1. Bulk Editing (التعديل الضخم)</strong></p>
+      <ul>
+        <li>تريد تغيير اسم 50 Measure من "Sales_2024" إلى "Sales_2024_Final"؟</li>
+        <li>في Desktop: 50 نقرة</li>
+        <li>في Tabular Editor: تحديد الكل وتعديل واحد ✅</li>
+      </ul>
+      <p><strong>2. نسخ Measures</strong></p>
+      <ul>
+        <li>تريد نسخ مجموعة Measures من جدول لآخر مع تعديل References؟</li>
+        <li>Tabular Editor تفعلها بسهولة</li>
+      </ul>
+      <p><strong>3. Formatting الضخم</strong></p>
+      <ul>
+        <li>تطبيق Currency Format على 100 Measure</li>
+        <li>تغيير عدد الـ Decimal Places</li>
+        <li>إضافة Descriptions للكل</li>
+      </ul>
+      <p><strong>4. Version Control</strong></p>
+      <ul>
+        <li>حفظ النموذج في Git</li>
+        <li>مقارنة الإصدارات</li>
+        <li>Back to previous versions</li>
+      </ul>
+      <p><strong>5. Calculation Groups (ميزة متقدمة)</strong></p>
+      <ul>
+        <li>إضافة Calculation Groups بسهولة</li>
+        <li>إدارة Dynamic Measures</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>نصيحة ذهبية:</strong> كل محترف في Power BI يستخدم Tabular Editor. ليس اختياراً بل ضرورة إذا كنت تتعامل مع نماذج معقدة أو ضخمة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>خطوات الاتصال مع نموذجك</h3>
+      <p><strong>الخطوة 1:</strong> افتح Power BI Desktop وبناء نموذجك بشكل عادي</p>
+      <p><strong>الخطوة 2:</strong> افتح Tabular Editor</p>
+      <p><strong>الخطوة 3:</strong> اختر "Connect to Power BI Desktop" من القائمة</p>
+      <p><strong>الخطوة 4:</strong> اختر الملف من قائمة الملفات المفتوحة</p>
+      <p><strong>النتيجة:</strong> Tabular Editor سيعرض نموذجك بشكل شجري كامل مع كل الـ Measures و Columns</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>مثال عملي: تطبيق Currency Format على جميع الأرقام</h3>
+      <p><strong>الهدف:</strong> جعل جميع الـ Numeric Measures تظهر بـ Currency Format</p>
+      <p><strong>في Power BI Desktop:</strong> تحديد كل Measure واحداً واحداً وتطبيق Format (ساعات من العمل!)</p>
+      <p><strong>في Tabular Editor:</strong></p>
+      <ol>
+        <li>اختر جميع الـ Measures (Ctrl+Click)</li>
+        <li>انقر Property "Format String"</li>
+        <li>اكتب: <code>"$#,##0.00"</code></li>
+        <li>اضغط Enter = كل شيء يتغير فوراً ✅</li>
+      </ol>
+      <p>الوقت: 30 ثانية بدلاً من ساعات!</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>احذر:</strong> Tabular Editor قوية جداً، لذا احذر من التعديلات الخاطئة. دائماً احفظ نسخة من النموذج قبل عمل تعديلات ضخمة.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is Tabular Editor and Why Do You Need It?</h3>
+<p>Tabular Editor is a free (almost) tool that allows you to edit Power BI and Analysis Services models in very advanced ways:</p>
+<ul>
+<li>Edit metadata at lightning speed</li>
+<li>Copy Measures and Columns between tables</li>
+<li>Batch Editing for huge operations</li>
+<li>Version Control & Git Integration</li>
+<li>Advanced DAX Scripting & Automation</li>
+</ul>
+<p><strong>The Difference:</strong> When you want to change 100 Measures in Power BI Desktop you'll be exhausted! In Tabular Editor you do it in minutes.</p>
+</div>
+<div class="lesson-card">
+<h3>Installation and Setup</h3>
+<p><strong>Option 1: Tabular Editor 2 (Free Basic)</strong></p>
+<ul>
+<li>Download from: <code>tabulareditor.com</code></li>
+<li>Completely free</li>
+<li>Works with Power BI Desktop & Analysis Services</li>
+</ul>
+<p><strong>Option 2: Tabular Editor 3 (Premium)</strong></p>
+<ul>
+<li>Enhanced version of 2</li>
+<li>Newer and easier interface</li>
+<li>Better support and advanced features</li>
+<li>Monthly or annual subscription</li>
+</ul>
+<p><strong>Recommendation:</strong> Start with Tabular Editor 2 (free), then upgrade to 3 if you like it</p>
+</div>
+<div class="lesson-card">
+<h3>Common Use Cases</h3>
+<p><strong>1. Bulk Editing</strong></p>
+<ul>
+<li>Want to change 50 Measures from "Sales_2024" to "Sales_2024_Final"?</li>
+<li>In Desktop: 50 clicks</li>
+<li>In Tabular Editor: Select all and edit one ✅</li>
+</ul>
+<p><strong>2. Copy Measures</strong></p>
+<ul>
+<li>Want to copy a set of Measures from one table to another with reference changes?</li>
+<li>Tabular Editor does it easily</li>
+</ul>
+<p><strong>3. Bulk Formatting</strong></p>
+<ul>
+<li>Apply Currency Format to 100 Measures</li>
+<li>Change number of decimal places</li>
+<li>Add Descriptions to all</li>
+</ul>
+<p><strong>4. Version Control</strong></p>
+<ul>
+<li>Save the model in Git</li>
+<li>Compare versions</li>
+<li>Revert to previous versions</li>
+</ul>
+<p><strong>5. Calculation Groups (Advanced Feature)</strong></p>
+<ul>
+<li>Add Calculation Groups easily</li>
+<li>Manage Dynamic Measures</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Golden Tip:</strong> Every Power BI professional uses Tabular Editor. Not an option but a necessity if you're dealing with complex or large models.</p>
+</div>
+<div class="lesson-card">
+<h3>Steps to Connect to Your Model</h3>
+<p><strong>Step 1:</strong> Open Power BI Desktop and build your model normally</p>
+<p><strong>Step 2:</strong> Open Tabular Editor</p>
+<p><strong>Step 3:</strong> Select "Connect to Power BI Desktop" from menu</p>
+<p><strong>Step 4:</strong> Choose the file from the list of open files</p>
+<p><strong>Result:</strong> Tabular Editor will display your model in a complete tree with all Measures and Columns</p>
+</div>
+<div class="lesson-card">
+<h3>Practical Example: Apply Currency Format to All Numbers</h3>
+<p><strong>Goal:</strong> Make all numeric Measures display in Currency Format</p>
+<p><strong>In Power BI Desktop:</strong> Select each Measure individually and apply format (hours of work!)</p>
+<p><strong>In Tabular Editor:</strong></p>
+<ol>
+<li>Select all Measures (Ctrl+Click)</li>
+<li>Click Property "Format String"</li>
+<li>Type: <code>"$#,##0.00"</code></li>
+<li>Press Enter = everything changes instantly ✅</li>
+</ol>
+<p>Time: 30 seconds instead of hours!</p>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Caution:</strong> Tabular Editor is very powerful, so be careful with incorrect edits. Always save a copy of the model before making bulk changes.</p>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Mobile Design ====================
+  "mobile-design": {
+    eyebrow: "05 · 08 — Mobile Design و الـ Responsive",
+    title: "Mobile Design و الـ Responsive",
+    lede: "تصميم تقارير تعمل بكفاءة عالية على الأجهزة المحمولة والأجهزة اللوحية",
+    en_eyebrow: "05 · 08 — Mobile Design & Responsive",
+    en_lede: "Design reports that work efficiently on mobile devices and tablets",
+    sectionId: "mobile-design",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>الفرق بين Desktop و Mobile في Power BI</h3>
+      <p><strong>Desktop Reports:</strong></p>
+      <ul>
+        <li>شاشة كبيرة، العديد من الـ Visuals</li>
+        <li>تفاعلات معقدة وتفصيلية</li>
+        <li>الملفات كبيرة وقد تكون بطيئة على الموبايل</li>
+      </ul>
+      <p><strong>Mobile Reports:</strong></p>
+      <ul>
+        <li>شاشة صغيرة، عدد محدود من الـ Visuals</li>
+        <li>سرعة تحميل سريعة</li>
+        <li>تفاعلات بسيطة وسهلة</li>
+        <li>إمكانية الاستخدام بيد واحدة</li>
+      </ul>
+      <p><strong>المشكلة الشائعة:</strong> كثير من المحللين يصممون تقرير Desktop جميل ثم يتفاجئون أنه فوضوي على الموبايل!</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخطوات الأساسية للـ Mobile Optimization</h3>
+      <p><strong>الخطوة 1: تفعيل Mobile Layout</strong></p>
+      <ul>
+        <li>Power BI Desktop → View → Mobile Layout</li>
+        <li>الآن أنت تصمم بشاشة بحجم الموبايل (عمود واحد)</li>
+      </ul>
+      <p><strong>الخطوة 2: التصميم البسيط</strong></p>
+      <ul>
+        <li>استخدم Column layout واحد فقط</li>
+        <li>أضف الـ Visuals واحد تحت الآخر بترتيب منطقي</li>
+        <li>تأكد أن كل Visual واضح وسهل القراءة</li>
+      </ul>
+      <p><strong>الخطوة 3: حذف ما لا يلزم</strong></p>
+      <ul>
+        <li>في الموبايل الشاشة محدودة</li>
+        <li>ركز على أهم الـ KPIs و Insights</li>
+        <li>أخفِ الـ Slicers غير الضرورية</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>نصائح لـ Mobile UX الممتازة</h3>
+      <p><strong>1. الـ Card Visuals أفضل من الجداول</strong></p>
+      <ul>
+        <li>Card: سهلة القراءة على الموبايل</li>
+        <li>Table: صعبة جداً على الموبايل (تحتاج scroll أفقي)</li>
+      </ul>
+      <p><strong>2. Drill-through بدلاً من الفصول</strong></p>
+      <ul>
+        <li>بدلاً من 5 صفحات منفصلة</li>
+        <li>استخدم Drill-through من KPI واحد للتفاصيل</li>
+      </ul>
+      <p><strong>3. Buttons و Bookmarks</strong></p>
+      <ul>
+        <li>زر "Summary" للعودة للصفحة الرئيسية</li>
+        <li>زر "Details" للدخول لصفحة التفاصيل</li>
+      </ul>
+      <p><strong>4. استخدم الألوان والرموز</strong></p>
+      <ul>
+        <li>الأرقام وحدها قد تكون ممل</li>
+        <li>أضف KPI مع Icon و Color indicator</li>
+      </ul>
+      <p><strong>5. اختبر على هاتف حقيقي</strong></p>
+      <ul>
+        <li>Emulator قد لا يعطيك الصورة الحقيقية</li>
+        <li>حمل التطبيق واختبر على هاتفك الشخصي</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>مثال عملي: Dashboard مبيعات</h3>
+      <p><strong>Desktop Version:</strong> 3 صفحات</p>
+      <ul>
+        <li>صفحة 1: مجموع المبيعات + عدة مخططات تفصيلية</li>
+        <li>صفحة 2: مبيعات حسب المنطقة</li>
+        <li>صفحة 3: أداء المندوبين</li>
+      </ul>
+      <p><strong>Mobile Version:</strong> صفحة واحدة</p>
+      <ul>
+        <li>KPI Cards في الأعلى: Total Sales, Target Achieved, Top Salesman</li>
+        <li>مخطط واحد: Sales Trend لآخر 30 يوم</li>
+        <li>Drill-through Button: اضغط على أي منطقة لرؤية التفاصيل</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذير:</strong> عدم اختبار التقرير على الموبايل قبل نشره قد يسبب سوء تجربة للمستخدمين. دائماً اختبر على الأجهزة الحقيقية.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>The Difference Between Desktop and Mobile in Power BI</h3>
+<p><strong>Desktop Reports:</strong></p>
+<ul>
+<li>Large screen, many visuals</li>
+<li>Complex and detailed interactions</li>
+<li>Large files may be slow on mobile</li>
+</ul>
+<p><strong>Mobile Reports:</strong></p>
+<ul>
+<li>Small screen, limited number of visuals</li>
+<li>Fast loading</li>
+<li>Simple and easy interactions</li>
+<li>One-hand usability</li>
+</ul>
+<p><strong>Common Problem:</strong> Many analysts design a beautiful Desktop report only to be surprised it's a mess on mobile!</p>
+</div>
+<div class="lesson-card">
+<h3>Basic Steps for Mobile Optimization</h3>
+<p><strong>Step 1: Enable Mobile Layout</strong></p>
+<ul>
+<li>Power BI Desktop → View → Mobile Layout</li>
+<li>Now you're designing with a mobile-sized screen (single column)</li>
+</ul>
+<p><strong>Step 2: Simple Design</strong></p>
+<ul>
+<li>Use only one column layout</li>
+<li>Add visuals one under the other in logical order</li>
+<li>Make sure each visual is clear and easy to read</li>
+</ul>
+<p><strong>Step 3: Remove Unnecessary Elements</strong></p>
+<ul>
+<li>On mobile, the screen is limited</li>
+<li>Focus on the most important KPIs and insights</li>
+<li>Hide unnecessary slicers</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Tips for Excellent Mobile UX</h3>
+<p><strong>1. Card Visuals Are Better Than Tables</strong></p>
+<ul>
+<li>Cards: Easy to read on mobile</li>
+<li>Tables: Very difficult on mobile (need horizontal scroll)</li>
+</ul>
+<p><strong>2. Drill-through Instead of Multiple Pages</strong></p>
+<ul>
+<li>Instead of 5 separate pages</li>
+<li>Use Drill-through from one KPI to details</li>
+</ul>
+<p><strong>3. Buttons and Bookmarks</strong></p>
+<ul>
+<li>Button "Summary" to return to main page</li>
+<li>Button "Details" to go to details page</li>
+</ul>
+<p><strong>4. Use Colors and Icons</strong></p>
+<ul>
+<li>Numbers alone can be boring</li>
+<li>Add KPI with Icon and color indicator</li>
+</ul>
+<p><strong>5. Test on a Real Phone</strong></p>
+<ul>
+<li>Emulator may not give you the true picture</li>
+<li>Download the app and test on your personal phone</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Practical Example: Sales Dashboard</h3>
+<p><strong>Desktop Version:</strong> 3 pages</p>
+<ul>
+<li>Page 1: Total sales + several detailed charts</li>
+<li>Page 2: Sales by region</li>
+<li>Page 3: Sales rep performance</li>
+</ul>
+<p><strong>Mobile Version:</strong> One page</p>
+<ul>
+<li>KPI Cards at top: Total Sales, Target Achieved, Top Salesman</li>
+<li>One chart: Sales Trend for last 30 days</li>
+<li>Drill-through Button: Click on any region to see details</li>
+</ul>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> Not testing the report on mobile before publishing can cause poor user experience. Always test on real devices.</p>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Error Handling و Debugging ====================
+  "error-handling": {
+    eyebrow: "07 · 02 — Error Handling و Debugging",
+    title: "Error Handling و Debugging",
+    lede: "اكتشاف الأخطاء وحلها وفهم رسائل الخطأ في Power BI و DAX بعمق",
+    en_eyebrow: "07 · 02 — Error Handling & Debugging",
+    en_lede: "Discover, solve errors and understand error messages in Power BI and DAX deeply",
+    sectionId: "error-handling",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>أنواع الأخطاء الشائعة في Power BI</h3>
+      <p><strong>1. #VALUE! - خطأ نوع البيانات</strong></p>
+      <ul>
+        <li><strong>السبب:</strong> محاولة عملية حسابية على نوع بيانات خاطئ</li>
+        <li><strong>المثال:</strong> <code>SUM("Text")</code> - محاولة جمع نصوص</li>
+        <li><strong>الحل:</strong> تأكد من نوع البيانات (Numbers, Text, Date)</li>
+      </ul>
+      <p><strong>2. #DIV/0! - قسمة على صفر</strong></p>
+      <ul>
+        <li><strong>السبب:</strong> المقسوم عليه = صفر</li>
+        <li><strong>المثال:</strong> <code>100/0</code></li>
+        <li><strong>الحل:</strong> استخدم DIVIDE أو IF للتحقق</li>
+        <li><strong>الكود الصحيح:</strong> <code>DIVIDE(100, Denominator, 0)</code></li>
+      </ul>
+      <p><strong>3. #NAME? - اسم غير معروف</strong></p>
+      <ul>
+        <li><strong>السبب:</strong> تسمية خاطئة أو Column/Table غير موجود</li>
+        <li><strong>المثال:</strong> <code>SUM(Sale)</code> و اسم Column هو <code>Sales</code></li>
+        <li><strong>الحل:</strong> تحقق من الأسماء بدقة</li>
+      </ul>
+      <p><strong>4. #NULL! - مرجع فارغ</strong></p>
+      <ul>
+        <li><strong>السبب:</strong> Reference إلى نطاق فارغ</li>
+        <li><strong>الحل:</strong> استخدم IFERROR أو IF(ISBLANK())</li>
+      </ul>
+      <p><strong>5. Calculation Error - خطأ في الحساب</strong></p>
+      <ul>
+        <li><strong>السبب:</strong> عادة ما يكون DAX معقد جداً أو Circular Dependency</li>
+        <li><strong>الحل:</strong> تبسيط الـ Formula أو إزالة الـ Circular Dependencies</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>استراتيجية Debugging في DAX</h3>
+      <p><strong>الخطوة 1: اقسم الـ Formula</strong></p>
+      <ul>
+        <li>إذا كان لديك Measure معقد، اقسمه لعدة Measures بسيطة</li>
+        <li>تحقق من كل واحد على حدة</li>
+      </ul>
+      <p><strong>الخطوة 2: استخدم SELECTIONSTATEMENT</strong></p>
+      <ul>
+        <li>أضف <code>ROW()</code> في DAX لرؤية القيم المرجعة</li>
+        <li>مثال: <code>VAR x = CALCULATE(...) RETURN ROW("Debug", x)</code></li>
+      </ul>
+      <p><strong>الخطوة 3: استخدم DAX Studio</strong></p>
+      <ul>
+        <li>أداة مجانية قوية جداً (DAXstudio.org)</li>
+        <li>تتيح لك تشغيل الـ DAX واختبار القيم</li>
+        <li>رؤية الأداء والأوقات</li>
+      </ul>
+      <p><strong>الخطوة 4: اختبر مع عينات صغيرة</strong></p>
+      <ul>
+        <li>بدلاً من اختبار على 10 ملايين صف</li>
+        <li>اختبر على 100 صف أولاً</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الأخطاء المنطقية (الأخطر)</h3>
+      <p><strong>الخطأ المنطقي:</strong> الـ Formula تعمل ولا تظهر خطأ، لكن النتيجة خاطئة!</p>
+      <p><strong>المثال:</strong></p>
+      <ul>
+        <li>تريد حساب النسبة المئوية للنمو</li>
+        <li>كتبت: <code>DIVIDE(NewValue, OldValue, 0) - 1</code></li>
+        <li>النتيجة عكسية! (تظهر -50% لما يجب أن تكون +50%)</li>
+      </ul>
+      <p><strong>كيفية الاكتشاف:</strong></p>
+      <ul>
+        <li>قارن النتيجة مع Excel أو SQL</li>
+        <li>اسأل نفسك: هل هذا منطقي؟</li>
+        <li>استخدم أرقام معروفة واختبر</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>النصيحة الذهبية:</strong> أفضل طريقة للتعامل مع الأخطاء هي الوقاية. كتب DAX بسيط وواضح من البداية بدلاً من debugging معقد لاحقاً.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>استخدام IFERROR و ISERROR</h3>
+      <p><strong>IFERROR:</strong> لإخفاء الأخطاء وإظهار قيمة بديلة</p>
+      <code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Sales Growth = IFERROR( DIVIDE(NewSales, OldSales) - 1, 0)</code>
+      <p><strong>الفائدة:</strong> بدلاً من رؤية #DIV/0!، سترى 0</p>
+      <p><strong>ISERROR:</strong> للتحقق من وجود خطأ</p>
+      <code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Has Error = IF(ISERROR(DIVIDE(A, B)), 1, 0)</code>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Common Error Types in Power BI</h3>
+<p><strong>1. #VALUE! - Data Type Error</strong></p>
+<ul>
+<li><strong>Cause:</strong> Attempting calculation on wrong data type</li>
+<li><strong>Example:</strong> <code>SUM("Text")</code> - trying to sum text</li>
+<li><strong>Solution:</strong> Ensure data type (Numbers, Text, Date)</li>
+</ul>
+<p><strong>2. #DIV/0! - Division by Zero</strong></p>
+<ul>
+<li><strong>Cause:</strong> Divisor = zero</li>
+<li><strong>Example:</strong> <code>100/0</code></li>
+<li><strong>Solution:</strong> Use DIVIDE or IF to check</li>
+<li><strong>Correct Code:</strong> <code>DIVIDE(100, Denominator, 0)</code></li>
+</ul>
+<p><strong>3. #NAME? - Unknown Name</strong></p>
+<ul>
+<li><strong>Cause:</strong> Wrong name or Column/Table doesn't exist</li>
+<li><strong>Example:</strong> <code>SUM(Sale)</code> when column is named <code>Sales</code></li>
+<li><strong>Solution:</strong> Check names carefully</li>
+</ul>
+<p><strong>4. #NULL! - Empty Reference</strong></p>
+<ul>
+<li><strong>Cause:</strong> Reference to empty range</li>
+<li><strong>Solution:</strong> Use IFERROR or IF(ISBLANK())</li>
+</ul>
+<p><strong>5. Calculation Error</strong></p>
+<ul>
+<li><strong>Cause:</strong> Usually DAX too complex or Circular Dependency</li>
+<li><strong>Solution:</strong> Simplify formula or remove circular dependencies</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Debugging Strategy in DAX</h3>
+<p><strong>Step 1: Break Down the Formula</strong></p>
+<ul>
+<li>If you have a complex measure, split it into simple ones</li>
+<li>Check each one individually</li>
+</ul>
+<p><strong>Step 2: Use Row Function</strong></p>
+<ul>
+<li>Add <code>ROW()</code> in DAX to see returned values</li>
+<li>Example: <code>VAR x = CALCULATE(...) RETURN ROW("Debug", x)</code></li>
+</ul>
+<p><strong>Step 3: Use DAX Studio</strong></p>
+<ul>
+<li>Free powerful tool (DAXstudio.org)</li>
+<li>Lets you run DAX and test values</li>
+<li>See performance and timings</li>
+</ul>
+<p><strong>Step 4: Test with Small Samples</strong></p>
+<ul>
+<li>Instead of testing on 10 million rows</li>
+<li>Test on 100 rows first</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Logical Errors (Most Dangerous)</h3>
+<p><strong>Logical Error:</strong> Formula works and shows no error, but result is wrong!</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>You want to calculate growth percentage</li>
+<li>You wrote: <code>DIVIDE(NewValue, OldValue, 0) - 1</code></li>
+<li>Result is backwards! (shows -50% when should be +50%)</li>
+</ul>
+<p><strong>How to Detect:</strong></p>
+<ul>
+<li>Compare result with Excel or SQL</li>
+<li>Ask yourself: Does this make sense?</li>
+<li>Use known numbers and test</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Golden Tip:</strong> Best way to handle errors is prevention. Write simple and clear DAX from the start instead of debugging complex code later.</p>
+</div>
+<div class="lesson-card">
+<h3>Using IFERROR & ISERROR</h3>
+<p><strong>IFERROR:</strong> To hide errors and show alternative value</p>
+<code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Sales Growth = IFERROR( DIVIDE(NewSales, OldSales) - 1, 0)</code>
+<p><strong>Benefit:</strong> Instead of seeing #DIV/0!, you'll see 0</p>
+<p><strong>ISERROR:</strong> To check if error exists</p>
+<code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Has Error = IF(ISERROR(DIVIDE(A, B)), 1, 0)</code>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Semantic Model Design و Governance ====================
+  "semantic-model": {
+    eyebrow: "07 · 03 — Semantic Model Design و Data Governance",
+    title: "Semantic Model Design و Data Governance",
+    lede: "بناء نماذج بيانات احترافية مع قواعد تسمية وتوثيق قوية لضمان صيانة طويلة الأجل",
+    en_eyebrow: "07 · 03 — Semantic Model Design & Data Governance",
+    en_lede: "Building professional data models with strong naming conventions and documentation to ensure long-term maintenance",
+    sectionId: "semantic-model",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ما هو Semantic Model Design؟</h3>
+      <p>ليس فقط نموذج يعمل، بل نموذج <strong>يُفهم بسهولة</strong> من أي شخص يستخدمه أو يصيانه.</p>
+      <p><strong>الفرق:</strong></p>
+      <ul>
+        <li><strong>نموذج عادي:</strong> جداول ومقاييس تعمل</li>
+        <li><strong>Semantic Model احترافي:</strong> منظم وموثق بشكل منطقي جداً مع أسماء واضحة</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Naming Conventions (قواعس التسمية)</h3>
+      <p><strong>1. Tables: Singular English Names</strong></p>
+      <ul>
+        <li>✅ <code>Product</code>, <code>Customer</code>, <code>Order</code></li>
+        <li>❌ <code>Products</code> (جمع خطأ)</li>
+        <li>❌ <code>tblProduct</code> (prefix قديم)</li>
+        <li>❌ <code>منتجات</code> (عربي في النموذج)</li>
+      </ul>
+      <p><strong>2. Columns: Descriptive English Names</strong></p>
+      <ul>
+        <li>✅ <code>ProductName</code>, <code>UnitPrice</code>, <code>CreatedDate</code></li>
+        <li>❌ <code>PName</code> (مختصر غير واضح)</li>
+        <li>❌ <code>Col1</code> (رقم عشوائي)</li>
+      </ul>
+      <p><strong>3. Measures: Clear Action Verbs</strong></p>
+      <ul>
+        <li>✅ <code>Total Sales</code>, <code>Average Margin %</code>, <code>YTD Revenue</code></li>
+        <li>❌ <code>Sales</code> (غير واضح)</li>
+        <li>❌ <code>M1</code> (اختصار غير مفهوم)</li>
+      </ul>
+      <p><strong>4. Calculated Columns: Prefix مميز</strong></p>
+      <ul>
+        <li>أضف <code>[</code> و <code>]</code> أو <code>_</code> قبل الاسم</li>
+        <li>✅ <code>[Full Name]</code> = FirstName &amp; LastName</li>
+        <li>✅ <code>_Revenue Rank</code> = RANK(...)</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>التنظيم الهرمي للنموذج</h3>
+      <p><strong>تجميع الـ Measures حسب الفئات:</strong></p>
+      <ul>
+        <li><strong>💰 Revenue Measures:</strong> Total Sales, Gross Profit, Net Revenue</li>
+        <li><strong>📊 Count Measures:</strong> Total Orders, Number of Customers</li>
+        <li><strong>📈 Percentage Measures:</strong> Profit %, Growth %</li>
+        <li><strong>🎯 KPI Measures:</strong> Target Achievement, YoY Growth</li>
+      </ul>
+      <p><strong>الفائدة:</strong> عندما يفتح المستخدم الـ Measures يرى منظومة واضحة وليس قائمة عشوائية</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>التوثيق (Documentation)</h3>
+      <p><strong>اضف Descriptions لكل Measure و Column</strong></p>
+      <ul>
+        <li>في Tabular Editor أو Desktop</li>
+        <li>اختر Property → Description</li>
+        <li>اكتب شرح واضح: ماذا يحسب هذا الـ Measure؟</li>
+      </ul>
+      <p><strong>مثال:</strong></p>
+      <p><strong>Measure:</strong> "Total Sales (Current Year)"</p>
+      <p><strong>Description:</strong> "Sum of all net sales for products sold in the current calendar year. Excludes returns and credits."</p>
+      <p><strong>الفائدة:</strong> المستخدمون يفهمون الفرق بين <code>Total Sales</code> و <code>Gross Revenue</code> بدون أسئلة</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>قانون النمذجة:</strong> استثمر 30% من وقتك في التنظيم والتوثيق، وستوفر 70% من وقتك لاحقاً في الصيانة والتعديلات.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Data Governance Basics</h3>
+      <p><strong>1. Data Lineage (معرفة مصدر البيانات)</strong></p>
+      <ul>
+        <li>كل Measure يجب أن تعرف من أين جاء؟</li>
+        <li>هل يعتمد على column موجود؟ أم على CALCULATE؟</li>
+      </ul>
+      <p><strong>2. Version Control</strong></p>
+      <ul>
+        <li>احفظ نسختك في Git</li>
+        <li>تابع التغييرات من أي شخص</li>
+      </ul>
+      <p><strong>3. Testing Before Publishing</strong></p>
+      <ul>
+        <li>اختبر جميع الـ Measures قبل النشر</li>
+        <li>قارن مع Excel أو SQL</li>
+      </ul>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is Semantic Model Design?</h3>
+<p>Not just a model that works, but a model that is <strong>easily understood</strong> by anyone who uses or maintains it.</p>
+<p><strong>The Difference:</strong></p>
+<ul>
+<li><strong>Regular model:</strong> Tables and measures that work</li>
+<li><strong>Professional Semantic Model:</strong> Organized and documented very logically with clear names</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Naming Conventions</h3>
+<p><strong>1. Tables: Singular English Names</strong></p>
+<ul>
+<li>✅ <code>Product</code>, <code>Customer</code>, <code>Order</code></li>
+<li>❌ <code>Products</code> (wrong plural)</li>
+<li>❌ <code>tblProduct</code> (old prefix)</li>
+</ul>
+<p><strong>2. Columns: Descriptive English Names</strong></p>
+<ul>
+<li>✅ <code>ProductName</code>, <code>UnitPrice</code>, <code>CreatedDate</code></li>
+<li>❌ <code>PName</code> (unclear abbreviation)</li>
+<li>❌ <code>Col1</code> (random number)</li>
+</ul>
+<p><strong>3. Measures: Clear Action Verbs</strong></p>
+<ul>
+<li>✅ <code>Total Sales</code>, <code>Average Margin %</code>, <code>YTD Revenue</code></li>
+<li>❌ <code>Sales</code> (unclear)</li>
+<li>❌ <code>M1</code> (incomprehensible abbreviation)</li>
+</ul>
+<p><strong>4. Calculated Columns: Distinctive Prefix</strong></p>
+<ul>
+<li>Add <code>[</code> and <code>]</code> or <code>_</code> before name</li>
+<li>✅ <code>[Full Name]</code> = FirstName &amp; LastName</li>
+<li>✅ <code>_Revenue Rank</code> = RANK(...)</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Hierarchical Organization of Model</h3>
+<p><strong>Group Measures by Categories:</strong></p>
+<ul>
+<li><strong>💰 Revenue Measures:</strong> Total Sales, Gross Profit, Net Revenue</li>
+<li><strong>📊 Count Measures:</strong> Total Orders, Number of Customers</li>
+<li><strong>📈 Percentage Measures:</strong> Profit %, Growth %</li>
+<li><strong>🎯 KPI Measures:</strong> Target Achievement, YoY Growth</li>
+</ul>
+<p><strong>Benefit:</strong> When users open Measures, they see organized structure, not a random list</p>
+</div>
+<div class="lesson-card">
+<h3>Documentation</h3>
+<p><strong>Add Descriptions for each Measure and Column</strong></p>
+<ul>
+<li>In Tabular Editor or Desktop</li>
+<li>Select Property → Description</li>
+<li>Write clear explanation: What does this measure calculate?</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><strong>Measure:</strong> "Total Sales (Current Year)"</p>
+<p><strong>Description:</strong> "Sum of all net sales for products sold in the current calendar year. Excludes returns and credits."</p>
+<p><strong>Benefit:</strong> Users understand the difference between <code>Total Sales</code> and <code>Gross Revenue</code> without asking</p>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Modeling Law:</strong> Invest 30% of your time in organization and documentation, and you'll save 70% of your time later in maintenance and updates.</p>
+</div>
+<div class="lesson-card">
+<h3>Data Governance Basics</h3>
+<p><strong>1. Data Lineage (Know Data Source)</strong></p>
+<ul>
+<li>Every measure should know where it came from</li>
+<li>Does it depend on existing column? Or on CALCULATE?</li>
+</ul>
+<p><strong>2. Version Control</strong></p>
+<ul>
+<li>Save your version in Git</li>
+<li>Track changes from anyone</li>
+</ul>
+<p><strong>3. Testing Before Publishing</strong></p>
+<ul>
+<li>Test all measures before publishing</li>
+<li>Compare with Excel or SQL</li>
+</ul>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Common Mistakes و Anti-patterns ====================
+  "common-mistakes": {
+    eyebrow: "07 · 04 — الأخطاء الشائعة و Anti-patterns",
+    title: "الأخطاء الشائعة و Anti-patterns",
+    lede: "تجنب الأخطاء المنتشرة التي تسبب بيانات خاطئة أو أداء سيئة",
+    en_eyebrow: "07 · 04 — Common Mistakes & Anti-patterns",
+    en_lede: "Avoid widespread mistakes that cause incorrect data or poor performance",
+    sectionId: "common-mistakes",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>الخطأ 1: Many-to-Many Relationships بدون جدول جسري</h3>
+      <p><strong>السيناريو:</strong> تريد ربط Product مع Region بدون Bridge Table</p>
+      <p><strong>النتيجة:</strong> بيانات مكررة وحسابات خاطئة تماماً!</p>
+      <p><strong>الحل:</strong> استخدم Bridge Table (جدول جسري) أو AllowMultipleValues Cardinality</p>
+      <p><strong>المثال الصحيح:</strong></p>
+      <ul>
+        <li>Product → ProductRegion Bridge → Region</li>
+        <li>هكذا كل Product يمكن أن يكون في عدة Regions</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخطأ 2: استخدام SUMPRODUCT بدلاً من CALCULATE</h3>
+      <p><strong>الكود الخطأ:</strong></p>
+      <code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Sales = SUMPRODUCT(Table[Amount], Table[Quantity])</code>
+      <p><strong>المشكلة:</strong> لا تعمل مع Filters وتعطي نتائج غلط</p>
+      <p><strong>الكود الصحيح:</strong></p>
+      <code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Sales = CALCULATE(SUM(Table[Amount]))</code>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخطأ 3: Circular Dependencies</h3>
+      <p><strong>المشكلة:</strong> Measure يعتمد على نفسه بشكل مباشر أو غير مباشر</p>
+      <p><strong>المثال الخطأ:</strong></p>
+      <ul>
+        <li>Measure A يستخدم Measure B</li>
+        <li>Measure B يستخدم Measure A</li>
+        <li>النتيجة: Calculation Error</li>
+      </ul>
+      <p><strong>الحل:</strong> تحقق من التبعيات وأزل الحلقات المغلقة</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخطأ 4: استخدام Calculated Columns بدلاً من Measures</h3>
+      <p><strong>الخطأ الشائع:</strong> عمل Calculated Column لحساب Revenue = Price × Quantity</p>
+      <p><strong>المشكلة:</strong></p>
+      <ul>
+        <li>استهلاك ذاكرة ضخم</li>
+        <li>بطيء جداً على البيانات الكبيرة</li>
+      </ul>
+      <p><strong>الحل:</strong> استخدم Measure بدلاً منها</p>
+      <code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Revenue = SUM(Sales[Price]) * SUM(Sales[Quantity])</code>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخطأ 5: Bi-directional Relationships بدون تفكير</h3>
+      <p><strong>المشكلة:</strong> تفعيل Bi-directional على جميع العلاقات</p>
+      <p><strong>النتيجة:</strong> أداء سيئة جداً والفلاتر تعمل بشكل غريب</p>
+      <p><strong>النصيحة:</strong> استخدم Bi-directional فقط عندما تحتاج فعلاً (نادراً جداً)</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>التحذير:</strong> هذه الأخطاء الخمسة مسؤولة عن 80% من مشاكل Power BI في الإنتاج!</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخطأ 6: عدم استخدام RELATED و LOOKUPVALUE</h3>
+      <p><strong>الخطأ:</strong> محاولة الوصول لـ Column من جدول مرتبط بدون RELATED</p>
+      <p><strong>الكود الخطأ:</strong></p>
+      <code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Product Name = Sales[Product Name]</code>
+      <p><strong>الكود الصحيح:</strong></p>
+      <code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Product Name = RELATED(Product[ProductName])</code>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Mistake 1: Many-to-Many Relationships Without Bridge Table</h3>
+<p><strong>Scenario:</strong> You want to connect Product with Region without Bridge Table</p>
+<p><strong>Result:</strong> Duplicate data and completely wrong calculations!</p>
+<p><strong>Solution:</strong> Use Bridge Table or AllowMultipleValues Cardinality</p>
+<p><strong>Correct Example:</strong></p>
+<ul>
+<li>Product → ProductRegion Bridge → Region</li>
+<li>So each Product can be in multiple Regions</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Mistake 2: Using SUMPRODUCT Instead of CALCULATE</h3>
+<p><strong>Wrong Code:</strong></p>
+<code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Sales = SUMPRODUCT(Table[Amount], Table[Quantity])</code>
+<p><strong>Problem:</strong> Doesn't work with filters and gives wrong results</p>
+<p><strong>Correct Code:</strong></p>
+<code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Sales = CALCULATE(SUM(Table[Amount]))</code>
+</div>
+<div class="lesson-card">
+<h3>Mistake 3: Circular Dependencies</h3>
+<p><strong>Problem:</strong> Measure depends on itself directly or indirectly</p>
+<p><strong>Wrong Example:</strong></p>
+<ul>
+<li>Measure A uses Measure B</li>
+<li>Measure B uses Measure A</li>
+<li>Result: Calculation Error</li>
+</ul>
+<p><strong>Solution:</strong> Check dependencies and remove closed loops</p>
+</div>
+<div class="lesson-card">
+<h3>Mistake 4: Using Calculated Columns Instead of Measures</h3>
+<p><strong>Common Mistake:</strong> Make Calculated Column to calculate Revenue = Price × Quantity</p>
+<p><strong>Problem:</strong></p>
+<ul>
+<li>Huge memory consumption</li>
+<li>Very slow on large data</li>
+</ul>
+<p><strong>Solution:</strong> Use Measure instead</p>
+<code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Revenue = SUM(Sales[Price]) * SUM(Sales[Quantity])</code>
+</div>
+<div class="lesson-card">
+<h3>Mistake 5: Bi-directional Relationships Without Thinking</h3>
+<p><strong>Problem:</strong> Enabling bi-directional on all relationships</p>
+<p><strong>Result:</strong> Very poor performance and filters behaving strangely</p>
+<p><strong>Advice:</strong> Use bi-directional only when you really need it (very rare)</p>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> These five mistakes are responsible for 80% of Power BI problems in production!</p>
+</div>
+<div class="lesson-card">
+<h3>Mistake 6: Not Using RELATED & LOOKUPVALUE</h3>
+<p><strong>Wrong:</strong> Trying to access column from related table without RELATED</p>
+<p><strong>Wrong Code:</strong></p>
+<code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Product Name = Sales[Product Name]</code>
+<p><strong>Correct Code:</strong></p>
+<code style="display:block; background:var(--ink-light); padding:10px; margin:10px 0; border-radius:4px;">Product Name = RELATED(Product[ProductName])</code>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Cost Optimization ====================
+  "cost-optimization": {
+    eyebrow: "07 · 05 — Cost Optimization و Premium",
+    title: "Cost Optimization و Premium",
+    lede: "تحسين التكاليف والاستفادة الذكية من ميزات Premium في Power BI",
+    en_eyebrow: "07 · 05 — Cost Optimization & Premium",
+    en_lede: "Optimizing costs and smart use of Premium features in Power BI",
+    sectionId: "cost-optimization",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>نماذج التسعير في Power BI</h3>
+      <p><strong>1. Power BI Pro (المتوسط):</strong> $10/month لكل مستخدم</p>
+      <ul>
+        <li>تطبيقات Desktop والـ Service</li>
+        <li>مشاركة محدودة (نحتاج Pro لكل شخص)</li>
+        <li>Refresh مرتين يومياً فقط</li>
+      </ul>
+      <p><strong>2. Power BI Premium Per User (PPU):</strong> $20/month</p>
+      <ul>
+        <li>نسخة Pro بمميزات إضافية</li>
+        <li>Refresh كل 15 دقيقة</li>
+        <li>أفضل أداء</li>
+      </ul>
+      <p><strong>3. Power BI Premium (الشركات الكبيرة):</strong> $5,000/month</p>
+      <ul>
+        <li>سعة محجوزة (Capacity)</li>
+        <li>Unlimited Refresh</li>
+        <li>مشاركة مع جميع المستخدمين</li>
+        <li>AI Features و Advanced</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>هل تحتاج Premium فعلاً؟</h3>
+      <p><strong>اختر Pro إذا:</strong></p>
+      <ul>
+        <li>عدد المستخدمين قليل (أقل من 10)</li>
+        <li>التحديثات كل ساعات قليلة كافية</li>
+        <li>لا تحتاج استراتيجيات تقدمة (Python, R)</li>
+      </ul>
+      <p><strong>اختر PPU إذا:</strong></p>
+      <ul>
+        <li>تحتاج تحديثات كل 15 دقيقة</li>
+        <li>عدد المستخدمين 10-50</li>
+      </ul>
+      <p><strong>اختر Premium إذا:</strong></p>
+      <ul>
+        <li>شركة كبيرة (500+ مستخدم)</li>
+        <li>تحتاج Unlimited Refresh و Advanced Features</li>
+        <li>الـ ROI واضح جداً</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>طرق تقليل التكاليف</h3>
+      <p><strong>1. تحسين كفاءة النموذج</strong></p>
+      <ul>
+        <li>نموذج فعال = حجم ملف أصغر = أداء أسرع</li>
+        <li>استخدم Aggregations للبيانات الضخمة</li>
+        <li>احذف الأعمدة غير المستخدمة</li>
+      </ul>
+      <p><strong>2. جدولة التحديثات بذكاء</strong></p>
+      <ul>
+        <li>لا تحدّث كل دقيقة إذا لم تكن ضرورية</li>
+        <li>حدّث في أوقات الخمول (مثلاً 3 صباحاً)</li>
+        <li>استخدم Incremental Refresh للبيانات الضخمة</li>
+      </ul>
+      <p><strong>3. استخدام DirectQuery للبيانات الحية</strong></p>
+      <ul>
+        <li>بدلاً من تحديث Import كل 15 دقيقة</li>
+        <li>استخدم DirectQuery فقط للبيانات التي تتغير باستمرار</li>
+      </ul>
+      <p><strong>4. مشاركة ذكية</strong></p>
+      <ul>
+        <li>استخدم Shared Capacity بدلاً من Premium لو أمكن</li>
+        <li>استخدم Apps بدلاً من Dashboards للمشاركة الكبيرة</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>القاعدة الذهبية:</strong> كل $1 تنفقه على Premium يجب أن يوفر لك $5 على الأقل في الإنتاجية والسرعة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>مثال حقيقي: شركة مبيعات</h3>
+      <p><strong>السيناريو الأول (Premium مكلف):</strong></p>
+      <ul>
+        <li>100 مستخدم Pro @ $10/month = $1,000</li>
+        <li>تكلفة سنوية: $12,000</li>
+        <li>الكثير يستخدم الـ Dashboard أحياناً فقط</li>
+      </ul>
+      <p><strong>الحل الأفضل:</strong></p>
+      <ul>
+        <li>20 مستخدم PPU @ $20/month = $400</li>
+        <li>80 مستخدم Pro @ $10/month = $800</li>
+        <li>المجموع: $1,200/month = $14,400/سنة</li>
+        <li>ولكن... PPU يوفر تحديث أسرع للـ 20 مستخدم الأساسي! ✅</li>
+      </ul>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Power BI Pricing Models</h3>
+<p><strong>1. Power BI Pro (Medium):</strong> $10/month per user</p>
+<ul>
+<li>Desktop and Service apps</li>
+<li>Limited sharing (need Pro for each person)</li>
+<li>Refresh twice a day only</li>
+</ul>
+<p><strong>2. Power BI Premium Per User (PPU):</strong> $20/month</p>
+<ul>
+<li>Pro version with additional features</li>
+<li>Refresh every 15 minutes</li>
+<li>Better performance</li>
+</ul>
+<p><strong>3. Power BI Premium (Large Companies):</strong> $5,000/month</p>
+<ul>
+<li>Reserved capacity</li>
+<li>Unlimited refresh</li>
+<li>Share with all users</li>
+<li>AI Features & Advanced</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Do You Really Need Premium?</h3>
+<p><strong>Choose Pro if:</strong></p>
+<ul>
+<li>Few users (less than 10)</li>
+<li>Refresh every few hours is sufficient</li>
+<li>Don't need advanced strategies (Python, R)</li>
+</ul>
+<p><strong>Choose PPU if:</strong></p>
+<ul>
+<li>Need refresh every 15 minutes</li>
+<li>10-50 users</li>
+</ul>
+<p><strong>Choose Premium if:</strong></p>
+<ul>
+<li>Large company (500+ users)</li>
+<li>Need unlimited refresh & advanced features</li>
+<li>ROI is very clear</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Ways to Reduce Costs</h3>
+<p><strong>1. Improve Model Efficiency</strong></p>
+<ul>
+<li>Efficient model = smaller file size = faster performance</li>
+<li>Use aggregations for huge data</li>
+<li>Delete unused columns</li>
+</ul>
+<p><strong>2. Schedule Refresh Smartly</strong></p>
+<ul>
+<li>Don't refresh every minute if not necessary</li>
+<li>Refresh during off-peak (like 3 AM)</li>
+<li>Use Incremental Refresh for huge data</li>
+</ul>
+<p><strong>3. Use DirectQuery for Live Data</strong></p>
+<ul>
+<li>Instead of Import refresh every 15 minutes</li>
+<li>Use DirectQuery only for constantly changing data</li>
+</ul>
+<p><strong>4. Smart Sharing</strong></p>
+<ul>
+<li>Use shared capacity instead of Premium if possible</li>
+<li>Use Apps instead of dashboards for large sharing</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Golden Rule:</strong> Every $1 you spend on Premium should save you at least $5 in productivity and speed.</p>
+</div>
+<div class="lesson-card">
+<h3>Real-Life Example: Sales Company</h3>
+<p><strong>Expensive Premium Scenario:</strong></p>
+<ul>
+<li>100 Pro users @ $10/month = $1,000</li>
+<li>Annual cost: $12,000</li>
+<li>Many use dashboard only occasionally</li>
+</ul>
+<p><strong>Better Solution:</strong></p>
+<ul>
+<li>20 PPU users @ $20/month = $400</li>
+<li>80 Pro users @ $10/month = $800</li>
+<li>Total: $1,200/month = $14,400/year</li>
+<li>But... PPU gives faster updates for 20 key users! ✅</li>
+</ul>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Power Automate و الـ Alerts ====================
+  // ==================== الدروس الأصلية الناقصة ====================
+  "git-integration": {
+    eyebrow: "07 · 10 — Git و CI/CD",
+    title: "Git و CI/CD",
+    lede: "تكامل Git والنشر التلقائي لنماذج Power BI",
+    en_eyebrow: "07 · 10 — Git Integration",
+    en_lede: "Git integration and automatic deployment of Power BI models",
+    sectionId: "git-integration",
+    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Git Integration مع Power BI</h3><p>استخدام Version Control مع Power BI لتتبع التغييرات والتعاون بين الفريق.</p><p><strong>الميزات:</strong></p><ul><li>تتبع كل تغيير في النموذج</li><li>العودة للإصدارات السابقة</li><li>مراجعة التغييرات قبل دمجها</li><li>تعاون آمن بين المحللين</li></ul></div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Git Integration with Power BI</h3><p>Using version control with Power BI to track changes and collaborate between team members.</p><p><strong>Features:</strong></p><ul><li>Track every model change</li><li>Revert to previous versions</li><li>Review changes before merging</li><li>Safe collaboration between analysts</li></ul></div>` }],
+  },
+  "external-tools": {
+    eyebrow: "07 · 08 — الأدوات الخارجية",
+    title: "الأدوات الخارجية",
+    lede: "أدوات مساعدة تحسّن إنتاجيتك مع Power BI",
+    en_eyebrow: "07 · 08 — External Tools",
+    en_lede: "Helper tools that improve your productivity with Power BI",
+    sectionId: "external-tools",
+    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>الأدوات الخارجية الأساسية</h3><p><strong>DAX Studio:</strong> اختبار DAX وتحسين الأداء</p><p><strong>Tabular Editor:</strong> تحرير سريع للنماذج</p><p><strong>Power BI Helper:</strong> أتمتة العمليات</p><p><strong>BirdsOfAFeather:</strong> تصدير البيانات</p></div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Essential External Tools</h3><p><strong>DAX Studio:</strong> Test DAX and improve performance</p><p><strong>Tabular Editor:</strong> Quick model editing</p><p><strong>Power BI Helper:</strong> Automate operations</p><p><strong>BirdsOfAFeather:</strong> Export data</p></div>` }],
+  },
+  "apis": {
+    eyebrow: "07 · 09 — APIs و Embedded",
+    title: "APIs و Embedded",
+    lede: "دمج Power BI في التطبيقات الخارجية",
+    en_eyebrow: "07 · 09 — APIs & Embedded",
+    en_lede: "Embed Power BI in external applications",
+    sectionId: "apis",
+    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Power BI APIs</h3><p><strong>REST API:</strong> الوصول البرمجي للتقارير</p><p><strong>Embedded Analytics:</strong> دمج التقارير في تطبيقك</p><p><strong>Service Principal:</strong> تشفير الاتصال التلقائي</p><p><strong>الفائدة:</strong> قوة Power BI في تطبيقك الخاص</p></div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>Power BI APIs</h3><p><strong>REST API:</strong> Programmatic access to reports</p><p><strong>Embedded Analytics:</strong> Embed reports in your app</p><p><strong>Service Principal:</strong> Automate connections</p><p><strong>Benefit:</strong> Power BI strength in your own app</p></div>` }],
+  },
+  "advanced-dataflows": {
+    eyebrow: "07 · 11 — Dataflows المتقدمة",
+    title: "Dataflows المتقدمة",
+    lede: "نقل ETL إلى السحابة باستخدام Dataflows",
+    en_eyebrow: "07 · 11 — Advanced Dataflows",
+    en_lede: "Move ETL to cloud using Dataflows",
+    sectionId: "advanced-dataflows",
+    blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>ما هي Dataflows؟</h3><p>Dataflows هي طريقة لإنشاء ETL (Extract, Transform, Load) في السحابة بدلاً من الكمبيوتر.</p><p><strong>المميزات:</strong></p><ul><li>معالجة بيانات في السحابة</li><li>معادة استخدام العمليات</li><li>أداء أفضل من Power Query</li><li>تكامل مع التطبيقات الأخرى</li></ul></div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card"><h3>What are Dataflows?</h3><p>Dataflows are a way to create ETL in cloud instead of on your computer.</p><p><strong>Features:</strong></p><ul><li>Process data in cloud</li><li>Reuse processes</li><li>Better performance than Power Query</li><li>Integration with other apps</li></ul></div>` }],
+  },
+
+  "power-automate": {
+    eyebrow: "08 · 01 — Power Automate و الـ Alerts",
+    title: "Power Automate و الـ Alerts",
+    lede: "أتمتة التقارير والـ Alerts لإرسال الإشعارات تلقائياً عند وصول KPI لحد معين",
+    en_eyebrow: "08 · 01 — Power Automate & Alerts",
+    en_lede: "Automate reports and alerts to automatically send notifications when KPI reaches a threshold",
+    sectionId: "power-automate",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ما هو Power Automate في السياق التنبيهات؟</h3>
+      <p>Power Automate (سابقاً Flow) هو أداة لإنشاء سير عمل تلقائي يمكن أن يتفاعل مع Power BI والخدمات الأخرى.</p>
+      <p><strong>المعادلة البسيطة:</strong></p>
+      <div class="code-block">
+Trigger (حدث) → Condition (شرط) → Action (إجراء)
+
+مثال:
+KPI = انخفض المبيعات → IF أقل من 80% هدف → THEN أرسل تنبيه للمدير
+      </div>
+      <p><strong>الحالات الشائعة:</strong></p>
+      <ul>
+        <li>🚨 عندما تنخفض المبيعات تحت الهدف → أرسل إنذار فوري</li>
+        <li>📦 عندما ينفد المخزون → أخطر فريق الشراء في Teams</li>
+        <li>✅ عندما يتحسن الأداء → أرسل تهنئة للفريق</li>
+        <li>⏰ كل صباح → أرسل ملخص البيانات إلى البريد الإلكتروني</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Data Alerts (الطريقة البسيطة)</h3>
+      <p><strong>متى تستخدمها؟</strong> للتنبيهات الأساسية بدون تعقيدات</p>
+      <p><strong>الخطوات التفصيلية:</strong></p>
+      <ol>
+        <li><strong>الخطوة 1:</strong> افتح Power BI Service (app.powerbi.com)</li>
+        <li><strong>الخطوة 2:</strong> انتقل إلى Dashboard أو Report يحتوي على KPI مهم</li>
+        <li><strong>الخطوة 3:</strong> انقر على الثلاث نقاط (⋯) أعلى الـ Visual المراد</li>
+        <li><strong>الخطوة 4:</strong> اختر من القائمة: "Manage Alerts" أو "Alert Settings"</li>
+        <li><strong>الخطوة 5:</strong> حدد الشرط:
+          <ul>
+            <li>"Alert me when the value goes above" (أنبّهني عندما يتجاوز)</li>
+            <li>أو "goes below" (عندما ينخفض عن)</li>
+          </ul>
+        </li>
+        <li><strong>الخطوة 6:</strong> أدخل القيمة الحد (مثل: 8000)</li>
+        <li><strong>الخطوة 7:</strong> اختر طريقة الاستقبال: Email، Notification، أو كلاهما</li>
+        <li><strong>الخطوة 8:</strong> انقر "Save"</li>
+      </ol>
+      <p><strong>المثال الفعلي:</strong> تنبيه عندما تنخفض المبيعات اليومية عن $8,000</p>
+      <p><strong>المميزات:</strong> ✅ بسيطة جداً | ✅ سريعة التنفيذ | ✅ لا تحتاج برمجة</p>
+      <p><strong>العيوب:</strong> ❌ محدودة جداً | ❌ لا يمكن تخصيص الرسالة | ❌ لا تدعم شروط معقدة</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Power Automate Flows (الطريقة المتقدمة)</h3>
+      <p><strong>متى تستخدمها؟</strong> عندما تحتاج تنبيهات مخصصة وذكية مع شروط معقدة</p>
+      <p><strong>خطوات إنشاء Flow جديد:</strong></p>
+      <ol>
+        <li><strong>الخطوة 1:</strong> اذهب إلى <strong>power.microsoft.com/automate</strong></li>
+        <li><strong>الخطوة 2:</strong> انقر على "<strong>+ Create</strong>"</li>
+        <li><strong>الخطوة 3:</strong> اختر "<strong>Cloud flow</strong>" → "<strong>Automated cloud flow</strong>"</li>
+        <li><strong>الخطوة 4:</strong> أعط الـ Flow اسماً، مثل "Sales Alert Low Performance"</li>
+        <li><strong>الخطوة 5:</strong> اختر Trigger من القائمة:
+          <div class="code-block">
+البحث عن: "Power BI"
+اختر: "When an alert is triggered" أو "When a Power BI dataset is refreshed"
+          </div>
+        </li>
+        <li><strong>الخطوة 6:</strong> اختر Workspace، Report، واسم الـ KPI</li>
+        <li><strong>الخطوة 7:</strong> أضف Condition: "If [Sales Value] < 8000"</li>
+        <li><strong>الخطوة 8:</strong> أضف Action (إجراء):
+          <ul>
+            <li>انقر "Add an action"</li>
+            <li>ابحث عن "Send an email"</li>
+            <li>أضف بيانات المستقبل والرسالة</li>
+          </ul>
+        </li>
+      </ol>
+      <p><strong>مثال عملي كامل:</strong></p>
+      <div class="code-block">
+<span class="cm">-- Flow: Monitor Sales Performance</span>
+TRIGGER: When Power BI data refreshes
+CONDITION: IF Daily_Sales < Target * 0.8 THEN
+ACTION 1: Send email to SalesManager@company.com
+  Subject: "🚨 Sales Alert: {sales_value} vs target {target}"
+  Body: "Sales are below 80% of daily target. Immediate action needed!"
+ACTION 2: Post to Teams #sales-alerts
+  Message: "Sales Alert! Current: {sales_value}, Target: {target}"
+ACTION 3: Update Excel tracking sheet with alert timestamp
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تكامل مع Teams (الطريقة الأكثر استخداماً)</h3>
+      <p><strong>لماذا Teams؟</strong> لأن الفريق يستخدمه بالفعل ويرى الإشعارات فوراً</p>
+      <p><strong>خطوات التكامل:</strong></p>
+      <ol>
+        <li>في Power Automate Flow، اضف Action جديد</li>
+        <li>ابحث عن "Post message in a chat or channel"</li>
+        <li>اختر:
+          <ul>
+            <li><strong>Team:</strong> اختر فريقك (مثل "Finance")</li>
+            <li><strong>Channel:</strong> اختر القناة (مثل "#alerts")</li>
+            <li><strong>Message:</strong> اكتب رسالتك مع Variables من Power BI</li>
+          </ul>
+        </li>
+      </ol>
+      <p><strong>رسالة Teams متقدمة (Adaptive Card):</strong></p>
+      <div class="code-block">
+{
+  "@type": "MessageCard",
+  "@context": "https://schema.org/extensions",
+  "summary": "Sales Alert",
+  "themeColor": "ff0000",
+  "title": "🚨 Sales Performance Alert",
+  "sections": [
+    {
+      "activityTitle": "Daily Sales Report",
+      "facts": [
+        { "name": "Current Sales:", "value": "\$7,500" },
+        { "name": "Target:", "value": "\$10,000" },
+        { "name": "Achievement:", "value": "75% ❌" }
+      ]
+    }
+  ],
+  "potentialAction": [
+    {
+      "@type": "OpenUri",
+      "name": "View Dashboard",
+      "targets": [{ "os": "default", "uri": "https://powerbi.microsoft.com/..." }]
+    }
+  ]
+}
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تكامل مع Slack (البديل)</h3>
+      <p><strong>خطوات التكامل:</strong></p>
+      <ol>
+        <li>في Power Automate، اضف Action: "Post message"</li>
+        <li>اختر Slack Workspace واسم القناة</li>
+        <li>اكتب الرسالة مع Emoji و Dynamic Content</li>
+        <li>لتضمين صورة: استخدم "Get data from Power BI dashboard visual as image"</li>
+      </ol>
+      <p><strong>مثال رسالة Slack:</strong></p>
+      <div class="code-block">
+:warning: *Sales Alert - Low Performance*
+Current: $7,500 | Target: $10,000 | Achievement: 75%
+_Please take immediate action_
+<https://app.powerbi.com/dashboards/123|View Dashboard>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>نصيحة احترافية:</strong> ادمج بين Data Alerts و Power Automate:
+      <br/>• استخدم Data Alerts للتنبيهات البسيطة (سريعة وسهلة)
+      <br/>• استخدم Power Automate للمنطق المعقد والعمليات المتعددة</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>مثال عملي متقدم: Alert System متكامل</h3>
+      <p><strong>السيناريو:</strong> شركة بيع تريد نظام تنبيهات شامل للأداء</p>
+      <p><strong>المتطلبات:</strong></p>
+      <ul>
+        <li>Dashboard بـ KPIs: Daily Sales, Conversion Rate, Customer Complaints</li>
+        <li>متى يحدث التنبيه؟ كل ساعة عند تحديث البيانات</li>
+        <li>من يستقبل؟ Sales Manager + Team + CFO</li>
+      </ul>
+      <p><strong>الحل الكامل:</strong></p>
+      <ol>
+        <li><strong>Trigger:</strong> "When a refresh completes" في Power BI Premium</li>
+        <li><strong>Action 1 - فحص المبيعات:</strong>
+          <div class="code-block">
+IF Sales < Target * 0.80 THEN
+  - Send email to SalesManager with current value
+  - Post to Teams #sales-low
+  - Create Task in Planner for follow-up
+          </div>
+        </li>
+        <li><strong>Action 2 - فحص معدل التحويل:</strong>
+          <div class="code-block">
+IF Conversion_Rate < 10% THEN
+  - Send alert to Marketing team
+  - Log to Excel tracking sheet
+          </div>
+        </li>
+        <li><strong>Action 3 - فحص الشكاوى:</strong>
+          <div class="code-block">
+IF Complaints > 5 THEN
+  - Send email to CS Director
+  - Create support ticket
+  - Alert on Teams
+          </div>
+        </li>
+        <li><strong>Action 4 - تسجيل النتائج:</strong>
+          <div class="code-block">
+Write to Excel:
+- Timestamp
+- Alert Type
+- Value
+- Recipient
+- Status
+          </div>
+        </li>
+      </ol>
+      <p><strong>النتيجة:</strong> نظام مراقبة تلقائي متطور يعمل 24/7! 🚀</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذيرات مهمة:</strong>
+      <br/>❌ تجنب الإفراط في التنبيهات (قد تسبب إرهاق)
+      <br/>❌ اختبر الـ Flow قبل تفعيله (قد ترسل مئات الرسائل خطأ!)
+      <br/>✅ استخدم "Throttle" للحد من عدد التنبيهات في الساعة</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is Power Automate in Alerts Context?</h3>
+<p>Power Automate (formerly Flow) is a tool for creating automated workflows that can interact with Power BI.</p>
+<p><strong>Common Cases:</strong></p>
+<ul>
+<li>When sales drop below target, send alert to manager</li>
+<li>When inventory runs out, send email to procurement</li>
+<li>When performance improves, send notification to team</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Data Alerts (Simple Method)</h3>
+<p><strong>Using Data Alerts Built into Power BI</strong></p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Open dashboard or report in Power BI Service</li>
+<li>Click three dots (⋯) on important visual</li>
+<li>Select "Manage Alerts"</li>
+<li>Set alert: "Alert me when value goes above/below X"</li>
+<li>Choose how to receive: Email, Push Notification</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Very easy and fast</li>
+<li>No programming needed</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Limited features</li>
+<li>Can't send full report</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Power Automate Flows (Advanced Method)</h3>
+<p><strong>To Create Advanced Flow:</strong></p>
+<ol>
+<li>Go to power.microsoft.com/automate</li>
+<li>Select "Create" → "Cloud Flow" → "Automated"</li>
+<li>Choose Trigger: "Power BI" from list</li>
+<li>Select report and visual</li>
+<li>Add Condition: "When value changes"</li>
+<li>Add Action: "Send Email" or "Post to Teams"</li>
+</ol>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Trigger: Sales KPI in dashboard</li>
+<li>Condition: If < 80% of target</li>
+<li>Action: Send email to manager with visual screenshot</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Integration with Teams & Slack</h3>
+<p><strong>Send Notifications to Teams:</strong></p>
+<ul>
+<li>In Flow, add Action: "Post message to Teams"</li>
+<li>Select channel to send to</li>
+<li>Write message with variables from Power BI</li>
+</ul>
+<p><strong>Slack Example:</strong></p>
+<ul>
+<li>Same steps but with Slack action</li>
+<li>Need Slack app in workspace</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Tip:</strong> Start with simple data alerts first, then move to Power Automate when you need more features.</p>
+</div>
+<div class="lesson-card">
+<h3>Complete Practical Example: Sales Alert</h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Dashboard with "Daily Sales" KPI</li>
+<li>Daily target: $10,000</li>
+<li>If drops below $8,000 → instant alert</li>
+</ul>
+<p><strong>Solution with Power Automate:</strong></p>
+<ol>
+<li>Create "Automated" flow</li>
+<li>Trigger: Every hour, refresh Power BI data</li>
+<li>Condition: IF Daily Sales < 8000 THEN...</li>
+<li>Action 1: Send email to Sales Manager with KPI value</li>
+<li>Action 2: Post to Teams #sales-alerts</li>
+<li>Action 3: Log alert to Excel for tracking</li>
+</ol>
+<p><strong>Result:</strong> Instant notification when sales drop! ⚡</p>
+</div>` }],
+  },
+
+  // ==================== درس جديد: Automated Refresh و Scheduling ====================
+  "auto-refresh": {
+    eyebrow: "08 · 02 — Automated Refresh و Scheduling",
+    title: "Automated Refresh و Scheduling",
+    lede: "جدولة التحديثات التلقائية للبيانات بذكاء والتعامل مع الفشل",
+    en_eyebrow: "08 · 02 — Automated Refresh & Scheduling",
+    en_lede: "Schedule automatic data updates smartly and handle failures",
+    sectionId: "auto-refresh",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>أنواع التحديث في Power BI</h3>
+      <p><strong>رسم توضيحي:</strong></p>
+      <div class="code-block">
+📊 Data Model Modes
+├─ Manual Refresh      → تحديث يدوي فقط (غير موصى به)
+├─ Scheduled Refresh   → تحديث تلقائي بجدول زمني ✅ الأكثر استخداماً
+├─ Incremental Refresh → تحديث الجزء الجديد فقط (للبيانات الضخمة)
+└─ DirectQuery         → تحديث فوري من قاعدة البيانات (بطيء)
+      </div>
+      <p><strong>1️⃣ Manual Refresh</strong></p>
+      <ul>
+        <li>📌 الوصف: تحديث يدوي بنقرة زر واحدة</li>
+        <li>⏱️ الوقت: يحدث في الحال</li>
+        <li>❌ المشكلة: غير عملي للبيانات التي تتغير باستمرار</li>
+        <li>🎯 متى تستخدمه؟ فقط للاختبار والتطوير</li>
+      </ul>
+      <p><strong>2️⃣ Scheduled Refresh</strong></p>
+      <ul>
+        <li>📌 الوصف: تحديث آلي حسب جدول محدد مسبقاً</li>
+        <li>⏱️ الوقت: يحدث تلقائياً حسب الجدول (مثلاً 8 صباحاً)</li>
+        <li>✅ المميزة: موثوقة وسهلة</li>
+        <li>🎯 متى تستخدمه؟ <strong>90% من الحالات</strong></li>
+      </ul>
+      <p><strong>3️⃣ Incremental Refresh</strong></p>
+      <ul>
+        <li>📌 الوصف: تحديث الجزء الجديد فقط من البيانات (آخر يوم/أسبوع)</li>
+        <li>⏱️ الوقت: أسرع بكثير (2 دقيقة بدلاً من 30)</li>
+        <li>💰 التكلفة: توفير موارد والكهرباء</li>
+        <li>🎯 متى تستخدمه؟ للبيانات الضخمة جداً (> 100 مليون صف)</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>جدولة التحديث الذكية (Scheduled Refresh)</h3>
+      <p><strong>خطوات التكوين التفصيلية:</strong></p>
+      <ol>
+        <li><strong>الخطوة 1:</strong> اذهب إلى <strong>Power BI Service</strong> (app.powerbi.com)</li>
+        <li><strong>الخطوة 2:</strong> اختر Workspace (مثل "Sales Team")</li>
+        <li><strong>الخطوة 3:</strong> جد الـ Dataset المراد جدولة تحديثه</li>
+        <li><strong>الخطوة 4:</strong> انقر على الثلاث نقاط (⋯) → اختر "Settings"</li>
+        <li><strong>الخطوة 5:</strong> انقر على "<strong>Scheduled refresh</strong>" أو "<strong>Refresh</strong>"</li>
+        <li><strong>الخطوة 6:</strong> اختر "<strong>Turn on</strong>" لتفعيل الجدولة</li>
+        <li><strong>الخطوة 7:</strong> حدد:<br/>
+          <ul>
+            <li><strong>Frequency:</strong> عدد مرات التحديث
+              <div class="code-block">
+خيارات:
+• مرة واحدة يومياً
+• مرتين يومياً
+• 4 مرات يومياً
+• يومي، أسبوعي، شهري (حسب الخطة)
+              </div>
+            </li>
+            <li><strong>Time:</strong> الساعة المحددة (مثلاً 8:00 AM)</li>
+            <li><strong>Time Zone:</strong> المنطقة الزمنية (Cairo / UTC+2)</li>
+          </ul>
+        </li>
+        <li><strong>الخطوة 8:</strong> انقر "Apply" أو "Save"</li>
+      </ol>
+      <p><strong>مثال عملي:</strong></p>
+      <div class="code-block">
+Dataset: "Sales Daily Report"
+
+التكوين:
+├─ Frequency: 4 مرات يومياً
+├─ Times: 6:00 AM, 12:00 PM, 4:00 PM, 7:00 PM
+├─ Time Zone: Cairo (UTC+2)
+└─ Gateway: Data Gateway (مسجل)
+
+النتيجة: Dataset يتحدث تلقائياً 4 مرات بدون أي تدخل!
+      </div>
+      <p><strong>النصائح الذكية للجدولة:</strong></p>
+      <ul>
+        <li>❌ <strong>لا تحدّث كل دقيقة</strong> - مضيعة للموارد والكهرباء</li>
+        <li>❌ <strong>لا تحدّث في أوقات الذروة</strong> (8-9 صباحاً) - قد يبطئ النظام</li>
+        <li>✅ <strong>حدّث في أوقات الخمول:</strong>
+          <div class="code-block">
+الأوقات المثالية:
+├─ 6:00 AM (قبل دوام العمل)
+├─ 12:30 PM (وقت الغداء)
+├─ 4:00 PM (بعد ذروة العمل)
+└─ 7:00 PM (بعد انتهاء العمل)
+          </div>
+        </li>
+        <li>✅ <strong>للبيانات الحية:</strong> حدّث كل 15 دقيقة في ساعات العمل 9 AM - 6 PM فقط</li>
+        <li>✅ <strong>للبيانات العادية:</strong> مرة أو مرتين يومياً كافٍ تماماً</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Incremental Refresh (التحديث الذكي الفعال)</h3>
+      <p><strong>ما الفرق الحقيقي؟</strong></p>
+      <div class="code-block">
+مثال: جدول مبيعات بـ 100 مليون صف (2010-2024)
+
+❌ Full Refresh (الطريقة العادية):
+- تحميل جميع البيانات من 2010 إلى اليوم = 100 مليون صف
+- الوقت: 20-30 دقيقة
+- الموارد: عالية جداً (CPU, Memory, Network)
+
+✅ Incremental Refresh (الطريقة الذكية):
+- تحميل فقط بيانات الأسبوع الماضي = 1 مليون صف
+- الوقت: 1-2 دقيقة فقط!
+- الموارد: منخفضة جداً
+- النتيجة: توفير 90% من الوقت والموارد!
+      </div>
+      <p><strong>متطلبات Incremental Refresh:</strong></p>
+      <div class="code-block">
+❌ شروط يجب توفرها:
+1. الاشتراك: Power BI Premium أو Pro (قد يتطلب Premium Capacity)
+2. جدول البيانات يجب أن يحتوي على:
+   - DateTime column (مثل: TransactionDate, CreatedDate)
+   - يستخدم لتقسيم البيانات (Partition)
+3. في Power Query: استخدام RangeStart و RangeEnd parameters
+
+✅ كيفية الإعداد في Power Query:
+- أضف parameters: RangeStart و RangeEnd (type: DateTime)
+- فلتر البيانات:
+  Table.SelectRows(Source, each [Date] > RangeStart and [Date] <= RangeEnd)
+      </div>
+      <p><strong>مثال: إعداد Incremental Refresh</strong></p>
+      <div class="code-block">
+في Power BI Desktop:
+1. اذهب إلى Transform Data
+2. أضف Parameters:
+   - RangeStart (DateTime)
+   - RangeEnd (DateTime)
+3. في Query، أضف Filter:
+   = Table.SelectRows(#"Source",
+     each [TransactionDate] > RangeStart
+     and [TransactionDate] <= RangeEnd)
+4. نشر الـ Report
+5. في Power BI Service → Dataset Settings:
+   - Incremental Refresh
+   - Archive data older than X days (مثلاً 90 يوم)
+   - Incrementally refresh data every X days (مثلاً 7 أيام)
+      </div>
+      <p><strong>مثال الأرقام الفعلية:</strong></p>
+      <div class="code-block">
+قبل Incremental Refresh:
+- حجم جدول Sales: 100 مليون صف
+- وقت التحديث: 25 دقيقة
+- حجم Model: 5 GB
+
+بعد Incremental Refresh:
+- حجم في الذاكرة: 500 MB (فقط آخر 3 أشهر)
+- وقت التحديث: 2 دقيقة
+- توفير النطاق الترددي: 99%
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>التعامل مع فشل التحديث</h3>
+      <p><strong>الأسباب الشائعة للفشل وحلولها:</strong></p>
+      <table style="width:100%;border-collapse:collapse;">
+        <tr style="background:var(--bg-2);">
+          <th style="padding:10px;border:1px solid var(--border);">السبب</th>
+          <th style="padding:10px;border:1px solid var(--border);">الأعراض</th>
+          <th style="padding:10px;border:1px solid var(--border);">الحل</th>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid var(--border);">⚠️ Gateway مقطوع</td>
+          <td style="padding:8px;border:1px solid var(--border);">رسالة "Gateway offline"</td>
+          <td style="padding:8px;border:1px solid var(--border);">تحقق من تشغيل On-Premises Data Gateway</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid var(--border);">⚠️ Credentials غير صحيحة</td>
+          <td style="padding:8px;border:1px solid var(--border);">رسالة "Authentication failed"</td>
+          <td style="padding:8px;border:1px solid var(--border);">أعد تسجيل بيانات الاعتماد في Dataset Settings</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid var(--border);">⚠️ Timeout (حد أقصى للوقت)</td>
+          <td style="padding:8px;border:1px solid var(--border);">التحديث يستغرق أكثر من الحد المسموح</td>
+          <td style="padding:8px;border:1px solid var(--border);">استخدم Incremental Refresh أو زيادة وقت الـ Timeout</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid var(--border);">⚠️ تنسيق بيانات تغير</td>
+          <td style="padding:8px;border:1px solid var(--border);">رسالة "Column not found"</td>
+          <td style="padding:8px;border:1px solid var(--border);">تحقق من Power Query Scripts وأعد تحديث البيانات يدوياً</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid var(--border);">⚠️ قاعدة بيانات معطلة</td>
+          <td style="padding:8px;border:1px solid var(--border);">رسالة "Connection failed"</td>
+          <td style="padding:8px;border:1px solid var(--border);">تحقق من حالة خادم قاعدة البيانات</td>
+        </tr>
+      </table>
+      <p><strong>مراقبة التحديثات - Refresh History:</strong></p>
+      <div class="code-block">
+في Power BI Service:
+1. اختر الـ Dataset
+2. انقر على ⋯ (ثلاث نقاط)
+3. اختر "Refresh History"
+4. شاهد:
+   - وقت بدء وانتهاء التحديث
+   - المدة الإجمالية
+   - حالة (Success/Failed/In Progress)
+   - رسائل الخطأ إن وجدت
+
+✅ نصيحة: احفظ Refresh History أسبوعياً للتتبع
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تنبيهات فشل التحديث مع Power Automate</h3>
+      <p><strong>لا تجلس تنتظر - اجعل النظام ينبهك!</strong></p>
+      <div class="code-block">
+Flow: Monitor Refresh Failures
+
+TRIGGER: Recurrence (يومياً الساعة 9 صباحاً)
+
+CONDITION: Check last refresh in dataset
+IF LastRefreshStatus = "FAILED" THEN
+  ACTION 1: Send email to Admin
+    Subject: "⚠️ Dataset Refresh Failed: Sales Daily Report"
+    Body: "Last refresh failed at 8:00 AM. Check status immediately."
+
+  ACTION 2: Post to Teams #alerts
+    Message: "🚨 Dataset failed to refresh. Admin notified."
+
+  ACTION 3: Create task in Planner
+    Title: "Fix Dataset Refresh Failure"
+    Assigned to: Data Team Lead
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>المعادلة الذهبية:</strong>
+      <br/><strong style="color:var(--gold);">Refresh Frequency = Data Change Rate</strong>
+      <br/>إذا تغيرت البيانات كل ساعة، حدّث كل ساعة
+      <br/>إذا تغيرت كل يوم، حدّث يومياً
+      <br/>إذا تغيرت كل أسبوع، حدّث أسبوعياً</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Types of Refresh in Power BI</h3>
+<p><strong>1. Manual Refresh</strong></p>
+<ul>
+<li>Manual refresh with one button click</li>
+<li>Not practical for constantly changing data</li>
+</ul>
+<p><strong>2. Scheduled Refresh</strong></p>
+<ul>
+<li>Automatic refresh according to predefined schedule</li>
+<li>Best for most cases</li>
+</ul>
+<p><strong>3. Incremental Refresh</strong></p>
+<ul>
+<li>Update only new data part</li>
+<li>Faster and more efficient for huge data</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Smart Refresh Scheduling</h3>
+<p><strong>Steps in Power BI Service:</strong></p>
+<ol>
+<li>Go to Dataset settings</li>
+<li>Select "Scheduled Refresh"</li>
+<li>Set refresh frequency (1, 2, or 4 times)</li>
+<li>Choose time: for example, 8 AM and 2 PM</li>
+<li>Set time zone</li>
+</ol>
+<p><strong>Smart Tips:</strong></p>
+<ul>
+<li>❌ Don't refresh every minute (waste of resources)</li>
+<li>❌ Don't refresh during peak work hours (may slow system)</li>
+<li>✅ Refresh during off-peak: 6 AM, 12 noon, 6 PM</li>
+<li>✅ For very live data: refresh every 15 minutes during work hours</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Incremental Refresh (Smart Update)</h3>
+<p><strong>What's the difference?</strong></p>
+<ul>
+<li><strong>Full Refresh:</strong> Load all data from 2020 to today = slow</li>
+<li><strong>Incremental Refresh:</strong> Load only new data from yesterday = very fast</li>
+</ul>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Power BI Pro or Premium (paid subscription)</li>
+<li>Timestamp column in table</li>
+<li>Partition data by date</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Sales table with 100 million rows from 2010-2024</li>
+<li>Full refresh: 30 minutes</li>
+<li>Incremental: 2 minutes (load yesterday only)</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Handling Refresh Failures</h3>
+<p><strong>Common Causes of Failure:</strong></p>
+<ul>
+<li>❌ Database unavailable (gateway down)</li>
+<li>❌ Data format changed</li>
+<li>❌ Time limit exceeded (timeout)</li>
+<li>❌ Credential problem</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Use Power Automate: if refresh fails, send alert</li>
+<li>Monitor refresh history in dashboard settings</li>
+<li>Add logs for tracking</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Golden Equation:</strong> Refresh Frequency = Data Change Rate. If data changes every hour, refresh every hour. If it changes weekly, refresh weekly.</p>
+</div>` }],
+  },
+
+  // ==================== درس جديد: توليد التقارير الآلي ====================
+  "automate-reports": {
+    eyebrow: "08 · 03 — توليد التقارير الآلي",
+    title: "توليد التقارير الآلي",
+    lede: "إنشاء وإرسال التقارير تلقائياً للمستخدمين حسب جدول معين",
+    en_eyebrow: "08 · 03 — Automated Report Generation",
+    en_lede: "Create and send reports automatically to users on a schedule",
+    sectionId: "automate-reports",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ماذا تعني توليد التقارير الآلي؟</h3>
+      <p><strong>الفكرة الأساسية:</strong> بدلاً من إرسال نفس التقرير يدوياً كل يوم أو أسبوع، اجعل البرنامج يفعلها تلقائياً!</p>
+      <p><strong>الاختلاف الجوهري:</strong></p>
+      <div class="code-block">
+❌ الطريقة اليدوية (قديمة):
+7:00 AM → فتح Power BI → Export to PDF → ملء بيانات البريد → إرسال لـ 50 مدير!
+
+✅ الطريقة الآلية (ذكية):
+7:00 AM → Flow يبدأ تلقائياً → 50 PDF مرسلة في ثانية! 🚀
+      </div>
+      <p><strong>الحالات الشائعة للأتمتة:</strong></p>
+      <ul>
+        <li>📊 إرسال تقرير مبيعات يومي للمديرين (8 صباحاً)</li>
+        <li>📦 إرسال تقرير جودة المخزون أسبوعي (كل يوم جمعة)</li>
+        <li>👥 إرسال ملخص الأداء الشهري للإدارة (أول يوم الشهر)</li>
+        <li>💰 إرسال تقرير المالية كل نهاية أسبوع</li>
+        <li>⏱️ إرسال تقرير التأخر لمديري المشاريع يومياً</li>
+      </ul>
+      <p><strong>الفوائد:</strong> ⏱️ توفير وقت | 🎯 ضمان المواعيد | 📈 احترافية أعلى</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخيار 1: Email Subscriptions (الطريقة السهلة)</h3>
+      <p><strong>لمن؟</strong> المستخدمين البسطاء الذين يريدون حل سريع</p>
+      <p><strong>خطوات التنفيذ في Power BI Service:</strong></p>
+      <ol>
+        <li><strong>الخطوة 1:</strong> اذهب إلى Power BI Service (app.powerbi.com)</li>
+        <li><strong>الخطوة 2:</strong> افتح التقرير أو Dashboard المراد</li>
+        <li><strong>الخطوة 3:</strong> انقر على زر "<strong>Subscribe</strong>" في الأعلى اليمين</li>
+        <li><strong>الخطوة 4:</strong> جديد نافذة: حدد:
+          <ul>
+            <li><strong>Recipients:</strong> أدخل البريد (يمكن واحد أو عدة)</li>
+            <li><strong>Subject (اختياري):</strong> عنوان الرسالة</li>
+            <strong>Send after</strong> قدم معة الإرسال</li>
+            <li><strong>Frequency:</strong>
+              <div class="code-block">
+الخيارات:
+• Daily (يومي)
+• Weekly (أسبوعي)
+• Monthly (شهري)
+              </div>
+            </li>
+            <li><strong>Time:</strong> الساعة المحددة (مثلاً 7:00 AM)</li>
+          </ul>
+        </li>
+        <li><strong>الخطوة 5:</strong> انقر "<strong>Save and Close</strong>"</li>
+      </ol>
+      <p><strong>ما الذي يرسله؟</strong></p>
+      <div class="code-block">
+البريد يحتوي على:
+1. لقطة (Screenshot) من التقرير
+2. رابط للتقرير كامل في Power BI
+3. تاريخ الإرسال
+4. معلومات إعادة الاشتراك
+
+✅ مثال البريد:
+━━━━━━━━━━━━━━━━━━
+[Screenshot of Sales Dashboard]
+
+View the full report: https://app.powerbi.com/...
+━━━━━━━━━━━━━━━━━━
+      </div>
+      <p><strong>المميزات:</strong> ✅ بسيطة جداً | ✅ بدون برمجة | ✅ سريعة</p>
+      <p><strong>العيوب:</strong> ❌ محدودة جداً | ❌ لا يمكن تغيير تصميم الرسالة | ❌ لا يمكن filters ديناميكية</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الخيار 2: Power Automate (الطريقة الاحترافية)</h3>
+      <p><strong>لمن؟</strong> الشركات التي تريد حل متطور ومخصص</p>
+      <p><strong>المميزات المتقدمة:</strong></p>
+      <ul>
+        <li>🎨 تخصيص كامل لرسالة البريد</li>
+        <li>🔀 إرسال تقارير مختلفة حسب الشخص (branch-specific)</li>
+        <li>📊 إضافة بيانات من مصادر أخرى (Excel, SharePoint)</li>
+        <li>🔔 تنبيهات متعددة: Email + Teams + Slack</li>
+        <li>📝 تسجيل وتتبع كل إرسال</li>
+      </ul>
+      <p><strong>مثال: إرسال تقرير مخصص حسب الموقع</strong></p>
+      <div class="code-block">
+السيناريو: شركة مبيعات بـ 10 فروع
+المشكلة: كل المديرين يريدون تقرير فرعهم فقط (بدون البيانات الأخرى)
+
+الحل مع Power Automate:
+1. Trigger: كل يوم الساعة 8 صباحاً
+2. Action 1: احصل على قائمة المديرين من Excel
+3. For Each Loop:
+   - Export report filtered by branch
+   - Personalize email بـ اسم المدير وفرعه
+   - Send personalized PDF
+4. Log results في Excel
+
+النتيجة: كل مدير يرى بيانات فرعه فقط!
+      </div>
+      <p><strong>خطوات بناء Flow في Power Automate:</strong></p>
+      <ol>
+        <li><strong>الخطوة 1:</strong> اذهب إلى <strong>flow.microsoft.com</strong></li>
+        <li><strong>الخطوة 2:</strong> انقر "<strong>+ Create</strong>" → "<strong>Scheduled cloud flow</strong>"</li>
+        <li><strong>الخطوة 3:</strong> سمّ الـ Flow: "Daily Sales Report Distribution"</li>
+        <li><strong>الخطوة 4:</strong> حدد:
+          <ul>
+            <li><strong>Repeat every:</strong> 1 day</li>
+            <li><strong>At:</strong> 7 AM</li>
+            <li><strong>Timezone:</strong> Cairo</li>
+          </ul>
+        </li>
+        <li><strong>الخطوة 5:</strong> أضف Action:
+          <div class="code-block">
+تسلسل الـ Actions:
+1. Initialize Variable: managers_list (Array)
+2. Get Excel Table (من قائمة المديرين)
+3. Apply to Each (لكل مدير):
+   a. Get Power BI Report
+   b. Export to PDF (filtered by branch)
+   c. Send Email (بـ Template مخصص)
+   d. Log to Excel (success/failure)
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="lesson-card">
+      <h3>أمثلة عملية متقدمة</h3>
+      <p><strong>مثال 1: تقرير يومي مع Filters ديناميكية</strong></p>
+      <div class="code-block">
+Flow: "Daily Sales Report with Dynamic Date"
+
+TRIGGER: Scheduled - يومياً 7 AM
+
+ACTIONS:
+1. Refresh Dataset في Power BI
+2. Get today's date من Dynamic Content
+3. Export report with Filter:
+   - Date parameter = Yesterday (@{adddays(utcNow(), -1)})
+4. Convert to PDF
+5. Send email with beautiful HTML template:
+
+Subject: "📊 Sales Report - @{formatDateTime(adddays(utcNow(), -1), 'MMMM dd, yyyy')}"
+
+Body:
+<html>
+<body style="font-family: Arial;">
+  <h2>Daily Sales Performance</h2>
+  <p>Hello @{managers_name},</p>
+  <p>Your sales report for @{yesterday} is attached below.</p>
+  <ul>
+    <li>Total Sales: @{total_sales}</li>
+    <li>Orders: @{order_count}</li>
+    <li>Achievement: @{achievement_percentage}% of daily target</li>
+  </ul>
+  <p>Best regards,<br/>BI Team</p>
+</body>
+</html>
+
+6. Attachment: PDF report
+      </div>
+      <p><strong>مثال 2: تقرير موجه مخصص (Personalized)</strong></p>
+      <div class="code-block">
+Flow: "Branch-Specific Sales Report"
+
+For each manager in managers_table:
+  1. Get manager: Name, Email, Branch_ID, Region
+  2. Export report with filters:
+     - Branch = @{branch_id}
+     - Region = @{region}
+  3. Get manager KPIs from Excel:
+     - Target sales
+     - Current achievement
+     - YTD performance
+  4. Compose rich HTML email:
+     <h3>Hello @{manager_name}</h3>
+     <p>Your @{branch_name} performance report:</p>
+     <table>
+       <tr><td>Target</td><td>@{target}</td></tr>
+       <tr><td>Actual</td><td>@{actual}</td></tr>
+       <tr><td>Achievement</td><td>@{achievement}%</td></tr>
+     </table>
+     <p>@{congratulation_or_warning_message}</p>
+  5. Send personalized email with PDF
+
+Result: كل مدير يشعر بأن التقرير من أجله! 🎯
+      </div>
+      <p><strong>مثال 3: الأسبوعي للإدارة</strong></p>
+      <div class="code-block">
+Flow: "Weekly Executive Summary"
+
+TRIGGER: كل يوم جمعة الساعة 4 مساءً
+
+ACTIONS:
+1. Get last 7 days data from Power BI
+2. Create summary:
+   - Total revenue: $XXX,XXX
+   - Top 3 products
+   - Top 3 regions
+   - Risk alerts (if any)
+3. Create Excel with details
+4. Compose executive email:
+   - Short summary (1 paragraph)
+   - Key metrics table
+   - Charts/images
+   - Recommendations
+5. Send to: CFO, CEO, VPs
+
+Result: Leadership يشوف الصورة الكاملة بسرعة! 👔
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Email Templates الاحترافية</h3>
+      <p><strong>لا تكتفِ بـ PDF بدون سياق! استخدم templates جميلة</strong></p>
+      <div class="code-block">
+Template محترف:
+
+Subject: 📊 Daily Sales Report - @{date}
+
+From: noreply@company.com
+To: @{recipient_email}
+
+---
+
+<html style="font-family: 'Segoe UI', Tahoma, sans-serif;">
+<body style="background-color: #f5f5f5; padding: 20px;">
+
+  <div style="background-color: white; border-radius: 10px; padding: 30px; max-width: 600px;">
+
+    <!-- Header -->
+    <div style="border-bottom: 3px solid #0078d4; padding-bottom: 20px;">
+      <h1 style="color: #0078d4; margin: 0;">📊 Daily Sales Report</h1>
+      <p style="color: #666; margin: 5px 0;">@{formatDateTime(utcNow(), 'MMMM dd, yyyy')}</p>
+    </div>
+
+    <!-- Greeting -->
+    <p style="color: #333; margin-top: 20px;">
+      Hello @{manager_name},
+    </p>
+
+    <!-- Key Metrics -->
+    <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 20px 0;">
+      <h3 style="color: #0078d4;">Key Metrics</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding: 5px; border-bottom: 1px solid #ddd;">
+          💰 Total Sales: <strong>@{total_sales}</strong>
+        </li>
+        <li style="padding: 5px; border-bottom: 1px solid #ddd;">
+          🎯 Target: <strong>@{target}</strong>
+        </li>
+        <li style="padding: 5px;">
+          ✅ Achievement: <strong style="color: @{achievement_color};">@{achievement}%</strong>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Status Message -->
+    <div style="background-color: @{status_bg_color}; padding: 15px; border-radius: 5px; margin: 20px 0;">
+      <p style="color: @{status_text_color}; margin: 0;">
+        @{status_message}
+      </p>
+    </div>
+
+    <!-- CTA Button -->
+    <div style="text-align: center; margin: 20px 0;">
+      <a href="@{report_url}" style="background-color: #0078d4; color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+        View Full Report
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div style="border-top: 1px solid #ddd; margin-top: 30px; padding-top: 20px; color: #999; font-size: 12px;">
+      <p>
+        This is an automated report. Questions? Contact the BI Team at bi@company.com
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>مثال عملي كامل: نظام توزيع تقارير متقدم</h3>
+      <p><strong>السيناريو الواقعي:</strong> شركة مبيعات بـ 50 فرع، تريد نظام توزيع تقارير يومي متطور</p>
+      <p><strong>المتطلبات:</strong></p>
+      <ul>
+        <li>50 مدير فرع ← كل واحد يريد تقرير فرعه فقط</li>
+        <li>3 VPs ← يريدون ملخص كل المناطق</li>
+        <li>CFO ← يريد تقرير مالي فقط</li>
+        <li>المواعيد ← 8 صباحاً (قبل اجتماع اليوم)</li>
+      </ul>
+      <p><strong>الحل الكامل مع Flow:</strong></p>
+      <div class="code-block">
+TRIGGER: Scheduled - يومياً 7:30 AM (نصف ساعة قبل الموعد)
+
+STEP 1: تجهيز البيانات
+└─ Refresh Power BI Dataset
+
+STEP 2: إعداد تواريخ
+├─ Get Yesterday's date
+└─ Get Month-to-date
+
+STEP 3: معالجة المديرين (50)
+└─ For Each manager in Excel:
+    ├─ Get manager info (Name, Email, Branch_ID, Region_ID)
+    ├─ Export report filtered by Branch_ID
+    ├─ Compose personalized email (see template above)
+    ├─ Send Email with PDF attachment
+    └─ Log to tracking Excel (Sent time, recipient, file size)
+
+STEP 4: معالجة الـ VPs (3)
+└─ For Each VP in Excel:
+    ├─ Get region summary data
+    ├─ Export full regional report
+    ├─ Compose executive summary email
+    ├─ Attach PDF + Excel summary
+    └─ Log success
+
+STEP 5: معالجة CFO (1)
+├─ Get financial KPIs
+├─ Create Financial Report PDF
+├─ Compose accounting email
+└─ Send
+
+STEP 6: التسجيل والمراقبة
+├─ Log total emails sent: 54
+├─ Log failures (if any)
+├─ Send admin notification: "Daily reports distributed successfully at 8:02 AM"
+└─ Create summary in Planner
+
+RESULT: 54 بريد مخصص في دقيقة واحدة! 🚀
+
+المخطط الزمني:
+7:30 AM → Flow يبدأ
+7:31 AM → تحديث البيانات
+7:32-7:45 AM → إرسال 54 بريد
+7:46 AM → تسجيل النتائج
+8:00 AM → المديرون يشتغلون بـ البيانات الحديثة!
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>نصائح احترافية:</strong>
+      <br/>🎨 استخدم HTML templates جميلة (ليست صورة عادية)
+      <br/>📊 ضمّن بيانات موجزة مباشرة في الرسالة
+      <br/>🔗 أضف رابط للتقرير الكامل
+      <br/>📝 اكتب رسالة مخصصة لكل شخص (اسمه، فرعه، إنجازاته)
+      <br/>⏰ أرسل في الوقت المناسب (قبل الاجتماعات مثلاً)</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>تحذيرات مهمة:</strong>
+      <br/>❌ اختبر Flow قبل التفعيل (قد ترسل 100 بريد خطأ!)
+      <br/>❌ تحقق من حدود الترخيص (إرسال 50+ PDF قد يحتاج Premium)
+      <br/>❌ لا تنسَ Throttle الـ Flow (حد أقصى للرسائل في الساعة)
+      <br/>✅ اعمل Dry Run أول يوم (أرسل لنفسك قبل التفعيل)</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What Does Automated Report Generation Mean?</h3>
+<p><strong>Idea:</strong> Instead of sending same report manually every day or week, let the program do it!</p>
+<p><strong>Common Cases:</strong></p>
+<ul>
+<li>Send daily sales report to managers</li>
+<li>Send weekly inventory quality report to procurement</li>
+<li>Send monthly performance summary to management</li>
+</ul>
+<p><strong>Benefit:</strong> Save time and ensure reports arrive on schedule 🎯</p>
+</div>
+<div class="lesson-card">
+<h3>Option 1: Subscriptions (Easy Method)</h3>
+<p><strong>In Power BI Service:</strong></p>
+<ol>
+<li>Open the report or dashboard</li>
+<li>Click "Subscribe" button at top</li>
+<li>Set recipients (email addresses)</li>
+<li>Choose send frequency: daily/weekly/monthly</li>
+<li>Set time and recurrence</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ Very easy</li>
+<li>✅ No programming</li>
+<li>✅ Sends screenshot with link</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>❌ Limited options (too simple)</li>
+<li>❌ Can't include dynamic filters</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Option 2: Power Automate (Professional Method)</h3>
+<p><strong>Example: Send customized report by location</strong></p>
+<ol>
+<li>Create new flow</li>
+<li>Trigger: Scheduled (daily 8 AM)</li>
+<li>Action: "Export to PDF" from Power BI</li>
+<li>Condition: By location → send to that location's manager</li>
+<li>Action 2: Send email with PDF attachment</li>
+</ol>
+<p><strong>Detailed Example:</strong></p>
+<ul>
+<li>Sales report from 10 branches</li>
+<li>Instead of sending one report to all managers</li>
+<li>Send each manager a customized report of their branch only</li>
+<li>Each one sees only their branch data + team performance</li>
+</ul>
+</div>
+<div class="lesson-card">
+<h3>Adding Dynamics to Reports</h3>
+<p><strong>Example: Report that changes by date</strong></p>
+<ul>
+<li>In Power BI: Add date parameter</li>
+<li>In Flow: Use dynamic content → today's date</li>
+<li>In PDF export: Pass date as filter</li>
+<li>Result: Every day yesterday's report sent automatically 📊</li>
+</ul>
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Professional Tip:</strong> Use email template in Power Automate. Write a nice message explaining what's in the report instead of just a PDF file without context.</p>
+</div>
+<div class="lesson-card">
+<h3>Complete Practical Example: Daily Sales Report</h3>
+<p><strong>Scenario:</strong> Sales company wants to send daily report to 50 branch managers</p>
+<p><strong>Solution with Power Automate:</strong></p>
+<ol>
+<li><strong>Trigger:</strong> Scheduled - daily 7 AM</li>
+<li><strong>Action 1:</strong> Refresh Power BI Dataset (get latest data)</li>
+<li><strong>Action 2:</strong> Get list of managers from Excel/SharePoint</li>
+<li><strong>Action 3:</strong> Loop through each manager:</li>
+<ul>
+<li>Export report filtered by their branch</li>
+<li>Convert to PDF</li>
+<li>Send personalized email</li>
+</ul>
+<li><strong>Action 4:</strong> Log success/failure to tracking sheet</li>
+</ol>
+<p><strong>Result:</strong> 50 customized reports sent automatically in minutes! 🚀</p>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Warning:</strong> Check license limits. Sending 50 PDFs daily may require Premium Capacity in some cases.</p>
+</div>` }],
   },
 };
 
+Object.assign(window.LESSONS, {
+  "common-mistakes": {
+    ...window.LESSONS["common-mistakes"],
+    eyebrow: "07 · 04 — الأخطاء الشائعة و Anti-patterns",
+    title: "الأخطاء الشائعة و Anti-patterns",
+    lede: "هذا الدرس ليس قائمة أخطاء فقط، بل خريطة للأشياء التي تفسد صحة الأرقام والأداء وقابلية الصيانة في Power BI.",
+    en_eyebrow: "07 · 04 — Common Mistakes & Anti-patterns",
+    en_lede: "A practical map of mistakes that break correctness, performance, and maintainability in Power BI.",
+    sectionId: "common-mistakes",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>كيف تتعامل مع هذا الدرس؟</h3>
+      <p>كل خطأ هنا له 3 زوايا: <strong>العرض الظاهر</strong> الذي يراه المستخدم، <strong>السبب الحقيقي</strong> داخل النموذج، ثم <strong>الإصلاح الصحيح</strong> الذي يمنع تكرار المشكلة.</p>
+      <p>إذا حفظت هذا الدرس جيدًا، ستوفّر على نفسك ساعات Debugging ومراجعات محرجة أمام العميل.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>Anti-pattern</th>
+        <th>الخطر</th>
+        <th>البديل الصحيح</th>
+      </tr>
+      <tr>
+        <td>Flat Table واحدة لكل شيء</td>
+        <td>بطء، تكرار، وصعوبة في DAX</td>
+        <td>Star Schema واضح: Facts + Dimensions</td>
+      </tr>
+      <tr>
+        <td>Many-to-Many مباشرة أو Bi-directional في كل علاقة</td>
+        <td>نتائج مضاعفة وفلاتر غير متوقعة</td>
+        <td>Bridge Table واستخدام الاتجاهين فقط عند الحاجة المبررة</td>
+      </tr>
+      <tr>
+        <td>استخدام Calculated Columns بدل Measures</td>
+        <td>زيادة الحجم وثبات الحساب على مستوى الصف</td>
+        <td>Measure تحترم Filter Context</td>
+      </tr>
+      <tr>
+        <td>عدم إنشاء Date Table حقيقية</td>
+        <td>Time Intelligence ناقصة أو خاطئة</td>
+        <td>جدول تقويم مستقل ومعلّم كـ Date Table</td>
+      </tr>
+      <tr>
+        <td>إطفاء الأداء في آخر المشروع فقط</td>
+        <td>نموذج جميل لكنه غير قابل للاستخدام</td>
+        <td>قياس الأداء مبكرًا باستخدام DAX Studio وPerformance Analyzer</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>مثال شائع: Column كان يجب أن تكون Measure</h3>
+      <p><strong>الخطأ:</strong> إنشاء عمود محسوب لكل صف ثم جمعه لاحقًا، فقط لأن الصيغة بدت أسهل.</p>
+      <div class="code-block">
+<span class="cm">-- خطأ: عمود محسوب يستهلك الذاكرة لكل صف</span>
+Line Amount = Sales[Quantity] * Sales[UnitPrice]
+
+<span class="cm">-- ثم Measure تجمع العمود</span>
+Total Sales = <span class="fn">SUM</span>( Sales[Line Amount] )
+
+<span class="cm">-- الأفضل: الحساب وقت الاستعلام فقط</span>
+Total Sales = 
+<span class="fn">SUMX</span>(
+    Sales,
+    Sales[Quantity] * Sales[UnitPrice]
+)
+      </div>
+      <p><strong>متى نلجأ لCalculated Column؟</strong> عندما تحتاج قيمة ثابتة على مستوى الصف للتصنيف أو الربط أو البحث، وليس Aggregate ديناميكيًا.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Many-to-Many: متى تكون كارثة؟</h3>
+      <p>المشكلة ليست في وجود علاقة Many-to-Many بحد ذاتها، بل في استخدامها كحل سريع بدون فهم لمسار الفلاتر. إذا كان المنتج يرتبط بعدة حملات، والحملة ترتبط بعدة منتجات، فالحل الصحيح غالبًا هو:</p>
+      <ul>
+        <li>جدول Products</li>
+        <li>جدول Campaigns</li>
+        <li>جدول وسيط ProductCampaign Bridge</li>
+      </ul>
+      <p>ثم تراقب اتجاه الفلترة وتختبر النتائج على أمثلة صغيرة قبل التعميم.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>قاعدة مهمة:</strong> إذا احتجت أن تشرح للعميل لماذا الرقم تغيّر لأن “الفلاتر مشت في اتجاه غريب”، فغالبًا المشكلة ليست في العميل بل في تصميم النموذج.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Checklist قبل النشر:</strong> هل لديك Date Table؟ هل الـ Measures منفصلة عن الأعمدة؟ هل كل علاقة مفهومة ومقصودة؟ هل راجعت الأداء؟ هل جرّبت سيناريوهات edge cases؟ إذا أجبت “لا” على واحدة منها، فالمنهج العملي يقول: لا تنشر بعد.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>How to use this lesson</h3>
+      <p>Each anti-pattern has three parts: the visible symptom, the real modeling cause, and the design correction that prevents the issue from returning.</p>
+      <p>If you learn this lesson well, you save hours of debugging and many awkward conversations about why a number changed unexpectedly.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>Anti-pattern</th>
+        <th>Why it hurts</th>
+        <th>Better pattern</th>
+      </tr>
+      <tr>
+        <td>One giant flat table</td>
+        <td>Weak performance, duplication, and harder DAX.</td>
+        <td>Clear star schema with facts and dimensions.</td>
+      </tr>
+      <tr>
+        <td>Many-to-many or bidirectional everywhere</td>
+        <td>Unpredictable filters and inflated totals.</td>
+        <td>Bridge tables and controlled filter direction.</td>
+      </tr>
+      <tr>
+        <td>Calculated columns for dynamic logic</td>
+        <td>Larger model size and row-level rigidity.</td>
+        <td>Measures that respect filter context.</td>
+      </tr>
+      <tr>
+        <td>No proper date table</td>
+        <td>Broken or incomplete time intelligence.</td>
+        <td>An explicit calendar table marked as Date Table.</td>
+      </tr>
+      <tr>
+        <td>Performance tuning at the end only</td>
+        <td>A nice-looking report that nobody enjoys using.</td>
+        <td>Measure performance early with DAX Studio and Performance Analyzer.</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>Classic example: column that should have been a measure</h3>
+      <p><strong>Wrong pattern:</strong> create a calculated column for every row because the formula feels easier at first, then aggregate it later.</p>
+      <div class="code-block">
+-- Wrong: stored on every row
+Line Amount = Sales[Quantity] * Sales[UnitPrice]
+
+-- Then aggregated later
+Total Sales = SUM( Sales[Line Amount] )
+
+-- Better: calculate at query time
+Total Sales =
+SUMX(
+    Sales,
+    Sales[Quantity] * Sales[UnitPrice]
+)
+      </div>
+      <p>Use a calculated column only when you need a stable row-level attribute for classification, relationship logic, or search. Use a measure when the value should change with filter context.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Many-to-many becomes risky when it becomes a shortcut</h3>
+      <p>The issue is not that many-to-many can never exist. The issue is using it as a quick fix without understanding filter flow.</p>
+      <p>If products connect to many campaigns and campaigns connect to many products, the safer design is usually Products, Campaigns, and a ProductCampaign bridge table, followed by careful filter testing on small examples.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">!</div>
+      <p><strong>Rule of thumb:</strong> if you keep explaining to users that a number changed because filters moved in a strange direction, the real problem is usually the model design, not the user.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Checklist before release:</strong> do you have a date table, clean measures, intentional relationships, and a performance review? If any answer is no, the practical answer is simple: do not ship yet.</p>
+    </div>` }],
+  },
+
+  "external-tools": {
+    ...window.LESSONS["external-tools"],
+    eyebrow: "07 · 08 — الأدوات الخارجية",
+    title: "الأدوات الخارجية",
+    lede: "هذه الأدوات ليست رفاهية. هي التي تنقلك من مستخدم Desktop إلى شخص يدير نموذجًا احترافيًا بسرعة ودقة.",
+    en_eyebrow: "07 · 08 — External Tools",
+    en_lede: "These tools move you from a Desktop user to a faster and more disciplined model builder.",
+    sectionId: "external-tools",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>متى تفتح أداة خارجية أصلًا؟</h3>
+      <p>افتحها عندما يصبح Power BI Desktop وحده بطيئًا أو محدودًا في واحدة من 4 مهام: <strong>تشخيص الأداء</strong>، <strong>التعديل الجماعي</strong>، <strong>مقارنة النماذج</strong>، <strong>توثيق الجودة</strong>.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>الأداة</th>
+        <th>الاستخدام الأساسي</th>
+        <th>متى أفتحها؟</th>
+      </tr>
+      <tr>
+        <td>DAX Studio</td>
+        <td>Server Timings, Query Plan, VertiPaq Analyzer</td>
+        <td>عندما يكون التقرير بطيئًا أو Measure مشكوكًا فيها</td>
+      </tr>
+      <tr>
+        <td>Tabular Editor</td>
+        <td>Bulk editing, folders, BPA, calculation groups</td>
+        <td>عندما يكبر النموذج ويصير التعديل اليدوي مرهقًا</td>
+      </tr>
+      <tr>
+        <td>Bravo</td>
+        <td>إدارة Date Table، تحسين النموذج، تنسيق Measures</td>
+        <td>للمهام السريعة والمتكررة</td>
+      </tr>
+      <tr>
+        <td>ALM Toolkit</td>
+        <td>مقارنة ونقل تغييرات النماذج بين بيئات مختلفة</td>
+        <td>قبل الترقية من Dev إلى Test أو Prod</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>DAX Studio — ماذا أفعل به عمليًا؟</h3>
+      <ul>
+        <li>شغّل <strong>Server Timings</strong> لمعرفة هل البطء من الـ Storage Engine أم Formula Engine.</li>
+        <li>راجع <strong>Query Plan</strong> لتعرف هل الصيغة معقدة أكثر من اللازم.</li>
+        <li>استخدم <strong>VertiPaq Analyzer</strong> لمعرفة أي جدول أو عمود يستهلك الذاكرة الأكبر.</li>
+      </ul>
+      <p>الهدف ليس “فتح الأداة”، بل الخروج منها بقرار عملي: حذف عمود، تبسيط Measure، أو تعديل Model.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Tabular Editor — أين يوفر الوقت فعلًا؟</h3>
+      <ul>
+        <li>إنشاء Display Folders لمئات الـ Measures دفعة واحدة</li>
+        <li>إضافة descriptions وتنسيقات موحّدة</li>
+        <li>تشغيل <strong>Best Practice Analyzer</strong> لاكتشاف مشاكل التسمية والاعتماديات</li>
+        <li>إنشاء Calculation Groups بدل تكرار 20 Measure متشابهة</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Workflow احترافي بسيط:</strong> ابنِ النموذج في Desktop → افحص الأداء بـ DAX Studio → نظّمه في Tabular Editor → قارنه ونقله بـ ALM Toolkit. بهذا التسلسل ستحصل على سرعة + جودة + قابلية صيانة.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>When should you open an external tool?</h3>
+      <p>Open one when Desktop alone becomes too slow or too limited for one of four jobs: diagnosing performance, making bulk edits, comparing models, or enforcing quality rules.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>Tool</th>
+        <th>Main use</th>
+        <th>When to open it</th>
+      </tr>
+      <tr>
+        <td>DAX Studio</td>
+        <td>Server Timings, Query Plan, VertiPaq Analyzer</td>
+        <td>When a report is slow or a measure feels suspicious.</td>
+      </tr>
+      <tr>
+        <td>Tabular Editor</td>
+        <td>Bulk editing, display folders, BPA, calculation groups</td>
+        <td>When the model becomes too large for manual editing.</td>
+      </tr>
+      <tr>
+        <td>Bravo</td>
+        <td>Quick date-table and model cleanup tasks</td>
+        <td>When you want fast productivity for repetitive tasks.</td>
+      </tr>
+      <tr>
+        <td>ALM Toolkit</td>
+        <td>Compare and deploy semantic model changes</td>
+        <td>Before promoting changes between environments.</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>DAX Studio in practical terms</h3>
+      <ul>
+        <li>Use <strong>Server Timings</strong> to see whether the bottleneck is in the Storage Engine or Formula Engine.</li>
+        <li>Use <strong>Query Plan</strong> to inspect expensive logic.</li>
+        <li>Use <strong>VertiPaq Analyzer</strong> to find which tables or columns are consuming memory.</li>
+      </ul>
+      <p>The goal is not to open the tool for its own sake. The goal is to leave with a concrete decision: remove a column, simplify a measure, or redesign part of the model.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Where Tabular Editor saves real time</h3>
+      <ul>
+        <li>Create display folders for many measures in one pass.</li>
+        <li>Apply descriptions and formatting consistently.</li>
+        <li>Run Best Practice Analyzer to catch quality issues early.</li>
+        <li>Build calculation groups instead of hand-writing many duplicate measures.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Practical workflow:</strong> build in Desktop, measure in DAX Studio, organize in Tabular Editor, and compare or deploy with ALM Toolkit. That sequence gives you speed, discipline, and maintainability together.</p>
+    </div>` }],
+  },
+
+  "apis": {
+    ...window.LESSONS["apis"],
+    eyebrow: "07 · 09 — APIs و Embedded",
+    title: "APIs و Embedded",
+    lede: "هذا الباب يشرح كيف تجعل Power BI جزءًا من نظام أكبر: تطبيق ويب، بوابة داخلية، أتمتة إدارية، أو منصة SaaS.",
+    en_eyebrow: "07 · 09 — APIs & Embedded",
+    en_lede: "How to make Power BI part of a larger system: web app, internal portal, automation flow, or SaaS platform.",
+    sectionId: "apis",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>3 استخدامات مختلفة لا تخلط بينها</h3>
+      <ul>
+        <li><strong>REST API:</strong> لإدارة Workspaces, Reports, Datasets, Refreshes, Users, Scans.</li>
+        <li><strong>Embedded Analytics:</strong> لعرض التقارير داخل تطبيقك بواجهة مخصّصة.</li>
+        <li><strong>Admin / Governance APIs:</strong> للجرد، المراقبة، والتحكم المؤسسي.</li>
+      </ul>
+      <p>المشكلة الشائعة أن الناس تقول “عايز أستخدم API” بينما هي تقصد غالبًا <strong>Embedding</strong> أو <strong>Automation</strong> لا أكثر.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Service Principal: ما هو فعلاً؟</h3>
+      <p>Service Principal ليس “تشفيرًا” كما يظن البعض، بل <strong>هوية تطبيق</strong> non-human identity تُستخدم للأتمتة والاتصالات بين الأنظمة.</p>
+      <ul>
+        <li>يُستخدم في refresh automation أو scanning أو embedding scenarios</li>
+        <li>يحتاج صلاحيات واضحة ومحدودة</li>
+        <li>لا يغني وحده عن تصميم أمني جيد داخل Power BI</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>معمارية Embedded باختصار عملي</h3>
+      <div class="code-block">
+<span class="cm">1) المستخدم يفتح تطبيقك</span>
+<span class="cm">2) Backend يتحقق من هوية المستخدم وصلاحياته</span>
+<span class="cm">3) Backend يطلب Access Token / Embed Token</span>
+<span class="cm">4) Frontend يحمّل تقرير Power BI داخل iframe أو SDK</span>
+<span class="cm">5) Filters / RLS / role assignment تحدد ما الذي يراه المستخدم</span>
+      </div>
+      <p>الـ token جزء من المعمارية، لكنه ليس المعمارية كلها. الأهم هو: من يطلبه؟ ولأي workspace؟ وبأي scope؟</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>السيناريو</th>
+        <th>الأداة المناسبة</th>
+      </tr>
+      <tr>
+        <td>إجبار Dataset على Refresh من نظام خارجي</td>
+        <td>REST API</td>
+      </tr>
+      <tr>
+        <td>عرض Dashboard داخل تطبيق SaaS لعملائك</td>
+        <td>Embedded Analytics</td>
+      </tr>
+      <tr>
+        <td>عمل Inventory لكل الـ workspaces والتقارير</td>
+        <td>Admin APIs</td>
+      </tr>
+    </table>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>أهم تحذير:</strong> الـ embedding لا يلغي الحاجة إلى RLS/OLS/permission design. إذا بنيت المعمارية على “token يفتح كل شيء” فأنت تصنع ثغرة، لا منتجًا.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>Three different use cases you should not mix up</h3>
+      <ul>
+        <li><strong>REST API:</strong> manage workspaces, reports, datasets, refreshes, and assignments.</li>
+        <li><strong>Embedded Analytics:</strong> place Power BI content inside your own application experience.</li>
+        <li><strong>Admin APIs:</strong> inventory, monitoring, and governance at scale.</li>
+      </ul>
+      <p>A common confusion is saying "we need the API" when the real need is embedding or a simple automation flow.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What a Service Principal really is</h3>
+      <p>A Service Principal is not an encryption method. It is a non-human application identity used for automation and system-to-system communication.</p>
+      <ul>
+        <li>It can be used for refresh automation, tenant scanning, and embedding scenarios.</li>
+        <li>It still needs explicit and limited permissions.</li>
+        <li>It does not replace good model security or good workspace design.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Embedded architecture in one simple flow</h3>
+      <div class="code-block">
+1) User opens your application
+2) Backend checks identity and permissions
+3) Backend requests access or embed token
+4) Frontend loads the Power BI content through SDK or iframe
+5) RLS, filters, and role assignments limit what the user sees
+      </div>
+      <p>The token is part of the architecture, but not the whole architecture. The real design questions are who requests it, for which workspace, and with what scope.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>Scenario</th>
+        <th>Best-fit tool</th>
+      </tr>
+      <tr>
+        <td>Trigger dataset refresh from another system</td>
+        <td>REST API</td>
+      </tr>
+      <tr>
+        <td>Show dashboards inside a SaaS product</td>
+        <td>Embedded Analytics</td>
+      </tr>
+      <tr>
+        <td>Create tenant-wide inventory or governance scans</td>
+        <td>Admin APIs</td>
+      </tr>
+    </table>
+
+    <div class="warn-box">
+      <div class="icon">!</div>
+      <p><strong>Important warning:</strong> embedding does not remove the need for RLS, OLS, or sane permissions. If your design assumes that one token can safely open everything, you are building a vulnerability, not a product.</p>
+    </div>` }],
+  },
+
+  "git-integration": {
+    ...window.LESSONS["git-integration"],
+    eyebrow: "07 · 10 — Git و CI/CD",
+    title: "Git و CI/CD",
+    lede: "Git في Power BI ليس شعارًا. هو أسلوب عمل يبدأ من PBIP/TMDL وينتهي بإطلاق منظم بين Dev و Test و Prod.",
+    en_eyebrow: "07 · 10 — Git & CI/CD",
+    en_lede: "Git in Power BI is a workflow, not a buzzword. It starts with PBIP/TMDL and ends with controlled promotion across environments.",
+    sectionId: "git-integration",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>متى يصبح Git ذا معنى في Power BI؟</h3>
+      <p>عندما تحفظ المشروع كـ <strong>PBIP</strong> أو تعتمد على <strong>TMDL / Tabular metadata</strong>. أما ملف PBIX الثنائي وحده فصعب مراجعته، ومقارنته، ودمجه داخل Git.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما الذي يدخل الريبو؟</h3>
+      <div class="code-block">
+Project/
+  Report/
+  SemanticModel/
+  .gitignore
+  deployment-notes.md
+  release-checklist.md
+      </div>
+      <ul>
+        <li>ملفات النموذج والنصوص القابلة للمقارنة</li>
+        <li>وثائق التغيير والإطلاق</li>
+        <li>Scripts أو pipeline config إن وجدت</li>
+      </ul>
+      <p><strong>ما لا يدخل غالبًا:</strong> ملفات مؤقتة، export binaries، أو أسرار وtokens.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Feature Branch</h4>
+          <p>كل تعديل على Measures أو visuals أو model structure يتم على branch منفصل، لا مباشرة على main.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Review</h4>
+          <p>راجع التغييرات: أسماء Measures، حذف الأعمدة، تغيّر العلاقات، التأثير على RLS، وأي breaking changes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Deploy</h4>
+          <p>بعد الدمج، استخدم Deployment Pipelines أو ALM Toolkit أو scripts لنقل التغييرات بشكل مضبوط إلى Test ثم Prod.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>CI/CD الواقعي في Power BI</h3>
+      <ul>
+        <li>CI هنا يعني التحقق من جودة metadata والملفات والـ naming conventions</li>
+        <li>CD يعني دفع التغييرات بين البيئات مع قواعد واضحة للبيانات والاتصالات</li>
+        <li>ليس المطلوب أن “تبني pipeline” فقط، بل أن تعرف ما الذي يجوز نقله وما الذي يجب أن يبقى environment-specific</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>أفضل نقطة بداية:</strong> لو فريقك صغير، لا تبدأ بمشهد DevOps ضخم. ابدأ بـ PBIP + Git + release checklist + بيئات واضحة. ثم أضف pipeline عندما تصبح الحاجة حقيقية.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>When does Git become meaningful in Power BI?</h3>
+      <p>When the project is stored as <strong>PBIP</strong> or represented through text-friendly metadata such as TMDL. A binary PBIX file alone is difficult to diff, review, and merge in a healthy Git workflow.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What belongs in the repository?</h3>
+      <div class="code-block">
+Project/
+  Report/
+  SemanticModel/
+  .gitignore
+  deployment-notes.md
+  release-checklist.md
+      </div>
+      <ul>
+        <li>Model and report metadata that can be reviewed.</li>
+        <li>Release notes and deployment guidance.</li>
+        <li>Pipeline config or scripts when they exist.</li>
+      </ul>
+      <p>What usually does not belong there: temporary exports, binaries you cannot review meaningfully, and secrets or tokens.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Use feature branches</h4>
+          <p>Measure changes, visual redesign, and model edits should happen on a branch, not directly on main.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Review like a BI engineer</h4>
+          <p>Review naming, deleted columns, changed relationships, RLS impact, and possible breaking changes before merge.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Promote after merge</h4>
+          <p>Once the change is approved, use Deployment Pipelines, ALM Toolkit, or scripts to move it safely into Test and then Prod.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What CI/CD means in the real world</h3>
+      <ul>
+        <li>CI means checking metadata quality, conventions, and readiness to release.</li>
+        <li>CD means moving approved changes between environments with discipline.</li>
+        <li>The main goal is knowing what can move automatically and what must remain environment-specific.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Best starting point:</strong> if your team is small, do not begin with a giant DevOps theater. Start with PBIP, Git, a release checklist, and clear environments. Add pipelines when the need becomes real.</p>
+    </div>` }],
+  },
+
+  "advanced-dataflows": {
+    ...window.LESSONS["advanced-dataflows"],
+    eyebrow: "07 · 11 — Dataflows المتقدمة",
+    title: "Dataflows المتقدمة",
+    lede: "Dataflows ليست فقط “Power Query في السحابة”. هي طبقة reuse وتحضير بيانات مشتركة بين عدة تقارير وفرق.",
+    en_eyebrow: "07 · 11 — Advanced Dataflows",
+    en_lede: "Dataflows are not just “Power Query in the cloud”; they are a reusable preparation layer across reports and teams.",
+    sectionId: "advanced-dataflows",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>متى أستخدم Dataflow بدل Power Query داخل Desktop؟</h3>
+      <p>عندما تكون خطوة التحضير نفسها مطلوبة في <strong>أكثر من Dataset</strong> أو <strong>أكثر من فريق</strong> أو تحتاج أن تعمل في السحابة لا على جهاز محلل واحد.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>الخيار</th>
+        <th>مناسب عندما</th>
+      </tr>
+      <tr>
+        <td>Power Query داخل Desktop</td>
+        <td>تقرير واحد أو نموذج واحد ومصدر بسيط</td>
+      </tr>
+      <tr>
+        <td>Dataflow</td>
+        <td>نفس الـ cleansing logic يجب إعادة استخدامه عبر عدة نماذج</td>
+      </tr>
+      <tr>
+        <td>Dataflow Gen2 / Fabric</td>
+        <td>تريد orchestration أوسع وربطًا أوضح مع lakehouse / warehouse</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>نمط عملي مقترح</h3>
+      <ul>
+        <li><strong>Raw layer:</strong> نسخ البيانات كما هي مع أقل تعديل ممكن</li>
+        <li><strong>Clean layer:</strong> توحيد الأنواع، تنظيف nulls، إصلاح keys</li>
+        <li><strong>Business layer:</strong> جداول جاهزة لإعادة الاستخدام من عدة نماذج</li>
+      </ul>
+      <p>بهذا الشكل لا تكرر نفس خطوات التنظيف في كل PBIX.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>أخطاء شائعة مع Dataflows</h3>
+      <ul>
+        <li>نقل كل شيء إلى Dataflow حتى عندما لا توجد إعادة استخدام حقيقية</li>
+        <li>عدم وجود ownership واضح: من يغيّر؟ ومن يختبر؟</li>
+        <li>بناء layer وسطية بدون naming conventions أو data contracts</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>المهم:</strong> Dataflows ليست سحرًا ولا “أفضل دائمًا” من Power Query Desktop. هي مفيدة عندما تشتري لك <strong>مركزية</strong> و<strong>إعادة استخدام</strong> و<strong>تشغيلًا سحابيًا</strong>. بدون ذلك قد تضيف تعقيدًا إضافيًا فقط.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>When should Dataflows replace Desktop Power Query?</h3>
+      <p>Use a Dataflow when the same preparation logic must be reused across multiple semantic models, multiple reports, or multiple teams, and when execution belongs in the cloud instead of one analyst's machine.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>Option</th>
+        <th>Best fit</th>
+      </tr>
+      <tr>
+        <td>Desktop Power Query</td>
+        <td>One report, one model, relatively isolated preparation.</td>
+      </tr>
+      <tr>
+        <td>Dataflow</td>
+        <td>Reusable cleansing and shaping logic across several downstream models.</td>
+      </tr>
+      <tr>
+        <td>Dataflow Gen2 / Fabric</td>
+        <td>When orchestration and tighter cloud-platform integration matter more.</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>A practical layered pattern</h3>
+      <ul>
+        <li><strong>Raw layer:</strong> land the source with minimal change.</li>
+        <li><strong>Clean layer:</strong> fix data types, nulls, keys, and naming.</li>
+        <li><strong>Business layer:</strong> publish reusable business-ready tables.</li>
+      </ul>
+      <p>This prevents every PBIX file from rewriting the same preparation steps from scratch.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Common mistakes with Dataflows</h3>
+      <ul>
+        <li>Moving everything into Dataflows even when no reuse exists.</li>
+        <li>No clear ownership for who changes and tests the logic.</li>
+        <li>Creating a shared middle layer without naming conventions or data contracts.</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">!</div>
+      <p><strong>Important:</strong> Dataflows are not automatically better than Desktop Power Query. They are valuable when they buy you centralization, reuse, and cloud execution. Without those benefits, they may add complexity without real return.</p>
+    </div>` }],
+  },
+
+  "calculation-groups": {
+    eyebrow: "07 · 12 — Calculation Groups و Reusable Time Intelligence",
+    title: "Calculation Groups و Reusable Time Intelligence",
+    lede: "إذا كنت تكرر YTD و QTD و YoY لكل Measure، فهذه هي اللحظة التي تنتقل فيها من التكرار إلى إعادة الاستخدام.",
+    en_eyebrow: "07 · 12 — Calculation Groups & Reusable Time Intelligence",
+    en_lede: "If you keep repeating YTD, QTD, and YoY for every measure, this is where you move from duplication to reuse.",
+    sectionId: "calculation-groups",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ما المشكلة التي تحلها Calculation Groups؟</h3>
+      <p>بدونها، تنشئ عشرات الـ Measures المتشابهة:</p>
+      <ul>
+        <li>Total Sales</li>
+        <li>Total Sales YTD</li>
+        <li>Total Sales YoY</li>
+        <li>Total Sales YoY %</li>
+        <li>ثم تعيد نفس السلسلة لكل Profit و Quantity و Margin...</li>
+      </ul>
+      <p>Calculation Group تجعل “منطق التحويل” reusable فوق أي base measure.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تصميم بسيط وفعّال</h3>
+      <div class="code-block">
+Time Intelligence
+  - Current
+  - YTD
+  - PY
+  - YoY
+  - YoY %
+      </div>
+      <p>الفكرة: المستخدم يختار calculation item، والـ engine يطبّقه على measure الحالية بدل إنشاء measure جديدة لكل حالة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>متى تستحق الجهد؟</h3>
+      <ul>
+        <li>عند وجود عشرات الـ measures الأساسية</li>
+        <li>عندما تريد توحيد تعريفات Time Intelligence بين الصفحات والفرق</li>
+        <li>عندما يصبح صعبًا صيانة 50 measure متكررة يدويًا</li>
+      </ul>
+      <p>غالبًا ستبنيها عبر Tabular Editor وليس من Desktop فقط.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>أفضل استخدام:</strong> اجعل Calculation Groups طبقة موحدة فوق base measures النظيفة. إذا كانت measures الأصلية نفسها فوضوية، فـ Calculation Groups لن تنقذك.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>What problem do calculation groups solve?</h3>
+      <p>Without them, the same logic gets copied again and again:</p>
+      <ul>
+        <li>Total Sales</li>
+        <li>Total Sales YTD</li>
+        <li>Total Sales PY</li>
+        <li>Total Sales YoY</li>
+        <li>Total Sales YoY %</li>
+      </ul>
+      <p>Then you repeat the same pattern for Profit, Quantity, Margin, and every other important measure. A calculation group turns that repeated transformation logic into one reusable layer that can sit on top of many clean base measures.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>A simple reusable pattern</h3>
+      <div class="code-block">
+Time Intelligence
+  - Current
+  - YTD
+  - PY
+  - YoY
+  - YoY %
+      </div>
+      <p>The user selects a calculation item, and the engine applies that item to the current measure context. You are no longer creating a brand-new measure for every time variation.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>When is the extra setup worth it?</h3>
+      <ul>
+        <li>When the model already has many core measures.</li>
+        <li>When different report pages or teams need the same time-intelligence definitions.</li>
+        <li>When maintaining dozens of near-duplicate measures has become risky and slow.</li>
+      </ul>
+      <p>In practice, most teams build them with Tabular Editor rather than relying on Desktop alone.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Best use case:</strong> keep your base measures clean first, then place calculation groups on top of them. If the original measures are messy, calculation groups will only automate the mess.</p>
+    </div>` }],
+  },
+
+  "enterprise-security": {
+    eyebrow: "07 · 13 — Enterprise Security — RLS و OLS و Permissions",
+    title: "Enterprise Security — RLS و OLS و Permissions",
+    lede: "أغلب مشاكل الأمان في Power BI ليست من نقص الأدوات، بل من خلط المفاهيم: من يرى الصف؟ من يرى العمود؟ من يستطيع Build؟ ومن يصل إلى الـ workspace أصلًا؟",
+    en_eyebrow: "07 · 13 — Enterprise Security — RLS, OLS & Permissions",
+    en_lede: "Most Power BI security issues come from mixing concepts: row access, column access, build rights, and workspace exposure.",
+    sectionId: "enterprise-security",
+    blocks: [{ kind: "html", html: `<table class="compare-table">
+      <tr>
+        <th>المفهوم</th>
+        <th>ما الذي يقيّده؟</th>
+        <th>مثال</th>
+      </tr>
+      <tr>
+        <td>RLS</td>
+        <td>الصفوف</td>
+        <td>مدير المنطقة يرى منطقته فقط</td>
+      </tr>
+      <tr>
+        <td>OLS</td>
+        <td>الأعمدة/الجداول الحساسة</td>
+        <td>إخفاء cost أو salary عن بعض الأدوار</td>
+      </tr>
+      <tr>
+        <td>Build Permission</td>
+        <td>إعادة استخدام الـ semantic model</td>
+        <td>السماح بإنشاء تقارير جديدة فوق dataset</td>
+      </tr>
+      <tr>
+        <td>App / Workspace Access</td>
+        <td>نقطة الدخول للمحتوى</td>
+        <td>المستخدم النهائي يدخل App فقط، لا الـ workspace</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>سيناريو عملي</h3>
+      <p>لديك تقرير مبيعات إقليمي:</p>
+      <ul>
+        <li>مدير القاهرة يرى القاهرة فقط ← RLS</li>
+        <li>جميع المديرين لا يجب أن يروا Cost أو Margin internals ← OLS أو model redesign</li>
+        <li>محلل مركزي يستطيع بناء Report جديد فوق نفس dataset ← Build Permission</li>
+        <li>المستخدم النهائي يدخل App جاهزة فقط ← App access</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>أكثر خطأ شائع:</strong> إعطاء Workspace access واسع ثم القول “لدينا RLS”. الـ RLS لا تعالج وحدها سوء توزيع الصلاحيات أو Build rights أو الوصول المباشر للبيئة الخطأ.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Security design rule:</strong> ابدأ من السؤال “ما أقل صلاحية تكفي هذا الدور؟” وليس “كيف أجعل كل شيء يعمل بسرعة؟”. الأمان الجيد يبدأ من principle of least privilege.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<table class="compare-table">
+      <tr>
+        <th>Layer</th>
+        <th>What it restricts</th>
+        <th>Typical example</th>
+      </tr>
+      <tr>
+        <td>RLS</td>
+        <td>Rows</td>
+        <td>A regional manager sees only their region.</td>
+      </tr>
+      <tr>
+        <td>OLS</td>
+        <td>Sensitive columns or tables</td>
+        <td>Cost or salary fields are hidden from most roles.</td>
+      </tr>
+      <tr>
+        <td>Build permission</td>
+        <td>Reuse of the semantic model</td>
+        <td>An analyst can create a new report on top of the model.</td>
+      </tr>
+      <tr>
+        <td>App or Workspace access</td>
+        <td>Entry point to the content</td>
+        <td>Business users enter through the app, not the workspace.</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>Practical scenario</h3>
+      <p>Imagine a regional sales report:</p>
+      <ul>
+        <li>Cairo managers should only see Cairo rows: that is RLS.</li>
+        <li>Most managers should not see cost or internal margin details: that is OLS or a safer model design.</li>
+        <li>A central BI analyst should be allowed to build a new report on the same model: that is Build permission.</li>
+        <li>End users should consume a finished app instead of browsing the workspace: that is an access decision, not just an RLS decision.</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">!</div>
+      <p><strong>Common mistake:</strong> giving broad workspace access and then saying "we have RLS." RLS does not fix weak workspace permissions, unnecessary Build rights, or the wrong content entry path.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Security design rule:</strong> start from the question "what is the minimum access this role needs?" Strong Power BI security follows least privilege, not maximum convenience.</p>
+    </div>` }],
+  },
+
+  "deployment-pipelines": {
+    eyebrow: "07 · 14 — Deployment Pipelines و ALM Toolkit",
+    title: "Deployment Pipelines و ALM Toolkit",
+    lede: "الاحتراف الحقيقي ليس أن تعدّل التقرير بسرعة، بل أن تنقل التعديل بين البيئات بدون مفاجآت.",
+    en_eyebrow: "07 · 14 — Deployment Pipelines & ALM Toolkit",
+    en_lede: "Professional delivery is not just making a change fast; it is moving that change safely across environments.",
+    sectionId: "deployment-pipelines",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>البيئات الثلاث الأساسية</h3>
+      <ul>
+        <li><strong>Dev:</strong> للتجربة والتطوير</li>
+        <li><strong>Test / UAT:</strong> للتحقق مع أصحاب المصلحة</li>
+        <li><strong>Prod:</strong> للمستخدمين النهائيين فقط</li>
+      </ul>
+      <p>إذا كنت تطوّر مباشرة في Prod، فأنت لا تدير منتجًا؛ أنت تختبر على المستخدمين.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>غيّر في Dev فقط</h4>
+          <p>كل تعديل على model أو report أو permissions يبدأ في بيئة تطوير معزولة.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>اختبر في Test</h4>
+          <p>تحقّق من النتائج، الأداء، RLS، والـ refresh behavior مع بيانات قريبة من الواقع.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>انشر إلى Prod بإجراء مضبوط</h4>
+          <p>استخدم Deployment Pipelines أو ALM Toolkit للمقارنة قبل النقل، ولا تنسَ القواعد الخاصة بمصادر البيانات وparameters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>متى أستخدم ALM Toolkit؟</h3>
+      <p>عندما تحتاج مقارنة دقيقة بين semantic models: measures، relationships، display folders، perspectives، calculation groups.</p>
+      <p>هو ممتاز عندما تريد أن ترى <strong>ما الذي سيتغير بالضبط</strong> قبل الضغط على deploy.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Release checklist:</strong> validation of measures, refresh credentials, RLS roles, app audiences, and rollback plan. وجود rollback plan وحده يميز الفريق الناضج عن الفريق المرتجل.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>The three environments</h3>
+      <ul>
+        <li><strong>Dev:</strong> where change is created and iterated.</li>
+        <li><strong>Test or UAT:</strong> where logic, performance, and stakeholder acceptance are validated.</li>
+        <li><strong>Prod:</strong> where end users consume the approved result.</li>
+      </ul>
+      <p>If you develop directly in Prod, you are not managing a product. You are testing on users.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Change only in Dev</h4>
+          <p>Model edits, report redesign, permission updates, and measure changes should start in an isolated development environment.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Validate in Test</h4>
+          <p>Check result accuracy, performance, refresh behavior, and security roles against realistic data and real stakeholder questions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Promote to Prod deliberately</h4>
+          <p>Use Deployment Pipelines or ALM Toolkit to compare and move changes in a controlled way. Environment-specific settings such as credentials and parameters must be reviewed, not assumed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>When ALM Toolkit becomes essential</h3>
+      <p>Use it when you need a precise semantic-model diff before release: measures, relationships, display folders, perspectives, translations, or calculation groups.</p>
+      <p>It is especially valuable when the real question is not "can we deploy?" but "what exactly will change if we do?"</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Release checklist:</strong> validate measures, refresh credentials, security roles, app audiences, and a rollback plan. Mature teams are distinguished by how they prepare for mistakes, not by pretending mistakes never happen.</p>
+    </div>` }],
+  },
+
+  "monitoring-adoption": {
+    eyebrow: "07 · 15 — Monitoring و Adoption و Refresh Operations",
+    title: "Monitoring و Adoption و Refresh Operations",
+    lede: "بعد النشر يبدأ شغل جديد بالكامل: من يستخدم التقرير؟ هل الـ refresh ثابت؟ أين يفشل المستخدمون؟ وما الصفحة التي لا يفتحها أحد؟",
+    en_eyebrow: "07 · 15 — Monitoring, Adoption & Refresh Operations",
+    en_lede: "After release, a new job begins: who uses the report, whether refresh is stable, and where adoption or operations are failing.",
+    sectionId: "monitoring-adoption",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>4 مؤشرات تشغيل يجب مراقبتها</h3>
+      <ul>
+        <li><strong>Refresh Success Rate</strong></li>
+        <li><strong>Average Refresh Duration</strong></li>
+        <li><strong>Active Users / Views</strong></li>
+        <li><strong>Pages أو visuals التي لا يستخدمها أحد</strong></li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>أسئلة Adoption الصحيحة</h3>
+      <ul>
+        <li>هل المستخدمون يعودون للتقرير أسبوعيًا أم فقط يوم الإطلاق؟</li>
+        <li>هل التقرير يساعد قرارًا حقيقيًا أم مجرد dashboard جميلة؟</li>
+        <li>ما أكثر سؤال يطرحه المستخدمون رغم وجود التقرير؟</li>
+      </ul>
+      <p>إذا استمر السؤال خارج التقرير، فغالبًا التصميم أو الـ semantics لا يجيبون السؤال المهم.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Operational Ownership</h3>
+      <p>كل نموذج يحتاج مالكًا واضحًا:</p>
+      <ul>
+        <li>من يراقب فشل الـ refresh؟</li>
+        <li>من يعتمد تغييرات الـ business logic؟</li>
+        <li>من يتعامل مع تغيّر schema من المصدر؟</li>
+      </ul>
+      <p>غياب هذا التحديد يحوّل أي dashboard ناجحة إلى “مشكلة مشتركة لا يملكها أحد”.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>خطأ شائع:</strong> قياس النجاح بعدد المشاهدات فقط. قد يحصل التقرير على 1000 view لأنه التقرير الوحيد المتاح، لا لأنه الأفضل. النجاح الحقيقي هو: استخدام متكرر + ثقة + قرار أفضل.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>Four operational signals to monitor</h3>
+      <ul>
+        <li><strong>Refresh success rate</strong></li>
+        <li><strong>Average refresh duration</strong></li>
+        <li><strong>Active users and repeat views</strong></li>
+        <li><strong>Pages or visuals nobody actually uses</strong></li>
+      </ul>
+      <p>These measures tell you whether the report is stable, whether it is adopted, and whether parts of it are wasted complexity.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>The right adoption questions</h3>
+      <ul>
+        <li>Do users come back weekly, or only during launch week?</li>
+        <li>Does the report support a real decision, or is it just a nice-looking dashboard?</li>
+        <li>What question do users still ask outside the report even after the report was published?</li>
+      </ul>
+      <p>If the same question keeps coming up outside the report, the semantic layer or the page design is probably not answering the business need clearly enough.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Operational ownership</h3>
+      <p>Every important model needs a named owner:</p>
+      <ul>
+        <li>Who watches refresh failures?</li>
+        <li>Who approves business-logic changes?</li>
+        <li>Who handles source-schema changes?</li>
+      </ul>
+      <p>Without ownership, even a successful dashboard slowly turns into a shared problem that nobody truly maintains.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">!</div>
+      <p><strong>Common mistake:</strong> measuring success by total views alone. A report can get many views because it is the only available report, not because it is trusted or useful. Real success is repeat usage plus confidence plus better decisions.</p>
+    </div>` }],
+  },
+
+  "fabric-dataflows": {
+    eyebrow: "07 · 16 — Fabric و Dataflows Gen2",
+    title: "Fabric و Dataflows Gen2",
+    lede: "إذا كان Power BI جزءًا من منصة بيانات أكبر، فهنا يبدأ الحديث عن OneLake و Dataflows Gen2 والطبقات السحابية الأحدث.",
+    en_eyebrow: "07 · 16 — Fabric & Dataflows Gen2",
+    en_lede: "If Power BI is part of a broader data platform, this is where OneLake and Dataflows Gen2 enter the picture.",
+    sectionId: "fabric-dataflows",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>لماذا يهمك Fabric أصلًا؟</h3>
+      <p>لأن بعض الفرق لم تعد تبني التقارير فقط، بل تبني منصة كاملة: ingestion + transformation + storage + semantic models + reports.</p>
+      <p>Fabric يقرّب هذه الطبقات في بيئة واحدة بدل التنقل بين أدوات كثيرة منفصلة.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>الخيار</th>
+        <th>متى تختاره؟</th>
+      </tr>
+      <tr>
+        <td>Power Query داخل Desktop</td>
+        <td>تحضير بسيط محلي لتقرير أو نموذج واحد</td>
+      </tr>
+      <tr>
+        <td>Dataflow Gen1</td>
+        <td>إعادة استخدام خطوات تحضير البيانات على مستوى الخدمة</td>
+      </tr>
+      <tr>
+        <td>Dataflow Gen2 / Fabric</td>
+        <td>عندما تحتاج flow أقرب لمنصة بيانات، وربطًا أوضح مع OneLake والطبقات السحابية</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>قرار ناضج، لا قرار موضة</h3>
+      <ul>
+        <li>إذا كنت فريقًا صغيرًا بمصدرين بيانات فقط، ربما Fabric مبكر عليك</li>
+        <li>إذا كانت لديك فرق متعددة ونماذج كثيرة واعتماد كبير على السحابة، يصبح Fabric أكثر منطقية</li>
+        <li>اسأل دائمًا: هل هذا يحل مشكلة تنسيق وتشغيل حقيقية، أم فقط يضيف طبقة جديدة؟</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>أفضل موقف تعليمي:</strong> تعلّم الأساس أولًا: model، DAX، governance. ثم ادخل Fabric كامتداد طبيعي لمنصة البيانات، لا كبديل مبكر عن فهم Power BI نفسه.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>Why Fabric matters at all</h3>
+      <p>Some teams no longer build just reports. They build a data platform that includes ingestion, transformation, storage, semantic models, and reporting.</p>
+      <p>Fabric matters when those layers need to work together more closely in the cloud instead of living across disconnected tools.</p>
+    </div>
+
+    <table class="compare-table">
+      <tr>
+        <th>Option</th>
+        <th>Best fit</th>
+      </tr>
+      <tr>
+        <td>Desktop Power Query</td>
+        <td>Simple local preparation for one report or one model.</td>
+      </tr>
+      <tr>
+        <td>Dataflow Gen1</td>
+        <td>Reusable preparation logic at the service level.</td>
+      </tr>
+      <tr>
+        <td>Dataflow Gen2 / Fabric</td>
+        <td>Broader orchestration, OneLake alignment, and a stronger cloud data-platform workflow.</td>
+      </tr>
+    </table>
+
+    <div class="lesson-card">
+      <h3>A mature decision, not a fashion choice</h3>
+      <ul>
+        <li>If your team is small and your source landscape is simple, Fabric may be too early.</li>
+        <li>If multiple teams reuse the same data and need stronger cloud coordination, it becomes more compelling.</li>
+        <li>The real question is always: what operating problem does this solve?</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Best learning path:</strong> master modeling, DAX, and governance first. Then learn Fabric as an extension of a real data-platform need, not as a shortcut around understanding Power BI fundamentals.</p>
+    </div>` }],
+  },
+
+  "project-retail-starter": {
+    eyebrow: "10 · 01 — مشروع البداية — Pizza Place Sales",
+    title: "مشروع البداية — Pizza Place Sales",
+    lede: "هذا أفضل مشروع بداية في Power BI: dataset صغيرة نسبيًا، متعددة الجداول، ومليانة فرص حقيقية للتنظيف والدمج وبناء KPIs تشغيلية من غير تعقيد مبكر.",
+    en_eyebrow: "10 · 01 — Starter Project — Pizza Place Sales",
+    en_lede: "A strong beginner capstone: small enough to finish, rich enough to teach joins, modeling, and operational KPIs.",
+    sectionId: "project-retail-starter",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>سيناريو المشروع</h3>
+      <p>أنت محلل بيانات لدى مطعم بيتزا يريد إجابات واضحة عن المبيعات، أوقات الذروة، أفضل المنتجات، والأصناف التي تستهلك تكلفة وجهد بلا عائد كافٍ.</p>
+      <p>الـ dataset مقسمة بالفعل إلى أكثر من جدول، لذلك هي ممتازة لتعلّم بناء model صحيحة بدل الاكتفاء برسم charts سريعة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ملفات البيانات الفعلية</h3>
+      <table class="compare-table">
+        <tr>
+          <th>الملف</th>
+          <th>الدور</th>
+        </tr>
+        <tr>
+          <td>orders.csv</td>
+          <td>رأس الطلب: رقم الطلب، التاريخ، الوقت</td>
+        </tr>
+        <tr>
+          <td>order_details.csv</td>
+          <td>سطر الطلب: pizza_id والكمية لكل order</td>
+        </tr>
+        <tr>
+          <td>pizzas.csv</td>
+          <td>السعر والحجم وربط pizza_id مع النوع</td>
+        </tr>
+        <tr>
+          <td>pizza_types.csv</td>
+          <td>الاسم والفئة والمكوّنات</td>
+        </tr>
+        <tr>
+          <td>data_dictionary.csv</td>
+          <td>مرجع سريع للحقول</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما الذي يجب أن تبنيه؟</h3>
+      <ul>
+        <li>Fact table على مستوى سطر الطلب بعد دمج orders مع order_details</li>
+        <li>Dimension للبيتزا بعد دمج pizzas مع pizza_types</li>
+        <li>Date table واضحة + اشتقاق الساعة واليوم واسم الشهر</li>
+        <li>صفحتان على الأقل: Sales Overview + Menu & Operations</li>
+        <li>KPIs أساسية: Revenue, Orders, Pizzas Sold, Average Order Value, Average Pizzas per Order, Peak Hour</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>وحّد الـ grain</h4>
+          <p>ابدأ من order_details كسجل أساسي، ثم اربطه مع orders للحصول على التاريخ والوقت، وبعدها مع pizzas وpizza_types للحصول على السعر والاسم والفئة.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>حوّل البيانات إلى أسئلة تشغيلية</h4>
+          <p>لا تكتفِ بإجمالي المبيعات. اسأل: متى يزيد الضغط؟ ما أكثر الأحجام مبيعًا؟ ما الأصناف التي تحقق إيرادًا عاليًا؟ وما الأصناف التي مبيعاتها ضعيفة؟</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>ابنِ report مفهومة لمدير المطعم</h4>
+          <p>الهدف هنا ليس dashboard جميلة فقط، بل تقرير يساعد مدير التشغيل على اتخاذ قرار حول الجدول الزمني والـ menu mix والعروض.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Definition of Done</h3>
+      <ul>
+        <li>العلاقات واضحة، ولا يوجد duplicated revenue بسبب دمج خاطئ</li>
+        <li>يمكنك شرح لماذا اخترت line-level fact بدل الاكتفاء بجدول orders فقط</li>
+        <li>يوجد visual واحد على الأقل يوضح أوقات الذروة، وvisual آخر يوضح أفضل/أضعف الأصناف</li>
+        <li>كل KPI لها تعريف business واضح، لا مجرد رقم معروض على الشاشة</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset Source Pack</h3>
+      <ul>
+        <li><strong>رابط التحميل المباشر:</strong> <a href="https://maven-datasets.s3.amazonaws.com/Pizza%20Place%20Sales/Pizza%20Place%20Sales.zip" target="_blank" rel="noopener noreferrer">Pizza Place Sales.zip</a></li>
+        <li><strong>صفحة المصدر المستقرة:</strong> <a href="https://mavenanalytics.io/data-playground/pizza-place-sales" target="_blank" rel="noopener noreferrer">Maven Analytics — Pizza Place Sales</a></li>
+        <li><strong>نوع البيانات:</strong> CSV متعددة الجداول، مناسبة جدًا لتعلّم joins وstar schema على حجم عملي لكن غير مرهق.</li>
+        <li><strong>المصدر كما تصفه Maven:</strong> سنة كاملة من مبيعات مطعم بيتزا خيالي، مع تفاصيل عن التاريخ والوقت والنوع والحجم والسعر والمكوّنات.</li>
+        <li><strong>آخر تحقق من الرابط:</strong> 2026-04-22. تم تصحيح الرابط إلى صيغة المسافات الصحيحة لأن نسخة <code>+</code> لا تعمل دائمًا.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Advanced DAX Formulas المطلوبة</h3>
+      <p><strong>في Power BI Desktop، أضف هذه الـ Measures:</strong></p>
+      <div class="code-block">
+<span class="cm">-- 1. الإيرادات الأساسية</span>
+<span class="kw">Total Revenue</span> = <span class="fn">SUMX</span>(OrderDetails, OrderDetails[Quantity] * RELATED(Pizzas[Price]))
+
+<span class="cm">-- 2. عدد الطلبات (لا الخطوط)</span>
+<span class="kw">Total Orders</span> = <span class="fn">DISTINCTCOUNT</span>(OrderDetails[OrderID])
+
+<span class="cm">-- 3. متوسط قيمة الطلب</span>
+<span class="kw">Average Order Value</span> = <span class="fn">DIVIDE</span>([Total Revenue], [Total Orders])
+
+<span class="cm">-- 4. متوسط عدد البيتزا لكل طلب</span>
+<span class="kw">Avg Pizzas per Order</span> = <span class="fn">DIVIDE</span>(<span class="fn">SUM</span>(OrderDetails[Quantity]), [Total Orders])
+
+<span class="cm">-- 5. الساعة الأكثر ازدحاماً</span>
+<span class="kw">Peak Hour</span> = <span class="fn">MAXX</span>(
+    <span class="fn">VALUES</span>(Orders[Hour]),
+    <span class="fn">CALCULATE</span>([Total Revenue])
+)
+
+<span class="cm">-- 6. أفضل نوع بيتزا (بالإيرادات)</span>
+<span class="kw">Top Pizza Category</span> = <span class="fn">MAXX</span>(
+    <span class="fn">VALUES</span>(PizzaTypes[Category]),
+    <span class="fn">CALCULATE</span>([Total Revenue])
+)
+
+<span class="cm">-- 7. مقارنة أسبوعية: هذا الأسبوع مقابل الأسبوع الماضي</span>
+<span class="kw">Week over Week Growth %</span> =
+<span class="fn">VAR</span> CurrentWeek = [Total Revenue]
+<span class="fn">VAR</span> PrevWeek = <span class="fn">CALCULATE</span>([Total Revenue], <span class="fn">DATEADD</span>(Orders[Date], -7, DAY))
+<span class="fn">RETURN</span>
+    <span class="fn">DIVIDE</span>(CurrentWeek - PrevWeek, PrevWeek) * 100
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>نموذج Dashboard المتوقع</h3>
+      <p><strong>صفحة 1: Sales Overview</strong></p>
+      <div class="code-block">
+┌─────────────────────────────────────────┐
+│ Pizza Place Sales Dashboard             │
+├─────────────────────────────────────────┤
+│                                         │
+│ Total Revenue: $817,860                 │
+│ Total Orders: 21,350                    │
+│ Avg Order Value: $38.30                 │
+│ Week-over-Week: +12.5%                  │
+│                                         │
+├─────────────────────────────────────────┤
+│ Revenue by Day of Week (Bar Chart)      │
+│ [Wed  Thu  Fri  Sat  Sun  Mon  Tue]     │
+│ [###  ###  ###  ███  ███  ##   ##]      │
+├─────────────────────────────────────────┤
+│ Orders by Hour (Line Chart)             │
+│ [Peak at 12-1 PM and 6-7 PM]            │
+├─────────────────────────────────────────┤
+│ Top 5 Pizzas by Revenue                 │
+│ 1. The Greek (14% revenue)              │
+│ 2. Spicy Sicilian (12%)                 │
+│ 3. The Big Meat (11%)                   │
+│ 4. The Prosciutto (10%)                 │
+│ 5. Thai Chicken (9%)                    │
+└─────────────────────────────────────────┘
+
+صفحة 2: Menu Analysis
+┌─────────────────────────────────────────┐
+│ Pizza Menu Performance                  │
+├─────────────────────────────────────────┤
+│ Revenue by Category                     │
+│ [Classic  Chicken  Meat  Veggie]        │
+│ [40%      25%      20%    15%]          │
+│                                         │
+│ Size Distribution (Pie Chart)           │
+│ [Large 40% | Medium 35% | Small 25%]    │
+│                                         │
+│ Worst Performers (بدون مبيعات):        │
+│ - The Brie Carre (طلب واحد فقط!)       │
+│ - The Calabrese (طلبان فقط)             │
+└─────────────────────────────────────────┘
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Business Insights المتوقعة</h3>
+      <p><strong>يجب أن تكتشف من التحليل:</strong></p>
+      <ul>
+        <li>🔝 أوقات الذروة (متى يزيد عدد الطلبات؟) → تدرب موظفين إضافيين</li>
+        <li>📊 بيتزا غير مربحة (مثل Brie Carre) → إزل من الـ menu؟</li>
+        <li>💰 أفضل فئة (مثل Classic) → ركز التسويق عليها</li>
+        <li>🔄 متوسط الطلب = 2 بيتزة → الـ Bundle deals ممكن تزيد من 2 ل 3</li>
+        <li>📈 اتجاهات أسبوعية (جمعة-سبت أقوى) → رفع الأسعار في نهاية الأسبوع؟</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>أفضل استخدام لهذا المشروع:</strong> اجعله أول قطعة Portfolio حقيقية لك، لأنه يثبت أنك تستطيع قراءة عدة جداول، دمجها، وبناء model نظيفة، لا مجرد نسخ dashboard جاهزة.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>Project scenario</h3>
+      <p>You are the analyst for a pizza business that wants clear answers about sales, peak hours, best-selling products, and menu items that consume effort without enough return.</p>
+      <p>The dataset already comes as multiple tables, which makes it perfect for learning model design instead of stopping at quick charts.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Actual dataset files</h3>
+      <table class="compare-table">
+        <tr>
+          <th>File</th>
+          <th>Role</th>
+        </tr>
+        <tr>
+          <td>orders.csv</td>
+          <td>Order header with order id, date, and time.</td>
+        </tr>
+        <tr>
+          <td>order_details.csv</td>
+          <td>Order lines with pizza id and quantity.</td>
+        </tr>
+        <tr>
+          <td>pizzas.csv</td>
+          <td>Price, size, and pizza-to-type mapping.</td>
+        </tr>
+        <tr>
+          <td>pizza_types.csv</td>
+          <td>Pizza name, category, and ingredients.</td>
+        </tr>
+        <tr>
+          <td>data_dictionary.csv</td>
+          <td>Quick field reference.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What you should build</h3>
+      <ul>
+        <li>A line-level fact table by combining orders with order_details.</li>
+        <li>A clean pizza dimension by combining pizzas with pizza_types.</li>
+        <li>A proper date table plus derived hour, weekday, and month attributes.</li>
+        <li>At least two report pages: Sales Overview and Menu or Operations.</li>
+        <li>Core KPIs such as Revenue, Orders, Pizzas Sold, Average Order Value, Average Pizzas per Order, and Peak Hour.</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Unify the grain</h4>
+          <p>Start from order_details as the analytical grain, then attach order date and time from orders, and product attributes from pizzas and pizza_types.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Translate the data into operating questions</h4>
+          <p>Go beyond total sales. Ask when demand spikes, which sizes sell best, which categories drive revenue, and which menu items underperform.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Design for a restaurant manager</h4>
+          <p>The report should help staffing, menu mix, and promotion decisions. It is not just a student exercise in colorful visuals.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Definition of Done</h3>
+      <ul>
+        <li>Relationships are clean and revenue is not duplicated by bad joins.</li>
+        <li>You can explain why line-level grain is better than stopping at order-level totals.</li>
+        <li>At least one visual explains peak demand, and another explains best and worst menu items.</li>
+        <li>Every KPI has a business meaning, not just a formula.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset Source Pack</h3>
+      <ul>
+        <li><strong>Direct download:</strong> <a href="https://maven-datasets.s3.amazonaws.com/Pizza%20Place%20Sales/Pizza%20Place%20Sales.zip" target="_blank" rel="noopener noreferrer">Pizza Place Sales.zip</a></li>
+        <li><strong>Source page:</strong> <a href="https://mavenanalytics.io/data-playground/pizza-place-sales" target="_blank" rel="noopener noreferrer">Maven Analytics - Pizza Place Sales</a></li>
+        <li><strong>Dataset type:</strong> multi-table CSV package that is ideal for early star-schema practice without overwhelming scale.</li>
+        <li><strong>Last verified:</strong> 2026-04-22.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Portfolio angle:</strong> this is an excellent first showcase project because it proves that you can read multiple tables, join them correctly, and build a business-friendly model instead of copying a finished dashboard.</p>
+    </div>` }],
+  },
+
+  "project-ops-intermediate": {
+    eyebrow: "10 · 02 — مشروع متوسط — Online Chess Games",
+    title: "مشروع متوسط — Online Chess Games",
+    lede: "هذا مشروع متوسط مختلف وذكي: dataset من جدول واحد، لكن قيمتها التعليمية عالية جدًا لأنها تجبرك على بناء طبقات تحليلية مشتقة بدل الاعتماد على shape جاهز.",
+    en_eyebrow: "10 · 02 — Intermediate Project — Online Chess Games",
+    en_lede: "A strong intermediate project: one raw table, but plenty of derived dimensions, segmentation, and behavioral analysis.",
+    sectionId: "project-ops-intermediate",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>سيناريو المشروع</h3>
+      <p>أنت تبني تقريرًا تحليليًا لبيانات أكثر من 20 ألف مباراة شطرنج من Lichess. المطلوب ليس مجرد عرض من فاز، بل فهم تأثير rating difference وtime control والافتتاحيات على نتائج المباريات.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>شكل البيانات</h3>
+      <ul>
+        <li>ملف واحد فقط: <code>chess_games.csv</code></li>
+        <li>كل صف يمثل مباراة واحدة</li>
+        <li>حقول مهمة: winner, victory_status, turns, time_increment, white_rating, black_rating, opening_shortname, opening_variation, moves</li>
+      </ul>
+      <p>هذا يعني أن التحدي ليس في الـ joins، بل في تحويل الجدول الخام إلى model تحليلية مفهومة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما الذي يجب أن تبنيه؟</h3>
+      <ul>
+        <li>طبقات مشتقة مثل Rating Band وResult Type وHigher Rated Color وTime Control Category</li>
+        <li>صفحتان أو ثلاث: Match Overview + Openings Lab + Rating & Time Control</li>
+        <li>KPIs مثل: White Win %, Draw %, Average Turns, Upset Rate, Higher-Rated Win %, Most Used Openings</li>
+        <li>Drill واضح من الافتتاحية الرئيسية إلى variation</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>ابنِ أعمدة تحليلية مشتقة</h4>
+          <p>استخرج فئات rating، وحدد من هو الأعلى تقييمًا، وصنّف الوقت من الحقل <code>time_increment</code> إلى rapid / blitz / bullet أو أي تقسيم منطقي تختاره.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>افصل بين الأسئلة</h4>
+          <p>سؤال النتائج غير سؤال الافتتاحيات غير سؤال التوازن بين اللون الأبيض والأسود. كل صفحة يجب أن تجيب فئة محددة من الأسئلة.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>لا تتورط في parsing كامل للمجال النصي moves منذ البداية</h4>
+          <p>يمكن استخدام moves كامتداد متقدم لاحقًا، لكن المشروع المتوسط ينجح أصلًا عبر opening fields وratings وresult logic.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Definition of Done</h3>
+      <ul>
+        <li>يوجد فصل واضح بين raw columns والأعمدة التحليلية المشتقة</li>
+        <li>يمكن للمستخدم معرفة هل اللاعب الأعلى تقييمًا يفوز دائمًا أم لا</li>
+        <li>يوجد تحليل واحد على الأقل للـ openings، وتحليل آخر للـ time controls</li>
+        <li>التقرير لا يعرض moves الخام كحائط نصي بلا معنى</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset Source Pack</h3>
+      <ul>
+        <li><strong>رابط التحميل المباشر:</strong> <a href="https://maven-datasets.s3.amazonaws.com/Online%20Chess%20Games/Online%20Chess%20Games.zip" target="_blank" rel="noopener noreferrer">Online Chess Games.zip</a></li>
+        <li><strong>صفحة المصدر المستقرة:</strong> <a href="https://mavenanalytics.io/data-playground/online-chess-games" target="_blank" rel="noopener noreferrer">Maven Analytics — Online Chess Games</a></li>
+        <li><strong>خلفية البيانات:</strong> بيانات أكثر من 20 ألف مباراة من Lichess، مع winner وratings وافتتاحيات ومعلومات الوقت والحركات.</li>
+        <li><strong>لماذا هذا مشروع متوسط ممتاز؟</strong> لأنه يدرّبك على بناء semantic layer بنفسك: buckets, labels, derived flags, and analytical groupings.</li>
+        <li><strong>آخر تحقق من الرابط:</strong> 2026-04-22. تم تصحيح الرابط إلى صيغة المسافات الصحيحة بدل النسخة غير المستقرة.</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>معيار الفشل هنا:</strong> أن يبقى التقرير مجرد counts وpie charts للفائز، بدون أي منطق تحليلي حول rating gap أو الافتتاحيات أو الوقت. القوة الحقيقية في هذا المشروع تأتي من التحويل الذكي للجدول الخام.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>Project scenario</h3>
+      <p>You are building an analytical report for more than 20,000 Lichess games. The goal is not just to count wins, but to explain how rating difference, time control, and opening choice affect results.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Raw data shape</h3>
+      <ul>
+        <li>One main file: <code>chess_games.csv</code></li>
+        <li>Each row represents a single game.</li>
+        <li>Important fields include winner, victory_status, turns, time_increment, white_rating, black_rating, opening_shortname, opening_variation, and moves.</li>
+      </ul>
+      <p>The challenge here is not joins. The challenge is converting a raw table into an analytical model with meaningful derived categories.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What you should build</h3>
+      <ul>
+        <li>Derived fields such as Rating Band, Result Type, Higher Rated Color, and Time Control Category.</li>
+        <li>Two or three report pages: Match Overview, Openings Lab, and Rating or Time Control Analysis.</li>
+        <li>KPIs such as White Win %, Draw %, Average Turns, Upset Rate, Higher-Rated Win %, and Most Used Openings.</li>
+        <li>A drill path from opening family to variation.</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Create analytical columns deliberately</h4>
+          <p>Group ratings into bands, determine which player was higher rated, and transform time_increment into clear game-speed buckets such as blitz, rapid, or bullet.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Separate the analytical questions</h4>
+          <p>Result distribution is one question, opening behavior is another, and color or rating advantage is another. Let each page answer a focused family of questions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Do not over-parse the moves text too early</h4>
+          <p>The moves column can become an advanced extension later, but the intermediate version of the project already succeeds through rating logic, opening fields, and result analysis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Definition of Done</h3>
+      <ul>
+        <li>Raw fields and derived analytical columns are clearly separated.</li>
+        <li>The user can see whether the higher-rated player actually wins most of the time.</li>
+        <li>There is at least one opening analysis and one time-control analysis.</li>
+        <li>The report does not dump the moves text into visuals without analytical purpose.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset Source Pack</h3>
+      <ul>
+        <li><strong>Direct download:</strong> <a href="https://maven-datasets.s3.amazonaws.com/Online%20Chess%20Games/Online%20Chess%20Games.zip" target="_blank" rel="noopener noreferrer">Online Chess Games.zip</a></li>
+        <li><strong>Source page:</strong> <a href="https://mavenanalytics.io/data-playground/online-chess-games" target="_blank" rel="noopener noreferrer">Maven Analytics - Online Chess Games</a></li>
+        <li><strong>Why it is a strong intermediate project:</strong> it forces you to create semantic layers, buckets, flags, and analytical groupings by yourself.</li>
+        <li><strong>Last verified:</strong> 2026-04-22.</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">!</div>
+      <p><strong>Failure pattern:</strong> turning this project into simple counts and pie charts of winners. The real value comes from transforming the raw table into insight about rating gaps, openings, and time-control behavior.</p>
+    </div>` }],
+  },
+
+  "project-enterprise-advanced": {
+    eyebrow: "10 · 03 — مشروع متقدم — Airbnb Market Intelligence",
+    title: "مشروع متقدم — Airbnb Market Intelligence",
+    lede: "هذا مشروع متقدم فعليًا: بيانات listings كبيرة، جدول reviews ضخم، أبعاد جغرافية، وأسئلة سوقية تحتاج model ذكية وأداء منضبط لا مجرد صفحة جميلة.",
+    en_eyebrow: "10 · 03 — Advanced Project — Airbnb Market Intelligence",
+    en_lede: "A true advanced project: large-scale listings and review data, geography, behavioral metrics, and performance-aware modeling.",
+    sectionId: "project-enterprise-advanced",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>سيناريو المشروع</h3>
+      <p>أنت تبني لوحة تحليلات لسوق الإيجارات القصيرة عبر مدن متعددة. المطلوب فهم التسعير، الجودة، انتشار الـ superhosts، الفروقات بين المدن والأحياء، وعلاقة reviews بجودة السوق.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>البيانات الفعلية</h3>
+      <ul>
+        <li><code>Listings.csv</code>: أكثر من 250 ألف listing عبر 10 مدن رئيسية</li>
+        <li><code>Reviews.csv</code>: ملايين الـ reviews التاريخية</li>
+        <li><code>Listings_data_dictionary.csv</code>: توصيف الحقول</li>
+      </ul>
+      <p>أول صف فعلي في البيانات يوضح حقول مثل <code>city</code> و<code>neighbourhood</code> و<code>latitude</code> و<code>longitude</code> و<code>room_type</code> و<code>price</code> وحقول ratings وخصائص المضيف.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما الذي يجب أن تبنيه؟</h3>
+      <ul>
+        <li>Model تفصل بوضوح بين listing-level metrics وreview-level activity</li>
+        <li>Date table لقراءة اتجاهات الـ reviews عبر الزمن</li>
+        <li>صفحة Market Overview + صفحة City Benchmark + صفحة Listing/Host Quality</li>
+        <li>KPIs مثل: Listings Count, Average Price, Review Volume, Average Rating, Superhost Share, Instant Bookable Share</li>
+        <li>خريطة أو تحليل جغرافي واحد على الأقل مبني على latitude/longitude</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>احترم الـ grain</h4>
+          <p>الـ listing ليست review. لا تخلط مؤشرات القوائم مع جدول المراجعات مباشرة دون فهم أثر التكرار على الأسعار والتقييمات والنسب.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>خفف الحمل على التقرير</h4>
+          <p>ليس مطلوبًا أن تعرض ملايين reviews الخام في كل visual. أحيانًا يكون الأفضل بناء جداول ملخصة حسب الشهر أو المدينة أو listing_id.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>اربط التحليل بقرار واضح</h4>
+          <p>هل المدينة ذات السعر الأعلى تحقق أيضًا تقييمات أعلى؟ هل الـ superhosts يسيطرون على مناطق بعينها؟ هل الأحياء ذات السعر المرتفع تتلقى reviews أكثر؟</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Rubric التقييم</h3>
+      <table class="compare-table">
+        <tr>
+          <th>المحور</th>
+          <th>ما الذي يثبت الجودة؟</th>
+        </tr>
+        <tr>
+          <td>Model Design</td>
+          <td>فصل واضح بين listing grain وreview grain وعدم تكرار المقاييس بسبب علاقة غير منضبطة</td>
+        </tr>
+        <tr>
+          <td>Performance</td>
+          <td>وجود قرار واعٍ حول التلخيص المسبق أو تقليل visual الثقيلة على reviews</td>
+        </tr>
+        <tr>
+          <td>Business Story</td>
+          <td>وجود 2 أو 3 أسئلة سوقية حقيقية يجيب عنها التقرير بوضوح</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>وجود صفحة benchmark واضحة وصفحة جغرافية وصفف KPIs قابلة للشرح</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset Source Pack</h3>
+      <ul>
+        <li><strong>رابط التحميل المباشر:</strong> <a href="https://maven-datasets.s3.amazonaws.com/Airbnb/Airbnb%20Data.zip" target="_blank" rel="noopener noreferrer">Airbnb Data.zip</a></li>
+        <li><strong>صفحة التحدي/الوصف:</strong> <a href="https://mavenanalytics.io/challenges/maven-vacation-challenge" target="_blank" rel="noopener noreferrer">Maven Vacation Challenge</a></li>
+        <li><strong>ما الذي يجعلها dataset متقدمة؟</strong> حجم كبير، مدن متعددة، reviews تاريخية، وتحليل جغرافي وسلوكي في نفس الوقت.</li>
+        <li><strong>ماذا تقرر مبكرًا؟</strong> هل ستحتفظ بجدول reviews كاملًا، أم ستبني طبقة summaries شهرية أو حسب المدينة/الحي لتخفيف الأداء؟</li>
+        <li><strong>آخر تحقق من الرابط:</strong> 2026-04-22. تم استخدام صيغة الرابط الصحيحة بالمئات المرمزة بدل الصيغة التي قد تفشل أحيانًا.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>النجاح هنا لا يقاس بكثرة الصفحات.</strong> النجاح أن تبني model تفصل بين grains بوضوح، وتبرر كل KPI، وتمنع الأداء من الانهيار رغم حجم البيانات.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>Project scenario</h3>
+      <p>You are building a market-intelligence dashboard for short-term rental listings across multiple cities. The objective is to understand pricing, quality, superhost concentration, neighborhood differences, and the relationship between review activity and market performance.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Actual dataset shape</h3>
+      <ul>
+        <li><code>Listings.csv</code>: listing-level attributes across major cities.</li>
+        <li><code>Reviews.csv</code>: historical review activity at much larger scale.</li>
+        <li><code>Listings_data_dictionary.csv</code>: field definitions.</li>
+      </ul>
+      <p>The first modeling decision is already advanced: listing grain is not review grain, and mixing them carelessly will distort price, rating, and count metrics.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What you should build</h3>
+      <ul>
+        <li>A model that clearly separates listing-level metrics from review-level activity.</li>
+        <li>A date table for review trends over time.</li>
+        <li>A Market Overview page, a City Benchmark page, and a Listing or Host Quality page.</li>
+        <li>KPIs such as Listings Count, Average Price, Review Volume, Average Rating, Superhost Share, and Instant Bookable Share.</li>
+        <li>At least one geographic view based on latitude and longitude.</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Respect the grain</h4>
+          <p>A listing is not a review. Do not join review history directly into listing metrics without understanding how repetition affects averages, counts, and ratios.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Reduce report pressure where needed</h4>
+          <p>You do not have to expose every raw review row in the final report. Sometimes a summarized monthly or city-level layer is the more professional performance decision.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Tie the analysis to decisions</h4>
+          <p>Which cities are expensive but still highly rated? Where are superhosts concentrated? Which neighborhoods combine price strength with healthy review activity?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Assessment rubric</h3>
+      <table class="compare-table">
+        <tr>
+          <th>Area</th>
+          <th>What proves quality</th>
+        </tr>
+        <tr>
+          <td>Model design</td>
+          <td>Listing grain and review grain are clearly separated, with no accidental duplication of metrics.</td>
+        </tr>
+        <tr>
+          <td>Performance</td>
+          <td>You made a conscious decision about summarization or heavy visuals instead of loading everything into one page.</td>
+        </tr>
+        <tr>
+          <td>Business story</td>
+          <td>The report answers two or three real market questions clearly.</td>
+        </tr>
+        <tr>
+          <td>Delivery</td>
+          <td>There is a benchmark page, a geographic view, and KPI definitions you can defend.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset Source Pack</h3>
+      <ul>
+        <li><strong>Direct download:</strong> <a href="https://maven-datasets.s3.amazonaws.com/Airbnb/Airbnb%20Data.zip" target="_blank" rel="noopener noreferrer">Airbnb Data.zip</a></li>
+        <li><strong>Source page:</strong> <a href="https://mavenanalytics.io/challenges/maven-vacation-challenge" target="_blank" rel="noopener noreferrer">Maven Vacation Challenge</a></li>
+        <li><strong>Why it is advanced:</strong> large volume, multiple cities, review history, and simultaneous geographic and behavioral analysis.</li>
+        <li><strong>Last verified:</strong> 2026-04-22.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>Success here is not the number of pages.</strong> Success is building a model that separates grains clearly, justifies each KPI, and stays performant despite large data volume.</p>
+    </div>` }],
+  },
+
+  "portfolio-playbook": {
+    eyebrow: "10 · 04 — Portfolio و Interview Playbook",
+    title: "Portfolio و Interview Playbook",
+    lede: "كثيرون ينهون المشاريع لكن لا يعرفون كيف يقدّمونها. هذا الدرس يحوّل المشروع إلى دليل كفاءة واضح لصاحب العمل أو العميل.",
+    en_eyebrow: "10 · 04 — Portfolio & Interview Playbook",
+    en_lede: "Many people finish projects but do not know how to present them. This lesson turns work into evidence of skill.",
+    sectionId: "portfolio-playbook",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ما الذي يجب أن تعرضه في أي مشروع Portfolio؟</h3>
+      <ul>
+        <li>Business problem في سطرين</li>
+        <li>مصادر البيانات والغرض من كل مصدر</li>
+        <li>شكل الـ model ولماذا صممته بهذا الشكل</li>
+        <li>أهم 5 measures وما القرار الذي تدعمه</li>
+        <li>لقطات من التقرير قبل/بعد أو overview/drill pages</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>أسئلة مقابلات يجب أن تكون مستعدًا لها</h3>
+      <ul>
+        <li>لماذا اخترت Import أو DirectQuery؟</li>
+        <li>كيف تأكدت أن الأرقام صحيحة؟</li>
+        <li>ما الفرق بين column وmeasure في هذا المشروع؟</li>
+        <li>ما أكبر trade-off واجهك؟</li>
+        <li>لو زاد حجم البيانات 10× ماذا كنت ستغيّر؟</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>قالب مختصر لعرض المشروع</h3>
+      <div class="code-block">
+1. Business Context
+2. Data Sources
+3. Model Design
+4. Core Measures
+5. Key Insights
+6. Security / Deployment Notes
+7. What I would improve next
+      </div>
+      <p>هذا القالب وحده يرفع جودة العرض جدًا لأنه ينقل الحديث من “عملت Dashboard” إلى “بنيت حلًا تحليليًا”.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Minimum Portfolio Package</h3>
+      <ul>
+        <li>ملف PDF أو صور مرتبة للصفحات الأساسية</li>
+        <li>شرح من صفحة واحدة للمشكلة والنموذج والنتائج</li>
+        <li>3 إلى 5 لقطات تبرز الـ model والمنطق لا الشكل فقط</li>
+        <li>قائمة “What I would improve next” لإظهار الوعي النقدي</li>
+      </ul>
+      <p>إذا كان الـ Portfolio كله صور Dashboard فقط بدون سياق أو تفسير، فغالبًا لن يظهر مستواك الحقيقي.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset Attribution Checklist</h3>
+      <ul>
+        <li>ضع <strong>رابط المصدر الأصلي</strong> واسم الجهة المالكة للبيانات داخل وصف المشروع أو README.</li>
+        <li>اذكر <strong>ما الذي حمّلته كما هو</strong>، وما الذي أنشأته محليًا مثل <code>Targets.xlsx</code> أو <code>OrgHierarchy.xlsx</code>.</li>
+        <li>اكتب <strong>تاريخ آخر تحقق من الرابط</strong> حتى لا يظهر المشروع كأنه يعتمد على source مجهول أو ميت.</li>
+        <li>إذا كانت الرخصة أو شروط الاستخدام مهمة، اذكرها باختصار بدل الاكتفاء بكلمة “public”.</li>
+        <li>إذا صغّرت dataset أو أنشأت extract، اشرح الفرق بين النسخة الأصلية ونسخة المشروع.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Trusted Dataset Sources</h3>
+      <ul>
+        <li><a href="https://learn.microsoft.com/en-us/power-bi/create-reports/sample-datasets" target="_blank" rel="noopener noreferrer">Microsoft Learn — Power BI sample catalog</a> هو أفضل نقطة بداية للمشاريع التعليمية السريعة والمتوسطة.</li>
+        <li><a href="https://learn.microsoft.com/en-us/power-bi/fundamentals/mobile-apps-download-samples" target="_blank" rel="noopener noreferrer">Learning Center / built-in samples in Power BI Service</a> ممتاز عندما تريد عينة جاهزة بدون تنزيل ملفات خارجيًا.</li>
+        <li><a href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver17" target="_blank" rel="noopener noreferrer">Wide World Importers</a> هو المصدر enterprise الأحدث لمسارات warehouse والتحليلات متعددة الجداول.</li>
+        <li><a href="https://github.com/microsoft/sql-server-samples/releases" target="_blank" rel="noopener noreferrer">SQL Server Samples Releases</a> يظل fallback رسميًا مفيدًا، خاصة إذا كنت تحتاج AdventureWorks أو ملفات restore مباشرة.</li>
+        <li>إذا اضطررت لاستخدام مصدر أقل استقرارًا، فأضف له <strong>fallback</strong> واضح: page link + service alternative + schema note + local extract.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Bonus Dataset لاحقًا</h3>
+      <ul>
+        <li><strong>الخيار الرابع الجاهز من نفس المجموعة:</strong> <a href="https://mavenanalytics.io/data-playground/inc-5000-companies" target="_blank" rel="noopener noreferrer">Inc 5000 Companies — Maven Analytics</a></li>
+        <li><strong>متى تستخدمه؟</strong> إذا أردت مشروعًا إضافيًا يركز على benchmarking والنمو والتمثيل الجغرافي والقطاعات بدل التشغيل أو الـ marketplace behavior.</li>
+        <li><strong>لماذا لم أضعه داخل الثلاثة الأساسية؟</strong> لأننا نملك ثلاث خانات مشاريع فقط، بينما هذا dataset مناسب جدًا كمشروع رابع أو case study إضافية للـ portfolio.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>أفضل Portfolio ليست الأكبر.</strong> هي التي تُظهر وضوح التفكير: مشكلة مفهومة، model منطقي، measures موثوقة، وقرارات معمارية مبررة.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>What every portfolio project should show</h3>
+      <ul>
+        <li>The business problem in one or two lines.</li>
+        <li>The data sources and why each source exists.</li>
+        <li>The model design and why you chose that shape.</li>
+        <li>The five most important measures and the decision each one supports.</li>
+        <li>Selected screenshots that show flow, drill, and insight, not just decoration.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Interview questions you should be ready for</h3>
+      <ul>
+        <li>Why did you choose Import or DirectQuery?</li>
+        <li>How did you validate that the numbers were correct?</li>
+        <li>What was the difference between a calculated column and a measure in this project?</li>
+        <li>What trade-off was hardest?</li>
+        <li>If the data volume became ten times larger, what would you change first?</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Short presentation template</h3>
+      <div class="code-block">
+1. Business Context
+2. Data Sources
+3. Model Design
+4. Core Measures
+5. Key Insights
+6. Security or Deployment Notes
+7. What I Would Improve Next
+      </div>
+      <p>This structure shifts the conversation from "I built a dashboard" to "I built an analytical solution."</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Minimum portfolio package</h3>
+      <ul>
+        <li>A clean PDF or organized screenshots of the main pages.</li>
+        <li>A one-page project summary covering the problem, model, and results.</li>
+        <li>Three to five screenshots that highlight modeling and logic, not just visuals.</li>
+        <li>A short "what I would improve next" section that shows critical thinking.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dataset attribution checklist</h3>
+      <ul>
+        <li>Include the original source link and source owner in the project description or README.</li>
+        <li>State what you downloaded as-is and what you created locally.</li>
+        <li>Add the date when the link was last verified.</li>
+        <li>If licensing or usage terms matter, mention them briefly instead of saying only "public data."</li>
+        <li>If you shrank or reshaped the dataset, explain how your project copy differs from the original source.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Trusted dataset sources</h3>
+      <ul>
+        <li><a href="https://mavenanalytics.io/data-playground" target="_blank" rel="noopener noreferrer">Maven Analytics Data Playground</a> for realistic practice datasets and challenge-ready files.</li>
+        <li><a href="https://learn.microsoft.com/en-us/power-bi/create-reports/sample-datasets" target="_blank" rel="noopener noreferrer">Microsoft Learn sample catalog</a> for official Power BI samples.</li>
+        <li><a href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver17" target="_blank" rel="noopener noreferrer">Wide World Importers</a> for warehouse and multi-table enterprise-style practice.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Bonus dataset for a fourth case study</h3>
+      <ul>
+        <li><strong>Dataset:</strong> <a href="https://maven-datasets.s3.amazonaws.com/INC%205000%20Companies/INC%205000%20Companies%202019.csv" target="_blank" rel="noopener noreferrer">INC 5000 Companies 2019.csv</a></li>
+        <li><strong>Use it when:</strong> you want a growth, benchmarking, geography, and industry segmentation case study.</li>
+        <li><strong>Why it is not in the core three:</strong> the site currently uses three main project slots, so this works best as an optional extra portfolio piece.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">?</div>
+      <p><strong>The best portfolio is not the biggest one.</strong> It is the one that shows clear thinking: a defined problem, a logical model, trustworthy measures, and architectural decisions you can explain calmly.</p>
+    </div>` }],
+  },
+});
+
 // Fallback stub for lessons not yet in HTML
 window.stubLesson = function(lesson, chapter) {
+  const lessonIndex = chapter.lessons.findIndex(l => l.id === lesson.id) + 1;
+  const lessonNum = String(lessonIndex).padStart(2, "0");
   return {
-    eyebrow: chapter.num + " · " + String(chapter.lessons.findIndex(l => l.id === lesson.id) + 1).padStart(2, "0") + " — " + chapter.title,
+    eyebrow: chapter.num + " · " + lessonNum + " — " + chapter.title,
+    en_eyebrow: chapter.num + " · " + lessonNum + " — " + (chapter.en || chapter.title),
     title: lesson.title,
-    lede: lesson.en + " — هذا الدرس قيد الإعداد.",
+    lede: lesson.title + " — هذا الدرس قيد الإعداد.",
+    en_lede: lesson.en + " — this lesson is still being prepared.",
     isStub: true,
     blocks: [{ kind: "html", html: "<p style=\"color:var(--ink-2)\">محتوى هذا الدرس قادم قريباً.</p>" }],
+    en_blocks: [{ kind: "html", html: "<p style=\"color:var(--ink-2)\">This lesson content is coming soon.</p>" }],
   };
 };
