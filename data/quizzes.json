@@ -35,7 +35,10 @@
       "section": "setup",
       "question": "هل Power BI Desktop يعمل على أنظمة macOS؟",
       "type": "true_false",
-      "options": ["صحيح", "خطأ"],
+      "options": [
+        "صحيح",
+        "خطأ"
+      ],
       "correctAnswer": 1,
       "explanation": "Power BI Desktop لا يعمل على أنظمة macOS مباشرة. يجب استخدام Parallels أو Boot Camp لتشغيل Windows على Mac.",
       "points": 3
@@ -1154,6 +1157,1080 @@
       "correctAnswer": 0,
       "explanation": "القرار الاستثماري الجيد يعتمد على عوامل متعددة: الأسعار (الدخل)، الجودة (التقييمات)، الطلب (الحجوزات)، والموثوقية (Superhost).",
       "points": 6
+    },
+    {
+      "id": "q79",
+      "section": "intro",
+      "question": "في مخطط BI النموذجي، ما أول طبقة بعد جمع البيانات الخام؟",
+      "type": "multiple_choice",
+      "options": [
+        "التنظيف والتحويل (Cleaning & Transformation)",
+        "الرسوم البيانية مباشرة",
+        "حذف كل البيانات",
+        "إنشاء App"
+      ],
+      "correctAnswer": 0,
+      "explanation": "في أي مشروع BI احترافي، البيانات الخام تحتاج تنظيف وتحويل قبل أي تحليل أو رسم.",
+      "points": 5
+    },
+    {
+      "id": "q80",
+      "section": "interface",
+      "question": "ما الفائدة من Model View مقابل Report View في Desktop؟",
+      "type": "multiple_choice",
+      "options": [
+        "Model View لرسم العلاقات والنموذج، Report View لبناء الرسوم البيانية",
+        "كلاهما نفس الشيء",
+        "Report View فقط يُستخدم",
+        "Model View لتغيير الألوان"
+      ],
+      "correctAnswer": 0,
+      "explanation": "نفصل بين المسؤوليات: في Model View تُدار البيانات والعلاقات، وفي Report View تُنشأ الرسومات والتفاعلات.",
+      "points": 5
+    },
+    {
+      "id": "q81",
+      "section": "setup",
+      "question": "ما المتطلبات الأساسية لتشغيل Power BI Desktop؟",
+      "type": "multiple_choice",
+      "options": [
+        "Windows 7 وما فوق + RAM 2GB فقط",
+        "Windows 10/11 + RAM 4GB على الأقل + Internet للتحديثات",
+        "أي نظام تشغيل مع أي RAM",
+        "فقط ملف PBIX بدون تثبيت"
+      ],
+      "correctAnswer": 1,
+      "explanation": "متطلبات Desktop الأدنى: Windows 10/11 و4GB RAM على الأقل للأداء المقبول. توصيات أعلى: 8GB+ للملفات الكبيرة.",
+      "points": 5
+    },
+    {
+      "id": "q82",
+      "section": "getdata",
+      "question": "ما الفرق بين Import و Live Connection عند استيراد البيانات؟",
+      "type": "multiple_choice",
+      "options": [
+        "Import تسحب نسخة من البيانات، Live يتصل مباشرة بدون نسخ",
+        "كلاهما نفس الشيء",
+        "Import أسرع دائماً",
+        "Live يأخذ مساحة أكثر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Import: نسخة محلية في PBIX (سريع، يأخذ حجم). Live Connection: اتصال مباشر للـ source (بيانات حية، لكن أداء أبطأ).",
+      "points": 6
+    },
+    {
+      "id": "q83",
+      "section": "cleaning",
+      "question": "أي من الآتي يُعتبر من أهم خطوات التنظيف عند اكتشاف قيم Null كثيرة؟",
+      "type": "multiple_choice",
+      "options": [
+        "فهم السبب: هل هي أخطاء في المصدر أم قيم مشروعة؟ ثم معالجة مناسبة",
+        "حذف كل الصفوف التي تحتوي Null فوراً",
+        "تجاهل المشكلة",
+        "استبدال كل Null بـ 0 بلا سؤال"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Null قد يعني missing data (خطأ) أو absent value (مشروع). الحل يعتمد على الفهم أولاً، ثم استراتيجية معالجة واضحة.",
+      "points": 7
+    },
+    {
+      "id": "q84",
+      "section": "powerquery",
+      "question": "ما الفائدة من Merge Queries في Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "ربط بيانات من جدولين بناءً على عمود مشترك (مثل SQL JOIN)",
+        "حذف الصفوف المكررة فقط",
+        "تغيير ألوان الخلايا",
+        "إنشاء التقارير"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Merge Queries مثل SQL JOIN: يربط جدولين بناءً على مفتاح مشترك (Left Outer, Right Outer, Inner, Full Outer).",
+      "points": 6
+    },
+    {
+      "id": "q85",
+      "section": "mcode",
+      "question": "متى تصبح كتابة M Code يدويًا أفضل من الواجهة الرسومية في Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "عند الحاجة للتعقيد، الحلقات، أو إعادة الاستخدام الدقيقة",
+        "فقط عند تغيير الخطوط",
+        "أبداً، الواجهة كافية دائماً",
+        "فقط لحذف الأعمدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "M Code يوفر مرونة أكثر للعمليات المعقدة، الحلقات، وإعادة الاستخدام بدل نسخ الخطوات.",
+      "points": 7
+    },
+    {
+      "id": "q86",
+      "section": "oltp-olap",
+      "question": "في أي نوع من الأنظمة تكون UPDATE و DELETE العمليات الأكثر تكرارًا؟",
+      "type": "multiple_choice",
+      "options": [
+        "OLTP (الأنظمة التشغيلية)",
+        "OLAP (الأنظمة التحليلية)",
+        "كلاهما بنفس الدرجة",
+        "لا توجد تحديثات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "OLTP مُصمم للعمليات اليومية السريعة مع INSERT, UPDATE, DELETE متكررة. OLAP للتاريخ والتحليل بدون تحديثات متكررة.",
+      "points": 6
+    },
+    {
+      "id": "q87",
+      "section": "model",
+      "question": "في نموذج BI احترافي، ما الهيكل الأكثر شيوعًا؟",
+      "type": "multiple_choice",
+      "options": [
+        "Star Schema: fact جدول وسطي محاط بجداول dimensions",
+        "جدول واحد عملاق يحتوي كل شيء",
+        "بدون أي هيكل منظم",
+        "فقط Dimension Tables بدون Facts"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Star Schema هو المعيار الذهبي: fact table في الوسط (أرقام) و dimensions حولها (وصف)، يسهل الفهم والـ queries.",
+      "points": 7
+    },
+    {
+      "id": "q88",
+      "section": "relationships",
+      "question": "عند وجود علاقة Many-to-Many بدون Bridge Table، ما المشكلة المتوقعة؟",
+      "type": "multiple_choice",
+      "options": [
+        "تضخيم الصفوف والمقاييس قد تظهر أرقام مضاعفة أو مضللة",
+        "لا توجد مشكلة",
+        "الأداء يتحسن دائماً",
+        "الملف يصبح أصغر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Many-to-Many بدون منطق واضح قد يؤدي إلى Cartesian products: كل صف على صف يُنتج ضعف الصفوف وتضخيم المقاييس.",
+      "points": 7
+    },
+    {
+      "id": "q89",
+      "section": "datetable",
+      "question": "ما الخاصية الأساسية التي يجب أن توفرها Date Table؟",
+      "type": "multiple_choice",
+      "options": [
+        "تغطية كاملة بدون فجوات، مع جميع التواريخ المتسلسلة، ومعلّمة كـ Date Table",
+        "تحتوي على أسماء الموظفين فقط",
+        "تكون مشفرة",
+        "لا تحتاج أي إعداد خاص"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Date Table يجب أن تكون متسلسلة بدون فجوات (من start_date إلى end_date بكل يوم)، وتُعلّم كـ Date Table في الخصائص.",
+      "points": 7
+    },
+    {
+      "id": "q90",
+      "section": "hierarchies",
+      "question": "أي ترتيب للـ Hierarchy يكون أفضل: من الأعم إلى الأخص أم العكس؟",
+      "type": "multiple_choice",
+      "options": [
+        "من الأعم إلى الأخص (مثل: سنة ← ربع ← شهر)",
+        "من الأخص إلى الأعم",
+        "أي ترتيب نفس الشيء",
+        "لا ترتيب معين"
+      ],
+      "correctAnswer": 0,
+      "explanation": "من الأعم إلى الأخص يسمح بـ drill down منطقي: المستخدم يبدأ من نظرة عامة ثم يتقصى التفاصيل.",
+      "points": 6
+    },
+    {
+      "id": "q91",
+      "section": "dax1",
+      "question": "ما الفرق الأساسي بين Measure و Calculated Column؟",
+      "type": "multiple_choice",
+      "options": [
+        "Measure يُحسب عند الطلب حسب السياق، Calculated Column يُحسب مسبقاً لكل صف",
+        "كلاهما نفس الشيء",
+        "Measure يأخذ أكثر مساحة",
+        "Calculated Column أسرع دائماً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Measure: ديناميكي، يُحسب حسب filter context (لا يأخذ مساحة كبيرة). Calculated Column: ثابت، يُحسب مرة واحدة (يأخذ RAM).",
+      "points": 8
+    },
+    {
+      "id": "q92",
+      "section": "dax-logical",
+      "question": "متى تستخدم IF بدل SWITCH في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "IF لشرط واحد أو اثنين، SWITCH لحالات متعددة",
+        "دائماً استخدم IF",
+        "لا فرق بينهما",
+        "SWITCH فقط للأرقام"
+      ],
+      "correctAnswer": 0,
+      "explanation": "IF أبسط للشروط القليلة. SWITCH أوضح وأداء أفضل عند وجود حالات كثيرة (3+).",
+      "points": 6
+    },
+    {
+      "id": "q93",
+      "section": "calculate",
+      "question": "ما معنى CALCULATE مع فلتر إضافي: CALCULATE([Sales], DimProduct[Color]=\"Red\")؟",
+      "type": "multiple_choice",
+      "options": [
+        "حساب المبيعات بينما تُطبق فلتر إضافي بأن اللون = Red",
+        "حذف جميع الفلاترات وحساب المبيعات الإجمالية",
+        "تغيير اسم المنتج",
+        "عداد عدد الألوان"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CALCULATE + فلتر إضافي = تُضيف قيد جديد للـ filter context مع الحفاظ على الفلاترات الموجودة (إن كانت compatible).",
+      "points": 8
+    },
+    {
+      "id": "q94",
+      "section": "iterators",
+      "question": "كيف يختلف SUMPRODUCT عن SUMX في المنطق؟",
+      "type": "multiple_choice",
+      "options": [
+        "SUMX iterator ينقل صفاً صفاً، SUMPRODUCT يضرب الأعمدة ثم يجمع",
+        "كلاهما نفس الشيء",
+        "SUMPRODUCT يعمل فقط مع النصوص",
+        "SUMX للأرقام فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SUMX: صف ← صف، يقيّم تعبير لكل صف. SUMPRODUCT: يضرب الأعمدة عنصر × عنصر ثم يجمع (يفيد للحسابات متعددة الأبعاد).",
+      "points": 7
+    },
+    {
+      "id": "q95",
+      "section": "dax2",
+      "question": "ما الخطأ الشائع عند بناء YEAR TO DATE (YTD) بدون Date Table؟",
+      "type": "multiple_choice",
+      "options": [
+        "أغلب دوال الوقت تعتمد على Date Table للـ calendar intelligence، بدونها تفشل",
+        "اليوم التالي بعد السنة تلقائياً ينتقل للسنة التالية",
+        "جميع الدول تستخدم نفس التقويم",
+        "لا توجد مشكلة، الحسابات صحيحة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "YTD، QTD، MTD كلها تحتاج Date Table سليمة. بدونها، لا توجد طريقة موثوقة لتحديد 'بداية السنة' و'اليوم الحالي'.",
+      "points": 7
+    },
+    {
+      "id": "q96",
+      "section": "visuals",
+      "question": "ما أفضل Chart لمقارنة أجزاء من الكل (مثل نسب الأسواق)؟",
+      "type": "multiple_choice",
+      "options": [
+        "Pie أو Donut Chart (مع شروط)، أو Stacked Bar (أفضل عند وجود فئات كثيرة)",
+        "Line Chart",
+        "Scatter Plot",
+        "Gauge"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Pie يسهل فهم النسب للعناصر القليلة (3-5). لـ 6+ عناصر أو مقارنات زمنية، Stacked Bar أفضل.",
+      "points": 6
+    },
+    {
+      "id": "q97",
+      "section": "themes",
+      "question": "ما محتويات ملف Theme JSON في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "تعريفات الألوان والخطوط والمسافات وأنماط الرسوم",
+        "أسماء الموظفين فقط",
+        "كود DAX",
+        "أسماء الملفات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ملف Theme هو JSON يحتوي على tokens لـ colors, fonts, sizes, visual properties تُطبق على التقرير كاملاً.",
+      "points": 5
+    },
+    {
+      "id": "q98",
+      "section": "custom-tooltips",
+      "question": "هل Custom Tooltip يمكنه عرض mini visual (مثل chart صغير)؟",
+      "type": "true_false",
+      "options": [
+        "صحيح",
+        "خطأ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "نعم، Custom Tooltip يمكن أن يحتوي على صفحة منفصلة بها visuals أخرى تظهر عند hover على نقطة بيانات.",
+      "points": 6
+    },
+    {
+      "id": "q99",
+      "section": "condformat",
+      "question": "أي قاعدة من قواعد Conditional Formatting تُضيف أيقونات أو أشرطة بناءً على القيمة؟",
+      "type": "multiple_choice",
+      "options": [
+        "Data Bars أو Icon Sets",
+        "Background Color فقط",
+        "Font Color فقط",
+        "Text Format"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Data Bars يعرض أشرطة بطول يعكس القيمة. Icon Sets يعرض رموز (مثل: أسهم أو نجوم) بناءً على الفئات.",
+      "points": 6
+    },
+    {
+      "id": "q100",
+      "section": "sync-slicers",
+      "question": "عند تفعيل Sync Slicers بين صفحتين، هل الفلترة التي يُطبقها Slicer تبقى عند الانتقال للصفحة الأخرى؟",
+      "type": "true_false",
+      "options": [
+        "صحيح",
+        "خطأ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "نعم، تفعيل Sync يضمن أن اختيار المستخدم في Slicer يبقى مؤثراً عبر الصفحات المتزامنة.",
+      "points": 5
+    },
+    {
+      "id": "q101",
+      "section": "drillthrough",
+      "question": "ما الخطوة الأساسية لتفعيل Drillthrough من صفحة إلى أخرى؟",
+      "type": "multiple_choice",
+      "options": [
+        "تحديد صفحة الوجهة كـ Drill Through Page وتعريف Drill Through Filters",
+        "مجرد ربط البيانات بدون إعدادات",
+        "حذف الصفحة الأولى",
+        "تغيير الألوان"
+      ],
+      "correctAnswer": 0,
+      "explanation": "يجب تعريف صفحة الوجهة كـ Drillthrough page وضبط filters (مثل: Product عندما ينقر المستخدم على product معين).",
+      "points": 6
+    },
+    {
+      "id": "q102",
+      "section": "bookmarks",
+      "question": "أي عنصر من العناصر التالية يمكن Bookmark أن يحفظها؟",
+      "type": "multiple_choice",
+      "options": [
+        "حالات الـ visual (مرشح، ترتيب)، ظهور العناصر، موقع الـ slicers",
+        "فقط الألوان",
+        "فقط أسماء الملفات",
+        "فقط الخطوط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Bookmark يحفظ snapshot من الصفحة: visual state، visibility، slicer selection — يسهل إنشاء story-telling.",
+      "points": 6
+    },
+    {
+      "id": "q103",
+      "section": "mobile-design",
+      "question": "في تصميم Mobile، ما أهم تحدٍّ عند تحويل Dashboard من Desktop؟",
+      "type": "multiple_choice",
+      "options": [
+        "المساحة المحدودة: يجب ترتيب الأولويات وحذف العناصر غير الضرورية",
+        "يجب نسخ كل الـ visuals بنفس الحجم",
+        "استخدام ألوان أكثر",
+        "عدم استخدام slicers"
+      ],
+      "correctAnswer": 0,
+      "explanation": "شاشة الموبايل صغيرة جداً. الحل: ترتيب أولويات KPIs، حذف detaiل غير ضروري، وتبسيط التخطيط.",
+      "points": 6
+    },
+    {
+      "id": "q104",
+      "section": "rls",
+      "question": "أي من الآتي قد يكون Dynamic Filter في RLS؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدام USERNAME() أو USERPRINCIPALNAME() لتقييد البيانات بناءً على هوية المستخدم",
+        "تغيير اللون بناءً على الدور",
+        "حذف الصفحات",
+        "إضافة أيقونات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dynamic RLS يستخدم دوال مثل USERNAME() أو USERPRINCIPALNAME() بحيث كل مستخدم يرى البيانات المخصصة له فقط.",
+      "points": 7
+    },
+    {
+      "id": "q105",
+      "section": "publish",
+      "question": "بعد Publish للـ Service، ما الإعدادات الأمنية الأساسية المطلوبة عادة؟",
+      "type": "multiple_choice",
+      "options": [
+        "تعريف Workspace roles (Admin, Member, Viewer)، RLS إذا كان ضروري، مشاركة App",
+        "لا تحتاج أي إعداد",
+        "حذف كل الصلاحيات",
+        "نشر للجميع بدون تقييد"
+      ],
+      "correctAnswer": 0,
+      "explanation": "بعد النشر: ضبط roles في Workspace (من يعدّل، من يشاهد)، تطبيق RLS، إنشاء App للتوزيع.",
+      "points": 6
+    },
+    {
+      "id": "q106",
+      "section": "workspaces",
+      "question": "ما الفرق بين Workspace و App في Power BI Service؟",
+      "type": "multiple_choice",
+      "options": [
+        "Workspace للتطوير والتعاون. App للتوزيع النهائي للمستخدمين النهائيين",
+        "كلاهما نفس الشيء",
+        "App للمطورين فقط",
+        "Workspace للنشر فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Workspace: محيط تطوير تعاوني (Admins, Members يعدّلون). App: واجهة توزيع نظيفة للـ consumers (viewing فقط).",
+      "points": 7
+    },
+    {
+      "id": "q107",
+      "section": "gateway",
+      "question": "هل يحتاج Gateway عند استخدام DirectQuery مع مصدر بيانات local (SQL Server محلي)؟",
+      "type": "true_false",
+      "options": [
+        "صحيح",
+        "خطأ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "نعم، إذا كان SQL Server في شبكة محلية وتريد DirectQuery من Power BI Service (سحابي)، يجب Gateway.",
+      "points": 6
+    },
+    {
+      "id": "q108",
+      "section": "incremental",
+      "question": "ما الشرط الأساسي لتفعيل Incremental Refresh؟",
+      "type": "multiple_choice",
+      "options": [
+        "وجود عمود التاريخ في الجدول لتقسيم البيانات إلى فترات قديمة وحديثة",
+        "استخدام Import mode فقط",
+        "وجود Power Premium subscription فقط",
+        "لا شروط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Incremental Refresh يحتاج عمود DateTime للتفريق بين البيانات القديمة (لا تُحدث) والحديثة (تُحدث دائماً).",
+      "points": 7
+    },
+    {
+      "id": "q109",
+      "section": "performance",
+      "question": "أي من الآتي هو السبب الأول لبطء التقارير غالباً؟",
+      "type": "multiple_choice",
+      "options": [
+        "نموذج ضعيف أو Measures معقدة أو عدم استخدام فلاترات كافية",
+        "دائماً السرعة الإنترنت",
+        "الألوان غير المناسبة",
+        "عدد الـ bookmarks"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الأداء يعتمد أساساً على: الـ data model (العلاقات، cardinality)، كفاءة الـ measures، والـ filters المطبقة.",
+      "points": 7
+    },
+    {
+      "id": "q110",
+      "section": "error-handling",
+      "question": "عند ظهور خطأ 'Column not found' في Power Query، ما أول خطوة تشخيصية؟",
+      "type": "multiple_choice",
+      "options": [
+        "تحقق أن اسم العمود في الاستعلام يطابق اسمه بالضبط (حساسية الأحرف) أو تحقق من خطوة سابقة قد حذفته",
+        "احذف كل الخطوات",
+        "غير الخادم",
+        "ابدأ من الصفر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الخطأ غالباً تهجئة خاطئة أو عمود فُقد في خطوة سابقة (Remove Columns). تتبع الخطوات للخلف للإيجاد.",
+      "points": 6
+    },
+    {
+      "id": "q111",
+      "section": "cost-optimization",
+      "question": "أي استراتيجية تقلل التكاليف عند استخدام Power BI Premium؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدام Auto Pause، تقليل Refresh frequency، ضغط البيانات غير الضرورية",
+        "زيادة Refresh إلى كل ساعة دائماً",
+        "تفعيل كل الـ features حتى لو لم تُستخدم",
+        "عدم مراقبة الاستهلاك"
+      ],
+      "correctAnswer": 0,
+      "explanation": "تقليل التكاليف: pause capacity عند عدم الاستخدام، refresh بـ cadence مناسب فقط، مراقبة مستخدمين فعليين.",
+      "points": 6
+    },
+    {
+      "id": "q112",
+      "section": "python-pbi",
+      "question": "ما نوع التحليلات التي يفيد فيها Python أكثر من DAX العادي؟",
+      "type": "multiple_choice",
+      "options": [
+        "الإحصاء المتقدم (Regression, Clustering)، معالجة NLP، نماذج ML",
+        "مجموع بسيط",
+        "تغيير الألوان",
+        "إنشاء Relationships"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Python يلمع في: تحليل إحصائي متقدم، machine learning، معالجة نصوص، visualization متخصصة.",
+      "points": 7
+    },
+    {
+      "id": "q113",
+      "section": "paginated",
+      "question": "ما الميزة الأساسية لتقارير Paginated مقابل Power BI Reports؟",
+      "type": "multiple_choice",
+      "options": [
+        "التحكم الدقيق بالتخطيط والطباعة، Pages متكررة بنفس الصيغة، تصدير PDF مثالي",
+        "تفاعل أفضل",
+        "أداء أسرع",
+        "أسهل في التصميم"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Paginated = Pixel-perfect printing, repeating headers/footers, PDF forms. Power BI = Interactive, visual-first.",
+      "points": 7
+    },
+    {
+      "id": "q114",
+      "section": "auto-refresh",
+      "question": "ما الفرق بين Scheduled Refresh و Personal Refresh في Power BI Service؟",
+      "type": "multiple_choice",
+      "options": [
+        "Scheduled: تحديث جدولي للـ dataset (يأخذ راحة capacity). Personal: تحديث يدوي عند الطلب",
+        "كلاهما نفس الشيء",
+        "Personal أسرع دائماً",
+        "Scheduled يحدث مرة واحدة فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Scheduled Refresh: مجدول (مثل كل ساعة) و يستهلك موارد. Personal: اليدوي بدون تأثير على جدول النظام.",
+      "points": 6
+    },
+    {
+      "id": "q115",
+      "section": "automate-reports",
+      "question": "أي أداة تستخدم غالباً لأتمتة توزيع التقارير (إرسال reports عبر بريد تلقائياً)؟",
+      "type": "multiple_choice",
+      "options": [
+        "Power Automate (Power Apps flows)",
+        "Excel Macros",
+        "Notepad",
+        "أي متصفح"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Power Automate تربط Power BI مع Outlook/Teams/SharePoint لتوزيع تلقائي بناءً على جداول أو أحداث.",
+      "points": 6
+    },
+    {
+      "id": "q116",
+      "section": "query-folding",
+      "question": "ما معنى 'Query Folding is not supported' عند محاولة تطبيق filter في Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "الخطوة لا يمكن دفعها إلى المصدر، ستُنفذ محليًا (أداء أبطأ)",
+        "Query Folding يعمل بشكل مثالي",
+        "المصدر لا يدعم البيانات",
+        "التقرير آمن تماماً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "عند عدم دعم Query Folding، كل البيانات تُسحب ثم يُطبق Filter محليًا، مما يزيد الاستهلاك والوقت.",
+      "points": 7
+    },
+    {
+      "id": "q117",
+      "section": "directquery",
+      "question": "متى يكون DirectQuery اختياراً معقولاً بدل Import؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تحتاج بيانات real-time أو الملف كبير جداً (Billions)، وأداء القاعدة كافي",
+        "عندما تريد أسرع أداء دائماً",
+        "عندما تريد استخدام كل DAX functions",
+        "فقط للملفات الصغيرة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "DirectQuery: real-time data وبيانات كبيرة، لكن مع قيود على DAX وأداء تعتمد على الـ source.",
+      "points": 7
+    },
+    {
+      "id": "q118",
+      "section": "tabular-editor",
+      "question": "ما الميزة الفريدة لـ Tabular Editor مقابل Power BI Desktop؟",
+      "type": "multiple_choice",
+      "options": [
+        "تعديل Semantic Model directly بدون Desktop، تعديل جماعي (bulk edit)، BPA، version control friendly",
+        "رسم الرسوم البيانية",
+        "استيراد البيانات من Web",
+        "تصميم التقارير"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Tabular Editor متخصص في Model: تعديلات متقدمة، تنظيم، و TMDL format يدعم version control.",
+      "points": 7
+    },
+    {
+      "id": "q119",
+      "section": "time-intel-pro",
+      "question": "عند حساب Last Full Month من تاريخ اليوم، ما الخطوة الأولى الصحيحة في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "حساب آخر تاريخ في الشهر الماضي: EDATE(EOMONTH(TODAY(),-1),0)",
+        "فقط استخدم TODAY()",
+        "استخدم ADDMONTHS بدون حدود",
+        "لا تحتاج إلى أي خطوة معقدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "للحصول على آخر شهر كامل: EOMONTH يحسب آخر يوم، -1 يرجع شهر واحد للخلف.",
+      "points": 8
+    },
+    {
+      "id": "q120",
+      "section": "deployment-pipelines",
+      "question": "أي من البيانات التالية لا تُنسخ تلقائياً عند نقل Report من Dev إلى Test عبر Deployment Pipeline؟",
+      "type": "multiple_choice",
+      "options": [
+        "Data Refresh Schedule و Gateway Settings (يجب إعادة ضبط يدويًا للـ Test environment)",
+        "كل شيء ينسخ تلقائياً",
+        "الألوان والخطوط فقط",
+        "أسماء الجداول"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Deployment Pipeline ينسخ التقرير والـ model، لكن الـ refresh schedules و gateway credentials يجب ضبطها لـ environment جديد.",
+      "points": 7
+    },
+    {
+      "id": "q121",
+      "section": "scd",
+      "question": "إذا تغيّر سعر منتج من 100 إلى 120، وتريد الاحتفاظ بالسعر القديم للأرقام التاريخية، أي SCD type تستخدم؟",
+      "type": "multiple_choice",
+      "options": [
+        "Type 2 (إضافة صف جديد مع تاريخ)",
+        "Type 1 (استبدال القيمة القديمة)",
+        "Type 0 (بدون تاريخ)",
+        "Type 3"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Type 2 يحتفظ بالتاريخ الكامل. سيكون لديك صف قديم (100) وصف جديد (120) مع تواريخ الصلاحية.",
+      "points": 7
+    },
+    {
+      "id": "q122",
+      "section": "bridge-tables",
+      "question": "في علاقة Many-to-Many بين Students و Courses (طالب واحد له كورسات متعددة، كورس واحد له طلاب متعددين)، كيف يبدو Bridge Table؟",
+      "type": "multiple_choice",
+      "options": [
+        "جدول StudentCourse يحتوي على StudentID و CourseID فقط",
+        "جدول يحتوي على كل بيانات الطالب والكورس",
+        "لا يوجد bridge، الربط المباشر كافٍ",
+        "جدول Date فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Bridge Table يحتوي على المفاتيح الأجنبية فقط (StudentID, CourseID) بدون البيانات الإضافية.",
+      "points": 7
+    },
+    {
+      "id": "q123",
+      "section": "relationships-dax",
+      "question": "إذا أردت في DAX الوصول إلى عمود من جدول مرتبط بدون filter context مباشر، أي دالة تستخدم؟",
+      "type": "multiple_choice",
+      "options": [
+        "RELATED() أو VALUES()",
+        "SUM() فقط",
+        "COUNT()",
+        "CONCATENATE()"
+      ],
+      "correctAnswer": 0,
+      "explanation": "RELATED يجلب قيمة من جدول related 1-side بناءً على العلاقة. VALUES يجلب الـ unique values في سياق معين.",
+      "points": 8
+    },
+    {
+      "id": "q124",
+      "section": "dax3",
+      "question": "ما الفرق بين ALL() و REMOVEFILTERS() في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "كلاهما يزيل الفلاترات، لكن REMOVEFILTERS أكثر مرونة في إزالة فلاترات محددة فقط",
+        "لا فرق",
+        "ALL أسرع دائماً",
+        "REMOVEFILTERS يعمل فقط مع الأرقام"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ALL: يزيل كل الفلاترات من جداول محددة. REMOVEFILTERS: أكثر دقة، يمكن تحديد الأعمدة بالضبط.",
+      "points": 8
+    },
+    {
+      "id": "q125",
+      "section": "dax-text",
+      "question": "لحساب عدد كلمات في نص (مثل Product Description)، أي دالة نصية ستستخدم؟",
+      "type": "multiple_choice",
+      "options": [
+        "LEN() لـ length، ثم عد المسافات وأضف 1",
+        "RIGHT() فقط",
+        "CONCATENATE() فقط",
+        "LOWER() فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "لحساب الكلمات: LEN(text) - LEN(SUBSTITUTE(text,\" \",\"\")) + 1 (العدد = المسافات + 1).",
+      "points": 7
+    },
+    {
+      "id": "q126",
+      "section": "dax-reference",
+      "question": "أي من الممارسات التالية يُعتبر 'best practice' عند تنظيم Measures في مشروع كبير؟",
+      "type": "multiple_choice",
+      "options": [
+        "تجميع الـ measures بـ Display Folders حسب الموضوع، استخدام prefixes واضحة (Calc_, Agg_)، كتابة وصف",
+        "تسميات عشوائية بدون تنظيم",
+        "ضع كل شيء في measure واحد كبير",
+        "استخدم أرقام كأسماء"
+      ],
+      "correctAnswer": 0,
+      "explanation": "التنظيم يقلل الخلط عند العودة للمشروع. Display Folders + Naming Convention + Documentation = maintainability.",
+      "points": 6
+    },
+    {
+      "id": "q127",
+      "section": "semantic-model",
+      "question": "ما الخاصية التي يجب أن تكون صحيحة لكل عمود في Semantic Model احترافي؟",
+      "type": "multiple_choice",
+      "options": [
+        "Data Type صحيح (Date/Integer/Text)، لا null غير متوقع، Formatting مناسب",
+        "يجب أن تكون كل الأعمدة نصية",
+        "بدون تنسيق",
+        "لا حاجة لـ data type"
+      ],
+      "correctAnswer": 0,
+      "explanation": "كل عمود يجب أن يكون مكتوب بالنوع الصحيح (Date ليس Text، Currency ليس General) وقيم مفقودة مُدارة.",
+      "points": 7
+    },
+    {
+      "id": "q128",
+      "section": "common-mistakes",
+      "question": "ما الخطأ الشائع عند استخدام SUMPRODUCT بدل SUM مع Many-to-Many relationship؟",
+      "type": "multiple_choice",
+      "options": [
+        "SUMPRODUCT قد يضاعف النتائج بدل حلها، الحل الأفضل: Bridge Table أو CALCULATE بـ filter واضح",
+        "SUMPRODUCT دائماً صحيح",
+        "SUM أفضل دائماً",
+        "لا فرق بينهما"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SUMPRODUCT قد يزيد التعقيد. الحل الأفضل: Bridge Table أو CALCULATE مع فلتر معرّف واضحاً.",
+      "points": 8
+    },
+    {
+      "id": "q129",
+      "section": "external-tools",
+      "question": "إذا أردت فهم لماذا Measure معين بطيء جداً، أي أداة خارجية تستخدم؟",
+      "type": "multiple_choice",
+      "options": [
+        "DAX Studio (لعرض Server Timings و VertiPaq Analyzer)",
+        "Tabular Editor",
+        "Microsoft Excel",
+        "Notepad"
+      ],
+      "correctAnswer": 0,
+      "explanation": "DAX Studio متخصصة في التشخيص: ترى كل query duration، cache hits، و memory consumption.",
+      "points": 6
+    },
+    {
+      "id": "q130",
+      "section": "apis",
+      "question": "أي استخدام من الآتي يتطلب Power BI Embed API؟",
+      "type": "multiple_choice",
+      "options": [
+        "دمج تقرير Power BI داخل تطبيق ويب خارجي بدون Power BI license منفصلة",
+        "عرض التقرير في Power BI Service مباشرة",
+        "تغيير الألوان",
+        "نسخ الملف"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Embed API تسمح بدمج reports/dashboards في apps خارجية (محل، موقع) بدون ترخيص منفصل.",
+      "points": 7
+    },
+    {
+      "id": "q131",
+      "section": "git-integration",
+      "question": "متى تصبح نسخة PBIP (Power BI Project) أفضل من PBIX التقليدية للـ git؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تريد version control، merge edits من عدة مطورين، CI/CD pipelines",
+        "فقط عند تغيير الألوان",
+        "دائماً PBIP أفضل",
+        "PBIP لا يدعم git"
+      ],
+      "correctAnswer": 0,
+      "explanation": "PBIP (text-based) = git-friendly (readable diffs). PBIX (binary) = صعب الـ diff والـ merge.",
+      "points": 7
+    },
+    {
+      "id": "q132",
+      "section": "advanced-dataflows",
+      "question": "في Dataflow Gen1 مقابل Gen2، ما الفرق الأساسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "Gen1 in Power BI service، Gen2 in Fabric (أسرع، أكثر مرونة في التخزين)",
+        "كلاهما نفس الشيء",
+        "Gen1 أسرع دائماً",
+        "Gen2 لا يدعم Power Query"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Gen2 = Fabric infrastructure = performance أفضل وتكامل أوسع مع Fabric services.",
+      "points": 7
+    },
+    {
+      "id": "q133",
+      "section": "calculation-groups",
+      "question": "إذا عرّفت Calculation Group بـ 3 items (YTD, PY, YoY) وطبقتها على 10 measures، كم measure فعالة الآن؟",
+      "type": "multiple_choice",
+      "options": [
+        "تقريباً 10 (الـ items تُطبق تلقائياً على كل measure بدون نسخ)",
+        "30 (3 × 10)",
+        "بقيت 10 فقط",
+        "بقيت 13"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Calculation Groups تُطبق على كل measure الموجودة دون إضافتها يدويًا. توفر مساحة وتعقيد.",
+      "points": 7
+    },
+    {
+      "id": "q134",
+      "section": "enterprise-security",
+      "question": "ما الفرق بين Static RLS و Dynamic RLS في تطبيق؟",
+      "type": "multiple_choice",
+      "options": [
+        "Static: أدوار ثابتة (Account vs Sales). Dynamic: قائمة على USERNAME() أو Azure AD (حسب المستخدم مباشرة)",
+        "كلاهما نفس الشيء",
+        "Dynamic دائماً أسرع",
+        "Static يعمل مع Power BI Service فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Static RLS: حسب Roles ثابتة. Dynamic: حسب USERPRINCIPALNAME() أو email المستخدم الفعلي.",
+      "points": 8
+    },
+    {
+      "id": "q135",
+      "section": "monitoring-adoption",
+      "question": "ما المؤشر الأول الذي يشير إلى أن التقرير المنشور 'ناجح' فعلياً؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدام متكرر من نفس الأشخاص + اعتماد عليه في القرارات + feedback إيجابي",
+        "عدد المشاهدات الإجمالي فقط",
+        "حجم الملف",
+        "عدد الصفحات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "النجاح الحقيقي = adoption متكرر بدون مساعدة، ثقة في البيانات، استخدام في decision-making.",
+      "points": 7
+    },
+    {
+      "id": "q136",
+      "section": "fabric-dataflows",
+      "question": "ما الميزة الأكثر إثارة في Fabric Dataflows Gen2؟",
+      "type": "multiple_choice",
+      "options": [
+        "Cloud-scale processing مع Power Query + Python، OneLake integration، Sharing سهل بين Workspaces",
+        "فقط رسوم بيانية",
+        "فقط Excel",
+        "بدون أي مميزات جديدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Fabric Gen2 = powerful ETL cloud-native مع تكامل كامل مع Fabric ecosystem.",
+      "points": 7
+    },
+    {
+      "id": "q137",
+      "section": "portfolio-playbook",
+      "question": "عند عرض مشروع Power BI لصاحب عمل أو مقابلة وظيفية، ما الترتيب الأمثل؟",
+      "type": "multiple_choice",
+      "options": [
+        "المشكلة → المصادر → النموذج → الـ KPIs → الرؤى → الأثر على العمل",
+        "الصور الجميلة أولاً",
+        "الكود DAX فوراً",
+        "الألوان والتصميم فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "عرض احترافي يبدأ بالـ 'Why' (المشكلة) ثم يتدرج نزولاً إلى 'What' و 'How' والنتائج النهائية.",
+      "points": 7
+    },
+    {
+      "id": "q138",
+      "section": "fieldparams",
+      "question": "بعد إنشاء Field Parameter 'Sales Metric' يحتوي Revenue و Profit، كيف تستخدمه في visual؟",
+      "type": "multiple_choice",
+      "options": [
+        "اسحب 'Sales Metric' الـ parameter للـ visual، ثم ضع measure ديناميكية تستخدم SELECTEDVALUE()",
+        "بلا حاجة لـ parameter",
+        "انسخ Revenue 2 مرات",
+        "استبدل الـ measure بـ parameter"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Field Parameters تحتاج slicing visual + calculated measure يستخدم SELECTEDVALUE() للمقياس المختار.",
+      "points": 8
+    },
+    {
+      "id": "q139",
+      "section": "scd",
+      "question": "إذا كان لديك Slowly Changing Dimension وأردت تحليل بيانات تاريخية صحيح، ما الاحتياطي الأساسي؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدم SCD Type 2 مع ValidFrom و ValidTo dates في Fact Table joins بالتاريخ الصحيح",
+        "احفظ كل الإصدارات في نفس الصف",
+        "تجاهل التاريخ",
+        "استبدل الصفوف القديمة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SCD Type 2 يحتفظ بالتاريخ كاملاً. عند الربط مع Fact، استخدم Date Range Joins للحصول على البيانات الصحيحة.",
+      "points": 8
+    },
+    {
+      "id": "q140",
+      "section": "query-folding",
+      "question": "أي من الخطوات التالية في Power Query قد تعطّل Query Folding غالباً؟",
+      "type": "multiple_choice",
+      "options": [
+        "استخدام دوال Python مخصصة، Custom Functions، أو INDEX/RANGE() بدون حدود واضحة",
+        "تغيير اسم العمود",
+        "إضافة عمود مفهرس",
+        "تغيير الترتيب"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Query Folding ينكسر عند: custom functions، transformations غير مدعومة، أو قيود معقدة.",
+      "points": 7
+    },
+    {
+      "id": "q141",
+      "section": "external-tools",
+      "question": "في Tabular Editor، ما الأداة الرئيسية لاكتشاف مشاكل النموذج قبل النشر؟",
+      "type": "multiple_choice",
+      "options": [
+        "Best Practice Analyzer (BPA) - يفحص naming، properties، configurations",
+        "Refresh only",
+        "Export only",
+        "لا توجد أداة فحص"
+      ],
+      "correctAnswer": 0,
+      "explanation": "BPA يوفر recommendations على مشاكل شائعة: Naming violations، غياب descriptions، relationships ضعيفة.",
+      "points": 6
+    },
+    {
+      "id": "q142",
+      "section": "tabular-editor",
+      "question": "ما فائدة 'Sync Metadata' في Tabular Editor عند العمل على نفس Workspace مع زملاء؟",
+      "type": "multiple_choice",
+      "options": [
+        "تحديث نسخة local من metadata مع آخر حالة بالسحابة لتجنب التضارب",
+        "حفظ الملف فقط",
+        "نسخ الألوان",
+        "لا فائدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sync Metadata ضروري في بيئة تعاونية: تنزل آخر تحديثات من Service قبل البدء بـ edits جديدة.",
+      "points": 7
+    },
+    {
+      "id": "q143",
+      "section": "time-intel-pro",
+      "question": "عند حساب 'Same Period Last Year' (SPLY) صحيح، ما الشرط الأساسي عن الحسابات التاريخية؟",
+      "type": "multiple_choice",
+      "options": [
+        "Date Table يجب أن تكون sequential بدون فجوات، و Fact dates يجب تغطي كلا السنتين",
+        "فقط استخدم DATEADD(-365)",
+        "لا حاجة لـ Date Table",
+        "كل السنوات متساوية"
+      ],
+      "correctAnswer": 0,
+      "explanation": "SPLY يفترض Date Table محكمة وبيانات متوازية. DATEADD(-365) ليس دقيقاً لـ leap years.",
+      "points": 8
+    },
+    {
+      "id": "q144",
+      "section": "deployment-pipelines",
+      "question": "إذا عملت deployment pipeline مع 3 stages (Dev → Test → Prod)، متى تستخدم 'Selective Deployment'؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تريد نقل report محدد بدون نقل كل الـ workspace (مثل: fix واحد فقط)",
+        "دائماً انقل كل شيء",
+        "لا توجد طريقة selectiveية",
+        "استخدمها مرة واحدة فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Selective Deployment يسمح بـ granular control: تختار أي report/dataflow تنقل دون باقي الـ workspace.",
+      "points": 7
+    },
+    {
+      "id": "q145",
+      "section": "premium-capacity",
+      "question": "أي من الإعدادات التالية يؤثر مباشرة على تكلفة Power BI Premium؟",
+      "type": "multiple_choice",
+      "options": [
+        "Capacity size (P1, P2, P3...) و Auto Pause setting",
+        "عدد التقارير",
+        "ألوان الـ visual",
+        "عدد الصفحات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "السعر بناءً على Capacity SKU فقط. Auto Pause يقلل التكلفة بإيقاف الـ capacity غير المستخدمة.",
+      "points": 6
+    },
+    {
+      "id": "q146",
+      "section": "workspace-premium",
+      "question": "ما الميزة الأساسية لـ Premium Workspace على Workspace عادي؟",
+      "type": "multiple_choice",
+      "options": [
+        "Incremental Refresh، Real-time Analytics، Large datasets, Pagination Reports يعملون بدون حد",
+        "ألوان أكثر",
+        "Slicers أفضل",
+        "لا فرق"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Premium = حق الاستخدام الكامل لـ advanced features (Incremental Refresh, Real-time, 100GB+ datasets).",
+      "points": 7
+    },
+    {
+      "id": "q147",
+      "section": "odata-endpoints",
+      "question": "ما فائدة OData endpoint في Power BI بدل Refresh العادي؟",
+      "type": "multiple_choice",
+      "options": [
+        "السماح بـ direct SQL queries على Semantic Model من أدوات خارجية (مثل Excel, Tableau)",
+        "تسريع الـ Refresh",
+        "تغيير الألوان",
+        "حذف الجداول"
+      ],
+      "correctAnswer": 0,
+      "explanation": "OData endpoint يوفر query interface على Semantic Model: أدوات خارجية تستطيع سؤال البيانات مباشرة.",
+      "points": 7
+    },
+    {
+      "id": "q148",
+      "section": "workspace-security",
+      "question": "ما الفرق بين Workspace Role 'Member' و 'Contributor' في Power BI Service؟",
+      "type": "multiple_choice",
+      "options": [
+        "Member يمكن edit content، Contributor يمكن create و edit لكن لا admin control",
+        "كلاهما نفس الشيء",
+        "Contributor يمكن حذف الـ workspace",
+        "Member لا يمكنه رؤية الـ reports"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Member = Editor (full power). Contributor = Creator (edit own content فقط). Admin = Full control.",
+      "points": 6
+    },
+    {
+      "id": "q149",
+      "section": "data-alerts",
+      "question": "متى تكون Data Alerts في Power BI Service أداة كافية بدل Power Automate الكامل؟",
+      "type": "multiple_choice",
+      "options": [
+        "عند الحاجة لتنبيهات بسيطة (email عند تجاوز حد) دون منطق معقد",
+        "دائماً استخدم Power Automate",
+        "Alerts لا تعمل",
+        "Alerts أسرع دائماً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Data Alerts: بسيط وسريع للحالات الأساسية. Power Automate: للمنطق المعقد والتكامل مع أنظمة أخرى.",
+      "points": 6
+    },
+    {
+      "id": "q150",
+      "section": "refresh-operations",
+      "question": "أي من الأسباب التالية قد يسبب فشل Refresh في Power BI Service؟",
+      "type": "multiple_choice",
+      "options": [
+        "Credentials expired، Gateway down، Source data not accessible، DAX errors",
+        "الثيم غير مناسب",
+        "اللون قديم",
+        "الـ visual count عالي جداً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "أسباب Refresh الشائعة: Authentication، gateway، data source availability، صيغة DAX خاطئة.",
+      "points": 7
     }
   ]
 }
