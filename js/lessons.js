@@ -7,40 +7,304 @@ window.LESSONS = {
     en_eyebrow: "01 · 01 — Introduction to Power BI",
     en_lede: "What is Power BI? And why is it considered the most powerful tool in the world in the field of data analysis and business intelligence?",
     sectionId: "intro",
-    blocks: [{ kind: "html", html: `<div class="lesson-card">
+    blocks: [{ kind: "html", html: `<section class="chapter-gateway">
+      <div class="chapter-gateway-top">
+        <div>
+          <div class="chapter-gateway-kicker">المرحلة 1 · مبتدئ</div>
+          <h3 class="chapter-gateway-title">البداية الحقيقية: افهم البيانات الأول</h3>
+        </div>
+        <div class="chapter-gateway-stat">
+          <span>الوقت التقريبي للفصل</span>
+          <strong>70 دقيقة</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="lesson-card">
+      <h3>Power BI ليس مجرد برنامج لرسم Charts</h3>
+      <p>الفكرة الأساسية في Power BI هي تحويل بيانات مشتتة وغير مفهومة إلى نموذج واضح يساعدك تسأل سؤال تجاري وتجاوب عليه بثقة. التقرير الجيد لا يكتفي بأن يقول لك الرقم، بل يساعدك تفهم لماذا هذا الرقم تغيّر، وأين المشكلة، وما القرار التالي.</p>
+      <p>مثال بسيط: لو عندك مبيعات من Excel، ومصاريف من نظام محاسبة، وأهداف شهرية من ملف آخر، فدور Power BI هو جمع هذه المصادر وتنظيفها وربطها ثم عرض مؤشرات مثل الإيراد، الربح، أفضل منتج، أسوأ فرع، واتجاه الأداء عبر الوقت.</p>
+    </div>
+
+    <div class="lesson-card">
       <h3>ما هو ذكاء الأعمال (Business Intelligence)؟</h3>
-      <p>هو عملية تحويل البيانات الخام (Raw Data) إلى معلومات ورؤى (Insights) مفهومة تساعد مدراء الشركات على اتخاذ قرارات صحيحة ومبنية على أرقام.</p>
+      <p>ذكاء الأعمال هو عملية منظمة لتحويل البيانات الخام إلى معلومات قابلة للفهم ثم إلى رؤى تساعد على القرار. كلمة "ذكاء" هنا لا تعني أن الأداة تفكر بدلًا منك، بل تعني أنها تعطيك طريقة أفضل لرؤية الواقع من خلال الأرقام.</p>
+      <table class="compare-table">
+        <tr>
+          <th>المستوى</th>
+          <th>المعنى</th>
+        </tr>
+        <tr>
+          <td><strong>Data</strong></td>
+          <td>أرقام خام مثل تاريخ البيع، اسم العميل، الكمية، السعر، والفرع.</td>
+        </tr>
+        <tr>
+          <td><strong>Information</strong></td>
+          <td>تلخيص مفهوم مثل إجمالي المبيعات في كل شهر أو حسب كل فرع.</td>
+        </tr>
+        <tr>
+          <td><strong>Insight</strong></td>
+          <td>ملاحظة لها معنى مثل أن فرعًا معينًا يبيع كثيرًا لكن هامش ربحه ضعيف.</td>
+        </tr>
+        <tr>
+          <td><strong>Decision</strong></td>
+          <td>إجراء عملي مثل مراجعة الخصومات، تغيير المخزون، أو إعادة توزيع فريق المبيعات.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>مسار العمل الحقيقي داخل Power BI</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>الاتصال بالبيانات</h4>
+            <p>تبدأ من مصادر مختلفة: Excel، CSV، SQL Server، SharePoint، Web APIs أو أنظمة الشركة.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>تنظيف وتحويل البيانات</h4>
+            <p>باستخدام Power Query تنظف الأعمدة، تغير الأنواع، توحد المسميات، وتحذف الأخطاء قبل بناء التقرير.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>بناء نموذج البيانات</h4>
+            <p>تربط الجداول بعلاقات صحيحة وتفصل بين جداول الحقائق Fact وجداول الأبعاد Dimension حتى لا تصبح الأرقام مضللة.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>كتابة المقاييس والتحليل</h4>
+            <p>باستخدام DAX تحسب مؤشرات مثل الإيراد، النمو، الربحية، النسبة من الإجمالي، والمقارنة مع العام السابق.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>العرض والمشاركة</h4>
+            <p>تصمم صفحات التقرير، تنشرها على Power BI Service، تضبط الصلاحيات والتحديث التلقائي، ثم تشاركها مع الفريق.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>كيف تفكر كمحلل بيانات؟</h3>
+      <p>قبل ما تسأل: "أعمل أي Chart؟" اسأل أولًا: "ما القرار الذي نحاول تحسينه؟" لأن التقرير الناجح يبدأ من سؤال واضح، وليس من شكل بصري جميل.</p>
+      <ul>
+        <li><strong>السؤال:</strong> ما المشكلة أو الفرصة التي نريد فهمها؟</li>
+        <li><strong>القرار:</strong> من سيستخدم التقرير؟ وماذا سيفعل بعد رؤية الأرقام؟</li>
+        <li><strong>البيانات:</strong> ما الجداول والأعمدة المطلوبة للإجابة؟ وهل تعريفاتها واضحة؟</li>
+        <li><strong>الثقة:</strong> هل الأرقام نظيفة ومتصلة بعلاقات صحيحة، أم مجرد تجميع سريع؟</li>
+      </ul>
+      <table class="compare-table">
+        <tr>
+          <th>سؤال ضعيف</th>
+          <th>سؤال أقوى</th>
+        </tr>
+        <tr>
+          <td>اعمل Dashboard للمبيعات.</td>
+          <td>ما المنتجات الأعلى ربحًا؟ وما الفروع التي تحتاج تدخلًا؟ وهل المشكلة في حجم المبيعات أم في هامش الربح؟</td>
+        </tr>
+        <tr>
+          <td>اعرض كل البيانات الموجودة.</td>
+          <td>ما المؤشرات القليلة التي تساعد المدير يتخذ قرارًا أسرع وبثقة أكبر؟</td>
+        </tr>
+      </table>
     </div>
 
     <div class="lesson-card">
       <h3>مكونات بيئة Power BI الأساسية</h3>
       <ul>
-        <li><strong>Power BI Desktop:</strong> البرنامج المجاني اللي بننزله على الكمبيوتر، وبنبني فيه التقارير والمعادلات.</li>
-        <li><strong>Power BI Service:</strong> السيرفر السحابي (Cloud) اللي بنرفع عليه التقرير عشان نشاركه مع الفريق والمديرين.</li>
-        <li><strong>Power BI Mobile:</strong> تطبيق الموبايل اللي بيسمح للمديرين بمتابعة التقارير من أي مكان.</li>
+        <li><strong>Power BI Desktop:</strong> المكان الذي تبني فيه التقرير: الاتصال بالبيانات، Power Query، النموذج، DAX، والصفحات المرئية.</li>
+        <li><strong>Power BI Service:</strong> المنصة السحابية للنشر والمشاركة والتحديث المجدول وإدارة الصلاحيات وبناء Dashboards.</li>
+        <li><strong>Power BI Report Server:</strong> خادم داخل الشركة لنشر التقارير بدون الاعتماد على السحابة، ويستخدم غالبًا في المؤسسات التي لديها قيود أمنية أو تنظيمية. له نسخة Desktop خاصة به، وتحديثاته عادة أبطأ من Power BI Service.</li>
+        <li><strong>Power BI Mobile:</strong> تطبيق متابعة التقارير على الهاتف، مفيد للمديرين والمتابعين وليس لبناء النماذج.</li>
+        <li><strong>Gateway:</strong> جسر يربط Power BI Service بالبيانات الموجودة داخل أجهزة أو سيرفرات الشركة حتى يتم تحديث التقرير تلقائيًا.</li>
       </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الفكرة الخاطئة مقابل الفهم الصحيح</h3>
+      <table class="compare-table">
+        <tr>
+          <th>الفكرة الخاطئة</th>
+          <th>الفهم الصحيح</th>
+        </tr>
+        <tr>
+          <td>Power BI يعني رسومات جميلة فقط.</td>
+          <td>الرسومات هي آخر خطوة؛ القيمة الحقيقية في تنظيف البيانات وبناء نموذج صحيح ومقاييس دقيقة.</td>
+        </tr>
+        <tr>
+          <td>مجرد إدخال البيانات إلى Power BI يكفي لبناء تقرير صحيح.</td>
+          <td>لازم تنظف البيانات في Power Query، وتبني علاقات صحيحة، وتكتب مقاييس DAX واضحة قبل أن تثق في التقرير.</td>
+        </tr>
+        <tr>
+          <td>كل شيء يتم داخل Desktop فقط.</td>
+          <td>Desktop للبناء، وService للنشر والمشاركة والتحديث والصلاحيات.</td>
+        </tr>
+      </table>
     </div>
 
     <div class="tip-box">
       <div class="icon">💡</div>
-      <p><strong>معلومة:</strong> برنامج Power BI Desktop مجاني بالكامل 100% وتقدر تتعلم عليه وتعمل كل حاجة بدون أي اشتراك مدفوع!</p>
+      <p><strong>قاعدة مهمة:</strong> لا تقس احترافك في Power BI بعدد الرسومات التي تعرفها، بل بقدرتك على بناء نموذج يعطي أرقامًا صحيحة قابلة للتفسير، ومفيدة لقرار واضح.</p>
     </div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>What is Business Intelligence?</h3>
-<p>It is the process of converting raw data into understandable information and insights that help company managers make correct decisions based on numbers.</p>
-</div>
-<div class="lesson-card">
-<h3>Core Power BI Components</h3>
-<ul>
-<li><strong>Power BI Desktop:</strong> The free desktop app that we install on our computer to build reports and formulas.</li>
-<li><strong>Power BI Service:</strong> The cloud server to which we upload the report to share it with the team and managers.</li>
-<li><strong>Power BI Mobile:</strong> A mobile application that allows managers to follow reports from anywhere.</li>
-</ul>
-</div>
-<div class="tip-box">
-<div class="icon">💡</div>
-<p><strong>Note:</strong> Power BI Desktop is completely free, so you can learn on it and build everything you need without any paid subscription!</p>
-</div>` }],
+    en_blocks: [{ kind: "html", html: `<section class="chapter-gateway">
+      <div class="chapter-gateway-top">
+        <div>
+          <div class="chapter-gateway-kicker">Stage 1 · Beginner</div>
+          <h3 class="chapter-gateway-title">The Real Start: Understand Data First</h3>
+        </div>
+        <div class="chapter-gateway-stat">
+          <span>Estimated chapter time</span>
+          <strong>70 minutes</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="lesson-card">
+      <h3>Power BI is not just a tool for drawing charts</h3>
+      <p>The core idea of Power BI is turning scattered, hard-to-read data into a clear model that helps you ask a business question and answer it with confidence. A good report does not only tell you the number. It helps you understand why the number changed, where the problem is, and what the next decision should be.</p>
+      <p>A simple example: if you have sales in Excel, expenses in an accounting system, and monthly targets in another file, the role of Power BI is to bring these sources together, clean them, connect them, then show metrics such as revenue, profit, best product, weakest branch, and performance trend over time.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>What is Business Intelligence?</h3>
+      <p>Business Intelligence is an organized process for turning raw data into understandable information, then into insights that support decisions. The word "intelligence" here does not mean the tool thinks for you. It means it gives you a better way to see reality through numbers.</p>
+      <table class="compare-table">
+        <tr>
+          <th>Level</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td><strong>Data</strong></td>
+          <td>Raw values such as sale date, customer name, quantity, price, and branch.</td>
+        </tr>
+        <tr>
+          <td><strong>Information</strong></td>
+          <td>A useful summary such as total sales by month or by branch.</td>
+        </tr>
+        <tr>
+          <td><strong>Insight</strong></td>
+          <td>A meaningful observation such as a branch selling a lot but generating weak margin.</td>
+        </tr>
+        <tr>
+          <td><strong>Decision</strong></td>
+          <td>A practical action such as reviewing discounts, changing stock, or redistributing the sales team.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>The real workflow inside Power BI</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Connect to data</h4>
+            <p>You begin with different sources: Excel, CSV, SQL Server, SharePoint, web APIs, or company systems.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Clean and transform data</h4>
+            <p>Using Power Query, you clean columns, change data types, standardize labels, and remove errors before building the report.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Build the data model</h4>
+            <p>You connect tables with the right relationships and separate Fact tables from Dimension tables so your numbers do not become misleading.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Write measures and analysis</h4>
+            <p>Using DAX, you calculate metrics such as revenue, growth, profitability, percentage of total, and comparison with last year.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Present and share</h4>
+            <p>You design report pages, publish them to Power BI Service, configure permissions and scheduled refresh, then share them with the team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>How do you think like a data analyst?</h3>
+      <p>Before asking, "Which chart should I build?" ask first, "What decision are we trying to improve?" A successful report starts from a clear question, not from a visually attractive shape.</p>
+      <ul>
+        <li><strong>The question:</strong> What problem or opportunity are we trying to understand?</li>
+        <li><strong>The decision:</strong> Who will use the report, and what will they do after seeing the numbers?</li>
+        <li><strong>The data:</strong> Which tables and columns are required to answer it, and are their definitions clear?</li>
+        <li><strong>Confidence:</strong> Are the numbers clean and connected through correct relationships, or are they just a quick aggregation?</li>
+      </ul>
+      <table class="compare-table">
+        <tr>
+          <th>Weak question</th>
+          <th>Stronger question</th>
+        </tr>
+        <tr>
+          <td>Build a sales dashboard.</td>
+          <td>Which products are most profitable? Which branches need intervention? Is the issue in sales volume or in profit margin?</td>
+        </tr>
+        <tr>
+          <td>Show all available data.</td>
+          <td>What small set of metrics helps the manager make a faster and more confident decision?</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Core components of the Power BI environment</h3>
+      <ul>
+        <li><strong>Power BI Desktop:</strong> The place where you build the report: data connection, Power Query, model, DAX, and report pages.</li>
+        <li><strong>Power BI Service:</strong> The cloud platform for publishing, sharing, scheduled refresh, permission management, and dashboards.</li>
+        <li><strong>Power BI Report Server:</strong> An on-premises server for publishing reports without depending on the cloud. It is common in organizations with security or regulatory constraints. It has its own Desktop version, and its updates are usually slower than Power BI Service.</li>
+        <li><strong>Power BI Mobile:</strong> A mobile app for following reports on the phone. It is useful for managers and consumers, not for building models.</li>
+        <li><strong>Gateway:</strong> A bridge that connects Power BI Service to data stored inside company devices or servers so the report can refresh automatically.</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Misconception vs correct understanding</h3>
+      <table class="compare-table">
+        <tr>
+          <th>Misconception</th>
+          <th>Correct understanding</th>
+        </tr>
+        <tr>
+          <td>Power BI is only about pretty visuals.</td>
+          <td>Visuals are the last step. The real value is in cleaning data, building the right model, and defining accurate measures.</td>
+        </tr>
+        <tr>
+          <td>Just loading data into Power BI is enough to build a correct report.</td>
+          <td>You still need to clean the data in Power Query, build the right relationships, and write clear DAX measures before trusting the report.</td>
+        </tr>
+        <tr>
+          <td>Everything happens inside Desktop only.</td>
+          <td>Desktop is for building, while Service is for publishing, sharing, refresh, and permissions.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>Important rule:</strong> Do not measure your Power BI skill by how many visuals you know. Measure it by your ability to build a model that produces correct, explainable numbers that support a clear decision.</p>
+    </div>` }],
   },
   "setup": {
     eyebrow: "01 · 02 — التثبيت والإعداد",
@@ -49,46 +313,149 @@ window.LESSONS = {
     en_eyebrow: "01 · 02 — Installation and Setup",
     en_lede: "Simple steps to download the program and prepare your work environment.",
     sectionId: "setup",
-    blocks: [{ kind: "html", html: `<div class="steps">
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>اختار النسخة الصحيحة من البداية</h3>
+      <p>أنت غالبًا تحتاج Power BI Desktop العادي، وليس Power BI Report Server Desktop. النسخة العادية هي الأفضل للتعلم ولأغلب الشغل الحديث لأنها مرتبطة بتحديثات Power BI Service والميزات الجديدة.</p>
+      <table class="compare-table">
+        <tr>
+          <th>النسخة</th>
+          <th>الاستخدام</th>
+        </tr>
+        <tr>
+          <td><strong>Power BI Desktop</strong></td>
+          <td>النسخة الأساسية لبناء التقارير والنماذج والتعلم.</td>
+        </tr>
+        <tr>
+          <td><strong>Power BI Report Server Desktop</strong></td>
+          <td>نسخة خاصة للشركات التي تنشر التقارير على Report Server داخل الشركة، وليست الاختيار الافتراضي للمبتدئ.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
           <h4>متجر مايكروسوفت (موصى به)</h4>
-          <p>افتح Microsoft Store في الويندوز وابحث عن "Power BI Desktop" واضغط Install. الميزة هنا إن البرنامج هيتحدث لوحده.</p>
+          <p>افتح Microsoft Store في Windows وابحث عن "Power BI Desktop" واضغط Install. الميزة هنا أن البرنامج يتحدث تلقائيًا. وهذا يقلل مشاكل الإصدارات القديمة.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h4>التحميل المباشر</h4>
-          <p>لو معندكش ستور، تقدر تحمله من موقع مايكروسوفت الرسمي (ابحث في جوجل عن Download Power BI Desktop).</p>
+          <h4>التحميل المباشر من Microsoft</h4>
+          <p>لو لا تستطيع استخدام المتجر، ادخل على موقع Microsoft الرسمي وحمّل Power BI Desktop. تجنب مواقع التحميل غير الرسمية حتى لا تحمل نسخة قديمة أو ملف غير موثوق.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>أول تشغيل بعد التثبيت</h4>
+          <p>افتح البرنامج وتأكد أن الشاشة الرئيسية ظهرت بدون أخطاء. تسجيل الدخول بحساب العمل أو الدراسة مفيد للنشر لاحقًا، لكنه ليس ضروريًا لبناء أول تقرير محلي على جهازك.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>اضبط إعدادات اللغة والمنطقة</h4>
+          <p>لو بياناتك فيها تواريخ أو أرقام بتنسيق مختلف، راجع إعدادات Regional Settings من Options. أخطاء اليوم والشهر والفواصل العشرية من أكثر أسباب النتائج الغريبة في بداية التعلم.</p>
         </div>
       </div>
     </div>
 
+    <img class="lesson-img" src="images/Power BI - Home Page.png" alt="الشاشة الرئيسية لـ Power BI Desktop">
+    <p class="lesson-img-caption">الشاشة الرئيسية لـ Power BI Desktop بعد التثبيت</p>
+
+    <div class="lesson-card">
+      <h3>Checklist سريع بعد التثبيت</h3>
+      <ul>
+        <li><strong>افتح Power BI Desktop:</strong> تأكد أنه يعمل بدون رسائل خطأ.</li>
+        <li><strong>جرب Get Data:</strong> افتح قائمة Get Data وتأكد أنك ترى مصادر مثل Excel وText/CSV.</li>
+        <li><strong>احفظ ملف اختبار:</strong> أنشئ ملفًا فارغًا واحفظه بصيغة PBIX لتتأكد أن مسار الحفظ والصلاحيات سليمة.</li>
+        <li><strong>لا تبدأ بمشروع كبير:</strong> أول تجربة يفضل تكون على ملف Excel صغير حتى تتأكد أن البيئة جاهزة.</li>
+      </ul>
+    </div>
+
     <div class="warn-box">
       <div class="icon">⚠️</div>
-      <p><strong>تنبيه:</strong> Power BI Desktop لا يعمل على أجهزة الماك (Mac OS). لو معاك ماك هتحتاج تنزل Windows عليه باستخدام Parallels أو Boot Camp.</p>
+      <p><strong>تنبيه:</strong> Power BI Desktop لا يعمل مباشرة على macOS. لو جهازك Mac ستحتاج Windows عبر Parallels أو Boot Camp أو جهاز Windows منفصل.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>بديل للماك:</strong> يمكنك استخدام Power BI Service (app.powerbi.com) مباشرةً من المتصفح على أي نظام تشغيل. بعض المهام مثل بناء التقارير وإنشاء المقاييس متاحة فيه بدون الحاجة لـ Desktop.</p>
     </div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="steps">
-<div class="step">
-<div class="step-num">1</div>
-<div class="step-content">
-<h4>Microsoft Store (recommended)</h4>
-<p>Open Microsoft Store in Windows, search for "Power BI Desktop", then click Install. The advantage is that the app updates automatically on its own.</p>
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Choose the right version from the start</h3>
+<p>You most likely need the standard Power BI Desktop, not Power BI Report Server Desktop. The standard version is best for learning and most modern work because it stays in sync with Power BI Service updates and new features.</p>
+<table class="compare-table">
+  <tr>
+    <th>Version</th>
+    <th>Use case</th>
+  </tr>
+  <tr>
+    <td><strong>Power BI Desktop</strong></td>
+    <td>The standard edition for building reports, data models, and learning.</td>
+  </tr>
+  <tr>
+    <td><strong>Power BI Report Server Desktop</strong></td>
+    <td>A special edition for organizations that publish reports to an on-premises Report Server — not the default choice for beginners.</td>
+  </tr>
+</table>
 </div>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>Microsoft Store (recommended)</h4>
+      <p>Open Microsoft Store in Windows, search for "Power BI Desktop", and click Install. The advantage is that the app updates automatically, which reduces version-related issues.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>Direct download from Microsoft</h4>
+      <p>If you cannot use the Store, visit the official Microsoft website and download Power BI Desktop. Avoid unofficial download sites to ensure you get the latest, trusted version.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>First launch after installation</h4>
+      <p>Open the app and confirm the home screen appears without errors. Signing in with a work or school account is useful for publishing later, but it is not required to build your first local report.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h4>Set your language and region settings</h4>
+      <p>If your data contains dates or numbers in a non-standard format, review the Regional Settings in Options. Date order and decimal separator mismatches are among the most common causes of strange results for beginners.</p>
+    </div>
+  </div>
 </div>
-<div class="step">
-<div class="step-num">2</div>
-<div class="step-content">
-<h4>Direct download</h4>
-<p>If you do not have a store, you can download it from the official Microsoft website (Search on Google for Download Power BI Desktop).</p>
+
+<img class="lesson-img" src="images/Power BI - Home Page.png" alt="Power BI Desktop home screen after installation">
+<p class="lesson-img-caption">Power BI Desktop home screen after installation</p>
+
+<div class="lesson-card">
+<h3>Quick checklist after installation</h3>
+<ul>
+  <li><strong>Open Power BI Desktop:</strong> confirm it launches without error messages.</li>
+  <li><strong>Try Get Data:</strong> open the Get Data menu and verify you can see sources such as Excel and Text/CSV.</li>
+  <li><strong>Save a test file:</strong> create an empty file and save it as PBIX to confirm your save path and permissions are correct.</li>
+  <li><strong>Don't start with a big project:</strong> your first experiment should be on a small Excel file to confirm the environment is ready.</li>
+</ul>
 </div>
-</div>
-</div>
+
 <div class="warn-box">
 <div class="icon">⚠️</div>
-<p><strong>Warning:</strong> Power BI Desktop does not run natively on Mac devices (macOS). If you use a Mac, you will need to install Windows on it through Parallels or Boot Camp.</p>
+<p><strong>Warning:</strong> Power BI Desktop does not run natively on macOS. If you are on a Mac, you will need Windows via Parallels, Boot Camp, or a separate Windows machine.</p>
+</div>
+
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Mac alternative:</strong> You can use Power BI Service (app.powerbi.com) directly in a browser on any operating system. Some tasks — such as building reports and creating measures — are available there without needing Desktop.</p>
 </div>` }],
   },
   "interface": {
@@ -99,39 +466,88 @@ window.LESSONS = {
     en_lede: "Learn about the main interface and available tools.",
     sectionId: "interface",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>الثلاث شاشات الرئيسية (Views)</h3>
+      <h3>📍 أنت هنا في الرحلة</h3>
+      <p>في الدرس السابق تعرفت على مكونات Power BI الثلاثة: Desktop (بناء)، Service (نشر)، Mobile (متابعة). الآن سنركز على Desktop والأدوات اللي بتساعدك في <strong>كل مرحلة من مراحل بناء التقرير</strong>.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الشاشات الرئيسية (Views)</h3>
       <ul>
         <li><strong>شاشة التقرير (Report View):</strong> الكانفاس الأبيض اللي بنرسم فيه الشارتات والرسومات البيانية.</li>
         <li><strong>شاشة البيانات (Data/Table View):</strong> هنا بتشوف الداتا بتاعتك في شكل جداول زي الإكسيل.</li>
         <li><strong>شاشة العلاقات (Model View):</strong> دي أهم شاشة للمحترفين! هنا بنربط الجداول ببعضها.</li>
+        <li><strong>شاشة استعلامات DAX (DAX Query View):</strong> هنا تكتب وتجرب استعلامات DAX مباشرة وتشوف النتائج بسرعة بدون ما تبني أي Visual كل مرة.</li>
+        <li><strong>شاشة TMDL (TMDL View):</strong> للمستخدمين المتقدمين، وبتخليك تراجع وتعدل مكونات الـ semantic model على شكل كود.</li>
       </ul>
     </div>
-    
+
+    <img class="lesson-img" src="images/Power BI - Views.png" alt="الشاشات الرئيسية في Power BI Desktop">
+    <p class="lesson-img-caption">الشاشات الرئيسية في Power BI Desktop</p>
+
     <div class="lesson-card">
       <h3>القوائم الجانبية (Panes)</h3>
-      <p>على اليمين هتلاقي:</p>
+      <p>على اليمين هتلاقي مجموعة panes بتختلف قليلًا حسب إصدار Power BI Desktop والإعدادات المفعلة:</p>
       <ul>
-          <li><strong>Data Pane:</strong> فيها كل الجداول والأعمدة بتاعتك.</li>
-          <li><strong>Visualizations Pane:</strong> فيها كل أنواع الشارتات (بار، باي، خريطة..) وإعدادات الألوان.</li>
-          <li><strong>Filters Pane:</strong> لعمل فلاتر متقدمة على مستوى التقرير كله أو شارت معين.</li>
+        <li><strong>Data Pane:</strong> فيها كل الجداول والأعمدة والـ measures المتاحة للاستخدام داخل التقرير.</li>
+        <li><strong>Filters Pane:</strong> لعمل فلاتر على مستوى الـ visual أو الصفحة أو التقرير كله.</li>
+        <li><strong>Build Pane / Build a visual:</strong> في الواجهة الحديثة دي بتستبدل جزء كبير من الـ Visualizations Pane وبتستخدمها لاختيار نوع الـ visual وتوزيع الحقول عليه.</li>
+        <li><strong>Format Pane:</strong> منها بتتحكم في الألوان، العناوين، الـ labels، الخلفيات، وأسلوب عرض الـ visual.</li>
+        <li><strong>Visualizations Pane:</strong> ممكن تلاقي الاسم ده في الشروحات الأقدم أو لو إعداداتك لسه على الشكل القديم؛ وهو كان يجمع بين البناء والتنسيق في pane واحدة.</li>
+        <li><strong>Panes إضافية عند الحاجة:</strong> زي Bookmarks - Selections - Sync Slicers — بتفتحها من قائمة View حسب الشغل اللي بتعمله.</li>
       </ul>
+    </div>
+
+    <div class="lesson-card">
+      <h3>⬇️ الخطوة القادمة: فهم البيانات التي بتشتغل معاها</h3>
+      <p>الآن بتعرف أين تذهب البيانات في Power BI (Data Pane) وكيف تحولها لـ Visuals. لكن <strong>قبل ما تشرع في بناء، لازم تفهم نوع البيانات اللي بتتعامل معاها</strong>:</p>
+      <ul>
+        <li>من أين تيجي البيانات؟ من نظام تشغيلي (مثل SAP أو نظام المبيعات) أم من ديتا وير محضّرة للتحليل؟</li>
+        <li>هل البيانات متحدّثة لحظياً أم تاريخية متراكمة؟</li>
+        <li>كيف هذا يؤثر على طريقة بناء النموذج؟</li>
+      </ul>
+      <p><strong>الدرس القادم (OLTP vs OLAP)</strong> هيجاوب على كل هذه الأسئلة ويشرح لك الفرق بين النظامين — وهذا أساسي قبل ما تشرع في نمذجة البيانات.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>The three main screens (Views)</h3>
+<h3>📍 Where you are on the journey</h3>
+<p>In the previous lesson, you learned about Power BI's three components: Desktop (build), Service (publish), Mobile (monitor). Now we'll focus on Desktop and the tools that help you in <strong>every stage of report building</strong>.</p>
+</div>
+
+<div class="lesson-card">
+<h3>The main screens (Views)</h3>
 <ul>
-<li><strong>Report View:</strong> The white canvas on which we draw charts and graphs.</li>
-<li><strong>Data/Table View:</strong> Here you can see your data in the form of tables like Excel.</li>
-<li><strong>Relationships screen (Model View):</strong> This is the most important screen for professionals! Here we link the tables together.</li>
+<li><strong>Report View:</strong> The white canvas where you draw charts and graphs.</li>
+<li><strong>Data/Table View:</strong> See your data in table form, similar to Excel.</li>
+<li><strong>Model View:</strong> The most important screen for professionals — this is where you link tables together.</li>
+<li><strong>DAX Query View:</strong> Write and test DAX queries directly and see results instantly, without having to build a visual every time.</li>
+<li><strong>TMDL View:</strong> For advanced users — lets you review and edit semantic model components as code.</li>
 </ul>
 </div>
+
+<img class="lesson-img" src="images/Power BI - Views.png" alt="The main screens in Power BI Desktop">
+<p class="lesson-img-caption">The main screens in Power BI Desktop</p>
+
 <div class="lesson-card">
-<h3>Side menus (Panes)</h3>
-<p>On the right you will find:</p>
+<h3>Side panels (Panes)</h3>
+<p>On the right you will find a set of panes that may vary slightly depending on your Power BI Desktop version and enabled settings:</p>
 <ul>
-<li><strong>Data Pane:</strong> It contains all your tables and columns.</li>
-<li><strong>Visualizations Pane:</strong> It contains all types of charts (bar, pie, map...) and color settings.</li>
-<li><strong>Filters Pane:</strong> To create advanced filters on the level of the entire report or a specific chart.</li>
+<li><strong>Data Pane:</strong> Contains all your tables, columns, and measures available for use inside the report.</li>
+<li><strong>Filters Pane:</strong> Apply filters at the visual, page, or entire report level.</li>
+<li><strong>Build Pane / Build a visual:</strong> In the modern interface this replaces most of the old Visualizations Pane — use it to choose the visual type and assign fields to it.</li>
+<li><strong>Format Pane:</strong> Control colors, titles, labels, backgrounds, and the visual's display style.</li>
+<li><strong>Visualizations Pane:</strong> You may see this name in older tutorials or if your settings are on the older layout — it used to combine building and formatting in one pane.</li>
+<li><strong>Additional panes when needed:</strong> Such as Bookmarks - Selections - Sync Slicers — open them from the View menu as your work requires.</li>
 </ul>
+</div>
+
+<div class="lesson-card">
+<h3>⬇️ Next Step: Understanding the data you're working with</h3>
+<p>Now you know where data goes in Power BI (Data Pane) and how to turn it into Visuals. But <strong>before you start building, you need to understand the type of data you're working with</strong>:</p>
+<ul>
+<li>Where does the data come from? From an operational system (like SAP or a sales system) or from a data warehouse prepared for analysis?</li>
+<li>Is the data updated in real-time or is it accumulated historical data?</li>
+<li>How does this affect the way you build the model?</li>
+</ul>
+<p><strong>Next Lesson (OLTP vs OLAP)</strong> will answer all these questions and explain the difference between the two systems — essential knowledge before you start modeling your data.</p>
 </div>` }],
   },
   "oltp-olap": {
@@ -142,97 +558,272 @@ window.LESSONS = {
     en_lede: "Before you start building any data model, you must understand the fundamental difference between the two systems you deal with in the world of data.",
     sectionId: "oltp-olap",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>OLTP — الأنظمة التشغيلية (Online Transaction Processing)</h3>
-      <p>دي الأنظمة اللي بتشغّل الأعمال يوم بيوم — مثل نظام المبيعات، نظام المستشفى، نظام المخزون.</p>
+      <h3>أولًا: أنت تعرف الفكرة بالفعل حتى لو لم تسمع الاسم</h3>
+      <p>كثير من الناس يعملون سنوات في البيانات أو التقارير بدون أن يسمعوا مصطلحي OLTP وOLAP بهذه الصيغة الأكاديمية. لكنهم في الواقع يتعاملون معهما كل يوم.</p>
       <ul>
-        <li><strong>الهدف:</strong> تسجيل العمليات بسرعة وأمان (Insert, Update, Delete).</li>
-        <li><strong>البيانات:</strong> محدّثة لحظياً — بتعكس الحالة الحالية فقط.</li>
-        <li><strong>النموذج:</strong> جداول كثيرة ومترابطة (Normalized) لتقليل التكرار.</li>
-        <li><strong>المستخدم:</strong> موظفو الإدخال والأنظمة التشغيلية.</li>
-        <li><strong>مثال:</strong> نظام نقاط البيع (POS)، SAP، نظام المستشفى.</li>
+        <li><strong>OLTP (Online Transaction Processing)</strong> هو النظام الذي <strong>يشغّل العمل اليومي</strong>: بيع، شراء، حجز، دخول مريض، تسجيل حضور، إصدار فاتورة.</li>
+        <li><strong>OLAP (Online Analytical Processing)</strong> هو النظام الذي <strong>يفهم ما حدث</strong>: ما أعلى فرع؟ لماذا انخفضت المبيعات؟ ما اتجاه الربح عبر 12 شهرًا؟</li>
       </ul>
+      <p>بمعنى أبسط جدًا: <strong>OLTP يكتب الحدث</strong>، و<strong>OLAP يقرأ آلاف أو ملايين الأحداث ليفسرها</strong>.</p>
     </div>
 
-    <div class="lesson-card">
-      <h3>OLAP — أنظمة التحليل (Online Analytical Processing)</h3>
-      <p>دي الأنظمة اللي بتحلّل البيانات التاريخية لاستخراج الرؤى واتخاذ القرارات — زي Power BI.</p>
-      <ul>
-        <li><strong>الهدف:</strong> استعلامات تحليلية معقدة (Aggregations, Trends, Comparisons).</li>
-        <li><strong>البيانات:</strong> تاريخية متراكمة — بتعكس فترات زمنية طويلة.</li>
-        <li><strong>النموذج:</strong> Star Schema أو Snowflake Schema (Denormalized) لسرعة القراءة.</li>
-        <li><strong>المستخدم:</strong> المديرون والمحللون واتخاذ القرار.</li>
-        <li><strong>مثال:</strong> Power BI، Tableau، Azure Synapse.</li>
-      </ul>
+    <div class="tip-box">
+      <div class="icon">🧠</div>
+      <p><strong>سطر للحفظ السريع:</strong> OLTP = "تشغيل الشغل"، بينما OLAP = "فهم الشغل".</p>
     </div>
 
+    <img class="lesson-img" src="images/OLAP Vs OLTP.png" alt="مقارنة OLAP vs OLTP">
+    <p class="lesson-img-caption">الفرق بين أنظمة OLTP وOLAP</p>
+
     <div class="lesson-card">
-      <h3>المقارنة المباشرة</h3>
-      <table style="width:100%;border-collapse:collapse;font-size:0.92rem;">
-        <thead>
-          <tr style="background:var(--bg4);color:var(--gold);">
-            <th style="padding:10px;border:1px solid var(--border);text-align:right;">المعيار</th>
-            <th style="padding:10px;border:1px solid var(--border);text-align:right;">OLTP</th>
-            <th style="padding:10px;border:1px solid var(--border);text-align:right;">OLAP</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:8px;border:1px solid var(--border);">الهدف</td><td style="padding:8px;border:1px solid var(--border);">تشغيل الأعمال</td><td style="padding:8px;border:1px solid var(--border);">تحليل البيانات</td></tr>
-          <tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">نوع العمليات</td><td style="padding:8px;border:1px solid var(--border);">Read/Write متكرر</td><td style="padding:8px;border:1px solid var(--border);">Read كثيف</td></tr>
-          <tr><td style="padding:8px;border:1px solid var(--border);">حجم البيانات</td><td style="padding:8px;border:1px solid var(--border);">صغير نسبياً</td><td style="padding:8px;border:1px solid var(--border);">ضخم (GB → TB)</td></tr>
-          <tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">النموذج</td><td style="padding:8px;border:1px solid var(--border);">Normalized</td><td style="padding:8px;border:1px solid var(--border);">Star Schema</td></tr>
-          <tr><td style="padding:8px;border:1px solid var(--border);">التحديث</td><td style="padding:8px;border:1px solid var(--border);">لحظي</td><td style="padding:8px;border:1px solid var(--border);">دوري (Batch)</td></tr>
-        </tbody>
-      </table>
+      <h3>القصة الحقيقية داخل أي شركة</h3>
+      <p>تخيل متجرًا يبيع منتجاته طوال اليوم:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>لحظة البيع نفسها</h4>
+            <p>الكاشير يسجل عملية: المنتج، الكمية، السعر، وقت البيع، العميل. هذا شغل OLTP لأنه يهتم بتسجيل العملية بسرعة ودقة.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>تكرار العملية آلاف المرات</h4>
+            <p>خلال اليوم تتراكم عمليات كثيرة جدًا. النظام التشغيلي ليس مهمًا الآن بسؤال: "ما الاتجاه الشهري؟" بل مهتم بأن كل عملية تُسجَّل بدون تعطل.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>بعد ذلك يأتي دور التحليل</h4>
+            <p>المدير يريد أن يعرف: أي الفروع أفضل؟ ما المنتج الأكثر ربحية؟ هل الخصومات زادت؟ هنا يدخل OLAP أو بيئة التحليل مثل Power BI.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="tip-box">
       <div class="icon">💡</div>
-      <p><strong>الصورة الكاملة:</strong> البيانات بتبدأ من OLTP (التشغيل) ← بتنتقل عبر ETL/Power Query ← لتوصل لـ OLAP (التحليل في Power BI). أنت كمحلل بياناتك بتشتغل في الجزء الأخير.</p>
-    </div>` }],
+      <p><strong>الخلاصة العملية:</strong> نفس البيانات تبدأ كعمليات يومية داخل OLTP، ثم تُنقل أو تُنظّف أو تُعاد تشكيلها لكي تصبح مناسبة للتحليل داخل OLAP.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما الذي يريده OLTP بالضبط؟</h3>
+      <p>OLTP ليس مصممًا ليعطيك Dashboard جميلة. هو مصمم لكي لا ينهار العمل اليومي.</p>
+      <ul>
+        <li><strong>الأولوية القصوى:</strong> السرعة في تنفيذ العملية الواحدة، مع صحة البيانات وعدم فقدانها.</li>
+        <li><strong>High throughput:</strong> النظام يستقبل عددًا ضخمًا جدًا من المعاملات الصغيرة طوال اليوم بدون توقف.</li>
+        <li><strong>نوع الشغل:</strong> عمليات صغيرة جدًا لكنها كثيرة جدًا: Insert, Update, Delete, Select لسجل أو عدد قليل من السجلات.</li>
+        <li><strong>شكل البيانات:</strong> غالبًا Normalized؛ البيانات موزعة على جداول كثيرة لتقليل التكرار وحماية الاتساق.</li>
+        <li><strong>المستخدمون:</strong> موظفو التشغيل، التطبيقات، الـ APIs، أنظمة ERP/CRM/POS والمواقع.</li>
+        <li><strong>نوع السؤال المعتاد:</strong> "هات لي طلب العميل رقم 18452" وليس "احسب نمو آخر 18 شهرًا حسب الفئة والمنطقة".</li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>مهم:</strong> النظام التشغيلي الممتاز ليس بالضرورة مريحًا للتحليل. قد يكون ممتازًا للعمليات اليومية لكنه سيئ جدًا لو حاولت أن تحلل عليه مباشرة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما الذي يريده OLAP بالضبط؟</h3>
+      <p>OLAP أو بيئة التحليل تهتم بالسؤال الكبير، لا بالمعاملة الواحدة. تريد أن تقرأ كمية ضخمة من البيانات بسرعة وتلخّصها بطريقة مفيدة للقرار.</p>
+      <ul>
+        <li><strong>الأولوية القصوى:</strong> سرعة القراءة والتحليل والتجميع، وليس سرعة كتابة كل عملية منفردة.</li>
+        <li><strong>نوع الشغل:</strong> Aggregations, Trends, Comparisons, KPIs, slicing, filtering عبر فترات طويلة.</li>
+        <li><strong>الاستعلامات:</strong> غالبًا Queries أعقد وتحتوي على joins وتجميعات كبيرة لأنها تحاول فهم الصورة الكاملة لا معاملة واحدة فقط.</li>
+        <li><strong>شكل البيانات:</strong> عادة Star Schema أو نموذج تحليلي يقلل التعقيد أثناء القراءة.</li>
+        <li><strong>المستخدمون:</strong> المحللون، المدراء، أصحاب القرار، ومن يبنون تقارير Power BI.</li>
+        <li><strong>نوع السؤال المعتاد:</strong> "ما سبب انخفاض الربح في المنطقة الشرقية آخر ربع؟" أو "ما أكثر 10 منتجات نموًا هذه السنة؟"</li>
+      </ul>
+      <p>لهذا Power BI لا يحب أن يتعامل مع بيانات تشغيلية خام كما هي؛ غالبًا يحتاج تنظيفًا وإعادة تشكيل لكي تصبح قابلة للتحليل بشكل مريح وسريع.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>لماذا لا نحلل مباشرة على OLTP؟</h3>
+      <p>هذا سؤال جوهري جدًا، وهو أصل الدرس كله تقريبًا.</p>
+      <ul>
+        <li><strong>لأن OLTP حساس للضغط:</strong> لو شغّلت عليه تقارير ثقيلة، قد تبطّئ النظام الذي يسجل المبيعات أو الطلبات الفعلية.</li>
+        <li><strong>لأن جداوله معقدة:</strong> البيانات موزعة على جداول كثيرة جدًا، وهذا ممتاز للتشغيل لكنه مرهق للمحلل.</li>
+        <li><strong>لأن التعاريف التحليلية لا تكون جاهزة:</strong> الربح، النمو، المقارنات الزمنية، تصنيف العملاء... هذه ليست أسئلة النظام التشغيلي من الأصل.</li>
+        <li><strong>لأن التاريخ قد لا يكون محفوظًا بالشكل الذي تحتاجه:</strong> بعض الأنظمة التشغيلية تركز على الحالة الحالية أكثر من اللقطات التاريخية المنظمة للتحليل.</li>
+      </ul>
+      <p>لذلك في العالم الواقعي، أنت غالبًا لا تأخذ Power BI وتوصله على قاعدة تشغيلية خام ثم تنتهي. هناك دائمًا طبقة تجهيز، حتى لو كانت بسيطة، بين المصدر التشغيلي والطبقة التحليلية، وغالبًا تمر هذه الرحلة عبر Data Warehouse أو طبقة تحليلية مشابهة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>المقارنة المباشرة</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>زاوية المقارنة</th>
+            <th>OLTP</th>
+            <th>OLAP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>الهدف الأساسي</td><td>تشغيل العمل وتسجيل كل معاملة</td><td>فهم العمل وتحليل النتائج</td></tr>
+          <tr><td>نوع الأسئلة</td><td>سؤال صغير عن سجل أو عملية محددة</td><td>سؤال كبير عبر وقت أو فئات أو مناطق</td></tr>
+          <tr><td>نوع العمليات</td><td>Read/Write متكرر جدًا</td><td>Read كثيف + Aggregation</td></tr>
+          <tr><td>تصميم البيانات</td><td>Normalized لتقليل التكرار</td><td>Star/Snowflake لتسهيل التحليل</td></tr>
+          <tr><td>أفضلية الأداء</td><td>سرعة المعاملة الواحدة</td><td>سرعة قراءة كميات كبيرة</td></tr>
+          <tr><td>التحديث</td><td>لحظي أو شبه لحظي</td><td>Batch أو دورات تحميل وتحضير</td></tr>
+          <tr><td>أمثلة</td><td>POS, ERP, CRM, Hospital System</td><td>Power BI, SSAS Tabular, Data Warehouse</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الربط مع Power BI الذي يهمك أنت</h3>
+      <p>إذا كنت تبني تقارير في Power BI، فأنت غالبًا تعمل في العالم التحليلي حتى لو كان المصدر النهائي جايًا من نظام تشغيلي.</p>
+      <ul>
+        <li><strong>Get Data:</strong> قد تسحب من SQL أو Excel أو API، لكن المصدر في أصله غالبًا OLTP.</li>
+        <li><strong>Power Query:</strong> هنا تبدأ بتحويل البيانات من شكل تشغيلي إلى شكل أقرب للتحليل.</li>
+        <li><strong>Data Warehouse / Analytical Layer:</strong> في الشركات الأكبر، البيانات لا تذهب مباشرة من النظام التشغيلي إلى التقرير، بل تمر على طبقة وسيطة تُنظّمها وتجمعها وتجهزها للتحليل.</li>
+        <li><strong>Model View:</strong> هنا تترك تفكير "الجداول التشغيلية الكثيرة" وتبدأ تفكير Fact وDimension.</li>
+        <li><strong>DAX:</strong> هنا تتحول من سؤال "ما العملية التي حدثت؟" إلى سؤال "ما الذي تعنيه كل هذه العمليات عندما نجمعها؟"</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">⭐</div>
+      <p><strong>قاعدة ذهبية تحفظها:</strong> OLTP يبني الحقيقة لحظةً بلحظة، وOLAP يشرح الحقيقة بعد أن تتجمع. ومهمتك كمحلل هي أن تأخذ البيانات من عالم التشغيل وتحوّلها إلى عالم الفهم.</p>
+    </div>
+
+` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>OLTP — Operational systems (Online Transaction Processing)</h3>
-<p>These are the systems that run a business day to day — such as the sales system, hospital system, inventory system.</p>
+<h3>First: you already know the idea, even if you've never heard the terms</h3>
+<p>Many people work for years in data or reporting without ever hearing the terms OLTP and OLAP in this academic form. Yet in practice they interact with both every day.</p>
 <ul>
-<li><strong>Goal:</strong> Record transactions quickly and safely (Insert, Update, Delete).</li>
-<li><strong>Data:</strong> Updated in real time — reflects only the current status.</li>
-<li><strong>Model:</strong> Many tables are normalized to reduce redundancy.</li>
-<li><strong>user:</strong> Input personnel and operational systems.</li>
-<li><strong>example:</strong> Point of sale system (POS), SAP, hospital system.</li>
+<li><strong>OLTP (Online Transaction Processing)</strong> is the system that <strong>runs daily business</strong>: a sale, purchase, booking, patient admission, attendance record, or invoice.</li>
+<li><strong>OLAP (Online Analytical Processing)</strong> is the system that <strong>understands what happened</strong>: which branch is highest? Why did sales drop? What is the profit trend over 12 months?</li>
 </ul>
+<p>In the simplest terms: <strong>OLTP writes the event</strong>, while <strong>OLAP reads thousands or millions of events to interpret them</strong>.</p>
 </div>
+
+<div class="tip-box">
+<div class="icon">🧠</div>
+<p><strong>Quick memorization line:</strong> OLTP = "running the work", OLAP = "understanding the work".</p>
+</div>
+
+<img class="lesson-img" src="images/OLAP Vs OLTP.png" alt="OLAP vs OLTP comparison">
+<p class="lesson-img-caption">The difference between OLTP and OLAP systems</p>
+
 <div class="lesson-card">
-<h3>OLAP — Analysis systems (Online Analytical Processing)</h3>
-<p>These are systems that analyze historical data to extract insights and make decisions — like Power BI.</p>
+<h3>The real story inside any company</h3>
+<p>Imagine a store selling products all day:</p>
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>The moment of sale itself</h4>
+      <p>The cashier records a transaction: product, quantity, price, sale time, customer. This is OLTP work — it cares about recording the transaction quickly and accurately.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>The transaction repeats thousands of times</h4>
+      <p>Throughout the day many transactions accumulate. The operational system is not concerned with asking "what is the monthly trend?" — it just needs every transaction recorded without failure.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>Then comes the role of analysis</h4>
+      <p>The manager wants to know: which branch performs best? Which product is most profitable? Did discounts increase? This is where OLAP or an analytical environment like Power BI comes in.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Practical takeaway:</strong> The same data starts as daily operations inside OLTP, then is transferred, cleaned, or reshaped to become suitable for analysis inside OLAP.</p>
+</div>
+
+<div class="lesson-card">
+<h3>What exactly does OLTP need?</h3>
+<p>OLTP is not designed to give you a nice Dashboard. It is designed so that daily business does not break down.</p>
 <ul>
-<li><strong>Goal:</strong> Complex analytical queries (Aggregations, Trends, Comparisons).</li>
-<li><strong>Data:</strong> Cumulative history - reflecting long periods of time.</li>
-<li><strong>Model:</strong> Star Schema or Snowflake Schema (Denormalized) for reading speed.</li>
-<li><strong>user:</strong> Managers, analysts and decision making.</li>
-<li><strong>example:</strong> Power BI, Tableau, Azure Synapse.</li>
+<li><strong>Top priority:</strong> Speed on each individual transaction, with data accuracy and no data loss.</li>
+<li><strong>High throughput:</strong> The system receives a very large number of small transactions all day long without stopping.</li>
+<li><strong>Type of work:</strong> Very small but very frequent operations: Insert, Update, Delete, Select for one record or a few records.</li>
+<li><strong>Data shape:</strong> Usually Normalized — data distributed across many tables to minimize redundancy and protect consistency.</li>
+<li><strong>Users:</strong> Operational staff, applications, APIs, ERP/CRM/POS systems, and websites.</li>
+<li><strong>Typical question:</strong> "Get me customer order #18452" — not "calculate growth over the last 18 months by category and region".</li>
 </ul>
 </div>
+
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Important:</strong> An excellent operational system is not necessarily comfortable for analysis. It can be outstanding for daily transactions but very poor if you try to analyze directly on top of it.</p>
+</div>
+
+<div class="lesson-card">
+<h3>What exactly does OLAP need?</h3>
+<p>OLAP or an analytical environment cares about the big question, not the individual transaction. It wants to read a huge volume of data quickly and summarize it in a way that is useful for decision-making.</p>
+<ul>
+<li><strong>Top priority:</strong> Speed of reading, analysis, and aggregation — not speed of writing each individual transaction.</li>
+<li><strong>Type of work:</strong> Aggregations, Trends, Comparisons, KPIs, slicing, and filtering across long periods.</li>
+<li><strong>Queries:</strong> Usually more complex queries with joins and large aggregations, because they are trying to understand the full picture, not just one transaction.</li>
+<li><strong>Data shape:</strong> Usually Star Schema or an analytical model that reduces complexity at read time.</li>
+<li><strong>Users:</strong> Analysts, managers, decision-makers, and those who build Power BI reports.</li>
+<li><strong>Typical question:</strong> "Why did profit drop in the eastern region last quarter?" or "What are the 10 fastest-growing products this year?"</li>
+</ul>
+<p>That is why Power BI does not like working with raw operational data as-is — it usually needs cleaning and reshaping before it becomes comfortable and fast to analyze.</p>
+</div>
+
+<div class="lesson-card">
+<h3>Why not analyze directly on OLTP?</h3>
+<p>This is a very fundamental question, and it is almost the entire point of this lesson.</p>
+<ul>
+<li><strong>Because OLTP is sensitive to load:</strong> Running heavy reports on it can slow down the system that records actual sales or orders.</li>
+<li><strong>Because its tables are complex:</strong> Data is distributed across many tables — excellent for operations, but exhausting for the analyst.</li>
+<li><strong>Because analytical definitions are not ready:</strong> Profit, growth, time comparisons, customer segmentation — these are not the operational system's questions to begin with.</li>
+<li><strong>Because history may not be stored in the form you need:</strong> Some operational systems focus on the current state more than organized historical snapshots for analysis.</li>
+</ul>
+<p>So in the real world, you generally don't plug Power BI directly into a raw operational database and call it done. There is always a preparation layer — even if simple — between the operational source and the analytical layer, and that journey usually passes through a Data Warehouse or similar analytical layer.</p>
+</div>
+
 <div class="lesson-card">
 <h3>Direct comparison</h3>
-<table style="width:100%;border-collapse:collapse;font-size:0.92rem;">
+<table class="compare-table">
 <thead>
-<tr style="background:var(--bg4);color:var(--gold);">
-<th style="padding:10px;border:1px solid var(--border);text-align:right;">Standard</th>
-<th style="padding:10px;border:1px solid var(--border);text-align:right;">OLTP</th>
-<th style="padding:10px;border:1px solid var(--border);text-align:right;">OLAP</th>
+<tr>
+<th>Dimension</th>
+<th>OLTP</th>
+<th>OLAP</th>
 </tr>
 </thead>
 <tbody>
-<tr><td style="padding:8px;border:1px solid var(--border);">the goal</td><td style="padding:8px;border:1px solid var(--border);">Running a business</td><td style="padding:8px;border:1px solid var(--border);">Data analysis</td></tr>
-<tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">Type of operations</td><td style="padding:8px;border:1px solid var(--border);">Read/Write recursive</td><td style="padding:8px;border:1px solid var(--border);">Read dense</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--border);">Data size</td><td style="padding:8px;border:1px solid var(--border);">Relatively small</td><td style="padding:8px;border:1px solid var(--border);">huge (GB → TB)</td></tr>
-<tr style="background:var(--bg4);"><td style="padding:8px;border:1px solid var(--border);">Model</td><td style="padding:8px;border:1px solid var(--border);">Normalized</td><td style="padding:8px;border:1px solid var(--border);">Star Schema</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--border);">Update</td><td style="padding:8px;border:1px solid var(--border);">My moment</td><td style="padding:8px;border:1px solid var(--border);">Batch</td></tr>
+<tr><td>Primary goal</td><td>Run the business and record every transaction</td><td>Understand the business and analyze results</td></tr>
+<tr><td>Type of questions</td><td>Small question about one record or transaction</td><td>Big question across time, categories, or regions</td></tr>
+<tr><td>Type of operations</td><td>Frequent Read/Write</td><td>Heavy Read + Aggregation</td></tr>
+<tr><td>Data design</td><td>Normalized to reduce redundancy</td><td>Star/Snowflake to simplify analysis</td></tr>
+<tr><td>Performance priority</td><td>Speed of each individual transaction</td><td>Speed of reading large volumes</td></tr>
+<tr><td>Updates</td><td>Real-time or near real-time</td><td>Batch or scheduled load cycles</td></tr>
+<tr><td>Examples</td><td>POS, ERP, CRM, Hospital System</td><td>Power BI, SSAS Tabular, Data Warehouse</td></tr>
 </tbody>
 </table>
 </div>
+
+<div class="lesson-card">
+<h3>The connection to Power BI that matters to you</h3>
+<p>If you are building reports in Power BI, you are generally working in the analytical world — even if the data source ultimately comes from an operational system.</p>
+<ul>
+<li><strong>Get Data:</strong> You may pull from SQL, Excel, or an API, but the original source is usually OLTP.</li>
+<li><strong>Power Query:</strong> This is where you start transforming data from an operational shape into something closer to analytical.</li>
+<li><strong>Data Warehouse / Analytical Layer:</strong> In larger organizations, data does not go directly from the operational system to the report — it passes through an intermediate layer that organizes, aggregates, and prepares it for analysis.</li>
+<li><strong>Model View:</strong> Here you leave the mindset of "many operational tables" and start thinking in Fact and Dimension.</li>
+<li><strong>DAX:</strong> Here you shift from asking "what transaction happened?" to asking "what do all these transactions mean when we aggregate them?"</li>
+</ul>
+</div>
+
 <div class="tip-box">
-<div class="icon">💡</div>
-<p><strong>The full picture:</strong> Data starts from OLTP (Operation) ← You move across ETL/Power Query ← To reach OLAP (Analysis in Power BI). You, as your data analyst, work on the last part.</p>
+<div class="icon">⭐</div>
+<p><strong>Golden rule to remember:</strong> OLTP builds the truth moment by moment, and OLAP explains the truth after it accumulates. Your job as an analyst is to take data from the operational world and transform it into the world of understanding.</p>
 </div>` }],
   },
   "model": {
@@ -243,8 +834,56 @@ window.LESSONS = {
     en_lede: "The secret of Power BI's power! How to build a strong database (Star Schema).",
     sectionId: "model",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>🎯 أنت هنا في الرحلة — من فهم الأنظمة إلى بناء النموذج</h3>
+      <p><strong>ما فهمته لحد الآن:</strong></p>
+      <ul>
+        <li>Power BI بتحول خام البيانات → رؤى واتخاذ قرار</li>
+        <li>البيانات تبدأ من OLTP (معقد، مكرر) وبتنقل لـ OLAP (منسق، تحليلي)</li>
+      </ul>
+      <p><strong>السؤال الآن:</strong> كيفية هندسة هذا التحول؟ الإجابة هي <strong>Star Schema</strong> — نموذج بيانات بسيط وقوي يفصل بين الحركات والتفاصيل.</p>
+      <p>هذا النموذج ليس مجرد "تنظيم أكاديمي" — هو الأساس اللي بتبني عليه:</p>
+      <ul>
+        <li>الفلاتر بتاعتك (عشان الأعمدة الفريدة في Dimensions)</li>
+        <li>معادلات DAX بتاعتك (عشان الفصل بين Fact و Dimension)</li>
+        <li>سرعة التقرير (عشان الجداول صغيرة ومترابطة بشكل ذكي)</li>
+      </ul>
+    </div>
+
+    <div class="lesson-card">
       <h3>لماذا لا نستخدم جدول واحد كبير؟ (Flat Table)</h3>
       <p>في الإكسيل متعودين نحط كل الداتا في شيت واحد كبير. في Power BI ده بيسبب بطء شديد وتكرار للبيانات. الصح هو تقسيم البيانات.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما هو الـ Data Model أصلًا؟</h3>
+      <p>الـ Data Model هو الطريقة التي ترتب بها الجداول داخل Power BI، وتحدد بها العلاقات بينها، وتقرر أين توجد الأرقام وأين توجد التفاصيل الوصفية.</p>
+      <p>بمعنى عملي: الـ Data Model ليس مجرد جداول موجودة داخل الملف، بل هو الخريطة المنطقية التي تجعل Power BI يفهم كيف تنتقل الفلاتر، وكيف تتجمع الأرقام، وكيف تخرج النتائج صحيحة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما هدف الـ Data Model؟</h3>
+      <ul>
+        <li><strong>إخراج أرقام صحيحة:</strong> حتى لا تتكرر النتائج أو تتضخم بسبب تصميم خاطئ.</li>
+        <li><strong>تسريع التقرير:</strong> النموذج الجيد يجعل Power BI يقرأ البيانات بكفاءة أعلى.</li>
+        <li><strong>تبسيط DAX:</strong> كلما كان الـ model واضحًا، أصبحت الـ measures أسهل وأوثق.</li>
+        <li><strong>تسهيل التوسع:</strong> عند إضافة جداول أو KPIs جديدة، لا ينهار الشغل كله من جديد.</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">💡</div>
+      <p><strong>فكرة مهمة:</strong> التقرير الجميل لا ينقذ model سيئ. لكن model جيد يجعل حتى التقرير البسيط موثوقًا وقابلًا للتطوير.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ما هو الـ Schema؟ وما أشهر أنواعه؟</h3>
+      <p>كلمة Schema تعني شكل تنظيم الجداول والعلاقات بينها. أي: كيف رتبت البيانات داخل النموذج.</p>
+      <ul>
+        <li><strong>Flat Table:</strong> كل شيء في جدول واحد كبير. سهل في البداية، لكنه يسبب تكرارًا وبطئًا ومشاكل في التحليل.</li>
+        <li><strong>Star Schema:</strong> أفضل شكل في أغلب مشاريع Power BI. فيه Fact Table في المنتصف، وحولها Dimension Tables.</li>
+        <li><strong>Snowflake Schema:</strong> مشابه للـ Star لكن فيه الـ Dimensions نفسها متفرعة إلى جداول إضافية. أحيانًا مفيد، لكنه غالبًا أعقد من اللازم للمبتدئ.</li>
+      </ul>
+      <p>في هذا الدرس سنركز على Star Schema لأنه الأكثر شيوعًا، والأوضح، والأفضل غالبًا في Power BI.</p>
     </div>
 
     <table class="compare-table">
@@ -266,35 +905,115 @@ window.LESSONS = {
       </tr>
     </table>
 
+    <img class="lesson-img" src="images/Schemas.png" alt="Star Schema vs Snowflake Schema">
+    <p class="lesson-img-caption">مقارنة بين Star Schema وSnowflake Schema</p>
+
     <div class="tip-box">
       <div class="icon">⭐</div>
       <p><strong>Star Schema:</strong> هو أفضل تصميم، وفيه بيكون الـ Fact Table في المنتصف، ومحاط بـ Dimension Tables زي النجمة.</p>
-    </div>` }],
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>البداية البسيطة:</strong> مش محتاج نموذج معقد جداً في أول مشروع. ابدأ بـ Facts و Dimensions واضحة، وحسّن بعدين.</li>
+        <li><strong>الحجم مهم:</strong> لو الـ Dimension Table فوق 10 مليون صف، فأنت بتخزّن بيانات يجب تكون في Fact Table. أعد تقييم النموذج.</li>
+        <li><strong>الـ Keys:</strong> استخدم surrogate keys (مفاتيح مصطنعة: 1, 2, 3...) بدل natural keys. أسرع وأمن أكثر للربط.</li>
+        <li><strong>الأداء أولاً:</strong> جرّب النموذج بـ dataset صغير أولاً (1000 صف). لو فيه مشكلة، اكتشفها بدري.</li>
+        <li><strong>التوثيق:</strong> وثّق "لماذا" نموذجك بهذا الشكل. بعد 6 أشهر انت نفسك مش هتفتكر!</li>
+      </ul>
+    </div>
+
+` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>Why don't we use one big table? (Flat Table)</h3>
-<p>In Excel, we are used to putting all the data in one big sheet. in Power BI This causes extreme slowness and data duplication. The correct thing is to divide the data.</p>
+<h3>🎯 Where you are in the journey — From understanding systems to building the model</h3>
+<p><strong>What you've learned so far:</strong></p>
+<ul>
+<li>Power BI transforms raw data → insights and decision-making</li>
+<li>Data starts from OLTP (complex, repetitive) and moves to OLAP (organized, analytical)</li>
+</ul>
+<p><strong>The question now:</strong> How do you engineer this transformation? The answer is <strong>Star Schema</strong> — a simple and powerful data model that separates transactions from details.</p>
+<p>This model is not just "academic organization" — it is the foundation you build on:</p>
+<ul>
+<li>Your filters (because Dimensions have unique columns)</li>
+<li>Your DAX formulas (because of the Fact vs Dimension separation)</li>
+<li>Your report speed (because tables are small and intelligently connected)</li>
+</ul>
 </div>
+
+<div class="lesson-card">
+<h3>Why not use one big table? (Flat Table)</h3>
+<p>In Excel we are used to putting all data in one large sheet. In Power BI this causes severe slowness and data duplication. The correct approach is to split the data.</p>
+</div>
+
+<div class="lesson-card">
+<h3>What is the Data Model, exactly?</h3>
+<p>The Data Model is the way you arrange tables inside Power BI, define the relationships between them, and decide where the numbers live and where the descriptive details live.</p>
+<p>In practical terms: the Data Model is not just tables that exist inside the file — it is the logical map that lets Power BI understand how filters flow, how numbers aggregate, and how results come out correct.</p>
+</div>
+
+<div class="lesson-card">
+<h3>What is the Data Model's goal?</h3>
+<ul>
+<li><strong>Produce correct numbers:</strong> So results are not duplicated or inflated by a bad design.</li>
+<li><strong>Speed up the report:</strong> A good model lets Power BI read data more efficiently.</li>
+<li><strong>Simplify DAX:</strong> The clearer the model, the easier and more reliable the measures.</li>
+<li><strong>Make scaling easier:</strong> When you add new tables or KPIs, the whole project does not collapse.</li>
+</ul>
+</div>
+
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Key idea:</strong> A beautiful report cannot save a bad model. But a good model makes even the simplest report trustworthy and extensible.</p>
+</div>
+
+<div class="lesson-card">
+<h3>What is a Schema? And what are the most common types?</h3>
+<p>The word Schema means the shape of how tables and relationships are organized — that is, how you arranged data inside the model.</p>
+<ul>
+<li><strong>Flat Table:</strong> Everything in one big table. Easy at first, but causes redundancy, slowness, and analytical problems.</li>
+<li><strong>Star Schema:</strong> The best shape for most Power BI projects. A Fact Table sits in the center, surrounded by Dimension Tables.</li>
+<li><strong>Snowflake Schema:</strong> Similar to Star, but Dimensions themselves branch into additional tables. Sometimes useful, but usually more complex than a beginner needs.</li>
+</ul>
+<p>This lesson focuses on Star Schema because it is the most common, the clearest, and usually the best choice in Power BI.</p>
+</div>
+
 <table class="compare-table">
 <tr>
 <th>Fact Tables</th>
 <th>Dimension Tables</th>
 </tr>
 <tr>
-<td>It contains transactions and numbers (sales, expenses).</td>
-<td>Contains details and description (customers, products).</td>
+<td>Contain transactions and numbers (sales, expenses).</td>
+<td>Contain details and descriptions (customers, products).</td>
 </tr>
 <tr>
 <td>Very long (millions of rows).</td>
 <td>Short and limited (hundreds or thousands of rows).</td>
 </tr>
 <tr>
-<td>The data is repeated (the customer can buy 100 times).</td>
-<td>The data is unique and not duplicated (each customer has only one code).</td>
+<td>Data repeats (a customer can buy 100 times).</td>
+<td>Data is unique and does not repeat (each customer has one code only).</td>
 </tr>
 </table>
+
+<img class="lesson-img" src="images/Schemas.png" alt="Star Schema vs Snowflake Schema">
+<p class="lesson-img-caption">Comparison between Star Schema and Snowflake Schema</p>
+
 <div class="tip-box">
 <div class="icon">⭐</div>
-<p><strong>Star Schema:</strong> It is the best design, and it includes a table of movements (Fact) in the text, surrounded by tables of dimensions (Dimensions) like a star.</p>
+<p><strong>Star Schema:</strong> The best design — a Fact Table in the center, surrounded by Dimension Tables like a star.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>Start simple:</strong> You don't need a very complex model on your first project. Start with clear Facts and Dimensions, then improve later.</li>
+<li><strong>Size matters:</strong> If a Dimension Table has more than 10 million rows, you are storing data that should be in a Fact Table. Re-evaluate the model.</li>
+<li><strong>Keys:</strong> Use surrogate keys (artificial keys: 1, 2, 3...) instead of natural keys. Faster and safer for joins.</li>
+<li><strong>Performance first:</strong> Test the model with a small dataset first (1,000 rows). If there is a problem, find it early.</li>
+<li><strong>Document it:</strong> Record <em>why</em> your model looks the way it does. Six months from now, even you won't remember!</li>
+</ul>
 </div>` }],
   },
   "scd": {
@@ -337,98 +1056,139 @@ window.LESSONS = {
       </tr>
     </table>
 
-    <div class="lesson-card">
-      <h3>Type 2 في Power Query — التطبيق العملي</h3>
-      <p>لكل موظف أو عميل يغيّر بياناته، تضيف صفاً جديداً بدل تعديل القديم:</p>
-      <div class="code-block">
-<span class="cm">-- جدول الموظفين بـ SCD Type 2</span>
-EmployeeKey | EmployeeID | Name   | Branch       | StartDate  | EndDate    | IsCurrent
------------ | ---------- | ------ | ------------ | ---------- | ---------- | ---------
-1           | E001       | Ahmed  | Cairo        | 2020-01-01 | 2023-06-30 | FALSE
-2           | E001       | Ahmed  | Alexandria   | 2023-07-01 | 9999-12-31 | TRUE
-3           | E002       | Sara   | Cairo        | 2021-03-15 | 9999-12-31 | TRUE
-
-<span class="cm">-- تاريخ 9999-12-31 = لا يزال نشطاً حتى الآن</span>
-<span class="cm">-- IsCurrent = TRUE للصف الحالي الفعّال</span>
-      </div>
-    </div>
+    <img class="lesson-img" src="images/SCD.png" alt="شرح بصري لفكرة SCD">
+    <p class="lesson-img-caption">الصورة تلخص الفكرة: البيانات تخرج من المصدر، تمر عبر ETL، ثم نحفظ التاريخ داخل الـ Dimension بصفوف متعددة، وبعدها نربطها بالـ Fact Table بشكل يسمح بتحليل صحيح.</p>
 
     <div class="lesson-card">
-      <h3>الربط الصحيح مع Fact Table</h3>
-      <div class="code-block">
-<span class="cm">-- الربط يكون على EmployeeKey (مش EmployeeID)</span>
-<span class="cm">-- لأن EmployeeID متكرر (صفين للموظف E001)</span>
-
-<span class="cm">-- في DAX: لعرض بيانات الموظف في تاريخ العملية</span>
-Employee Branch at Sale = 
-<span class="fn">CALCULATE</span>(
-    <span class="fn">MAX</span>(Dim_Employee[Branch]),
-    <span class="fn">FILTER</span>(
-        Dim_Employee,
-        Dim_Employee[EmployeeID] = <span class="fn">MAX</span>(Fact_Sales[EmployeeID]) &amp;&amp;
-        Dim_Employee[StartDate] &lt;= <span class="fn">MAX</span>(Fact_Sales[SaleDate]) &amp;&amp;
-        Dim_Employee[EndDate] >= <span class="fn">MAX</span>(Fact_Sales[SaleDate])
-    )
-)
-      </div>
+      <h3>الربط الصحيح مع الـ Fact Table</h3>
+      <p>الفكرة المهمة هنا أننا لا نعتمد على <strong>EmployeeID</strong> وحده، لأن الموظف نفسه قد يظهر في أكثر من صف تاريخي داخل <code>Dim_Employee</code>.</p>
+      <ul>
+        <li><strong>EmployeeID</strong> هو هوية الموظف في البزنس، لذلك قد يتكرر في أكثر من صف.</li>
+        <li><strong>EmployeeKey</strong> هو المفتاح الفريد لكل نسخة تاريخية من الموظف، لذلك لا يتكرر.</li>
+        <li>لو كنا نقرأ عملية بيع قديمة، فنحن نريد بيانات الموظف <strong>كما كانت وقت البيع</strong>، وليس كما هي اليوم.</li>
+      </ul>
+      <p><strong>ملاحظة مهمة:</strong> في النموذج المثالي قد نخزن <code>EmployeeKey</code> مباشرة داخل <code>Fact Table</code>. لكن في هذا المثال التعليمي نحن نتعمد الوصول للصف الصحيح باستخدام <code>EmployeeID</code> + <code>SaleDate</code> حتى تكون الفكرة أوضح للمتدرب خطوة بخطوة.</p>
     </div>
 
     <div class="tip-box">
       <div class="icon">💡</div>
-      <p><strong>في معظم مشاريع Power BI:</strong> Type 1 كافٍ لـ 80% من الحالات. Type 2 لما العميل أو المدير يسألك "ما كانت بيانات الموظف وقت البيعة؟" — هنا فقط تحتاجه.</p>
-    </div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>What's the problem?</h3>
-<p>In fact, the data of Dimension It changes with time. If a branch manager moved from Cairo to Alexandria in July, do the pre-July reports reflect Cairo or Alexandria? The answer depends on the type of SCD Which you choose.</p>
-</div>
-<table class="compare-table">
-<tr>
-<th>Type</th>
-<th>Mechanism</th>
-<th>When do you use it?</th>
-</tr>
-<tr>
-<td><strong>Type 0</strong></td>
-<td>No change — the first value remains forever.</td>
-<td>Data that never changes (date of birth).</td>
-</tr>
-<tr>
-<td><strong>Type 1</strong></td>
-<td>Overwrite — Replace the old value with the new one.</td>
-<td>Why don't you care about the date (correct a spelling error).</td>
-</tr>
-<tr>
-<td><strong>Type 2 <span class="yes">✔ Most common</span></strong></td>
-<td>Add a new row with start and end dates.</td>
-<td>Why do you need to keep the full history?</td>
-</tr>
-<tr>
-<td><strong>Type 3</strong></td>
-<td>Add a column for the previous value next to the current one.</td>
-<td>Track just one last change.</td>
-</tr>
-</table>
-<div class="lesson-card">
-<h3>Type 2 in Power Query — Practical application</h3>
-<p>For every employee or customer who changes their data, you add a new row instead of modifying the old one:</p>
-<div class="code-block">
-<span class="cm">-- Staff table with SCD Type 2</span>
-EmployeeKey | EmployeeID | Name   | Branch       | StartDate  | EndDate    | IsCurrent
------------ | ---------- | ------ | ------------ | ---------- | ---------- | ---------
-1           | E001       | Ahmed  | Cairo        | 2020-01-01 | 2023-06-30 | FALSE
-2           | E001       | Ahmed  | Alexandria   | 2023-07-01 | 9999-12-31 | TRUE
-3           | E002       | Sara   | Cairo        | 2021-03-15 | 9999-12-31 | TRUE
+      <p><strong>مهم جدًا:</strong> هذا المثال هدفه شرح الفكرة، وليس أن يحفظ المتدرب الصيغة. لو فهم أن اختيار الصف يتم حسب الموظف + تاريخ البيع، فهو فهم جوهر Type 2.</p>
+    </div>
 
-<span class="cm">-- date 9999-12-31 = He is still active now</span>
-<span class="cm">-- IsCurrent = TRUE For the current active row</span>
-</div>
-</div>
-<div class="lesson-card">
-<h3>Correct association with Fact Table</h3>
-<div class="code-block">
-<span class="cm">-- Linking is to EmployeeKey (not EmployeeID)</span>
-<span class="cm">-- Because EmployeeID is duplicate (two rows for employee E001)</span>
-<span class="cm">-- in DAX: To display employee data on the transaction date</span>
+    <div class="lesson-card">
+      <h3>كيف نشرح الكود بطريقة بسيطة جداً؟</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>اسم الـ Measure</h4>
+            <p><code>Employee Branch at Sale</code> معناها: أعطني فرع الموظف في لحظة البيع.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>ما معنى CALCULATE؟</h4>
+            <p>فكر فيها كأنها تقول: احسب النتيجة، ولكن تحت شروط معيّنة.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>ما معنى FILTER؟</h4>
+            <p>فكر فيها كأنها تقول: ابحث داخل جدول الموظفين عن الصف الذي يطابق عملية البيع الحالية.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>ما هي الشروط؟</h4>
+            <p>نفس الموظف، ويجب أن يكون تاريخ البيع واقعاً بين <code>StartDate</code> و <code>EndDate</code> لهذا الصف.</p>
+          </div>
+        </div>
+      </div>
+      <p><strong>اقرأ الكود بهذه الجملة:</strong> من جدول الموظفين، ابحث عن صف نفس الموظف الذي كان صالحاً وقت البيع، ثم أرجع الفرع من هذا الصف.</p>
+    </div>
+
+    <div class="lesson-card lesson-card-wide lesson-card-example-table">
+      <h3>الجدولان اللذان يعمل عليهما الكود</h3>
+      <p>قبل قراءة الـ DAX، انظر أولاً إلى الجدولين. الكود يأخذ <strong>EmployeeID</strong> و<strong>SaleDate</strong> من <code>Fact_Sales</code>، ثم يبحث داخل <code>Dim_Employee</code> عن الصف التاريخي الصحيح.</p>
+
+      <h4 style="margin:1.25rem 0 0.6rem;">1) جدول البعد</h4>
+      <table class="compare-table">
+        <tr>
+          <th>Is_Current</th>
+          <th>EndDate</th>
+          <th>StartDate</th>
+          <th>Branch</th>
+          <th>Name</th>
+          <th>EmployeeID (NK)</th>
+          <th>EmployeeKey (SK)</th>
+        </tr>
+        <tr>
+          <td>N</td>
+          <td>2023-06-30</td>
+          <td>2022-01-01</td>
+          <td>Cairo</td>
+          <td>Ahmed</td>
+          <td>E001</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>9999-12-31</td>
+          <td>2023-07-01</td>
+          <td>Giza</td>
+          <td>Ahmed</td>
+          <td>E001</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>9999-12-31</td>
+          <td>2022-01-01</td>
+          <td>Alex</td>
+          <td>Sara</td>
+          <td>E002</td>
+          <td>2</td>
+        </tr>
+      </table>
+
+      <h4 style="margin:1.4rem 0 0.6rem;">2) جدول الـ Fact</h4>
+      <table class="compare-table">
+        <tr>
+          <th>Amount</th>
+          <th>SaleDate</th>
+          <th>EmployeeID</th>
+          <th>SaleID</th>
+        </tr>
+        <tr>
+          <td>500</td>
+          <td>2023-03-15</td>
+          <td>E001</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>800</td>
+          <td>2024-03-15</td>
+          <td>E001</td>
+          <td>101</td>
+        </tr>
+        <tr>
+          <td>300</td>
+          <td>2024-01-10</td>
+          <td>E002</td>
+          <td>102</td>
+        </tr>
+      </table>
+
+      <p><strong>مثال سريع:</strong> لو الكود يقرأ الصف الذي فيه <strong>SaleID = 101</strong>، فسيرى أن الموظف هو <strong>E001</strong> وأن تاريخ البيع هو <strong>2024-03-15</strong>. بعدها سيبحث داخل <code>Dim_Employee</code> عن صف أحمد الذي تشمل فترة صلاحيته هذا التاريخ، وبالتالي ستكون النتيجة هي <strong>Giza</strong>.</p>
+    </div>
+
+    <div class="code-block">
+<span class="cm">-- ابدأ من الموظف الموجود في صف البيع</span>
+<span class="cm">-- ابحث عن الصف التاريخي الصالح في تاريخ البيع</span>
+<span class="cm">-- أرجع اسم الفرع من هذا الصف</span>
 Employee Branch at Sale = 
 <span class="fn">CALCULATE</span>(
     <span class="fn">MAX</span>(Dim_Employee[Branch]),
@@ -439,14 +1199,217 @@ Employee Branch at Sale =
         Dim_Employee[EndDate] &gt;= <span class="fn">MAX</span>(Fact_Sales[SaleDate])
     )
 )
-      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>ترجمة الكود إلى كلام عادي</h3>
+      <ul>
+        <li><strong><code>MAX(Dim_Employee[Branch])</code>:</strong> بعد أن نجد الصف الصحيح، خذ اسم الفرع منه.</li>
+        <li><strong><code>Dim_Employee[EmployeeID] = MAX(Fact_Sales[EmployeeID])</code>:</strong> احتفظ فقط بالصفوف الخاصة بنفس الموظف الموجود في عملية البيع.</li>
+        <li><strong><code>StartDate &lt;= SaleDate</code>:</strong> الصف يجب أن يكون بدأ قبل البيع أو في نفس اليوم.</li>
+        <li><strong><code>EndDate &gt;= SaleDate</code>:</strong> الصف يجب أن يظل صالحاً وقت البيع.</li>
+      </ul>
+      <p>إذا تحققت كل الشروط، فهذا هو الصف التاريخي الذي نريده، ومنه نأخذ قيمة الفرع.</p>
+    </div>
+
+    <div class="tip-box">
+      <div class="icon">✅</div>
+      <p><strong>الخلاصة:</strong> المطلوب هنا ليس حفظ DAX، بل فهم الفكرة. إذا فهم المتدرب أن الصف الصحيح يتم اختياره باستخدام <strong>الموظف + تاريخ البيع</strong>، فقد فهم قلب Type 2.</p>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is the problem?</h3>
+<p>In real life, dimension data changes over time. If a branch manager moved from Cairo to Alexandria in July, do reports before July show Cairo or Alexandria? The answer depends on the SCD type you choose.</p>
 </div>
+
+<table class="compare-table">
+<tr>
+<th>Type</th>
+<th>Mechanism</th>
+<th>When do you use it?</th>
+</tr>
+<tr>
+<td><strong>Type 0</strong></td>
+<td>No change — the first value stays forever.</td>
+<td>Data that should never change, such as date of birth.</td>
+</tr>
+<tr>
+<td><strong>Type 1</strong></td>
+<td>Overwrite — replace the old value with the new one.</td>
+<td>When history does not matter, such as fixing a typo.</td>
+</tr>
+<tr>
+<td><strong>Type 2 <span class="yes">✔ Most common</span></strong></td>
+<td>Add a new row with a validity period.</td>
+<td>When you need to preserve the full history.</td>
+</tr>
+<tr>
+<td><strong>Type 3</strong></td>
+<td>Add a column for the previous value beside the current one.</td>
+<td>To track only the latest previous change.</td>
+</tr>
+</table>
+
+<img class="lesson-img" src="images/SCD.png" alt="Visual explanation of the SCD Type 2 idea">
+<p class="lesson-img-caption">This image summarizes the idea: data comes from the source, passes through ETL, then history is preserved inside the dimension with multiple rows, and finally the dimension connects to the fact table in a way that supports correct analysis.</p>
+
+<div class="lesson-card">
+<h3>Correct association with the Fact Table</h3>
+<p>The important idea here is that we do not rely on <strong>EmployeeID</strong> alone, because the same employee can appear in more than one historical row inside <code>Dim_Employee</code>.</p>
+<ul>
+<li><strong>EmployeeID</strong> is the business identity of the employee, so it can repeat across multiple rows.</li>
+<li><strong>EmployeeKey</strong> is the unique key for each historical version of the employee, so it does not repeat.</li>
+<li>If we are reading an old sale, we want the employee information <strong>as it was at the time of the sale</strong>, not as it is today.</li>
+</ul>
+<p><strong>Important note:</strong> In the ideal model, <code>EmployeeKey</code> may be stored directly inside the <code>Fact Table</code>. In this teaching example, however, we deliberately reach the correct row using <code>EmployeeID</code> + <code>SaleDate</code> so the learner can understand the logic step by step.</p>
+</div>
+
 <div class="tip-box">
 <div class="icon">💡</div>
-<p><strong>In most projects Power BI:</strong> Type 1 is sufficient for 80% of cases. Type 2 When a client or manager asks you, “What was the employee’s data at the time of the sale?” - Only here you need it.</p>
+<p><strong>Important:</strong> This example aims to explain the concept, not have the learner memorize the formula. If they understand that row selection uses <strong>employee + sale date</strong>, they have understood the heart of Type 2.</p>
+</div>
+
+<div class="lesson-card">
+<h3>How do we explain the code in a very simple way?</h3>
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>The measure name</h4>
+      <p><code>Employee Branch at Sale</code> means: give me the employee's branch at the moment of the sale.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>What does CALCULATE mean?</h4>
+      <p>Think of it as saying: compute the result, but under specific conditions.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>What does FILTER mean?</h4>
+      <p>Think of it as saying: search inside the employee table for the row that matches the current sale.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h4>What are the conditions?</h4>
+      <p>The same employee, and the sale date must fall between <code>StartDate</code> and <code>EndDate</code> for that row.</p>
+    </div>
+  </div>
+</div>
+<p><strong>Read the code like this:</strong> from the employee table, find the row for the same employee that was valid when the sale happened, then return the branch from that row.</p>
+</div>
+
+<div class="lesson-card lesson-card-wide lesson-card-example-table">
+  <h3>The two tables the code works with</h3>
+  <p>Before reading the DAX, first look at the two tables. The code takes <strong>EmployeeID</strong> and <strong>SaleDate</strong> from <code>Fact_Sales</code>, then searches inside <code>Dim_Employee</code> for the correct historical row.</p>
+
+  <h4 style="margin:1.25rem 0 0.6rem;">1) The dimension table</h4>
+  <table class="compare-table">
+    <tr>
+      <th>Is_Current</th>
+      <th>EndDate</th>
+      <th>StartDate</th>
+      <th>Branch</th>
+      <th>Name</th>
+      <th>EmployeeID (NK)</th>
+      <th>EmployeeKey (SK)</th>
+    </tr>
+    <tr>
+      <td>N</td>
+      <td>2023-06-30</td>
+      <td>2022-01-01</td>
+      <td>Cairo</td>
+      <td>Ahmed</td>
+      <td>E001</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>9999-12-31</td>
+      <td>2023-07-01</td>
+      <td>Giza</td>
+      <td>Ahmed</td>
+      <td>E001</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td>9999-12-31</td>
+      <td>2022-01-01</td>
+      <td>Alex</td>
+      <td>Sara</td>
+      <td>E002</td>
+      <td>2</td>
+    </tr>
+  </table>
+
+  <h4 style="margin:1.4rem 0 0.6rem;">2) The fact table</h4>
+  <table class="compare-table">
+    <tr>
+      <th>Amount</th>
+      <th>SaleDate</th>
+      <th>EmployeeID</th>
+      <th>SaleID</th>
+    </tr>
+    <tr>
+      <td>500</td>
+      <td>2023-03-15</td>
+      <td>E001</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>800</td>
+      <td>2024-03-15</td>
+      <td>E001</td>
+      <td>101</td>
+    </tr>
+    <tr>
+      <td>300</td>
+      <td>2024-01-10</td>
+      <td>E002</td>
+      <td>102</td>
+    </tr>
+  </table>
+
+  <p><strong>Quick example:</strong> if the code is reading the row where <strong>SaleID = 101</strong>, it will see that the employee is <strong>E001</strong> and the sale date is <strong>2024-03-15</strong>. It will then search inside <code>Dim_Employee</code> for Ahmed's row whose validity period includes that date, so the result will be <strong>Giza</strong>.</p>
+</div>
+
+<div class="code-block">
+<span class="cm">-- Start from the employee in the sale row</span>
+<span class="cm">-- Find the historical row that is valid on the sale date</span>
+<span class="cm">-- Return the branch name from that row</span>
+Employee Branch at Sale = 
+<span class="fn">CALCULATE</span>(
+    <span class="fn">MAX</span>(Dim_Employee[Branch]),
+    <span class="fn">FILTER</span>(
+        Dim_Employee,
+        Dim_Employee[EmployeeID] = <span class="fn">MAX</span>(Fact_Sales[EmployeeID]) &amp;&amp;
+        Dim_Employee[StartDate] &lt;= <span class="fn">MAX</span>(Fact_Sales[SaleDate]) &amp;&amp;
+        Dim_Employee[EndDate] &gt;= <span class="fn">MAX</span>(Fact_Sales[SaleDate])
+    )
+)
+</div>
+
+<div class="lesson-card">
+<h3>Translate the code into plain words</h3>
+<ul>
+<li><strong><code>MAX(Dim_Employee[Branch])</code>:</strong> once we find the correct row, take the branch name from it.</li>
+<li><strong><code>Dim_Employee[EmployeeID] = MAX(Fact_Sales[EmployeeID])</code>:</strong> keep only rows for the same employee as the current sale row.</li>
+<li><strong><code>StartDate &lt;= SaleDate</code>:</strong> the row must have started before the sale, or on the same day.</li>
+<li><strong><code>EndDate &gt;= SaleDate</code>:</strong> the row must still be valid at the time of the sale.</li>
+</ul>
+<p>If all conditions are true, that is the historical row we want, and that is where the branch value comes from.</p>
+</div>
+
+<div class="tip-box">
+<div class="icon">✅</div>
+<p><strong>Bottom line:</strong> the goal here is not to memorize DAX. If the learner understands that the correct row is chosen using <strong>employee + sale date</strong>, then they have understood the heart of Type 2.</p>
 </div>` }],
-  },
-  "bridge-tables": {
+  },  "bridge-tables": {
     eyebrow: "01 · 07 — Bridge Tables",
     title: "Bridge Tables",
     lede: "الحل الاحترافي لعلاقات Many-to-Many في Data Model — بدون Bridge Tables ستواجه نتائج خاطئة والـ Filters ستكون مكسورة.",
@@ -1063,6 +2026,17 @@ A       | Mar   | 900
 
 <span class="cm">-- الخطوة: select columns Jan,Feb,Mar → Transform → Unpivot Columns</span>
       </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>Change Type أول خطوة:</strong> كل استعلام جديد، غيّر نوع الأعمدة أول شيء. ده يوفر مشاكل كثيرة في DAX لاحقاً.</li>
+        <li><strong>Unpivot مهم جداً:</strong> معظم الجداول التي تأتي من Excel عرضية. تحويلها لـ Long هو الخطوة الأولى للتحليل الصحيح.</li>
+        <li><strong>Merge بدل VLOOKUP:</strong> Power Query Merge أقوى من VLOOKUP — يدعم كل أنواع Join ولا يحتاج تحديث يدوي.</li>
+        <li><strong>استخدم Remove Errors و Replace Values:</strong> بدل الفلترة اليدوية، استخدم Power Query لتنظيف البيانات آلياً.</li>
+        <li><strong>الـ Applied Steps = Security:</strong> كل خطوة تُسجل تلقائياً، فتقدر تعود لأي خطوة لو غلطت، أو تشوف الخطوات تعديت كام مرة.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>What is Power Query?</h3>
@@ -1131,6 +2105,17 @@ A       | Mar   | 900
 
 <span class="cm">-- Step: select columns Jan,Feb,Mar → Transform → Unpivot Columns</span>
 </div>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>Change Type first step:</strong> Every new query, change column types first. This saves many problems in DAX later.</li>
+<li><strong>Unpivot is very important:</strong> Most tables that come from Excel are wide. Converting them to Long is the first step to proper analysis.</li>
+<li><strong>Merge instead of VLOOKUP:</strong> Power Query Merge is stronger than VLOOKUP — supports all types of Join and doesn't require manual updates.</li>
+<li><strong>Use Remove Errors and Replace Values:</strong> Instead of manual filtering, use Power Query to clean data automatically.</li>
+<li><strong>Applied Steps = Security:</strong> Every step is automatically logged, so you can go back to any step if you make a mistake, or see how many times the steps have been updated.</li>
+</ul>
 </div>` }],
   },
   "mcode": {
@@ -1232,6 +2217,17 @@ CleanedFeb = CleanSalesTable(RawFebTable)
     <div class="tip-box">
       <div class="icon">💡</div>
       <p><strong>Advanced Editor:</strong> في Power Query → View → Advanced Editor. هنا تشوف وتعدّل الكود M الكامل للاستعلام. Ctrl+Z للتراجع يشتغل هنا. اعتاد على قراءته بعد كل خطوة تعملها بالضغط على الأزرار.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>Advanced Editor = الكود الحقيقي:</strong> لا تخاف من الكود. Advanced Editor يعرضك الكود الـ M الفعلي وراء كل خطوة. اعتاد على قراءة الكود.</li>
+        <li><strong>Parameters = Flexibility:</strong> استخدم Parameters لأي قيمة تتغير (مسار ملف، تاريخ، تصفية). ده يجعل الـ Query قابلة لإعادة الاستخدام.</li>
+        <li><strong>Custom Functions = Reusability:</strong> لما تكرر نفس الخطوات على ملفات مختلفة، حوّلها لـ Function. أسهل وأسرع.</li>
+        <li><strong>Error Handling مهم:</strong> استخدم try-catch عند قراءة ملفات خارجية. لو الملف لا يوجد أو فاسد، بدل الـ Query تفشل، أرجع قيمة افتراضية.</li>
+        <li><strong>الأداء: قلل الـ Table Scans:</strong> لما تعمل Folder Connector، افلتر الملفات أول شيء (بالاسم أو الحجم) قبل فتح البيانات.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>M language syntax — how to read code</h3>
@@ -1321,6 +2317,17 @@ CleanedFeb = CleanSalesTable(RawFebTable)
 <div class="tip-box">
 <div class="icon">💡</div>
 <p><strong>Advanced Editor:</strong> In Power Query → View → Advanced Editor. Here you can view and edit the complete M code for the query. Ctrl+Z to undo works here. Get into the habit of reading it after each step you make by pressing the buttons.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>Advanced Editor = Real code:</strong> Don't be afraid of code. Advanced Editor shows you the actual M code behind each step. Get used to reading the code.</li>
+<li><strong>Parameters = Flexibility:</strong> Use Parameters for any value that changes (file path, date, filter). This makes the Query reusable.</li>
+<li><strong>Custom Functions = Reusability:</strong> When you repeat the same steps on different files, convert them to a Function. Easier and faster.</li>
+<li><strong>Error Handling is important:</strong> Use try-catch when reading external files. If the file doesn't exist or is corrupted, instead of the Query failing, return a default value.</li>
+<li><strong>Performance: Reduce Table Scans:</strong> When you do Folder Connector, filter files first (by name or size) before opening the data.</li>
+</ul>
 </div>` }],
   },
   "relationships": {
@@ -1356,6 +2363,17 @@ CleanedFeb = CleanSalesTable(RawFebTable)
     <div class="warn-box">
       <div class="icon">🚨</div>
       <p><strong>خطر Both Directional Filter:</strong> تغيير العلاقة إلى "Both" يبدو مغرياً لكنه يسبب 3 مشاكل خطيرة: (1) يبطئ النموذج بشكل ملحوظ لأن المحرك يحسب مسارات Filter إضافية. (2) يؤدي لنتائج خاطئة عند وجود Many-to-Many ضمنية. (3) يجعل التشخيص صعباً جداً. الحل الصحيح: ابقَ على Single Direction واستخدم <strong>CROSSFILTER()</strong> في DAX فقط عند الحاجة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>1 to Many = الوضع الصحيح:</strong> لو شُفت Many to Many، فكّر في إضافة Bridge Table بدل قبول العلاقة الخطيرة.</li>
+        <li><strong>تحقق من Data Types:</strong> أكثر مشاكل الـ Relationships تأتي من أن عمود ID نوعه نص في جدول ورقم في جدول آخر. Power BI لن يربط الاثنين.</li>
+        <li><strong>Single Direction = الأصل الآمن:</strong> ابقَ على Single Direction في كل الأحوال. لو محتاج filtering عكسي، استخدم CROSSFILTER في DAX.</li>
+        <li><strong>اختبر الـ Cross-Filters:</strong> الفلترة ثنائية الاتجاه تؤثر على كل الـ visuals. لو فعّلتها، اختبر كل الـ dashboard لتتأكد من النتائج.</li>
+        <li><strong>المشكلة الخفية: Ambiguous Relationships:</strong> لو هناك أكثر من علاقة ممكنة بين جدولين، Power BI قد تختار الخطأ تلقائياً وتعطيك نتائج خاطئة.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>Types of relationships (Cardinality)</h3>
@@ -1380,6 +2398,17 @@ CleanedFeb = CleanSalesTable(RawFebTable)
 <div class="warn-box">
 <div class="icon">🚨</div>
 <p><strong>The danger of both directional filter:</strong> Changing the relationship to "Both" sounds tempting but it causes 3 serious problems: (1) It slows down the model significantly because the engine calculates additional filter paths. (2) It leads to incorrect results when there is a Many-to-Many implicit. (3) It makes diagnosis very difficult. Correct solution: Stay with Single Direction and use <strong>CROSSFILTER()</strong> in DAX Only when needed.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>1 to Many = the right situation:</strong> If you see Many to Many, think about adding a Bridge Table instead of accepting the dangerous relationship.</li>
+<li><strong>Check Data Types:</strong> Most Relationships problems come from an ID column being text in one table and a number in another. Power BI won't connect the two.</li>
+<li><strong>Single Direction = the safe origin:</strong> Stay on Single Direction in all cases. If you need reverse filtering, use CROSSFILTER in DAX.</li>
+<li><strong>Test Cross-Filters:</strong> Two-way filtering affects all visuals. If you enable it, test the entire dashboard to make sure the results are correct.</li>
+<li><strong>The hidden problem: Ambiguous Relationships:</strong> If there are multiple possible relationships between two tables, Power BI may automatically choose the wrong one and give you incorrect results.</li>
+</ul>
 </div>` }],
   },
   "datetable": {
@@ -1708,6 +2737,17 @@ Total Orders = <span class="fn">COUNTROWS</span>(Sales)
 <span class="cm">-- عد المنتجات الفريدة المباعة</span>
 Unique Products = <span class="fn">DISTINCTCOUNT</span>(Sales[ProductID])
       </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>Context هو كل شيء:</strong> معظم أخطاء DAX تأتي من عدم فهم الفرق بين Row Context و Filter Context. جرّب Measure على visualizations مختلفة لتشعر بالفرق.</li>
+        <li><strong>الـ Scoping:</strong> عندما تكتب Calculated Column، أنت في Row Context — كل صف يحسب لنفسه. عندما تكتب Measure، أنت تحسب بناءً على الفلاتر الإجمالية.</li>
+        <li><strong>اختبر الـ Edge Cases:</strong> جرّب Measure عند الفلاتر الفارغة، عند وجود بيانات NULL، وعند المقارنات بين جداول مختلفة.</li>
+        <li><strong>التسمية واضحة:</strong> استخدم أسماء Measures توضح نوعها: <code>Total Sales</code> بدل <code>Sales</code>، <code>% Growth YoY</code> بدل <code>Growth</code>.</li>
+        <li><strong>الأداء:</strong> Calculated Columns تُحسب عند التحميل وتأخذ مساحة RAM. Measures تُحسب وقت الطلب. اختر الصيغة المناسبة حسب الحجم والتعقيد.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>The difference between Calculated Column and Measure</h3>
@@ -1743,6 +2783,17 @@ Total Orders = <span class="fn">COUNTROWS</span>(Sales)
 <span class="cm">-- Count unique products sold</span>
 Unique Products = <span class="fn">DISTINCTCOUNT</span>(Sales[ProductID])
       </div>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>Context is everything:</strong> Most DAX errors come from misunderstanding the difference between Row Context and Filter Context. Try the same measure on different visuals to feel the difference.</li>
+<li><strong>Scoping:</strong> When you write a Calculated Column, you're in Row Context — each row calculates for itself. When you write a Measure, you're calculating based on overall filters.</li>
+<li><strong>Test edge cases:</strong> Try your measures with empty filters, NULL data, and cross-table comparisons.</li>
+<li><strong>Clear naming:</strong> Use measure names that tell you what they do: <code>Total Sales</code> instead of <code>Sales</code>, <code>% Growth YoY</code> instead of <code>Growth</code>.</li>
+<li><strong>Performance:</strong> Calculated Columns are computed at load time and consume RAM. Measures are computed on demand. Choose the right approach based on data size and complexity.</li>
+</ul>
 </div>` }],
   },
   "dax-logical": {
@@ -1852,6 +2903,17 @@ Flagged =
     <div class="tip-box">
       <div class="icon">💡</div>
       <p><strong>IFERROR و ISBLANK:</strong> لو الـ Measure ممكن يرجع خطأ (مثل قسمة) استخدم <code>IFERROR([Measure], 0)</code>. لو ممكن يرجع BLANK استخدم <code>IF(ISBLANK([Measure]), "لا يوجد", [Measure])</code>.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>SWITCH أفضل من IF المتداخل:</strong> كل ما تحتاج أكثر من 2 شروط، استخدم SWITCH — أسهل قراءة وأسرع أداء.</li>
+        <li><strong>استخدم IFERROR دائماً:</strong> أي Measure يمكن أن يرجع خطأ (قسمة على صفر، قيم لا توجد، إلخ) يجب تحميه بـ IFERROR أو DIVIDE مع default value.</li>
+        <li><strong>الـ Short Circuiting:</strong> إذا كان الشرط الأول FALSE، الـ IF/SWITCH لن يُقيّم الأجزاء الأخرى. استخدم هذا لتجنب الأخطاء المكلفة.</li>
+        <li><strong>استخدم TRUE() مع SWITCH:</strong> عند الحاجة لشروط معقدة (مثل >= و <)، SWITCH(TRUE()) أفضل بكثير من IF المتداخل.</li>
+        <li><strong>اختبر الـ NULL Values:</strong> استخدم ISBLANK قبل المقارنات إذا كانت القيم قد تكون فارغة.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>IF — Simple condition</h3>
@@ -1949,6 +3011,17 @@ Flagged =
 <div class="tip-box">
 <div class="icon">💡</div>
 <p><strong>IFERROR and ISBLANK:</strong> If the Measure may return an error (such as division), use <code>IFERROR([Measure], 0)</code>. If he can come back BLANK use <code>IF(ISBLANK([Measure]), "nothing", [Measure])</code>.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>SWITCH beats nested IF:</strong> Whenever you need more than 2 conditions, use SWITCH — much easier to read and faster performance.</li>
+<li><strong>Always use IFERROR:</strong> Any measure that could error (division by zero, missing values, etc.) should be protected with IFERROR or DIVIDE with a default.</li>
+<li><strong>Short-circuiting:</strong> If the first condition is FALSE, the IF/SWITCH won't evaluate the rest. Use this to avoid expensive errors.</li>
+<li><strong>Use TRUE() with SWITCH:</strong> When you need complex conditions (like >= and <), SWITCH(TRUE()) is much better than nested IF.</li>
+<li><strong>Test for NULL values:</strong> Use ISBLANK before comparisons if values could be empty.</li>
+</ul>
 </div>` }],
   },
   "calculate": {
@@ -2054,6 +3127,17 @@ Sales % of Category =
     <div class="warn-box">
       <div class="icon">⚠️</div>
       <p><strong>ترتيب تنفيذ CALCULATE:</strong> الفلاتر الخارجية تُطبَّق أولاً ← ثم فلاتر CALCULATE تعدّل عليها ← ثم تُحسب Expression. فهم هذا الترتيب يحل 90% من مشاكل DAX.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>CALCULATE = السلاح السري:</strong> معظم المشاكل المعقدة في DAX يمكن حلها بـ CALCULATE + الفلاتر الصحيحة. اتعلم كيفية استخدامها بشكل صحيح أولاً.</li>
+        <li><strong>استخدم REMOVEFILTERS بدل ALL:</strong> كلاهما يمسح الفلاتر، لكن REMOVEFILTERS أوضح في الكود والنية. ALL قديمة وتوصل لالتباس.</li>
+        <li><strong>ALLEXCEPT توفر الكود:</strong> بدل تكتب ALL وبعدين تضيف الفلتر، استخدم ALLEXCEPT مباشرة — أقصر وأوضح.</li>
+        <li><strong>اختبر التفاعلات:</strong> الفلاتر من Slicers والـ Cross-filters تتفاعل مع CALCULATE. جرّب كل الـ edge cases عند بناء Measure معقدة.</li>
+        <li><strong>Context Transition = فرصة وخطر:</strong> مشكلة في Calculated Column؟ استخدم CALCULATE مع Context Transition بحذر — يمكن أن تكسر الأداء إذا كانت البيانات ضخمة.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>How does CALCULATE work? — Context Transition</h3>
@@ -2146,6 +3230,17 @@ Sales % of Category =
 <div class="warn-box">
 <div class="icon">⚠️</div>
 <p><strong>Execution order CALCULATE:</strong> External filters are applied first ← Then filters CALCULATE Modify it ← Then it is calculated Expression. Understanding this arrangement solves 90% Of problems DAX.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>CALCULATE = Secret weapon:</strong> Most complex DAX problems can be solved with CALCULATE + the right filters. Learn how to use it correctly first.</li>
+<li><strong>Use REMOVEFILTERS instead of ALL:</strong> Both clear filters, but REMOVEFILTERS is clearer in the code and intent. ALL is old and causes confusion.</li>
+<li><strong>ALLEXCEPT saves code:</strong> Instead of writing ALL and then adding a filter, use ALLEXCEPT directly — shorter and clearer.</li>
+<li><strong>Test interactions:</strong> Filters from Slicers and Cross-filters interact with CALCULATE. Try all edge cases when building complex Measures.</li>
+<li><strong>Context Transition = Opportunity and danger:</strong> Problem in Calculated Column? Use CALCULATE with Context Transition carefully — it can break performance if the data is large.</li>
+</ul>
 </div>` }],
   },
   "relationships-dax": {
@@ -2232,6 +3327,17 @@ Unsold Products =
     <div class="warn-box">
       <div class="icon">⚠️</div>
       <p><strong>CROSSFILTER في Measure = آمن. Both في الموديل = خطر:</strong> CROSSFILTER يفعّل الفلترة الثنائية فقط لحظة تنفيذ الـ Measure المحدد. أما تغيير العلاقة لـ Both في الموديل، فيؤثر على كل المعادلات في التقرير ويسبب نتائج غير متوقعة في أماكن أخرى.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>RELATED في Calculated Columns فقط:</strong> في Measures استخدم RELATEDTABLE. RELATED لا تعمل في Measures وستحصل على خطأ.</li>
+        <li><strong>USERELATIONSHIP أفضل من تغيير الموديل:</strong> لو محتاج تفعيل علاقة غير نشطة، استخدم USERELATIONSHIP في الـ Measure بدل تغيير العلاقة لـ Both في الموديل (ده بيبطّء الأداء).</li>
+        <li><strong>CROSSFILTER فقط عند الحاجة:</strong> استخدمها فقط في الـ Measures المحددة، مش في كل الموديل. فعّل الفلترة الثنائية بحذر.</li>
+        <li><strong>اختبر التفاعلات بين العلاقات:</strong> لو الموديل فيه علاقات متشابكة، جرّب كل الـ Slicers والـ Cross-filters عشان متاكد من النتائج.</li>
+        <li><strong>توثيق العلاقات المعقدة:</strong> لو استخدمت USERELATIONSHIP أو CROSSFILTER، اترك ملاحظة في الـ Measure توضح ليه استخدمت ده.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>RELATED — Fetch a value from a linked table</h3>
@@ -2304,6 +3410,17 @@ Unsold Products =
 <div class="warn-box">
 <div class="icon">⚠️</div>
 <p><strong>CROSSFILTER in Measure = security. Both In the model = risk:</strong> CROSSFILTER Binary filtering is activated only the moment the Measure Specified. As for changing the relationship to Both In the model, it affects all equations in the report and causes unexpected results elsewhere.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>RELATED in Calculated Columns only:</strong> in Measures use RELATEDTABLE. RELATED does not work in Measures and you will get an error.</li>
+<li><strong>USERELATIONSHIP better than modifying the model:</strong> If you need to activate an inactive relationship, use USERELATIONSHIP in the Measure instead of changing the relationship to Both in the model (this slows down performance).</li>
+<li><strong>CROSSFILTER only when needed:</strong> Use it only in specific Measures, not throughout the model. Enable two-way filtering with caution.</li>
+<li><strong>Test interactions between relationships:</strong> If the model has intertwined relationships, test each Slicers and Cross-filters so you're sure of the results.</li>
+<li><strong>Document complex relationships:</strong> If you use USERELATIONSHIP or CROSSFILTER, leave a note in the Measure explaining why you used it.</li>
+</ul>
 </div>` }],
   },
   "iterators": {
@@ -2382,6 +3499,17 @@ Compound Factor =
     <div class="tip-box">
       <div class="icon">💡</div>
       <p><strong>قاعدة الاختيار:</strong> لو الحساب يحتاج ضرب أو قسمة أو منطق على مستوى الصف → SUMX. لو بتجمع عمود موجود فقط → SUM (أسرع).</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>SUM أسرع من SUMX:</strong> لو تقدر تستخدم SUM (العمود موجود فعلاً)، استخدمها. SUMX بطيء لأنها تمشي صف بصف.</li>
+        <li><strong>SUMX مع FILTER = بطء شديد:</strong> تجنب تكرار SUMX جوّا SUMX. لو محتاج، استخدم Calculated Column أولاً.</li>
+        <li><strong>استخدم VALUES بدل FILTER عند الإمكان:</strong> VALUES أسرع وأقل استهلاكاً للـ Memory.</li>
+        <li><strong>COUNTX بدل COUNT مع Conditions:</strong> عندما تحتاج تعد صفوف بناءً على شرط معين، استخدم COUNTX مع FILTER.</li>
+        <li><strong>اختبر الأداء مع بيانات ضخمة:</strong> جرّب SUMX/AVERAGEX على ملايين الصفوف قبل تحريرها في الإنتاج. قد تكتشف مشاكل أداء.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>The difference between SUM and SUMX</h3>
@@ -2448,6 +3576,17 @@ Compound Factor =
 <div class="tip-box">
 <div class="icon">💡</div>
 <p><strong>Selection rule:</strong> If arithmetic requires multiplication, division, or logic at the grade level → SUMX. If you collect only an existing column → SUM (faster).</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>SUM is faster than SUMX:</strong> If you can use SUM (the column already exists), use it. SUMX is slow because it walks row by row.</li>
+<li><strong>SUMX with FILTER = very slow:</strong> Avoid repeating SUMX inside SUMX. If you need it, use a Calculated Column first.</li>
+<li><strong>Use VALUES instead of FILTER when possible:</strong> VALUES is faster and consumes less Memory.</li>
+<li><strong>COUNTX instead of COUNT with Conditions:</strong> When you need to count rows based on a specific condition, use COUNTX with FILTER.</li>
+<li><strong>Test performance with large data:</strong> Try SUMX/AVERAGEX on millions of rows before releasing in production. You may discover performance issues.</li>
+</ul>
 </div>` }],
   },
   "dax2": {
@@ -2489,21 +3628,21 @@ YoY Growth =
       <h3>DATEADD — مرونة كاملة في التحريك الزمني</h3>
       <div class="code-block">
 <span class="cm">-- مبيعات الشهر اللي فات</span>
-Sales Last Month = 
+Sales Last Month =
 <span class="fn">CALCULATE</span>(
     [Total Sales],
     <span class="fn">PREVIOUSMONTH</span>('Calendar'[Date])
 )
 
 <span class="cm">-- مبيعات قبل 3 شهور</span>
-Sales 3M Ago = 
+Sales 3M Ago =
 <span class="fn">CALCULATE</span>(
     [Total Sales],
     <span class="fn">DATEADD</span>('Calendar'[Date], <span class="num">-3</span>, MONTH)
 )
 
 <span class="cm">-- مبيعات نفس الربع من السنة الماضية</span>
-Sales PQ = 
+Sales PQ =
 <span class="fn">CALCULATE</span>(
     [Total Sales],
     <span class="fn">DATEADD</span>('Calendar'[Date], <span class="num">-1</span>, QUARTER)
@@ -2512,6 +3651,17 @@ Sales PQ =
 <span class="cm">-- MTD: مبيعات من أول الشهر للتاريخ الحالي</span>
 Sales MTD = <span class="fn">TOTALMTD</span>([Total Sales], 'Calendar'[Date])
       </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>Date Table أساسية:</strong> بدون Date Table مرتبط بشكل صحيح، معظم دوال الزمن لن تعمل. تأكد أن علاقتك من Date[Date] إلى Fact[Date] بنوع 1 إلى متعدد.</li>
+        <li><strong>SAMEPERIODLASTYEAR vs PARALLELPERIOD:</strong> كلاهما يقارن بالعام الماضي، لكن SAMEPERIODLASTYEAR = PARALLELPERIOD(-1, YEAR) تقريباً. استخدم PARALLELPERIOD للتحكم الأكثر دقة.</li>
+        <li><strong>Slicers تؤثر على دوال الزمن:</strong> عندما تستخدم YTD أو DATEADD في Measure، الـ Date Slicer الحالي يؤثر على الفترة المختارة. اختبر مع فلاتر مختلفة.</li>
+        <li><strong>DATEADD يحتفظ بالنافذة الحالية:</strong> لو الـ Slicer على Q1، DATEADD(-1, QUARTER) يعطيك Q4 من السنة السابقة، لكن يحافظ على القيود الأخرى.</li>
+        <li><strong>اختبر السنوات الكبيسة:</strong> لو بيانات تتضمن سنوات كبيسة (29 فبراير)، تأكد من نتائج المقارنات الزمنية.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="warn-box">
 <div class="icon">🚨</div>
@@ -2566,6 +3716,17 @@ Sales PQ =
 <span class="cm">-- MTD: Sales from the beginning of the month to the current date</span>
 Sales MTD = <span class="fn">TOTALMTD</span>([Total Sales], 'Calendar'[Date])
       </div>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>Date Table is essential:</strong> Without a properly linked Date Table, most time functions won't work. Make sure your relationship is from Date[Date] to Fact[Date] as 1-to-many.</li>
+<li><strong>SAMEPERIODLASTYEAR vs PARALLELPERIOD:</strong> Both compare to last year, but SAMEPERIODLASTYEAR ≈ PARALLELPERIOD(-1, YEAR). Use PARALLELPERIOD for more precise control.</li>
+<li><strong>Slicers affect time functions:</strong> When you use YTD or DATEADD in a Measure, the current Date Slicer affects the selected period. Test with different filters.</li>
+<li><strong>DATEADD preserves the current window:</strong> If the Slicer is on Q1, DATEADD(-1, QUARTER) gives you Q4 of the previous year, but maintains other constraints.</li>
+<li><strong>Test leap years:</strong> If your data includes leap years (February 29), verify the results of time comparisons.</li>
+</ul>
 </div>` }],
   },
   "time-intel-pro": {
@@ -2669,6 +3830,17 @@ YoY Growth % =
     <div class="tip-box">
       <div class="icon">💡</div>
       <p><strong>متى تستخدم أيها؟</strong> DATESINPERIOD للنوافذ الثابتة (آخر N يوم/شهر). DATEADD لتحريك النافذة الحالية. PARALLELPERIOD لمقارنة الفترات الكاملة (ربع كامل، سنة كاملة). SAMEPERIODLASTYEAR = PARALLELPERIOD بـ -1 YEAR مع فارق دقيق في التعامل مع السنوات الكبيسة.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>Moving Average = Clarity:</strong> التذبذبات اليومية تخفي الحقيقة. Moving Average تعطيك صورة واضحة عن الاتجاه الحقيقي.</li>
+        <li><strong>DATESINPERIOD أفضل من البرمجة اليدوية:</strong> بدل تكتب CALCULATE مع معادلات تاريخ معقدة، استخدم DATESINPERIOD مع فترة محددة.</li>
+        <li><strong>PARALLELPERIOD للمقارنات الكاملة:</strong> لو محتاج تقارن فترة كاملة (ربع كامل) بنفس الفترة من الماضي، PARALLELPERIOD أحسن خيار.</li>
+        <li><strong>الـ MAX(Date) مهم:</strong> في DATESINPERIOD و Moving Average، استخدم MAX('Date'[Date]) للتأكد من استخدام آخر تاريخ متوفر في البيانات.</li>
+        <li><strong>الأداء: اختبر مع بيانات حقيقية:</strong> Moving Average و DATESINPERIOD قد تكون بطيئة مع ملايين الصفوف. اختبرها مع بيانات الإنتاج قبل النشر.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>DATESINPERIOD — Animated time window</h3>
@@ -2760,6 +3932,17 @@ YoY Growth % =
 <div class="tip-box">
 <div class="icon">💡</div>
 <p><strong>When do you use them?</strong> DATESINPERIOD For fixed windows (last N day/month). DATEADD To move the current window. PARALLELPERIOD To compare full periods (A whole quarter, a whole year). SAMEPERIODLASTYEAR = PARALLELPERIOD With -1 YEAR With a nuance in dealing with leap years.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>Moving Average = Clarity:</strong> Daily fluctuations hide the truth. Moving Average gives you a clear picture of the real trend.</li>
+<li><strong>DATESINPERIOD better than manual programming:</strong> Instead of writing CALCULATE with complex date formulas, use DATESINPERIOD with a specific period.</li>
+<li><strong>PARALLELPERIOD for complete comparisons:</strong> If you need to compare a complete period (entire quarter) with the same period in the past, PARALLELPERIOD is the best option.</li>
+<li><strong>The MAX(Date) is important:</strong> in DATESINPERIOD and Moving Average, use MAX('Date'[Date]) to ensure you're using the most recent date available in the data.</li>
+<li><strong>Performance: Test with real data:</strong> Moving Average and DATESINPERIOD can be slow with millions of rows. Test them with production data before release.</li>
+</ul>
 </div>` }],
   },
   "fieldparams": {
@@ -3269,11 +4452,907 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
 <p><strong>FORMAT Returns text — Do not use it in calculations:</strong> after FORMAT You cannot add or subtract the result. Use it only in the Card or Tooltip or Labels. For calculations stay with the original numbers.</p>
 </div>` }],
   },
+  "dax-m2m": {
+    eyebrow: "04 · 11 — Many-to-Many و TREATAS",
+    title: "Many-to-Many و TREATAS — علاقات أكتر من Many",
+    lede: "العلاقات Many-to-Many من أكتر المشاكل اللي بتتعب المحللين. تعلّم متى تستخدم Bridge Table ومتى تستخدم TREATAS كحل DAX نظيف.",
+    en_eyebrow: "04 · 11 — Many-to-Many & TREATAS",
+    en_lede: "Many-to-Many relationships are one of the trickiest data modeling problems. Learn when to use a Bridge Table and when TREATAS is the clean DAX alternative.",
+    sectionId: "dax-m2m",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>ما هي مشكلة Many-to-Many؟</h3>
+      <p>في نماذج البيانات العادية، العلاقة تكون <strong>One-to-Many</strong> — منتج واحد له كتير من المبيعات. المشكلة تظهر في <strong>Many-to-Many (M2M)</strong>: موظف اشتغل في أكتر من فرع، وكل فرع فيه أكتر من موظف.</p>
+      <p>النتيجة: مبيعات الموظف المشترك هتتحسب <strong>مرتين</strong> في كل فرع — وده اللي بنسميه Double Counting.</p>
+    </div>
+
+    <div class="warn-box">
+      <div class="icon">⚠️</div>
+      <p><strong>الحل الغلط — Both Filter Direction:</strong> تحويل العلاقة لـ "Both" في الموديل يبدو سهلاً لكنه خطير. بيسبب <strong>ambiguous filter paths</strong> — الفلاتر تسلك مسارات غير متوقعة، الأرقام بتتكرر، والأداء بيتراجع.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الحل المعماري الصح: Bridge Table</h3>
+      <p>جدول وسيط يكسر M2M لعلاقتين One-to-Many نظيفتين:</p>
+      <div class="code-block">
+<span class="cm">-- بدل علاقة M2M المباشرة الخطيرة:</span>
+<span class="cm">-- Dim_Employee --- M:M --- Dim_Branch</span>
+
+<span class="cm">-- نبني Bridge Table:</span>
+Dim_Employee:      EmpID | EmpName
+Dim_Branch:        BranchID | BranchName
+Bridge_EmpBranch:  EmpID | BranchID      <span class="cm">-- الجدول الوسيط</span>
+Fact_Sales:        OrderID | EmpID | Amount
+
+<span class="cm">-- العلاقات في الموديل (اتجاه واحد فقط):</span>
+Dim_Employee  ---1:M--&gt; Bridge_EmpBranch &lt;--M:1--- Dim_Branch
+Dim_Employee  ---1:M--&gt; Fact_Sales
+      </div>
+      <div class="tip-box">
+        <div class="icon">💡</div>
+        <p><strong>Bridge Table = الحل الأفضل دائماً.</strong> الفلاتر تمشي في اتجاه واحد واضح بدون ambiguity. مش محتاج DAX خاص في كل Measure — الموديل بيحل المشكلة تلقائياً.</p>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>TREATAS — العلاقة الوهمية في DAX</h3>
+      <p>لو مش قادر تعدّل الموديل (Data Source ثابت أو أذونات محدودة)، <strong>TREATAS</strong> بتبني علاقة وهمية (Virtual Relationship) جوا الـ Measure نفسه بس.</p>
+      <div class="code-block">
+<span class="cm">-- Syntax الأساسي</span>
+<span class="fn">TREATAS</span>(table_expression, column1 [, column2 ...])
+
+<span class="cm">-- مثال: مبيعات حسب الفئات المختارة من الـ Slicer</span>
+Sales by Category =
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">TREATAS</span>(
+        <span class="fn">VALUES</span>(Dim_Category[CategoryID]),  <span class="cm">-- قيم الفئات المحددة</span>
+        Dim_Product[CategoryID]             <span class="cm">-- نطبقها على عمود المنتج</span>
+    )
+)
+
+<span class="cm">-- مثال: مبيعات الموظفين في الفروع المختارة</span>
+Branch Sales =
+<span class="kw">VAR</span> SelectedBranches = <span class="fn">VALUES</span>(Dim_Branch[BranchID])
+<span class="kw">RETURN</span>
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">TREATAS</span>(SelectedBranches, Fact_Sales[BranchID])
+)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>مثال واقعي: منتجات في أكتر من فئة</h3>
+      <p>Laptop في نفس الوقت Electronics وOffice Equipment. نريد مبيعات كل فئة بدون تكرار:</p>
+      <div class="code-block">
+<span class="cm">-- الجداول المطلوبة</span>
+Dim_Product:     ProductID | ProductName
+Dim_Category:    CategoryID | CategoryName
+Bridge_ProdCat:  ProductID | CategoryID   <span class="cm">-- Bridge</span>
+Fact_Sales:      OrderID | ProductID | Amount
+
+<span class="cm">-- الـ Measure الصحيح</span>
+Category Sales =
+<span class="kw">VAR</span> CurrentCats      = <span class="fn">VALUES</span>(Dim_Category[CategoryID])
+<span class="kw">VAR</span> FilteredProducts =
+    <span class="fn">CALCULATETABLE</span>(
+        <span class="fn">VALUES</span>(Bridge_ProdCat[ProductID]),
+        <span class="fn">TREATAS</span>(CurrentCats, Bridge_ProdCat[CategoryID])
+    )
+<span class="kw">RETURN</span>
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">TREATAS</span>(FilteredProducts, Fact_Sales[ProductID])
+)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>SUMMARIZE — تجميع من جداول معقدة</h3>
+      <p>SUMMARIZE بتبني جدول وهمي مجمّع — مفيدة كمدخل لـ TOPN وFILTER وCOUNTROWS:</p>
+      <div class="code-block">
+<span class="cm">-- ملخص مبيعات كل فئة</span>
+<span class="kw">VAR</span> Summary =
+    <span class="fn">SUMMARIZE</span>(
+        Fact_Sales,
+        Dim_Category[CategoryName],
+        <span class="str">"Sales"</span>, [Total Sales]
+    )
+
+<span class="cm">-- أعلى 3 فئات مبيعاً باستخدام TOPN + TREATAS</span>
+Top 3 Categories =
+<span class="kw">VAR</span> Sum  = <span class="fn">SUMMARIZE</span>(Fact_Sales, Dim_Category[CategoryName], <span class="str">"S"</span>, [Total Sales])
+<span class="kw">VAR</span> Top3 = <span class="fn">TOPN</span>(<span class="num">3</span>, Sum, [S], DESC)
+<span class="kw">RETURN</span>
+<span class="fn">CALCULATE</span>([Total Sales], <span class="fn">TREATAS</span>(Top3, Dim_Category[CategoryName]))
+      </div>
+      <div class="tip-box">
+        <div class="icon">💡</div>
+        <p><strong>SUMMARIZE + TREATAS = combo قوي</strong> لعمل فلاتر ديناميكية معقدة جوا الـ Measures من غير ما تحتاج تغيير الموديل.</p>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips</h3>
+      <ul>
+        <li><strong>Bridge أولاً، TREATAS تانياً:</strong> Bridge Table في الموديل هي الحل المعماري الصح. TREATAS هو خيار تاني لو الموديل مش في إيدك.</li>
+        <li><strong>نفس نوع البيانات ضروري:</strong> TREATAS تحتاج عمود المصدر وعمود الهدف بنفس الـ Data Type — رقم مع رقم، نص مع نص.</li>
+        <li><strong>اختبر بـ COUNTROWS أولاً:</strong> COUNTROWS(TREATAS(...)) تساعدك تتأكد إن الجدول الوهمي بيرجع الصفوف الصح قبل ما تضيف الحسابات.</li>
+        <li><strong>TREATAS بتأثر على Filter Context بس:</strong> مش علاقة فعلية في الموديل. بتأثر بس داخل الـ Measure اللي استخدمتها فيه.</li>
+        <li><strong>CROSSFILTER(BOTH) مش حل:</strong> له نفس مشاكل Both في الموديل. TREATAS أنظف وأوضح وأأمن.</li>
+      </ul>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>What is the Many-to-Many problem?</h3>
+<p>In normal data models relationships are <strong>One-to-Many</strong> — one product has many sales rows. The problem appears with <strong>Many-to-Many (M2M)</strong>: an employee works in multiple branches, and each branch has multiple employees.</p>
+<p>Result: that employee's sales get counted <strong>twice</strong> — once per branch. This is Double Counting.</p>
+</div>
+<div class="warn-box">
+<div class="icon">⚠️</div>
+<p><strong>Wrong solution — Both Filter Direction:</strong> Switching the relationship to "Both" looks easy but it is dangerous. It causes <strong>ambiguous filter paths</strong> — filters take unexpected routes, numbers get double-counted, and performance degrades noticeably.</p>
+</div>
+<div class="lesson-card">
+<h3>The correct architectural solution: Bridge Table</h3>
+<p>An intermediate table breaks M2M into two clean One-to-Many relationships:</p>
+<div class="code-block">
+<span class="cm">-- Instead of the dangerous direct M2M:</span>
+<span class="cm">-- Dim_Employee --- M:M --- Dim_Branch</span>
+
+<span class="cm">-- Build a Bridge Table:</span>
+Dim_Employee:      EmpID | EmpName
+Dim_Branch:        BranchID | BranchName
+Bridge_EmpBranch:  EmpID | BranchID
+Fact_Sales:        OrderID | EmpID | Amount
+
+<span class="cm">-- Single-direction relationships:</span>
+Dim_Employee  ---1:M--&gt; Bridge_EmpBranch &lt;--M:1--- Dim_Branch
+Dim_Employee  ---1:M--&gt; Fact_Sales
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Bridge Table = always the best solution.</strong> Filters flow in one clear direction without ambiguity. No special DAX needed in every measure — the model solves it automatically.</p>
+</div>
+</div>
+<div class="lesson-card">
+<h3>TREATAS — Virtual Relationship in DAX</h3>
+<p>If you cannot change the model (fixed data source, limited permissions), <strong>TREATAS</strong> builds a virtual relationship inside the measure itself only.</p>
+<div class="code-block">
+<span class="cm">-- Basic syntax</span>
+<span class="fn">TREATAS</span>(table_expression, column1 [, column2 ...])
+
+<span class="cm">-- Example: sales by selected categories from Slicer</span>
+Sales by Category =
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">TREATAS</span>(
+        <span class="fn">VALUES</span>(Dim_Category[CategoryID]),
+        Dim_Product[CategoryID]
+    )
+)
+
+<span class="cm">-- Example: employee sales in selected branches</span>
+Branch Sales =
+<span class="kw">VAR</span> SelectedBranches = <span class="fn">VALUES</span>(Dim_Branch[BranchID])
+<span class="kw">RETURN</span>
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">TREATAS</span>(SelectedBranches, Fact_Sales[BranchID])
+)
+</div>
+</div>
+<div class="lesson-card">
+<h3>Real example: products in multiple categories</h3>
+<p>A Laptop belongs to both Electronics and Office Equipment. We want each category's sales without double-counting the Laptop:</p>
+<div class="code-block">
+Dim_Product:     ProductID | ProductName
+Dim_Category:    CategoryID | CategoryName
+Bridge_ProdCat:  ProductID | CategoryID
+Fact_Sales:      OrderID | ProductID | Amount
+
+Category Sales =
+<span class="kw">VAR</span> CurrentCats      = <span class="fn">VALUES</span>(Dim_Category[CategoryID])
+<span class="kw">VAR</span> FilteredProducts =
+    <span class="fn">CALCULATETABLE</span>(
+        <span class="fn">VALUES</span>(Bridge_ProdCat[ProductID]),
+        <span class="fn">TREATAS</span>(CurrentCats, Bridge_ProdCat[CategoryID])
+    )
+<span class="kw">RETURN</span>
+<span class="fn">CALCULATE</span>(
+    [Total Sales],
+    <span class="fn">TREATAS</span>(FilteredProducts, Fact_Sales[ProductID])
+)
+</div>
+</div>
+<div class="lesson-card">
+<h3>SUMMARIZE — aggregate from complex tables</h3>
+<p>SUMMARIZE builds a virtual aggregated table — useful as input for TOPN, FILTER, and COUNTROWS:</p>
+<div class="code-block">
+Top 3 Categories =
+<span class="kw">VAR</span> Sum  = <span class="fn">SUMMARIZE</span>(Fact_Sales, Dim_Category[CategoryName], <span class="str">"S"</span>, [Total Sales])
+<span class="kw">VAR</span> Top3 = <span class="fn">TOPN</span>(<span class="num">3</span>, Sum, [S], DESC)
+<span class="kw">RETURN</span>
+<span class="fn">CALCULATE</span>([Total Sales], <span class="fn">TREATAS</span>(Top3, Dim_Category[CategoryName]))
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>SUMMARIZE + TREATAS = powerful combo</strong> for dynamic filters inside Measures without touching the model.</p>
+</div>
+</div>
+<div class="lesson-card">
+<h3>🏆 Pro Tips</h3>
+<ul>
+<li><strong>Bridge first, TREATAS second:</strong> A Bridge Table in the model is always the better architectural solution. TREATAS is a fallback when the model is out of your control.</li>
+<li><strong>Data types must match:</strong> TREATAS requires the source and target columns to have the same data type — number to number, text to text.</li>
+<li><strong>Test with COUNTROWS first:</strong> COUNTROWS(TREATAS(...)) lets you verify the virtual table returns the right rows before adding calculations.</li>
+<li><strong>TREATAS only affects Filter Context:</strong> It does not create a real model relationship. The effect is only inside the measure where you used it.</li>
+<li><strong>CROSSFILTER(BOTH) is not a solution:</strong> It has the same problems as Both in the model. TREATAS is cleaner, clearer, and safer.</li>
+</ul>
+</div>` }],
+  },
+  "dax-budget": {
+    eyebrow: "04 · 12 — Budget vs Actual",
+    title: "Budget vs Actual — مقارنة الهدف بالواقع",
+    lede: "من أكتر البترنز المطلوبة في الشركات. تعلّم كيف تبني نموذج Budget vs Actual صحيح وتكتب Measures الفرق والإنجاز والتراكمي.",
+    en_eyebrow: "04 · 12 — Budget vs Actual",
+    en_lede: "One of the most requested patterns in enterprise Power BI. Build a correct Budget vs Actual model and write Variance, Achievement, and YTD measures.",
+    sectionId: "dax-budget",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>لماذا Budget vs Actual مختلف؟</h3>
+      <p>الفرق الجوهري هو <strong>اختلاف مستوى التفصيل (Granularity)</strong>:</p>
+      <table class="compare-table">
+        <tr>
+          <th>جدول المبيعات الفعلية</th>
+          <th>جدول الميزانية</th>
+        </tr>
+        <tr>
+          <td>يسجل كل معاملة بتاريخ دقيق</td>
+          <td>يسجل أهداف شهرية أو ربع سنوية</td>
+        </tr>
+        <tr>
+          <td>مستوى التفصيل: يومي</td>
+          <td>مستوى التفصيل: شهري أو ربعي</td>
+        </tr>
+        <tr>
+          <td>علاقة مباشرة مع Date Table</td>
+          <td>لا علاقة مباشرة — تحتاج TREATAS</td>
+        </tr>
+      </table>
+      <p>لو ربطت الجدولين مباشرة وطرحت Budget من Actuals هتاخد أرقام غلط لأن الـ granularity مختلف.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>تصميم الموديل الصح</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Fact_Sales — المبيعات الفعلية</h4>
+            <p>OrderID | Date | ProductID | RegionID | Amount</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Fact_Budget — الميزانية</h4>
+            <p>YearMonth | ProductID | RegionID | BudgetAmount</p>
+            <p><em>YearMonth كرقم Integer: 202401، 202402، ...</em></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>الربط عبر TREATAS</h4>
+            <p>Fact_Budget لا يرتبط مباشرة بـ Date Table. نبني عمود YearMonth في Date Table ونستخدم TREATAS في الـ Measures للربط الصح.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الـ Measures الأساسية</h3>
+      <div class="code-block">
+<span class="cm">-- 1. المبيعات الفعلية</span>
+Total Actuals =
+<span class="fn">SUM</span>(Fact_Sales[Amount])
+
+<span class="cm">-- 2. الميزانية مع TREATAS لمطابقة الشهر</span>
+Total Budget =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Budget[BudgetAmount]),
+    <span class="fn">TREATAS</span>(
+        <span class="fn">VALUES</span>('Date'[YearMonth]),    <span class="cm">-- شهر/سنة من Date Table</span>
+        Fact_Budget[YearMonth]       <span class="cm">-- نفس العمود في جدول الميزانية</span>
+    )
+)
+
+<span class="cm">-- 3. الفرق (Variance)</span>
+Variance =
+[Total Actuals] - [Total Budget]
+
+<span class="cm">-- 4. نسبة الانحراف</span>
+Variance % =
+<span class="fn">DIVIDE</span>([Variance], [Total Budget], <span class="num">0</span>)
+
+<span class="cm">-- 5. نسبة الإنجاز</span>
+Achievement % =
+<span class="fn">DIVIDE</span>([Total Actuals], [Total Budget], <span class="num">0</span>)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Budget YTD ومقارنة تراكمية</h3>
+      <div class="code-block">
+<span class="cm">-- Actuals تراكمي سنوي</span>
+Actuals YTD =
+<span class="fn">TOTALYTD</span>([Total Actuals], 'Date'[Date])
+
+<span class="cm">-- Budget YTD</span>
+Budget YTD =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Budget[BudgetAmount]),
+    <span class="fn">TREATAS</span>(
+        <span class="fn">VALUES</span>('Date'[YearMonth]),
+        Fact_Budget[YearMonth]
+    ),
+    <span class="fn">DATESYTD</span>('Date'[Date])
+)
+
+<span class="cm">-- Variance تراكمي</span>
+Variance YTD =
+[Actuals YTD] - [Budget YTD]
+
+<span class="cm">-- تصنيف الأداء</span>
+Performance Status =
+<span class="fn">SWITCH</span>(
+    <span class="kw">TRUE</span>(),
+    [Variance %] >= <span class="num">0.05</span>,  <span class="str">"🟢 Exceeding"</span>,
+    [Variance %] >= <span class="num">0</span>,     <span class="str">"🟡 On Track"</span>,
+    [Variance %] >= -<span class="num">0.1</span>, <span class="str">"🟠 At Risk"</span>,
+    <span class="str">"🔴 Below Budget"</span>
+)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Budget ربع سنوي موزّع على أشهر</h3>
+      <div class="code-block">
+<span class="cm">-- توزيع الميزانية الربعية على الأشهر</span>
+Monthly Budget (from Quarterly) =
+<span class="kw">VAR</span> QuarterBudget =
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">SUM</span>(Fact_Budget[BudgetAmount]),
+        <span class="fn">TREATAS</span>(
+            <span class="fn">VALUES</span>('Date'[QuarterYear]),
+            Fact_Budget[QuarterYear]
+        )
+    )
+<span class="kw">VAR</span> MonthsInQ =
+    <span class="fn">COUNTROWS</span>(<span class="fn">VALUES</span>('Date'[MonthNum]))
+<span class="kw">RETURN</span>
+<span class="fn">DIVIDE</span>(QuarterBudget, MonthsInQ, <span class="num">0</span>)
+      </div>
+      <div class="tip-box">
+        <div class="icon">💡</div>
+        <p><strong>أفضل الممارسات:</strong> خزّن الميزانية في أدق مستوى متاح (شهري أفضل من ربعي). التوزيم في Power Query أسهل وأدق من التوزيع في DAX.</p>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Dashboard Budget المتكامل</h3>
+      <div class="code-block">
+[Total Actuals]      <span class="cm">-- المبيعات الفعلية</span>
+[Total Budget]       <span class="cm">-- الميزانية المستهدفة</span>
+[Variance]           <span class="cm">-- الفرق (+/-)</span>
+[Variance %]         <span class="cm">-- نسبة الانحراف</span>
+[Achievement %]      <span class="cm">-- نسبة الإنجاز</span>
+[Actuals YTD]        <span class="cm">-- تراكمي سنوي فعلي</span>
+[Budget YTD]         <span class="cm">-- تراكمي سنوي مستهدف</span>
+[Variance YTD]       <span class="cm">-- فرق تراكمي</span>
+[Performance Status] <span class="cm">-- 🟢 🟡 🟠 🔴</span>
+
+<span class="cm">-- Conditional Formatting على KPI Card:</span>
+<span class="cm">-- Variance % &gt; 0  → أخضر   (أحسن من الهدف)</span>
+<span class="cm">-- Variance % = 0  → رمادي  (مكتمل بالظبط)</span>
+<span class="cm">-- Variance % &lt; 0  → أحمر   (أقل من الهدف)</span>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips</h3>
+      <ul>
+        <li><strong>YearMonth كـ Integer:</strong> خزّن YearMonth كـ 202401 مش "2024-01". الأرقام أسرع في الفلترة والمقارنة.</li>
+        <li><strong>DIVIDE دايماً بدل /:</strong> في Variance % وAchievement %، استخدم DIVIDE لتجنب خطأ القسمة على صفر عند بداية السنة.</li>
+        <li><strong>Budget الشهري قبل الإدراج:</strong> لو الميزانية سنوية أو ربعية، قسّمها في Power Query قبل ما تدخل الموديل — أسهل وأدق.</li>
+        <li><strong>اختبر بـ Matrix Visual:</strong> افرد الشهور على Rows وشوف Budget وActuals جنب بعض. لو الأرقام بدت غريبة، في مشكلة في TREATAS.</li>
+        <li><strong>Budget Remaining:</strong> فكّر تضيف [Budget Remaining] = [Budget YTD] - [Actuals YTD] عشان Stakeholders يعرفوا المتبقي.</li>
+      </ul>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>Why is Budget vs Actual different?</h3>
+<p>The fundamental difference is the <strong>difference in granularity</strong>:</p>
+<table class="compare-table">
+<tr>
+<th>Sales Table (Actuals)</th>
+<th>Budget Table</th>
+</tr>
+<tr>
+<td>Records each transaction with an exact date</td>
+<td>Records monthly or quarterly targets</td>
+</tr>
+<tr>
+<td>Granularity: daily</td>
+<td>Granularity: monthly or quarterly</td>
+</tr>
+<tr>
+<td>Direct relationship with Date Table</td>
+<td>No direct relationship — needs TREATAS</td>
+</tr>
+</table>
+<p>If you link both tables directly and subtract Budget from Actuals you will get wrong numbers because their granularity differs.</p>
+</div>
+<div class="lesson-card">
+<h3>Correct model design</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Fact_Sales — Actual sales</h4>
+<p>OrderID | Date | ProductID | RegionID | Amount</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Fact_Budget — Budget table</h4>
+<p>YearMonth | ProductID | RegionID | BudgetAmount</p>
+<p><em>YearMonth as Integer: 202401, 202402, ...</em></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Link via TREATAS</h4>
+<p>Fact_Budget does not link directly to the Date Table. Build a YearMonth column in the Date Table and use TREATAS in measures to apply the correct filter.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Core measures</h3>
+<div class="code-block">
+<span class="cm">-- 1. Actual sales</span>
+Total Actuals =
+<span class="fn">SUM</span>(Fact_Sales[Amount])
+
+<span class="cm">-- 2. Budget with TREATAS to match the month</span>
+Total Budget =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Budget[BudgetAmount]),
+    <span class="fn">TREATAS</span>(
+        <span class="fn">VALUES</span>('Date'[YearMonth]),
+        Fact_Budget[YearMonth]
+    )
+)
+
+<span class="cm">-- 3. Variance</span>
+Variance =     [Total Actuals] - [Total Budget]
+
+<span class="cm">-- 4. Variance percentage</span>
+Variance %   = <span class="fn">DIVIDE</span>([Variance], [Total Budget], <span class="num">0</span>)
+
+<span class="cm">-- 5. Achievement rate</span>
+Achievement % = <span class="fn">DIVIDE</span>([Total Actuals], [Total Budget], <span class="num">0</span>)
+</div>
+</div>
+<div class="lesson-card">
+<h3>Budget YTD and cumulative comparison</h3>
+<div class="code-block">
+Actuals YTD =
+<span class="fn">TOTALYTD</span>([Total Actuals], 'Date'[Date])
+
+Budget YTD =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Budget[BudgetAmount]),
+    <span class="fn">TREATAS</span>(<span class="fn">VALUES</span>('Date'[YearMonth]), Fact_Budget[YearMonth]),
+    <span class="fn">DATESYTD</span>('Date'[Date])
+)
+
+Variance YTD = [Actuals YTD] - [Budget YTD]
+
+Performance Status =
+<span class="fn">SWITCH</span>(
+    <span class="kw">TRUE</span>(),
+    [Variance %] >= <span class="num">0.05</span>,  <span class="str">"🟢 Exceeding"</span>,
+    [Variance %] >= <span class="num">0</span>,     <span class="str">"🟡 On Track"</span>,
+    [Variance %] >= -<span class="num">0.1</span>, <span class="str">"🟠 At Risk"</span>,
+    <span class="str">"🔴 Below Budget"</span>
+)
+</div>
+</div>
+<div class="lesson-card">
+<h3>Quarterly budget distributed across months</h3>
+<div class="code-block">
+Monthly Budget (from Quarterly) =
+<span class="kw">VAR</span> QuarterBudget =
+    <span class="fn">CALCULATE</span>(
+        <span class="fn">SUM</span>(Fact_Budget[BudgetAmount]),
+        <span class="fn">TREATAS</span>(<span class="fn">VALUES</span>('Date'[QuarterYear]), Fact_Budget[QuarterYear])
+    )
+<span class="kw">VAR</span> MonthsInQ = <span class="fn">COUNTROWS</span>(<span class="fn">VALUES</span>('Date'[MonthNum]))
+<span class="kw">RETURN</span>
+<span class="fn">DIVIDE</span>(QuarterBudget, MonthsInQ, <span class="num">0</span>)
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p><strong>Best practice:</strong> Store budget at the finest granularity available. Splitting in Power Query is easier and more accurate than splitting in DAX.</p>
+</div>
+</div>
+<div class="lesson-card">
+<h3>🏆 Pro Tips</h3>
+<ul>
+<li><strong>YearMonth as Integer:</strong> Store YearMonth as 202401 not "2024-01". Numbers filter and compare faster.</li>
+<li><strong>Always use DIVIDE:</strong> In Variance % and Achievement %, DIVIDE protects automatically against divide-by-zero.</li>
+<li><strong>Pre-split budget in Power Query:</strong> If budget is annual or quarterly, divide it there before loading the model.</li>
+<li><strong>Test with a Matrix visual:</strong> Put Months on Rows and check Budget vs Actuals side by side. Repeated or strange numbers mean TREATAS mapping is wrong.</li>
+<li><strong>Add Budget Remaining:</strong> [Budget Remaining] = [Budget YTD] - [Actuals YTD] helps stakeholders track how much budget is left.</li>
+</ul>
+</div>` }],
+  },
+  "dax-performance": {
+    eyebrow: "04 · 13 — أداء DAX وتحسينه",
+    title: "أداء DAX وتحسينه — اكتب Measures أسرع وأذكى",
+    lede: "الكود الصح مش بس كود يشتغل — هو كود يشتغل بسرعة. تعلّم كيف DAX بيشتغل من الداخل وما هي الأنماط اللي بتبطّئ التقرير.",
+    en_eyebrow: "04 · 13 — DAX Performance Tuning",
+    en_lede: "Correct DAX is not just DAX that works — it is DAX that works fast. Learn how DAX evaluates internally and which patterns silently slow your reports.",
+    sectionId: "dax-performance",
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
+      <h3>كيف DAX بيشتغل من الداخل؟</h3>
+      <p>لتحسين الأداء، لازم تعرف إن DAX بيشتغل عبر <strong>محركين</strong>:</p>
+      <table class="compare-table">
+        <tr>
+          <th>Storage Engine (SE)</th>
+          <th>Formula Engine (FE)</th>
+        </tr>
+        <tr>
+          <td>يقرأ البيانات من الذاكرة بسرعة عالية</td>
+          <td>ينفّذ منطق DAX المعقد</td>
+        </tr>
+        <tr>
+          <td>يعمل بشكل متوازٍ (Parallel)</td>
+          <td>يعمل بشكل خطي (Single-threaded)</td>
+        </tr>
+        <tr>
+          <td>أسرع بكتير — استخدمه قدر الإمكان</td>
+          <td>أبطأ — قلّل عمله قدر الإمكان</td>
+        </tr>
+        <tr>
+          <td>يعمل مع Column Predicates البسيطة</td>
+          <td>يعمل مع FILTER + Iterators</td>
+        </tr>
+      </table>
+      <p><strong>القاعدة الذهبية:</strong> اجعل Storage Engine يعمل أكبر جزء من العمل، وقلّل عمل Formula Engine.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Column Predicates بدل FILTER — الفرق الأكبر في الأداء</h3>
+      <div class="code-block">
+<span class="cm">-- ❌ بطيء: FILTER يشتغل بـ Formula Engine</span>
+Slow Sales =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    <span class="fn">FILTER</span>(Fact_Sales, Fact_Sales[Category] = <span class="str">"Electronics"</span>)
+)
+
+<span class="cm">-- ✅ أسرع: Column Predicate → Storage Engine بيعمل الفلتر</span>
+Fast Sales =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    Dim_Product[Category] = <span class="str">"Electronics"</span>
+)
+
+<span class="cm">-- ❌ بطيء: FILTER على Fact Table الكبيرة مباشرة</span>
+Very Slow =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    <span class="fn">FILTER</span>(Fact_Sales, Fact_Sales[Amount] > <span class="num">1000</span>)
+)
+
+<span class="cm">-- ✅ أحسن: FILTER على VALUES الأصغر</span>
+Better =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    <span class="fn">FILTER</span>(
+        <span class="fn">VALUES</span>(Fact_Sales[OrderID]),
+        <span class="fn">CALCULATE</span>(<span class="fn">SUM</span>(Fact_Sales[Amount])) > <span class="num">1000</span>
+    )
+)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>VAR/RETURN — أداء أفضل وكود أنظف</h3>
+      <p>DAX بيحسب كل VAR <strong>مرة واحدة فقط</strong> — مش كل مرة بتظهر في التعبير:</p>
+      <div class="code-block">
+<span class="cm">-- ❌ بطيء: نفس الحساب يتنفذ 3 مرات</span>
+Slow Version =
+<span class="fn">IF</span>(
+    <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>) > <span class="num">0.1</span>,
+    <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>) * <span class="num">100</span>,
+    <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>)
+)
+
+<span class="cm">-- ✅ أسرع: الحساب مرة واحدة في VAR</span>
+Fast Version =
+<span class="kw">VAR</span> Pct = <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>)
+<span class="kw">RETURN</span>
+<span class="fn">IF</span>(Pct > <span class="num">0.1</span>, Pct * <span class="num">100</span>, Pct)
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>DIVIDE بدل العلامة /</h3>
+      <div class="code-block">
+<span class="cm">-- ❌ خطر: لو المقام صفر → خطأ في الـ Visual</span>
+Risky Margin = [Total Profit] / [Total Sales]
+
+<span class="cm">-- ✅ آمن: قيمة افتراضية عند صفر</span>
+Safe Margin  = <span class="fn">DIVIDE</span>([Total Profit], [Total Sales], <span class="num">0</span>)
+
+<span class="cm">-- ✅ مع BLANK() لـ KPI Cards أنظف</span>
+Clean Margin = <span class="fn">DIVIDE</span>([Total Profit], [Total Sales], <span class="fn">BLANK</span>())
+      </div>
+      <div class="tip-box">
+        <div class="icon">💡</div>
+        <p>DIVIDE مع BLANK() أفضل في الـ KPI Cards لأنه بيحافظ على نظافة الـ Visual عند البيانات الناقصة أو أول الأشهر.</p>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Performance Analyzer — شوف المشكلة قبل ما تحلها</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>فتح Performance Analyzer</h4>
+            <p>View → Performance Analyzer → Start Recording</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>تفاعل مع التقرير</h4>
+            <p>اضغط على Slicers أو غيّر الصفحات. كل Visual هيسجّل وقت تنفيذه.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>راجع النتائج</h4>
+            <p>لكل Visual:<br>• <strong>DAX Query:</strong> وقت تنفيذ الـ Measure<br>• <strong>Visual Display:</strong> وقت رسم الـ Visual<br>• <strong>Other:</strong> وقت الشبكة والتحضير</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Copy Query للتحليل المتعمق</h4>
+            <p>اضغط "Copy Query" على Visual بطيء وحطّه في DAX Studio (أداة خارجية مجانية) للتحليل العميق وقراءة الـ query plan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>الأنماط المشهورة اللي بتبطّئ DAX</h3>
+      <div class="code-block">
+<span class="cm">-- ❌ CALCULATE متداخلة بدون داعٍ</span>
+Bad =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">CALCULATE</span>([Sales], <span class="fn">FILTER</span>(Fact_Sales, Fact_Sales[Amt] > <span class="num">100</span>)),
+    Dim_Region[Region] = <span class="str">"Cairo"</span>
+)
+
+<span class="cm">-- ✅ ادمج الفلاتر في CALCULATE واحدة</span>
+Good =
+<span class="fn">CALCULATE</span>(
+    [Sales],
+    Fact_Sales[Amt] > <span class="num">100</span>,
+    Dim_Region[Region] = <span class="str">"Cairo"</span>
+)
+
+<span class="cm">-- ❌ SUMX على ملايين الصفوف</span>
+Slow SUMX =
+<span class="fn">SUMX</span>(Fact_Sales, Fact_Sales[Qty] * Fact_Sales[Price])
+
+<span class="cm">-- ✅ Calculated Column + SUM</span>
+LineAmount = Fact_Sales[Qty] * Fact_Sales[Price]  <span class="cm">-- عمود محسوب</span>
+Fast       = <span class="fn">SUM</span>(Fact_Sales[LineAmount])           <span class="cm">-- ثم SUM</span>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips للأداء</h3>
+      <ul>
+        <li><strong>Column Predicate > FILTER دايماً:</strong> CALCULATE([M], Table[Col] = "X") أسرع لأنه يشتغل بـ Storage Engine مش Formula Engine.</li>
+        <li><strong>FILTER على Dimension مش Fact:</strong> لو محتاج FILTER، فلتر على Dim_Product (آلاف الصفوف) مش Fact_Sales (ملايين الصفوف).</li>
+        <li><strong>VALUES أسرع من FILTER(ALL(...)):</strong> استخدم VALUES(Table[Col]) بدل FILTER(ALL(Table), ...) للحصول على قيم فريدة.</li>
+        <li><strong>قيّم الأداء قبل ما تحسّن:</strong> استخدم Performance Analyzer لتحديد Visual البطيء أولاً. بعدين حسّن الـ Measure المسبّبة للبطء.</li>
+        <li><strong>Calculated Column للعمليات الثابتة:</strong> لو الحساب ثابت ومش بيتغير بالفلاتر (زي Qty × Price)، خليه Calculated Column بدل SUMX.</li>
+      </ul>
+    </div>` }],
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
+<h3>How DAX works internally</h3>
+<p>To improve performance you need to know that DAX runs through <strong>two engines</strong>:</p>
+<table class="compare-table">
+<tr>
+<th>Storage Engine (SE)</th>
+<th>Formula Engine (FE)</th>
+</tr>
+<tr>
+<td>Reads data from memory at high speed</td>
+<td>Executes complex DAX logic</td>
+</tr>
+<tr>
+<td>Works in parallel</td>
+<td>Works single-threaded</td>
+</tr>
+<tr>
+<td>Much faster — maximize its use</td>
+<td>Slower — minimize its work</td>
+</tr>
+<tr>
+<td>Works with simple column predicates</td>
+<td>Works with FILTER and iterators</td>
+</tr>
+</table>
+<p><strong>Golden rule:</strong> Let Storage Engine do as much work as possible and reduce what Formula Engine handles.</p>
+</div>
+<div class="lesson-card">
+<h3>Column Predicates vs FILTER — the biggest performance difference</h3>
+<div class="code-block">
+<span class="cm">-- ❌ Slow: FILTER runs through Formula Engine (full table scan)</span>
+Slow Sales =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    <span class="fn">FILTER</span>(Fact_Sales, Fact_Sales[Category] = <span class="str">"Electronics"</span>)
+)
+
+<span class="cm">-- ✅ Faster: Column Predicate → Storage Engine handles the filter</span>
+Fast Sales =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    Dim_Product[Category] = <span class="str">"Electronics"</span>
+)
+
+<span class="cm">-- ❌ Very slow: FILTER directly on large Fact Table</span>
+Very Slow =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    <span class="fn">FILTER</span>(Fact_Sales, Fact_Sales[Amount] > <span class="num">1000</span>)
+)
+
+<span class="cm">-- ✅ Better: FILTER on smaller VALUES table</span>
+Better =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">SUM</span>(Fact_Sales[Amount]),
+    <span class="fn">FILTER</span>(
+        <span class="fn">VALUES</span>(Fact_Sales[OrderID]),
+        <span class="fn">CALCULATE</span>(<span class="fn">SUM</span>(Fact_Sales[Amount])) > <span class="num">1000</span>
+    )
+)
+</div>
+</div>
+<div class="lesson-card">
+<h3>VAR/RETURN — Better performance and cleaner code</h3>
+<p>DAX evaluates each VAR <strong>only once</strong> — not every time it appears in the expression:</p>
+<div class="code-block">
+<span class="cm">-- ❌ Slow: same calculation runs 3 times</span>
+Slow Version =
+<span class="fn">IF</span>(
+    <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>) > <span class="num">0.1</span>,
+    <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>) * <span class="num">100</span>,
+    <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>)
+)
+
+<span class="cm">-- ✅ Faster: calculate once in VAR</span>
+Fast Version =
+<span class="kw">VAR</span> Pct = <span class="fn">DIVIDE</span>([Sales], <span class="fn">CALCULATE</span>([Sales], <span class="fn">ALL</span>(Fact_Sales)), <span class="num">0</span>)
+<span class="kw">RETURN</span>
+<span class="fn">IF</span>(Pct > <span class="num">0.1</span>, Pct * <span class="num">100</span>, Pct)
+</div>
+</div>
+<div class="lesson-card">
+<h3>DIVIDE instead of /</h3>
+<div class="code-block">
+<span class="cm">-- ❌ Dangerous: denominator is zero → error in the visual</span>
+Risky Margin = [Total Profit] / [Total Sales]
+
+<span class="cm">-- ✅ Safe: default value when zero</span>
+Safe Margin  = <span class="fn">DIVIDE</span>([Total Profit], [Total Sales], <span class="num">0</span>)
+
+<span class="cm">-- ✅ With BLANK() for cleaner KPI Cards</span>
+Clean Margin = <span class="fn">DIVIDE</span>([Total Profit], [Total Sales], <span class="fn">BLANK</span>())
+</div>
+<div class="tip-box">
+<div class="icon">💡</div>
+<p>DIVIDE with BLANK() is better for KPI Cards because it keeps the visual clean when data is missing or at the start of a period.</p>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Performance Analyzer — diagnose before optimizing</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Open Performance Analyzer</h4>
+<p>View → Performance Analyzer → Start Recording</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Interact with the report</h4>
+<p>Click Slicers or change pages. Each visual records its execution time.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Review the results</h4>
+<p>For each visual:<br>• <strong>DAX Query:</strong> time to run the measure<br>• <strong>Visual Display:</strong> time to render the visual<br>• <strong>Other:</strong> network and preparation time</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>Copy Query for deep analysis</h4>
+<p>Click "Copy Query" on a slow visual and paste it into DAX Studio (free external tool) for deep analysis and query plan inspection.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card">
+<h3>Common DAX patterns that hurt performance</h3>
+<div class="code-block">
+<span class="cm">-- ❌ Nested CALCULATE without reason</span>
+Bad =
+<span class="fn">CALCULATE</span>(
+    <span class="fn">CALCULATE</span>([Sales], <span class="fn">FILTER</span>(Fact_Sales, Fact_Sales[Amt] > <span class="num">100</span>)),
+    Dim_Region[Region] = <span class="str">"Cairo"</span>
+)
+
+<span class="cm">-- ✅ Merge filters into one CALCULATE</span>
+Good =
+<span class="fn">CALCULATE</span>(
+    [Sales],
+    Fact_Sales[Amt] > <span class="num">100</span>,
+    Dim_Region[Region] = <span class="str">"Cairo"</span>
+)
+
+<span class="cm">-- ❌ SUMX on a million-row Fact Table</span>
+Slow SUMX =
+<span class="fn">SUMX</span>(Fact_Sales, Fact_Sales[Qty] * Fact_Sales[Price])
+
+<span class="cm">-- ✅ Calculated Column + SUM</span>
+LineAmount = Fact_Sales[Qty] * Fact_Sales[Price]
+Fast       = <span class="fn">SUM</span>(Fact_Sales[LineAmount])
+</div>
+</div>
+<div class="lesson-card">
+<h3>🏆 Performance Pro Tips</h3>
+<ul>
+<li><strong>Column Predicate is always faster than FILTER:</strong> CALCULATE([M], Table[Col] = "X") runs through Storage Engine, not Formula Engine.</li>
+<li><strong>FILTER Dimension not Fact:</strong> If you must use FILTER, run it on Dim_Product (thousands of rows) not Fact_Sales (millions of rows).</li>
+<li><strong>VALUES is faster than FILTER(ALL(...)):</strong> Use VALUES(Table[Col]) instead of FILTER(ALL(Table), ...) to get distinct values.</li>
+<li><strong>Diagnose before optimizing:</strong> Use Performance Analyzer to identify the slow visual first, then fix the specific measure causing the slowdown.</li>
+<li><strong>Calculated Column for fixed math:</strong> If a calculation never changes with filters (like Qty × Price), make it a Calculated Column instead of repeating SUMX.</li>
+</ul>
+</div>` }],
+  },
   "dax-reference": {
-    eyebrow: "04 · 11 — مرجع DAX الكامل",
+    eyebrow: "04 · 14 — مرجع DAX الكامل",
     title: "جدول المرجع الشامل — DAX Functions Reference",
     lede: "مرجع سريع لكل فئات دوال DAX مع أبرز الدوال في كل فئة. احتفظ بهذه الصفحة كمرجع دائم.",
-    en_eyebrow: "04 · 11 — DAX Reference",
+    en_eyebrow: "04 · 14 — DAX Reference",
     en_lede: "Complete reference for DAX functions organized by category.",
     sectionId: "dax-reference",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -3291,7 +5370,7 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
     </div>
 
     <div class="lesson-card">
-      <h3>🔍 دوال التصفية (Filter)</h3>
+      <h3>ðŸ” دوال التصفية (Filter)</h3>
       <table class="compare-table">
         <tr><th>الدالة</th><th>الاستخدام</th><th>ملاحظة</th></tr>
         <tr><td><strong>CALCULATE</strong></td><td>تعديل Filter Context</td><td>أقوى دالة في DAX</td></tr>
@@ -3364,7 +5443,7 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
 </table>
 </div>
 <div class="lesson-card">
-<h3>🔍 Filter functions</h3>
+<h3>ðŸ” Filter functions</h3>
 <table class="compare-table">
 <tr><th>Function</th><th>Use</th><th>note</th></tr>
 <tr><td><strong>CALCULATE</strong></td><td>Edit Filter Context</td><td>The strongest function in DAX</td></tr>
@@ -3520,6 +5599,17 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
     <div class="warn-box">
       <div class="icon">⚠️</div>
       <p><strong>تحذير:</strong> في Power BI Desktop، الشارتات Interactive (تفاعلية). في Power BI Service، لا تنسَ أن Mobile users قد لا يرى التفاصيل الدقيقة على الشاشة الصغيرة. اختبر على Mobile.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>🏆 Pro Tips من الخبرة الميدانية</h3>
+      <ul>
+        <li><strong>قاعدة الألوان:</strong> استخدم نفس اللون لنفس الفئة عبر كل الشارتات. اللون الأحمر = مشكلة، الأخضر = نجاح. ثبّت هذا في ذهن المستخدم.</li>
+        <li><strong>لا تستخدم Pie Charts:</strong> معظم المحترفين يقولون: Pie Charts سيئة. استخدم Bar أو Treemap بدلاً منها — أسهل قراءة.</li>
+        <li><strong>Line Chart مع التنبؤ:</strong> أضف خط مقطع (dashed line) للتنبؤات. الناس فوراً يفهموا الفرق بين الماضي والمستقبل.</li>
+        <li><strong>Data Labels = أسرع فهم:</strong> أضف أرقام على كل شريط أو نقطة. لا تجعل المستخدم يقدّر القيمة من العيون.</li>
+        <li><strong>White Space = نظافة:</strong> لا تحشر 20 شارت في صفحة واحدة. 5 شارتات جيدة أفضل من 20 سيئة. اترك مساحات فارغة.</li>
+      </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
 <h3>Introduction: Visualize Data, Don't Tabulate It</h3>
@@ -3614,6 +5704,17 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
 <div class="warn-box">
 <div class="icon">⚠️</div>
 <p><strong>Warning:</strong> In Power BI Desktop, charts are interactive. In Power BI Service, remember mobile users won't see fine details on small screens. Test on mobile.</p>
+</div>
+
+<div class="lesson-card">
+<h3>🏆 Pro Tips from field experience</h3>
+<ul>
+<li><strong>Color rule:</strong> Use the same color for the same category across all charts. Red = problem, Green = success. Embed this in the user's mind.</li>
+<li><strong>Don't use Pie Charts:</strong> Most professionals say: Pie Charts are bad. Use Bar or Treemap instead — easier to read.</li>
+<li><strong>Line Chart with forecast:</strong> Add a dashed line for forecasts. People instantly understand the difference between past and future.</li>
+<li><strong>Data Labels = Faster understanding:</strong> Add numbers to each bar or point. Don't make the user estimate the value from the eyes.</li>
+<li><strong>White Space = Cleanliness:</strong> Don't cram 20 charts on one page. 5 good charts beat 20 bad ones. Leave empty spaces.</li>
+</ul>
 </div>` }],
   },
   "sync-slicers": {
@@ -4682,7 +6783,7 @@ Timezone: Africa/Cairo
     </div>
 
     <div class="lesson-card">
-      <h3>🔐 إدارة الصلاحيات والمشاركة</h3>
+      <h3>ðŸ” إدارة الصلاحيات والمشاركة</h3>
       <p>بعد النشر، بتقدر تتحكم من يشوف التقرير:</p>
       <div class="steps">
         <div class="step">
@@ -4884,7 +6985,7 @@ Timezone: Africa/Cairo
 </div>
 
 <div class="lesson-card">
-<h3>🔐 Managing permissions and sharing</h3>
+<h3>ðŸ” Managing permissions and sharing</h3>
 <p>After publishing, you can control who sees the report:</p>
 <div class="steps">
 <div class="step">
@@ -5087,7 +7188,7 @@ Viewer → Watch only (requires Pro or Premium License)
     en_lede: "Control which users see which data rows in your reports.",
     sectionId: "rls",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>🔐 لماذا RLS مهمة جداً؟</h3>
+      <h3>ðŸ” لماذا RLS مهمة جداً؟</h3>
       <p>كل مدير في الشركة يحتاج نفس التقرير، لكن كل واحد يشوف بيانات نطاقه فقط. بدون RLS، لازم تطبع 20 تقرير نسخ — واحد لكل مدير. مع RLS: تقرير واحد بس، كل مدير يفتحه ويشوف بيانته تلقائياً.</p>
       <div class="tip-box">
         <div class="icon">💡</div>
@@ -5382,7 +7483,7 @@ tabulareditor.github.io
       </table>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>🔐 Why is RLS so important?</h3>
+<h3>ðŸ” Why is RLS so important?</h3>
 <p>Every manager in the company needs the same report, but each one sees only their regional data. Without RLS, you’d need to print 20 copies of the report — one for each manager. With RLS: one report, every manager opens it and automatically sees their data.</p>
 <div class="tip-box">
 <div class="icon">💡</div>
@@ -10300,11 +12401,11 @@ IF LastRefreshStatus = "FAILED" THEN
 4. معلومات إعادة الاشتراك
 
 ✅ مثال البريد:
-━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 [Screenshot of Sales Dashboard]
 
 View the full report: https://app.powerbi.com/...
-━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
       </div>
       <p><strong>المميزات:</strong> ✅ بسيطة جداً | ✅ بدون برمجة | ✅ سريعة</p>
       <p><strong>العيوب:</strong> ❌ محدودة جداً | ❌ لا يمكن تغيير تصميم الرسالة | ❌ لا يمكن filters ديناميكية</p>
@@ -10319,7 +12420,7 @@ View the full report: https://app.powerbi.com/...
         <li>🔀 إرسال تقارير مختلفة حسب الشخص (branch-specific)</li>
         <li>📊 إضافة بيانات من مصادر أخرى (Excel, SharePoint)</li>
         <li>🔔 تنبيهات متعددة: Email + Teams + Slack</li>
-        <li>📝 تسجيل وتتبع كل إرسال</li>
+        <li>ðŸ“ تسجيل وتتبع كل إرسال</li>
       </ul>
       <p><strong>مثال: إرسال تقرير مخصص حسب الموقع</strong></p>
       <div class="code-block">
@@ -10588,7 +12689,7 @@ RESULT: 54 بريد مخصص في دقيقة واحدة! 🚀
       <br/>🎨 استخدم HTML templates جميلة (ليست صورة عادية)
       <br/>📊 ضمّن بيانات موجزة مباشرة في الرسالة
       <br/>🔗 أضف رابط للتقرير الكامل
-      <br/>📝 اكتب رسالة مخصصة لكل شخص (اسمه، فرعه، إنجازاته)
+      <br/>ðŸ“ اكتب رسالة مخصصة لكل شخص (اسمه، فرعه، إنجازاته)
       <br/>⏰ أرسل في الوقت المناسب (قبل الاجتماعات مثلاً)</p>
     </div>
 
@@ -12313,7 +14414,7 @@ OR:
       <h3>نموذج Dashboard المتوقع</h3>
       <p><strong>صفحة 1: Sales Overview</strong></p>
       <div class="code-block">
-┌─────────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │ Pizza Place Sales Dashboard             │
 ├─────────────────────────────────────────┤
 │                                         │
@@ -12339,7 +14440,7 @@ OR:
 └─────────────────────────────────────────┘
 
 صفحة 2: Menu Analysis
-┌─────────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │ Pizza Menu Performance                  │
 ├─────────────────────────────────────────┤
 │ Revenue by Category                     │
@@ -12360,7 +14461,7 @@ OR:
       <h3>Business Insights المتوقعة</h3>
       <p><strong>يجب أن تكتشف من التحليل:</strong></p>
       <ul>
-        <li>🔝 أوقات الذروة (متى يزيد عدد الطلبات؟) → تدرب موظفين إضافيين</li>
+        <li>ðŸ” أوقات الذروة (متى يزيد عدد الطلبات؟) → تدرب موظفين إضافيين</li>
         <li>📊 بيتزا غير مربحة (مثل Brie Carre) → إزل من الـ menu؟</li>
         <li>💰 أفضل فئة (مثل Classic) → ركز التسويق عليها</li>
         <li>🔄 متوسط الطلب = 2 بيتزة → الـ Bundle deals ممكن تزيد من 2 ل 3</li>
@@ -12602,7 +14703,7 @@ OR:
 
       <p><strong>صفحة 1: Match Overview</strong></p>
       <div class="code-block">
-┌─────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │         CHESS GAMES ANALYTICS       │
 ├─────────────────────────────────────┤
 │  Total Games: 20,345                │
@@ -12611,15 +14712,15 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Win Distribution          Top 10   │
-│  ┌─────────────┐         Openings   │
-│  │ Pie Chart   │         ┌─────────┐│
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         Openings   │
+│  │ Pie Chart   │         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”│
 │  │ W/D/B       │         │ 1. Ruy  ││
 │  └─────────────┘         │ 2. Sicil││
 │                          │ 3. French││
 │  Rating Gap Impact        └─────────┘│
-│  ┌─────────────┐                    │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”                    │
 │  │ Bar Chart   │  Blitz vs Rapid     │
-│  │ ↑ Win Rate  │  ┌──────┬──────┐   │
+│  │ ↑ Win Rate  │  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”   │
 │  └─────────────┘  │ Blitz│Rapid │   │
 │                   │ 40%  │ 52%  │   │
 │                   └──────┴──────┘   │
@@ -12628,7 +14729,7 @@ OR:
 
       <p><strong>صفحة 2: Opening Analysis</strong></p>
       <div class="code-block">
-┌─────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │     OPENING DEEP DIVE               │
 ├─────────────────────────────────────┤
 │  Selected Opening: Ruy Lopez        │
@@ -12637,7 +14738,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Variations Win Rate:               │
-│  ┌─────────────────────────────┐   │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
 │  │ Variation      │ W% │ Count │   │
 │  ├─────────────────────────────┤   │
 │  │ Classical      │47%│ 1,245 │   │
@@ -12647,7 +14748,7 @@ OR:
 │  └─────────────────────────────┘   │
 │                                     │
 │  Performance Trend:                 │
-│  ┌─────────────────────────────┐   │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
 │  │ Line Chart: Wins over time  │   │
 │  └─────────────────────────────┘   │
 └─────────────────────────────────────┘
@@ -12655,7 +14756,7 @@ OR:
 
       <p><strong>صفحة 3: Rating & Time Control</strong></p>
       <div class="code-block">
-┌─────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │  RATING & TIME ANALYSIS             │
 ├─────────────────────────────────────┤
 │  Higher-Rated Win: 58.2%            │
@@ -12663,7 +14764,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Rating Band Performance:           │
-│  ┌──────┬──────┬──────┬──────┐    │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”    │
 │  │ Band │ W%   │Draw%│ Count│    │
 │  ├──────┼──────┼──────┼──────┤    │
 │  │<1200 │ 48%  │ 32% │ 1,200│    │
@@ -12673,7 +14774,7 @@ OR:
 │  └──────┴──────┴──────┴──────┘    │
 │                                     │
 │  Game Speed Impact:                 │
-│  ┌─────────────────────────────┐   │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
 │  │ Bullet: 41% | Blitz: 45%    │   │
 │  │ Rapid: 52%  | Classic: 58%  │   │
 │  └─────────────────────────────┘   │
@@ -12682,7 +14783,7 @@ OR:
     </div>
 
     <div class="lesson-card">
-      <h3>🔍 Business Insights المتوقعة</h3>
+      <h3>ðŸ” Business Insights المتوقعة</h3>
       <ol>
         <li><strong>أثر التقييم حقيقي:</strong> اللاعب الأعلى تقييماً يفوز في 58% من الحالات — أعلى من الـ 50% المتوقع عشوائياً، مما يثبت أن التقييم مؤشر قوي للأداء.</li>
         <li><strong>الافتتاحيات ذات تأثير:</strong> افتتاحيات معينة (مثل Ruy Lopez و Sicilian) لها معدل فوز أعلى للأبيض — تعكس عمق الإعداد النظري.</li>
@@ -12816,7 +14917,7 @@ OR:
 
       <p><strong>Page 1: Match Overview</strong></p>
       <div class="code-block">
-┌─────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │         CHESS GAMES ANALYTICS       │
 ├─────────────────────────────────────┤
 │  Total Games: 20,345                │
@@ -12825,15 +14926,15 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Win Distribution          Top 10   │
-│  ┌─────────────┐         Openings   │
-│  │ Pie Chart   │         ┌─────────┐│
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         Openings   │
+│  │ Pie Chart   │         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”│
 │  │ W/D/B       │         │ 1. Ruy  ││
 │  └─────────────┘         │ 2. Sicil││
 │                          │ 3. French││
 │  Rating Gap Impact        └─────────┘│
-│  ┌─────────────┐                    │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”                    │
 │  │ Bar Chart   │  Blitz vs Rapid     │
-│  │ ↑ Win Rate  │  ┌──────┬──────┐   │
+│  │ ↑ Win Rate  │  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”   │
 │  └─────────────┘  │ Blitz│Rapid │   │
 │                   │ 40%  │ 52%  │   │
 │                   └──────┴──────┘   │
@@ -12842,7 +14943,7 @@ OR:
 
       <p><strong>Page 2: Opening Analysis</strong></p>
       <div class="code-block">
-┌─────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │     OPENING DEEP DIVE               │
 ├─────────────────────────────────────┤
 │  Selected Opening: Ruy Lopez        │
@@ -12851,7 +14952,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Variations Win Rate:               │
-│  ┌─────────────────────────────┐   │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
 │  │ Variation      │ W% │ Count │   │
 │  ├─────────────────────────────┤   │
 │  │ Classical      │47%│ 1,245 │   │
@@ -12861,7 +14962,7 @@ OR:
 │  └─────────────────────────────┘   │
 │                                     │
 │  Performance Trend:                 │
-│  ┌─────────────────────────────┐   │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
 │  │ Line Chart: Wins over time  │   │
 │  └─────────────────────────────┘   │
 └─────────────────────────────────────┘
@@ -12869,7 +14970,7 @@ OR:
 
       <p><strong>Page 3: Rating & Time Control</strong></p>
       <div class="code-block">
-┌─────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │  RATING & TIME ANALYSIS             │
 ├─────────────────────────────────────┤
 │  Higher-Rated Win: 58.2%            │
@@ -12877,7 +14978,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Rating Band Performance:           │
-│  ┌──────┬──────┬──────┬──────┐    │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”    │
 │  │ Band │ W%   │Draw%│ Count│    │
 │  ├──────┼──────┼──────┼──────┤    │
 │  │<1200 │ 48%  │ 32% │ 1,200│    │
@@ -12887,7 +14988,7 @@ OR:
 │  └──────┴──────┴──────┴──────┘    │
 │                                     │
 │  Game Speed Impact:                 │
-│  ┌─────────────────────────────┐   │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
 │  │ Bullet: 41% | Blitz: 45%    │   │
 │  │ Rapid: 52%  | Classic: 58%  │   │
 │  └─────────────────────────────┘   │
@@ -12896,7 +14997,7 @@ OR:
     </div>
 
     <div class="lesson-card">
-      <h3>🔍 Expected Business Insights</h3>
+      <h3>ðŸ” Expected Business Insights</h3>
       <ol>
         <li><strong>Rating impact is real:</strong> The higher-rated player wins 58% of the time — higher than 50% random chance, proving rating is a strong performance predictor.</li>
         <li><strong>Openings matter:</strong> Certain openings (like Ruy Lopez and Sicilian) show higher white win rates — reflecting deep theoretical preparation.</li>
@@ -13138,7 +15239,7 @@ OR:
 
       <p><strong>Page 1: Market Overview</strong></p>
       <div class="code-block">
-┌────────────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │        AIRBNB MARKET INTELLIGENCE          │
 ├────────────────────────────────────────────┤
 │  Total Listings: 250,145    Avg Price: $145│
@@ -13147,13 +15248,13 @@ OR:
 ├────────────────────────────────────────────┤
 │                                            │
 │  Price Distribution      Market Composition│
-│  ┌─────────────┐         ┌──────────────┐ │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
 │  │ Histogram   │         │ Pie Chart    │ │
 │  │ $ vs Count  │         │ Room Types   │ │
 │  └─────────────┘         └──────────────┘ │
 │                                            │
 │  Review Scores Trend       Superhost Share │
-│  ┌─────────────┐         ┌──────────────┐ │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
 │  │ Line Chart  │         │ 18.2%        │ │
 │  │ Rating over │         │ 82.0% Regular│ │
 │  │ Time        │         │ 0.8% Other   │ │
@@ -13163,12 +15264,12 @@ OR:
 
       <p><strong>Page 2: City Benchmark</strong></p>
       <div class="code-block">
-┌────────────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │     CITY COMPARISON & BENCHMARKING         │
 ├────────────────────────────────────────────┤
 │                                            │
 │  City Metrics Table:                       │
-│  ┌────────┬─────┬───────┬──────┬────────┐│
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”│
 │  │ City   │Count│ Price │ Rev  │ SHost %││
 │  ├────────┼─────┼───────┼──────┼────────┤│
 │  │ NYC    │45K  │ $215  │5.2M  │ 22%    ││
@@ -13179,13 +15280,13 @@ OR:
 │  └────────┴─────┴───────┴──────┴────────┘│
 │                                            │
 │  Superhost Concentration:                 │
-│  ┌────────────────────────────────────┐  │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
 │  │ Bar Chart: Superhost % by City     │  │
 │  │ NYC leads at 22%, Boston at 21%    │  │
 │  └────────────────────────────────────┘  │
 │                                            │
 │  Price vs Quality Scatter:                │
-│  ┌────────────────────────────────────┐  │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
 │  │ X: Price | Y: Review Score | Size  │  │
 │  │ Premium = High Price + High Reviews│  │
 │  └────────────────────────────────────┘  │
@@ -13194,19 +15295,19 @@ OR:
 
       <p><strong>Page 3: Geographic Analysis</strong></p>
       <div class="code-block">
-┌────────────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │      GEOGRAPHIC & NEIGHBORHOOD VIEW        │
 ├────────────────────────────────────────────┤
 │                                            │
 │  Map: Price Heatmap by Neighborhood       │
-│  ┌────────────────────────────────────┐  │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
 │  │ [Map showing color intensity]      │  │
 │  │ Red = $200+  Yellow = $150-200     │  │
 │  │ Green = $100-150  Blue = <$100     │  │
 │  └────────────────────────────────────┘  │
 │                                            │
 │  Top 10 Neighborhoods by:                 │
-│  ┌──────────────┬──────────────────────┐ │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
 │  │ By Price     │ By Superhost Density │ │
 │  ├──────────────┼──────────────────────┤ │
 │  │ 1. Tribeca   │ 1. Park Slope        │ │
@@ -13221,7 +15322,7 @@ OR:
 
       <p><strong>Page 4: Host & Quality Analytics</strong></p>
       <div class="code-block">
-┌────────────────────────────────────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 │   HOST QUALITY & PERFORMANCE ANALYSIS      │
 ├────────────────────────────────────────────┤
 │  Average Review Score: 4.73/5              │
@@ -13230,13 +15331,13 @@ OR:
 ├────────────────────────────────────────────┤
 │                                            │
 │  Review Score Distribution:                │
-│  ┌────────────────────────────────────┐  │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
 │  │ Histogram: 5.0 | 4.8-4.9 | 4.5+   │  │
 │  │ Most cluster at 4.8+               │  │
 │  └────────────────────────────────────┘  │
 │                                            │
 │  Superhost vs Regular Performance:        │
-│  ┌──────────────┬──────────────────────┐ │
+│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
 │  │ Metric       │ Superhost │ Regular  │ │
 │  ├──────────────┼──────────┼──────────┤ │
 │  │ Avg Rating   │ 4.85     │ 4.62     │ │
@@ -13251,7 +15352,7 @@ OR:
     </div>
 
     <div class="lesson-card">
-      <h3>🔍 Business Insights You Should Discover</h3>
+      <h3>ðŸ” Business Insights You Should Discover</h3>
       <ol>
         <li><strong>Superhost Premium:</strong> Superhosts command 15-20% price premium while maintaining 4.85/5 rating (vs 4.62 for regular hosts). ROI: higher reviews + higher prices = loyalty.</li>
         <li><strong>Geographic Pricing Power:</strong> Top neighborhoods (NYC Tribeca, LA Pacific Palisades) command 2-3x median price. But Superhosts in secondary neighborhoods often match primary-area regular host ratings.</li>
@@ -13448,3 +15549,5 @@ window.stubLesson = function(lesson, chapter) {
     en_blocks: [{ kind: "html", html: "<p style=\"color:var(--ink-2)\">This lesson content is coming soon.</p>" }],
   };
 };
+
+

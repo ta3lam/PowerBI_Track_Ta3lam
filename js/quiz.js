@@ -5,8 +5,8 @@ const I18N_QUIZ = {
     loadingMsg: "لحظة، الأسئلة بتتحمل...",
     noQuestionsMsg: "مفيش أسئلة لهذا الدرس دلوقتي.",
     quizTitle: "📝 اختبر نفسك",
-    prevBtn: "← اللي فات",
-    nextBtn: "الجاى →",
+    prevBtn: "← السابق",
+    nextBtn: "التالي →",
     finishBtn: "خلّص الاختبار →",
     questionsLabel: "سؤال",
     from: "من",
@@ -22,6 +22,11 @@ const I18N_QUIZ = {
     closeBtn: "تمام، إغلاق",
     codeAnswerLabel: "اكتب إجابتك:",
     codeError: "في مشكلة! تأكد من النت وحاول تاني.",
+    selectAnswerMsg: "الرجاء الإجابة على السؤال أولاً",
+    provideAnswerMsg: "الرجاء كتابة إجابتك",
+    continueBtn: "متابعة الدرس التالي ✓",
+    retryBtn: "إعادة المحاولة",
+    passRequired: "يجب أن تحصل على {percent}% على الأقل للنجاح",
     quizNote: "",
     certTitle: "مبروك يا بطل! 🎉",
     certLead: "أنهيت الدروس المتاحة بنجاح",
@@ -57,7 +62,12 @@ const I18N_QUIZ = {
     closeBtn: "Close",
     codeAnswerLabel: "Your answer:",
     codeError: "Error! Please try again.",
-    quizNote: "Questions are currently in Arabic.",
+    selectAnswerMsg: "Please answer the question first",
+    provideAnswerMsg: "Please provide an answer",
+    continueBtn: "Continue to Next Lesson ✓",
+    retryBtn: "Retry",
+    passRequired: "You need at least {percent}% to pass",
+    quizNote: "",
     certTitle: "Congratulations! 🎉",
     certLead: "You completed the available course lessons",
     certCourseTitle: "Power BI — From Zero to Pro",
@@ -78,6 +88,14 @@ const qt = (key) => {
   return I18N_QUIZ[lang][key] || I18N_QUIZ.ar[key];
 };
 
+const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#039;",
+}[char]));
+
 const currentLang = () => document.documentElement.lang === "en" ? "en" : "ar";
 const isEnglish = () => currentLang() === "en";
 const getCourseStats = () => window.getCourseStats ? window.getCourseStats() : {
@@ -93,23 +111,27 @@ let currentQuiz = null;
 let userAnswers = {};
 let quizScore = 0;
 let totalQuizPoints = 0;
+let quizCompletionCallback = null;
+const REQUIRED_PASS_PERCENTAGE = 80;
 
 async function loadQuizData() {
   try {
-    const response = await fetch("./data/quizzes.json");
+    const response = await fetch("./data/quizzes.json?v=" + Date.now(), { cache: "no-store" });
     const data = await response.json();
     window.quizData = data.quizzes;
     console.log("Quiz data loaded:", window.quizData.length, "questions");
+    const withEn = window.quizData.filter(q => q.en_question).length;
+    console.log("Questions with English translation:", withEn);
   } catch (error) {
     console.error("Failed to load quiz data:", error);
     window.quizData = [];
   }
 }
 
-window.startQuiz = function(sectionId) {
+window.startQuiz = function(sectionId, callback = null) {
   if (!window.quizData) {
     alert(qt("loadingMsg"));
-    loadQuizData().then(() => window.startQuiz(sectionId));
+    loadQuizData().then(() => window.startQuiz(sectionId, callback));
     return;
   }
 
@@ -119,6 +141,7 @@ window.startQuiz = function(sectionId) {
     return;
   }
 
+  quizCompletionCallback = callback;
   currentQuiz = { section: sectionId, questions: sectionQuizzes, currentQuestionIndex: 0 };
   userAnswers = {};
   quizScore = 0;
@@ -177,7 +200,25 @@ function showQuizModal() {
   nextBtn.textContent = qt("nextBtn");
   nextBtn.className = "btn-next";
   nextBtn.onclick = () => {
-    saveAnswer();
+    const question = currentQuiz.questions[currentQuiz.currentQuestionIndex];
+    let answer = "";
+    if (question.type === "multiple_choice" || question.type === "true_false") {
+      const selected = document.querySelector('input[name="quizAnswer"]:checked');
+      if (!selected) {
+        alert(qt("selectAnswerMsg"));
+        return;
+      }
+      answer = selected.value;
+    } else if (question.type === "code") {
+      const textarea = document.getElementById("codeAnswer");
+      if (!textarea || !textarea.value.trim()) {
+        alert(qt("provideAnswerMsg"));
+        return;
+      }
+      answer = textarea.value;
+    }
+
+    userAnswers[currentQuiz.currentQuestionIndex] = answer;
     if (currentQuiz.currentQuestionIndex < currentQuiz.questions.length - 1) {
       currentQuiz.currentQuestionIndex++;
       displayQuestion(currentQuiz.currentQuestionIndex);
@@ -213,17 +254,21 @@ function displayQuestion(index) {
 
   progress.textContent = `${qt("questionsLabel")} ${index + 1} ${qt("from")} ${currentQuiz.questions.length}`;
 
-  let html = `<div style="background:#1A2836;border-radius:10px;padding:1.25rem;margin-bottom:1rem;"><h3 dir="auto" style="font-size:1rem;margin:0 0 1rem;color:#ECEFF3;font-family:Cairo,sans-serif;text-align:start;">${question.question}</h3><div>`;
+  const displayQuestion = isEnglish() && question.en_question ? question.en_question : question.question;
+  const displayOptions = isEnglish() && question.en_options ? question.en_options : question.options;
+  const displayCodeTemplate = isEnglish() && question.en_codeTemplate ? question.en_codeTemplate : question.codeTemplate;
+
+  let html = `<div style="background:#1A2836;border-radius:10px;padding:1.25rem;margin-bottom:1rem;"><h3 dir="${isEnglish() ? 'ltr' : 'rtl'}" style="font-size:1rem;margin:0 0 1rem;color:#ECEFF3;font-family:Cairo,sans-serif;text-align:start;direction:${isEnglish() ? 'ltr' : 'rtl'};">${escapeHTML(displayQuestion)}</h3><div>`;
 
   if (question.type === "multiple_choice" || question.type === "true_false") {
-    question.options.forEach((option, optionIndex) => {
+    displayOptions.forEach((option, optionIndex) => {
       const isChecked = userAnswers[index] === optionIndex.toString();
-      html += `<div style="margin-bottom:0.6rem;"><label dir="auto" style="display:flex;align-items:center;gap:0.6rem;cursor:pointer;color:#A8B2BF;font-family:Cairo,sans-serif;font-size:0.95rem;text-align:start;"><input type="radio" name="quizAnswer" value="${optionIndex}" ${isChecked ? "checked" : ""} style="accent-color:#F5A623;"><span>${option}</span></label></div>`;
+      html += `<div style="margin-bottom:0.6rem;"><label style="display:flex;align-items:center;gap:0.6rem;cursor:pointer;color:#A8B2BF;font-family:Cairo,sans-serif;font-size:0.95rem;text-align:start;direction:${isEnglish() ? 'ltr' : 'rtl'};unicode-bidi:plaintext;"><input type="radio" name="quizAnswer" value="${optionIndex}" ${isChecked ? "checked" : ""} style="accent-color:#F5A623;"><bdi style="flex:1;unicode-bidi:isolate;">${escapeHTML(option)}</bdi></label></div>`;
     });
   } else if (question.type === "code") {
-    html += `<div style="background:#0A1017;padding:1rem;border-radius:8px;margin-bottom:1rem;"><pre style="margin:0;white-space:pre-wrap;font-family:'JetBrains Mono',monospace;font-size:0.88rem;color:#A8B2BF;">${question.codeTemplate || ""}</pre></div>
+    html += `<div style="background:#0A1017;padding:1rem;border-radius:8px;margin-bottom:1rem;"><pre style="margin:0;white-space:pre-wrap;font-family:'JetBrains Mono',monospace;font-size:0.88rem;color:#A8B2BF;text-align:start;direction:ltr;">${escapeHTML(displayCodeTemplate || "")}</pre></div>
       <label style="display:block;margin-bottom:0.5rem;color:#A8B2BF;font-family:Cairo,sans-serif;">${qt("codeAnswerLabel")}</label>
-      <textarea id="codeAnswer" style="width:100%;height:100px;background:#0A1017;border:1px solid #1E2D3D;border-radius:6px;padding:0.75rem;color:#ECEFF3;font-family:'JetBrains Mono',monospace;font-size:0.88rem;">${userAnswers[index] || ""}</textarea>`;
+      <textarea id="codeAnswer" style="width:100%;height:100px;background:#0A1017;border:1px solid #1E2D3D;border-radius:6px;padding:0.75rem;color:#ECEFF3;font-family:'JetBrains Mono',monospace;font-size:0.88rem;">${escapeHTML(userAnswers[index] || "")}</textarea>`;
   }
 
   html += "</div></div>";
@@ -259,26 +304,64 @@ function finishQuiz() {
     const userAnswer = userAnswers[index];
     const isCorrect = userAnswer === question.correctAnswer.toString();
     if (isCorrect) quizScore += question.points;
+
+    // Use English translation if available and language is English
+    const displayQuestion = isEnglish() && question.en_question ? question.en_question : question.question;
+    const displayExplanation = isEnglish() && question.en_explanation ? question.en_explanation : question.explanation;
+
     resultsHTML += `<div dir="auto" style="background:#1A2836;border-radius:10px;padding:1rem;margin-bottom:0.75rem;text-align:start;">
-      <p style="font-weight:600;font-family:Cairo,sans-serif;color:#ECEFF3;margin:0 0 0.4rem;">${question.question}</p>
+      <p style="font-weight:600;font-family:Cairo,sans-serif;color:#ECEFF3;margin:0 0 0.4rem;">${escapeHTML(displayQuestion)}</p>
       <p style="color:${isCorrect ? "#3FD37A" : "#E85D4A"};margin:0 0 0.3rem;font-family:Cairo,sans-serif;">${isCorrect ? qt("correctMsg") : qt("incorrectMsg")}</p>
-      <p style="color:#6A7685;font-size:0.88rem;margin:0;font-family:Cairo,sans-serif;">${question.explanation}</p>
+      <p style="color:#6A7685;font-size:0.88rem;margin:0;font-family:Cairo,sans-serif;">${escapeHTML(displayExplanation)}</p>
     </div>`;
   });
 
   const percentage = Math.round((quizScore / totalQuizPoints) * 100);
+  const isPassed = percentage >= REQUIRED_PASS_PERCENTAGE;
+  const resultColor = isPassed ? "#3FD37A" : percentage >= 50 ? "#F5A623" : "#E85D4A";
+  const resultMessage = isPassed ? qt("excellent") : percentage >= 50 ? qt("good") : qt("poor");
+  const buttonText = isPassed ? qt("continueBtn") : qt("retryBtn");
+
   resultsHTML += `<div style="background:#1A2836;border-radius:12px;padding:1.25rem;margin:1rem 0;">
-    <div style="font-size:2.5rem;font-weight:800;color:${percentage >= 70 ? "#3FD37A" : percentage >= 50 ? "#F5A623" : "#E85D4A"};">${percentage}%</div>
+    <div style="font-size:2.5rem;font-weight:800;color:${resultColor};">${percentage}%</div>
     <div style="color:#6A7685;font-family:Cairo,sans-serif;">${quizScore}/${totalQuizPoints}</div>
-    <div style="margin-top:0.5rem;color:#A8B2BF;font-family:Cairo,sans-serif;">${percentage >= 70 ? qt("excellent") : percentage >= 50 ? qt("good") : qt("poor")}</div>
-  </div>`;
-  resultsHTML += `<button onclick="document.getElementById('quizModal').remove();" class="btn-next" style="margin-top:0.5rem;">${qt("closeBtn")}</button>`;
+    <div style="margin-top:0.5rem;color:#A8B2BF;font-family:Cairo,sans-serif;">${resultMessage}</div>`;
+
+  if (!isPassed) {
+    const passRequired = REQUIRED_PASS_PERCENTAGE;
+    const passMessage = qt("passRequired").replace("{percent}", passRequired);
+    resultsHTML += `<div style="margin-top:1rem;padding:1rem;background:#E85D4A20;border-left:4px solid #E85D4A;border-radius:6px;color:#A8B2BF;font-family:Cairo,sans-serif;font-size:0.95rem;">${passMessage}</div>`;
+  }
+
+  resultsHTML += `</div>`;
+  resultsHTML += `<button id="quizCloseBtn" style="background:${isPassed ? "#3FD37A" : "#F5A623"};border:none;color:#0A1017;padding:0.75rem 1.5rem;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;font-family:Cairo,sans-serif;margin-top:0.5rem;">${buttonText}</button>`;
   resultsHTML += "</div>";
 
   document.getElementById("quizContainer").innerHTML = resultsHTML;
   document.getElementById("quizProgress").textContent = qt("finishQuizMsg");
   document.querySelector("#quizModal .btn-prev").style.display = "none";
   document.querySelector("#quizModal .btn-next").style.display = "none";
+
+  const closeBtn = document.getElementById("quizCloseBtn");
+  if (closeBtn) {
+    closeBtn.onclick = () => {
+      if (isPassed) {
+        document.getElementById("quizModal").remove();
+        if (typeof quizCompletionCallback === "function") {
+          quizCompletionCallback();
+        }
+      } else {
+        // Retry quiz - reset answers and go back to first question
+        currentQuiz.currentQuestionIndex = 0;
+        userAnswers = {};
+        displayQuestion(0);
+        document.getElementById("quizProgress").textContent = `${qt("questionsLabel")} 1 ${qt("from")} ${currentQuiz.questions.length}`;
+        document.querySelector("#quizModal .btn-prev").style.display = "";
+        document.querySelector("#quizModal .btn-next").style.display = "";
+        updateNextButton();
+      }
+    };
+  }
 
   saveQuizResult(currentQuiz.section, percentage, quizScore, totalQuizPoints);
 }
@@ -441,6 +524,15 @@ window.initLightbox = function() {
 
 window.initCopyButtons = function() {
   document.querySelectorAll(".code-block").forEach((block) => {
+    // Trim leading/trailing newlines so white-space:pre doesn't add blank lines
+    if (block.firstChild && block.firstChild.nodeType === 3) {
+      block.firstChild.textContent = block.firstChild.textContent.replace(/^\n/, '');
+    }
+    const lastNode = block.lastChild;
+    if (lastNode && lastNode.nodeType === 3) {
+      lastNode.textContent = lastNode.textContent.replace(/\n[ \t]*$/, '');
+    }
+
     if (block.querySelector(".copy-btn")) return;
     const copyText = isEnglish() ? "Copy" : "نسخ 📋";
     const copiedText = isEnglish() ? "Copied ✓" : "اتنسخ ✓";

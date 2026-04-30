@@ -144,9 +144,35 @@ html[data-theme="light"] .kpi-en {
 .lesson-card {
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.3s, transform 0.3s;
 }
-.lesson-card:hover { border-color: var(--border2); }
+.lesson-card:hover {
+  border-color: var(--border2);
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+  transform: translateY(-2px);
+}
+.lesson-card.lesson-card-wide {
+  width: min(1080px, calc(100vw - 72px));
+  max-width: none;
+  position: relative;
+  left: auto;
+  transform: none;
+  margin-right: 0;
+  margin-left: 0;
+}
+.lesson-card.lesson-card-wide:hover {
+  transform: translateY(-2px);
+}
+.lesson-card.lesson-card-example-table {
+  padding: 1.35rem 1.15rem;
+}
+.lesson-card.lesson-card-example-table .compare-table {
+  font-size: clamp(0.75rem, 0.72rem + 0.18vw, 0.9rem);
+}
+.lesson-card.lesson-card-example-table .compare-table th,
+.lesson-card.lesson-card-example-table .compare-table td {
+  padding-inline: 0.75rem;
+}
 .lesson-card h3 { font-size: var(--legacy-heading-size); font-weight: 700; margin-bottom: 0.6rem; }
 .lesson-card p  { font-size: var(--legacy-body-size); color: var(--text2); margin-bottom: 0.75rem; }
 .lesson-card ul { list-style: none; padding: 0; }
@@ -178,6 +204,11 @@ html[data-theme="light"] .kpi-en {
 }
 .lesson-card ul li:last-child { border-bottom: none; }
 .lesson-card ul li::before { content: '←'; color: var(--gold); flex-shrink: 0; font-size: 0.8rem; margin-top: 2px; }
+.lesson-card ul li strong {
+  flex: 1 0 calc(100% - 24px);
+  color: var(--text);
+  line-height: 1.55;
+}
 
 .code-block {
   background: #070D12; border: 1px solid var(--border);
@@ -185,6 +216,7 @@ html[data-theme="light"] .kpi-en {
   font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 0.83rem;
   direction: ltr; text-align: left; overflow-x: auto; line-height: 1.7;
   position: relative;
+  white-space: pre; unicode-bidi: bidi-override;
 }
 .code-block .kw  { color: #F5B800; font-weight: 600; }
 .code-block .fn  { color: #00B4D8; }
@@ -195,9 +227,12 @@ html[data-theme="light"] .kpi-en {
 .tip-box, .warn-box {
   border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0;
   display: flex; gap: 10px; align-items: center;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 .tip-box  { background: rgba(245,184,0,0.06);  border: 1px solid rgba(245,184,0,0.2); }
+.tip-box:hover { background: rgba(245,184,0,0.12); border-color: rgba(245,184,0,0.35); box-shadow: 0 0 12px rgba(245,184,0,0.15); }
 .warn-box { background: rgba(216,90,48,0.06); border: 1px solid rgba(216,90,48,0.2); }
+.warn-box:hover { background: rgba(216,90,48,0.12); border-color: rgba(216,90,48,0.35); box-shadow: 0 0 12px rgba(216,90,48,0.15); }
 .tip-box .icon, .warn-box .icon { font-size: 1.5rem; flex-shrink: 0; }
 .tip-box p, .warn-box p { margin: 0; font-size: var(--legacy-tip-size); color: var(--text2); }
 
@@ -346,6 +381,16 @@ html.lang-en .compare-table td,
 html.lang-en .lesson table th,
 html.lang-en .lesson table td {
   text-align: left !important;
+}
+
+@media (max-width: 880px) {
+  .lesson-card.lesson-card-wide {
+    width: 100%;
+    transform: none;
+  }
+  .lesson-card.lesson-card-wide:hover {
+    transform: translateY(-2px);
+  }
 }
 
 html.lang-en .kpi-card-header .kpi-en {

@@ -26,8 +26,31 @@
       tweakDensityLabel: "تباعد المحتوى",
       tweakBackdropLabel: "خلفية متحركة",
       tweakGrainLabel: "Grain texture",
+      tweakThemeLabel: "🌙 وضع فاتح",
+      tweakQuizRequiredLabel: "الاختبار الإجباري",
       tweakAccentOptions: { gold: "ذهبي", teal: "تيل", dual: "مزدوج" },
       tweakDensityOptions: { compact: "ضيق", cozy: "عادي", spacious: "واسع" },
+      courseStageLabel: "المرحلة",
+      levelLabel: "المستوى",
+      bestForLabel: "مناسب لـ",
+      howToUseLabel: "طريقة مذاكرة الدرس",
+      beforeLessonLabel: "قبل هذا الدرس",
+      nextMilestoneLabel: "الخطوة التالية",
+      chapterMilestoneLabel: "محطة التعلم",
+      chapterProgressLabel: "داخل الفصل",
+      chapterOverviewLabel: "ما الذي سوف تتعلمه في هذا الفصل",
+      chapterChecklistLabel: "قبل أن تنتقل للفصل التالي",
+      chapterTimeLabel: "الوقت التقريبي للفصل",
+      noPrereq: "ابدأ من هنا؛ لا تحتاج أكثر من تركيزك ورغبتك في الفهم.",
+      finalMilestone: "أنت في آخر محطة من المسار. بعد هذا الدرس انتقل للمشروعات أو راجع ما تحتاجه بثقة.",
+      studyModes: {
+        concept: "ابدأ بالفكرة العامة أولاً، ثم ارجع للأمثلة وربطها بما سبق.",
+        practice: "نفّذ الخطوات بالترتيب، ثم كررها على ملف أو سيناريو قريب من شغلك.",
+        theory: "اربط الفكرة بما قبلها وما بعدها؛ هذا الدرس يبني منطقًا ذهنيًا أكثر من كونه حفظًا.",
+        code: "افهم المنطق أولاً ثم اقرأ الكود، وبعدها عدّله على سيناريو قريب منك.",
+        reference: "استخدم هذا الدرس كملخص ترجع له بعد التطبيق، وليس كبديل عن الممارسة."
+      },
+      levelNames: { beginner: "مبتدئ", intermediate: "متوسط", advanced: "متقدم", expert: "احترافي" },
       englishContentNote: "",
       kindLabels: { concept: "فاهم الفكرة", practice: "تطبيق عملي", theory: "نظري", code: "كود", reference: "مرجع" },
       calloutLabels: { warn: "تنبيه مهم", note: "لازم تعرف", tip: "نصيحة" },
@@ -54,8 +77,31 @@
       tweakDensityLabel: "Content density",
       tweakBackdropLabel: "Animated backdrop",
       tweakGrainLabel: "Grain texture",
+      tweakThemeLabel: "🌙 Light mode",
+      tweakQuizRequiredLabel: "Quiz required",
       tweakAccentOptions: { gold: "Gold", teal: "Teal", dual: "Dual" },
       tweakDensityOptions: { compact: "Compact", cozy: "Cozy", spacious: "Spacious" },
+      courseStageLabel: "Phase",
+      levelLabel: "Level",
+      bestForLabel: "Best for",
+      howToUseLabel: "Best way to study",
+      beforeLessonLabel: "Before this lesson",
+      nextMilestoneLabel: "Next step",
+      chapterMilestoneLabel: "Learning milestone",
+      chapterProgressLabel: "in chapter",
+      chapterOverviewLabel: "What you will learn in this chapter",
+      chapterChecklistLabel: "Before moving to the next chapter",
+      chapterTimeLabel: "Estimated chapter time",
+      noPrereq: "Start here. You only need focus and a willingness to understand the logic.",
+      finalMilestone: "You are at the final stop in the track. From here, move into projects or review the areas you want to strengthen.",
+      studyModes: {
+        concept: "Get the big idea first, then come back to the examples and how they connect.",
+        practice: "Follow the steps in order, then repeat them on your own file or a similar case.",
+        theory: "Connect this lesson to what comes before and after it; this one builds a mental model.",
+        code: "Understand the logic first, then read the code, then adapt it to a scenario close to your work.",
+        reference: "Use this as a quick recap after practice, not as a replacement for hands-on work."
+      },
+      levelNames: { beginner: "Beginner", intermediate: "Intermediate", advanced: "Advanced", expert: "Expert" },
       englishContentNote: "<strong>Lesson content is in Arabic.</strong> English translations are coming in a future update.",
       kindLabels: { concept: "Concept", practice: "Practice", theory: "Theory", code: "Code", reference: "Reference" },
       calloutLabels: { warn: "Important", note: "Good to know", tip: "Tip" },
@@ -68,6 +114,18 @@
     done: new Set(JSON.parse(localStorage.getItem("t3m_done") || "[]")),
     openChapters: new Set(JSON.parse(localStorage.getItem("t3m_open") || '["foundations","dax"]')),
   };
+
+  const DEFAULT_OPEN_CHAPTERS = ["foundations", "dax"];
+  const getDefaultLessonId = () => window.CURRICULUM?.[0]?.lessons?.[0]?.id || "intro";
+  const lessonExists = (id) => window.CURRICULUM.some((chapter) => chapter.lessons.some((lesson) => lesson.id === id));
+
+  function ensureCurrentLesson() {
+    if (!lessonExists(STATE.currentId)) {
+      STATE.currentId = getDefaultLessonId();
+    }
+  }
+
+  ensureCurrentLesson();
 
   const isStubLesson = (id) => !window.LESSONS[id] || window.LESSONS[id].isStub;
   const COMPLETABLE_LESSON_IDS = new Set(
@@ -88,6 +146,311 @@
   };
 
   const t = (key) => I18N[STATE.lang][key] || I18N.ar[key];
+  const COURSE_PATH = window.COURSE_PATH_META || { chapters: {} };
+
+  function localizeCourseCopy(value, fallback = "") {
+    if (!value) return fallback;
+    if (typeof value === "string") return value;
+    return STATE.lang === "en"
+      ? (value.en || value.ar || fallback)
+      : (value.ar || value.en || fallback);
+  }
+
+  function getChapterPath(chapter) {
+    return chapter.path || COURSE_PATH.chapters[chapter.id] || {};
+  }
+
+  function getLevelLabel(level) {
+    return I18N[STATE.lang].levelNames[level] || level || "";
+  }
+
+  function getStudyMode(kind) {
+    return I18N[STATE.lang].studyModes[kind] || I18N[STATE.lang].studyModes.concept;
+  }
+
+  function getChapterIndex(chapterId) {
+    return window.CURRICULUM.findIndex((chapter) => chapter.id === chapterId);
+  }
+
+  function getChapterPhaseLabel(chapter) {
+    const path = getChapterPath(chapter);
+    return path.phase ? `${t("courseStageLabel")} ${path.phase}` : chapter.num;
+  }
+
+  function getLessonSequenceLabel(chapter, lesson) {
+    const lessonIndex = chapter.lessons.findIndex((entry) => entry.id === lesson.id) + 1;
+    return `${lessonIndex} ${t("of")} ${chapter.lessons.length} ${t("chapterProgressLabel")}`;
+  }
+
+  function getPreviousRequirementCopy(chapter, lesson, globalIndex) {
+    const chapterLessonIndex = chapter.lessons.findIndex((entry) => entry.id === lesson.id);
+    if (chapterLessonIndex > 0) {
+      const previousLesson = chapter.lessons[chapterLessonIndex - 1];
+      const previousTitle = STATE.lang === "en" ? previousLesson.en : previousLesson.title;
+      return STATE.lang === "en"
+        ? `Ideally finish ${previousTitle} first, because this lesson builds directly on it.`
+        : `يفضل أن تكون أنهيت ${previousTitle} أولاً، لأن هذا الدرس يبني عليه مباشرة.`;
+    }
+
+    if (globalIndex > 0) {
+      const previousChapter = window.CURRICULUM[getChapterIndex(chapter.id) - 1];
+      if (previousChapter) {
+        const previousChapterTitle = STATE.lang === "en" ? previousChapter.en : previousChapter.title;
+        return STATE.lang === "en"
+          ? `You will get the most value if you already passed through the previous chapter: ${previousChapterTitle}.`
+          : `ستستفيد أكثر لو مررت على الفصل السابق: ${previousChapterTitle}.`;
+      }
+    }
+
+    return t("noPrereq");
+  }
+
+  function getNextMilestoneCopy(chapter, lesson) {
+    const chapterLessonIndex = chapter.lessons.findIndex((entry) => entry.id === lesson.id);
+    if (chapterLessonIndex < chapter.lessons.length - 1) {
+      const nextLesson = chapter.lessons[chapterLessonIndex + 1];
+      const nextTitle = STATE.lang === "en" ? nextLesson.en : nextLesson.title;
+      return STATE.lang === "en"
+        ? `Next inside this chapter: ${nextTitle}.`
+        : `الخطوة التالية داخل هذا الفصل: ${nextTitle}.`;
+    }
+
+    const nextChapter = window.CURRICULUM[getChapterIndex(chapter.id) + 1];
+    if (nextChapter) {
+      const nextChapterTitle = STATE.lang === "en" ? nextChapter.en : nextChapter.title;
+      return STATE.lang === "en"
+        ? `After this chapter, you move into ${nextChapterTitle}.`
+        : `بعد هذا الفصل ستنتقل إلى ${nextChapterTitle}.`;
+    }
+
+    return t("finalMilestone");
+  }
+
+  function renderLessonRoadmap(chapter, lesson, globalIndex) {
+    const chapterPath = getChapterPath(chapter);
+    const focusCopy = localizeCourseCopy(chapterPath.focus);
+    const audienceCopy = localizeCourseCopy(chapterPath.audience);
+    const milestoneCopy = localizeCourseCopy(chapterPath.milestone);
+    const phaseLabel = getChapterPhaseLabel(chapter);
+    const levelLabel = getLevelLabel(chapterPath.level);
+    const lessonSequence = getLessonSequenceLabel(chapter, lesson);
+
+    return `
+      <section class="lesson-path">
+        <div class="lesson-path-top">
+          <span class="lesson-path-pill">${escapeHTML(phaseLabel)}</span>
+          <span class="lesson-path-pill subtle">${escapeHTML(levelLabel)}</span>
+          <span class="lesson-path-pill subtle">${escapeHTML(kindLabel(lesson.kind))}</span>
+          <span class="lesson-path-pill subtle">${escapeHTML(lessonSequence)}</span>
+        </div>
+        <div class="lesson-path-grid">
+          <div class="lesson-path-card">
+            <div class="lesson-path-label">${t("bestForLabel")}</div>
+            <p>${escapeHTML(audienceCopy)}</p>
+          </div>
+          <div class="lesson-path-card">
+            <div class="lesson-path-label">${t("howToUseLabel")}</div>
+            <p>${escapeHTML(getStudyMode(lesson.kind))}</p>
+          </div>
+          <div class="lesson-path-card">
+            <div class="lesson-path-label">${t("beforeLessonLabel")}</div>
+            <p>${escapeHTML(getPreviousRequirementCopy(chapter, lesson, globalIndex))}</p>
+          </div>
+          <div class="lesson-path-card">
+            <div class="lesson-path-label">${t("nextMilestoneLabel")}</div>
+            <p>${escapeHTML(getNextMilestoneCopy(chapter, lesson))}</p>
+          </div>
+        </div>
+        <div class="lesson-path-note">
+          <strong>${t("chapterMilestoneLabel")}:</strong> ${escapeHTML(focusCopy)} ${escapeHTML(milestoneCopy)}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderChapterGateway(chapter) {
+    const chapterPath = getChapterPath(chapter);
+    const outcomes = localizeCourseCopy(chapterPath.outcomes, []);
+    const chapterTitle = STATE.lang === "en" ? (chapter.en || chapter.title) : chapter.title;
+    const levelLabel = getLevelLabel(chapterPath.level);
+    const totalMinutes = chapter.lessons.reduce((sum, entry) => sum + (entry.mins || 0), 0);
+    const focusCopy = localizeCourseCopy(chapterPath.focus);
+
+    return `
+      <section class="chapter-gateway">
+        <div class="chapter-gateway-top">
+          <div>
+            <div class="chapter-gateway-kicker">${escapeHTML(getChapterPhaseLabel(chapter))} · ${escapeHTML(levelLabel)}</div>
+            <h2 class="chapter-gateway-title">${escapeHTML(chapterTitle)}</h2>
+          </div>
+          <div class="chapter-gateway-stat">
+            <span>${t("chapterTimeLabel")}</span>
+            <strong>${totalMinutes} ${t("minutes")}</strong>
+          </div>
+        </div>
+        <p class="chapter-gateway-lede">${escapeHTML(focusCopy)}</p>
+        <div class="chapter-gateway-label">${t("chapterOverviewLabel")}</div>
+        <ul class="chapter-gateway-list">
+          ${(Array.isArray(outcomes) ? outcomes : []).map((item) => `<li>${escapeHTML(item)}</li>`).join("")}
+        </ul>
+      </section>
+    `;
+  }
+
+  function renderChapterCheckpoint(chapter) {
+    const chapterPath = getChapterPath(chapter);
+    const checkpoint = localizeCourseCopy(chapterPath.checkpoint, []);
+    const milestone = localizeCourseCopy(chapterPath.milestone, "");
+
+    return `
+      <section class="chapter-checkpoint">
+        <div class="chapter-gateway-label">${t("chapterChecklistLabel")}</div>
+        <ul class="chapter-gateway-list">
+          ${(Array.isArray(checkpoint) ? checkpoint : []).map((item) => `<li>${escapeHTML(item)}</li>`).join("")}
+        </ul>
+        <p class="chapter-checkpoint-note"><strong>${t("chapterMilestoneLabel")}:</strong> ${escapeHTML(milestone)}</p>
+      </section>
+    `;
+  }
+
+  function cleanTopicText(value) {
+    return String(value || "")
+      .replace(/\s+/g, " ")
+      .replace(/^[\s\-–—•●▪§:]+|[\s\-–—•●▪§:]+$/g, "")
+      .trim();
+  }
+
+  function extractLessonTopics(blocks) {
+    const topics = [];
+    const seen = new Set();
+
+    const pushTopic = (value) => {
+      const text = cleanTopicText(value);
+      if (!text) return;
+      const key = text.toLocaleLowerCase();
+      if (seen.has(key)) return;
+      seen.add(key);
+      topics.push(text);
+    };
+
+    blocks.forEach((block) => {
+      if (!block) return;
+
+      if (block.kind === "h2") {
+        pushTopic(block.text);
+        return;
+      }
+
+      if (block.kind === "triple" && Array.isArray(block.items)) {
+        block.items.forEach((item) => pushTopic(item.title));
+        return;
+      }
+
+      if (block.kind === "compare") {
+        pushTopic(block.left?.title);
+        pushTopic(block.right?.title);
+        return;
+      }
+
+      if (block.kind !== "html" || !block.html) return;
+
+      const template = document.createElement("template");
+      template.innerHTML = block.html;
+      [...template.content.querySelectorAll("h2, h3, h4")].forEach((heading) => {
+        pushTopic(heading.textContent);
+      });
+    });
+
+    return topics.slice(0, 5);
+  }
+
+  function getLessonActionCopy(lesson, topics) {
+    const topic = topics[0] || (STATE.lang === "en" ? lesson.en : lesson.title);
+
+    if (STATE.lang === "en") {
+      switch (lesson.kind) {
+        case "practice":
+          return `Repeat ${topic} once on your own sample file so the steps become muscle memory.`;
+        case "code":
+          return `Rewrite or adapt the example behind ${topic} using names or conditions that match a scenario close to yours.`;
+        case "theory":
+          return `Turn ${topic} into a decision rule: when do you use it, and when do you avoid it?`;
+        case "reference":
+          return `Come back to this lesson after hands-on work and mark the two points you expect to reuse the most.`;
+        default:
+          return `Explain ${topic} in your own words, then connect it to the lesson that follows.`;
+      }
+    }
+
+    switch (lesson.kind) {
+      case "practice":
+        return `أعد تنفيذ ${topic} مرة واحدة على ملف صغير من عندك حتى تصبح الخطوات مألوفة.`;
+      case "code":
+        return `اكتب أو عدّل المثال المرتبط بـ ${topic} باستخدام أسماء أو شروط قريبة من شغلك الحقيقي.`;
+      case "theory":
+        return `حوّل ${topic} إلى قاعدة قرار: متى تستخدمها، ومتى تتجنبها؟`;
+      case "reference":
+        return `ارجع لهذا الدرس بعد التطبيق العملي وحدد أهم نقطتين ستحتاج إليهما باستمرار.`;
+      default:
+        return `اشرح ${topic} بكلماتك، ثم اربطه بالدرس الذي يأتي بعده مباشرة.`;
+    }
+  }
+
+  function getReadyToMoveChecklist(lesson, hasQuiz) {
+    let items;
+
+    if (STATE.lang === "en") {
+      switch (lesson.kind) {
+        case "practice":
+        case "code":
+          items = [
+            "You can repeat the steps or logic on your own file without copying every line blindly.",
+            "You know what would change if the data shape or scenario changed."
+          ];
+          break;
+        case "reference":
+          items = [
+            "You know when this lesson should be your quick fallback.",
+            "You can find the function, rule, or example you need without getting lost."
+          ];
+          break;
+        default:
+          items = [
+            "You can explain the main idea without looking back at the text.",
+            "You understand how this lesson affects the next decision, lesson, or model choice."
+          ];
+          break;
+      }
+
+      if (hasQuiz) items.push("You finished the quiz or feel ready to take it with confidence.");
+      return items;
+    }
+
+    switch (lesson.kind) {
+      case "practice":
+      case "code":
+        items = [
+          "تستطيع تكرار الخطوات أو المنطق على ملف من عندك بدون نسخ أعمى.",
+          "تعرف ما الذي سيتغير لو تغير شكل البيانات أو السيناريو."
+        ];
+        break;
+      case "reference":
+        items = [
+          "تعرف متى ترجع لهذا الدرس كمرجع سريع.",
+          "تستطيع الوصول للنقطة أو الدالة التي تحتاجها بدون تشتت."
+        ];
+        break;
+      default:
+        items = [
+          "تستطيع شرح الفكرة الأساسية بدون الرجوع للنص.",
+          "تفهم كيف سيؤثر هذا الدرس على القرار أو الدرس الذي يليه."
+        ];
+        break;
+    }
+
+    if (hasQuiz) items.push("أنهيت الاختبار أو أصبحت جاهزًا له بثقة.");
+    return items;
+  }
 
   function setLang(lang) {
     STATE.lang = lang;
@@ -123,8 +486,9 @@
       chapterEl.className = "chapter" + (STATE.openChapters.has(chapter.id) ? " open" : "");
       chapterEl.dataset.chapter = chapter.id;
 
+      const chapterPath = getChapterPath(chapter);
       const chapterTitle = STATE.lang === "en" ? (chapter.en || chapter.title) : chapter.title;
-      const chapterSub = STATE.lang === "en" ? (chapter.subtitle || "") : "";
+      const chapterSub = [getChapterPhaseLabel(chapter), getLevelLabel(chapterPath.level)].filter(Boolean).join(" · ");
 
       chapterEl.innerHTML = `
         <div class="chapter-head">
@@ -163,7 +527,23 @@
       });
 
       $$(".lesson-item", chapterEl).forEach((lessonEl) => {
-        lessonEl.addEventListener("click", () => goTo(lessonEl.dataset.lesson));
+        lessonEl.addEventListener("click", () => {
+          const targetLessonId = lessonEl.dataset.lesson;
+          const currentInfo = findLesson(STATE.currentId);
+          const hasQuizForCurrent = currentInfo && hasQuizForLesson(currentInfo.lesson.id);
+          const isCurrentLessonDone = STATE.done.has(STATE.currentId);
+
+          // If current lesson has quiz and is not done, prevent navigation to any future lesson (if quiz required is enabled).
+          if (TWEAKS.quizRequired && hasQuizForCurrent && !isCurrentLessonDone) {
+            const currentIndex = flatIndex(STATE.currentId);
+            const targetIndex = flatIndex(targetLessonId);
+            if (targetIndex > currentIndex) {
+              alert(STATE.lang === "ar" ? "الرجاء إكمال الاختبار أولاً" : "Please complete the quiz first");
+              return;
+            }
+          }
+          goTo(targetLessonId);
+        });
       });
 
       toc.appendChild(chapterEl);
@@ -291,6 +671,7 @@
   }
 
   function renderLesson() {
+    ensureCurrentLesson();
     const info = findLesson(STATE.currentId);
     if (!info) return;
 
@@ -319,6 +700,9 @@
     const blocks = blocksToRender.map(renderBlock).join("");
     const isDone = STATE.done.has(lesson.id);
     const hasQuiz = hasQuizForLesson(lesson.id);
+    const lessonIndexInChapter = chapter.lessons.findIndex((entry) => entry.id === lesson.id);
+    const chapterGateway = lessonIndexInChapter === 0 ? renderChapterGateway(chapter) : "";
+    const chapterCheckpoint = lessonIndexInChapter === chapter.lessons.length - 1 ? renderChapterCheckpoint(chapter) : "";
     const englishNote = STATE.lang === "en" && !content.en_blocks && I18N.en.englishContentNote
       ? `<div class="callout tone-note" style="margin-bottom:2rem;">
           <div class="callout-label">${I18N[STATE.lang].calloutLabels.note}</div>
@@ -329,11 +713,17 @@
     const displayEyebrow = STATE.lang === "en" ? (content.en_eyebrow || chapter.en || content.eyebrow) : content.eyebrow;
     const displayLede = STATE.lang === "en" ? (content.en_lede || "") : content.lede;
 
+    const buttonLabel = isStub ? t("stubLesson") : (isDone ? t("alreadyDone") : (hasQuiz && TWEAKS.quizRequired ? (STATE.lang === "ar" ? "📝 اختبر نفسك (مطلوب)" : "📝 Quiz Required") : (hasQuiz ? (STATE.lang === "ar" ? "📝 اختبر نفسك" : "📝 Quiz") : t("markDone"))));
+
+    const nextDisabled = !isDone && hasQuiz && TWEAKS.quizRequired ? "disabled" : "";
+    const nextStyle = !isDone && hasQuiz && TWEAKS.quizRequired ? "opacity:0.5;cursor:not-allowed;pointer-events:none;" : "";
+
     $("#reader-body").innerHTML = `
       <article class="lesson" dir="${lessonDir}">
         <div class="eyebrow">${escapeHTML(displayEyebrow)}</div>
         <h1 class="lesson-h1">${titleHTML}</h1>
         ${displayLede ? `<p class="lede">${escapeHTML(displayLede)}</p>` : ""}
+        ${chapterGateway}
         <div class="meta-strip">
           <span class="meta-item"><span class="lesson-kind" data-k="${lesson.kind}" style="width:6px;height:6px;border-radius:50%;"></span><b>${kindLabel(lesson.kind)}</b></span>
           <span class="meta-dot"></span>
@@ -343,17 +733,18 @@
         </div>
         ${englishNote}
         ${blocks}
+        ${chapterCheckpoint}
       </article>
       <div class="lesson-footer">
         ${prev ? `<div class="foot-nav prev" data-goto="${prev.id}">
             <div class="foot-arrow">${t("prevArrow")}</div>
             <div class="foot-title">${escapeHTML(prevTitle)}</div>
           </div>` : '<div class="foot-nav empty"></div>'}
-        <button class="foot-cta" id="markDoneBtn" ${isStub ? "disabled" : ""}>
-          ${isStub ? t("stubLesson") : (isDone ? t("alreadyDone") : t("markDone"))}
-          ${!isStub && next ? (STATE.lang === "en" ? " →" : " ←") : ""}
+        <button class="foot-cta" id="markDoneBtn" ${isStub || isDone ? "disabled" : ""}>
+          ${buttonLabel}
+          ${!isStub && !isDone && next ? (STATE.lang === "en" ? " →" : " ←") : ""}
         </button>
-        ${next ? `<div class="foot-nav" data-goto="${next.id}">
+        ${next ? `<div class="foot-nav" data-goto="${next.id}" style="${nextStyle}" ${nextDisabled ? "onclick='return false;'" : ""}>
             <div class="foot-arrow" style="text-align:${STATE.lang === "en" ? "left" : "right"};">${t("nextArrow")}</div>
             <div class="foot-title" style="text-align:${STATE.lang === "en" ? "left" : "right"};">${escapeHTML(nextTitle)}</div>
           </div>` : '<div class="foot-nav empty"></div>'}
@@ -374,19 +765,45 @@
       });
     });
 
-    $$("[data-goto]").forEach((element) => element.addEventListener("click", () => goTo(element.dataset.goto)));
+    $$("[data-goto]").forEach((element) => {
+      element.addEventListener("click", (e) => {
+        if (element.hasAttribute("disabled")) {
+          e.preventDefault();
+          return;
+        }
+        goTo(element.dataset.goto);
+      });
+    });
 
     if (!isStub) {
       $("#markDoneBtn").addEventListener("click", () => {
-        STATE.done.add(lesson.id);
-        persist();
-        renderSidebar();
-        if (getCompletedCount() === COMPLETABLE_LESSON_COUNT && typeof window.showCertificate === "function") {
-          setTimeout(() => window.showCertificate(), 300);
-        } else if (next) {
-          setTimeout(() => goTo(next.id), 300);
+        if (hasQuiz) {
+          // Open quiz with callback to mark lesson as done after passing
+          window.startQuiz(lesson.id, () => {
+            STATE.done.add(lesson.id);
+            persist();
+            renderSidebar();
+            renderLesson();
+            if (getCompletedCount() === COMPLETABLE_LESSON_COUNT && typeof window.showCertificate === "function") {
+              setTimeout(() => window.showCertificate(), 300);
+            } else if (next) {
+              setTimeout(() => goTo(next.id), 300);
+            } else {
+              $("#markDoneBtn").textContent = t("alreadyDone");
+            }
+          });
         } else {
-          $("#markDoneBtn").textContent = t("alreadyDone");
+          // No quiz - mark as done directly
+          STATE.done.add(lesson.id);
+          persist();
+          renderSidebar();
+          if (getCompletedCount() === COMPLETABLE_LESSON_COUNT && typeof window.showCertificate === "function") {
+            setTimeout(() => window.showCertificate(), 300);
+          } else if (next) {
+            setTimeout(() => goTo(next.id), 300);
+          } else {
+            $("#markDoneBtn").textContent = t("alreadyDone");
+          }
         }
       });
     }
@@ -424,8 +841,8 @@
   }
 
   function goTo(id) {
-    STATE.currentId = id;
-    const info = findLesson(id);
+    STATE.currentId = lessonExists(id) ? id : getDefaultLessonId();
+    const info = findLesson(STATE.currentId);
     if (info) STATE.openChapters.add(info.chapter.id);
     persist();
     renderSidebar();
@@ -477,7 +894,8 @@
     density: "cozy",
     backdrop: true,
     grain: true,
-    theme: "dark"
+    theme: "dark",
+    quizRequired: true
   };
 
   const TWEAKS = { ...TWEAK_DEFAULTS, ...JSON.parse(localStorage.getItem("t3m_tweaks") || "{}") };
@@ -493,6 +911,7 @@
     $("#sw-backdrop").classList.toggle("on", TWEAKS.backdrop);
     $("#sw-grain").classList.toggle("on", TWEAKS.grain);
     $("#sw-theme").classList.toggle("on", TWEAKS.theme === "light");
+    $("#sw-quiz-required").classList.toggle("on", TWEAKS.quizRequired);
   }
 
   function setTweak(key, value) {
@@ -520,6 +939,9 @@
     $("#sw-backdrop").addEventListener("click", () => setTweak("backdrop", !TWEAKS.backdrop));
     $("#sw-grain").addEventListener("click", () => setTweak("grain", !TWEAKS.grain));
     $("#sw-theme").addEventListener("click", () => setTweak("theme", TWEAKS.theme === "dark" ? "light" : "dark"));
+    $("#sw-quiz-required").addEventListener("click", () => setTweak("quizRequired", !TWEAKS.quizRequired));
+
+    // Close tweaks panel with X button
     $("#tweaksClose").addEventListener("click", () => $("#tweaksPanel").classList.remove("open"));
 
     applyTweaks();
@@ -533,11 +955,11 @@
   window.resetShellProgress = function() {
     if (confirm(t("resetConfirm"))) {
       STATE.done.clear();
-      STATE.currentId = "intro";
-      STATE.openChapters = new Set(["foundations", "dax"]);
+      STATE.currentId = getDefaultLessonId();
+      STATE.openChapters = new Set(DEFAULT_OPEN_CHAPTERS);
       persist();
       renderSidebar();
-      goTo("intro");
+      goTo(STATE.currentId);
     }
   };
 
@@ -579,6 +1001,12 @@
 
     const tweakGrainLabel = $("#tweakGrainLabel");
     if (tweakGrainLabel) tweakGrainLabel.textContent = t("tweakGrainLabel");
+
+    const tweakThemeLabel = $("#tweakThemeLabel");
+    if (tweakThemeLabel) tweakThemeLabel.textContent = t("tweakThemeLabel");
+
+    const tweakQuizRequiredLabel = $("#tweakQuizRequiredLabel");
+    if (tweakQuizRequiredLabel) tweakQuizRequiredLabel.textContent = t("tweakQuizRequiredLabel");
 
     const accentLabels = I18N[STATE.lang].tweakAccentOptions;
     const densityLabels = I18N[STATE.lang].tweakDensityOptions;
