@@ -7,20 +7,7 @@ window.LESSONS = {
     en_eyebrow: "01 · 01 — Introduction to Power BI",
     en_lede: "What is Power BI? And why is it considered the most powerful tool in the world in the field of data analysis and business intelligence?",
     sectionId: "intro",
-    blocks: [{ kind: "html", html: `<section class="chapter-gateway">
-      <div class="chapter-gateway-top">
-        <div>
-          <div class="chapter-gateway-kicker">المرحلة 1 · مبتدئ</div>
-          <h3 class="chapter-gateway-title">البداية الحقيقية: افهم البيانات الأول</h3>
-        </div>
-        <div class="chapter-gateway-stat">
-          <span>الوقت التقريبي للفصل</span>
-          <strong>70 دقيقة</strong>
-        </div>
-      </div>
-    </section>
-
-    <div class="lesson-card">
+    blocks: [{ kind: "html", html: `<div class="lesson-card">
       <h3>Power BI ليس مجرد برنامج لرسم Charts</h3>
       <p>الفكرة الأساسية في Power BI هي تحويل بيانات مشتتة وغير مفهومة إلى نموذج واضح يساعدك تسأل سؤال تجاري وتجاوب عليه بثقة. التقرير الجيد لا يكتفي بأن يقول لك الرقم، بل يساعدك تفهم لماذا هذا الرقم تغيّر، وأين المشكلة، وما القرار التالي.</p>
       <p>مثال بسيط: لو عندك مبيعات من Excel، ومصاريف من نظام محاسبة، وأهداف شهرية من ملف آخر، فدور Power BI هو جمع هذه المصادر وتنظيفها وربطها ثم عرض مؤشرات مثل الإيراد، الربح، أفضل منتج، أسوأ فرع، واتجاه الأداء عبر الوقت.</p>
@@ -156,20 +143,7 @@ window.LESSONS = {
       <div class="icon">💡</div>
       <p><strong>قاعدة مهمة:</strong> لا تقس احترافك في Power BI بعدد الرسومات التي تعرفها، بل بقدرتك على بناء نموذج يعطي أرقامًا صحيحة قابلة للتفسير، ومفيدة لقرار واضح.</p>
     </div>` }],
-    en_blocks: [{ kind: "html", html: `<section class="chapter-gateway">
-      <div class="chapter-gateway-top">
-        <div>
-          <div class="chapter-gateway-kicker">Stage 1 · Beginner</div>
-          <h3 class="chapter-gateway-title">The Real Start: Understand Data First</h3>
-        </div>
-        <div class="chapter-gateway-stat">
-          <span>Estimated chapter time</span>
-          <strong>70 minutes</strong>
-        </div>
-      </div>
-    </section>
-
-    <div class="lesson-card">
+    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
       <h3>Power BI is not just a tool for drawing charts</h3>
       <p>The core idea of Power BI is turning scattered, hard-to-read data into a clear model that helps you ask a business question and answer it with confidence. A good report does not only tell you the number. It helps you understand why the number changed, where the problem is, and what the next decision should be.</p>
       <p>A simple example: if you have sales in Excel, expenses in an accounting system, and monthly targets in another file, the role of Power BI is to bring these sources together, clean them, connect them, then show metrics such as revenue, profit, best product, weakest branch, and performance trend over time.</p>
