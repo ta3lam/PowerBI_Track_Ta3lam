@@ -1,0 +1,15 @@
+# Claude Code tool directory
+.claude/
+
+# Backup files created by utility scripts
+*.bak
+*.bak_*
+
+# One-shot bulk-editor scripts (never commit — see CLAUDE.md)
+fix_lessons.js
+rebuild_lessons.js
+translate_add_en.js
+clean_quiz.py
+
+# Review/audit reports (local notes only)
+تقرير_*.md
