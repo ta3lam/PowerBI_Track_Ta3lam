@@ -10,11 +10,11 @@
       resetBtn: "↺ ابدأ من الأول",
       tweaksBtn: "Tweaks",
       quizBtn: "📝 اختبر نفسك",
-      markDone: "خلّصت الدرس",
-      alreadyDone: "✓ خلّصت الدرس ده",
+      markDone: "أكملت الدرس",
+      alreadyDone: "✓ أكملت هذا الدرس",
       stubLesson: "الدرس قيد الإعداد",
       comingSoonMeta: "قريبًا",
-      prevArrow: "← اللي فات",
+      prevArrow: "← السابق",
       nextArrow: "الجاى →",
       readingTime: "وقت القراءة",
       minutes: "دقيقة",
@@ -53,7 +53,7 @@
       levelNames: { beginner: "مبتدئ", intermediate: "متوسط", advanced: "متقدم", expert: "احترافي" },
       englishContentNote: "",
       kindLabels: { concept: "فاهم الفكرة", practice: "تطبيق عملي", theory: "نظري", code: "كود", reference: "مرجع" },
-      calloutLabels: { warn: "تنبيه مهم", note: "لازم تعرف", tip: "نصيحة" },
+      calloutLabels: { warn: "تنبيه مهم", note: "يجب أن تعرف", tip: "نصيحة" },
     },
     en: {
       searchPlaceholder: "Search lessons...",
@@ -198,7 +198,7 @@
         const previousChapterTitle = STATE.lang === "en" ? previousChapter.en : previousChapter.title;
         return STATE.lang === "en"
           ? `You will get the most value if you already passed through the previous chapter: ${previousChapterTitle}.`
-          : `ستستفيد أكثر لو مررت على الفصل السابق: ${previousChapterTitle}.`;
+          : `ستستفيد أكثر إذا راجعت الفصل السابق: ${previousChapterTitle}.`;
       }
     }
 
@@ -431,7 +431,7 @@
       case "code":
         items = [
           "تستطيع تكرار الخطوات أو المنطق على ملف من عندك بدون نسخ أعمى.",
-          "تعرف ما الذي سيتغير لو تغير شكل البيانات أو السيناريو."
+          "تعرف ما الذي سيتغير إذا تغيّر شكل البيانات أو السيناريو."
         ];
         break;
       case "reference":

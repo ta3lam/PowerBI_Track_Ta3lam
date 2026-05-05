@@ -13,8 +13,8 @@ window.CURRICULUM = [
       { id: "interface",     title: "واجهة البرنامج",                   en: "Interface Overview",            mins: 9,  kind: "concept" },
       { id: "oltp-olap",     title: "OLTP مقابل OLAP",                  en: "OLTP vs OLAP",                  mins: 11, kind: "theory" },
       { id: "model",         title: "نموذج البيانات والـ Star Schema",  en: "Data Model & Star Schema",      mins: 14, kind: "theory" },
-      { id: "scd",           title: "الأبعاد المتغيرة ببطء",            en: "Slowly Changing Dimensions",    mins: 12, kind: "theory" },
-      { id: "bridge-tables", title: "الجداول الجسرية",                  en: "Bridge Tables",                 mins: 10, kind: "theory" },
+      { id: "scd",           title: "البيانات المتغيرة عبر الوقت (SCD)", en: "Slowly Changing Dimensions",    mins: 12, kind: "theory" },
+      { id: "bridge-tables", title: "ربط الجداول المعقدة (Bridge Tables)",                  en: "Bridge Tables",                 mins: 10, kind: "theory" },
     ],
   },
   {
@@ -28,6 +28,7 @@ window.CURRICULUM = [
       { id: "getdata",     title: "جلب البيانات",            en: "Get Data",         mins: 7,  kind: "practice" },
       { id: "cleaning",    title: "تنظيف البيانات",           en: "Data Cleaning",    mins: 12, kind: "practice" },
       { id: "powerquery",  title: "محرر Power Query",          en: "Power Query",      mins: 18, kind: "practice" },
+      { id: "pq-groupby",  title: "Group By وPivot/Unpivot والـ Parameters", en: "Group By, Pivot & Parameters", mins: 20, kind: "code" },
       { id: "mcode",       title: "لغة M المتقدمة",            en: "Advanced M Code",  mins: 22, kind: "code" },
       { id: "query-folding", title: "Query Folding و الأداء", en: "Query Folding & Performance", mins: 24, kind: "theory" },
     ],
@@ -56,6 +57,7 @@ window.CURRICULUM = [
     accent: "coral",
     lessons: [
       { id: "dax1",              title: "أساسيات DAX",                en: "DAX Basics",              mins: 10, kind: "code" },
+      { id: "filter-context",    title: "Row Context و Filter Context",  en: "Row Context & Filter Context", mins: 18, kind: "theory" },
       { id: "dax-logical",       title: "IF و SWITCH",                en: "Logical Functions",       mins: 13, kind: "code" },
       { id: "calculate",         title: "CALCULATE بعمق",             en: "CALCULATE Deep Dive",     mins: 20, kind: "code" },
       { id: "relationships-dax", title: "العلاقات داخل DAX",          en: "Relationships in DAX",    mins: 12, kind: "code" },
@@ -87,6 +89,9 @@ window.CURRICULUM = [
       { id: "drillthrough",    title: "Drill Down و Drill Through",  en: "Drill Through",           mins: 11, kind: "practice" },
       { id: "bookmarks",       title: "الإشارات المرجعية",            en: "Bookmarks",               mins: 9,  kind: "practice" },
       { id: "mobile-design",   title: "Mobile Design و الـ Responsive", en: "Mobile Design & Responsive", mins: 18, kind: "practice" },
+      { id: "storytelling",    title: "\u0633\u0631\u062f \u0627\u0644\u0642\u0635\u0629 \u0628\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a",      en: "Storytelling with Data", mins: 16, kind: "theory" },
+      { id: "ai-visuals",        title: "المرئيات الذكية والذكاء الاصطناعي", en: "AI Visuals & Intelligence",     mins: 20, kind: "concept" },
+      { id: "dashboard-workshop", title: "\u0648\u0631\u0634\u0629 \u0628\u0646\u0627\u0621 \u0644\u0648\u062d\u0629 \u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0643\u0627\u0645\u0644\u0629", en: "Full Dashboard Workshop", mins: 26, kind: "practice" },
     ],
   },
   {
@@ -116,6 +121,7 @@ window.CURRICULUM = [
       { id: "error-handling",      title: "Error Handling و Debugging", en: "Error Handling & Debugging", mins: 24, kind: "code" },
       { id: "semantic-model",      title: "Semantic Model Design و Governance", en: "Semantic Model Design & Governance", mins: 28, kind: "theory" },
       { id: "common-mistakes",     title: "الأخطاء الشائعة و Anti-patterns", en: "Common Mistakes & Anti-patterns", mins: 26, kind: "theory" },
+      { id: "data-governance",    title: "حوكمة البيانات والتصنيف الأمني",   en: "Data Governance & Sensitivity", mins: 18, kind: "theory"  },
       { id: "cost-optimization",   title: "Cost Optimization و Premium", en: "Cost Optimization & Premium", mins: 22, kind: "theory" },
       { id: "python-pbi",          title: "Python داخل Power BI",  en: "Python in PBI",          mins: 18, kind: "code" },
       { id: "paginated",           title: "التقارير الموجهة",       en: "Paginated Reports",      mins: 12, kind: "practice" },
@@ -158,6 +164,7 @@ window.CURRICULUM = [
 const advancedChapter = window.CURRICULUM.find((chapter) => chapter.id === "advanced");
 if (advancedChapter && !advancedChapter.lessons.some((lesson) => lesson.id === "calculation-groups")) {
   advancedChapter.lessons.push(
+    { id: "composite-models", title: "Composite Models والـ Aggregations", en: "Composite Models & Aggregations", mins: 22, kind: "theory" },
     { id: "calculation-groups", title: "Calculation Groups و Reusable Time Intelligence", en: "Calculation Groups & Reusable Time Intelligence", mins: 17, kind: "code" },
     { id: "enterprise-security", title: "Enterprise Security — RLS و OLS و Permissions", en: "Enterprise Security — RLS, OLS & Permissions", mins: 18, kind: "theory" },
     { id: "deployment-pipelines", title: "Deployment Pipelines و ALM Toolkit", en: "Deployment Pipelines & ALM Toolkit", mins: 16, kind: "practice" },
@@ -189,11 +196,11 @@ window.COURSE_PATH_META = {
       phase: 1,
       level: "beginner",
       focus: {
-        ar: "قبل ما تفتح Power BI، لازم تفهم البيانات: جاية منين، معناها إيه، وإزاي تتحول لقرار.",
+        ar: "قبل أن تفتح Power BI، يجب أن تفهم البيانات: من أين تأتي، ما معناها، وكيف تتحوّل إلى قرار.",
         en: "Before opening Power BI, understand the data: where it comes from, what it means, and how it becomes a decision."
       },
       audience: {
-        ar: "مناسب لو أنت جديد على Power BI أو جاي من Excel وتريد أساسًا واضحًا.",
+        ar: "مناسب إذا كنت جديدًا على Power BI أو قادمًا من Excel وتريد أساسًا واضحًا.",
         en: "Best if you're new to Power BI or coming from Excel and want a clean foundation."
       },
       milestone: {
@@ -389,7 +396,7 @@ window.COURSE_PATH_META = {
       phase: 6,
       level: "intermediate",
       focus: {
-        ar: "تنقل الشغل من ملف محلي إلى بيئة تشغيل ومشاركة وحوكمة.",
+        ar: "تنقل العمل من ملف محلي إلى بيئة تشغيل ومشاركة وحوكمة.",
         en: "Move the work from a local file into a governed sharing and delivery environment."
       },
       audience: {

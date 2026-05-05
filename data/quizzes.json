@@ -77,7 +77,7 @@
         "شاشة البيانات وشاشة الرسومات فقط"
       ],
       "correctAnswer": 0,
-      "explanation": "الشاشات الرئيسية هي: 1) شاشة التقرير (Report View) لرسم الشارتات، 2) شاشة البيانات (Data/Table View) لعرض الجداول، 3) شاشة العلاقات (Model View) لربط الجداول.",
+      "explanation": "الشاشات الرئيسية هي: 1) شاشة التقرير (Report View) لرسم المخططات، 2) شاشة البيانات (Data/Table View) لعرض الجداول، 3) شاشة العلاقات (Model View) لربط الجداول.",
       "points": 5,
       "en_question": "What are the main screens in Power BI Desktop?",
       "en_options": [
@@ -206,7 +206,7 @@
         "لا يوجد فرق بينهما"
       ],
       "correctAnswer": 0,
-      "explanation": "Calculated Column يضيف عمود فعلي في الجدول ويأخذ مساحة من الرام، بينما Measure معادلة وهمية لا تأخذ مساحة وتُحسب فقط عند وضعها في شارت.",
+      "explanation": "Calculated Column يضيف عمود فعلي في الجدول ويأخذ مساحة من الرام، بينما Measure معادلة وهمية لا تأخذ مساحة وتُحسب فقط عند وضعها في مخطط.",
       "points": 8,
       "en_question": "What is the difference between a Calculated Column and a Measure?",
       "en_options": [
@@ -538,7 +538,7 @@
       "options": [
         "سطر الطلب في order_details بعد ربطه مع orders وباقي الجداول",
         "الاعتماد على pizza_types فقط لأنها أصغر جدول",
-        "صف واحد لكل يوم حتى لو فقدت تفاصيل الصنف",
+        "صف واحد لكل يوم حتى وإن فقدت تفاصيل الصنف",
         "دمج كل شيء في visual مباشرة بدون model"
       ],
       "correctAnswer": 0,
@@ -858,7 +858,7 @@
       "question": "ما النصيحة العملية الأنسب عند بدء العمل على تنبيهات Power BI؟",
       "type": "multiple_choice",
       "options": [
-        "ابدأ مباشرة بـ Flows معقدة جدًا حتى لو الاحتياج بسيط",
+        "ابدأ مباشرة بـ Flows معقدة جدًا حتى وإن الاحتياج بسيط",
         "ابدأ بـ Data Alerts البسيطة، ثم انتقل إلى Power Automate عندما تحتاج منطقًا أعمق",
         "لا تستخدم أي تنبيهات داخل Power BI Service",
         "احذف كل KPIs قبل بناء التنبيهات"
@@ -1619,7 +1619,7 @@
       "options": [
         "مراقبة KPI وتفعيل إجراء تلقائي (بريد، Teams رسالة) عند تجاوز حد معين",
         "تصدير البيانات فقط",
-        "تغيير ألوان الشارتات",
+        "تغيير ألوان المخططات",
         "حذف الصفوف"
       ],
       "correctAnswer": 0,
@@ -2504,7 +2504,7 @@
       "options": [
         "استخدام Auto Pause ، تقليل Refresh frequency ، ضغط البيانات غير الضرورية",
         "زيادة Refresh إلى كل ساعة دائماً",
-        "تفعيل كل الـ features حتى لو لم تُستخدم",
+        "تفعيل كل الـ features حتى وإن لم تُستخدم",
         "عدم مراقبة الاستهلاك"
       ],
       "correctAnswer": 0,
@@ -3649,7 +3649,7 @@
     {
       "id": "q167",
       "section": "custom-tooltips",
-      "question": "إذا أردت إظهار mini chart (شارت صغير) عند hover على نقطة، أي ميزة تستخدم؟",
+      "question": "إذا أردت إظهار mini chart (مخطط مصغّر) عند hover على نقطة، أي ميزة تستخدم؟",
       "type": "multiple_choice",
       "options": [
         "Custom Tooltip Page (صفحة منفصلة بـ visuals صغيرة)",
@@ -4551,7 +4551,7 @@
         "بدون حالة استخدام"
       ],
       "correctAnswer": 0,
-      "explanation": "Fabric = platform شاملة. Power BI = analytics فقط. Fabric لو احتجت more than analytics.",
+      "explanation": "Fabric = platform شاملة. Power BI = analytics فقط. Fabric إذا احتجت more than analytics.",
       "points": 8,
       "en_question": "When does Fabric become the best choice instead of Power BI standalone?",
       "en_options": [
@@ -5582,7 +5582,7 @@
         "يعيد تسمية الأعمدة"
       ],
       "correctAnswer": 0,
-      "explanation": "TREATAS = Virtual Relationship. يخبر DAX 'عامل هذا العمود كأنه جاي من جدول آخر' بدون إضافة أي علاقة فعلية في الـ model، مفيد في M2M والـ Budget.",
+      "explanation": "TREATAS = Virtual Relationship. يخبر DAX 'عامل هذا العمود كأنه قادم من جدول آخر' بدون إضافة أي علاقة فعلية في الـ model، مفيد في M2M والـ Budget.",
       "points": 7,
       "en_question": "What does TREATAS do in DAX?",
       "en_options": [
@@ -5822,6 +5822,1248 @@
         "The problem is the internet connection"
       ],
       "en_explanation": "Performance Analyzer breaks down: DAX query = measure execution time, Visual display = chart rendering time. If DAX query = 8s and Visual display = 0.1s, the problem is in the DAX, not the visual."
+    },
+    {
+      "id": "q263",
+      "section": "storytelling",
+      "question": "ما الهدف الأساسي من صفحة لوحة المعلومات وفق مبادئ سرد القصة بالبيانات؟",
+      "type": "multiple_choice",
+      "options": [
+        "ترتيب ما يهم حتى يفهم المستخدم: ماذا حدث، ولماذا، وما الخطوة التالية",
+        "عرض أكبر قدر ممكن من البيانات في صفحة واحدة",
+        "إظهار مهارة المحلل التقنية",
+        "استخدام أكبر عدد من المخططات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الهدف ليس عرض كل شيء، بل ترتيب ما يهم حتى يفهم المستخدم القصة كاملة: ماذا حدث، ولماذا، وما المطلوب بعد ذلك.",
+      "points": 7,
+      "en_question": "According to data storytelling principles, what is the main goal of a dashboard page?",
+      "en_options": [
+        "Arrange what matters so the user understands what happened, why, and what comes next",
+        "Show as much data as possible on one page",
+        "Demonstrate the analyst's technical skill",
+        "Use as many chart types as possible"
+      ],
+      "en_explanation": "The goal isn't to show everything — it's to arrange what matters so the user can read the story clearly: what happened, why, and what to do next."
+    },
+    {
+      "id": "q264",
+      "section": "storytelling",
+      "question": "ما الفرق بين العنوان الاستنتاجي والعنوان الوصفي في لوحة المعلومات؟",
+      "type": "multiple_choice",
+      "options": [
+        "الاستنتاجي يذكر النتيجة مباشرة، والوصفي يذكر اسم الموضوع فقط",
+        "الاستنتاجي أطول، والوصفي أقصر",
+        "الاستنتاجي للمدراء، والوصفي للمحللين",
+        "لا فرق بينهما في الأثر على القارئ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "العنوان الاستنتاجي يقول النتيجة مثل 'المبيعات تراجعت 12% في Q3' بدلاً من 'تقرير المبيعات'. هذا يجعل الرسالة واضحة للقارئ فوراً.",
+      "points": 7,
+      "en_question": "What is the difference between a conclusion title and a descriptive title on a dashboard?",
+      "en_options": [
+        "A conclusion title states the result directly; a descriptive title just names the topic",
+        "A conclusion title is longer, a descriptive title is shorter",
+        "Conclusion titles are for managers, descriptive for analysts",
+        "There's no meaningful difference in impact on the reader"
+      ],
+      "en_explanation": "A conclusion title delivers the insight — e.g. 'Sales dropped 12% in Q3' instead of 'Sales Report'. This lets the reader grasp the message instantly."
+    },
+    {
+      "id": "q265",
+      "section": "storytelling",
+      "question": "مدير يحتاج أن يفهم الوضع في ثوانٍ قبل أن يتعمق في التفاصيل. أي عنصر في قالب الصفحة يخدم هذا الهدف أولاً؟",
+      "type": "multiple_choice",
+      "options": [
+        "المؤشرات السريعة (Headline KPIs) التي تعطي النظرة الأولى الفورية",
+        "الرسم الرئيسي الكبير الذي يحمل الفكرة الأساسية",
+        "الدليل المساعد الذي يفسر السبب",
+        "قائمة الفلاتر على الجانب"
+      ],
+      "correctAnswer": 0,
+      "explanation": "المؤشرات السريعة (Headline KPIs) هي أول ما يقرأه المستخدم وتعطيه نظرة أولية فورية قبل الدخول للتفاصيل في الرسم الرئيسي.",
+      "points": 7,
+      "en_question": "A manager needs to understand the situation in seconds before diving into details. Which page element serves this goal first?",
+      "en_options": [
+        "Headline KPIs that give an immediate first read",
+        "The dominant visual that carries the core idea",
+        "The supporting proof that explains the cause",
+        "The filter list on the side"
+      ],
+      "en_explanation": "Headline KPIs are the first thing users see — they deliver instant situational awareness before the reader engages with the main visual."
+    },
+    {
+      "id": "q266",
+      "section": "storytelling",
+      "question": "محلل أضاف 6 فلاتر في لوحة المعلومات. وفق مبادئ سرد القصة، ما المشكلة المحتملة؟",
+      "type": "multiple_choice",
+      "options": [
+        "الفلاتر الزائدة بدون سبب تشتت المستخدم وتبعده عن رسالة الصفحة",
+        "الفلاتر الكثيرة تُبطئ الأداء دائماً",
+        "Power BI لا يدعم أكثر من 4 فلاتر في الصفحة",
+        "الفلاتر لا تؤثر على تجربة المستخدم"
+      ],
+      "correctAnswer": 0,
+      "explanation": "كل فلتر يجب أن يخدم قراراً محدداً. الفلاتر بدون سبب واضح تشتت المستخدم وتضعف الرسالة الأساسية للصفحة.",
+      "points": 8,
+      "en_question": "An analyst added 6 filters to a dashboard. According to storytelling principles, what is the likely problem?",
+      "en_options": [
+        "Too many filters without purpose distract the user and weaken the page's core message",
+        "Many filters always slow down performance",
+        "Power BI doesn't support more than 4 filters per page",
+        "Filters don't affect the user experience"
+      ],
+      "en_explanation": "Every filter should serve a specific decision. Filters without a clear purpose distract users and dilute the main message the page is trying to convey."
+    },
+    {
+      "id": "q267",
+      "section": "storytelling",
+      "question": "وفق الاختبار السريع لجودة سرد القصة، متى تعتبر الصفحة تحكي قصة بوضوح؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما يكفي العنوان والمؤشرات السريعة والرسم الرئيسي وحدهم لنقل الرسالة",
+        "عندما تحتوي على أكثر من 10 عناصر بصرية",
+        "عندما تستخدم ألواناً متعددة لتمييز البيانات",
+        "عندما تحتوي على جدول بيانات كامل في الأسفل"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الاختبار السريع: إذا بقي العنوان الاستنتاجي والمؤشرات السريعة والرسم الرئيسي وحدهم مفهومين، فالصفحة تقترب من صفحة تحكي قصة بوضوح.",
+      "points": 8,
+      "en_question": "According to the quick storytelling test, when does a page tell a clear story?",
+      "en_options": [
+        "When the title, headline KPIs, and dominant visual alone are enough to convey the message",
+        "When it contains more than 10 visual elements",
+        "When it uses multiple colors to distinguish data",
+        "When it includes a full data table at the bottom"
+      ],
+      "en_explanation": "The quick test: if the conclusion title, headline KPIs, and dominant visual are sufficient to communicate the message on their own, the page is telling a clear story."
+    },
+    {
+      "id": "q268",
+      "section": "dashboard-workshop",
+      "question": "في سيناريو الورشة، لماذا تبدأ ببناء لوحة مبيعات بتحديد 'من سيستخدم التقرير وما القرار المطلوب' قبل أي خطوة تقنية؟",
+      "type": "multiple_choice",
+      "options": [
+        "لأن القرار والجمهور يحددان ما تقيسه وكيف تصمم الصفحة",
+        "لأن Power BI يطلب ذلك قبل إنشاء الملف",
+        "لتجنب الأخطاء في Power Query فقط",
+        "لأنه إجراء إداري ليس له أثر تقني"
+      ],
+      "correctAnswer": 0,
+      "explanation": "تحديد الجمهور والقرار هو الخطوة الأولى لأنه يحدد المقاييس المطلوبة والتصميم المناسب. بدونها قد تبني تقريراً كاملاً لكنه لا يجيب على السؤال الصح.",
+      "points": 7,
+      "en_question": "In the workshop scenario, why do you start by defining 'who will use this report and what decision it needs to support' before any technical step?",
+      "en_options": [
+        "Because the decision and audience define what you measure and how you design the page",
+        "Because Power BI requires this before creating the file",
+        "To avoid Power Query errors only",
+        "It's an administrative step with no technical impact"
+      ],
+      "en_explanation": "Defining the audience and decision comes first because it determines which measures to build and what the page should look like. Without it, you risk building a technically correct report that answers the wrong question."
+    },
+    {
+      "id": "q269",
+      "section": "dashboard-workshop",
+      "question": "في الخطوة الثانية من الورشة 'جهّز البيانات'، ما الأهم التحقق منه بخصوص جدول التاريخ؟",
+      "type": "multiple_choice",
+      "options": [
+        "جاهزية جدول التاريخ وصحة العلاقات حتى يعمل Time Intelligence بشكل صحيح",
+        "عدد الصفوف في جدول التاريخ أكبر من مليون",
+        "أن جدول التاريخ مربوط بعلاقة Many-to-Many",
+        "أن جدول التاريخ محفوظ في ملف Excel منفصل"
+      ],
+      "correctAnswer": 0,
+      "explanation": "جدول التاريخ هو عمود فقري لأي مقاييس Time Intelligence مثل YTD وMTD. إذا كان غير جاهز أو العلاقة خاطئة، ستعطي مقاييس التاريخ نتائج غلط.",
+      "points": 7,
+      "en_question": "In the workshop's 'Prepare data' step, what is most important to verify about the date table?",
+      "en_options": [
+        "That the date table is ready and relationships are correct so Time Intelligence works properly",
+        "That the date table has more than one million rows",
+        "That the date table is connected with a Many-to-Many relationship",
+        "That the date table is stored in a separate Excel file"
+      ],
+      "en_explanation": "The date table is the backbone of any Time Intelligence measures like YTD and MTD. If it's missing or incorrectly related, date-based calculations will return wrong results."
+    },
+    {
+      "id": "q270",
+      "section": "dashboard-workshop",
+      "question": "لماذا يُنصح برسم تخطيط الصفحة على ورقة قبل البناء في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "لتحديد مواضع العنوان والبطاقات والرسم الرئيسي والفلاتر بوضوح قبل الانغماس في التفاصيل التقنية",
+        "لأن Power BI لا يسمح بتغيير تخطيط الصفحة بعد الإنشاء",
+        "لأن الرسم اليدوي أسرع من Power BI",
+        "لتجنب استخدام themes في التقرير"
+      ],
+      "correctAnswer": 0,
+      "explanation": "رسم التخطيط مسبقاً يمنعك من الضياع في التفاصيل التقنية قبل أن تحدد الهيكل. كثير من المحللين يبنون ثم يعيدون البناء لأنهم لم يخططوا للتصميم مسبقاً.",
+      "points": 8,
+      "en_question": "Why is it recommended to sketch the page layout on paper before building in Power BI?",
+      "en_options": [
+        "To define the placement of the title, KPI cards, main visual, and filters before getting lost in technical details",
+        "Because Power BI doesn't allow changing the page layout after creation",
+        "Because hand-drawing is faster than Power BI",
+        "To avoid using themes in the report"
+      ],
+      "en_explanation": "Sketching the layout first prevents you from getting lost in technical details before the structure is decided. Many analysts build and rebuild because they didn't plan the design upfront."
+    },
+    {
+      "id": "q271",
+      "section": "dashboard-workshop",
+      "question": "في قائمة الفحص قبل التسليم، ما المقصود بـ 'الأرقام موثوقة'؟",
+      "type": "multiple_choice",
+      "options": [
+        "اختبار المقاييس على جدول بسيط والتحقق من صحة النتائج قبل مشاركة التقرير",
+        "التأكد من أن الأرقام كبيرة بما يكفي لتبدو مقنعة",
+        "الحصول على موافقة المدير على الأرقام",
+        "ربط التقرير بمصدر بيانات حي"
+      ],
+      "correctAnswer": 0,
+      "explanation": "قبل التسليم، اختبر مقاييسك على جدول بسيط واحسب النتيجة يدوياً إذا أمكن. هذا يضمن أن CALCULATE وDAX يعطيان النتيجة الصحيحة قبل أن يرى المدير التقرير.",
+      "points": 8,
+      "en_question": "In the pre-delivery checklist, what does 'numbers are reliable' mean?",
+      "en_options": [
+        "Testing measures against a simple table and verifying the results are correct before sharing the report",
+        "Making sure the numbers are large enough to appear convincing",
+        "Getting manager approval on the numbers",
+        "Connecting the report to a live data source"
+      ],
+      "en_explanation": "Before delivery, test your measures against a simple table and manually verify the results when possible. This ensures your DAX and CALCULATE logic produces correct output before the report reaches stakeholders."
+    },
+    {
+      "id": "q272",
+      "section": "dashboard-workshop",
+      "question": "صفحة لوحة مبيعات جيدة يجب أن تجيب على ثلاثة أسئلة. أي مجموعة تعبّر بدقة عن هذه الأسئلة الثلاثة؟",
+      "type": "multiple_choice",
+      "options": [
+        "هل الأداء أعلى أم أقل من الهدف؟ / ما المناطق أو المنتجات التي تفسر التغيير؟ / ما الذي يجب متابعته هذا الأسبوع؟",
+        "كيف تصدير البيانات؟ / كيف حساب المجموع؟ / كيف نشر التقرير؟",
+        "من بنى التقرير؟ / متى بُني؟ / ما مصدر البيانات؟",
+        "ما عدد الصفوف؟ / ما عدد الأعمدة؟ / ما حجم الملف؟"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الأسئلة الثلاثة التي تجيب عنها صفحة المبيعات الجيدة: (1) الأداء فوق أم تحت الهدف، (2) المناطق/المنتجات المفسِّرة للتغيير، (3) ما يستحق المتابعة هذا الأسبوع.",
+      "points": 7,
+      "en_question": "A good sales dashboard page should answer three questions. Which set accurately captures all three?",
+      "en_options": [
+        "Is performance above or below target? / Which regions or products explain the change? / What should be followed up on this week?",
+        "How to export data? / How to calculate totals? / How to publish the report?",
+        "Who built the report? / When was it built? / What is the data source?",
+        "How many rows? / How many columns? / What is the file size?"
+      ],
+      "en_explanation": "The three questions a good sales dashboard answers: (1) Is performance above or below target, (2) Which regions/products explain the change, and (3) What deserves follow-up this week."
+    },
+    {
+      "id": "q273",
+      "section": "calculate",
+      "question": "ما الفرق بين CALCULATE([Sales]) وSUM(Sales[Amount]) عند استخدامهما كمقياس؟",
+      "type": "multiple_choice",
+      "options": [
+        "CALCULATE يمكنه تعديل Filter Context قبل الحساب، بينما SUM يحسب في الـ context الحالي فقط",
+        "لا فرق بينهما في الأداء أو النتيجة",
+        "SUM أسرع دائماً لأنه أبسط",
+        "CALCULATE يعمل فقط مع الجداول المحسوبة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CALCULATE([Sales]) مكافئ لـ CALCULATE(SUM(Sales[Amount])) ويضيف قدرة تعديل الـ Filter Context، بينما SUM وحده محدود بالـ context الموجود.",
+      "points": 8,
+      "en_question": "What is the difference between CALCULATE([Sales]) and SUM(Sales[Amount]) when used as a measure?",
+      "en_options": [
+        "CALCULATE can modify the Filter Context before calculation, while SUM only calculates within the current context",
+        "There's no difference in performance or result",
+        "SUM is always faster because it's simpler",
+        "CALCULATE only works with calculated tables"
+      ],
+      "en_explanation": "CALCULATE([Sales]) is equivalent to CALCULATE(SUM(Sales[Amount])) and adds the ability to modify the Filter Context, while standalone SUM is limited to the existing context."
+    },
+    {
+      "id": "q274",
+      "section": "calculate",
+      "question": "عندما تستخدم CALCULATE مع ALLEXCEPT، ما الفائدة العملية؟",
+      "type": "multiple_choice",
+      "options": [
+        "إزالة كل الفلاترات ما عدا فلتر محدد — مفيد لحساب نسبة كل قسم من إجمالي الشركة",
+        "إضافة فلاتر جديدة لجميع الجداول",
+        "منع استخدام الـ context من الـ visual",
+        "تحويل Measure إلى Calculated Column"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ALLEXCEPT(Table, Column) تزيل كل الفلاترات عدا العمود المحدد. مثال: حساب % مبيعات كل منطقة من إجمالي الشركة مع الاحتفاظ بفلتر المنطقة.",
+      "points": 8,
+      "en_question": "When you use CALCULATE with ALLEXCEPT, what is the practical benefit?",
+      "en_options": [
+        "Removes all filters except a specific one — useful for calculating each department's share of the company total",
+        "Adds new filters to all tables",
+        "Prevents the visual context from being used",
+        "Converts a Measure to a Calculated Column"
+      ],
+      "en_explanation": "ALLEXCEPT(Table, Column) removes all filters except the specified column. Example: calculating each region's % of total company sales while keeping the region filter active."
+    },
+    {
+      "id": "q275",
+      "section": "calculate",
+      "question": "لديك Measure: [YTD Sales] = CALCULATE([Total Sales], DATESYTD(Calendar[Date])). لماذا يُستخدم CALCULATE هنا وليس DATESYTD وحدها؟",
+      "type": "multiple_choice",
+      "options": [
+        "CALCULATE يطبق الفلتر الزمني من DATESYTD على الـ Measure، وهذا لا يمكن لـ SUM أن يفعله مباشرة",
+        "DATESYTD لا تعمل بدون CALCULATE في DAX",
+        "CALCULATE تسرّع DATESYTD",
+        "DATESYTD وحدها تعطي نتيجة خاطئة لأنها دالة نصية"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CALCULATE هو الغلاف الذي يطبق فلتر التاريخ الناتج عن DATESYTD على الـ Measure. بدون CALCULATE لا يمكنك تطبيق فلتر جدول التاريخ ديناميكياً على حساب آخر.",
+      "points": 9,
+      "en_question": "You have: [YTD Sales] = CALCULATE([Total Sales], DATESYTD(Calendar[Date])). Why is CALCULATE used here instead of DATESYTD alone?",
+      "en_options": [
+        "CALCULATE applies the date filter from DATESYTD to the Measure — something SUM can't do directly",
+        "DATESYTD doesn't work without CALCULATE in DAX",
+        "CALCULATE speeds up DATESYTD",
+        "DATESYTD alone returns wrong results because it's a text function"
+      ],
+      "en_explanation": "CALCULATE is the wrapper that applies the date filter generated by DATESYTD to the Measure. Without CALCULATE, you can't dynamically apply a date table filter to another calculation."
+    },
+    {
+      "id": "q276",
+      "section": "calculate",
+      "question": "في أي حالة يمكن أن يتجاهل CALCULATE فلتر جديد أضفته ويستخدم القديم؟",
+      "type": "multiple_choice",
+      "options": [
+        "عند تعارض الفلترين — CALCULATE يحتفظ بالفلتر الأضيق أو يتصرف حسب قواعد الـ Context Transition",
+        "عند استخدام CALCULATE داخل calculated column",
+        "عند عدم وجود علاقات في النموذج",
+        "هذا لا يحدث أبداً — CALCULATE يطبق الفلتر الجديد دائماً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "تعارض الفلاترات مثلاً: Filter Context الحالي = Year=2024، وأضفت فلتر Year=2023. CALCULATE يطبق الجديد (override). لكن عند وجود KEEPFILTERS يتصرف بشكل مختلف.",
+      "points": 9,
+      "en_question": "In what situation might CALCULATE ignore a new filter you added and keep the old one?",
+      "en_options": [
+        "When filters conflict — CALCULATE keeps the narrower filter or behaves per Context Transition rules",
+        "When CALCULATE is used inside a calculated column",
+        "When there are no relationships in the model",
+        "This never happens — CALCULATE always applies the new filter"
+      ],
+      "en_explanation": "Filter conflicts: if the current context has Year=2024 and you add Year=2023, CALCULATE overrides. But with KEEPFILTERS, the behavior changes — filters intersect rather than override."
+    },
+    {
+      "id": "q277",
+      "section": "relationships",
+      "question": "لماذا يُفضل استخدام Integer key بدلاً من Text key في علاقات النموذج؟",
+      "type": "multiple_choice",
+      "options": [
+        "Integer أصغر حجماً في الذاكرة وأسرع في المقارنة، مما يحسّن أداء الـ DAX",
+        "Text key أكثر قراءة للمستخدم",
+        "Power BI يرفض Text keys في الـ relationships",
+        "Integer يمنع أخطاء البيانات تلقائياً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الـ VertiPaq engine يضغط Integer بكفاءة أعلى من Text. الـ relationship joins تكون أسرع والذاكرة أقل عند استخدام Integer keys بدلاً من Text.",
+      "points": 8,
+      "en_question": "Why is using an Integer key preferred over a Text key in model relationships?",
+      "en_options": [
+        "Integers are smaller in memory and faster to compare, which improves DAX performance",
+        "Text keys are more readable to users",
+        "Power BI rejects Text keys in relationships",
+        "Integers prevent data errors automatically"
+      ],
+      "en_explanation": "The VertiPaq engine compresses integers more efficiently than text. Relationship joins are faster and memory usage is lower with Integer keys compared to Text keys."
+    },
+    {
+      "id": "q278",
+      "section": "relationships",
+      "question": "ما معنى Cross-filter direction = Both في علاقة، ومتى يُنصح بها؟",
+      "type": "multiple_choice",
+      "options": [
+        "الفلتر يمشي في الاتجاهين — يُنصح بها بحذر فقط عند الضرورة لأنها قد تسبب Circular dependency أو نتائج غير متوقعة",
+        "الفلتر يُطبق على الجدولين بالتساوي دائماً وهي الأفضل دائماً",
+        "تعني أن العلاقة Many-to-Many",
+        "تُحسّن الأداء في جميع الحالات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Bidirectional filtering يتيح تصفية الجدول من أي جهة، لكنه قد يسبب ambiguity في النموذج أو نتائج خاطئة. الأفضل استخدام Single direction واللجوء للـ CROSSFILTER في DAX عند الحاجة.",
+      "points": 8,
+      "en_question": "What does Cross-filter direction = Both mean in a relationship, and when is it recommended?",
+      "en_options": [
+        "Filtering flows in both directions — use it cautiously and only when necessary, as it can cause circular dependencies or unexpected results",
+        "Filters apply equally to both tables and it's always the best choice",
+        "It means the relationship is Many-to-Many",
+        "It always improves performance"
+      ],
+      "en_explanation": "Bidirectional filtering allows filtering from either side, but it can cause model ambiguity or incorrect results. Best practice is to use single direction and resort to CROSSFILTER in DAX when needed."
+    },
+    {
+      "id": "q279",
+      "section": "relationships",
+      "question": "عندك جدول Sales مرتبط بجدول Customers بعلاقة One-to-Many. لماذا يجب أن يكون Customers هو جانب الـ One؟",
+      "type": "multiple_choice",
+      "options": [
+        "لأن كل عميل يظهر مرة واحدة في Customers، بينما نفس العميل قد يظهر في عدة صفوف في Sales",
+        "لأن Power BI يطلب ذلك تلقائياً",
+        "لأن Sales يحتوي على أكثر بيانات",
+        "العكس هو الصحيح — Sales يجب أن يكون جانب الـ One"
+      ],
+      "correctAnswer": 0,
+      "explanation": "في Star Schema، الـ Dimension table (Customers) هو جانب الـ 1 لأن كل عميل فريد، والـ Fact table (Sales) هو جانب الـ Many لأن نفس العميل قد يشتري عدة مرات.",
+      "points": 7,
+      "en_question": "You have a Sales table related to a Customers table in a One-to-Many relationship. Why should Customers be the One side?",
+      "en_options": [
+        "Because each customer appears once in Customers, while the same customer may appear in many rows in Sales",
+        "Because Power BI requires this automatically",
+        "Because Sales contains more data",
+        "The opposite is correct — Sales should be the One side"
+      ],
+      "en_explanation": "In a Star Schema, the Dimension table (Customers) is the One side because each customer is unique, and the Fact table (Sales) is the Many side because the same customer can make multiple purchases."
+    },
+    {
+      "id": "q280",
+      "section": "relationships",
+      "question": "عندما تظهر علاقة بخط متقطع (inactive relationship) في Power BI، كيف تستخدمها في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "باستخدام USERELATIONSHIP داخل CALCULATE لتفعيل العلاقة الغير نشطة مؤقتاً",
+        "بحذف العلاقة النشطة أولاً ثم تفعيل الغير نشطة",
+        "لا يمكن استخدام العلاقة الغير نشطة في DAX",
+        "بتغيير Cross-filter direction إلى Both"
+      ],
+      "correctAnswer": 0,
+      "explanation": "USERELATIONSHIP(Table1[Col], Table2[Col]) داخل CALCULATE يفعّل العلاقة الغير نشطة مؤقتاً لحساب الـ Measure. مفيد مثلاً عند وجود علاقتين بين Orders وCalendar (تاريخ الطلب وتاريخ الشحن).",
+      "points": 9,
+      "en_question": "When a relationship appears as a dashed line (inactive relationship) in Power BI, how do you use it in DAX?",
+      "en_options": [
+        "Use USERELATIONSHIP inside CALCULATE to temporarily activate the inactive relationship",
+        "Delete the active relationship first, then activate the inactive one",
+        "Inactive relationships cannot be used in DAX",
+        "Change Cross-filter direction to Both"
+      ],
+      "en_explanation": "USERELATIONSHIP(Table1[Col], Table2[Col]) inside CALCULATE temporarily activates the inactive relationship for that measure calculation. Useful when you have two relationships between Orders and Calendar (order date and ship date)."
+    },
+    {
+      "id": "q281",
+      "section": "dax-m2m",
+      "question": "في سيناريو المنتج-الفئة (منتج في أكثر من فئة، فئة تضم أكثر من منتج)، ما هيكل Bridge Table الصحيح؟",
+      "type": "multiple_choice",
+      "options": [
+        "جدول وسطي يحتوي على ProductID و CategoryID فقط، مع علاقة 1:* من كل جدول رئيسي إليه",
+        "جدول يضم كل بيانات المنتج والفئة معاً",
+        "علاقة مباشرة M:M بين Products وCategories بدون جدول وسطي",
+        "حذف علاقة الفئات وبناء Calculated Column بدلاً عنها"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Bridge Table الصحيح يحمل فقط المفاتيح (ProductID + CategoryID)، وكل جدول رئيسي يرتبط به بعلاقة One-to-Many. هذا يحل الـ M:M بدون تكرار بيانات.",
+      "points": 8,
+      "en_question": "In a product-category scenario (a product can be in multiple categories, a category can have multiple products), what is the correct Bridge Table structure?",
+      "en_options": [
+        "An intermediate table containing only ProductID and CategoryID, with a 1:* relationship from each main table to it",
+        "A table that combines all product and category data together",
+        "A direct M:M relationship between Products and Categories without an intermediate table",
+        "Remove the category relationship and build a Calculated Column instead"
+      ],
+      "en_explanation": "The correct Bridge Table holds only the keys (ProductID + CategoryID), and each main table connects to it via a One-to-Many relationship. This resolves M:M without duplicating data."
+    },
+    {
+      "id": "q282",
+      "section": "dax-m2m",
+      "question": "عند استخدام TREATAS لحل Many-to-Many، ما الذي يفعله تحديداً؟",
+      "type": "multiple_choice",
+      "options": [
+        "يعامل نتيجة expression كأنها تنتمي لجدول آخر، مما يتيح تطبيق فلتر افتراضي من جدول لجدول",
+        "ينشئ علاقة جديدة دائمة بين الجداول",
+        "يحذف Filter Context الحالي قبل الحساب",
+        "يُستخدم فقط مع جداول التاريخ"
+      ],
+      "correctAnswer": 0,
+      "explanation": "TREATAS(table_expression, column1, column2...) تعامل نتيجة الجدول كأنها قادمة من الأعمدة المحددة، مما يتيح إنشاء فلتر ديناميكي بدون علاقة فعلية في النموذج.",
+      "points": 9,
+      "en_question": "When using TREATAS to resolve Many-to-Many, what does it specifically do?",
+      "en_options": [
+        "Treats the result of an expression as if it belongs to another table, enabling a virtual filter across tables",
+        "Creates a new permanent relationship between tables",
+        "Deletes the current Filter Context before calculating",
+        "Used only with date tables"
+      ],
+      "en_explanation": "TREATAS(table_expression, column1, column2...) treats a table result as if it came from the specified columns, enabling dynamic filtering without a physical relationship in the model."
+    },
+    {
+      "id": "q283",
+      "section": "dax-m2m",
+      "question": "لديك تقرير به مبيعات وكل منتج في أكثر من فئة. عند حساب 'Total Sales by Category' باستخدام Bridge Table، ما المشكلة التي قد تظهر إذا كانت العلاقة من Bridge إلى Categories باتجاه Single فقط؟",
+      "type": "multiple_choice",
+      "options": [
+        "الفلتر من Categories لن ينتقل عبر Bridge إلى Sales، فيظهر إجمالي المبيعات بدون تصفية بالفئة",
+        "سيتسبب في أخطاء syntax في الـ DAX",
+        "لا مشكلة — Single direction كافٍ دائماً مع Bridge Tables",
+        "ستتضاعف قيم المبيعات بسبب التكرار"
+      ],
+      "correctAnswer": 0,
+      "explanation": "إذا كانت العلاقة Single من Bridge إلى Categories، فالفلتر لا ينتقل من Categories إلى Bridge ثم إلى Sales. يجب أن يكون اتجاه الفلتر من Categories نحو البيانات أو استخدام CROSSFILTER في DAX.",
+      "points": 9,
+      "en_question": "You have a report with sales where each product is in multiple categories. When calculating 'Total Sales by Category' using a Bridge Table, what problem appears if the Bridge-to-Categories relationship is Single direction only?",
+      "en_options": [
+        "The filter from Categories won't propagate through Bridge to Sales, so total sales appear unfiltered by category",
+        "It causes DAX syntax errors",
+        "No problem — Single direction is always sufficient with Bridge Tables",
+        "Sales values will double due to repetition"
+      ],
+      "en_explanation": "If the relationship is Single from Bridge to Categories, the filter doesn't flow from Categories through Bridge to Sales. The filter direction must flow from Categories toward the data, or use CROSSFILTER in DAX."
+    },
+    {
+      "id": "q284",
+      "section": "dax-m2m",
+      "question": "متى تختار TREATAS بدلاً من Bridge Table لحل Many-to-Many؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تريد فلتراً ديناميكياً من قائمة محسوبة في DAX دون إضافة جدول جديد للنموذج",
+        "عندما يكون حجم البيانات أقل من 10,000 صف",
+        "TREATAS دائماً أفضل من Bridge Table في كل الحالات",
+        "عند وجود أكثر من 3 جداول في النموذج"
+      ],
+      "correctAnswer": 0,
+      "explanation": "TREATAS مناسب عندما تريد تطبيق فلتر من نتيجة DAX expression بدون تعديل هيكل النموذج. Bridge Table أفضل للحالات الثابتة حيث العلاقة معروفة مسبقاً في البيانات.",
+      "points": 8,
+      "en_question": "When do you choose TREATAS over a Bridge Table for Many-to-Many resolution?",
+      "en_options": [
+        "When you want a dynamic filter from a DAX-computed list without adding a new table to the model",
+        "When data volume is less than 10,000 rows",
+        "TREATAS is always better than Bridge Table in every situation",
+        "When there are more than 3 tables in the model"
+      ],
+      "en_explanation": "TREATAS is suitable when you want to apply a filter from a DAX expression result without modifying the model structure. Bridge Table is better for static relationships that are predefined in the data."
+    },
+    {
+      "id": "q285",
+      "section": "performance",
+      "question": "ما الفرق بين Storage Engine (SE) وFormula Engine (FE) في سياق أداء Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "SE يقرأ البيانات من VertiPaq بسرعة عالية ومتوازية، أما FE فيحسب DAX وهو single-threaded وأبطأ",
+        "SE يحسب الـ DAX وFE يقرأ من قاعدة البيانات",
+        "كلاهما نفس الشيء لكن بأسماء مختلفة",
+        "SE يعمل في DirectQuery فقط وFE في Import فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Storage Engine (SE) يقرأ البيانات المضغوطة من VertiPaq بشكل متوازٍ وسريع. Formula Engine (FE) يفسر DAX ويحسب النتائج وهو single-threaded، لذا تقليل عبء FE هو مفتاح تحسين الأداء.",
+      "points": 9,
+      "en_question": "What is the difference between Storage Engine (SE) and Formula Engine (FE) in the context of Power BI performance?",
+      "en_options": [
+        "SE reads data from VertiPaq in parallel at high speed, while FE calculates DAX and is single-threaded and slower",
+        "SE calculates DAX and FE reads from the database",
+        "They're the same thing with different names",
+        "SE only works in DirectQuery and FE only in Import"
+      ],
+      "en_explanation": "The Storage Engine (SE) reads compressed data from VertiPaq in parallel — fast. The Formula Engine (FE) interprets DAX and is single-threaded — slower. Reducing FE workload is the key to performance optimization."
+    },
+    {
+      "id": "q286",
+      "section": "performance",
+      "question": "أي من الممارسات التالية يُحسّن أداء الـ DAX بشكل مباشر؟",
+      "type": "multiple_choice",
+      "options": [
+        "تجنب FILTER() على جداول كبيرة وتفضيل Boolean expressions أو Column filters مباشرة في CALCULATE",
+        "استخدام CONCATENATEX في كل مقياس لضمان دقة النتائج",
+        "زيادة عدد الـ Calculated Columns لتسريع الـ Measures",
+        "حذف جداول التاريخ لتقليل حجم النموذج"
+      ],
+      "correctAnswer": 0,
+      "explanation": "FILTER() على جدول كبير يُحمّل الـ Formula Engine. الأفضل استخدام Boolean مثل CALCULATE([Sales], Product[Color]=\"Red\") بدلاً من CALCULATE([Sales], FILTER(Product, Product[Color]=\"Red\")).",
+      "points": 9,
+      "en_question": "Which of the following practices directly improves DAX performance?",
+      "en_options": [
+        "Avoid FILTER() on large tables and prefer Boolean expressions or column filters directly in CALCULATE",
+        "Use CONCATENATEX in every measure to ensure accurate results",
+        "Increase the number of Calculated Columns to speed up Measures",
+        "Delete date tables to reduce model size"
+      ],
+      "en_explanation": "FILTER() on a large table overloads the Formula Engine. Prefer Boolean syntax like CALCULATE([Sales], Product[Color]=\"Red\") instead of CALCULATE([Sales], FILTER(Product, Product[Color]=\"Red\"))."
+    },
+    {
+      "id": "q287",
+      "section": "performance",
+      "question": "في DAX Studio، عند تحليل بطء تقرير، ما المقياس الذي يدل على أن الـ Storage Engine يقرأ بيانات كثيرة بشكل غير ضروري؟",
+      "type": "multiple_choice",
+      "options": [
+        "عدد كبير من SE Queries مع حجم Cache كبير يدل على أن DAX يطلب بيانات أكثر مما يحتاج",
+        "وقت FE الطويل يعني أن SE يعمل كثيراً",
+        "عدد الـ Measures في النموذج",
+        "حجم ملف PBIX على القرص"
+      ],
+      "correctAnswer": 0,
+      "explanation": "في DAX Studio، كثرة SE Queries مع بيانات Cache كبيرة تدل على inefficient DAX يطلب بيانات زائدة. الحل: تبسيط الـ Measure أو إعادة هيكلة النموذج لتقليل عدد SE Queries.",
+      "points": 9,
+      "en_question": "In DAX Studio, when analyzing a slow report, what metric indicates the Storage Engine is reading unnecessarily large amounts of data?",
+      "en_options": [
+        "A high number of SE Queries with large Cache size indicates DAX is requesting more data than needed",
+        "Long FE time means SE is working excessively",
+        "The number of Measures in the model",
+        "The PBIX file size on disk"
+      ],
+      "en_explanation": "In DAX Studio, high SE Query count with large Cache sizes indicates inefficient DAX requesting excessive data. The fix: simplify the measure or restructure the model to reduce SE Query count."
+    },
+    {
+      "id": "q288",
+      "section": "rls",
+      "question": "ما الفرق بين Static RLS وDynamic RLS في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "Static تحدد القيم بشكل ثابت في تعريف الـ Role، وDynamic تستخدم USERNAME() أو USERPRINCIPALNAME() لفلترة البيانات بناءً على هوية المستخدم",
+        "Static للمستخدمين الخارجيين وDynamic للداخليين فقط",
+        "Static أسرع في الأداء دائماً",
+        "لا فرق — كلاهما يعطي نفس النتيجة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Static RLS: تكتب قيمة ثابتة مثل [Region] = \"Cairo\". Dynamic RLS: تستخدم USERNAME() أو USERPRINCIPALNAME() لمطابقة المستخدم الحالي بجدول الأذونات.",
+      "points": 8,
+      "en_question": "What is the difference between Static RLS and Dynamic RLS in Power BI?",
+      "en_options": [
+        "Static hardcodes values in the Role definition; Dynamic uses USERNAME() or USERPRINCIPALNAME() to filter based on the user's identity",
+        "Static is for external users, Dynamic for internal users only",
+        "Static is always faster in performance",
+        "No difference — both give the same result"
+      ],
+      "en_explanation": "Static RLS: you hardcode a value like [Region] = \"Cairo\". Dynamic RLS: uses USERNAME() or USERPRINCIPALNAME() to match the current user against a permissions table."
+    },
+    {
+      "id": "q289",
+      "section": "rls",
+      "question": "عند بناء Dynamic RLS بجدول UserPermissions يحتوي على Email وRegion، ما صيغة الـ DAX الصحيحة في تعريف الـ Role؟",
+      "type": "multiple_choice",
+      "options": [
+        "[Region] = LOOKUPVALUE(UserPermissions[Region], UserPermissions[Email], USERPRINCIPALNAME())",
+        "[Region] = USERNAME()",
+        "FILTER(UserPermissions, [Email] = USERNAME())",
+        "[Region] IN UserPermissions[Region]"
+      ],
+      "correctAnswer": 0,
+      "explanation": "LOOKUPVALUE تبحث في UserPermissions عن الـ Region المقابلة لـ Email المستخدم الحالي (USERPRINCIPALNAME()). هذا يربط كل مستخدم بصلاحياته بشكل ديناميكي.",
+      "points": 9,
+      "en_question": "When building Dynamic RLS with a UserPermissions table containing Email and Region, what is the correct DAX syntax in the Role definition?",
+      "en_options": [
+        "[Region] = LOOKUPVALUE(UserPermissions[Region], UserPermissions[Email], USERPRINCIPALNAME())",
+        "[Region] = USERNAME()",
+        "FILTER(UserPermissions, [Email] = USERNAME())",
+        "[Region] IN UserPermissions[Region]"
+      ],
+      "en_explanation": "LOOKUPVALUE looks up the Region in UserPermissions matching the current user's email (USERPRINCIPALNAME()). This dynamically ties each user to their specific data permissions."
+    },
+    {
+      "id": "q290",
+      "section": "rls",
+      "question": "عند اختبار RLS في Power BI Desktop قبل النشر، ما الأداة المستخدمة وما قيودها؟",
+      "type": "multiple_choice",
+      "options": [
+        "View as Role في Modeling tab — تتيح محاكاة RLS لكنها لا تُظهر تأثير البيانات الحية أو أذونات الـ Service",
+        "DAX Studio فقط لأنه الأدق",
+        "لا يمكن اختبار RLS في Desktop، فقط في Power BI Service",
+        "Performance Analyzer يُظهر تأثير RLS تلقائياً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "View as Role في Power BI Desktop يتيح رؤية التقرير كما سيراه المستخدم المحدد. لكنها محاكاة — بعض الحالات كـ Dynamic RLS المعتمدة على Service بيانات المستخدم الفعلية تحتاج اختباراً في Power BI Service.",
+      "points": 8,
+      "en_question": "When testing RLS in Power BI Desktop before publishing, what tool is used and what are its limitations?",
+      "en_options": [
+        "View as Role in the Modeling tab — allows RLS simulation but doesn't show live data effects or Service-level permissions",
+        "Only DAX Studio because it's more accurate",
+        "RLS cannot be tested in Desktop, only in Power BI Service",
+        "Performance Analyzer shows RLS impact automatically"
+      ],
+      "en_explanation": "View as Role in Power BI Desktop lets you see the report as a specific user would. But it's a simulation — some cases like Dynamic RLS relying on Service-level user data need testing in Power BI Service."
+    },
+    {
+      "id": "q291",
+      "section": "rls",
+      "question": "مدير يريد تطبيق RLS بحيث يرى كل موظف بيانات نفسه ومرؤوسيه فقط. ما النهج الأنسب؟",
+      "type": "multiple_choice",
+      "options": [
+        "Dynamic RLS مع جدول تسلسل هرمي (Hierarchy) يربط كل موظف بمرؤوسيه، وDAX يجمع بين USERPRINCIPALNAME وPATHCONTAINS أو recursive logic",
+        "Static RLS بإنشاء Role لكل مدير على حدة",
+        "تطبيق فلتر في Power Query وليس في RLS",
+        "RLS لا تدعم التسلسل الهرمي — يجب تصدير ملفات منفصلة لكل مدير"
+      ],
+      "correctAnswer": 0,
+      "explanation": "RLS الهرمية تستخدم جدول الـ Hierarchy مع دوال PATH وPATHCONTAINS للبحث عن كل مرؤوسي المستخدم الحالي. هذا النهج scalable ولا يحتاج role جديدة مع كل تعيين.",
+      "points": 9,
+      "en_question": "A manager wants to apply RLS so each employee sees only their own data and their direct reports. What is the most suitable approach?",
+      "en_options": [
+        "Dynamic RLS with a hierarchy table linking each employee to their reports, using USERPRINCIPALNAME combined with PATHCONTAINS or recursive logic in DAX",
+        "Static RLS creating a separate Role for each manager",
+        "Apply a filter in Power Query instead of RLS",
+        "RLS doesn't support hierarchies — you must export separate files for each manager"
+      ],
+      "en_explanation": "Hierarchical RLS uses a Hierarchy table with PATH and PATHCONTAINS functions to find all subordinates of the current user. This approach is scalable and doesn't require a new role with every org change."
+    },
+    {
+      "id": "q292",
+      "section": "filter-context",
+      "question": "ما الفرق الجوهري بين Filter Context وRow Context في DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "Filter Context يُحدد الصفوف المرئية لحساب المقياس؛ Row Context يُمثّل الصف الحالي أثناء تقييم عمود محسوب أو دالة تكرارية",
+        "Filter Context يُستخدم فقط في الجداول المحسوبة؛ Row Context يُستخدم فقط في المقاييس",
+        "كلاهما نفس المفهوم لكن بمصطلحين مختلفين",
+        "Row Context يُصفّي البيانات؛ Filter Context يتكرر على الصفوف"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Filter Context ينشأ من التقطيع والفلاتر والمرئيات — يُخبر DAX أي صفوف مرئية. Row Context ينشأ تلقائياً في الأعمدة المحسوبة والدوال التكرارية — يُشير إلى الصف الذي يُعالَج الآن.",
+      "points": 7,
+      "en_question": "What is the fundamental difference between Filter Context and Row Context in DAX?",
+      "en_options": [
+        "Filter Context defines which rows are visible for a measure calculation; Row Context represents the current row being evaluated in a calculated column or iterator",
+        "Filter Context is only used in calculated tables; Row Context is only used in measures",
+        "Both are the same concept with different names",
+        "Row Context filters data; Filter Context iterates over rows"
+      ],
+      "en_explanation": "Filter Context comes from slicers, filters, and visuals — it tells DAX which rows are visible. Row Context is created automatically in calculated columns and iterator functions — it refers to the row currently being processed."
+    },
+    {
+      "id": "q293",
+      "section": "filter-context",
+      "question": "ما الذي تفعله CALCULATE تحديداً من ناحية السياق؟",
+      "type": "multiple_choice",
+      "options": [
+        "تُحوّل Row Context إلى Filter Context — وهو ما يُسمى Context Transition",
+        "تُلغي Filter Context الحالي وتُنشئ واحداً جديداً تماماً",
+        "تُضيف Row Context إضافياً فوق Filter Context الموجود",
+        "لا تؤثر في السياق بل تُعيد تقييم التعبير فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CALCULATE تُجري Context Transition: تأخذ Row Context الحالي (في عمود محسوب مثلاً) وتُحوّله إلى Filter Context، مما يجعل الصف الحالي يُصبح فلتراً على الجدول. هذا يُغيّر نتيجة الحساب بشكل جذري.",
+      "points": 8,
+      "en_question": "What does CALCULATE specifically do in terms of context?",
+      "en_options": [
+        "It converts Row Context into Filter Context — this is called Context Transition",
+        "It removes the current Filter Context and creates a completely new one",
+        "It adds an additional Row Context on top of the existing Filter Context",
+        "It does not affect context — it only re-evaluates the expression"
+      ],
+      "en_explanation": "CALCULATE performs Context Transition: it takes the current Row Context (in a calculated column, for example) and converts it into a Filter Context, making the current row a filter on the table. This fundamentally changes the result of the calculation."
+    },
+    {
+      "id": "q294",
+      "section": "filter-context",
+      "question": "في العمود المحسوب التالي: `Sales[Rank] = RANKX(ALL(Sales), [Total Sales])` — أي سياق يعمل هنا؟",
+      "type": "multiple_choice",
+      "options": [
+        "Row Context على الجدول Sales مع RANKX تُكرر على ALL(Sales) بدون فلتر",
+        "Filter Context فقط لأن RANKX دالة تكرارية",
+        "لا يوجد سياق لأن ALL() تُزيل كل السياقات",
+        "Filter Context من لوحة التقارير يؤثر على الترتيب"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الأعمدة المحسوبة تعمل بـ Row Context — كل صف في Sales يُحسب بشكل مستقل. RANKX تُكرر على ALL(Sales) لتُزيل أي فلاتر وتُقارن كل صف بكامل الجدول. النتيجة: رقم ترتيب ثابت لكل صف.",
+      "points": 8,
+      "en_question": "In this calculated column: `Sales[Rank] = RANKX(ALL(Sales), [Total Sales])` — which context is at work?",
+      "en_options": [
+        "Row Context on the Sales table with RANKX iterating over ALL(Sales) without a filter",
+        "Filter Context only because RANKX is an iterator function",
+        "No context because ALL() removes all contexts",
+        "Filter Context from the report page affects the ranking"
+      ],
+      "en_explanation": "Calculated columns operate with Row Context — each row in Sales is evaluated independently. RANKX iterates over ALL(Sales) to remove any filters and compare each row against the full table. The result: a fixed rank number for each row."
+    },
+    {
+      "id": "q295",
+      "section": "filter-context",
+      "question": "ما الفرق في سياق التقييم بين مقياس (Measure) وعمود محسوب (Calculated Column)؟",
+      "type": "multiple_choice",
+      "options": [
+        "المقياس يعمل بـ Filter Context (يتأثر بالفلاتر والتقطيع)؛ العمود المحسوب يعمل بـ Row Context (يُحسب صفاً بصف عند تحديث البيانات)",
+        "كلاهما يعمل بـ Row Context لكن المقياس أسرع",
+        "كلاهما يعمل بـ Filter Context لكن العمود المحسوب يُخزَّن في الذاكرة",
+        "المقياس يعمل بـ Row Context؛ العمود المحسوب يعمل بـ Filter Context"
+      ],
+      "correctAnswer": 0,
+      "explanation": "المقاييس تُحسب في وقت الاستعلام وتتأثر بـ Filter Context من المرئيات والفلاتر. الأعمدة المحسوبة تُحسب عند تحديث البيانات بـ Row Context لكل صف، وتُخزَّن في نموذج البيانات. هذا الفرق يُؤثر على الأداء ومكان استخدام كل منهما.",
+      "points": 7,
+      "en_question": "What is the evaluation context difference between a Measure and a Calculated Column?",
+      "en_options": [
+        "A measure operates in Filter Context (affected by slicers and filters); a calculated column operates in Row Context (computed row-by-row at refresh)",
+        "Both operate in Row Context but measures are faster",
+        "Both operate in Filter Context but calculated columns are stored in memory",
+        "Measures operate in Row Context; calculated columns operate in Filter Context"
+      ],
+      "en_explanation": "Measures are evaluated at query time and respond to Filter Context from visuals and filters. Calculated columns are computed at data refresh time using Row Context for each row, and stored in the data model. This difference affects performance and where each should be used."
+    },
+    {
+      "id": "q296",
+      "section": "filter-context",
+      "question": "لديك مقياس `[Total Sales] = SUM(Sales[Amount])`. عند وضعه في مصفوفة (Matrix) مع تقطيع بالمنطقة — ما الذي يُحدث Filter Context للمقياس؟",
+      "type": "multiple_choice",
+      "options": [
+        "خلية المصفوفة + قيمة المقطّع معاً يُشكّلان Filter Context الذي يُقيَّم فيه المقياس",
+        "المقياس يُقيَّم دائماً على كامل الجدول بدون فلتر",
+        "Row Context من المصفوفة هو الذي يُحدد الحساب",
+        "المقطّع يُلغي Filter Context من المصفوفة ويستبدله"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Filter Context يتراكم من عدة مصادر: هيكل المرئية (الصفوف والأعمدة في المصفوفة)، والمقطّعات، وفلاتر الصفحة. كل خلية في المصفوفة تُقيَّم بـ Filter Context خاص بها يجمع: قيمة المحور + قيمة المقطّع. SUM تُجمع فقط الصفوف المُتوافقة مع هذا السياق.",
+      "points": 8,
+      "en_question": "You have a measure `[Total Sales] = SUM(Sales[Amount])`. When placed in a Matrix with a Region slicer — what creates the Filter Context for the measure?",
+      "en_options": [
+        "The matrix cell position + the slicer value together form the Filter Context in which the measure is evaluated",
+        "The measure always evaluates against the full table without any filter",
+        "The Row Context from the matrix determines the calculation",
+        "The slicer cancels the matrix Filter Context and replaces it"
+      ],
+      "en_explanation": "Filter Context accumulates from multiple sources: the visual structure (rows and columns in the matrix), slicers, and page filters. Each cell in the matrix is evaluated with its own Filter Context combining: the axis value + the slicer value. SUM only aggregates rows matching this context."
+    },
+    {
+      "id": "q297",
+      "section": "pq-groupby",
+      "question": "متى تستخدم Group By في Power Query بدلاً من تجميع البيانات في DAX Measure؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تحتاج تقليص حجم الجدول قبل التحميل — مثل تحويل ملايين صفوف المعاملات إلى ملخص على مستوى المنتج أو الشهر",
+        "Group By في Power Query أسرع دائماً من DAX لذا يجب استخدامه في كل الحالات",
+        "عندما تحتاج حساباً ديناميكياً يتغير مع فلاتر التقارير",
+        "Group By لا يدعم التجميع على أكثر من عمود واحد"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Group By في Power Query يُقلّص البيانات عند التحميل — يقع قبل نموذج البيانات. مثالي لتحويل جدول المعاملات الضخم إلى ملخص مُعالج مسبقاً. أما DAX فيُحسب ديناميكياً وقت الاستعلام ويتأثر بالفلاتر — كل منهما له دوره.",
+      "points": 7,
+      "en_question": "When should you use Group By in Power Query instead of aggregating in a DAX Measure?",
+      "en_options": [
+        "When you need to reduce table size before loading — like converting millions of transaction rows into a product-level or monthly summary",
+        "Group By in Power Query is always faster than DAX, so it should be used in all cases",
+        "When you need a dynamic calculation that changes with report filters",
+        "Group By only supports aggregation on a single column"
+      ],
+      "en_explanation": "Group By in Power Query reduces data at load time — it happens before the data model. It's ideal for converting a large transactions table into a pre-aggregated summary. DAX, on the other hand, is computed dynamically at query time and responds to filters — each has its role."
+    },
+    {
+      "id": "q298",
+      "section": "pq-groupby",
+      "question": "ما الفرق بين Pivot وUnpivot في Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "Pivot يُحوّل القيم الفريدة في عمود إلى أعمدة منفصلة؛ Unpivot يُحوّل الأعمدة المتعددة إلى صفوف (Attribute + Value)",
+        "Pivot يُضيف صفوفاً جديدة؛ Unpivot يُضيف أعمدة جديدة",
+        "كلاهما نفس العملية لكن بترتيب عكسي للأعمدة",
+        "Unpivot يُستخدم فقط مع البيانات النصية؛ Pivot مع الأرقام فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Pivot: تأخذ عمود 'الشهر' مثلاً وتُحوّل قيمه (يناير، فبراير...) إلى أعمدة — مفيد للتقارير الأفقية. Unpivot: العكس تماماً — تأخذ أعمدة (يناير، فبراير...) وتُحوّلها إلى صفوف بعمودين: Attribute وValue. Unpivot ضروري لتطبيع البيانات وجعلها مناسبة لنموذج Star Schema.",
+      "points": 7,
+      "en_question": "What is the difference between Pivot and Unpivot in Power Query?",
+      "en_options": [
+        "Pivot converts unique values in a column into separate columns; Unpivot converts multiple columns into rows (Attribute + Value)",
+        "Pivot adds new rows; Unpivot adds new columns",
+        "Both perform the same operation but in reverse column order",
+        "Unpivot is only for text data; Pivot is only for numbers"
+      ],
+      "en_explanation": "Pivot: takes a 'Month' column for example and converts its values (January, February...) into columns — useful for horizontal reports. Unpivot: the exact reverse — takes columns (January, February...) and converts them into rows with two columns: Attribute and Value. Unpivot is essential for normalizing data and making it suitable for a Star Schema model."
+    },
+    {
+      "id": "q299",
+      "section": "pq-groupby",
+      "question": "ما الاستخدام الأساسي للـ Parameters في Power Query؟",
+      "type": "multiple_choice",
+      "options": [
+        "تخزين قيم متغيرة (مثل مسار الملف أو اسم الخادم) يمكن تغييرها من مكان واحد دون تعديل كل استعلام على حدة",
+        "Parameters تُستخدم فقط لتمرير قيم من DAX إلى Power Query",
+        "Parameters هي نفس الـ Variables في لغة M لكن بواجهة مرئية",
+        "تُستخدم Parameters لتحديد عدد الصفوف المُحمَّلة فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Parameters في Power Query تُمركز القيم المتغيرة — مسار ملف، اسم خادم، تاريخ بداية — في مكان واحد. عند التغيير من بيئة تطوير لإنتاج مثلاً، تُعدّل قيمة Parameter واحدة فتتأثر كل الاستعلامات المستخدِمة لها تلقائياً. هذا يُبسّط الصيانة ويُقلّل الأخطاء.",
+      "points": 7,
+      "en_question": "What is the primary use of Parameters in Power Query?",
+      "en_options": [
+        "Storing variable values (such as file path or server name) that can be changed in one place without editing every individual query",
+        "Parameters are only used to pass values from DAX to Power Query",
+        "Parameters are the same as Variables in M language but with a visual interface",
+        "Parameters are only used to limit the number of rows loaded"
+      ],
+      "en_explanation": "Parameters in Power Query centralize variable values — file path, server name, start date — in one place. When switching from development to production for example, you change one Parameter value and all queries using it update automatically. This simplifies maintenance and reduces errors."
+    },
+    {
+      "id": "q300",
+      "section": "pq-groupby",
+      "question": "لديك جدول مبيعات بهذا الشكل: كل منتج له عمود لكل سنة (2022, 2023, 2024). ما الخطوة الأولى لجعله مناسباً لـ Star Schema؟",
+      "type": "multiple_choice",
+      "options": [
+        "تطبيق Unpivot على أعمدة السنوات لتحويلها إلى صفوف بعمودَي 'السنة' و'المبيعات'",
+        "تطبيق Pivot لإضافة أعمدة سنوات إضافية",
+        "استخدام Group By لتجميع المنتجات المتشابهة",
+        "لا تحتاج تعديل — النموذج يتعامل مع الأعمدة الأفقية مباشرة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "البيانات الأفقية (عمود لكل سنة) هي بنية Crosstab غير مناسبة لـ Star Schema. Unpivot يُحوّلها إلى شكل طولي: منتج + سنة + قيمة. هذا يجعل إضافة سنوات جديدة تلقائياً دون تعديل النموذج، ويُمكّن DAX من التحليل الصحيح.",
+      "points": 8,
+      "en_question": "You have a sales table where each product has a column per year (2022, 2023, 2024). What is the first step to make it suitable for a Star Schema?",
+      "en_options": [
+        "Apply Unpivot on the year columns to convert them into rows with 'Year' and 'Sales' columns",
+        "Apply Pivot to add more year columns",
+        "Use Group By to aggregate similar products",
+        "No change needed — the model handles horizontal columns directly"
+      ],
+      "en_explanation": "Horizontal data (a column per year) is a Crosstab structure unsuitable for Star Schema. Unpivot converts it to a vertical form: product + year + value. This makes adding new years automatic without model changes, and enables correct DAX analysis."
+    },
+    {
+      "id": "q301",
+      "section": "pq-groupby",
+      "question": "عند استخدام Group By في Power Query، أي نوع من الدوال يمكن تطبيقه على الأعمدة المُجمَّعة؟",
+      "type": "multiple_choice",
+      "options": [
+        "Sum, Count, Average, Min, Max, وكذلك All Rows (لإرجاع جدول فرعي) وعمليات مخصصة بـ M Code",
+        "Sum وCount فقط — لا يدعم Average أو Min",
+        "Group By يدعم فقط Count لأنه يعمل على مستوى الصفوف",
+        "نفس دوال DAX تماماً مثل SUMX وAVERAGEX"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Group By في Power Query يدعم دوال تجميع متعددة: Sum, Count Rows, Count Distinct, Average, Min, Max. الخيار 'All Rows' فريد — يُبقي جميع الصفوف في عمود جدول متداخل (Nested Table) يمكن معالجته لاحقاً. يمكن أيضاً كتابة عملية مخصصة بـ M Code للحالات المتقدمة.",
+      "points": 7,
+      "en_question": "When using Group By in Power Query, which types of aggregation functions can be applied to grouped columns?",
+      "en_options": [
+        "Sum, Count, Average, Min, Max, and also All Rows (to return a subtable) and custom operations with M Code",
+        "Only Sum and Count — Average and Min are not supported",
+        "Group By only supports Count because it operates at the row level",
+        "The same DAX functions like SUMX and AVERAGEX"
+      ],
+      "en_explanation": "Group By in Power Query supports multiple aggregation functions: Sum, Count Rows, Count Distinct, Average, Min, Max. The 'All Rows' option is unique — it keeps all rows in a nested table column that can be processed later. Custom M Code operations are also possible for advanced cases."
+    },
+    {
+      "id": "q302",
+      "section": "composite-models",
+      "question": "ما هو الـ Composite Model في Power BI وما الميزة الرئيسية له؟",
+      "type": "multiple_choice",
+      "options": [
+        "نموذج يجمع مصادر Import وDirectQuery في نفس التقرير، مما يُتيح ضم بيانات مخزّنة محلياً مع بيانات حيّة مباشرة من قاعدة البيانات",
+        "نموذج يحتوي على أكثر من جدول واحد — وهو الوضع الافتراضي في Power BI",
+        "نموذج يستخدم DirectQuery فقط لكن مع جداول متعددة",
+        "نموذج يجمع Power BI مع Excel في نفس مساحة العمل"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Composite Model يكسر قيد 'مصدر واحد فقط': يمكن Import جداول الأبعاد (Dimensions) الصغيرة لسرعة الأداء، مع الإبقاء على جداول الحقائق (Facts) الضخمة كـ DirectQuery للحصول على بيانات حيّة. النتيجة: أداء جيد + بيانات محدَّثة.",
+      "points": 7,
+      "en_question": "What is a Composite Model in Power BI and what is its main advantage?",
+      "en_options": [
+        "A model that combines Import and DirectQuery sources in the same report, enabling joins between locally cached data and live data directly from the database",
+        "A model that contains more than one table — which is the default in Power BI",
+        "A model that uses DirectQuery only but with multiple tables",
+        "A model that combines Power BI with Excel in the same workspace"
+      ],
+      "en_explanation": "Composite Model breaks the 'single source only' constraint: you can Import small Dimension tables for query speed, while keeping large Fact tables as DirectQuery for live data. The result: good performance + up-to-date data."
+    },
+    {
+      "id": "q303",
+      "section": "composite-models",
+      "question": "ما الغرض من Aggregation Tables في Composite Models؟",
+      "type": "multiple_choice",
+      "options": [
+        "تخزين ملخصات مُحسوبة مسبقاً للاستعلامات الشائعة — عندما يتطابق الاستعلام مع مستوى التجميع يُجيب من الـ Cache بدلاً من إرسال SQL للخادم",
+        "استبدال DirectQuery بالكامل والتحويل إلى Import Mode",
+        "إنشاء نسخة مؤقتة من الجدول لتسريع التحديث",
+        "جداول Aggregation تُستخدم فقط مع Azure Synapse وليس SQL Server"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Aggregation Tables هي الحل الذكي لأداء DirectQuery: تُخزن ملخصات على مستوى السنة/المنتج/المنطقة كـ Import. عندما يطلب التقرير مجموع المبيعات بالسنة، Power BI يُجيب من جدول التجميع مباشرة. فقط الاستعلامات التفصيلية تذهب إلى DirectQuery. هذا يُقلل الضغط على قاعدة البيانات بنسبة كبيرة.",
+      "points": 8,
+      "en_question": "What is the purpose of Aggregation Tables in Composite Models?",
+      "en_options": [
+        "Storing pre-computed summaries for common queries — when a query matches the aggregation level, it's answered from cache instead of sending SQL to the server",
+        "Replacing DirectQuery entirely and switching to Import Mode",
+        "Creating a temporary copy of the table to speed up refresh",
+        "Aggregation tables are only used with Azure Synapse, not SQL Server"
+      ],
+      "en_explanation": "Aggregation Tables are the smart solution for DirectQuery performance: they store summaries at the year/product/region level as Import. When a report requests total sales by year, Power BI answers directly from the aggregation table. Only detailed queries go to DirectQuery. This significantly reduces database load."
+    },
+    {
+      "id": "q304",
+      "section": "composite-models",
+      "question": "متى يكون DirectQuery الخيار الأفضل على Import Mode؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تكون البيانات حجمها أكبر من طاقة الذاكرة، أو تحتاج تحديثاً فورياً (Real-time)، أو تفرض سياسات أمنية عدم مغادرة البيانات للمصدر",
+        "Import أبطأ دائماً من DirectQuery لذا DirectQuery هو الأفضل في كل الحالات",
+        "DirectQuery أفضل دائماً للبيانات الصغيرة لأنه يوفر مساحة تخزين",
+        "عندما تحتاج استخدام كل دوال DAX لأن Import لا يدعمها"
+      ],
+      "correctAnswer": 0,
+      "explanation": "DirectQuery ضروري في ثلاث حالات: (1) البيانات أكبر من إمكانية الاستيراد — ملايين الصفوف التي تتجاوز الذاكرة؛ (2) تحتاج Real-time أو شبه حقيقي؛ (3) قيود أمنية تمنع نسخ البيانات. الجانب السلبي: أداء أبطأ وقيود على بعض دوال DAX.",
+      "points": 7,
+      "en_question": "When is DirectQuery the better choice over Import Mode?",
+      "en_options": [
+        "When data volume exceeds memory capacity, real-time updates are required, or security policies prohibit data leaving the source",
+        "Import is always slower than DirectQuery so DirectQuery is best in all cases",
+        "DirectQuery is always better for small data because it saves storage space",
+        "When you need to use all DAX functions since Import doesn't support them"
+      ],
+      "en_explanation": "DirectQuery is necessary in three situations: (1) Data is too large to import — millions of rows exceeding memory; (2) Real-time or near-real-time updates are needed; (3) Security restrictions prevent copying data. The downside: slower performance and limitations on some DAX functions."
+    },
+    {
+      "id": "q305",
+      "section": "composite-models",
+      "question": "ما الـ Storage Mode الافتراضي للجداول الجديدة في Composite Model؟",
+      "type": "multiple_choice",
+      "options": [
+        "Import — إلا إذا غيّرته يدوياً إلى DirectQuery أو Dual في خصائص الجدول",
+        "DirectQuery دائماً لضمان حداثة البيانات",
+        "Dual دائماً لأنه يجمع مزايا الاثنين",
+        "يعتمد على نوع مصدر البيانات: SQL = DirectQuery، Excel = Import"
+      ],
+      "correctAnswer": 0,
+      "explanation": "عند إضافة جدول جديد في Power BI Desktop، Storage Mode الافتراضي هو Import. في Composite Model، يمكن تغييره لكل جدول بشكل مستقل من قائمة خصائص الجدول. وضع Dual يجعل الجدول يعمل بالوضعين حسب الاستعلام — مفيد للجداول الوسيطة في النموذج.",
+      "points": 6,
+      "en_question": "What is the default Storage Mode for new tables in a Composite Model?",
+      "en_options": [
+        "Import — unless you manually change it to DirectQuery or Dual in the table properties",
+        "Always DirectQuery to ensure data freshness",
+        "Always Dual because it combines the benefits of both",
+        "Depends on the data source type: SQL = DirectQuery, Excel = Import"
+      ],
+      "en_explanation": "When adding a new table in Power BI Desktop, the default Storage Mode is Import. In a Composite Model, it can be changed per table independently from the table properties menu. Dual mode makes the table work in both modes depending on the query — useful for bridge tables in the model."
+    },
+    {
+      "id": "q306",
+      "section": "composite-models",
+      "question": "ما القيد الرئيسي عند استخدام DirectQuery في Composite Model مع DAX؟",
+      "type": "multiple_choice",
+      "options": [
+        "بعض دوال DAX لا تعمل أو تعمل بشكل محدود — مثل دوال Time Intelligence التي قد تحتاج إعداداً خاصاً، وبعض الدوال التي لا يمكن ترجمتها إلى SQL",
+        "لا يمكن استخدام Measures مع DirectQuery — فقط Calculated Columns",
+        "DirectQuery في Composite Model لا يدعم أي علاقات بين الجداول",
+        "لا يمكن استخدام RLS مع Composite Models نهائياً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "DirectQuery يُترجم DAX إلى SQL ليُرسله للمصدر — وليست كل دوال DAX قابلة للترجمة. دوال Time Intelligence مثل DATESYTD قد تحتاج جدول تاريخ بـ Import Mode. بعض الدوال المعقدة كـ PATH() لا تعمل إطلاقاً. هذا يُعني أن تصميم النموذج يجب أن يأخذ هذه القيود بعين الاعتبار مسبقاً.",
+      "points": 8,
+      "en_question": "What is the main constraint when using DirectQuery in a Composite Model with DAX?",
+      "en_options": [
+        "Some DAX functions don't work or work with limitations — such as Time Intelligence functions that may need special setup, and functions that can't be translated to SQL",
+        "Measures cannot be used with DirectQuery — only Calculated Columns",
+        "DirectQuery in Composite Models doesn't support any relationships between tables",
+        "RLS cannot be used with Composite Models at all"
+      ],
+      "en_explanation": "DirectQuery translates DAX into SQL to send to the source — and not all DAX functions can be translated. Time Intelligence functions like DATESYTD may require a Date table in Import Mode. Some complex functions like PATH() don't work at all. This means model design must account for these constraints upfront."
+    },
+    {
+      "id": "q307",
+      "section": "ai-visuals",
+      "question": "ما السؤال الذي تُجيب عليه مرئية Key Influencers بشكل مباشر؟",
+      "type": "multiple_choice",
+      "options": [
+        "ما العوامل التي تُؤثر على ارتفاع أو انخفاض قيمة معينة؟",
+        "كيف تتوزع قيمة مقياس على أبعاد متعددة تسلسلياً؟",
+        "ما ملخص بياناتي بلغة طبيعية؟",
+        "ما النقاط الشاذة في السلسلة الزمنية؟"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Key Influencers مُصممة لاكتشاف العوامل المؤثرة: 'عندما تكون الفئة = Premium، الرضا يرتفع 2.3×'. Decomposition Tree تُجيب على التوزيع التسلسلي، Smart Narrative يُلخّص بلغة طبيعية، Anomaly Detection يكشف الشذوذات.",
+      "points": 6,
+      "en_question": "What question does the Key Influencers visual directly answer?",
+      "en_options": [
+        "What factors drive a particular metric up or down?",
+        "How does a measure's value break down across multiple dimensions hierarchically?",
+        "What is a plain-language summary of my data?",
+        "What are the outlier points in a time series?"
+      ],
+      "en_explanation": "Key Influencers is designed to surface driving factors: 'When Category = Premium, satisfaction is 2.3× higher'. Decomposition Tree answers hierarchical breakdowns, Smart Narrative provides plain-language summaries, Anomaly Detection flags outliers."
+    },
+    {
+      "id": "q308",
+      "section": "ai-visuals",
+      "question": "لتحسين دقة Q&A Visual لمصطلحاتك التجارية، ما الخطوة الأهم؟",
+      "type": "multiple_choice",
+      "options": [
+        "إضافة Synonyms في Q&A Setup بـ Power BI Service لربط المصطلحات المحلية بأسماء الأعمدة",
+        "إعادة تسمية كل الأعمدة باللغة الإنجليزية فقط",
+        "استخدام Calculated Columns بدل المقاييس لأن Q&A لا تدعم Measures",
+        "تفعيل DirectQuery بدلاً من Import Mode"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Q&A تُرجمة الأسئلة تعتمد على أسماء الحقول ومرادفاتها. إضافة Synonyms في Service تُخبر Q&A أن 'الإيرادات' = 'Revenue' = 'Sales Amount' — هذا يُحسّن دقة الإجابات بشكل جوهري. أسماء الأعمدة باللغة العربية مدعومة تماماً.",
+      "points": 7,
+      "en_question": "To improve Q&A Visual accuracy for your business terminology, what is the most important step?",
+      "en_options": [
+        "Add Synonyms in Q&A Setup in Power BI Service to map business terms to field names",
+        "Rename all columns to English only",
+        "Use Calculated Columns instead of Measures because Q&A doesn't support Measures",
+        "Switch to DirectQuery instead of Import Mode"
+      ],
+      "en_explanation": "Q&A question translation relies on field names and their synonyms. Adding Synonyms in Service tells Q&A that 'revenue' = 'Revenue' = 'Sales Amount' — this substantially improves answer accuracy. Arabic column names are fully supported."
+    },
+    {
+      "id": "q309",
+      "section": "ai-visuals",
+      "question": "ما الشرط التقني الأساسي لتشغيل Anomaly Detection في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "وجود بُعد زمني على محور X في مخطط خطوط (Line Chart)",
+        "استخدام Premium Capacity فقط — لا تعمل في Pro",
+        "تفعيل Python Integration في إعدادات Power BI Desktop",
+        "وجود أكثر من 1000 صف في Dataset"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Anomaly Detection تعتمد على تحليل الاتجاه الزمني لتحديد الانحرافات — لذا تحتاج حتماً لمحور زمني. تعمل في Pro وPremium على حد سواء، ولا تتطلب Python أو حداً أدنى من الصفوف.",
+      "points": 7,
+      "en_question": "What is the core technical requirement for running Anomaly Detection in Power BI?",
+      "en_options": [
+        "A time dimension on the X-axis of a Line Chart",
+        "Premium Capacity only — doesn't work in Pro",
+        "Python Integration enabled in Power BI Desktop settings",
+        "More than 1,000 rows in the dataset"
+      ],
+      "en_explanation": "Anomaly Detection relies on time-trend analysis to identify deviations — it absolutely requires a time axis. It works in both Pro and Premium, and requires neither Python nor a minimum row count."
+    },
+    {
+      "id": "q310",
+      "section": "ai-visuals",
+      "question": "متى يكون Smart Narrative الخيار الأمثل مقارنةً بكتابة نص ثابت في مربع نص عادي؟",
+      "type": "multiple_choice",
+      "options": [
+        "عندما تريد ملخصاً ديناميكياً يتغير تلقائياً مع الفلاتر والتقطيعات",
+        "Smart Narrative دائماً أفضل لأنه أسرع في الكتابة",
+        "عندما تريد نصاً منسّقاً بخطوط وألوان مخصصة فقط",
+        "Smart Narrative لا يتأثر بالفلاتر — لذا يُستخدم للمعلومات الثابتة فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Smart Narrative قوته في الديناميكية: عند تغيير الفلاتر، يُعيد حساب كل الأرقام في النص تلقائياً. مربع النص العادي يحتوي نصاً ثابتاً لا يتغير. الاختيار بينهما يعتمد على ما إذا كنت تريد ملخصاً يتكيّف مع السياق أم لا.",
+      "points": 7,
+      "en_question": "When is Smart Narrative the better choice compared to writing static text in a regular text box?",
+      "en_options": [
+        "When you want a dynamic summary that automatically updates with filters and slicers",
+        "Smart Narrative is always better because it's faster to write",
+        "When you want text formatted with custom fonts and colors only",
+        "Smart Narrative is not affected by filters — so it's used for static information only"
+      ],
+      "en_explanation": "Smart Narrative's strength is its dynamism: when filters change, it automatically recalculates all numbers in the text. A regular text box contains static text that never changes. The choice depends on whether you want a context-adaptive summary or not."
+    },
+    {
+      "id": "q311",
+      "section": "ai-visuals",
+      "question": "ما الفرق الجوهري بين Decomposition Tree وKey Influencers في تحليل البيانات؟",
+      "type": "multiple_choice",
+      "options": [
+        "Decomposition Tree يُظهر كيف تتفكّك القيمة عبر الأبعاد (يدوي أو ذكي)؛ Key Influencers يكشف العوامل ذات الارتباط الإحصائي الأقوى",
+        "كلاهما يُجيب على نفس السؤال لكن Decomposition Tree أبطأ",
+        "Key Influencers للمديرين؛ Decomposition Tree للمحللين التقنيين فقط",
+        "Decomposition Tree لا يدعم الاختيار اليدوي للأبعاد"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Decomposition Tree: تبدأ بقيمة إجمالية وتُفككها تسلسلياً عبر الأبعاد التي تختارها — يدوياً أو بـ AI Splits (أعلى/أدنى قيمة). Key Influencers: يُقارن إحصائياً الحالات المختلفة ويُرتّب العوامل بقوة الارتباط. الأول للاستكشاف، الثاني لفهم الأسباب.",
+      "points": 8,
+      "en_question": "What is the fundamental difference between Decomposition Tree and Key Influencers in data analysis?",
+      "en_options": [
+        "Decomposition Tree shows how a value breaks down across dimensions (manual or AI); Key Influencers reveals factors with the strongest statistical correlation",
+        "Both answer the same question but Decomposition Tree is slower",
+        "Key Influencers is for managers; Decomposition Tree is for technical analysts only",
+        "Decomposition Tree doesn't support manual dimension selection"
+      ],
+      "en_explanation": "Decomposition Tree: start with a total value and break it down sequentially across dimensions you choose — manually or via AI Splits (highest/lowest value). Key Influencers: statistically compares different cases and ranks factors by correlation strength. The former is for exploration, the latter for understanding drivers."
+    },
+    {
+      "id": "q312",
+      "section": "data-governance",
+      "question": "ما الفرق بين Promoted وCertified في نظام Endorsement بـ Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "Promoted يُعيّنه أي صاحب Dataset؛ Certified يتطلب صلاحية خاصة من مسؤول Tenant وهو الأعلى موثوقية",
+        "كلاهما نفس المستوى لكن Certified يُضيف شارة ملونة فقط",
+        "Promoted للتقارير فقط؛ Certified للـ Datasets فقط",
+        "Certified أسرع في الظهور في نتائج البحث من Promoted"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Promoted: أي مالك Dataset يستطيع رفعه — إشارة للاستخدام العام. Certified: يتطلب صلاحية خاصة يمنحها مسؤول الـ Tenant — يعني اجتياز مراجعة جودة رسمية. كلاهما يظهر في أعلى نتائج البحث، لكن Certified يحمل ثقلاً أكبر ويتطلب سياسة مؤسسية واضحة.",
+      "points": 7,
+      "en_question": "What is the difference between Promoted and Certified in Power BI's Endorsement system?",
+      "en_options": [
+        "Promoted can be set by any dataset owner; Certified requires a special permission from a Tenant admin and carries higher trust",
+        "Both are the same level but Certified just adds a colored badge",
+        "Promoted is for reports only; Certified is for Datasets only",
+        "Certified appears in search results faster than Promoted"
+      ],
+      "en_explanation": "Promoted: any dataset owner can set it — signals readiness for general use. Certified: requires special permission from a Tenant admin — means the dataset passed formal quality review. Both appear at the top of search results, but Certified carries more weight and requires a clear organizational policy."
+    },
+    {
+      "id": "q313",
+      "section": "data-governance",
+      "question": "ما الذي يحدث تلقائياً عند تطبيق Sensitivity Label على Dataset في Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "يُورَث التصنيف تلقائياً للتقارير المبنية على هذا Dataset، ويُطبَّق التشفير عند التصدير إلى Excel أو PDF",
+        "يُحذف Dataset بعد 30 يوماً إذا لم يُراجَع",
+        "لا يتغير شيء سوى ظهور شارة ملونة في Service",
+        "يُقفل Dataset ولا يمكن لأي مستخدم الوصول إليه إلا بعد الموافقة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sensitivity Labels لها تأثيران رئيسيان: (1) التوريث — التقارير الجديدة المبنية على Dataset مُصنَّف تحصل على نفس التصنيف تلقائياً؛ (2) الحماية عند التصدير — الملفات المُصنَّفة Confidential تُشفَّر، فقط المُصرَّح لهم يفتحونها خارج Power BI.",
+      "points": 8,
+      "en_question": "What happens automatically when a Sensitivity Label is applied to a Power BI Dataset?",
+      "en_options": [
+        "The label is automatically inherited by reports built on that dataset, and encryption is applied when exporting to Excel or PDF",
+        "The dataset is deleted after 30 days if not reviewed",
+        "Nothing changes except a colored badge appearing in Service",
+        "The dataset is locked and no user can access it without approval"
+      ],
+      "en_explanation": "Sensitivity Labels have two key effects: (1) Inheritance — new reports built on a labeled dataset automatically receive the same label; (2) Export protection — files labeled Confidential are encrypted, only authorized users can open them outside Power BI."
+    },
+    {
+      "id": "q314",
+      "section": "data-governance",
+      "question": "ما الاستخدام الأساسي لـ Impact Analysis في Power BI Service؟",
+      "type": "multiple_choice",
+      "options": [
+        "معرفة عدد التقارير والمستخدمين الذين يعتمدون على Dataset قبل إجراء أي تغيير عليه",
+        "قياس أداء Dataset وتحديد الاستعلامات البطيئة",
+        "مقارنة إصدارين مختلفين من التقرير",
+        "تتبع من فتح التقرير ومتى — سجل النشاط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Impact Analysis لمنع المفاجآت: قبل تعديل Dataset مشترك، تعرف كم تقريراً وكم مستخدماً متأثرون، ومن يجب إخباره. بدونها، تُعدّل عمود وتكتشف لاحقاً أن 15 تقريراً توقفت عن العمل. أداء Dataset يُقاس بـ Performance Analyzer. سجل النشاط يُوفّره Activity Log.",
+      "points": 7,
+      "en_question": "What is the primary use of Impact Analysis in Power BI Service?",
+      "en_options": [
+        "Knowing how many reports and users depend on a dataset before making any changes to it",
+        "Measuring dataset performance and identifying slow queries",
+        "Comparing two different versions of a report",
+        "Tracking who opened the report and when — activity log"
+      ],
+      "en_explanation": "Impact Analysis prevents surprises: before modifying a shared dataset, you know how many reports and users are affected, and who to notify. Without it, you change a column and later discover 15 reports stopped working. Dataset performance is measured with Performance Analyzer. Activity tracking is provided by Activity Log."
+    },
+    {
+      "id": "q315",
+      "section": "data-governance",
+      "question": "في Data Lineage View، ما اتجاه تدفق البيانات الصحيح؟",
+      "type": "multiple_choice",
+      "options": [
+        "مصادر البيانات → Dataflows → Datasets → التقارير → لوحات المعلومات",
+        "لوحات المعلومات → التقارير → Datasets → Dataflows → مصادر البيانات",
+        "Datasets → مصادر البيانات → Dataflows → التقارير",
+        "التقارير ↔ Datasets بشكل دائري بدون مصدر محدد"
+      ],
+      "correctAnswer": 0,
+      "explanation": "تدفق البيانات خطي: البيانات الخام تأتي من مصادر خارجية → تُعالَج في Dataflows → تُخزَّن في Datasets → تُبنى عليها التقارير → تُعرض في لوحات المعلومات. Lineage View تُجسّد هذا التدفق بصرياً لتفهم التبعيات.",
+      "points": 6,
+      "en_question": "In Data Lineage View, what is the correct direction of data flow?",
+      "en_options": [
+        "Data sources → Dataflows → Datasets → Reports → Dashboards",
+        "Dashboards → Reports → Datasets → Dataflows → Data sources",
+        "Datasets → Data sources → Dataflows → Reports",
+        "Reports ↔ Datasets in a circular pattern with no defined source"
+      ],
+      "en_explanation": "Data flow is linear: raw data comes from external sources → processed in Dataflows → stored in Datasets → reports are built on them → displayed in Dashboards. Lineage View visualizes this flow to help you understand dependencies."
+    },
+    {
+      "id": "q316",
+      "section": "data-governance",
+      "question": "لماذا تُعتبر حوكمة البيانات ضرورية في بيئة Power BI المؤسسية متعددة المستخدمين؟",
+      "type": "multiple_choice",
+      "options": [
+        "لأن غيابها يُؤدي إلى تعدد الحقائق (Multiple Sources of Truth) — نفس المقياس يُعطي أرقاماً مختلفة من تقارير مختلفة",
+        "لأن Power BI يشترط الحوكمة للعمل في بيئات Enterprise",
+        "الحوكمة مطلوبة فقط للشركات المالية والصحية — قطاعات أخرى لا تحتاجها",
+        "لأن Sensitivity Labels تُسرّع أداء الاستعلامات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "المشكلة الجوهرية بغياب الحوكمة: كل مستخدم يبني Dataset خاصاً فتنشأ تعريفات متناقضة — 'المبيعات' في تقرير المالية تختلف عن 'المبيعات' في تقرير المبيعات. Endorsement وCertified يُحددان مصدر الحقيقة الواحد. Sensitivity Labels تحمي البيانات. Lineage تُوضّح التبعيات. معاً يبنون ثقة الإدارة بالبيانات.",
+      "points": 8,
+      "en_question": "Why is data governance essential in a multi-user enterprise Power BI environment?",
+      "en_options": [
+        "Because its absence leads to multiple sources of truth — the same metric gives different numbers across different reports",
+        "Because Power BI requires governance to function in Enterprise environments",
+        "Governance is only needed for financial and healthcare companies — other sectors don't need it",
+        "Because Sensitivity Labels speed up query performance"
+      ],
+      "en_explanation": "The core problem without governance: every user builds their own dataset creating conflicting definitions — 'Sales' in the Finance report differs from 'Sales' in the Sales report. Endorsement and Certified establish a single source of truth. Sensitivity Labels protect data. Lineage clarifies dependencies. Together they build management's trust in the data."
     }
   ]
 }

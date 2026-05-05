@@ -34,7 +34,7 @@
   --r-xl: 22px;
 
   --display-ar: "Alexandria", "Plus Jakarta Sans", "Cairo", system-ui, sans-serif;
-  --display-en: "Plus Jakarta Sans", "Alexandria", "Cairo", system-ui, sans-serif;
+  --display-en: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
   --serif: var(--display-ar);
   --sans:  var(--display-ar);
   --mono:  "JetBrains Mono", "Fira Code", ui-monospace, monospace;
