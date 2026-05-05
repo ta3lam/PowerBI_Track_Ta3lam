@@ -450,7 +450,7 @@ window.LESSONS = {
         <li><strong>شاشة التقرير (Report View):</strong> لوحة الرسم البيضاء التي نرسم فيها المخططات والرسومات البيانية.</li>
         <li><strong>شاشة البيانات (Data/Table View):</strong> هنا تعرض بياناتك في شكل جداول مثل Excel.</li>
         <li><strong>شاشة العلاقات (Model View):</strong> هذه هي أهم شاشة للمحترفين! هنا نربط الجداول ببعضها.</li>
-        <li><strong>شاشة استعلامات DAX (DAX Query View):</strong> هنا تكتب وتجرب استعلامات DAX مباشرة وتشوف النتائج بسرعة بدون ما تبني أي Visual كل مرة.</li>
+        <li><strong>شاشة استعلامات DAX (DAX Query View):</strong> هنا تكتب وتجرب استعلامات DAX مباشرة وترى النتائج بسرعة بدون ما تبني أي Visual كل مرة.</li>
         <li><strong>شاشة TMDL (TMDL View):</strong> للمستخدمين المتقدمين، ويجعلك تراجع وتعدل مكونات الـ semantic model على شكل كود.</li>
       </ul>
     </div>
@@ -893,8 +893,8 @@ window.LESSONS = {
         <li><strong>البداية البسيطة:</strong> لا تحتاج نموذج معقد جداً في أول مشروع. ابدأ بـ Facts و Dimensions واضحة، وحسّنه لاحقاً.</li>
         <li><strong>الحجم مهم:</strong> إذا كان Dimension Table فوق 10 مليون صف، فأنت تخزّن بيانات يجب تكون في Fact Table. أعد تقييم النموذج.</li>
         <li><strong>الـ Keys:</strong> استخدم surrogate keys (مفاتيح مصطنعة: 1, 2, 3...) بدل natural keys. أسرع وأمن أكثر للربط.</li>
-        <li><strong>الأداء أولاً:</strong> جرّب النموذج بـ dataset صغير أولاً (1000 صف). إذا وُجدت مشكلة، اكتشفها بدري.</li>
-        <li><strong>التوثيق:</strong> وثّق "لماذا" نموذجك بهذا الشكل. بعد 6 أشهر انت نفسك ليس ستتذكر!</li>
+        <li><strong>الأداء أولاً:</strong> جرّب النموذج بـ dataset صغير أولاً (1000 صف). إذا وُجدت مشكلة، اكتشفها مبكراً.</li>
+        <li><strong>التوثيق:</strong> وثّق "لماذا" نموذجك بهذا الشكل. بعد 6 أشهر لن تتذكر السبب بنفسك!</li>
       </ul>
     </div>
 
@@ -1500,7 +1500,7 @@ Sales With Promo =
 </div>
 <div class="warn-box">
 <div class="icon">⚠️</div>
-<p><strong>warning:</strong> Avoid activation Cross-filter Direction = Both On the relationships directly in the model Many-to-Many — use CROSSFILTER in DAX Instead of precise control.</p>
+<p><strong>Warning:</strong> Avoid setting Cross-filter direction to Both directly on many-to-many relationships unless you have a clear modeling reason. Use CROSSFILTER in a specific DAX measure when you need controlled, local behavior.</p>
 </div>` }],
   },
   "getdata": {
@@ -1578,8 +1578,8 @@ Sales With Promo =
         <div class="step-content">
           <h4>الـ Navigator Window</h4>
           <p><strong>ماذا ترى:</strong> قائمة بكل الجداول المتاحة في المصدر.</p>
-          <p><strong>اختر جداولك:</strong> علم (checkmark) على الجداول التي عايزها. تقدر تختار أكثر من جدول.</p>
-          <p><strong>معاينة:</strong> انقر على جدول لتشوف البيانات الفعلية قبل الاستيراد.</p>
+          <p><strong>اختر جداولك:</strong> علم (checkmark) على الجداول التي تريدها. تقدر تختار أكثر من جدول.</p>
+          <p><strong>معاينة:</strong> انقر على جدول لمعاينة البيانات الفعلية قبل الاستيراد.</p>
         </div>
       </div>
       <div class="step">
@@ -2009,7 +2009,7 @@ A       | Mar   | 900
         <li><strong>Unpivot مهم جداً:</strong> معظم الجداول التي تأتي من Excel عرضية. تحويلها لـ Long هو الخطوة الأولى للتحليل الصحيح.</li>
         <li><strong>Merge بدل VLOOKUP:</strong> Power Query Merge أقوى من VLOOKUP — يدعم كل أنواع Join ولا يحتاج تحديث يدوي.</li>
         <li><strong>استخدم Remove Errors و Replace Values:</strong> بدل الفلترة اليدوية، استخدم Power Query لتنظيف البيانات آلياً.</li>
-        <li><strong>الـ Applied Steps = Security:</strong> كل خطوة تُسجل تلقائياً، فتقدر تعود لأي خطوة إذا غلطت، أو تشوف الخطوات تعديت كام مرة.</li>
+        <li><strong>الـ Applied Steps = Security:</strong> كل خطوة تُسجل تلقائياً، فتقدر تعود لأي خطوة إذا غلطت، أو تراجع الخطوات وعدد مرات التعديل.</li>
       </ul>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -2337,10 +2337,10 @@ A       | Mar   | 900
     </div>` }],
   },
   "mcode": {
-    eyebrow: "02 · 04 — لغة M المتقدمة",
+    eyebrow: "02 · 05 — لغة M المتقدمة",
     title: "Advanced M-Code — لغة Power Query",
     lede: "الانتقال من \"الضغط على الأزرار\" إلى كتابة كود M يدوياً لبناء استعلامات مرنة وقابلة لإعادة الاستخدام.",
-    en_eyebrow: "02 · 04 — Advanced M Language",
+    en_eyebrow: "02 · 05 — Advanced M Language",
     en_lede: "When clicks aren't enough, M code gives you full control over query logic — reusable, flexible, and precise.",
     sectionId: "mcode",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -2434,7 +2434,7 @@ CleanedFeb = CleanSalesTable(RawFebTable)
 
     <div class="tip-box">
       <div class="icon">💡</div>
-      <p><strong>Advanced Editor:</strong> في Power Query → View → Advanced Editor. هنا تشوف وتعدّل الكود M الكامل للاستعلام. Ctrl+Z للتراجع يشتغل هنا. اعتاد على قراءته بعد كل خطوة تعملها بالضغط على الأزرار.</p>
+      <p><strong>Advanced Editor:</strong> في Power Query → View → Advanced Editor. هنا تعرض وتعدّل الكود M الكامل للاستعلام. Ctrl+Z للتراجع يشتغل هنا. اعتاد على قراءته بعد كل خطوة تعملها بالضغط على الأزرار.</p>
     </div>
 
     <div class="lesson-card">
@@ -3224,10 +3224,10 @@ Product % =
     </div>` }],
   },
   "dax-logical": {
-    eyebrow: "04 · 02 — IF و SWITCH",
+    eyebrow: "04 · 03 — IF و SWITCH",
     title: "دوال المنطق (Logical Functions) — IF & SWITCH",
     lede: "التفرع الشرطي في DAX. أساس بناء أي منطق ذكي داخل Measures والأعمدة المحسوبة.",
-    en_eyebrow: "04 · 02 — IF and SWITCH",
+    en_eyebrow: "04 · 03 — IF and SWITCH",
     en_lede: "IF, SWITCH, and logical functions — the building blocks of conditional logic in DAX measures.",
     sectionId: "dax-logical",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -3452,10 +3452,10 @@ Flagged =
 </div>` }],
   },
   "calculate": {
-    eyebrow: "04 · 03 — CALCULATE بعمق",
+    eyebrow: "04 · 04 — CALCULATE بعمق",
     title: "CALCULATE بعمق — قلب DAX",
     lede: "CALCULATE هي أقوى دالة في DAX وأكثرها غموضاً. فهمها الصحيح هو الفرق بين مبتدئ ومحترف.",
-    en_eyebrow: "04 · 03 — CALCULATE Deep Dive",
+    en_eyebrow: "04 · 04 — CALCULATE Deep Dive",
     en_lede: "CALCULATE changes filter context. Master it, and almost everything else in DAX becomes easier.",
     sectionId: "calculate",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -3671,10 +3671,10 @@ Sales % of Category =
 </div>` }],
   },
   "relationships-dax": {
-    eyebrow: "04 · 04 — العلاقات داخل DAX",
+    eyebrow: "04 · 05 — العلاقات داخل DAX",
     title: "إدارة العلاقات في DAX — RELATED & USERELATIONSHIP & CROSSFILTER",
     lede: "أحياناً البنية الثابتة للموديل لا تكفي. هذه الدوال تمنحك تحكماً كاملاً في العلاقات داخل الـ Measures.",
-    en_eyebrow: "04 · 04 — Managing Relationships in DAX",
+    en_eyebrow: "04 · 05 — Managing Relationships in DAX",
     en_lede: "RELATED, USERELATIONSHIP, and CROSSFILTER give you direct control over how relationships behave inside a measure.",
     sectionId: "relationships-dax",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -3851,10 +3851,10 @@ Unsold Products =
 </div>` }],
   },
   "iterators": {
-    eyebrow: "04 · 05 — دوال التكرار",
+    eyebrow: "04 · 06 — دوال التكرار",
     title: "Iterator Functions — دوال التكرار",
     lede: "دوال تمشي صف بصف على الجدول وتعمل حساب لكل صف، ثم تجمع النتائج. أداة لا غنى عنها لحسابات الإيرادات والتكاليف والهوامش.",
-    en_eyebrow: "04 · 05 — Iterator Functions",
+    en_eyebrow: "04 · 06 — Iterator Functions",
     en_lede: "SUMX, AVERAGEX, COUNTX — functions that calculate row-by-row then aggregate. Essential for revenue, cost, and margin work.",
     sectionId: "iterators",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -4017,10 +4017,10 @@ Compound Factor =
 </div>` }],
   },
   "dax2": {
-    eyebrow: "04 · 06 — ذكاء الوقت",
+    eyebrow: "04 · 07 — ذكاء الوقت",
     title: "دوّال الزمن (Time Intelligence)",
     lede: "كيف تقارن مبيعات هذا العام بالعام الماضي أو الشهر الماضي؟",
-    en_eyebrow: "04 · 06 — Time Functions",
+    en_eyebrow: "04 · 07 — Time Functions",
     en_lede: "Year-over-year, month-over-month, and running totals — the time comparison patterns every analyst needs.",
     sectionId: "dax2",
     blocks: [{ kind: "html", html: `<div class="warn-box">
@@ -4157,10 +4157,10 @@ Sales MTD = <span class="fn">TOTALMTD</span>([Total Sales], 'Calendar'[Date])
 </div>` }],
   },
   "time-intel-pro": {
-    eyebrow: "04 · 07 — ذكاء الوقت المتقدم",
+    eyebrow: "04 · 08 — ذكاء الوقت المتقدم",
     title: "Time Intelligence Pro — المتوسطات والمقارنات المرنة",
     lede: "ما وراء YTD وYoY: المتوسطات المتحركة، DATESINPERIOD، وPARALLELPERIOD للمقارنات المخصصة.",
-    en_eyebrow: "04 · 07 — Advanced Time Intelligence",
+    en_eyebrow: "04 · 08 — Advanced Time Intelligence",
     en_lede: "Moving averages, DATESINPERIOD, and PARALLELPERIOD — for analysts who need more than basic YTD and YoY.",
     sectionId: "time-intel-pro",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -4373,10 +4373,10 @@ YoY Growth % =
 </div>` }],
   },
   "fieldparams": {
-    eyebrow: "04 · 08 — Field Parameters",
+    eyebrow: "04 · 09 — Field Parameters",
     title: "Field Parameters — المؤشرات الديناميكية",
     lede: "تمكين المستخدم من تغيير محتوى المخطط كاملاً (مبيعات / ربح / كمية) بضغطة زر — بدون إنشاء مخططات متعددة.",
-    en_eyebrow: "04 · 08 — Field Parameters",
+    en_eyebrow: "04 · 09 — Field Parameters",
     en_lede: "Field parameters let users swap the metric in a chart — Sales, Profit, Quantity — without you building separate charts for each.",
     sectionId: "fieldparams",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -4523,10 +4523,10 @@ Axis Selector = {
 </div>` }],
   },
   "dax3": {
-    eyebrow: "04 · 09 — DAX المتقدم",
+    eyebrow: "04 · 10 — DAX المتقدم",
     title: "DAX المتقدم",
     lede: "VAR/RETURN لكود أنظف، RANKX للترتيب، SWITCH بديل IF، ALLSELECTED، FILTER كـ Iterator.",
-    en_eyebrow: "04 · 09 — Advanced DAX",
+    en_eyebrow: "04 · 10 — Advanced DAX",
     en_lede: "VAR/RETURN for cleaner code, RANKX for rankings, ALLSELECTED for selection-aware totals, and FILTER as an iterator.",
     sectionId: "dax3",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -4722,10 +4722,10 @@ Repeat Customers =
 </div>` }],
   },
   "dax-text": {
-    eyebrow: "04 · 10 — دوال النصوص",
+    eyebrow: "04 · 11 — دوال النصوص",
     title: "دوال النصوص — Text Functions",
     lede: "معالجة النصوص وتنسيق المخرجات وتجميع القيم — أدوات لا غنى عنها لبناء تقارير احترافية.",
-    en_eyebrow: "04 · 10 — Text Functions",
+    en_eyebrow: "04 · 11 — Text Functions",
     en_lede: "FORMAT, CONCATENATE, and text functions for controlling how values appear in your reports.",
     sectionId: "dax-text",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -4880,10 +4880,10 @@ Has Egypt   = <span class="fn">IF</span>(<span class="fn">ISERROR</span>(<span c
 </div>` }],
   },
   "dax-m2m": {
-    eyebrow: "04 · 11 — Many-to-Many و TREATAS",
+    eyebrow: "04 · 12 — Many-to-Many و TREATAS",
     title: "Many-to-Many و TREATAS — علاقات أكثر من Many",
     lede: "العلاقات Many-to-Many من أكثر المشاكل التي يصعب المحللين. تعلّم متى تستخدم Bridge Table ومتى تستخدم TREATAS كحل DAX نظيف.",
-    en_eyebrow: "04 · 11 — Many-to-Many & TREATAS",
+    en_eyebrow: "04 · 12 — Many-to-Many & TREATAS",
     en_lede: "Many-to-Many is one of the trickiest modeling problems. Learn when a Bridge Table is the right call and when TREATAS is cleaner.",
     sectionId: "dax-m2m",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -5117,10 +5117,10 @@ Top 3 Categories =
 </div>` }],
   },
   "dax-budget": {
-    eyebrow: "04 · 12 — Budget vs Actual",
+    eyebrow: "04 · 13 — Budget vs Actual",
     title: "Budget vs Actual — مقارنة الهدف بالواقع",
     lede: "من أكثر البترنز المطلوبة في الشركات. تعلّم كيف تبني نموذج Budget vs Actual صحيح وتكتب Measures الفرق والإنجاز والتراكمي.",
-    en_eyebrow: "04 · 12 — Budget vs Actual",
+    en_eyebrow: "04 · 13 — Budget vs Actual",
     en_lede: "Budget vs Actual is one of the most requested enterprise patterns. Build the model correctly and write Variance, Achievement, and YTD measures.",
     sectionId: "dax-budget",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -5426,10 +5426,10 @@ Monthly Budget (from Quarterly) =
 </div>` }],
   },
   "dax-performance": {
-    eyebrow: "04 · 13 — أداء DAX وتحسينه",
+    eyebrow: "04 · 14 — أداء DAX وتحسينه",
     title: "أداء DAX وتحسينه — اكتب Measures أسرع وأذكى",
     lede: "الكود الصح ليس فقط كود يشتغل — هو كود يشتغل بسرعة. تعلّم كيف DAX يعمل من الداخل وما هي الأنماط التي تُبطئ التقرير.",
-    en_eyebrow: "04 · 13 — DAX Performance Tuning",
+    en_eyebrow: "04 · 14 — DAX Performance Tuning",
     en_lede: "Working DAX isn't the same as fast DAX. Learn how the engine evaluates your formulas and which patterns silently kill performance.",
     sectionId: "dax-performance",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -5776,10 +5776,10 @@ Fast       = <span class="fn">SUM</span>(Fact_Sales[LineAmount])
 </div>` }],
   },
   "dax-reference": {
-    eyebrow: "04 · 14 — مرجع DAX الكامل",
+    eyebrow: "04 · 15 — مرجع DAX الكامل",
     title: "جدول المرجع الشامل — DAX Functions Reference",
     lede: "مرجع سريع لكل فئات دوال DAX مع أبرز الدوال في كل فئة. احتفظ بهذه الصفحة كمرجع دائم.",
-    en_eyebrow: "04 · 14 — DAX Reference",
+    en_eyebrow: "04 · 15 — DAX Reference",
     en_lede: "A categorized reference of DAX functions — organized for when you need to look something up fast.",
     sectionId: "dax-reference",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -5797,7 +5797,7 @@ Fast       = <span class="fn">SUM</span>(Fact_Sales[LineAmount])
     </div>
 
     <div class="lesson-card">
-      <h3>ðŸ” دوال التصفية (Filter)</h3>
+      <h3>🔍 دوال التصفية (Filter)</h3>
       <table class="compare-table">
         <tr><th>الدالة</th><th>الاستخدام</th><th>ملاحظة</th></tr>
         <tr><td><strong>CALCULATE</strong></td><td>تعديل Filter Context</td><td>أقوى دالة في DAX</td></tr>
@@ -5870,7 +5870,7 @@ Fast       = <span class="fn">SUM</span>(Fact_Sales[LineAmount])
 </table>
 </div>
 <div class="lesson-card">
-<h3>ðŸ” Filter functions</h3>
+<h3>🔍 Filter functions</h3>
 <table class="compare-table">
 <tr><th>Function</th><th>Use</th><th>note</th></tr>
 <tr><td><strong>CALCULATE</strong></td><td>Edit Filter Context</td><td>The strongest function in DAX</td></tr>
@@ -5878,7 +5878,7 @@ Fast       = <span class="fn">SUM</span>(Fact_Sales[LineAmount])
 <tr><td><strong>ALL</strong></td><td>Delete all filters</td><td>Returns all table/column values</td></tr>
 <tr><td><strong>ALLEXCEPT</strong></td><td>Delete filters except columns</td><td>For partial percentages (% of category)</td></tr>
 <tr><td><strong>ALLSELECTED</strong></td><td>Delete filters while respecting Slicer</td><td>For the percentage of all in the Slicer range</td></tr>
-<tr><td><strong>REMOVEFILTERS</strong></td><td>same ALL — Clearer in intention</td><td>Best Practice Hadith</td></tr>
+<tr><td><strong>REMOVEFILTERS</strong></td><td>Similar to ALL when used as a filter remover — clearer in intent</td><td>Modern best practice</td></tr>
 <tr><td><strong>KEEPFILTERS</strong></td><td>Adding a filter without replacing it</td><td>Filter intersection</td></tr>
 <tr><td><strong>VALUES</strong></td><td>Unique values ​​while respecting the filter</td><td>Different from ALL</td></tr>
 </table>
@@ -5927,10 +5927,10 @@ Fast       = <span class="fn">SUM</span>(Fact_Sales[LineAmount])
 </div>` }],
   },
   "composite-models": {
-    eyebrow: "07 · 12 — Composite Models والـ Aggregations",
+    eyebrow: "07 · 13 — Composite Models والـ Aggregations",
     title: "Composite Models والـ Aggregations",
     lede: "عندما يصبح النموذج أكبر من أن يُحمَّل بالكامل وأسرع من DirectQuery وحده — Composite Models هو الجواب.",
-    en_eyebrow: "07 · 12 — Composite Models & Aggregations",
+    en_eyebrow: "07 · 13 — Composite Models & Aggregations",
     en_lede: "When your model is too large to import fully and too slow to run purely on DirectQuery, Composite Models gives you the best of both worlds.",
     sectionId: "composite-models",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -7121,7 +7121,7 @@ If Value &lt; 0   → ↓ (red)
 
     <div class="lesson-card">
       <h3>Page Navigator — تنقل تلقائي بين الصفحات</h3>
-      <p>Insert → Buttons → Navigator → Page Navigator. Power BI بيولّد أزرار لكل صفحات التقرير تلقائياً وبيتحدث لما تضيف صفحات جديدة.</p>
+      <p>Insert → Buttons → Navigator → Page Navigator. Power BI يولّد أزرارًا لكل صفحات التقرير تلقائيًا ويحدّثها عندما تضيف صفحات جديدة.</p>
     </div>
 
     <div class="tip-box">
@@ -7323,7 +7323,7 @@ Premium → للمؤسسات الكبيرة (capacity-based)
           <div class="step-num">1</div>
           <div class="step-content">
             <h4>في Service، اذهب للـ Dataset</h4>
-            <p>اضغط على "..." بجانب اسم الـ Dataset وختار "Settings".</p>
+            <p>اضغط على "..." بجانب اسم الـ Dataset واختر "Settings".</p>
           </div>
         </div>
 
@@ -7356,7 +7356,7 @@ Timezone: Africa/Cairo
     </div>
 
     <div class="lesson-card">
-      <h3>ðŸ” إدارة الصلاحيات والمشاركة</h3>
+      <h3>🔐 إدارة الصلاحيات والمشاركة</h3>
       <p>بعد النشر، تستطيع تتحكم من يشوف التقرير:</p>
       <div class="steps">
         <div class="step">
@@ -7558,7 +7558,7 @@ Timezone: Africa/Cairo
 </div>
 
 <div class="lesson-card">
-<h3>ðŸ” Managing permissions and sharing</h3>
+<h3>🔐 Managing permissions and sharing</h3>
 <p>After publishing, you can control who sees the report:</p>
 <div class="steps">
 <div class="step">
@@ -7640,7 +7640,7 @@ Viewer  → يشاهد فقط (يحتاج Pro أو Premium License)
 
     <div class="lesson-card">
       <h3>Power BI App — التوزيع الاحترافي</h3>
-      <p>الـ App هي طريقة النشر الأنظف للمستخدمين النهائيين. بدل إعطائهم رابط الـ Workspace مباشرة (اللي فيه كل الـ Datasets والـ Reports)، تبني App تحتوي فقط على ما تريدهم يرونه:</p>
+      <p>الـ App هي طريقة النشر الأنظف للمستخدمين النهائيين. بدل إعطائهم رابط الـ Workspace مباشرة (الذي يحتوي كل الـ Datasets والـ Reports)، تبني App تحتوي فقط على ما تريدهم يرونه:</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
@@ -7761,7 +7761,7 @@ Viewer → Watch only (requires Pro or Premium License)
     en_lede: "Row-level security ensures each user only sees the data they're allowed to — configured once, enforced automatically.",
     sectionId: "rls",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>ðŸ” لماذا RLS مهمة جداً؟</h3>
+      <h3>🔐 لماذا RLS مهمة جداً؟</h3>
       <p>كل مدير في الشركة يحتاج نفس التقرير، لكن كل واحد يشوف بيانات نطاقه فقط. بدون RLS، يجب تطبع 20 تقرير نسخ — واحد لكل مدير. مع RLS: تقرير واحد بس، كل مدير يفتحه ويرى بيانته تلقائياً.</p>
       <div class="tip-box">
         <div class="icon">💡</div>
@@ -7843,7 +7843,7 @@ Role Name: Cairo_Manager
           <div class="step-num">4</div>
           <div class="step-content">
             <h4>🧪 اختبر الفلتر قبل النشر</h4>
-            <p>Modeling → View as Role. اختار Cairo_Manager واضغط OK. ستشوف التقرير كأنك Cairo_Manager — تأكد من الفلترة:</p>
+            <p>Modeling → View as Role. اختار Cairo_Manager واضغط OK. ستعرض التقرير كأنك Cairo_Manager — تأكد من الفلترة:</p>
             <div class="code-block">
 <span class="cm">-- توقع أن ترى فقط بيانات Cairo</span>
 <span class="cm">-- أي منطقة أخرى ما تظهر في المخططات</span>
@@ -7967,7 +7967,7 @@ tabulareditor.github.io
           <div class="step-num">2</div>
           <div class="step-content">
             <h4>🛠️ فتح الـ Model في Tabular Editor</h4>
-            <p>افتح Tabular Editor، افتح ملف PBIX الخاص بك. ستشوف شجرة الـ Tables و Columns.</p>
+            <p>افتح Tabular Editor، افتح ملف PBIX الخاص بك. ستعرض شجرة الـ Tables و Columns.</p>
           </div>
         </div>
 
@@ -8003,7 +8003,7 @@ tabulareditor.github.io
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
-            <p><strong>التحقق من الأرقام:</strong> كل Role يشوف أرقام مختلفة بالضبط. القاهرة مثلاً ما تشوف بيانات الإسكندرية.</p>
+            <p><strong>التحقق من الأرقام:</strong> كل Role يعرض أرقاماً مختلفة بالضبط. القاهرة مثلاً لا ترى بيانات الإسكندرية.</p>
           </div>
         </div>
         <div class="step">
@@ -8017,11 +8017,11 @@ tabulareditor.github.io
 
     <div class="warn-box">
       <div class="icon">⚠️</div>
-      <p><strong>تحذير حرج:</strong> RLS تحمي البيانات عند المشاهدة فقط. إذا المستخدم عنده صلاحية "Build" على الـ Dataset، ممكن يحمّل الـ PBIX ويرى البيانات كاملة! الحل:</p>
+      <p><strong>تحذير حرج:</strong> RLS تُطبَّق على المستخدمين بدور Viewer حتى لو لديهم Build permission، مثل Analyze in Excel. لكنها لا تُطبَّق على Admin أو Member أو Contributor داخل Workspace لأن لديهم صلاحيات تحرير على الـ Semantic Model. لذلك راجع أدوار Workspace وصلاحيات Build/Export بدل افتراض أن Build وحدها تكسر RLS.</p>
       <ul>
-        <li>💻 اسحب صلاحية "Build" من الـ Dataset تماماً</li>
+        <li>💻 اجعل مستهلكي التقرير Viewers وأضفهم إلى RLS roles المناسبة</li>
         <li>📱 استخدم Power BI Apps بدل مشاركة Workspace مباشرة</li>
-        <li>🔑 استخدم Service Principals + Management APIs للتحكم الكامل</li>
+        <li>🔑 لا تمنح Admin/Member/Contributor إلا لفريق التطوير أو الإدارة</li>
       </ul>
     </div>
 
@@ -8056,7 +8056,7 @@ tabulareditor.github.io
       </table>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>ðŸ” Why is RLS so important?</h3>
+<h3>🔐 Why is RLS so important?</h3>
 <p>Every manager in the company needs the same report, but each one sees only their regional data. Without RLS, you’d need to print 20 copies of the report — one for each manager. With RLS: one report, every manager opens it and automatically sees their data.</p>
 <div class="tip-box">
 <div class="icon">💡</div>
@@ -8312,11 +8312,11 @@ tabulareditor.github.io
 
 <div class="warn-box">
 <div class="icon">⚠️</div>
-<p><strong>Critical warning:</strong> RLS only protects data when viewing. If a user has "Build" permission on the Dataset, they can download the PBIX and see all the data! Solution:</p>
+<p><strong>Critical warning:</strong> RLS still applies to Viewers even when they have Build permission, including Analyze in Excel scenarios. It does not apply to Workspace Admins, Members, or Contributors because they have edit rights on the semantic model. Review Workspace roles and Build/Export permissions instead of assuming Build alone bypasses RLS.</p>
 <ul>
-<li>💻 Remove "Build" permission from the Dataset completely</li>
+<li>💻 Keep report consumers as Viewers and assign them to the right RLS roles</li>
 <li>📱 Use Power BI Apps instead of sharing the Workspace directly</li>
-<li>🔑 Use Service Principals + Management APIs for full control</li>
+<li>🔑 Grant Admin/Member/Contributor only to developers or administrators</li>
 </ul>
 </div>
 
@@ -8641,7 +8641,7 @@ Detect Changes: OrderUpdatedAt  <span class="cm">// A column that changes when a
     eyebrow: "07 · 01 — الأداء والتحسين",
     title: "Performance & Optimization",
     lede: "تقريرك بطيء؟ هنا أسباب البطء والحلول العملية لكل مشكلة.",
-    en_eyebrow: "06 · 06 — Performance Optimization",
+    en_eyebrow: "07 · 01 — Performance Optimization",
     en_lede: "Why reports slow down and what to actually do about it — from model structure to DAX patterns to visual load.",
     sectionId: "performance",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -8738,7 +8738,7 @@ Detect Changes: OrderUpdatedAt  <span class="cm">// A column that changes when a
 
     <div class="tip-box">
       <div class="icon">🚀</div>
-      <p><strong>DAX Studio:</strong> أداة مجانية منفصلة (daxstudio.org) للتحليل العميق لأداء الـ DAX. تقدر تشوف Server Timings، Storage Engine Calls، وترى VertiPaq Analyzer لتحليل حجم كل عمود في النموذج. المحترفون لا يستغنون عنها.</p>
+      <p><strong>DAX Studio:</strong> أداة مجانية منفصلة (daxstudio.org) للتحليل العميق لأداء الـ DAX. تقدر ترى Server Timings، Storage Engine Calls، وترى VertiPaq Analyzer لتحليل حجم كل عمود في النموذج. المحترفون لا يستغنون عنها.</p>
     </div>` }],
     en_blocks: [{ kind: "html", html: `<div class="lesson-card">
       <h3>Import vs DirectQuery — the most important decision</h3>
@@ -8820,10 +8820,10 @@ Detect Changes: OrderUpdatedAt  <span class="cm">// A column that changes when a
     </div>` }],
   },
   "python-pbi": {
-    eyebrow: "07 · 06 — Python داخل Power BI",
+    eyebrow: "07 · 07 — Python داخل Power BI",
     title: "Python في Power BI",
     lede: "دمج Python مع Power BI يفتح أبواب التحليل الإحصائي المتقدم والمرئيات غير المتوفرة في Power BI الافتراضي — من Seaborn للـ Forecasting.",
-    en_eyebrow: "07 · 06 — Python Integration",
+    en_eyebrow: "07 · 07 — Python Integration",
     en_lede: "Run Python inside Power Query and Power BI visuals for transformations and analysis that go beyond built-in tools.",
     sectionId: "python-pbi",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -8919,7 +8919,7 @@ df = df[df['Sales'] &gt; 0]  <span style="color:var(--text3);"># Cleanup: Delete
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-<span style="color:var(--text3);"># dataset he DataFrame Auto from Power BI</span>
+<span style="color:var(--text3);"># dataset is the DataFrame provided automatically by Power BI</span>
 fig, ax = plt.subplots(figsize=(8, 4))
 sns.boxplot(data=dataset, x='Category', y='Sales',
             palette='viridis', ax=ax)
@@ -8954,10 +8954,10 @@ plt.show()
 </div>` }],
   },
   "paginated": {
-    eyebrow: "07 · 07 — التقارير المُصفَّحة",
+    eyebrow: "07 · 08 — التقارير المُصفَّحة",
     title: "Paginated Reports — التقارير المُصفَّحة",
     lede: "Power BI Paginated Reports هي التقارير المصممة للطباعة والتصدير — مثالية للفواتير، كشوف الرواتب، التقارير المحاسبية التي تمتد لصفحات متعددة.",
-    en_eyebrow: "07 · 07 — Paginated Reports",
+    en_eyebrow: "07 · 08 — Paginated Reports",
     en_lede: "Paginated reports are built for print and export — pixel-perfect layouts, multi-page tables, and scheduled PDF delivery.",
     sectionId: "paginated",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -9058,7 +9058,7 @@ plt.show()
 <p>Download it for free from Microsoft's website. Similar to Excel in wire charting:</p>
 <ul>
 <li><strong>Data Sources:</strong> Specifies the data source (Power BI Dataset, SQL Server…).</li>
-<li><strong>Datasets:</strong> inquiry SQL or MDX Fetches data.</li>
+<li><strong>Datasets:</strong> SQL or MDX queries that retrieve the data.</li>
 <li><strong>Report Items:</strong> Table, Matrix, Chart, Image, Textbox.</li>
 <li><strong>Parameters:</strong> Like a history filter — can be passed from Power BI Service.</li>
 </ul>
@@ -9098,7 +9098,7 @@ plt.show()
       <div class="kpi-domain-icon">💰</div>
       <div>
         <h3>الـ Domain المالي</h3>
-        <p>بيقيس الصحة المالية العامة للشركة — الربحية، التكاليف، العائد، والسيولة. أهم domain بالنسبة لإدارة الشركة والمستثمرين.</p>
+        <p>يقيس الصحة المالية العامة للشركة — الربحية، التكاليف، العائد، والسيولة. أهم domain بالنسبة لإدارة الشركة والمستثمرين.</p>
       </div>
     </div>
 
@@ -9515,7 +9515,7 @@ plt.show()
       <div class="kpi-domain-icon">📈</div>
       <div>
         <h3>الـ Domain المبيعاتي</h3>
-        <p>بيقيس كفاءة فريق المبيعات، معدل النمو، وجودة الصفقات. أهم domain لمديري المبيعات وال C-Level.</p>
+        <p>يقيس كفاءة فريق المبيعات، معدل النمو، وجودة الصفقات. أهم domain لمديري المبيعات وال C-Level.</p>
       </div>
     </div>
 
@@ -9863,7 +9863,7 @@ plt.show()
   "kpi-inventory": {
     eyebrow: "09 · 03 — المخزون والإمداد",
     title: "📦 مؤشرات المخزون وسلسلة الإمداد — Inventory & Supply KPIs",
-    lede: "مؤشرات بتقيس كفاءة إدارة المخزون والديون التجارية. حرجة جداً في قطاعات التجزئة والتصنيع والتوزيع.",
+    lede: "مؤشرات تقيس كفاءة إدارة المخزون والديون التجارية. حرجة جداً في قطاعات التجزئة والتصنيع والتوزيع.",
     en_eyebrow: "09 · 03 — Inventory KPIs",
     en_lede: "Inventory turnover, stockout rate, carrying cost, and days on hand — core metrics for supply chain reporting.",
     sectionId: "kpi-inventory",
@@ -9871,7 +9871,7 @@ plt.show()
       <div class="kpi-domain-icon">📦</div>
       <div>
         <h3>الـ Domain — Supply Chain</h3>
-        <p>بيقيس سرعة دوران المخزون، تحصيل الديون، وعلاقة الشركة بموردينها وعملائها في الجانب المالي.</p>
+        <p>يقيس سرعة دوران المخزون، تحصيل الديون، وعلاقة الشركة بموردينها وعملائها في الجانب المالي.</p>
       </div>
     </div>
 
@@ -10158,7 +10158,7 @@ plt.show()
       <div class="kpi-domain-icon">👥</div>
       <div>
         <h3>الـ Domain — Human Resources</h3>
-        <p>بيقيس صحة بيئة العمل، تكلفة الموظفين، وإنتاجيتهم. بياناته من HR Systems مثل SAP أو Oracle أو حتى Excel.</p>
+        <p>يقيس صحة بيئة العمل، تكلفة الموظفين، وإنتاجيتهم. بياناته من HR Systems مثل SAP أو Oracle أو حتى Excel.</p>
       </div>
     </div>
 
@@ -10188,7 +10188,7 @@ plt.show()
           <div class="ex-label">📊 مثال عملي</div>
           <p>شركة بـ <strong>200 موظف</strong> — غادر منهم <strong>30 موظف</strong> خلال السنة:<br>
           Turnover = 30 ÷ 200 × 100 = <strong>15%</strong><br>
-          كل موظف بيغادر بيكلف الشركة تقريباً 50-200% من راتبه السنوي في تكاليف إعادة التوظيف!</p>
+          كل موظف يغادر يكلّف الشركة تقريباً 50-200% من راتبه السنوي في تكاليف إعادة التوظيف!</p>
         </div>
         <div class="kpi-importance">
           <div class="imp-label">⭐ الأهمية</div>
@@ -10450,7 +10450,7 @@ plt.show()
       <div class="kpi-domain-icon">📣</div>
       <div>
         <h3>الـ Domain التسويقي</h3>
-        <p>بيقيس العائد على الإنفاق التسويقي وكفاءة اكتساب العملاء والاحتفاظ بهم. بياناته من Google Ads, Meta, CRM.</p>
+        <p>يقيس العائد على الإنفاق التسويقي وكفاءة اكتساب العملاء والاحتفاظ بهم. بياناته من Google Ads, Meta, CRM.</p>
       </div>
     </div>
 
@@ -10764,10 +10764,10 @@ plt.show()
 
   // ==================== درس جديد: Query Folding و الأداء ====================
   "query-folding": {
-    eyebrow: "02 · 05 — Query Folding و الأداء",
+    eyebrow: "02 · 06 — Query Folding و الأداء",
     title: "Query Folding و الأداء",
     lede: "فهم كيفية عمل Query Folding في Power Query وأثره الحقيقي على أداء التحديث والاستعلامات",
-    en_eyebrow: "02 · 05 — Query Folding & Performance",
+    en_eyebrow: "02 · 06 — Query Folding & Performance",
     en_lede: "Query Folding pushes your transformation steps back to the source as SQL — less data moved, faster refresh.",
     sectionId: "query-folding",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -10953,265 +10953,6 @@ plt.show()
 <p>If you need complex operations, create a Staging Query that fully supports Folding, then Merge with it</p>
 <p><strong>4. Test with Small Samples</strong></p>
 <p>Try the query while writing it on a sample of 1,000 rows to see the speed</p>
-</div>` }],
-  },
-
-  // ==================== درس قديم: DirectQuery vs Import vs Live ====================
-  "__legacy_directquery": {
-    eyebrow: "03 · 04 — DirectQuery vs Import vs Live Connection",
-    title: "DirectQuery vs Import vs Live Connection",
-    lede: "فهم الفروقات الجوهرية بين أنماط الاتصال الثلاثة واختيار الأنسب لحالتك",
-    en_eyebrow: "03 · 04 — DirectQuery vs Import vs Live Connection",
-    en_lede: "Import, DirectQuery, and Live Connection behave differently in ways that affect performance, freshness, and model design.",
-    sectionId: "directquery",
-    blocks: [{ kind: "html", html: `<div class="lesson-card">
-      <h3>المقارنة السريعة</h3>
-      <table style="width:100%; border-collapse:collapse; margin:15px 0;">
-        <tr style="background:var(--ink-light);">
-          <th style="border:1px solid var(--ink-2); padding:10px; text-align:right;">الخاصية</th>
-          <th style="border:1px solid var(--ink-2); padding:10px;">Import</th>
-          <th style="border:1px solid var(--ink-2); padding:10px;">DirectQuery</th>
-          <th style="border:1px solid var(--ink-2); padding:10px;">Live Connection</th>
-        </tr>
-        <tr>
-          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>حجم البيانات</strong></td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">حتى 1 GB</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">ضخمة جداً</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">ضخمة جداً</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>الأداء</strong></td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">سريع جداً ⚡⚡⚡</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">يعتمد على الشبكة ⏳</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">يعتمد على الشبكة ⏳</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>التحديث الفوري</strong></td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">حسب جدول التحديث</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">دائماً آخر بيانات ✅</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">دائماً آخر بيانات ✅</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid var(--ink-2); padding:10px; text-align:right;"><strong>الميزات المتقدمة</strong></td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">جميع DAX الميزات</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">محدودة</td>
-          <td style="border:1px solid var(--ink-2); padding:10px;">محدودة جداً</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="lesson-card">
-      <h3>Import Mode: التقليدي والموثوق</h3>
-      <p><strong>ماذا يحدث:</strong> تحميل البيانات من المصدر إلى ذاكرة Power BI، مرة واحدة أو حسب جدول معين</p>
-      <p><strong>المميزات:</strong></p>
-      <ul>
-        <li>✅ أسرع أداء ممكنة (البيانات في الذاكرة)</li>
-        <li>✅ جميع ميزات DAX متاحة</li>
-        <li>✅ يعمل بدون اتصال إنترنت بعد التحميل</li>
-        <li>✅ أفضل للبيانات التاريخية والمقارنات</li>
-      </ul>
-      <p><strong>العيوب:</strong></p>
-      <ul>
-        <li>❌ محدود بحجم الملف (1 GB في عادي، 10 GB في Premium)</li>
-        <li>❌ بيانات غير مباشرة (متأخرة حسب جدول التحديث)</li>
-        <li>❌ يحتاج تحديث منتظم</li>
-      </ul>
-      <p><strong>الحالات المثالية:</strong></p>
-      <ul>
-        <li>البيانات الصغيرة والمتوسطة (أقل من 500 MB)</li>
-        <li>التقارير اليومية والأسبوعية</li>
-        <li>البيانات التاريخية والتحليل العميق</li>
-        <li>عندما تحتاج ميزات DAX متقدمة</li>
-      </ul>
-    </div>
-
-    <div class="lesson-card">
-      <h3>DirectQuery Mode: البيانات الحية المباشرة</h3>
-      <p><strong>ماذا يحدث:</strong> لا تحميل بيانات نهائياً! كل نقرة على الـ Slicer أو تصفية تُرسل استعلام SQL إلى المصدر</p>
-      <p><strong>المميزات:</strong></p>
-      <ul>
-        <li>✅ بيانات حية دائماً (تحديث فوري)</li>
-        <li>✅ لا حد أقصى لحجم البيانات</li>
-        <li>✅ استهلاك ذاكرة محدود جداً</li>
-        <li>✅ مثالي للبيانات الكبيرة جداً</li>
-      </ul>
-      <p><strong>العيوب:</strong></p>
-      <ul>
-        <li>❌ أداء أبطأ (تعتمد على السرعة والشبكة)</li>
-        <li>❌ ميزات DAX محدودة (بعض الدوال لا تعمل)</li>
-        <li>❌ تحتاج Gateway في Power BI Service</li>
-        <li>❌ سيء للبيانات التاريخية والـ Comparisons</li>
-        <li>❌ قد يشكل ضغط على قاعدة البيانات</li>
-      </ul>
-      <p><strong>الحالات المثالية:</strong></p>
-      <ul>
-        <li>البيانات الضخمة جداً (مليارات الصفوف)</li>
-        <li>التقارير الفورية (Operational Dashboards)</li>
-        <li>البيانات التي تتغير بسرعة كل دقائق</li>
-        <li>عندما لا تحتاج ميزات DAX معقدة</li>
-      </ul>
-    </div>
-
-    <div class="lesson-card">
-      <h3>Live Connection: الاتصال المباشر بـ Analysis Services</h3>
-      <p><strong>ماذا يحدث:</strong> اتصال مباشر بـ SQL Server Analysis Services أو Azure Analysis Services (Tabular Models)</p>
-      <p><strong>المميزات:</strong></p>
-      <ul>
-        <li>✅ بيانات حية دائماً</li>
-        <li>✅ استفادة من نموذج موجود على السيرفر</li>
-        <li>✅ أمان ممركز</li>
-      </ul>
-      <p><strong>العيوب:</strong></p>
-      <ul>
-        <li>❌ لا يمكن تعديل النموذج</li>
-        <li>❌ ميزات محدودة جداً</li>
-        <li>❌ يحتاج بنية موجودة بالفعل</li>
-      </ul>
-      <p><strong>الحالات المثالية:</strong></p>
-      <ul>
-        <li>شركات كبيرة عندها Analysis Services بالفعل</li>
-        <li>Data Warehouses مركزية</li>
-      </ul>
-    </div>
-
-    <div class="warn-box">
-      <div class="icon">⚠️</div>
-      <p><strong>التحذير الأهم:</strong> اختيار الـ Mode الخطأ قد يسبب كارثة. إذا اخترت Import لبيانات ضخمة جداً ستفقد فعالية النموذج. وإذا اخترت DirectQuery لمشروع معقد ستفقد جميع ميزات DAX المتقدمة.</p>
-    </div>
-
-    <div class="lesson-card">
-      <h3>الاختيار الذكي: Hybrid Approach</h3>
-      <p><strong>الحل الأفضل في كثير من الحالات: استخدام كلا النمطين معاً!</strong></p>
-      <p><strong>السيناريو:</strong> جدول مبيعات كبير جداً (ضخم) + جدول أبعاد صغير (منتجات)</p>
-      <p><strong>الحل الهجين:</strong></p>
-      <ul>
-        <li>جدول المبيعات → DirectQuery (يبقى حي)</li>
-        <li>جدول المنتجات → Import (سريع)</li>
-        <li>الربط بينهما عادي</li>
-      </ul>
-      <p><strong>النتيجة:</strong> أداء جيدة مع بيانات حية وميزات DAX متاحة!</p>
-    </div>` }],
-    en_blocks: [{ kind: "html", html: `<div class="lesson-card">
-<h3>Quick Comparison</h3>
-<table style="width:100%; border-collapse:collapse; margin:15px 0;">
-<tr style="background:var(--ink-light);">
-<th style="border:1px solid var(--ink-2); padding:10px;">Feature</th>
-<th style="border:1px solid var(--ink-2); padding:10px;">Import</th>
-<th style="border:1px solid var(--ink-2); padding:10px;">DirectQuery</th>
-<th style="border:1px solid var(--ink-2); padding:10px;">Live Connection</th>
-</tr>
-<tr>
-<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Data Size</strong></td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Up to 1 GB</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Extremely large</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Extremely large</td>
-</tr>
-<tr>
-<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Performance</strong></td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Very fast ⚡⚡⚡</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Network dependent ⏳</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Network dependent ⏳</td>
-</tr>
-<tr>
-<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Real-time Updates</strong></td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Scheduled refresh</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Always latest ✅</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Always latest ✅</td>
-</tr>
-<tr>
-<td style="border:1px solid var(--ink-2); padding:10px;"><strong>Advanced Features</strong></td>
-<td style="border:1px solid var(--ink-2); padding:10px;">All DAX features</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Limited</td>
-<td style="border:1px solid var(--ink-2); padding:10px;">Very limited</td>
-</tr>
-</table>
-</div>
-<div class="lesson-card">
-<h3>Import Mode: Traditional and Reliable</h3>
-<p><strong>What Happens:</strong> Load data from source into Power BI memory, once or on a schedule</p>
-<p><strong>Advantages:</strong></p>
-<ul>
-<li>✅ Fastest performance possible (data in memory)</li>
-<li>✅ All DAX features available</li>
-<li>✅ Works offline after loading</li>
-<li>✅ Best for historical data and comparisons</li>
-</ul>
-<p><strong>Disadvantages:</strong></p>
-<ul>
-<li>❌ Limited by file size (1 GB normal, 10 GB Premium)</li>
-<li>❌ Non-direct data (delayed by refresh schedule)</li>
-<li>❌ Requires regular refresh</li>
-</ul>
-<p><strong>Ideal Cases:</strong></p>
-<ul>
-<li>Small to medium data (less than 500 MB)</li>
-<li>Daily and weekly reports</li>
-<li>Historical data and deep analysis</li>
-<li>When you need advanced DAX features</li>
-</ul>
-</div>
-<div class="lesson-card">
-<h3>DirectQuery Mode: Live Direct Data</h3>
-<p><strong>What Happens:</strong> No data loading at all! Every click on a Slicer or filter sends a SQL query to the source</p>
-<p><strong>Advantages:</strong></p>
-<ul>
-<li>✅ Live data always (instant updates)</li>
-<li>✅ No upper limit on data size</li>
-<li>✅ Very limited memory consumption</li>
-<li>✅ Perfect for very large data</li>
-</ul>
-<p><strong>Disadvantages:</strong></p>
-<ul>
-<li>❌ Slower performance (depends on network speed)</li>
-<li>❌ Limited DAX features (some functions don't work)</li>
-<li>❌ Requires Gateway in Power BI Service</li>
-<li>❌ Bad for historical data and comparisons</li>
-<li>❌ May put pressure on database</li>
-</ul>
-<p><strong>Ideal Cases:</strong></p>
-<ul>
-<li>Very large data (billions of rows)</li>
-<li>Real-time reports (Operational Dashboards)</li>
-<li>Data that changes rapidly every minutes</li>
-<li>When you don't need complex DAX features</li>
-</ul>
-</div>
-<div class="lesson-card">
-<h3>Live Connection: Direct Analysis Services</h3>
-<p><strong>What Happens:</strong> Direct connection to SQL Server Analysis Services or Azure Analysis Services (Tabular Models)</p>
-<p><strong>Advantages:</strong></p>
-<ul>
-<li>✅ Live data always</li>
-<li>✅ Leverage existing server model</li>
-<li>✅ Centralized security</li>
-</ul>
-<p><strong>Disadvantages:</strong></p>
-<ul>
-<li>❌ Cannot modify the model</li>
-<li>❌ Very limited features</li>
-<li>❌ Requires existing infrastructure</li>
-</ul>
-<p><strong>Ideal Cases:</strong></p>
-<ul>
-<li>Large enterprises with Analysis Services</li>
-<li>Centralized Data Warehouses</li>
-</ul>
-</div>
-<div class="warn-box">
-<div class="icon">⚠️</div>
-<p><strong>Most Important Warning:</strong> Choosing the wrong mode can be catastrophic. If you choose Import for extremely large data, you'll lose model efficiency. If you choose DirectQuery for a complex project, you'll lose all advanced DAX features.</p>
-</div>
-<div class="lesson-card">
-<h3>Smart Choice: Hybrid Approach</h3>
-<p><strong>Best solution in many cases: Use both modes together!</strong></p>
-<p><strong>Scenario:</strong> Very large sales table (huge) + small dimension table (products)</p>
-<p><strong>Hybrid Solution:</strong></p>
-<ul>
-<li>Sales table → DirectQuery (stays live)</li>
-<li>Products table → Import (fast)</li>
-<li>Connect them normally</li>
-</ul>
-<p><strong>Result:</strong> Good performance with live data and available DAX features!</p>
 </div>` }],
   },
 
@@ -11832,10 +11573,10 @@ plt.show()
 </div>` }],
   },
   "ai-visuals": {
-    eyebrow: "05 · 09 — المرئيات الذكية",
+    eyebrow: "05 · 10 — المرئيات الذكية",
     title: "المرئيات الذكية والذكاء الاصطناعي",
     lede: "Power BI يحتوي على مرئيات مدعومة بالذكاء الاصطناعي تُحلّل بياناتك تلقائياً وتكشف الأنماط الخفية — دون كتابة سطر DAX واحد.",
-    en_eyebrow: "05 · 09 — AI Visuals",
+    en_eyebrow: "05 · 10 — AI Visuals",
     en_lede: "Power BI includes AI-powered visuals that automatically analyze your data and surface hidden patterns — without writing a single line of DAX.",
     sectionId: "ai-visuals",
     blocks: [
@@ -12136,10 +11877,10 @@ plt.show()
     </div>` }],
   },
   "dashboard-workshop": {
-    eyebrow: "05 \u00b7 10 \u2014 \u0648\u0631\u0634\u0629 \u0628\u0646\u0627\u0621 \u0644\u0648\u062d\u0629 \u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0643\u0627\u0645\u0644\u0629",
+    eyebrow: "05 \u00b7 11 \u2014 \u0648\u0631\u0634\u0629 \u0628\u0646\u0627\u0621 \u0644\u0648\u062d\u0629 \u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0643\u0627\u0645\u0644\u0629",
     title: "\u0648\u0631\u0634\u0629 \u0628\u0646\u0627\u0621 \u0644\u0648\u062d\u0629 \u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0643\u0627\u0645\u0644\u0629",
     lede: "\u064a\u062c\u0645\u0639 \u0647\u0630\u0627 \u0627\u0644\u062f\u0631\u0633 \u0627\u0644\u0646\u0645\u0630\u062c\u0629 \u0648\u0627\u0644\u0645\u0642\u0627\u064a\u064a\u0633 \u0648\u0627\u0644\u062a\u0635\u0645\u064a\u0645 \u0648\u0627\u0644\u062a\u0641\u0627\u0639\u0644 \u0641\u064a \u0645\u0633\u0627\u0631 \u0639\u0645\u0644\u064a \u0648\u0627\u062d\u062f \u0644\u0628\u0646\u0627\u0621 \u0644\u0648\u062d\u0629 \u0645\u0639\u0644\u0648\u0645\u0627\u062a \u0645\u0646 \u0627\u0644\u0628\u062f\u0627\u064a\u0629 \u062d\u062a\u0649 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629 \u0627\u0644\u0646\u0647\u0627\u0626\u064a\u0629.",
-    en_eyebrow: "05 \u00b7 10 \u2014 Full Dashboard Workshop",
+    en_eyebrow: "05 \u00b7 11 \u2014 Full Dashboard Workshop",
     en_lede: "A step-by-step workshop: take a real dataset from raw data to a complete, interactive dashboard page.",
     sectionId: "dashboard-workshop",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -12608,10 +12349,10 @@ plt.show()
 </div>` }],
   },
   "data-governance": {
-    eyebrow: "07 · 04 — حوكمة البيانات",
+    eyebrow: "07 · 05 — حوكمة البيانات",
     title: "حوكمة البيانات والتصنيف الأمني",
     lede: "الحوكمة ليست مجرد أمان — هي الثقة. بناء نظام للتصنيف والتوثيق والانتساب يجعل بياناتك موثوقة وقابلة للتدقيق على مستوى المؤسسة.",
-    en_eyebrow: "07 · 04 — Data Governance",
+    en_eyebrow: "07 · 05 — Data Governance",
     en_lede: "Governance isn't just security — it's trust. Building a system of classification, documentation, and endorsement makes your data reliable and auditable at enterprise scale.",
     sectionId: "data-governance",
     blocks: [
@@ -12920,10 +12661,10 @@ plt.show()
 
   // ==================== درس جديد: Cost Optimization ====================
   "cost-optimization": {
-    eyebrow: "07 · 05 — Cost Optimization و Premium",
+    eyebrow: "07 · 06 — Cost Optimization و Premium",
     title: "Cost Optimization و Premium",
     lede: "تحسين التكاليف والاستفادة الذكية من ميزات Premium في Power BI",
-    en_eyebrow: "07 · 05 — Cost Optimization & Premium",
+    en_eyebrow: "07 · 06 — Cost Optimization & Premium",
     en_lede: "Get more out of your Power BI capacity by reducing unnecessary computation, refresh load, and Premium spend.",
     sectionId: "cost-optimization",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -13796,11 +13537,11 @@ IF LastRefreshStatus = "FAILED" THEN
 4. معلومات إعادة الاشتراك
 
 ✅ مثال البريد:
-â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+==================
 [Screenshot of Sales Dashboard]
 
 View the full report: https://app.powerbi.com/...
-â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+==================
       </div>
       <p><strong>المميزات:</strong> ✅ بسيطة جداً | ✅ بدون برمجة | ✅ سريعة</p>
       <p><strong>العيوب:</strong> ❌ محدودة جداً | ❌ لا يمكن تغيير تصميم الرسالة | ❌ لا يمكن filters ديناميكية</p>
@@ -13815,7 +13556,7 @@ View the full report: https://app.powerbi.com/...
         <li>🔀 إرسال تقارير مختلفة حسب الشخص (branch-specific)</li>
         <li>📊 إضافة بيانات من مصادر أخرى (Excel, SharePoint)</li>
         <li>🔔 تنبيهات متعددة: Email + Teams + Slack</li>
-        <li>ðŸ“ تسجيل وتتبع كل إرسال</li>
+        <li>📝 تسجيل وتتبع كل إرسال</li>
       </ul>
       <p><strong>مثال: إرسال تقرير مخصص حسب الموقع</strong></p>
       <div class="code-block">
@@ -14000,7 +13741,7 @@ To: @{recipient_email}
 
     <!-- CTA Button -->
     <div style="text-align: center; margin: 20px 0;">
-      <a href="@{report_url}" style="background-color: #0078d4; color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+      <a href="https://app.powerbi.com/groups/.../reports/..." style="background-color: #0078d4; color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold;">
         View Full Report
       </a>
     </div>
@@ -14084,7 +13825,7 @@ RESULT: 54 بريد مخصص في دقيقة واحدة! 🚀
       <br/>🎨 استخدم HTML templates جميلة (ليست صورة عادية)
       <br/>📊 ضمّن بيانات موجزة مباشرة في الرسالة
       <br/>🔗 أضف رابط للتقرير الكامل
-      <br/>ðŸ“ اكتب رسالة مخصصة لكل شخص (اسمه، فرعه، إنجازاته)
+      <br/>📝 اكتب رسالة مخصصة لكل شخص (اسمه، فرعه، إنجازاته)
       <br/>⏰ أرسل في الوقت المناسب (قبل الاجتماعات مثلاً)</p>
     </div>
 
@@ -14352,10 +14093,10 @@ SUMX(
 
   "external-tools": {
     ...window.LESSONS["external-tools"],
-    eyebrow: "07 · 08 — الأدوات الخارجية",
+    eyebrow: "07 · 09 — الأدوات الخارجية",
     title: "الأدوات الخارجية",
     lede: "هذه الأدوات ليست رفاهية. هي التي تنقلك من مستخدم Desktop إلى شخص يدير نموذجًا احترافيًا بسرعة ودقة.",
-    en_eyebrow: "07 · 08 — External Tools",
+    en_eyebrow: "07 · 09 — External Tools",
     en_lede: "DAX Studio, Tabular Editor, and ALM Toolkit — the tools that serious Power BI developers use daily.",
     sectionId: "external-tools",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -14476,10 +14217,10 @@ SUMX(
 
   "apis": {
     ...window.LESSONS["apis"],
-    eyebrow: "07 · 09 — APIs و Embedded",
+    eyebrow: "07 · 10 — APIs و Embedded",
     title: "APIs و Embedded",
     lede: "هذا الباب يشرح كيف تجعل Power BI جزءًا من نظام أكبر: تطبيق ويب، بوابة داخلية، أتمتة إدارية، أو منصة SaaS.",
-    en_eyebrow: "07 · 09 — APIs & Embedded",
+    en_eyebrow: "07 · 10 — APIs & Embedded",
     en_lede: "Embed reports, automate dataset operations, and integrate Power BI with external systems using the REST API.",
     sectionId: "apis",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -14489,7 +14230,7 @@ SUMX(
         <li><strong>Embedded Analytics:</strong> لعرض التقارير داخل تطبيقك بواجهة مخصّصة.</li>
         <li><strong>Admin / Governance APIs:</strong> للجرد، المراقبة، والتحكم المؤسسي.</li>
       </ul>
-      <p>المشكلة الشائعة أن الناس تقول “عايز أستخدم API” بينما هي تقصد غالبًا <strong>Embedding</strong> أو <strong>Automation</strong> لا أكثر.</p>
+      <p>المشكلة الشائعة أن الناس تقول “أريد استخدام API” بينما هي تقصد غالبًا <strong>Embedding</strong> أو <strong>Automation</strong> لا أكثر.</p>
     </div>
 
     <div class="lesson-card">
@@ -14596,10 +14337,10 @@ SUMX(
 
   "git-integration": {
     ...window.LESSONS["git-integration"],
-    eyebrow: "07 · 10 — Git و CI/CD",
+    eyebrow: "07 · 11 — Git و CI/CD",
     title: "Git و CI/CD",
     lede: "Git في Power BI ليس شعارًا. هو أسلوب عمل يبدأ من PBIP/TMDL وينتهي بإطلاق منظم بين Dev و Test و Prod.",
-    en_eyebrow: "07 · 10 — Git & CI/CD",
+    en_eyebrow: "07 · 11 — Git & CI/CD",
     en_lede: "Version control for Power BI using PBIP and Git — track changes, review diffs, and promote safely across environments.",
     sectionId: "git-integration",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -14726,10 +14467,10 @@ Project/
 
   "advanced-dataflows": {
     ...window.LESSONS["advanced-dataflows"],
-    eyebrow: "07 · 11 — Dataflows المتقدمة",
+    eyebrow: "07 · 12 — Dataflows المتقدمة",
     title: "Dataflows المتقدمة",
     lede: "Dataflows ليست فقط “Power Query في السحابة”. هي طبقة reuse وتحضير بيانات مشتركة بين عدة تقارير وفرق.",
-    en_eyebrow: "07 · 11 — Advanced Dataflows",
+    en_eyebrow: "07 · 12 — Advanced Dataflows",
     en_lede: "Dataflows are a shared data preparation layer — build once, reuse across multiple datasets and teams.",
     sectionId: "advanced-dataflows",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -14829,10 +14570,10 @@ Project/
   },
 
   "calculation-groups": {
-    eyebrow: "07 · 12 — Calculation Groups و Reusable Time Intelligence",
+    eyebrow: "07 · 14 — Calculation Groups و Reusable Time Intelligence",
     title: "Calculation Groups و Reusable Time Intelligence",
     lede: "إذا كنت تكرر YTD و QTD و YoY لكل Measure، فهذه هي اللحظة التي تنتقل فيها من التكرار إلى إعادة الاستخدام.",
-    en_eyebrow: "07 · 12 — Calculation Groups & Reusable Time Intelligence",
+    en_eyebrow: "07 · 14 — Calculation Groups & Reusable Time Intelligence",
     en_lede: "Stop repeating YTD, QTD, and YoY for every measure. Calculation groups apply time intelligence in one place.",
     sectionId: "calculation-groups",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -15054,10 +14795,10 @@ In Calculation Item "YTD":
   },
 
   "enterprise-security": {
-    eyebrow: "07 · 13 — Enterprise Security — RLS و OLS و Permissions",
+    eyebrow: "07 · 15 — Enterprise Security — RLS و OLS و Permissions",
     title: "Enterprise Security — RLS و OLS و Permissions",
     lede: "أغلب مشاكل الأمان في Power BI ليست من نقص الأدوات، بل من خلط المفاهيم: من يرى الصف؟ من يرى العمود؟ من يستطيع Build؟ ومن يصل إلى الـ workspace أصلًا؟",
-    en_eyebrow: "07 · 13 — Enterprise Security — RLS, OLS & Permissions",
+    en_eyebrow: "07 · 15 — Enterprise Security — RLS, OLS & Permissions",
     en_lede: "Row access, column masking, build permissions, and workspace exposure — the full security picture for enterprise deployments.",
     sectionId: "enterprise-security",
     blocks: [{ kind: "html", html: `<table class="compare-table">
@@ -15155,7 +14896,7 @@ In Calculation Item "YTD":
       <h3>اختبار RLS في Power BI Desktop</h3>
       <p>قبل النشر، اختبر RLS محليّاً:</p>
       <ul>
-        <li><strong>Modeling → Manage Roles → View as (اختر الدور)</strong> — تشوف البيانات تتفلتر تلقائياً.</li>
+        <li><strong>Modeling → Manage Roles → View as (اختر الدور)</strong> — تعرض البيانات تتفلتر تلقائياً.</li>
         <li><strong>Validate the filter:</strong> إذا كنت تختبر Region=”Cairo”، شُف هل الأرقام نزلت لـ Cairo data فقط.</li>
         <li><strong>Test multiple roles:</strong> اختبر Admin (كل البيانات)، Regional (Cairo فقط)، Viewer (limited).</li>
       </ul>
@@ -15290,10 +15031,10 @@ OR:
   },
 
   "deployment-pipelines": {
-    eyebrow: "07 · 14 — Deployment Pipelines و ALM Toolkit",
+    eyebrow: "07 · 16 — Deployment Pipelines و ALM Toolkit",
     title: "Deployment Pipelines و ALM Toolkit",
     lede: "الاحتراف الحقيقي ليس أن تعدّل التقرير بسرعة، بل أن تنقل التعديل بين البيئات بدون مفاجآت.",
-    en_eyebrow: "07 · 14 — Deployment Pipelines & ALM Toolkit",
+    en_eyebrow: "07 · 16 — Deployment Pipelines & ALM Toolkit",
     en_lede: "Deployment pipelines move changes safely from Dev → Test → Production — with validation, review, and rollback.",
     sectionId: "deployment-pipelines",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -15387,10 +15128,10 @@ OR:
   },
 
   "monitoring-adoption": {
-    eyebrow: "07 · 15 — Monitoring و Adoption و Refresh Operations",
+    eyebrow: "07 · 17 — Monitoring و Adoption و Refresh Operations",
     title: "Monitoring و Adoption و Refresh Operations",
     lede: "بعد النشر يبدأ شغل جديد بالكامل: من يستخدم التقرير؟ هل الـ refresh ثابت؟ أين يفشل المستخدمون؟ وما الصفحة التي لا يفتحها أحد؟",
-    en_eyebrow: "07 · 15 — Monitoring, Adoption & Refresh Operations",
+    en_eyebrow: "07 · 17 — Monitoring, Adoption & Refresh Operations",
     en_lede: "After you publish, a new job starts: tracking who uses the report, whether refresh is healthy, and where things break.",
     sectionId: "monitoring-adoption",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -15430,7 +15171,7 @@ OR:
       <ul>
         <li>في Power BI Service، انقر على Admin Portal (أيقونة الترس).</li>
         <li>اختر Tenant Settings ← Audit and monitoring ← Audit Log.</li>
-        <li>ستشوف سجل كل الـ activities: من فتح التقرير، من حدّث النموذج، متى فشل الـ refresh.</li>
+        <li>ستجد سجل كل الـ activities: من فتح التقرير، من حدّث النموذج، متى فشل الـ refresh.</li>
       </ul>
       <p><strong>خطوة 2: Admin Monitoring Workspace (مميزة متقدمة)</strong></p>
       <ul>
@@ -15585,10 +15326,10 @@ OR:
   },
 
   "fabric-dataflows": {
-    eyebrow: "07 · 16 — Fabric و Dataflows Gen2",
+    eyebrow: "07 · 18 — Fabric و Dataflows Gen2",
     title: "Fabric و Dataflows Gen2",
     lede: "إذا كان Power BI جزءًا من منصة بيانات أكبر، فهنا يبدأ الحديث عن OneLake و Dataflows Gen2 والطبقات السحابية الأحدث.",
-    en_eyebrow: "07 · 16 — Fabric & Dataflows Gen2",
+    en_eyebrow: "07 · 18 — Fabric & Dataflows Gen2",
     en_lede: "When Power BI is part of a bigger data platform, OneLake and Dataflows Gen2 change how you think about storage and prep.",
     sectionId: "fabric-dataflows",
     blocks: [{ kind: "html", html: `<div class="lesson-card">
@@ -15809,7 +15550,7 @@ OR:
       <h3>نموذج Dashboard المتوقع</h3>
       <p><strong>صفحة 1: Sales Overview</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-----------------------------------------+
 │ Pizza Place Sales Dashboard             │
 ├─────────────────────────────────────────┤
 │                                         │
@@ -15835,7 +15576,7 @@ OR:
 └─────────────────────────────────────────┘
 
 صفحة 2: Menu Analysis
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-----------------------------------------+
 │ Pizza Menu Performance                  │
 ├─────────────────────────────────────────┤
 │ Revenue by Category                     │
@@ -15856,7 +15597,7 @@ OR:
       <h3>Business Insights المتوقعة</h3>
       <p><strong>يجب أن تكتشف من التحليل:</strong></p>
       <ul>
-        <li>ðŸ” أوقات الذروة (متى يزيد عدد الطلبات؟) → تدرب موظفين إضافيين</li>
+        <li>🔝 أوقات الذروة (متى يزيد عدد الطلبات؟) → تدرب موظفين إضافيين</li>
         <li>📊 بيتزا غير مربحة (مثل Brie Carre) → إزل من الـ menu؟</li>
         <li>💰 أفضل فئة (مثل Classic) → ركز التسويق عليها</li>
         <li>🔄 متوسط الطلب = 2 بيتزة → الـ Bundle deals ممكن تزيد من 2 ل 3</li>
@@ -16098,7 +15839,7 @@ OR:
 
       <p><strong>صفحة 1: Match Overview</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-------------------------------------+
 │         CHESS GAMES ANALYTICS       │
 ├─────────────────────────────────────┤
 │  Total Games: 20,345                │
@@ -16107,15 +15848,15 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Win Distribution          Top 10   │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         Openings   │
-│  │ Pie Chart   │         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”│
+│  +-------------+         Openings   │
+│  │ Pie Chart   │         +---------+│
 │  │ W/D/B       │         │ 1. Ruy  ││
 │  └─────────────┘         │ 2. Sicil││
 │                          │ 3. French││
 │  Rating Gap Impact        └─────────┘│
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”                    │
+│  +-------------+                    │
 │  │ Bar Chart   │  Blitz vs Rapid     │
-│  │ ↑ Win Rate  │  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”   │
+│  │ ↑ Win Rate  │  +------+------+   │
 │  └─────────────┘  │ Blitz│Rapid │   │
 │                   │ 40%  │ 52%  │   │
 │                   └──────┴──────┘   │
@@ -16124,7 +15865,7 @@ OR:
 
       <p><strong>صفحة 2: Opening Analysis</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-------------------------------------+
 │     OPENING DEEP DIVE               │
 ├─────────────────────────────────────┤
 │  Selected Opening: Ruy Lopez        │
@@ -16133,7 +15874,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Variations Win Rate:               │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
+│  +-----------------------------+   │
 │  │ Variation      │ W% │ Count │   │
 │  ├─────────────────────────────┤   │
 │  │ Classical      │47%│ 1,245 │   │
@@ -16143,7 +15884,7 @@ OR:
 │  └─────────────────────────────┘   │
 │                                     │
 │  Performance Trend:                 │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
+│  +-----------------------------+   │
 │  │ Line Chart: Wins over time  │   │
 │  └─────────────────────────────┘   │
 └─────────────────────────────────────┘
@@ -16151,7 +15892,7 @@ OR:
 
       <p><strong>صفحة 3: Rating & Time Control</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-------------------------------------+
 │  RATING & TIME ANALYSIS             │
 ├─────────────────────────────────────┤
 │  Higher-Rated Win: 58.2%            │
@@ -16159,7 +15900,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Rating Band Performance:           │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”    │
+│  +------+------+------+------+    │
 │  │ Band │ W%   │Draw%│ Count│    │
 │  ├──────┼──────┼──────┼──────┤    │
 │  │<1200 │ 48%  │ 32% │ 1,200│    │
@@ -16169,7 +15910,7 @@ OR:
 │  └──────┴──────┴──────┴──────┘    │
 │                                     │
 │  Game Speed Impact:                 │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
+│  +-----------------------------+   │
 │  │ Bullet: 41% | Blitz: 45%    │   │
 │  │ Rapid: 52%  | Classic: 58%  │   │
 │  └─────────────────────────────┘   │
@@ -16178,7 +15919,7 @@ OR:
     </div>
 
     <div class="lesson-card">
-      <h3>ðŸ” Business Insights المتوقعة</h3>
+      <h3>🔍 Business Insights المتوقعة</h3>
       <ol>
         <li><strong>أثر التقييم حقيقي:</strong> اللاعب الأعلى تقييماً يفوز في 58% من الحالات — أعلى من الـ 50% المتوقع عشوائياً، مما يثبت أن التقييم مؤشر قوي للأداء.</li>
         <li><strong>الافتتاحيات ذات تأثير:</strong> افتتاحيات معينة (مثل Ruy Lopez و Sicilian) لها معدل فوز أعلى للأبيض — تعكس عمق الإعداد النظري.</li>
@@ -16312,7 +16053,7 @@ OR:
 
       <p><strong>Page 1: Match Overview</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-------------------------------------+
 │         CHESS GAMES ANALYTICS       │
 ├─────────────────────────────────────┤
 │  Total Games: 20,345                │
@@ -16321,15 +16062,15 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Win Distribution          Top 10   │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         Openings   │
-│  │ Pie Chart   │         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”│
+│  +-------------+         Openings   │
+│  │ Pie Chart   │         +---------+│
 │  │ W/D/B       │         │ 1. Ruy  ││
 │  └─────────────┘         │ 2. Sicil││
 │                          │ 3. French││
 │  Rating Gap Impact        └─────────┘│
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”                    │
+│  +-------------+                    │
 │  │ Bar Chart   │  Blitz vs Rapid     │
-│  │ ↑ Win Rate  │  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”   │
+│  │ ↑ Win Rate  │  +------+------+   │
 │  └─────────────┘  │ Blitz│Rapid │   │
 │                   │ 40%  │ 52%  │   │
 │                   └──────┴──────┘   │
@@ -16338,7 +16079,7 @@ OR:
 
       <p><strong>Page 2: Opening Analysis</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-------------------------------------+
 │     OPENING DEEP DIVE               │
 ├─────────────────────────────────────┤
 │  Selected Opening: Ruy Lopez        │
@@ -16347,7 +16088,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Variations Win Rate:               │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
+│  +-----------------------------+   │
 │  │ Variation      │ W% │ Count │   │
 │  ├─────────────────────────────┤   │
 │  │ Classical      │47%│ 1,245 │   │
@@ -16357,7 +16098,7 @@ OR:
 │  └─────────────────────────────┘   │
 │                                     │
 │  Performance Trend:                 │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
+│  +-----------------------------+   │
 │  │ Line Chart: Wins over time  │   │
 │  └─────────────────────────────┘   │
 └─────────────────────────────────────┘
@@ -16365,7 +16106,7 @@ OR:
 
       <p><strong>Page 3: Rating & Time Control</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++-------------------------------------+
 │  RATING & TIME ANALYSIS             │
 ├─────────────────────────────────────┤
 │  Higher-Rated Win: 58.2%            │
@@ -16373,7 +16114,7 @@ OR:
 ├─────────────────────────────────────┤
 │                                     │
 │  Rating Band Performance:           │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”    │
+│  +------+------+------+------+    │
 │  │ Band │ W%   │Draw%│ Count│    │
 │  ├──────┼──────┼──────┼──────┤    │
 │  │<1200 │ 48%  │ 32% │ 1,200│    │
@@ -16383,7 +16124,7 @@ OR:
 │  └──────┴──────┴──────┴──────┘    │
 │                                     │
 │  Game Speed Impact:                 │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   │
+│  +-----------------------------+   │
 │  │ Bullet: 41% | Blitz: 45%    │   │
 │  │ Rapid: 52%  | Classic: 58%  │   │
 │  └─────────────────────────────┘   │
@@ -16392,7 +16133,7 @@ OR:
     </div>
 
     <div class="lesson-card">
-      <h3>ðŸ” Expected Business Insights</h3>
+      <h3>🔍 Expected Business Insights</h3>
       <ol>
         <li><strong>Rating impact is real:</strong> The higher-rated player wins 58% of the time — higher than 50% random chance, proving rating is a strong performance predictor.</li>
         <li><strong>Openings matter:</strong> Certain openings (like Ruy Lopez and Sicilian) show higher white win rates — reflecting deep theoretical preparation.</li>
@@ -16634,7 +16375,7 @@ OR:
 
       <p><strong>Page 1: Market Overview</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++--------------------------------------------+
 │        AIRBNB MARKET INTELLIGENCE          │
 ├────────────────────────────────────────────┤
 │  Total Listings: 250,145    Avg Price: $145│
@@ -16643,13 +16384,13 @@ OR:
 ├────────────────────────────────────────────┤
 │                                            │
 │  Price Distribution      Market Composition│
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
+│  +-------------+         +--------------+ │
 │  │ Histogram   │         │ Pie Chart    │ │
 │  │ $ vs Count  │         │ Room Types   │ │
 │  └─────────────┘         └──────────────┘ │
 │                                            │
 │  Review Scores Trend       Superhost Share │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
+│  +-------------+         +--------------+ │
 │  │ Line Chart  │         │ 18.2%        │ │
 │  │ Rating over │         │ 82.0% Regular│ │
 │  │ Time        │         │ 0.8% Other   │ │
@@ -16659,12 +16400,12 @@ OR:
 
       <p><strong>Page 2: City Benchmark</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++--------------------------------------------+
 │     CITY COMPARISON & BENCHMARKING         │
 ├────────────────────────────────────────────┤
 │                                            │
 │  City Metrics Table:                       │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”│
+│  +--------+-----+-------+------+--------+│
 │  │ City   │Count│ Price │ Rev  │ SHost %││
 │  ├────────┼─────┼───────┼──────┼────────┤│
 │  │ NYC    │45K  │ $215  │5.2M  │ 22%    ││
@@ -16675,13 +16416,13 @@ OR:
 │  └────────┴─────┴───────┴──────┴────────┘│
 │                                            │
 │  Superhost Concentration:                 │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
+│  +------------------------------------+  │
 │  │ Bar Chart: Superhost % by City     │  │
 │  │ NYC leads at 22%, Boston at 21%    │  │
 │  └────────────────────────────────────┘  │
 │                                            │
 │  Price vs Quality Scatter:                │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
+│  +------------------------------------+  │
 │  │ X: Price | Y: Review Score | Size  │  │
 │  │ Premium = High Price + High Reviews│  │
 │  └────────────────────────────────────┘  │
@@ -16690,19 +16431,19 @@ OR:
 
       <p><strong>Page 3: Geographic Analysis</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++--------------------------------------------+
 │      GEOGRAPHIC & NEIGHBORHOOD VIEW        │
 ├────────────────────────────────────────────┤
 │                                            │
 │  Map: Price Heatmap by Neighborhood       │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
+│  +------------------------------------+  │
 │  │ [Map showing color intensity]      │  │
 │  │ Red = $200+  Yellow = $150-200     │  │
 │  │ Green = $100-150  Blue = <$100     │  │
 │  └────────────────────────────────────┘  │
 │                                            │
 │  Top 10 Neighborhoods by:                 │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
+│  +--------------+----------------------+ │
 │  │ By Price     │ By Superhost Density │ │
 │  ├──────────────┼──────────────────────┤ │
 │  │ 1. Tribeca   │ 1. Park Slope        │ │
@@ -16717,7 +16458,7 @@ OR:
 
       <p><strong>Page 4: Host & Quality Analytics</strong></p>
       <div class="code-block">
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++--------------------------------------------+
 │   HOST QUALITY & PERFORMANCE ANALYSIS      │
 ├────────────────────────────────────────────┤
 │  Average Review Score: 4.73/5              │
@@ -16726,13 +16467,13 @@ OR:
 ├────────────────────────────────────────────┤
 │                                            │
 │  Review Score Distribution:                │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  │
+│  +------------------------------------+  │
 │  │ Histogram: 5.0 | 4.8-4.9 | 4.5+   │  │
 │  │ Most cluster at 4.8+               │  │
 │  └────────────────────────────────────┘  │
 │                                            │
 │  Superhost vs Regular Performance:        │
-│  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” │
+│  +--------------+----------------------+ │
 │  │ Metric       │ Superhost │ Regular  │ │
 │  ├──────────────┼──────────┼──────────┤ │
 │  │ Avg Rating   │ 4.85     │ 4.62     │ │
@@ -16747,7 +16488,7 @@ OR:
     </div>
 
     <div class="lesson-card">
-      <h3>ðŸ” Business Insights You Should Discover</h3>
+      <h3>🔍 Business Insights You Should Discover</h3>
       <ol>
         <li><strong>Superhost Premium:</strong> Superhosts command 15-20% price premium while maintaining 4.85/5 rating (vs 4.62 for regular hosts). ROI: higher reviews + higher prices = loyalty.</li>
         <li><strong>Geographic Pricing Power:</strong> Top neighborhoods (NYC Tribeca, LA Pacific Palisades) command 2-3x median price. But Superhosts in secondary neighborhoods often match primary-area regular host ratings.</li>
@@ -16944,5 +16685,3 @@ window.stubLesson = function(lesson, chapter) {
     en_blocks: [{ kind: "html", html: "<p style=\"color:var(--ink-2)\">This lesson content is coming soon.</p>" }],
   };
 };
-
-

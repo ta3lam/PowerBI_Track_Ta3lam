@@ -7064,6 +7064,420 @@
         "Because Sensitivity Labels speed up query performance"
       ],
       "en_explanation": "The core problem without governance: every user builds their own dataset creating conflicting definitions — 'Sales' in the Finance report differs from 'Sales' in the Sales report. Endorsement and Certified establish a single source of truth. Sensitivity Labels protect data. Lineage clarifies dependencies. Together they build management's trust in the data."
+    },
+    {
+      "id": "q317",
+      "section": "power-automate",
+      "question": "ما الفرق بين Power Automate Trigger و Action في سياق Power BI؟",
+      "type": "multiple_choice",
+      "options": [
+        "Trigger هو الحدث الذي يُطلق التدفق (مثل تجاوز تنبيه)؛ Action هو ما يحدث بعده (مثل إرسال إيميل أو تحديث قائمة)",
+        "Trigger هو العملية اليدوية؛ Action هو العملية التلقائية فقط",
+        "كلاهما نفس الشيء لكن Trigger للبيانات وAction للتقارير",
+        "Action يسبق Trigger دائماً في ترتيب التدفق"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Trigger = الشرط الذي يُشغّل الـ Flow (تنبيه Power BI، وقت محدد، تغيير في SharePoint). Action = ما يُنفَّذ عند التشغيل (إرسال إيميل، نشر في Teams، تحديث Excel). الربط بينهما هو جوهر Power Automate.",
+      "points": 7,
+      "en_question": "What is the difference between a Power Automate Trigger and Action in a Power BI context?",
+      "en_options": [
+        "A Trigger is the event that fires the flow (like an alert threshold); an Action is what happens next (like sending an email or updating a list)",
+        "A Trigger is a manual operation; an Action is automatic only",
+        "Both are the same — Trigger is for data and Action is for reports",
+        "Action always precedes Trigger in the flow sequence"
+      ],
+      "en_explanation": "Trigger = the condition that fires the Flow (Power BI alert, scheduled time, SharePoint change). Action = what executes when triggered (send email, post to Teams, update Excel). Connecting them is the heart of Power Automate."
+    },
+    {
+      "id": "q318",
+      "section": "power-automate",
+      "question": "كيف يمكن لـ Power BI Data Alerts تشغيل Power Automate Flow تلقائياً؟",
+      "type": "multiple_choice",
+      "options": [
+        "بإعداد تنبيه على بطاقة KPI في Dashboard، ثم ربطه بـ Flow عبر Trigger 'When a data driven alert is triggered'",
+        "Power BI لا يدعم الربط المباشر مع Power Automate — يحتاج Azure Logic Apps",
+        "فقط عبر كتابة Python Script داخل Power BI يستدعي الـ Flow يدوياً",
+        "Data Alerts في Power BI تعمل فقط للإشعارات البريدية ولا ترتبط بـ Automate"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الخطوات: (1) Dashboard → بطاقة KPI → Set Alert (حدد الحد مثل المبيعات < 50K). (2) في Power Automate: New Flow → Trigger: 'Power BI — When a data driven alert is triggered' → اختر التنبيه → أضف Actions. النتيجة: كل مرة تتجاوز القيمة الحد، يُشغَّل الـ Flow فوراً.",
+      "points": 8,
+      "en_question": "How can Power BI Data Alerts automatically trigger a Power Automate Flow?",
+      "en_options": [
+        "By setting an alert on a KPI card in a Dashboard, then linking it to a Flow using the 'When a data driven alert is triggered' trigger",
+        "Power BI doesn't support direct integration with Power Automate — Azure Logic Apps are needed",
+        "Only by writing a Python script inside Power BI that manually calls the Flow",
+        "Data Alerts in Power BI only work for email notifications and don't connect to Automate"
+      ],
+      "en_explanation": "Steps: (1) Dashboard → KPI card → Set Alert (set threshold like Sales < 50K). (2) In Power Automate: New Flow → Trigger: 'Power BI — When a data driven alert is triggered' → select alert → add Actions. Result: every time the value crosses the threshold, the Flow fires immediately."
+    },
+    {
+      "id": "q319",
+      "section": "power-automate",
+      "question": "ما أبرز حالة استخدام لـ Power Automate مع Power BI في بيئة عمل مؤسسية؟",
+      "type": "multiple_choice",
+      "options": [
+        "إرسال تقرير أسبوعي تلقائي بالبريد الإلكتروني يحتوي على لقطة شاشة أو رابط لوحة معلومات عندما يكتمل تحديث البيانات",
+        "Power Automate يُستخدم فقط لتحديث مصادر البيانات في Power BI",
+        "إنشاء مقاييس DAX جديدة تلقائياً بناءً على متطلبات المستخدمين",
+        "Power Automate يستبدل Gateway في إدارة الاتصالات بمصادر البيانات المحلية"
+      ],
+      "correctAnswer": 0,
+      "explanation": "الـ Use Case الأكثر شيوعاً: Scheduled Flow يعمل كل إثنين الساعة 8 صباحاً → يتحقق من اكتمال Refresh في Power BI → يُرسل بريداً للمديرين يحتوي على رابط Dashboard. Flow آخر شائع: عند تجاوز KPI للحد → إشعار فوري في Teams لمدير المبيعات.",
+      "points": 7,
+      "en_question": "What is the most common Power Automate use case with Power BI in an enterprise environment?",
+      "en_options": [
+        "Automatically sending a weekly report by email containing a screenshot or dashboard link when the data refresh completes",
+        "Power Automate is only used to refresh data sources in Power BI",
+        "Automatically creating new DAX measures based on user requirements",
+        "Power Automate replaces Gateway for managing connections to on-premises data sources"
+      ],
+      "en_explanation": "Most common use case: a Scheduled Flow runs every Monday at 8am → checks if Power BI Refresh completed → emails managers with a Dashboard link. Another common Flow: when a KPI exceeds threshold → instant Teams notification to the sales manager."
+    },
+    {
+      "id": "q320",
+      "section": "kpi-finance",
+      "question": "ما الفرق بين Gross Profit Margin وNet Profit Margin؟",
+      "type": "multiple_choice",
+      "options": [
+        "Gross Profit Margin يقيس الربح بعد خصم تكلفة البضاعة فقط؛ Net Profit Margin يقيس الربح بعد خصم جميع المصروفات والضرائب",
+        "كلاهما نفس المقياس لكن بمقامات مختلفة",
+        "Net Profit Margin يُحسب على مستوى المنتج؛ Gross Profit Margin على مستوى الشركة",
+        "Gross Profit Margin يشمل المصروفات التشغيلية بينما Net لا يشملها"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Gross Profit Margin = (الإيراد - COGS) / الإيراد. يقيس كفاءة الإنتاج والتسعير. Net Profit Margin = صافي الربح / الإيراد، ويشمل خصم كل المصروفات: تشغيلية، فوائد، ضرائب. Net أشمل وأكثر دقة لقياس الربحية الحقيقية للشركة.",
+      "points": 7,
+      "en_question": "What is the difference between Gross Profit Margin and Net Profit Margin?",
+      "en_options": [
+        "Gross Profit Margin measures profit after deducting cost of goods only; Net Profit Margin measures profit after deducting all expenses and taxes",
+        "Both are the same measure but with different denominators",
+        "Net Profit Margin is calculated at the product level; Gross at the company level",
+        "Gross Profit Margin includes operating expenses while Net does not"
+      ],
+      "en_explanation": "Gross Profit Margin = (Revenue - COGS) / Revenue. Measures production and pricing efficiency. Net Profit Margin = Net Profit / Revenue, deducting all expenses: operating, interest, taxes. Net is more comprehensive and accurately reflects a company's true profitability."
+    },
+    {
+      "id": "q321",
+      "section": "kpi-finance",
+      "question": "ما الذي يقيسه مؤشر Current Ratio ولماذا هو مهم؟",
+      "type": "multiple_choice",
+      "options": [
+        "يقيس قدرة الشركة على سداد ديونها قصيرة الأجل باستخدام أصولها المتداولة — القيمة المثالية عادة بين 1.5 و2",
+        "يقيس معدل نمو الإيرادات خلال الربع الحالي مقارنة بالسابق",
+        "يقيس نسبة الديون طويلة الأجل إلى حقوق الملكية",
+        "يقيس متوسط أيام تحصيل الديون من العملاء"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Current Ratio = الأصول المتداولة / الخصوم المتداولة. يُقيس السيولة قصيرة الأجل. قيمة < 1 تعني أن الشركة قد لا تستطيع سداد ديونها القريبة. قيمة > 2 قد تعني أصولاً غير مُستثمرة. يختلف المعيار الطبيعي حسب القطاع.",
+      "points": 7,
+      "en_question": "What does the Current Ratio measure and why is it important?",
+      "en_options": [
+        "It measures the company's ability to pay short-term debts using current assets — the ideal value is typically between 1.5 and 2",
+        "It measures revenue growth in the current quarter vs. the previous one",
+        "It measures the ratio of long-term debt to equity",
+        "It measures the average days to collect receivables from customers"
+      ],
+      "en_explanation": "Current Ratio = Current Assets / Current Liabilities. Measures short-term liquidity. A value < 1 means the company may not cover near-term obligations. A value > 2 may indicate underutilized assets. The normal benchmark varies by industry."
+    },
+    {
+      "id": "q322",
+      "section": "kpi-finance",
+      "question": "في Power BI، ما أفضل طريقة لعرض Budget vs Actual للمصروفات؟",
+      "type": "multiple_choice",
+      "options": [
+        "Clustered Bar Chart مع مقياسَي [Actual Expenses] و[Budget Expenses]، مع إضافة Variance% كـ Tooltip أو عمود إضافي",
+        "Pie Chart يُظهر نسبة الفعلي من الميزانية",
+        "Line Chart بمحور زمني فقط بدون مقارنة",
+        "KPI Visual يُظهر رقماً واحداً فقط"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Clustered Bar هو المعيار لمقارنة Actual vs Budget: يُظهر الفجوة بصرياً على مستوى كل بند. Variance% = (Actual - Budget) / Budget يُضاف كـ Tooltip. للمصروفات، الشريط الأحمر (Actual > Budget) تحذير فوري. يمكن إضافة Reference Line عند الـ Budget لتسهيل القراءة.",
+      "points": 8,
+      "en_question": "In Power BI, what is the best way to display Budget vs Actual for expenses?",
+      "en_options": [
+        "Clustered Bar Chart with [Actual Expenses] and [Budget Expenses] measures, plus Variance% as a Tooltip or additional column",
+        "Pie Chart showing actual as a percentage of budget",
+        "Line Chart with a time axis only, no comparison",
+        "KPI Visual showing a single number only"
+      ],
+      "en_explanation": "Clustered Bar is the standard for Actual vs Budget comparison: it visually shows the gap at each line item. Variance% = (Actual - Budget) / Budget is added as a Tooltip. For expenses, a red bar (Actual > Budget) is an immediate warning. Adding a Reference Line at Budget level makes reading easier."
+    },
+    {
+      "id": "q323",
+      "section": "kpi-sales",
+      "question": "ما الفرق بين Win Rate وConversion Rate في مؤشرات المبيعات؟",
+      "type": "multiple_choice",
+      "options": [
+        "Win Rate = الصفقات المُغلقة فوزاً / إجمالي الصفقات؛ Conversion Rate = العملاء المحتملين الذين أصبحوا عملاء فعليين / إجمالي المحتملين",
+        "كلاهما نفس المقياس بأسماء مختلفة",
+        "Win Rate للـ B2B فقط؛ Conversion Rate للـ B2C فقط",
+        "Conversion Rate يقيس المبيعات؛ Win Rate يقيس الإيرادات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Win Rate يُقاس في نهاية قمع المبيعات: كم صفقة كسبنا من الصفقات التي دخلنا فيها منافسة؟ Conversion Rate يُقاس على طول القمع: كم lead تحوّل لـ prospect؟ كم prospect تحوّل لعميل؟ كل مرحلة لها Conversion Rate خاص.",
+      "points": 7,
+      "en_question": "What is the difference between Win Rate and Conversion Rate in sales KPIs?",
+      "en_options": [
+        "Win Rate = closed-won deals / total deals; Conversion Rate = leads who became customers / total leads",
+        "Both are the same measure with different names",
+        "Win Rate is for B2B only; Conversion Rate is for B2C only",
+        "Conversion Rate measures sales; Win Rate measures revenue"
+      ],
+      "en_explanation": "Win Rate is measured at the bottom of the sales funnel: how many deals did we win out of those we competed for? Conversion Rate is measured throughout the funnel: how many leads became prospects? How many prospects became customers? Each stage has its own Conversion Rate."
+    },
+    {
+      "id": "q324",
+      "section": "kpi-sales",
+      "question": "ما المقياس الأنسب لقياس جودة محفظة المبيعات (Pipeline) وليس فقط حجمها؟",
+      "type": "multiple_choice",
+      "options": [
+        "Pipeline Coverage Ratio = قيمة الـ Pipeline / الهدف المتبقي — قيمة 3x تعني أن الـ Pipeline يكفي لتحقيق الهدف مع هامش أمان",
+        "إجمالي عدد الفرص مهما كان احتمال إغلاقها",
+        "متوسط حجم الصفقة فقط",
+        "عدد الاجتماعات مع العملاء المحتملين أسبوعياً"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Pipeline Coverage Ratio يُجيب: هل Pipeline كافٍ لتحقيق الهدف؟ نسبة 3x تعني: لو أغلقنا ثلث الصفقات فقط، سنحقق الهدف. نسبة < 2x تُنبّه إلى ضرورة ملء الـ Pipeline. هذا المقياس أذكى من مجرد عدد الفرص لأنه يُحسب بالقيمة المرجّحة.",
+      "points": 8,
+      "en_question": "What is the most appropriate metric to measure sales pipeline quality, not just its size?",
+      "en_options": [
+        "Pipeline Coverage Ratio = Pipeline value / remaining target — a 3x ratio means the pipeline is sufficient to hit the target with a safety margin",
+        "Total number of opportunities regardless of close probability",
+        "Average deal size only",
+        "Number of weekly meetings with prospects"
+      ],
+      "en_explanation": "Pipeline Coverage Ratio answers: is the pipeline sufficient to hit the target? A 3x ratio means: if we close just one-third of deals, we'll meet the target. A ratio < 2x signals the pipeline needs filling. This metric is smarter than just counting opportunities because it's weighted by value."
+    },
+    {
+      "id": "q325",
+      "section": "kpi-sales",
+      "question": "ما Customer Lifetime Value (CLV) ولماذا هو أهم من الإيراد الفوري للصفقة؟",
+      "type": "multiple_choice",
+      "options": [
+        "CLV = إجمالي الإيراد المتوقع من العميل طوال فترة علاقته بالشركة — يُساعد في تحديد كم يمكن إنفاقه لاكتساب عميل جديد",
+        "CLV يقيس متوسط حجم الطلب الواحد للعميل",
+        "CLV = الإيراد السنوي للعميل مقسوماً على عدد الطلبات",
+        "CLV يُستخدم فقط في التجارة الإلكترونية وليس في المبيعات B2B"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CLV يُحوّل نظرة المبيعات من 'كم ربحنا من هذه الصفقة' إلى 'كم يستحق هذا العميل على المدى الطويل'. إذا كان CLV = 50K$، يمكن إنفاق حتى 10K$ لاكتسابه ولا يزال مربحاً. هذا يُغيّر قرارات التسعير والخصومات وأولويات فريق المبيعات.",
+      "points": 8,
+      "en_question": "What is Customer Lifetime Value (CLV) and why is it more important than immediate deal revenue?",
+      "en_options": [
+        "CLV = total expected revenue from a customer over their entire relationship with the company — helps determine how much can be spent to acquire a new customer",
+        "CLV measures the average order size per customer",
+        "CLV = annual customer revenue divided by number of orders",
+        "CLV is only used in e-commerce and not in B2B sales"
+      ],
+      "en_explanation": "CLV shifts the sales view from 'how much did we make on this deal' to 'how much is this customer worth long-term'. If CLV = $50K, spending up to $10K to acquire them is still profitable. This changes pricing decisions, discounts, and sales team priorities."
+    },
+    {
+      "id": "q326",
+      "section": "kpi-inventory",
+      "question": "ما مؤشر Inventory Turnover ولماذا يهم؟",
+      "type": "multiple_choice",
+      "options": [
+        "عدد مرات بيع واستبدال المخزون خلال فترة — مرتفع يعني كفاءة، منخفض يعني بضاعة راكدة وأموال مجمّدة",
+        "عدد الوحدات الموجودة في المستودع في نهاية الفترة",
+        "نسبة المخزون التالف إلى إجمالي المخزون",
+        "متوسط تكلفة شراء وحدة المخزون الواحدة"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Inventory Turnover = تكلفة البضاعة المباعة / متوسط المخزون. إذا = 12، الشركة تبيع وتُعيد تخزينها كل شهر. إذا = 2، البضاعة تبقى 6 أشهر — أموال مجمّدة وخطر تقادم. كل قطاع له معيار مختلف: Supermarket > 20، Jewelry < 2.",
+      "points": 7,
+      "en_question": "What is Inventory Turnover and why does it matter?",
+      "en_options": [
+        "The number of times inventory is sold and replaced during a period — high means efficiency, low means stagnant stock and tied-up capital",
+        "The number of units in the warehouse at period end",
+        "The ratio of damaged inventory to total inventory",
+        "The average cost to purchase one inventory unit"
+      ],
+      "en_explanation": "Inventory Turnover = COGS / Average Inventory. If = 12, the company sells and restocks monthly. If = 2, goods sit for 6 months — capital is tied up and obsolescence risk grows. Each sector has different benchmarks: Supermarket > 20, Jewelry < 2."
+    },
+    {
+      "id": "q327",
+      "section": "kpi-inventory",
+      "question": "ما Stockout Rate وما أثره على الأعمال؟",
+      "type": "multiple_choice",
+      "options": [
+        "نسبة الطلبات التي لم يمكن تلبيتها بسبب نفاد المخزون — يُؤدي لفقدان مبيعات وتآكل ثقة العميل",
+        "نسبة المنتجات التي تجاوزت تاريخ الصلاحية في المستودع",
+        "عدد مرات طلب إعادة التخزين في الشهر",
+        "تكلفة تخزين وحدة واحدة لمدة شهر"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Stockout = المنتج غير متوفر عند طلب العميل. أثره المزدوج: (1) خسارة البيع الفوري، (2) العميل قد يذهب للمنافس وقد لا يعود. Stockout Rate = طلبات غير مُلبَّاة / إجمالي الطلبات × 100. تخفيضه يتطلب توازناً دقيقاً مع تكاليف الاحتفاظ بمخزون أعلى.",
+      "points": 7,
+      "en_question": "What is Stockout Rate and what is its business impact?",
+      "en_options": [
+        "The percentage of orders that couldn't be fulfilled due to out-of-stock items — leads to lost sales and eroding customer trust",
+        "The percentage of products that exceeded their expiry date in the warehouse",
+        "The number of restocking requests per month",
+        "The cost of storing one unit for one month"
+      ],
+      "en_explanation": "Stockout = product unavailable when a customer orders. Its dual impact: (1) immediate lost sale, (2) the customer may go to a competitor and not return. Stockout Rate = unfulfilled orders / total orders × 100. Reducing it requires careful balance with the costs of carrying higher inventory."
+    },
+    {
+      "id": "q328",
+      "section": "kpi-inventory",
+      "question": "ما Days Sales of Inventory (DSI) وكيف يُفسَّر؟",
+      "type": "multiple_choice",
+      "options": [
+        "متوسط عدد الأيام التي يستغرقها بيع المخزون الحالي — منخفض يعني سرعة دوران، مرتفع يعني بطء وتكاليف تخزين أعلى",
+        "عدد أيام التأخير بين طلب البضاعة واستلامها",
+        "عدد أيام التي استغرقها تحصيل الديون من العملاء",
+        "متوسط أيام الإنتاج لكل وحدة في المصنع"
+      ],
+      "correctAnswer": 0,
+      "explanation": "DSI = (متوسط المخزون / تكلفة البضاعة المباعة) × 365. مثال: DSI = 45 يعني المخزون الحالي سيُباع خلال 45 يوماً. هذا يُساعد في التخطيط: متى نطلب شحنة جديدة؟ ما الحد الأدنى للمخزون الآمن؟ يعمل جنباً إلى جنب مع Lead Time الموردين.",
+      "points": 7,
+      "en_question": "What is Days Sales of Inventory (DSI) and how is it interpreted?",
+      "en_options": [
+        "The average number of days to sell current inventory — low means fast turnover, high means slow movement and higher storage costs",
+        "Number of delay days between ordering goods and receiving them",
+        "Number of days taken to collect receivables from customers",
+        "Average production days per unit in the factory"
+      ],
+      "en_explanation": "DSI = (Average Inventory / COGS) × 365. Example: DSI = 45 means current inventory will sell in 45 days. This aids planning: when should we reorder? What is the minimum safe stock level? Works alongside supplier Lead Time."
+    },
+    {
+      "id": "q329",
+      "section": "kpi-hr",
+      "question": "ما مؤشر Employee Turnover Rate ولماذا يُعدّ مقياساً حرجاً لـ HR؟",
+      "type": "multiple_choice",
+      "options": [
+        "نسبة الموظفين الذين غادروا الشركة خلال فترة — مرتفع يعني تكاليف توظيف عالية وفقدان خبرات وأثر على الإنتاجية",
+        "عدد الموظفين الجدد الذين تم توظيفهم خلال الفترة",
+        "نسبة الموظفين الذين حصلوا على ترقية",
+        "متوسط عدد أيام الغياب للموظف الواحد"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Turnover Rate = (عدد المغادرين / متوسط عدد الموظفين) × 100. تكلفة استبدال موظف واحد تتراوح بين 50% و200% من راتبه السنوي (تدريب، فقدان إنتاجية، وقت التوظيف). تقسيمه إلى Voluntary (الموظف اختار المغادرة) وInvoluntary (فصل) يعطي رؤية أعمق.",
+      "points": 7,
+      "en_question": "What is Employee Turnover Rate and why is it a critical HR metric?",
+      "en_options": [
+        "The percentage of employees who left the company in a period — high rate means high recruitment costs, lost expertise, and productivity impact",
+        "The number of new employees hired during the period",
+        "The percentage of employees who received a promotion",
+        "The average number of absence days per employee"
+      ],
+      "en_explanation": "Turnover Rate = (number of departures / average headcount) × 100. Replacing one employee costs between 50% and 200% of their annual salary (training, lost productivity, hiring time). Splitting into Voluntary (employee chose to leave) and Involuntary (termination) gives deeper insight."
+    },
+    {
+      "id": "q330",
+      "section": "kpi-hr",
+      "question": "ما Time to Hire وكيف يختلف عن Time to Fill؟",
+      "type": "multiple_choice",
+      "options": [
+        "Time to Hire = الأيام من قبول المرشح للعرض حتى بدء العمل؛ Time to Fill = الأيام من فتح الوظيفة حتى قبول العرض",
+        "كلاهما نفس المقياس بأسماء مختلفة",
+        "Time to Fill للوظائف التقنية؛ Time to Hire للوظائف الإدارية",
+        "Time to Hire يشمل فترة الاختبار؛ Time to Fill لا يشملها"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Time to Fill يقيس كفاءة عملية التوظيف من البداية للقبول. Time to Hire يقيس ما بعد القبول: كم يستغرق الإجراءات والبدء الفعلي. كلاهما معاً يُحددان إجمالي وقت شغل الوظيفة الشاغرة وتأثيره على الإنتاجية.",
+      "points": 7,
+      "en_question": "What is Time to Hire and how does it differ from Time to Fill?",
+      "en_options": [
+        "Time to Hire = days from candidate accepting the offer to starting work; Time to Fill = days from opening the position to offer acceptance",
+        "Both are the same measure with different names",
+        "Time to Fill is for technical roles; Time to Hire is for management roles",
+        "Time to Hire includes the probation period; Time to Fill does not"
+      ],
+      "en_explanation": "Time to Fill measures recruitment process efficiency from start to acceptance. Time to Hire measures post-acceptance: how long do procedures and actual start take. Together they define the total time a vacancy remains open and its impact on productivity."
+    },
+    {
+      "id": "q331",
+      "section": "kpi-hr",
+      "question": "ما Revenue per Employee ولماذا يختلف كثيراً بين القطاعات؟",
+      "type": "multiple_choice",
+      "options": [
+        "إجمالي إيراد الشركة مقسوماً على عدد الموظفين — يختلف بين القطاعات لأن بعضها كثيف العمالة وآخر كثيف رأس المال أو التكنولوجيا",
+        "ربح كل موظف من المبيعات التي أجراها شخصياً",
+        "متوسط راتب الموظفين مقسوماً على الإيراد",
+        "يُستخدم فقط في شركات التجزئة ولا يُطبق على الخدمات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Revenue per Employee = إجمالي الإيراد / عدد الموظفين. شركة تقنية بـ 100 موظف وإيراد 500M$ = 5M$/موظف. مصنع بـ 5000 موظف وإيراد 500M$ = 100K$/موظف. المقارنة المفيدة هي داخل نفس القطاع — تُقيس كفاءة استخدام القوى العاملة.",
+      "points": 7,
+      "en_question": "What is Revenue per Employee and why does it vary significantly across industries?",
+      "en_options": [
+        "Total company revenue divided by number of employees — varies across industries because some are labor-intensive while others are capital or technology-intensive",
+        "The profit each employee generates from their personal sales",
+        "Average employee salary divided by revenue",
+        "Only used in retail companies and doesn't apply to services"
+      ],
+      "en_explanation": "Revenue per Employee = Total Revenue / Number of Employees. A tech company with 100 employees and $500M revenue = $5M/employee. A factory with 5,000 employees and $500M revenue = $100K/employee. The useful comparison is within the same industry — it measures workforce utilization efficiency."
+    },
+    {
+      "id": "q332",
+      "section": "kpi-marketing",
+      "question": "ما Customer Acquisition Cost (CAC) وكيف يُقيَّم صحة المسار التسويقي؟",
+      "type": "multiple_choice",
+      "options": [
+        "إجمالي مصروفات التسويق والمبيعات مقسوماً على عدد العملاء الجدد المكتسبين — الصحة تُقاس بنسبة CLV/CAC التي يجب أن تكون > 3",
+        "تكلفة إنتاج المحتوى التسويقي فقط بدون احتساب رواتب الفريق",
+        "CAC يُحسب فقط للإعلانات المدفوعة ولا يشمل قنوات Organic",
+        "متوسط تكلفة كل نقرة (CPC) على الإعلانات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CAC = (مصروفات التسويق + المبيعات) / عدد العملاء الجدد. الاختبار الحقيقي: CLV/CAC. إذا CLV = 300$ وCAC = 100$، النسبة = 3x — مقبول. إذا < 1، الشركة تخسر على كل عميل. تحسين CAC يأتي من تحسين القنوات ذات الكفاءة الأعلى وليس قطع الميزانية عشوائياً.",
+      "points": 8,
+      "en_question": "What is Customer Acquisition Cost (CAC) and how does it assess marketing funnel health?",
+      "en_options": [
+        "Total marketing and sales expenses divided by number of new customers acquired — health is measured by CLV/CAC ratio which should be > 3",
+        "The cost of producing marketing content only, excluding team salaries",
+        "CAC is calculated only for paid ads and doesn't include Organic channels",
+        "The average cost per click (CPC) on advertisements"
+      ],
+      "en_explanation": "CAC = (Marketing + Sales expenses) / New Customers acquired. The real test: CLV/CAC. If CLV = $300 and CAC = $100, ratio = 3x — acceptable. If < 1, the company loses money on every customer. Improving CAC comes from optimizing highest-efficiency channels, not random budget cuts."
+    },
+    {
+      "id": "q333",
+      "section": "kpi-marketing",
+      "question": "ما Return on Ad Spend (ROAS) وكيف يختلف عن ROI التسويقي العام؟",
+      "type": "multiple_choice",
+      "options": [
+        "ROAS = الإيراد الناتج عن الإعلانات / تكلفة الإعلانات — يقيس العائد المباشر للإنفاق الإعلاني تحديداً؛ ROI العام يشمل كل مصروفات التسويق",
+        "ROAS وROI مصطلحان مترادفان تماماً في التسويق",
+        "ROAS يُحسب شهرياً؛ ROI يُحسب سنوياً فقط",
+        "ROAS يقيس عدد النقرات؛ ROI يقيس عدد التحويلات"
+      ],
+      "correctAnswer": 0,
+      "explanation": "ROAS = إيراد الحملة / إنفاق الحملة. ROAS = 4 يعني كل دولار أُنفق أعاد 4 دولارات. ROI التسويقي = (إيراد - إجمالي التكاليف) / إجمالي التكاليف ويشمل الرواتب والأدوات. ROAS أسرع لتقييم حملة بعينها؛ ROI للحكم على قسم التسويق ككل.",
+      "points": 7,
+      "en_question": "What is Return on Ad Spend (ROAS) and how does it differ from overall marketing ROI?",
+      "en_options": [
+        "ROAS = revenue generated by ads / ad spend — measures the direct return on advertising spend specifically; overall ROI includes all marketing expenses",
+        "ROAS and ROI are completely interchangeable terms in marketing",
+        "ROAS is calculated monthly; ROI is calculated annually only",
+        "ROAS measures clicks; ROI measures conversions"
+      ],
+      "en_explanation": "ROAS = Campaign Revenue / Campaign Spend. ROAS = 4 means every dollar spent returned 4 dollars. Marketing ROI = (Revenue - Total Costs) / Total Costs, including salaries and tools. ROAS is faster for evaluating a specific campaign; ROI is for judging the marketing department as a whole."
+    },
+    {
+      "id": "q334",
+      "section": "kpi-marketing",
+      "question": "ما Email Open Rate وما العوامل الرئيسية التي تؤثر عليه؟",
+      "type": "multiple_choice",
+      "options": [
+        "نسبة المستلمين الذين فتحوا البريد الإلكتروني — يتأثر بـ: جودة سطر الموضوع، توقيت الإرسال، شهرة المرسل، ومدى تقسيم القائمة (Segmentation)",
+        "عدد مرات النقر على الروابط داخل البريد مقسوماً على عدد المرسَل إليهم",
+        "Open Rate يقيس نسبة الإيميلات التي وصلت للـ Inbox بدون أن تذهب للـ Spam",
+        "Open Rate = الإيرادات من حملة البريد / عدد المشتركين"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Open Rate = (الإيميلات المفتوحة / الإيميلات المُسلَّمة) × 100. المعدل الجيد يتراوح بين 20-30% حسب القطاع. أبرز عوامل التأثير: (1) سطر الموضوع — السؤال أو الرقم يرفع الفتح؛ (2) التوقيت — الثلاثاء والأربعاء صباحاً أفضل عموماً؛ (3) التخصيص — اسم المستلم يرفع الفتح 26%.",
+      "points": 7,
+      "en_question": "What is Email Open Rate and what are the key factors affecting it?",
+      "en_options": [
+        "The percentage of recipients who opened the email — influenced by: subject line quality, send timing, sender reputation, and list segmentation",
+        "The number of link clicks inside the email divided by recipients",
+        "Open Rate measures the percentage of emails that reached the Inbox without going to Spam",
+        "Open Rate = revenue from email campaign / number of subscribers"
+      ],
+      "en_explanation": "Open Rate = (emails opened / emails delivered) × 100. A good rate ranges from 20-30% depending on industry. Key factors: (1) Subject line — questions or numbers boost opens; (2) Timing — Tuesday and Wednesday mornings generally perform best; (3) Personalization — using the recipient's name increases opens by 26%."
     }
   ]
 }

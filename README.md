@@ -5,7 +5,7 @@
 ### The most comprehensive Arabic Power BI course — free, open-source, and built to take you from zero to enterprise-level analyst.
 
 [![Lessons](https://img.shields.io/badge/Lessons-79-F5A623?style=flat-square&logo=bookstack&logoColor=white)](https://ta3lam.github.io/Power-BI/)
-[![Quiz Questions](https://img.shields.io/badge/Quiz%20Questions-309-00B4D8?style=flat-square&logo=checkmarx&logoColor=white)](https://ta3lam.github.io/Power-BI/)
+[![Quiz Questions](https://img.shields.io/badge/Quiz%20Questions-327-00B4D8?style=flat-square&logo=checkmarx&logoColor=white)](https://ta3lam.github.io/Power-BI/)
 [![Languages](https://img.shields.io/badge/Languages-AR%20%2B%20EN-6C63FF?style=flat-square&logo=googletranslate&logoColor=white)](https://ta3lam.github.io/Power-BI/)
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Live-F5A623?style=flat-square&logo=github-pages&logoColor=white)](https://ta3lam.github.io/Power-BI/)
@@ -28,11 +28,11 @@ No account required. No subscription. No ads. Just open the link and start learn
 
 - **79 structured lessons** across 10 progressive chapters — from "what is a data model" to Composite Models, Deployment Pipelines, and Microsoft Fabric
 - **Bilingual** — every lesson is fully translated to English; switch languages with one click in the top bar
-- **Quiz-gated progression** — each lesson has a built-in quiz (309 questions total); you must pass at 80% before unlocking the next lesson
+- **Quiz-gated progression** — each lesson has a built-in quiz (327 questions total); you must pass at 80% before unlocking the next lesson
 - **AI-powered visuals chapter** — dedicated lessons on Key Influencers, Q&A, Smart Narrative, and Anomaly Detection
 - **KPI domain library** — 5 industry-specific lessons covering Finance, Sales, Inventory, HR, and Marketing KPIs
 - **Real-world capstone projects** — 3 guided projects (Starter → Intermediate → Advanced) plus a Portfolio & Interview Playbook
-- **Fully offline-capable** — static site with zero dependencies on external APIs
+- **Static core that runs locally** — lessons and quizzes run from a local static server; Google Fonts and certificate PDF generation use CDN unless vendored locally
 - **Customizable UI** — accent color, density, dark/light mode, and backdrop all persist in localStorage
 - **Certificate of completion** — generated as a PDF via jsPDF when all lessons are finished
 
@@ -48,9 +48,9 @@ No account required. No subscription. No ads. Just open the link and start learn
 | 04 | DAX — Data Analysis Expressions | 15 | CALCULATE, Row/Filter Context, Iterators, Time Intelligence, M2M, Budget vs Actual |
 | 05 | Visual Design & Visualization | 11 | Conditional Formatting, Bookmarks, Drillthrough, Mobile Design, AI Visuals |
 | 06 | Publishing & Governance | 5 | Workspaces, RLS, Gateway, Incremental Refresh |
-| 07 | Advanced & Optimization | 12 | Performance Tuning, Composite Models, Calculation Groups, Deployment Pipelines, Data Governance |
+| 07 | Advanced & Optimization | 18 | Performance Tuning, Composite Models, Calculation Groups, Deployment Pipelines, Data Governance |
 | 08 | Automation & Integration | 3 | Power Automate, Automated Refresh, Report Generation |
-| 09 | KPI Domains | 11 | Finance · Sales · Inventory · HR · Marketing — practical measure libraries |
+| 09 | KPI Domains | 5 | Finance · Sales · Inventory · HR · Marketing — practical measure libraries |
 | 10 | Capstones & Case Studies | 4 | Pizza Place → Chess Games → Airbnb Intelligence + Portfolio Playbook |
 
 ---
@@ -66,7 +66,7 @@ This is a **zero-build static site** — no framework, no bundler, no node_modul
 | Logic | Vanilla JavaScript (ES6+) — single IIFE architecture |
 | Content | Lesson content in `js/lessons.js` as tagged template literals |
 | Quiz data | `data/quizzes.json` — loaded via `fetch()` |
-| PDF certificate | [jsPDF](https://github.com/parallax/jsPDF) (CDN) |
+| PDF certificate | [jsPDF](https://github.com/parallax/jsPDF) (CDN; vendor locally for full offline use) |
 | Hosting | GitHub Pages via GitHub Actions |
 | Fonts | Newsreader (headings) · Cairo (Arabic body) · JetBrains Mono (code) |
 
@@ -117,7 +117,7 @@ Power-BI/
 │   ├── shell.js            # Navigation, rendering, i18n, state management
 │   └── quiz.js             # Quiz modal, certificate, bilingual UI
 ├── data/
-│   └── quizzes.json        # 309 quiz questions across all 79 lessons
+│   └── quizzes.json        # 327 quiz questions across all 79 lessons
 ├── images/                 # Lesson screenshots and diagrams
 ├── fonts/                  # MirandaSans (Latin subset)
 └── .github/
@@ -172,10 +172,10 @@ The language toggle in the top bar switches all content instantly — no page re
 |--------|-------|
 | Total lessons | 79 |
 | Total chapters | 10 |
-| Quiz questions | 309 |
+| Quiz questions | 327 |
 | Quiz coverage | 100% (79 / 79 lessons) |
 | Languages | Arabic + English |
-| Avg. questions per lesson | 3.9 |
+| Avg. questions per lesson | 4.1 |
 | Passing score | 80% |
 
 ---

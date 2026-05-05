@@ -36,7 +36,7 @@ node --check js/shell.js && node --check js/quiz.js && node --check js/lessons.j
 
 ## Architecture
 
-The site is a data-driven shell (69 lessons across 10 chapters). **Lesson content lives in `js/lessons.js`** as raw HTML strings, not in `index.html`. Lessons are fetched dynamically and rendered on-demand.
+The site is a data-driven shell (79 lessons across 10 chapters). **Lesson content lives in `js/lessons.js`** as raw HTML strings, not in `index.html`. Lessons are fetched dynamically and rendered on-demand.
 
 ### File roles
 
@@ -61,7 +61,7 @@ The site is a data-driven shell (69 lessons across 10 chapters). **Lesson conten
   - **Mark-done button behavior:** If lesson has quiz data (`hasQuizForLesson()`), clicking opens quiz with callback; otherwise marks lesson done directly
   - **Next button state:** If current lesson has quiz and is incomplete, next lesson nav is disabled (faded, non-clickable)
   - Button text shows "📝 اختبر نفسك (مطلوب)" / "📝 Quiz Required" when quiz is present
-- `window.stubLesson()` — fallback for lessons not yet in `lessons.js`. There are currently no active stub lessons in the 69-lesson curriculum.
+- `window.stubLesson()` — fallback for lessons not yet in `lessons.js`. There are currently no active stub lessons in the 79-lesson curriculum.
 
 **Quiz progression & navigation locks:**
 When a lesson has a quiz, the system prevents advancement via multiple overlapping mechanisms:
@@ -118,10 +118,10 @@ This layered approach ensures users cannot skip the quiz requirement from the le
 
 **What's translated per lesson:**
 - `en_eyebrow`, `en_lede` — rendered in EN mode by `renderLesson()` for lesson header
-- `en_blocks` — authored for all 69 current lessons. English mode renders English body content when this field exists.
+- `en_blocks — authored for all 79 current lessons. English mode renders English body content when this field exists.
 
 **English content banner:**
-`renderLesson()` still supports a fallback banner when `STATE.lang === "en"` and a future lesson lacks `en_blocks`, but the current 69 lessons all include English body content.
+`renderLesson()` still supports a fallback banner when `STATE.lang === "en"` and a future lesson lacks `en_blocks`, but the current 79 lessons all include English body content.
 
 **Recent additions and improvements (as of 2026-04-23):**
 - UI/Layout improvements: Increased lesson content width from 760px to 850px for better text flow with larger fonts
@@ -129,7 +129,7 @@ This layered approach ensures users cannot skip the quiz requirement from the le
 - Added favicon (SVG gold circle) to eliminate 404 errors in browser console
 - 11 new professional-level lessons (Query Folding, Tabular Editor, Error Handling, Semantic Model Design, Common Mistakes, Cost Optimization, Mobile Design, DirectQuery, Power Automate, Automated Refresh, Automated Report Generation)
 - Added new chapter 08 (Automation & Integration) with 3 lessons
-- All 69 lessons have full `en_eyebrow`, `en_lede`, and `en_blocks` translations
+- All 79 lessons have full `en_eyebrow`, `en_lede`, and `en_blocks` translations
 
 **Recent improvements (as of 2026-04-25):**
 - **Bidirectional text fixes in quiz** — improved rendering of mixed English/Arabic text in question headings and options using CSS `unicode-bidi` (plaintext/isolate) + HTML `<bdi>` tags. Fixes character reordering and overlap issues in technical terms embedded in Arabic text.
@@ -352,7 +352,7 @@ The sidebar brand section displays a logo and site name. To customize:
 
 ### Certificate
 
-`showCertificate()` in `quiz.js` — triggered when all 69 lessons are marked done. `downloadCertificate()` uses jsPDF (CDN) to produce a landscape A4 PDF.
+`showCertificate()` in `quiz.js` — triggered when all 79 lessons are marked done. `downloadCertificate()` uses jsPDF (CDN) to produce a landscape A4 PDF.
 
 ## Adding Lessons (Practical Guide)
 

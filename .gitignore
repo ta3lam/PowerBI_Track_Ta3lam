@@ -11,5 +11,5 @@ rebuild_lessons.js
 translate_add_en.js
 clean_quiz.py
 
-# Review/audit reports (local notes only)
-تقرير_*.md
+# Internal review reports (local only)
+تقرير_مراجعة_*.md

@@ -1,4 +1,4 @@
-// Real Ta3laM Power BI curriculum — 10 chapters, 69 lessons
+// Real Ta3laM Power BI curriculum — 10 chapters, 79 lessons
 window.CURRICULUM = [
   {
     id: "foundations",

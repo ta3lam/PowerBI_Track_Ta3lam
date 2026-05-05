@@ -216,7 +216,7 @@ html[data-theme="light"] .kpi-en {
   font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 0.83rem;
   direction: ltr; text-align: left; overflow-x: auto; line-height: 1.7;
   position: relative;
-  white-space: pre; unicode-bidi: bidi-override;
+  white-space: pre; unicode-bidi: normal;
 }
 .code-block .kw  { color: #F5B800; font-weight: 600; }
 .code-block .fn  { color: #00B4D8; }

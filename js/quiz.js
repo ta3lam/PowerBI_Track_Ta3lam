@@ -288,6 +288,28 @@ function saveAnswer() {
   userAnswers[currentQuiz.currentQuestionIndex] = answer;
 }
 
+function normalizeCodeAnswer(value) {
+  return String(value ?? "")
+    .replace(/\r\n/g, "\n")
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/\s*([{}()[\],])\s*/g, "$1")
+    .replace(/\s*(>=|<=|<>|=|>|<)\s*/g, "$1")
+    .toLowerCase();
+}
+
+function isQuizAnswerCorrect(question, userAnswer) {
+  if (question.type === "code") {
+    const acceptedAnswers = [question.correctAnswer, ...(question.acceptedAnswers || [])];
+    const normalizedUserAnswer = normalizeCodeAnswer(userAnswer);
+    return acceptedAnswers.some((answer) => normalizeCodeAnswer(answer) === normalizedUserAnswer);
+  }
+
+  return userAnswer === question.correctAnswer.toString();
+}
+
 function updateNextButton() {
   const nextBtn = document.querySelector("#quizModal .btn-next");
   if (!nextBtn) return;
@@ -302,7 +324,7 @@ function finishQuiz() {
 
   currentQuiz.questions.forEach((question, index) => {
     const userAnswer = userAnswers[index];
-    const isCorrect = userAnswer === question.correctAnswer.toString();
+    const isCorrect = isQuizAnswerCorrect(question, userAnswer);
     if (isCorrect) quizScore += question.points;
 
     // Use English translation if available and language is English

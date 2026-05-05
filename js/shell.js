@@ -20,7 +20,7 @@
       minutes: "دقيقة",
       lessonOf: "درس",
       of: "من",
-      resetConfirm: "متأكد إنك عايز تبدأ من الأول؟ هيتمسح كل تقدمك!",
+      resetConfirm: "هل أنت متأكد أنك تريد البدء من جديد؟ سيتم مسح كل تقدمك!",
       tweaksTitle: "Tweaks",
       tweakAccentLabel: "اختار اللون",
       tweakDensityLabel: "تباعد المحتوى",
@@ -1028,7 +1028,7 @@
     if (quizBtn && quizBtn.style.display !== "none") quizBtn.textContent = t("quizBtn");
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function initShell() {
     document.documentElement.lang = STATE.lang;
     document.documentElement.dir = STATE.lang === "ar" ? "rtl" : "ltr";
     document.documentElement.classList.toggle("lang-en", STATE.lang === "en");
@@ -1052,5 +1052,11 @@
     }
 
     window.addEventListener("resize", scheduleHeadlineFit);
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initShell, { once: true });
+  } else {
+    initShell();
+  }
 })();
