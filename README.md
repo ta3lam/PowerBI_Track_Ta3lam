@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Live-F5A623?style=flat-square&logo=github-pages&logoColor=white)](https://ta3lam.github.io/Power-BI/)
 
-**[🚀 ابدأ التعلم الآن](https://ta3lam.github.io/Power-BI/)**
+**[🚀 ابدأ التعلم الآن](https://ta3lam.github.io/PowerBI_Track_Ta3lam/)**
 
 </div>
 
