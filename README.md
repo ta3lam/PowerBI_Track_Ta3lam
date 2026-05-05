@@ -24,6 +24,53 @@ No account required. No subscription. No ads. Just open the link and start learn
 
 ---
 
+## Who this is for
+
+This course is built for Arabic-speaking learners who want to move beyond clicking around Power BI and start thinking like BI analysts:
+
+- Beginners who want a structured path from data basics to report publishing
+- Excel or SQL users moving into Power BI and dashboard work
+- Junior data analysts who need stronger DAX, modeling, and Power Query foundations
+- Business users who want to understand metrics, KPIs, and decision-focused reporting
+- Instructors or teams looking for a complete Arabic Power BI learning path
+
+---
+
+## What you will build and learn
+
+By the end, the learner is not only expected to know where buttons are. The goal is to build a practical BI mindset:
+
+- Design clean data models using facts, dimensions, relationships, date tables, and bridge tables
+- Transform messy data with Power Query and understand when Query Folding matters
+- Write DAX measures for real business questions, not only isolated formulas
+- Build dashboards that explain performance through KPIs, filters, bookmarks, drillthrough, and mobile layouts
+- Publish reports, think about security, RLS, gateway refresh, governance, and deployment workflows
+- Complete guided portfolio projects that can be discussed in interviews or client conversations
+
+---
+
+## Visual preview
+
+<p align="center">
+  <img src="images/Power%20BI%20-%20Home%20Page.png" alt="Power BI course homepage preview" width="48%">
+  <img src="images/Power%20BI%20-%20Views.png" alt="Power BI interface lesson preview" width="48%">
+</p>
+
+<p align="center">
+  <img src="images/OLAP%20Vs%20OLTP.png" alt="OLAP versus OLTP diagram" width="48%">
+  <img src="images/Schemas.png" alt="Data schema lesson diagram" width="48%">
+</p>
+
+---
+
+## Why I built this
+
+Power BI is often taught as a collection of visuals and formulas. This project takes a different path: it teaches the thinking behind reliable BI work, from understanding operational data to modeling, DAX, governance, and business outcomes.
+
+It is part of the Ta3laM Tech mission to make serious data education accessible in Arabic while still matching the structure and depth expected from professional analytics work.
+
+---
+
 ## ✨ Features
 
 - **79 structured lessons** across 10 progressive chapters — from "what is a data model" to Composite Models, Deployment Pipelines, and Microsoft Fabric
